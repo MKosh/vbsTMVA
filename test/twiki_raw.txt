@@ -1,0 +1,94 @@
+---+!! TMVA based framework for H-&gt;ZZ-&gt;4l analysis.
+
+%COMPLETE1%
+
+%TOC{title="Contents:"}%
+
+---++ Motivation/Goals
+
+The code is developing for H-&gt;ZZ-&gt;4l analysis, using reduced rootuples obtained as described<br />here: [[CMS.SWGuideCMSDataAnalysisSchoolLPC2018MonoHiggsHZZ][Dark Matter via MonoHiggs, H-&gt;ZZ-&gt;4l]].  
+
+The described tool:
+   * arranges input rootuples in groups of user's choice - e.g - data, signal(s), background(s)
+   * trains and evaluates different neural net discriminants based on the TMVA framework
+   * displays stack histograms of variables using ROOT selection machinery
+   * calculates statistics to optimize selections
+
+---++ Contacts
+
+%BLUE%Sergey A Uzunyan (NIU, suzunyan@niu.edu), Nicola De Filippis (INFN Bari, [[mailto:nicola.defilippis@ba.infn.it][nicola.defilippis@ba.infn.it]])<br />%ENDCOLOR%
+---++ Software dependencies
+   * <a href="https://root.cern.ch/" target="_blank" title="ROOT main page">ROOT</a> v6.10.08 or newer
+   * <a href="https://developer.nvidia.com/cuda-toolkit" target="_blank" title="CUDA toolkit">CUDA toolkit</a> for DNN-GPU TMVA support (optionally, refer to this section for build options)
+---++ Quick start at <a href="https://lpc.fnal.gov/" target="_blank" title="LPC cluster main page">FNAL-LPC</a>
+
+1) Setup the working area::
+<verbatim>  source /cvmfs/cms.cern.ch/cmsset_default.sh (for bash shell or .csh for tcsh)
+  cd $HOME/nobackup
+  cmsrel CMSSW_9_3_2
+  cd CMSSW_9_3_2/src 
+  cmsenv</verbatim>
+
+Note:: To use package on a standalone system refer to this section.<br /><br />2) copy and untar the source code
+
+<verbatim>  cp -rfvp /uscms_data/d1/lpchzz4leptons/archive/hzztmva.tgz ./   
+  tar -xzf hzztmva.tgz
+  cd hzztmva</verbatim>
+
+3) create links to hzz4l reduced rootuples:
+
+<verbatim>  source dsw.sh</verbatim>
+---++ Training TMVA discriminants
+
+1) Add/change the TMVA variables and spectators in *hzzDL.hpp* (optional)<br /><br />2) Train BDT with signal and backgrounds (for hzz_4mu skims)
+<verbatim>  root -b -q ./hzzTMVAClassification.C\(\"hzz_4mu\",\"BDT\"\)
+  //to test DNN ( but much faster with DNN_GPU)   
+  root -b -q ./hzzTMVAClassification.C\(\"hzz_4mu\",\"Fisher,BDT,DNN_CPU\"\) </verbatim>
+
+3) Apply BDT classification to data
+
+<verbatim>  root -b -q ./hzzTMVAClassificationApplication.C\(\"hzz_4mu\",\"BDT\"\)
+  //or, if other discriminants were trained   
+  root -b -q ./hzzTMVAClassificationApplication.C\(\"hzz_4mu\",\"Fisher,BDT,DNN_CPU\"\)</verbatim>
+
+Combined signal and MC (both test and training) and data trees with corresponding discriminant variables will be stored <br />in the output *hzz_4mu_SBtmva.root* rootuple. The TMVA service histograms ( ROC curves e.t.c ) are stored as well.
+
+4) To analyze 4e or 2e2mu samples
+
+<verbatim>  rm -f reqlists
+  ln -s skimrqs/hzz_4e reqlists</verbatim>
+
+Repeat  items  1-3 using  "hzz_4e" label
+<verbatim>  root -b -q ./hzzTMVAClassification.C\(\"hzz_4e\",\"BDT\"\);
+  root -b -q ./hzzTMVAClassificationApplication.C\(\"hzz_4e\",\"BDT\"\)</verbatim>
+
+Correspondingly an output will be stored in *hzz_4e_SBtmva.root*.
+---++ Obtaining histograms<br /><br />
+
+Use *plot_tmva.C* to analyze the output (*hzz_mu_SBtmva.root*) rootuple
+
+<verbatim>  root -l plot_tmva.C\(\"hzz_4mu\"\) </verbatim>
+---++ Examples
+<pre><span class='WYSIWYG_COLOR' style='color: black;'>// Normalized 4l  invariant mass distribution for higgs samples(green) </span><br /><span class='WYSIWYG_COLOR' style='color: black;'>// on top of combined background(red) superimposed with data</span></pre> <verbatim>root [1]  plotvar(treeSB,"f_mass4l",""); </verbatim> <pre><br /><span class='WYSIWYG_COLOR' style='color: black;'>// BDT discriminant (from TMVA)  distributio</span></pre> <verbatim>root [2]  plotvar(treeSB,"BDT","");  </verbatim> <pre><br />/<span class='WYSIWYG_COLOR' style='color: black;'>/  4l Invariant mass for  BDT&gt;0.1</span></pre> <verbatim>root [3]  plotvar(treeSB,"f_mass4l","BDT>0.1");  </verbatim> <pre><br /><span class='WYSIWYG_COLOR' style='color: black;'>//  Some presentation work (binning, labels, title)</span></pre> <verbatim>root [4]  plotvar(treeSB,"f_mass4l", "BDT>0.1",  1.00, 0, 0,     80., 200., 2.,  0, 0, "H->ZZ->4#mu, 35.867 pb^{-1}","M(4#mu), GeV");</verbatim>
+
+To examine TMVA plots:
+<verbatim>root [5]  tmgui()</verbatim>
+---++ Setup on a standalone system
+---++ Use with a custom rootuples
+
+Explain the design of the algorithm to ensure that the software can be maintained
+once the existing authors have left:
+   * design arguments - why this is done as it is done
+   * description of algorithm.
+
+-- Main.SergeyUzunyan1 - 2018-01-24
+
+   * [[%ATTACHURL%/f_mass4mu_nocuts.pdf][f_mass4mu_nocuts.pdf]]:             Example 1
+
+   * [[%ATTACHURL%/BDT_nocuts.pdf][BDT_nocuts.pdf]]:                    Example 2
+
+   * [[%ATTACHURL%/f_mass4l_BDTgt0p1.pdf][f_mass4l_BDTgt0p1.pdf]]:      Example 3
+
+   * [[%ATTACHURL%/f_mass4l_BDTgt0p1_nice.pdf][f_mass4l_BDTgt0p1_nice.pdf]]:  Example 4
+
+   * [[%ATTACHURL%/ROC_BDT_DNN_Fisher.pdf][ROC_BDT_DNN_Fisher.pdf]]: TMVA ROC curves (BDT, Fisher, DNN)</verbatim>

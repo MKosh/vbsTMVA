@@ -1,0 +1,59 @@
+#=============================================================
+I-1. ssh -Y cmslpcgpu1.fnal.gov 
+(use interactive nodes with P100 GPU cmslpcgpu1,cmslpcgpu2,cmslpcgpu3)
+
+##############################################################
+#
+1) at cmslpc
+  mkdir ~/nobackup/vbstest; cd ~/nobackup/vbstest;
+  cp -rfvp /uscms/home/serguei/nobackup/suvbs/vbstmva.tgz ./
+  tar -xzf vbstmva.tgz
+3) create links to vbs_ww reduced rootuples:
+   source dsw.sh  (for bash users)
+   source dsw.tcsh (for tcsh users)
+The code will use redused skims at /eos/uscms/store/user/rasharma/SecondStep/WWTree_After_CWR_2019_03_22_16h49/HaddedFiles 
+change link (skims/vbs_ww) to use different set 
+
+Note:: the code will use a custom ROOT v6.10.08 built with cuda9.0 at  cmslpcgpu1. 
+(~/lpchzz4leptons/serguei/contrib/root/root_v6.10.08-gcc4.8-x64-cuda9.0-cmslpc-sl7/bin/root)
+
+4) define TMVA variables and spectators in  vbsDL.hpp
+
+5) Train BDT with signal and backrounds (for vbs_ww skims), runtime ~12 min
+//ok to ignore "unknown branch errors"
+   root -b -q ./vbsTMVAClassification.C\(\"vbs_ww\",\"BDT\"\) 
+  //to test DNN runtime ~1 hour
+   root -b -q ./vbsTMVAClassification.C\(\"vbs_ww\",\"Fisher,BDT,DNN_GPU\"\) 
+  //MLPBFGS,DNN_GPU,BDT ~8 hours
+   root -b -q ./vbsTMVAClassification.C\(\"vbs_ww\",\"DNN_GPU,MLPBFGS,BDT\"\) 
+
+6) Apply BDT classification to data 
+  root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww\",\"BDT\"\)
+  //or, if other disriminants were trained 
+   root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww\",\"Fisher,BDT,DNN_GPU\"\) 
+  //MLPBFGS,DNN_GPU,BDT 
+   root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww\",\"DNN_GPU,MLPBFGS,BDT\"\) 
+
+7) Use tmvaMon.cpp to analyse output (vbs_ww_SBtmva.root)
+  root -l tmvaMon.cpp\(\"vbs_ww\"\) 
+// root [1]  plotvar(anl, "BDT", tmvasel+allCuts,  1.0, 1, 1,  -1., 1.3, 0.05);
+
+Tools:: 
+- to examine TMVA plots
+tmgui()
+
+- to create set of control plots for TCut=allCuts 
+cplots(anl, allCuts, "allCuts")
+
+- to find cut on BDT that corresponds to the  maximum of significance s/sqrt(s+b)
+anl->optCutScan("sgf1",cleanNAN+allCuts,"BDT",-1, 1, 0.1,0.0005, 20)
+
+- to create nice looking plots with custom axis labels, title, log scale - 
+plotvar(anl, "BDT", tmvasel+allCuts,  1.0, 1, 1,  -1., 1.3, 0.05,   1, 0, "VBS (WV), 35.9 fb^{-1}", "BDT", "Events/bin");
+
+#############################################################
+Fine tuning:
+- to change set of NN variables
+  edit TMVAVARS in writeDL.sh; ./write_vbsDL.sh
+
+##############################################################
