@@ -72,7 +72,7 @@ void arrange_vbsReducedTree(TTree* vbsTree, VbsReducedEvent& vbsEvent){
 EOF
 
 while read line; do
-two=$(echo $line | awk '{print $2}')
+two=$(echo $line | awk '{print $2}' | sed 's/;//g')
 echo -e "vbsTree->SetBranchAddress( \"$two\", \t vbsEvent.$two );" >> $outfile
 done < list_of_branches.txt
 
@@ -123,7 +123,7 @@ void setVbsDLorReaderVarsAndSpectators(TMVA::DataLoader* dataloader, TMVA::Reade
 
 EOF
 
-allVARS="$(cat vbsReducedTreeNew.hpp | grep SetBranchAddress | awk '{print #2}' | sed 's/\"//g' | sed 's/,//g')"
+allVARS="$(cat vbsReducedTreeNew.hpp | grep SetBranchAddress | awk '{print $2}' | sed 's/\"//g' | sed 's/,//g')"
 
 for var in $SUanlVARS; do
     isVarArray="$(cat vbsReducedTreeNew.hpp | grep $var | grep '\['])"
@@ -193,6 +193,7 @@ EOF
 #----------------------------------------------------------
 
 # - Start - Create vbsActiveBranches.hpp - Start -
+echo "Creating $ActiveBranchesOutfile"
 
 if [ -f $ActiveBranchesOutfile ]; then /bin/mv -f  ${ActiveBranchesOutfile} ${ActiveBranchesOutfile}.save; fi
 cat >> $ActiveBranchesOutfile <<EOF

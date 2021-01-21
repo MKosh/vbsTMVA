@@ -56,7 +56,8 @@
         "ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root"
     };
 
-    string location="~/documents/ntuples/";
+    // string location="~/documents/ntuples/"; // on my personal laptop
+    string location="/mnt/e/Research/ntuples/2018/"; // on my personal desktop
     //TFile *outfile = new TFile("var_list.txt", "RECREATE");
     std::ofstream ofs ("var_list.txt", std::ofstream::out);
 
@@ -65,7 +66,7 @@
         TFile *input = new TFile(infile.c_str());
         TObjArray* brches = Events->GetListOfBranches();
         for (int iter = 0; iter <brches->GetEntries(); iter++) {
-            ofs << brches->At(iter)->GetTitle() <<'\t' << brches->At(iter)->GetName() << std::endl;
+            ofs << brches->At(iter)->GetTitle() <<'\t' << brches->At(iter)->GetName() << ";" << std::endl;
         }
         input->Close();
     }
