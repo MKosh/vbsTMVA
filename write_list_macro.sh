@@ -4,7 +4,58 @@
 # Then uses that file to write the vbsReducedTree.hpp file
 # and the vbsDL.hpp file
 
-# - Run - Create the variable list - Run -
+# --------------------------------------------------------- Start - Create write_list macro - Start -------------------------------------------------------------------
+
+# Writes a macro file that reads in all of the root files in the folder
+# rootFiles/subFolders, then writes a list of all of the names of the branches and their types
+
+rootFiles="/mnt/e/Research/ntuples/" # Location of the ntuples 3 subfolders <2016, 2017, 2018>
+subFolders=("2016" "2017" "2018") # For work on my local machine just use 2018
+
+macroFile="write_list.C"
+if [ -f $macroFile ]; then rm -f $macroFile; fi
+touch $macroFile
+
+echo "Creating $macroFile"
+cat >> $macroFile << EOF
+{
+    #include <fstream>
+    #include <vector>
+    #include <string>
+
+    std::vector<std::string> ntuples = {
+EOF
+
+# This block reads the names off all the files in the folder and adds them to the ntuples vector in $macroFile
+for file in "$rootFiles"/2018/*; do # Only using 2018 for my local machine
+    echo $file | sed "s@$rootFiles\/2018\/@@g" | sed 's/^/\"/g' | sed 's/$/\",/g' | cat >> $macroFile 
+done
+
+# Don't forget to update the string "location" to the correct folder
+cat >> $macroFile << EOF
+    };
+
+    // string location="~/documents/ntuples/"; // on my personal laptop
+    string location="/mnt/e/Research/ntuples/2018/"; // on my personal desktop
+    //TFile *outfile = new TFile("var_list.txt", "RECREATE");
+    std::ofstream ofs ("var_list.txt", std::ofstream::out);
+
+    for (int i = 0; i<ntuples.size(); i++) {
+        string infile = location+ntuples[i];
+        TFile *input = new TFile(infile.c_str());
+        TObjArray* brches = Events->GetListOfBranches();
+        for (int iter = 0; iter <brches->GetEntries(); iter++) {
+            ofs << brches->At(iter)->GetTitle() <<'\t' << brches->At(iter)->GetName() << ";" << std::endl;
+        }
+        input->Close();
+    }
+    
+    ofs.close();
+
+}
+EOF
+
+# --------------------------------------------------------- End - Create write_list macro - End -------------------------------------------------------------------
 
 root -q .x write_list_branches.C
 
@@ -16,14 +67,15 @@ cat branches.txt | sed 's/[0-z]*\/I/Int_t/g' | sed 's/[0-z]*\/F/Float_t/g' | sed
 
 rm branches.txt
 
-#----------------------------------------------------------
 
-# - Start - Create the vbsReducedTree.hpp file - Start -
+
+# --------------------------------------------------------- Start - Create the vbsReducedTree.hpp file - Start ----------------------------------------------------
 outfile="vbsReducedTreeNew.hpp"
 
 if [ -f $outfile ]; then rm -f $outfile; fi
 echo "Creating $outfile"
 
+# cat boiler plate things
 cat >> $outfile << EOF
 #ifndef vbsReducedTree_hpp
 #define vbsReducedTree_hpp
@@ -44,6 +96,7 @@ typedef struct {
 
 EOF
 
+# cat all of the names of branches previously automatically generated
 cat list_of_branches.txt >> $outfile
 
 cat >> $outfile << EOF
@@ -73,7 +126,7 @@ EOF
 
 while read line; do
 two=$(echo $line | awk '{print $2}' | sed 's/;//g')
-echo -e "vbsTree->SetBranchAddress( \"$two\", \t vbsEvent.$two );" >> $outfile
+echo -e "\t vbsTree->SetBranchAddress( \"$two\", \t vbsEvent.$two );" >> $outfile
 done < list_of_branches.txt
 
 cat >> $outfile << EOF
@@ -83,11 +136,9 @@ cat >> $outfile << EOF
 #endif
 EOF
 
-# - End - Create vbsReducedTree.hpp file - End -
+# --------------------------------------------------------- End - Create vbsReducedTree.hpp file - End -------------------------------------------------------------
 
-#----------------------------------------------------------
-
-# - Start - Create vbsDL.hpp file - Start -
+# --------------------------------------------------------- Start - Create vbsDL.hpp file - Start -----------------------------------------------------------------
 TMVAVARS="lep1_pt lep1_eta"
 activeVARS=""
 plotVARS=""
@@ -188,11 +239,9 @@ cat >> $outfile_DL << EOF
 //=============================
 #endif
 EOF
-# - End - Create vbsDL.hpp file - End -
+# --------------------------------------------------------- End - Create vbsDL.hpp file - End ----------------------------------------------------------------------
 
-#----------------------------------------------------------
-
-# - Start - Create vbsActiveBranches.hpp - Start -
+# --------------------------------------------------------- Start - Create vbsActiveBranches.hpp - Start ------------------------------------------------------------
 echo "Creating $ActiveBranchesOutfile"
 
 if [ -f $ActiveBranchesOutfile ]; then /bin/mv -f  ${ActiveBranchesOutfile} ${ActiveBranchesOutfile}.save; fi
@@ -227,6 +276,6 @@ cat >> $ActiveBranchesOutfile <<EOF
 #endif
 EOF
 
-# - End - Create vbsActiveBranches.hpp - End -
+# --------------------------------------------------------- End - Create vbsActiveBranches.hpp - End ---------------------------------------------------------------
 
 echo "Done!"
