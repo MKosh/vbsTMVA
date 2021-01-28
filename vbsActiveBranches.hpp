@@ -17,6 +17,26 @@ void setChainBranches (TChain* inpChain){
 //
    inpChain->SetBranchStatus("", kFALSE);   // disable all branches
 // switch on required  branches
+inpChain->SetBranchStatus("L1PFWeight", 1);
+inpChain->SetBranchStatus("bosCent", 1);
+inpChain->SetBranchStatus("bos_PuppiAK8_eta", 1);
+inpChain->SetBranchStatus("bos_PuppiAK8_m_sd0_corr", 1);
+inpChain->SetBranchStatus("bos_PuppiAK8_pt", 1);
+inpChain->SetBranchStatus("bos_PuppiAK8_tau2tau1", 1);
+inpChain->SetBranchStatus("evt", 1);
+inpChain->SetBranchStatus("genWeight", 1);
+inpChain->SetBranchStatus("lep1_eta", 1);
+inpChain->SetBranchStatus("lep1_pt", 1);
+inpChain->SetBranchStatus("lep2_pt", 1);
+inpChain->SetBranchStatus("nBtag_loose", 1);
+inpChain->SetBranchStatus("puWeight", 1);
+inpChain->SetBranchStatus("run", 1);
+inpChain->SetBranchStatus("vbf1_AK4_eta", 1);
+inpChain->SetBranchStatus("vbf1_AK4_pt", 1);
+inpChain->SetBranchStatus("vbf2_AK4_eta", 1);
+inpChain->SetBranchStatus("vbf2_AK4_pt", 1);
+inpChain->SetBranchStatus("zeppHad", 1);
+inpChain->SetBranchStatus("zeppLep", 1);
 }
 //=======================================
 #endif

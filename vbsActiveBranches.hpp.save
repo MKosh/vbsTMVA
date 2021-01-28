@@ -17,6 +17,9 @@ void setChainBranches (TChain* inpChain){
 //
    inpChain->SetBranchStatus("", kFALSE);   // disable all branches
 // switch on required  branches
+inpChain->SetBranchStatus("L1PFWeight", 1);
+inpChain->SetBranchStatus("evt", 1);
+inpChain->SetBranchStatus("run", 1);
 }
 //=======================================
 #endif
