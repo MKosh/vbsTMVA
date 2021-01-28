@@ -6,6 +6,7 @@ The framework was already very automated, hopefully I can extend that so the use
 
 ### Current tasks
    * Getting the TMVA step to run on my local machine with older ntuples.
+   * Getting TMVA plot outputs
    
 ### Upcoming tasks
    * Determining Spectators/Variables in the newer ntuples
