@@ -1,8 +1,11 @@
 #!/bin/bash
-#DD_VBS_REDUCED2016="/cdata/cms/archive/vbs_reduced_2016"
-#SNAME="$(uname -a | awk '{print $2}')"
-#if [ "0$(echo  $SNAME | grep fnal)" != "0" ]; then
-#DD_VBS_REDUCED2016="/uscms_data/d1/lpchzz4leptons/serguei/data/vbs_reduced_2016"
+
+# ------------------------------------------------------------------- Start System Check ----------------------------------------------------------------------------------------------
+
+#DD_VBS_REDUCED="/eos/uscms/store/user/rsingh/wv_vbs_ntuples/WVJJTree_2020_Dec_12"
+#SNAME="$(uname -a | awk '{print $2}')" # System name
+#if [ "0$(echo  $SNAME | grep fnal)" != "0" ]; then # If the system name is from Fermilab, use these setup conditions
+#DD_VBS_REDUCED="/eos/uscms/store/user/rsingh/wv_vbs_ntuples/WVJJTree_2020_Dec_12" # OLD "/uscms_data/d1/lpchzz4leptons/serguei/data/vbs_reduced_2016"
 #export SUREPO="/uscms/home/serguei/lpchzz4leptons/serguei/contrib"
 #export ROOT_DIR=$SUREPO//root/root_v6.10.08-gcc4.8-x64-cuda9.0-cmslpc-sl7
 #export ROOTSYS=$SUREPO/root/root_v6.10.08-gcc4.8-x64-cuda9.0-cmslpc-sl7
@@ -25,12 +28,13 @@
 #fi
 
 #
-#if [ ! -d $DD_VBS_REDUCED2016 ]; then
+#if [ ! -d $DD_VBS_REDUCED ]; then
 #echo "Data folder $DD_VBS_REDUCED2016 does not exists."
-#echo "Please set the correct root folder (DD_VBS_REDUCED2016) for the reduced ntuples and rerun:" 
+#echo "Please set the correct root folder (DD_VBS_REDUCED) for the reduced ntuples and rerun:" 
 #echo "source dsw.sh" 
 #return 0;
 #fi
+
 #OS_RELEASE="$(cat /etc/redhat-release | awk '{print $NF}' | sed 's/(//g' | sed 's/)//g')"
 #OS_ARCH="$(uname -a | awk '{print $14}')"
 #echo "OS_RELEASE = $OS_RELEASE, OS_ARCH = $OS_ARCH"
@@ -52,7 +56,14 @@
 #  echo "Please setup ROOT"
 #return 0;
 #fi
-SKIMS="vbs_ww"
+
+if [ "0$(echo $SNAME | grep Mark)" != "0" ]; then # If running on my personal machine
+DD_VBS_REDUCED="/mnt/e/Research/ntuples/NEW/ntuples"
+conda activate root_env # Start the ROOT environment
+fi
+
+# ------------------------------------------------------------------- End System Check -------------------------------------------------------------------------------------------
+
 #
 if [ ! -d ./bin ]; then  /bin/mkdir -p ./bin; fi
 cd limit_calc
@@ -61,27 +72,28 @@ cd limit_calc
 cd ..
 export PATH=$PWD/bin:$PATH
 
-# - Start here
+# ------------------------------------------------------------------- Start here --------------------------------------------------------------------------------------------------
 
-DD_VBS_REDUCED2016="/mnt/c/users/markm/Documents/Grad_School/Year_2.0/Research/ntuples_old/HaddedFiles"
+SKIMS="vbs_ww"
+
 echo "Creating link to data files as "
 #
 for skim in $SKIMS; do 
-if [ ! -d skimrqs/$skim ]; then /bin/mkdir -p skimrqs/$skim; fi;
-echo "skim = $skim"
-if [ ! -L skims/$skim ]; then  
-echo "skims/$skim -> $DD_VBS_REDUCED2016/vbs_ww"
-if [ "$skim" = "vbs_ww" ] ; then ln -s $DD_VBS_REDUCED2016/vbs_ww skims/$skim; fi;
-if [ "$skim" = "vbs_wz"  ] ; then ln -s $DD_VBS_REDUCED2016/vbs_wz  skims/$skim; fi;
-if [ "$skim" = "vbs_zz" ] ; then ln -s $DD_VBS_REDUCED2016/vbs_zz skims/$skim; fi;
- 
-else 
-ls -l skims/$skim
-fi;
+    if [ ! -d skimrqs/$skim ]; then /bin/mkdir -p skimrqs/$skim; fi; # -p option creates the parent directories as needed
+    echo "skim = $skim"
+    if [ ! -L skims/$skim ]; then  
+        echo "skims/$skim -> $DD_VBS_REDUCED/vbs_ww"
+        if [ "$skim" = "vbs_ww" ] ; then ln -s $DD_VBS_REDUCED/ skims/$skim; fi;
+        if [ "$skim" = "vbs_wz"  ] ; then ln -s $DD_VBS_REDUCED/vbs_wz  skims/$skim; fi;
+        if [ "$skim" = "vbs_zz" ] ; then ln -s $DD_VBS_REDUCED/vbs_zz skims/$skim; fi;
+    else 
+        ls -l skims/$skim
+    fi;
+
 # Create reqlists 
-COMBINED_SKIM="cmbvbs_vv"
-/bin/rm -rf  skimrqs/$skim/*.lst > /dev/null 2>&1
-/bin/rm -rf  skimrqs/$COMBINED_SKIM/*.lst > /dev/null 2>&1
+    COMBINED_SKIM="cmbvbs_vv"
+    /bin/rm -rf  skimrqs/$skim/*.lst > /dev/null 2>&1
+    /bin/rm -rf  skimrqs/$COMBINED_SKIM/*.lst > /dev/null 2>&1
 #
 #
 SamplesInpFile="./macros/cplots/DibosonBoostedElMuSamples13TeV_2019_03_23_03h56.txt"
