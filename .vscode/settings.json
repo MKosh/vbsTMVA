@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "write_list_branches.C": "cpp",
-        "vbsTMVAClassificationApplication.C": "cpp",
-        "vbsTMVAClassification.C": "cpp",
-        "write_list.C": "cpp"
-    }
-}
