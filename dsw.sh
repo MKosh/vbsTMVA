@@ -92,10 +92,10 @@ for skim in $SKIMS; do
 
 # Create reqlists 
     COMBINED_SKIM="cmbvbs_vv"
-    /bin/rm -rf  skimrqs/$skim/*.lst > /dev/null 2>&1
+    /bin/rm -rf  skimrqs/$skim/*.lst > /dev/null 2>&1 # remove skimrqs/vbs_ww/something.lst (/dev/null 2>&1 forces no output. 2>&1 forces any possible error message (2) into the stdout stream (1))
     /bin/rm -rf  skimrqs/$COMBINED_SKIM/*.lst > /dev/null 2>&1
 #
-#
+# This file is where the information like xsec (cross section) and nMCgen come from 
 SamplesInpFile="./macros/cplots/DibosonBoostedElMuSamples13TeV_2019_03_23_03h56.txt"
 SamplesOutfile="vbsSamples.cpp"
 if [ -f $SamplesOutfile ]; then /bin/rm -f $SamplesOutfile; fi;
