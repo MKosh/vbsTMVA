@@ -1,0 +1,77 @@
+{
+    "data_obs": {
+        "lumi": 1.0,
+        "filelist": [
+            {"name": "Data_noDup"   , "xs": 1.0 , "nMC": 1.0    ,   "nMCneg":   0   ,   "colorcode":    1   }
+        ]
+    },
+
+    "VBS_EWK": {
+        "lumi": 35867.06,
+        "filelist":[
+            {"name": "WminusTo2JZTo2LJJ_EWK_LO_SM"          , "xs": 0.02982 , "nMC": 189086.0   ,   "nMCneg":   0   ,   "colorcode":    840 },
+            {"name": "WminusToLNuWminusTo2JJJ_EWK_LO_SM"    , "xs": 0.03259 , "nMC": 189560.0   ,   "nMCneg":   0   ,   "colorcode":    840 }, 
+            {"name": "WminusToLNuZTo2JJJ_EWK_LO_SM"         , "xs": 0.1     , "nMC": 199542.0   ,   "nMCneg":   0   ,   "colorcode":    840 },
+            {"name": "WplusTo2JWminusToLNuJJ_EWK_LO_SM"     , "xs": 0.9107  , "nMC": 1983847.0  ,   "nMCneg":   0   ,   "colorcode":    840 },
+            {"name": "WplusTo2JZTo2LJJ_EWK_LO_SM"           , "xs": 0.05401 , "nMC": 198922.0   ,   "nMCneg":   0   ,   "colorcode":    840 },
+            {"name": "WplusToLNuWminusTo2JJJ_EWK_LO_SM"     , "xs": 0.9114  , "nMC": 1991227.0  ,   "nMCneg":   0   ,   "colorcode":    840 },
+            {"name": "WplusToLNuWplusTo2JJJ_EWK_LO_SM"      , "xs": 0.08793 , "nMC": 198848.0   ,   "nMCneg":   0   ,   "colorcode":    840 },
+            {"name": "WplusToLNuZTo2JJJ_EWK_LO_SM"          , "xs": 0.1825  , "nMC": 393171.0   ,   "nMCneg":   0   ,   "colorcode":    840 },
+            {"name": "ZTo2LZTo2JJJ_EWK_LO_SM"               , "xs": 0.01589 , "nMC": 99997.0   ,   "nMCneg":   0   ,   "colorcode":    840 }
+        ]
+    },
+
+    "VBS_QCD": {
+        "lumi": 35867.06,
+        "filelist": [
+            {"name": "WminusTo2JZTo2LJJ_QCD_LO_SM"          , "xs": 0.3488  , "nMC": 489280.0   ,   "nMCneg":   0   ,   "colorcode":    400 },
+            {"name": "WminusToLNuWminusTo2JJJ_QCD_LO_SM"    , "xs": 0.03203 , "nMC": 99657.0   ,   "nMCneg":   0   ,   "colorcode":    400 },
+            {"name": "WminusToLNuZTo2JJJ_QCD_LO_SM"         , "xs": 1.166   , "nMC": 981540.0   ,   "nMCneg":   0   ,   "colorcode":    400 },
+            {"name": "WplusTo2JWminusToLNuJJ_QCD_LO_SM"     , "xs": 5.568   , "nMC": 3994663.0  ,   "nMCneg":   0   ,   "colorcode":    400 },
+            {"name": "WplusTo2JZTo2LJJ_QCD_LO_SM"           , "xs": 0.575   , "nMC": 499432.0   ,   "nMCneg":   0   ,   "colorcode":    400 },
+            {"name": "WplusToLNuWminusTo2JJJ_QCD_LO_SM"     , "xs": 5.546   , "nMC": 3949170.0  ,   "nMCneg":   0   ,   "colorcode":    400 },
+            {"name": "WplusToLNuWplusTo2JJJ_QCD_LO_SM"      , "xs": 0.07584 , "nMC": 99992.0   ,   "nMCneg":   0   ,   "colorcode":    400 },
+            {"name": "WplusToLNuZTo2JJJ_QCD_LO_SM"          , "xs": 1.938   , "nMC": 1991348.0  ,   "nMCneg":   0   ,   "colorcode":    400 },
+            {"name": "ZTo2LZTo2JJJ_QCD_LO_SM"               , "xs": 0.3449  , "nMC": 49999.0   ,   "nMCneg":   0   ,   "colorcode":    400 }
+        ]
+    },
+
+    "WJets_HT": { 
+        "lumi": 35867.06,
+        "filelist": [
+            {"name": "WJetsToLNu_HT_100To200"     , "xs": 1627.45  , "nMC": 79165703.0 ,   "nMCneg":   0   ,   "colorcode":    924 ,  "kf": 1.21},
+            {"name": "WJetsToLNu_HT_200To400"    , "xs": 435.24   , "nMC": 29087430.0 ,   "nMCneg":   0   ,   "colorcode":    924 ,  "kf": 1.21},
+            {"name": "WJetsToLNu_HT_400To600"    , "xs": 59.18    , "nMC": 7754252.0  ,   "nMCneg":   0   ,   "colorcode":    924 ,  "kf": 1.21},
+            {"name": "WJetsToLNu_HT_600To800"    , "xs": 14.58   , "nMC": 18578604.0 ,   "nMCneg":   0   ,   "colorcode":    924 ,  "kf": 1.21},
+            {"name": "WJetsToLNu_HT_800To1200"   , "xs": 6.655   , "nMC": 7688957.0  ,   "nMCneg":   0   ,   "colorcode":    924 ,  "kf": 1.21},
+            {"name": "WJetsToLNu_HT_1200To2500"  , "xs": 1.60809   , "nMC": 6708656.0  ,   "nMCneg":   0   ,   "colorcode":    924 ,  "kf": 1.21},
+            {"name": "WJetsToLNu_HT_2500ToInf"   , "xs": 0.0389136 , "nMC": 2520618.0  ,   "nMCneg":   0   ,   "colorcode":    924 ,  "kf": 1.21}
+        ]
+    },
+
+    "DYJets_HT": {
+        "lumi": 35867.06,
+        "filelist": [
+            {"name": "DY1JetsToLL"    , "xs": 1012.296845       , "nMC": 46443016.0  ,   "nMCneg":   0   ,   "colorcode":    4 ,  "kf": 1.21},
+            {"name": "DY2JetsToLL"   , "xs": 334.717838       , "nMC": 19296117.0 ,   "nMCneg":   0   ,   "colorcode":    4 ,  "kf": 1.21},
+            {"name": "DY3JetsToLL"   , "xs": 102.4628       , "nMC": 4866978.0  ,   "nMCneg":   0   ,   "colorcode":    4 ,  "kf": 1.21},
+            {"name": "DY4JetsToLL"   , "xs": 54.48136       , "nMC": 2798791.0  ,   "nMCneg":   0   ,   "colorcode":    4 ,  "kf": 1.21}
+        ]
+    },
+
+    "Top": {
+        "lumi": 35867.06,
+        "filelist": [
+            {"name": "ST_s_channel"            , "xs": 11.36   , "nMC": 999976.0     ,   "nMCneg":   188501.0   ,   "colorcode":    592 },
+            {"name": "ST_tW_antitop_5f_NoFullyHadronicDecays"          , "xs": 19.5741   , "nMC": 5424956.0    ,   "nMCneg":   0   ,   "colorcode":    592 },
+            {"name": "ST_tW_top_5f_NoFullyHadronicDecays"                , "xs": 19.5741   , "nMC": 5372830.0      ,   "nMCneg":   0   ,   "colorcode":    592 },
+            {"name": "ST_t_channel_antitop"              , "xs": 80.95   , "nMC": 3927980.0    ,   "nMCneg":   0   ,   "colorcode":    592 },
+            {"name": "ST_t_channel_top_4f"   , "xs": 136.02   , "nMC": 5993570.0     ,   "nMCneg":   0   ,   "colorcode":    592 },
+            {"name": "TTToSemilepton"       , "xs": 364.3   , "nMC": 91832423.0     ,   "nMCneg":   0   ,   "colorcode":    592 },
+            {"name": "TTWJetsToLNu"                    , "xs": 0.2043   , "nMC": 5280251.0     ,   "nMCneg":   1282079.0   ,   "colorcode":    592 },
+            {"name": "TTWJetsToQQ"          , "xs": 0.4062   , "nMC": 833257.0     ,   "nMCneg":   201483.0   ,   "colorcode":    592 },
+            {"name": "TTZToLLNuNu_M-10"                           , "xs": 0.2529   , "nMC": 7969186.0     ,   "nMCneg":   2126557.0   ,   "colorcode":    592 },
+            {"name": "TTZToQQ"                              , "xs": 0.5297  , "nMC": 749367.0  ,   "nMCneg":   199113.0   ,   "colorcode":    592 }
+        ]
+    }
+}
