@@ -12,10 +12,12 @@
 # Writes a macro file that reads in all of the root files in the folder
 # rootFiles/subFolders, then writes a list of all of the names of the branches and their types
 
-rootFiles="/mnt/e/Research/ntuples/NEW/ntuples/" # Location of the ntuples on my personal machine
-#rootFiles="/mnt/e/Research/ntuples/vbs_ww_old/"
+#rootFiles="/mnt/e/Research/ntuples/NEW/ntuples/" # Location of the ntuples on my personal machine
+rootFiles="/mnt/e/Research/ntuples/vbs_ww_old/"
 subFolders=("2016" "2017" "2018") # 3 subfolders for this analysis in the CMS LPC EOS <2016, 2017, 2018>
 now=$(date)
+Trees="otree" # otree for the old ntuples, Events for the new ntuples
+#Trees="Events"
 
 macroFile="write_list.C"
 if [ -f $macroFile ]; then rm -f $macroFile; fi
@@ -56,7 +58,7 @@ cat >> $macroFile << EOF
     for (int i = 0; i<1; i++) {
         string infile = location+ntuples[i];
         TFile *input = new TFile(infile.c_str());
-        TObjArray* brches = Events->GetListOfBranches();
+        TObjArray* brches = $Trees->GetListOfBranches();
         for (int iter = 0; iter <brches->GetEntries(); iter++) {
             ofs << brches->At(iter)->GetTitle() << '\t' << '\t' << brches->At(iter)->GetName() << ";" << std::endl;
         }
@@ -77,7 +79,11 @@ sort -u var_list.txt > branches.txt
 # Delete the old varible list file
 rm var_list.txt
 # Replace the I, F, and O type names with the full root type name (Int_t, Float_t, Bool_t) then store it in a new file
-cat branches.txt | sed 's/[0-z]*\/I/Int_t/g' | sed 's/[0-z]*\/F/Float_t/g' | sed 's/[0-z]*\/O/Bool_t/g' > list_of_branches.txt
+# This can give issues. Apparently some branches in the root files don't have types. Forced them to be floats
+cat branches.txt | sed 's/[0-z]*\/I/Int_t/g' | sed 's/[0-z]*\/F/Float_t/g' | sed 's/[0-z]*\/O/Bool_t/g' | grep -v Float_t | grep -v Int_t | grep -v Bool_t | awk '{$1="Float_t"} {print}' > list_of_branches.txt
+cat branches.txt | sed 's/[0-z]*\/I/Int_t/g' | grep Int_t  >> list_of_branches.txt
+cat branches.txt | sed 's/[0-z]*\/F/Float_t/g' | grep Float_t >> list_of_branches.txt
+cat branches.txt | sed 's/[0-z]*\/O/Bool_t/g' | grep Bool_t >> list_of_branches.txt
 # Delete the old variable list file
 rm branches.txt
 
@@ -152,13 +158,30 @@ EOF
 # --------------------------------------------------------- End - Create vbsReducedTree.hpp file - End -------------------------------------------------------------
 
 # --------------------------------------------------------- Start - Create vbsDL.hpp file - Start -----------------------------------------------------------------
-TMVAVARS="lep1_pt lep1_eta bos_PuppiAK8_pt bos_PuppiAK8_tau2tau1 bos_PuppiAK8_m_sd0_corr vbf2_AK4_eta vbf1_AK4_eta vbf1_AK4_pt vbf2_AK4_pt bosCent zeppLep zeppHad"
-activeVARS="run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta $TMVAVARS"
-plotVARS=""
-plotVARS_AK8jet=""
-plotVARS_VBFJet=""
-plotVARS_Other=""
-SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
+ 
+VARIABLES="old" # or new
+if [ $VARIABLES == "new" ]; then
+    # These are the variables for the new ntuples.
+    TMVAVARS="lep1_pt lep1_eta bos_PuppiAK8_pt bos_PuppiAK8_tau2tau1 bos_PuppiAK8_m_sd0_corr vbf2_AK4_eta vbf1_AK4_eta vbf1_AK4_pt vbf2_AK4_pt bosCent zeppLep zeppHad"
+    activeVARS="run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta $TMVAVARS"
+    plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0"
+    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi"
+    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
+    plotVARS_Other=""
+    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
+elif [ $VARIABLES == "old" ]; then
+    # These are the variables for the old ntuples
+    TMVAVARS=" l_pt1  l_eta1 pfMET_Corr ungroomed_PuppiAK8_jet_pt PuppiAK8_jet_tau2tau1 PuppiAK8_jet_mass_so_corr vbf_maxpt_jj_m vbf_maxpt_j2_eta vbf_maxpt_j1_eta vbf_maxpt_j1_pt  vbf_maxpt_j2_pt mass_lvj_type0_PuppiAK8 BosonCentrality_type0 ZeppenfeldWL_type0 ZeppenfeldWH"
+    activeVARS="gid sid mcWeight run event nTotEvents lumi  L1_Prefweight totalEventWeight type isVBF nBTagJet_loose btag0Wgt genWeight trig_eff_Weight id_eff_Weight pu_Weight l_pt2  ungroomed_PuppiAK8_jet_eta $TMVAVARS"
+    plotVARS="nPV l_pt1 l_eta1 l_iso1 l_phi1 l_e1 l_charge1    pfMET_Corr pfMET_Corr_phi nu_pz_type0   mass_lvj_type0_PuppiAK8 mt_lvj_type0_PuppiAK8  v_pt_type0 v_mt_type0"
+    plotVARS_AK8jet="nGoodPuppiAK8jets ungroomed_PuppiAK8_jet_pt  ungroomed_PuppiAK8_jet_pt ungroomed_PuppiAK8_jet_eta ungroomed_PuppiAK8_jet_phi ungroomed_PuppiAK8_jet_e ungroomed_PuppiAK8_jet_charge PuppiAK8_jet_mass PuppiAK8_jet_mass_pr PuppiAK8_jet_mass_so_corr PuppiAK8_jet_mass_tr PuppiAK8_jet_sj1_pt PuppiAK8_jet_sj1_eta PuppiAK8_jet_sj1_phi PuppiAK8_jet_sj1_m  PuppiAK8_jet_sj1_q PuppiAK8_jet_sj2_pt PuppiAK8_jet_sj2_eta PuppiAK8_jet_sj2_phi PuppiAK8_jet_sj2_m PuppiAK8_jet_sj2_q PuppiAK8jet_qjet PuppiAK8_jet_tau2tau1"
+    plotVARS_VBFJet="njets nBTagJet_loose nBTagJet_medium vbf_maxpt_j1_eta vbf_maxpt_j2_eta vbf_maxpt_j2_pt vbf_maxpt_j1_pt vbf_maxpt_jj_m vbf_maxpt_jj_Deta"
+    plotVARS_Other="deltaR_lPuppiak8jet deltaphi_METPuppiak8jet deltaphi_METvbfJ1 deltaphi_METvbfJ2 deltaphi_METmin deltaphi_VPuppiak8jet PtBalance_type0 BosonCentrality_type0  costheta1_type0 costheta2_type0 costhetastar_type0  phi_type0 phi1_type0  PtBalance_type2 costheta1_type2 costheta2_type2 costhetastar_type2 phi_type2 phi1_type2"
+    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet}  ${plotVARS_Other} | sort | tr -s '\ '  '\n'  | sort | uniq )"
+else
+    echo "Pick from the premade variable lists: 'old' or 'new' OR make a new list"
+    return 0;
+fi
 
 outfile_DL="vbsDL_new.hpp"
 ActiveBranchesOutfile="vbsActiveBranches.hpp"
