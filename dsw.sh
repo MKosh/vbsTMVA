@@ -31,7 +31,7 @@ if [ ! -d $DD_VBS_REDUCED ]; then
     echo "Data folder $DD_VBS_REDUCED does not exists."
     echo "Please set the correct root folder (DD_VBS_REDUCED) for the reduced ntuples and rerun:" 
     echo "source dsw.sh" 
-    return 0;
+    #return 0;
 fi
 
 OS_RELEASE="$(cat /etc/redhat-release | awk '{print $NF}' | sed 's/(//g' | sed 's/)//g')"
@@ -102,7 +102,7 @@ for skim in $SKIMS; do
     #SamplesInpFile="./macros/cplots/DibosonBoostedElMuSamples13TeV_2019_03_23_03h56.txt"
     #DatasetInpFile="./lists/datasets_2016.json"
     DatasetInpFile="./lists/oldData.json"
-    SamplesOutfile="vbsSamplesNew.cpp"
+    SamplesOutfile="vbsSamples.cpp"
     echo "Creating $SamplesOutfile"
     if [ -f $SamplesOutfile ]; then /bin/rm -f $SamplesOutfile; fi;
     cat >>  $SamplesOutfile <<EOF
@@ -117,16 +117,16 @@ EOF
 # WV_EWK->VBS_EWK | Diboson->VBS_QCD | top->Top | Wjets->WJets_HT | Zjets->DYJets_HT
     #LISTREQ="$(cat $SamplesInpFile | grep data | grep -v "#" | awk '{print $1"--"$2}'  | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g')"
     # Make one big list of all of the file names and the group they belong to
-    Groups="Data EWK QCD Top WJets ZJets"
+    Groups="data EWK QCD Top WJets ZJets"
     for group in $Groups; do
-        if [ "$group" == "Data" ]; then
-            TempListData="$(cat $DatasetInpFile | grep Data | awk '{print $2}' | sed 's/"//g' | sed 's/^/Data--/g' | sed 's/_noDup//g')"
+        if [ "$group" == "data" ]; then
+            TempListData="$(cat $DatasetInpFile | grep Data | awk '{print $2}' | sed 's/"//g' | sed 's/^/data--/g' | sed 's/_noDup//g')"
         elif [ "$group" == "EWK" ]; then
-            TempListEWK="$(cat $DatasetInpFile | grep $group | grep -v VBS_EWK | awk '{print $2}' | sed 's/"//g' | sed 's/^/VBS_EWK--/g')"
+            TempListEWK="$(cat $DatasetInpFile | grep $group | grep -v VBS_EWK | awk '{print $2}' | sed 's/"//g' | sed 's/^/WV_EWK--/g')"
         elif [ "$group" == "QCD" ]; then
             TempListQCD="$(cat $DatasetInpFile | grep $group | grep -v VBS_QCD | awk '{print $2}' | sed 's/"//g' | sed 's/^/Diboson--/g')"
         elif [ "$group" == "Top" ]; then
-            TempListTop="$(cat $DatasetInpFile | grep name | grep -v EWK | grep -v QCD | grep -v WJetsToLNu_HT | grep -v DY | grep -v Data | awk '{print $2}' | sed 's/"//g' | sed 's/^/Top--/g')"
+            TempListTop="$(cat $DatasetInpFile | grep name | grep -v EWK | grep -v QCD | grep -v WJetsToLNu_HT | grep -v DY | grep -v Data | awk '{print $2}' | sed 's/"//g' | sed 's/^/top--/g')"
         elif [ "$group" == "WJets" ]; then
             TempListWjets="$(cat $DatasetInpFile | grep $group | grep -v WJets_HT | grep -v TT | awk '{print $2}' | sed 's/"//g' | sed 's/^/Wjets--/g')"
         elif [ "$group" == "ZJets" ]; then
@@ -150,7 +150,7 @@ EOF
         #echo  skims/$skim/*${smpl}*root
         #ls -l skims/$skim/WWTree*${smpl}*root  | awk '{print $NF}'
 
-        if  [ "$grp" == "Data" ];     then
+        if  [ "$grp" == "data" ];     then
             #cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "dataSamples.push_back( new Sample(\""$1"\",\t  \""$2"\",\t    1,\t  1,  gid_data,  gid_data,   "$7",  "$5",  "$6") );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g' >> $SamplesOutfile
             cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "dataSamples.push_back( new Sample(\"'${grp}'\",\t "$2" ,\t 1,\t 1,\t gid_data, gid_data,\t" $14 ",\t" $8 ",\t" $11") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
             #echo ls -l skims/$skim/${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim/rqs_${req}_data.lst
@@ -168,7 +168,7 @@ EOF
 
         else
 
-            if  [ "$grp" == "VBS_EWK" ]; then
+            if  [ "$grp" == "WV_EWK" ]; then
 
                 if  [ "$signal" != "ewk" ]; then 
                     cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "bkgSamples.push_back( new Sample(\"'${grp}'\",\t  "$2",\t"$5",\t  1,  gid_'${grp}',  1100,   "$14",\t"$8",\t"$11") );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
