@@ -12,12 +12,21 @@
 # Writes a macro file that reads in all of the root files in the folder
 # rootFiles/subFolders, then writes a list of all of the names of the branches and their types
 
-#rootFiles="/mnt/e/Research/ntuples/NEW/ntuples/" # Location of the ntuples on my personal machine
-rootFiles="/mnt/e/Research/ntuples/vbs_ww_old/"
+# Once things are finalized, this will probably be changed to selecting the subfolder based on the year
+if [ $1 == "new" ]; then
+    rootFiles="/mnt/e/Research/ntuples/NEW/ntuples/" # Location of the ntuples on my personal machine
+    Trees="Events"
+elif [ $1 == "old" ]; then
+    rootFiles="/mnt/e/Research/ntuples/vbs_ww_old/"
+    Trees="otree"
+else
+    echo "Nothing specified - Using new ntuples"
+    rootFiles="/mnt/e/Research/ntuples/NEW/ntuples/"
+    Trees="Events"
+fi
+
 subFolders=("2016" "2017" "2018") # 3 subfolders for this analysis in the CMS LPC EOS <2016, 2017, 2018>
 now=$(date)
-Trees="otree" # otree for the old ntuples, Events for the new ntuples
-#Trees="Events"
 
 macroFile="write_list.C"
 if [ -f $macroFile ]; then rm -f $macroFile; fi

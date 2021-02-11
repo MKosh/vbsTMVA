@@ -27,6 +27,22 @@ if [ "0$(echo  $SNAME | grep suv)" != "0" ]; then
     module load root/root-6.10.08-SL7-x64-cvmfs
 fi
 
+if [ "0$(echo $SNAME | grep Mark)" != "0" ]; then # If running on my personal machine
+    if [ $1 == "new" ]; then
+        echo "Using new ntuples!"
+        DD_VBS_REDUCED="/mnt/e/Research/ntuples/NEW/ntuples"
+        DatasetInpFile="./lists/datasets_2016.json"
+    elif [ $1 == "old" ]; then
+        echo "Using old ntuples!"
+        DD_VBS_REDUCED="/mnt/e/Research/ntuples/vbs_ww_old"
+        DatasetInpFile="./lists/oldData.json"
+    else
+        echo "You didn't specify so I'm using the new ntuples"
+        DD_VBS_REDUCED="/mnt/e/Research/ntuples/NEW/ntuples"
+    fi
+    # conda activate root_env # Start the ROOT environment - nevermind, this only works as long as the script runs
+fi
+
 if [ ! -d $DD_VBS_REDUCED ]; then
     echo "Data folder $DD_VBS_REDUCED does not exists."
     echo "Please set the correct root folder (DD_VBS_REDUCED) for the reduced ntuples and rerun:" 
@@ -58,12 +74,6 @@ if [ "0$ROOTSYS" == "0" ]; then
     #return 0;
 fi
 
-if [ "0$(echo $SNAME | grep Mark)" != "0" ]; then # If running on my personal machine
-    #DD_VBS_REDUCED="/mnt/e/Research/ntuples/NEW/ntuples"
-    DD_VBS_REDUCED="/mnt/e/Research/ntuples/vbs_ww_old"
-    #conda activate root_env # Start the ROOT environment
-fi
-
 echo "System check done!"
 # ------------------------------------------------------------------- End System Check -------------------------------------------------------------------------------------------
 
@@ -81,6 +91,7 @@ SKIMS="vbs_ww"
 
 echo "Creating link to data files as "
 # Sometimes run into issues with the links if the data changes location you'll get a lot of errors from this script. Check that what gets printed out (skim -> $DD_VBS_REDUCED) points to the proper folder
+# If it doesn't you have to delete the folder with the skims in it
 for skim in $SKIMS; do 
     if [ ! -d skimrqs/$skim ]; then /bin/mkdir -p skimrqs/$skim; fi; # -p option creates the parent directories as needed
     echo "skim = $skim"
@@ -101,7 +112,7 @@ for skim in $SKIMS; do
 # This file is where the information like xsec (cross section) and nMCgen come from 
     #SamplesInpFile="./macros/cplots/DibosonBoostedElMuSamples13TeV_2019_03_23_03h56.txt"
     #DatasetInpFile="./lists/datasets_2016.json"
-    DatasetInpFile="./lists/oldData.json"
+    #DatasetInpFile="./lists/oldData.json"
     SamplesOutfile="vbsSamples.cpp"
     echo "Creating $SamplesOutfile"
     if [ -f $SamplesOutfile ]; then /bin/rm -f $SamplesOutfile; fi;
@@ -135,13 +146,31 @@ EOF
     done
 
     LISTREQ="$(echo $TempListData $TempListEWK $TempListQCD $TempListTop $TempListWjets $TempListZjets)"
+    LIST=$LISTREQ
+# --------------------------------------------------------------- Start - Temporary work around zone - Start ------------------------------------------------------------------------------
+# Issue with testing, the json file the script is pulling the data from tells it to look for all of the files, but since that's 400GB worth of data
+# I don't have it stored locally, meaning the script is looking for files that don't exist. Work around idea for this is to look at the skims that got made
+# and only include the LISTREQ variables that show up on that list, then make that a tempLISTREQ
+#
+# Ugh that works but only solves half the problem, I have to apply the above code to group these temp lists, otherwise the Sample() doesn't have a group and just the smpl twice 
+if [ $1 == "new" ]; then
+    echo "Don't forget to remove the temporary work around for reading the skims when you move to the proper data files"
+    skim_folder="skims/vbs_ww"
+    tempLISTREQ=()
+    for f in $skim_folder/*.root; do
+        add="$(echo ${f} | sed 's/skims\/vbs_ww\///g' | sed 's/_01.root//g')"
+        tempLISTREQ+=($add)
+    done
+    LIST=${tempLISTREQ[@]}
+fi
 
+
+# ---------------------------------------------------------------- End - Temporary work around zone - End ---------------------------------------------------------------------------------
     sid_sgl="100"
     sid_color="910"
-    #signal=higgs;
     signal="ewk";
 
-    for req in $LISTREQ; do
+    for req in $LIST; do
         #echo "$req"
         grp="$(echo $req | sed 's/--/ /g'| awk '{print $1}')"  
         smpl="$(echo $req | sed 's/'${grp}'--//g')"
