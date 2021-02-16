@@ -155,15 +155,35 @@ EOF
 # Ugh that works but only solves half the problem, I have to apply the above code to group these temp lists, otherwise the Sample() doesn't have a group and just the smpl twice 
 if [ $1 == "new" ]; then
     echo "Don't forget to remove the temporary work around for reading the skims when you move to the proper data files"
+    echo ""
     skim_folder="skims/vbs_ww"
     tempLISTREQ=()
     for f in $skim_folder/*.root; do
-        add="$(echo ${f} | sed 's/skims\/vbs_ww\///g' | sed 's/_01.root//g')"
+        samp="$(echo ${f} | sed 's/skims\/vbs_ww\///g' | sed 's/_01.root//g' | sed 's/.root//g')"
+        #echo $samp
+        #echo ""
+        if [[ "$samp" == *"Data"* ]]; then
+            add="$(echo $samp | sed 's/^/data--/g')"
+        elif [[ "$samp" == *"WJets"* ]]; then
+            add="$(echo $samp | sed 's/^/Wjets--/g')"
+        elif [[ "$samp" == *"DYJets"* ]]; then
+            add="$(echo $samp | sed 's/^/Zjets--/g')"
+        elif [[ "$samp" == *"EWK_LO_SM"* ]]; then
+            add="$(echo $samp | sed 's/^/WV_EWK--/g')"
+        elif [[ "$samp" == *"QCD_LO_SM"* ]]; then
+            add="$(echo $samp | sed 's/^/Diboson--/g')"
+        elif [[ "$samp" == *"TTTo"* ]]; then
+            add="$(echo $samp | sed 's/^/top--/g')"
+        elif [[ "$samp" == *"aQGC"* ]]; then
+            add="$(echo $samp | sed 's/^/aQGC--/g')"
+        else
+            echo "------------- Not sure what I'm looking at here ---------------"
+            echo ""
+        fi
         tempLISTREQ+=($add)
     done
     LIST=${tempLISTREQ[@]}
 fi
-
 
 # ---------------------------------------------------------------- End - Temporary work around zone - End ---------------------------------------------------------------------------------
     sid_sgl="100"

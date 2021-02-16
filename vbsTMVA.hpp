@@ -45,7 +45,7 @@ const Float_t lum =  35867.06; //pb-1
 TCut cut_sgl         ("cut_sgl",        "classID==0");
 TCut cut_bkg         ("cut_bkg",        "classID==1");
 TCut cut_data        ("cut_data",       "classID==3");
-
+ 
 TCut cut_ewkWV       ("cut_ewkWV",      "(gid ==  11)");
 TCut cut_DiBosons    ("cut_DiBosons",   "(gid ==  12)");
 TCut cut_Wjets       ("cut_Wjets",      "(gid ==  13)");
@@ -54,10 +54,10 @@ TCut cut_TT          ("cut_TT",         "(gid ==  15)");
 
 //Cuts
 //from MyControlPlots.C
-TCut cleanNAN       ("cleanNAN",        "(mass_lvj_type0_PuppiAK8>0)"); 
+TCut cleanNAN       ("cleanNAN",        "(run>0)"); // was mass_lvj_type0_PuppiAK8
 TCut mVVgt0         ("mVVgt0",          "(mass_lvj_type0_PuppiAK8>0)"); 
-TCut oneLepton      ("oneLepton",       "(l_pt2<0)"); 
-TCut Lpt1gt50       ("Lpt1gt50",        "(l_pt1>50)"); 
+TCut oneLepton      ("oneLepton",       "(lep2_pt<0)"); 
+TCut Lpt1gt50       ("Lpt1gt50",        "(lep1_pt>50)"); 
 TCut goodEleta      ("goodEleta",       "(type==1)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)");
 TCut badEleta       ("badEleta",        "(type==1)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)");
 TCut etaMu2p4       ("etaMu2p4",        "((type==0)&&(abs(l_eta1)<2.4))");
@@ -68,7 +68,7 @@ TCut goodEl          ("goodEl",          "(l_pt1>50&&(type==1)&&((abs(l_eta1)<2.
 
 
 //TCut cleanNAN_phi    ("cleanNAN_phi",    "(phi_type0>0&&phi_type2>0&&phi_type0<3.14&&phi_type2<3.14)"  ); 
-TCut cleanNAN_phi    ("cleanNAN_phi",    "(!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))"  ); 
+TCut cleanNAN_phi    ("cleanNAN_phi",    "(!TMath::IsNaN(run) && !TMath::IsNaN(run))"  ); // was (!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))
 TCut wtot            ("wtot",        "35867.06*mcWeight*L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
 TCut wtotL1          ("wtotL1",      "L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
 
