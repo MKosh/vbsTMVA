@@ -27,7 +27,7 @@ if [ "0$(echo  $SNAME | grep suv)" != "0" ]; then
     module load root/root-6.10.08-SL7-x64-cvmfs
 fi
 
-if [ "0$(echo $SNAME | grep Mark)" != "0" ]; then # If running on my personal machine
+if [ "0$(echo $SNAME | grep MM)" != "0" ]; then # If running on my personal machine
     if [ $1 == "new" ]; then
         echo "Using new ntuples!"
         DD_VBS_REDUCED="/mnt/e/Research/ntuples/NEW/ntuples"
@@ -38,6 +38,7 @@ if [ "0$(echo $SNAME | grep Mark)" != "0" ]; then # If running on my personal ma
         DatasetInpFile="./lists/oldData.json"
         if [ $2 == "laptop" ]; then
             DD_VBS_REDUCED="/mnt/c/users/markm/documents/Grad_School/Year_2.0/Research/ntuples_old/HaddedFiles/vbs_ww"
+        fi
     else
         echo "You didn't specify so I'm using the new ntuples"
         DD_VBS_REDUCED="/mnt/e/Research/ntuples/NEW/ntuples"
@@ -114,7 +115,11 @@ for skim in $SKIMS; do
 # This file is where the information like xsec (cross section) and nMCgen come from 
     #SamplesInpFile="./macros/cplots/DibosonBoostedElMuSamples13TeV_2019_03_23_03h56.txt"
     #DatasetInpFile="./lists/datasets_2016.json"
-    #DatasetInpFile="./lists/oldData.json"
+    if [ $1 == "old" ]; then
+        DatasetInpFile="./lists/oldData.json"
+    elif [ $1 == "new" ]; then
+        DatasetInpFile="./lists/datasets_2016.json"
+    fi
     SamplesOutfile="vbsSamples.cpp"
     echo "Creating $SamplesOutfile"
     if [ -f $SamplesOutfile ]; then /bin/rm -f $SamplesOutfile; fi;
@@ -147,8 +152,9 @@ EOF
         fi
     done
 
-    LISTREQ="$(echo $TempListData $TempListEWK $TempListQCD $TempListTop $TempListWjets $TempListZjets)"
-    LIST=$LISTREQ
+    LIST="$(echo $TempListData $TempListEWK $TempListQCD $TempListTop $TempListWjets $TempListZjets)"
+    echo "List made"
+    #LIST=$LISTREQ
 # --------------------------------------------------------------- Start - Temporary work around zone - Start ------------------------------------------------------------------------------
 # Issue with testing, the json file the script is pulling the data from tells it to look for all of the files, but since that's 400GB worth of data
 # I don't have it stored locally, meaning the script is looking for files that don't exist. Work around idea for this is to look at the skims that got made
@@ -219,7 +225,7 @@ fi
 
         else
 
-            if  [ "$grp" == "WV_EWK" ]; then
+            if  [ "$grp" == "WV_EWK" ]; then # WV_EWK
 
                 if  [ "$signal" != "ewk" ]; then 
                     cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "bkgSamples.push_back( new Sample(\"'${grp}'\",\t  "$2",\t"$5",\t  1,  gid_'${grp}',  1100,   "$14",\t"$8",\t"$11") );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile

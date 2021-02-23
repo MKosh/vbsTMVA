@@ -19,6 +19,10 @@ if [ $1 == "new" ]; then
 elif [ $1 == "old" ]; then
     rootFiles="/mnt/e/Research/ntuples/vbs_ww_old/"
     Trees="otree"
+    if [ $2 == "laptop" ]; then
+        rootFiles="/mnt/c/users/markm/Documents/Grad_School/Year_2.0/Research/ntuples_old/HaddedFiles/vbs_ww/"
+        echo "using old ntuples on laptop"
+    fi
 else
     echo "Nothing specified - Using new ntuples"
     rootFiles="/mnt/e/Research/ntuples/NEW/ntuples/"
