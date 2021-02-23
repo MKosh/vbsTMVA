@@ -36,6 +36,8 @@ if [ "0$(echo $SNAME | grep Mark)" != "0" ]; then # If running on my personal ma
         echo "Using old ntuples!"
         DD_VBS_REDUCED="/mnt/e/Research/ntuples/vbs_ww_old"
         DatasetInpFile="./lists/oldData.json"
+        if [ $2 == "laptop" ]; then
+            DD_VBS_REDUCED="/mnt/c/users/markm/documents/Grad_School/Year_2.0/Research/ntuples_old/HaddedFiles/vbs_ww"
     else
         echo "You didn't specify so I'm using the new ntuples"
         DD_VBS_REDUCED="/mnt/e/Research/ntuples/NEW/ntuples"
