@@ -8,11 +8,11 @@
 
 Method         : BDT::BDT
 TMVA Release   : 4.2.1         [262657]
-ROOT Release   : 6.22/00       [398848]
+ROOT Release   : 6.22/02       [398850]
 Creator        : mmekosh
-Date           : Tue Feb 23 14:34:22 2021
-Host           : Linux d13cdd3d3a72 4.15.0-1083-azure #93~16.04.1-Ubuntu SMP Thu May 7 18:39:44 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
-Dir            : /home/mmekosh/documents/research/vbstmva_new
+Date           : Wed Feb 24 12:56:12 2021
+Host           : Linux 7ed0a80d5e2e 4.15.0-1092-azure #102~16.04.1-Ubuntu SMP Tue Jul 14 20:28:23 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+Dir            : /home/mmekosh/documents/research/vbsCode/vbstmva_new/vbsTMVA
 Training events: 1503261
 Analysis type  : [Classification]
 

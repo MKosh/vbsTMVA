@@ -153,7 +153,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    std::vector<Sample*> dataSamples;
 //look at the vbsSamples.cpp
 
-// // dataSamples.push_back( new Sample("data",	  "Data",	    1,	  1,  gid_data,  gid_data,   1,  1,  0) );
+dataSamples.push_back( new Sample("data",	  "Data",	    1,	  1,  gid_data,  gid_data,   1,  1,  0) );
 // // sglSamples.push_back( new Sample("CH_WZToLL_M500",  "WWTree_ChargedHiggsToWZToLLQQ_M500_13TeV",	    0.04231,	  1, gid_sgl,  100,   910,  98337.0,  0.0) );
 // // sglSamples.push_back( new Sample("CH_WZToLNu_M500", "WWTree_ChargedHiggsToWZToLNuQQ_M500_13TeV",    0.141582,	  1, gid_sgl,  101,   910,  99996.0,  0.0) );
 // // sglSamples.push_back( new Sample("DCH_WW_M500",	  "DoublyChargedHiggsGMmodel_HWW_WWToLNuQQ_M500_13TeV",	    0.35078,	  1, gid_sgl,  102,   900,  99996.0,  0.0) );

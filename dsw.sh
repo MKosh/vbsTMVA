@@ -27,7 +27,7 @@ if [ "0$(echo  $SNAME | grep suv)" != "0" ]; then
     module load root/root-6.10.08-SL7-x64-cvmfs
 fi
 
-if [ "0$(echo $SNAME | grep MM)" != "0" ]; then # If running on my personal machine
+if [ "0$(echo $SNAME | grep MM)" != "0" ] || [ "0$(echo $SNAME | grep Mark)" != "0" ]; then # If running on my personal machine
     if [ $1 == "new" ]; then
         echo "Using new ntuples!"
         DD_VBS_REDUCED="/mnt/e/Research/ntuples/NEW/ntuples"
@@ -98,7 +98,8 @@ echo "Creating link to data files as "
 for skim in $SKIMS; do 
     if [ ! -d skimrqs/$skim ]; then /bin/mkdir -p skimrqs/$skim; fi; # -p option creates the parent directories as needed
     echo "skim = $skim"
-    if [ ! -L skims/$skim ]; then  
+    if [ ! -L skims/$skim ]; then
+        rm skims/$skim  
         echo "skims/$skim -> $DD_VBS_REDUCED"
         if [ "$skim" = "vbs_ww" ] ; then ln -s $DD_VBS_REDUCED/ skims/$skim; fi;
         if [ "$skim" = "vbs_wz"  ] ; then ln -s $DD_VBS_REDUCED/vbs_wz  skims/$skim; fi;
