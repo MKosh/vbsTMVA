@@ -37,11 +37,12 @@ if [ "0$(echo $SNAME | grep MM)" != "0" ] || [ "0$(echo $SNAME | grep Mark)" != 
         DD_VBS_REDUCED="/mnt/e/Research/ntuples/vbs_ww_old"
         DatasetInpFile="./lists/oldData.json"
         if [ $2 == "laptop" ]; then
+            echo "Using old laptop files"
             DD_VBS_REDUCED="/mnt/c/users/markm/documents/Grad_School/Year_2.0/Research/ntuples_old/HaddedFiles/vbs_ww"
         fi
     else
         echo "You didn't specify so I'm using the new ntuples"
-        DD_VBS_REDUCED="/mnt/e/Research/ntuples/NEW/ntuples"
+        # DD_VBS_REDUCED="/mnt/e/Research/ntuples/NEW/ntuples"
     fi
     # conda activate root_env # Start the ROOT environment - nevermind, this only works as long as the script runs
 fi
