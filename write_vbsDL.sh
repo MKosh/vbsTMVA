@@ -340,6 +340,9 @@ EOF
 # --------------------------------------------------------- End - Create vbsActiveBranches.hpp - End ---------------------------------------------------------------
 
 echo "Done!"
+echo ""
+echo "Next run root -b -q ./vbsTMVAClassification.C\(\\\"vbs_ww\\\",\\\"BDT\\\"\)"
+echo "Don't forget to change the selector variable to switch what samples are being used"
 
 # ----------------------------------------------------- Start - Material from old write_vbsDL.sh - Start ------------------------------------------------------------
 

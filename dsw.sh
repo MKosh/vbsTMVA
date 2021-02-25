@@ -284,4 +284,5 @@ if [ ! -d skimrqs/$COMBINED_SKIM ]; then /bin/mkdir -p skimrqs/${COMBINED_SKIM};
 if [ -d reqlists ]; then /bin/rm -r reqlists; fi;
 ln -s ./skimrqs/vbs_ww reqlists
 echo "Done!"
-#
+echo ""
+echo "Next run ./write_vbsDL.sh with the appropriate arguments"
