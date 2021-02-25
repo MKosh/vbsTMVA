@@ -13,7 +13,7 @@ This is still very much a work in progress. It is an update for an existing anal
 
 ## Things to update for future analysis
 The first thing to update is the dsw.sh script
-   * It's set to check the system you're running things on. Either CMS-LPC, NICADD, or a personal machine. Make sure to look over that section and point the script to the proper places
+   * It's set to check the system you're running things on. Either CMS-LPC, NICADD, or a personal machine. Make sure to look over that section and point the script to the proper places for the root files.
 
 The next thing to update is to run the "write_vbsDL.sh"
 
@@ -21,6 +21,10 @@ The next thing to update is to run the "write_vbsDL.sh"
         * rootFiles - Point it to the folder where the files are held
         * subFolders - If the data is seperated (in this case by year)
         * As of now you can select between old and new files by adding arguments "old" or "new"
+
+ vbsTMVAClassification.C
+   * `Samples.push_back( new Sample(...))`
+     * The proper ones need to be commented out/included. Check *vbsSamples.cpp* for which is which 
 
 General things to update
 
