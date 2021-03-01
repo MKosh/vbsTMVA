@@ -25,7 +25,7 @@ else
     Trees="Events"
 fi
 
-rootFiles="/mnt/$1" # $1 = d/2016 or g/2016 on my desktop
+rootFiles="/mnt/$1/" # $1 = d/2016 or g/2016 on my desktop
 subFolders=("2016" "2017" "2018") # 3 subfolders for this analysis in the CMS LPC EOS <2016, 2017, 2018>
 now=$(date)
 

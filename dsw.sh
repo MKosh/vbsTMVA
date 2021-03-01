@@ -51,7 +51,7 @@ fi
 
 OS_RELEASE="$(cat /etc/redhat-release | awk '{print $NF}' | sed 's/(//g' | sed 's/)//g')"
 OS_ARCH="$(uname -a | awk '{print $14}')"
-echo "OS_RELEASE = $OS_RELEASE, OS_ARCH = $OS_ARCH"
+# echo "OS_RELEASE = $OS_RELEASE, OS_ARCH = $OS_ARCH"
 
 #At nicadd
 if [ "0$(echo  $SNAME | grep nicadd)" != "0" ] &&  [ "0$ROOTSYS" == "0" ]; then 
@@ -70,6 +70,7 @@ fi
 
 if [ "0$ROOTSYS" == "0" ]; then
     echo "Please setup ROOT"
+    echo ""
     #return 0;
 fi
 
@@ -150,7 +151,7 @@ EOF
     done
 
     LIST="$(echo $TempListData $TempListEWK $TempListQCD $TempListTop $TempListWjets $TempListZjets)"
-    echo "List made"
+    
     #LIST=$LISTREQ
 # --------------------------------------------------------------- Start - Temporary work around zone - Start ------------------------------------------------------------------------------
 # Issue with testing, the json file the script is pulling the data from tells it to look for all of the files, but since that's 400GB worth of data
