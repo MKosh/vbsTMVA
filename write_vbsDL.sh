@@ -13,22 +13,19 @@
 # rootFiles/subFolders, then writes a list of all of the names of the branches and their types
 
 # Once things are finalized, this will probably be changed to selecting the subfolder based on the year
-if [ $1 == "new" ]; then
-    rootFiles="/mnt/e/Research/ntuples/NEW/ntuples/" # Location of the ntuples on my personal machine
+
+if [ $2 == "new" ]; then
+    # rootFiles="/mnt/e/Research/ntuples/NEW/ntuples/" # Location of the ntuples on my personal machine
     Trees="Events"
-elif [ $1 == "old" ]; then
-    rootFiles="/mnt/e/Research/ntuples/vbs_ww_old/"
+elif [ $2 == "old" ]; then
+    # rootFiles="/mnt/e/Research/ntuples/vbs_ww_old/"
     Trees="otree"
-    if [ $2 == "laptop" ]; then
-        rootFiles="/mnt/c/users/markm/Documents/Grad_School/Year_2.0/Research/ntuples_old/HaddedFiles/vbs_ww/"
-        echo "using old ntuples on laptop"
-    fi
 else
     echo "Nothing specified - Using new ntuples"
-    rootFiles="/mnt/e/Research/ntuples/NEW/ntuples/"
     Trees="Events"
 fi
 
+rootFiles="/mnt/$1" # $1 = d/2016 or g/2016 on my desktop
 subFolders=("2016" "2017" "2018") # 3 subfolders for this analysis in the CMS LPC EOS <2016, 2017, 2018>
 now=$(date)
 
@@ -172,7 +169,7 @@ EOF
 
 # --------------------------------------------------------- Start - Create vbsDL.hpp file - Start -----------------------------------------------------------------
  
-if [ $1 == "new" ]; then
+if [ $2 == "new" ]; then
     # These are the variables for the new ntuples.
     TMVAVARS="lep1_pt lep1_eta bos_PuppiAK8_pt bos_PuppiAK8_tau2tau1 bos_PuppiAK8_m_sd0_corr vbf2_AK4_eta vbf1_AK4_eta vbf1_AK4_pt vbf2_AK4_pt bosCent zeppLep zeppHad"
     activeVARS="run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta $TMVAVARS"
@@ -181,7 +178,7 @@ if [ $1 == "new" ]; then
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
     plotVARS_Other=""
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $1 == "old" ]; then
+elif [ $2 == "old" ]; then
     # These are the variables for the old ntuples
     TMVAVARS=" l_pt1  l_eta1 pfMET_Corr ungroomed_PuppiAK8_jet_pt PuppiAK8_jet_tau2tau1 PuppiAK8_jet_mass_so_corr vbf_maxpt_jj_m vbf_maxpt_j2_eta vbf_maxpt_j1_eta vbf_maxpt_j1_pt  vbf_maxpt_j2_pt mass_lvj_type0_PuppiAK8 BosonCentrality_type0 ZeppenfeldWL_type0 ZeppenfeldWH"
     activeVARS="gid sid mcWeight run event nTotEvents lumi  L1_Prefweight totalEventWeight type isVBF nBTagJet_loose btag0Wgt genWeight trig_eff_Weight id_eff_Weight pu_Weight l_pt2  ungroomed_PuppiAK8_jet_eta $TMVAVARS"

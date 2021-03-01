@@ -28,21 +28,16 @@ if [ "0$(echo  $SNAME | grep suv)" != "0" ]; then
 fi
 
 if [ "0$(echo $SNAME | grep MM)" != "0" ] || [ "0$(echo $SNAME | grep Mark)" != "0" ]; then # If running on my personal machine
-    if [ $1 == "new" ]; then
-        echo "Using new ntuples!"
-        DD_VBS_REDUCED="/mnt/e/Research/ntuples/NEW/ntuples"
+    DD_VBS_REDUCED="/mnt/$1" # d/2016 - This uses the data stored on a flash drive, don't forget to mount it (_ = some letter) use: mkdir /mnt/_ sudo mount -t drvfs _: /mnt/_
+    if [ $2 == "new" ]; then
+        echo "Using new variables!"
         DatasetInpFile="./lists/datasets_2016.json"
-    elif [ $1 == "old" ]; then
-        echo "Using old ntuples!"
-        DD_VBS_REDUCED="/mnt/e/Research/ntuples/vbs_ww_old"
+    elif [ $2 == "old" ]; then
+        echo "Using old variables!"
+        # DD_VBS_REDUCED="/mnt/e/Research/ntuples/vbs_ww_old"
         DatasetInpFile="./lists/oldData.json"
-        if [ $2 == "laptop" ]; then
-            echo "Using old laptop files"
-            DD_VBS_REDUCED="/mnt/c/users/markm/documents/Grad_School/Year_2.0/Research/ntuples_old/HaddedFiles/vbs_ww"
-        fi
     else
         echo "You didn't specify so I'm using the new ntuples"
-        # DD_VBS_REDUCED="/mnt/e/Research/ntuples/NEW/ntuples"
     fi
     # conda activate root_env # Start the ROOT environment - nevermind, this only works as long as the script runs
 fi
@@ -163,7 +158,7 @@ EOF
 # and only include the LISTREQ variables that show up on that list, then make that a tempLISTREQ
 #
 # Ugh that works but only solves half the problem, I have to apply the above code to group these temp lists, otherwise the Sample() doesn't have a group and just the smpl twice 
-if [ $1 == "new" ]; then
+if [ $2 == "new" ]; then
     echo "Don't forget to remove the temporary work around for reading the skims when you move to the proper data files"
     echo ""
     skim_folder="skims/vbs_ww"
