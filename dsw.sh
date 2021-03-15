@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# args #1=root file location #2= new or old variables
 # ------------------------------------------------------------------- Start System Check ----------------------------------------------------------------------------------------------
 
 DD_VBS_REDUCED="/eos/uscms/store/user/rsingh/wv_vbs_ntuples/WVJJTree_2020_Dec_12"
@@ -28,7 +29,7 @@ if [ "0$(echo  $SNAME | grep suv)" != "0" ]; then
 fi
 
 if [ "0$(echo $SNAME | grep MM)" != "0" ] || [ "0$(echo $SNAME | grep Mark)" != "0" ]; then # If running on my personal machine
-    DD_VBS_REDUCED="/mnt/$1" # d/2016 - This uses the data stored on a flash drive, don't forget to mount it (_ = some letter) use: mkdir /mnt/_ sudo mount -t drvfs _: /mnt/_
+    DD_VBS_REDUCED="/mnt/$1" # d/2016/haddedFiles (g if on my desktop) - This uses the data stored on a flash drive, don't forget to mount it (_ = some letter) use:~$ mkdir /mnt/_ ~$ sudo mount -t drvfs _: /mnt/_
     if [ $2 == "new" ]; then
         echo "Using new variables!"
         DatasetInpFile="./lists/datasets_2016.json"
@@ -38,6 +39,7 @@ if [ "0$(echo $SNAME | grep MM)" != "0" ] || [ "0$(echo $SNAME | grep Mark)" != 
         DatasetInpFile="./lists/oldData.json"
     else
         echo "You didn't specify so I'm using the new ntuples"
+        DatasetInpFile="./lists/datasets_2016.json"
     fi
     # conda activate root_env # Start the ROOT environment - nevermind, this only works as long as the script runs
 fi
@@ -150,7 +152,7 @@ EOF
         fi
     done
 
-    LIST="$(echo $TempListData $TempListEWK $TempListQCD $TempListTop $TempListWjets $TempListZjets)"
+    #LIST="$(echo $TempListData $TempListEWK $TempListQCD $TempListTop $TempListWjets $TempListZjets)"
     
     #LIST=$LISTREQ
 # --------------------------------------------------------------- Start - Temporary work around zone - Start ------------------------------------------------------------------------------
@@ -165,7 +167,7 @@ if [ $2 == "new" ]; then
     skim_folder="skims/vbs_ww"
     tempLISTREQ=()
     for f in $skim_folder/*.root; do
-        samp="$(echo ${f} | sed 's/skims\/vbs_ww\///g' | sed 's/_01.root//g' | sed 's/.root//g')"
+        samp="$(echo ${f} | sed 's/skims\/vbs_ww\///g' | sed 's/.root//g')"
         #echo $samp
         #echo ""
         if [[ "$samp" == *"Data"* ]]; then
@@ -178,17 +180,20 @@ if [ $2 == "new" ]; then
             add="$(echo $samp | sed 's/^/WV_EWK--/g')"
         elif [[ "$samp" == *"QCD_LO_SM"* ]]; then
             add="$(echo $samp | sed 's/^/Diboson--/g')"
-        elif [[ "$samp" == *"TTTo"* ]]; then
+        elif [[ "$samp" == *"TTTo"* ]] || [[ "$samp" == *"ST_"* && "$samp" != *"ST_s-channel_antitop"* ]]; then
             add="$(echo $samp | sed 's/^/top--/g')"
         elif [[ "$samp" == *"aQGC"* ]]; then
             add="$(echo $samp | sed 's/^/aQGC--/g')"
         else
-            echo "------------- Not sure what I'm looking at here ---------------"
+            echo "------------- Here's a sample that doesn't have a group ---------------"
+            echo "$samp"
             echo ""
+            add=""
         fi
         tempLISTREQ+=($add)
     done
     LIST=${tempLISTREQ[@]}
+    #echo $LIST
 fi
 
 # ---------------------------------------------------------------- End - Temporary work around zone - End ---------------------------------------------------------------------------------

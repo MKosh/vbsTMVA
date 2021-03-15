@@ -3,6 +3,8 @@
 # Then uses that file to write the vbsReducedTree.hpp file, the vbsDL.hpp file
 # and the vbsActiveBranches.hpp file
 # 
+# Arguments #1-location of rootfiles #2-old or new variable lists
+#
 # Usage
 #   Update rootFiles, and subFolders to point to the data being used
 #   Update the variable lists under the vbsDL.hpp section
