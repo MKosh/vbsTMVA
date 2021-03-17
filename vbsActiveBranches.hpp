@@ -18,6 +18,7 @@ void setChainBranches (TChain* inpChain){
    inpChain->SetBranchStatus("", kFALSE);   // disable all branches
 // switch on required  branches
 inpChain->SetBranchStatus("L1PFWeight", 1);
+inpChain->SetBranchStatus("MET", 1);
 inpChain->SetBranchStatus("bosCent", 1);
 inpChain->SetBranchStatus("bos_PuppiAK8_eta", 1);
 inpChain->SetBranchStatus("bos_PuppiAK8_m_sd0_corr", 1);
