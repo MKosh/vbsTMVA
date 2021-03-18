@@ -18,6 +18,7 @@ void setChainBranches (TChain* inpChain){
    inpChain->SetBranchStatus("", kFALSE);   // disable all branches
 // switch on required  branches
 inpChain->SetBranchStatus("L1PFWeight", 1);
+inpChain->SetBranchStatus("MET", 1);
 inpChain->SetBranchStatus("bosCent", 1);
 inpChain->SetBranchStatus("bos_PuppiAK8_eta", 1);
 inpChain->SetBranchStatus("bos_PuppiAK8_m_sd0_corr", 1);
@@ -26,11 +27,14 @@ inpChain->SetBranchStatus("bos_PuppiAK8_pt", 1);
 inpChain->SetBranchStatus("bos_PuppiAK8_tau2tau1", 1);
 inpChain->SetBranchStatus("evt", 1);
 inpChain->SetBranchStatus("genWeight", 1);
+inpChain->SetBranchStatus("isAntiIso", 1);
 inpChain->SetBranchStatus("lep1_eta", 1);
 inpChain->SetBranchStatus("lep1_iso", 1);
+inpChain->SetBranchStatus("lep1_m", 1);
 inpChain->SetBranchStatus("lep1_phi", 1);
 inpChain->SetBranchStatus("lep1_pt", 1);
 inpChain->SetBranchStatus("lep1_q", 1);
+inpChain->SetBranchStatus("lep2_eta", 1);
 inpChain->SetBranchStatus("lep2_pt", 1);
 inpChain->SetBranchStatus("nBtag_loose", 1);
 inpChain->SetBranchStatus("nBtag_medium", 1);

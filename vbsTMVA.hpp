@@ -68,26 +68,22 @@ TCut goodEl          ("goodEl",          "(l_pt1>50&&(type==1)&&((abs(l_eta1)<2.
 
 // Mark cuts --------------------------------------------------------------------------------------------------------------------------------
 // WV Signal Region (a.k.a boosted WV channel)
-TCut category_selection ("category_selection",  "!(isAntiIso)&&(lep2_pt < 0)&&(bos_PuppiAK8_pt > 0)");
-  // can be different for muon or electron, see eta cut
-TCut lep_pt ("lep_pt",  "(lep1_pt > 25)"); // can be different value, debatable
-  // lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
-TCut lep_eta ("lep_eta",   "(lep1_m > 0.105)&&(fabs(lep1_eta) < 2.4)&&(fabs(lep2_eta) < 2.4))||((lep1_m < 0.105)&&(fabs(lep1_eta) < 2.5)&&(!(fabs(lep1_eta) > 1.4442)&&(fabs(lep1_eta) < 1.566))");
-TCut fatjet_pt ("fatjet_pt",  "(bos_PuppiAK8_pt > 200)");
-TCut fatjet_eta ("fatjet_eta",   "(fabs(bos_PuppiAK8_eta) < 2.4)");
-TCut fatjet_tau21 ("fatjet_tau21",  "(bos_PuppiAK8_tau2tau1 < 0.55)"); // can be different
-  // vbs vbf are used interchangeably
-TCut vbs_jets_mjj ("vbs_jets_mjj",  "(vbf_m > 500)");
-TCut vbs_jets_pt ("vbs_jets_pt", "(vbf1_AK4_pt > 50)&&(vbf2_AK4_pt > 50)");
-TCut vbs_delta_eta ("vbs_delta_eta",   "(vbf_deta > 2.5)"); // this is absolute delta eta
-TCut btag_veto ("btag_veto",  "(nBtag_loose == 0)");
-  // regions, sr: signal region, cr: control region
-TCut wv_sr ("wv_sr", "(bos_PuppiAK8_m_sd0_corr > 65)&&(bos_PuppiAK8_m_sd0_corr < 105)");
-TCut wv_cr_vjets ("wv_cr_vjets", "((bos_PuppiAK8_m_sd0_corr > 50)&&(bos_PuppiAK8_m_sd0_corr < 65))||((bos_PuppiAK8_m_sd0_corr > 105)&&(bos_PuppiAK8_m_sd0_corr < 150))");
-TCut wv_cr_top ("wv_cr_top",  "(nBtag_loose > 0)");
-TCut met_pt ("met_pt",  "(MET > 30)");
-TCut full_common ("full_common", category_selection + lep_pt + lep_eta + fatjet_pt + fatjet_eta + fatjet_tau21 + vbs_jets_mjj + vbs_jets_pt + vbs_delta_eta + met_pt);
-TCut full_wv_sr ("full_wv_sr", full_common + btag_veto + wv_sr);
+TCut category_selection ("category_selection",  "lep2_pt<0 && bos_PuppiAK8_pt>0");// can be different for muon or electron, see eta cut        TCut category_selection ("category_selection",  "!isAntiIso && lep2_pt<0 && bos_PuppiAK8_pt>0")
+TCut lep_pt ("lep_pt",  "lep1_pt>25"); // can be different value, debatable// lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
+TCut lep_eta ("lep_eta",   "(lep1_m>0.105 && TMath::Abs(lep1_eta)<2.4 && TMath::Abs(lep2_eta)<2.4) || (lep1_m<0.105 && TMath::Abs(lep1_eta)<2.5 && !(TMath::Abs(lep1_eta)>1.4442) && TMath::Abs(lep1_eta)<1.566)");
+TCut fatjet_pt ("fatjet_pt",  "bos_PuppiAK8_pt>200");
+TCut fatjet_eta ("fatjet_eta",   "TMath::Abs(bos_PuppiAK8_eta)<2.4");
+TCut fatjet_tau21 ("fatjet_tau21",  "TMath::Abs(bos_PuppiAK8_tau2tau1)<0.55"); // can be different// vbs vbf are used interchangeably TCut fatjet_tau21 ("fatjet_tau21",  "bos_PuppiAK8_tau2tau1<0.55");
+TCut vbs_jets_mjj ("vbs_jets_mjj",  "vbf_m>500");
+TCut vbs_jets_pt ("vbs_jets_pt", "vbf1_AK4_pt>50 && vbf2_AK4_pt>50");
+TCut vbs_delta_eta ("vbs_delta_eta",   "vbf_deta>2.5"); // this is absolute delta eta
+TCut btag_veto ("btag_veto",  "nBtag_loose==0");// regions, sr: signal region, cr: control region
+TCut wv_sr ("wv_sr", "bos_PuppiAK8_m_sd0_corr>65 && bos_PuppiAK8_m_sd0_corr<105");
+TCut wv_cr_vjets ("wv_cr_vjets", "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150)");
+TCut wv_cr_top ("wv_cr_top",  "nBtag_loose>0");
+TCut met_pt ("met_pt",  "MET>30");
+TCut full_common ("full_common", category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
+TCut full_wv_sr ("full_wv_sr", full_common+btag_veto+wv_sr);
 // Mark Cuts ---------------------------------------------------------------------------------------------------------------------------------
 
 
