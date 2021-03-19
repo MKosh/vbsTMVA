@@ -174,7 +174,7 @@ EOF
 if [ $2 == "new" ]; then
     # These are the variables for the new ntuples.
     TMVAVARS="lep1_pt lep1_eta MET vbf_m bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 bos_PuppiAK8_m_sd0_corr vbf2_AK4_eta vbf1_AK4_eta vbf1_AK4_pt vbf2_AK4_pt bosCent zeppLep zeppHad"
-    activeVARS="run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta $TMVAVARS"
+    activeVARS="run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
     plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"

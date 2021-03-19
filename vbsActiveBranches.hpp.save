@@ -27,7 +27,6 @@ inpChain->SetBranchStatus("bos_PuppiAK8_pt", 1);
 inpChain->SetBranchStatus("bos_PuppiAK8_tau2tau1", 1);
 inpChain->SetBranchStatus("evt", 1);
 inpChain->SetBranchStatus("genWeight", 1);
-inpChain->SetBranchStatus("isAntiIso", 1);
 inpChain->SetBranchStatus("lep1_eta", 1);
 inpChain->SetBranchStatus("lep1_iso", 1);
 inpChain->SetBranchStatus("lep1_m", 1);

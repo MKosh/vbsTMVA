@@ -335,7 +335,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
 
    //
    TMVA::Factory* factory = new TMVA::Factory( "TMVAClassification", outputFile,
-                                               "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification" );
+                                               "!V:!Silent:Color:DrawProgressBar:Transformations=I;P;G,D:AnalysisType=Classification" ); //I;D;P;G,D
 
    TMVA::DataLoader* dataloader=new TMVA::DataLoader(sname);
 

@@ -8,12 +8,12 @@
 
 Method         : BDT::BDT
 TMVA Release   : 4.2.1         [262657]
-ROOT Release   : 6.22/00       [398848]
+ROOT Release   : 6.22/02       [398850]
 Creator        : mmekosh
-Date           : Sun Feb 28 22:00:09 2021
-Host           : Linux d13cdd3d3a72 4.15.0-1083-azure #93~16.04.1-Ubuntu SMP Thu May 7 18:39:44 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
-Dir            : /home/mmekosh/documents/research/vbstmva_new
-Training events: 1503261
+Date           : Fri Mar 19 14:51:50 2021
+Host           : Linux 7ed0a80d5e2e 4.15.0-1092-azure #102~16.04.1-Ubuntu SMP Tue Jul 14 20:28:23 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+Dir            : /home/mmekosh/documents/research/vbstmva_new/vbsTMVA
+Training events: 30513
 Analysis type  : [Classification]
 
 
@@ -71,90 +71,41 @@ NNodesMax: "0" [deprecated: Use MaxDepth instead to limit the tree size]
 #VAR -*-*-*-*-*-*-*-*-*-*-*-* variables *-*-*-*-*-*-*-*-*-*-*-*-
 
 NVar 15
-BosonCentrality_type0         BosonCentrality_type0         BosonCentrality_type0         BosonCentrality_type0                                           'F'    [-7.42084980011,4.47437620163]
-PuppiAK8_jet_mass_so_corr     PuppiAK8_jet_mass_so_corr     PuppiAK8_jet_mass_so_corr     PuppiAK8_jet_mass_so_corr                                       'F'    [41.3228492737,174.326782227]
-PuppiAK8_jet_tau2tau1         PuppiAK8_jet_tau2tau1         PuppiAK8_jet_tau2tau1         PuppiAK8_jet_tau2tau1                                           'F'    [0.00172252370976,0.958702325821]
-ZeppenfeldWH                  ZeppenfeldWH                  ZeppenfeldWH                  ZeppenfeldWH                                                    'F'    [-5.31441497803,5.27964496613]
-ZeppenfeldWL_type0            ZeppenfeldWL_type0            ZeppenfeldWL_type0            ZeppenfeldWL_type0                                              'F'    [-8.58155632019,7.86179971695]
-l_eta1                        l_eta1                        l_eta1                        l_eta1                                                          'F'    [-2.49999523163,2.49998879433]
-l_pt1                         l_pt1                         l_pt1                         l_pt1                                                           'F'    [27.0000076294,2329.02441406]
-mass_lvj_type0_PuppiAK8       mass_lvj_type0_PuppiAK8       mass_lvj_type0_PuppiAK8       mass_lvj_type0_PuppiAK8                                         'F'    [142.824432373,13063.0263672]
-pfMET_Corr                    pfMET_Corr                    pfMET_Corr                    pfMET_Corr                                                      'F'    [0.0343449413776,3718.54150391]
-ungroomed_PuppiAK8_jet_pt     ungroomed_PuppiAK8_jet_pt     ungroomed_PuppiAK8_jet_pt     ungroomed_PuppiAK8_jet_pt                                       'F'    [200.000289917,4046.81054688]
-vbf_maxpt_j1_eta              vbf_maxpt_j1_eta              vbf_maxpt_j1_eta              vbf_maxpt_j1_eta                                                'F'    [-4.88994789124,4.89051675797]
-vbf_maxpt_j1_pt               vbf_maxpt_j1_pt               vbf_maxpt_j1_pt               vbf_maxpt_j1_pt                                                 'F'    [30.0007629395,3782.83203125]
-vbf_maxpt_j2_eta              vbf_maxpt_j2_eta              vbf_maxpt_j2_eta              vbf_maxpt_j2_eta                                                'F'    [-4.96393918991,4.93394851685]
-vbf_maxpt_j2_pt               vbf_maxpt_j2_pt               vbf_maxpt_j2_pt               vbf_maxpt_j2_pt                                                 'F'    [30.0000629425,2670.71777344]
-vbf_maxpt_jj_m                vbf_maxpt_jj_m                vbf_maxpt_jj_m                vbf_maxpt_jj_m                                                  'F'    [468.996643066,8052.8125]
-NSpec 68
-L1_Prefweight                 L1_Prefweight                 L1_Prefweight                 L1_Prefweight                                                   'F'    [2.31962735597e-06,1]
-PtBalance_type0               PtBalance_type0               PtBalance_type0               PtBalance_type0                                                 'F'    [0.000651531678159,1]
-PtBalance_type2               PtBalance_type2               PtBalance_type2               PtBalance_type2                                                 'F'    [0.000651531678159,1]
-PuppiAK8_jet_mass             PuppiAK8_jet_mass             PuppiAK8_jet_mass             PuppiAK8_jet_mass                                               'F'    [43.7300109863,678.795410156]
-PuppiAK8_jet_mass_pr          PuppiAK8_jet_mass_pr          PuppiAK8_jet_mass_pr          PuppiAK8_jet_mass_pr                                            'F'    [0.884336292744,441.535217285]
-PuppiAK8_jet_mass_tr          PuppiAK8_jet_mass_tr          PuppiAK8_jet_mass_tr          PuppiAK8_jet_mass_tr                                            'F'    [0.0838012695312,531.38861084]
-PuppiAK8_jet_sj1_eta          PuppiAK8_jet_sj1_eta          PuppiAK8_jet_sj1_eta          PuppiAK8_jet_sj1_eta                                            'F'    [-2.70342803001,2.67406010628]
-PuppiAK8_jet_sj1_m            PuppiAK8_jet_sj1_m            PuppiAK8_jet_sj1_m            PuppiAK8_jet_sj1_m                                              'F'    [-0.232299804688,201.742324829]
-PuppiAK8_jet_sj1_phi          PuppiAK8_jet_sj1_phi          PuppiAK8_jet_sj1_phi          PuppiAK8_jet_sj1_phi                                            'F'    [-3.14159226418,3.14159035683]
-PuppiAK8_jet_sj1_pt           PuppiAK8_jet_sj1_pt           PuppiAK8_jet_sj1_pt           PuppiAK8_jet_sj1_pt                                             'F'    [81.8884735107,2848.77954102]
-PuppiAK8_jet_sj1_q            PuppiAK8_jet_sj1_q            PuppiAK8_jet_sj1_q            PuppiAK8_jet_sj1_q                                              'F'    [-1.00120830536,1.00032413006]
-PuppiAK8_jet_sj2_eta          PuppiAK8_jet_sj2_eta          PuppiAK8_jet_sj2_eta          PuppiAK8_jet_sj2_eta                                            'F'    [-2.97193741798,2.98181509972]
-PuppiAK8_jet_sj2_m            PuppiAK8_jet_sj2_m            PuppiAK8_jet_sj2_m            PuppiAK8_jet_sj2_m                                              'F'    [-0.0501708984375,99.6905441284]
-PuppiAK8_jet_sj2_phi          PuppiAK8_jet_sj2_phi          PuppiAK8_jet_sj2_phi          PuppiAK8_jet_sj2_phi                                            'F'    [-3.14158797264,3.14159083366]
-PuppiAK8_jet_sj2_pt           PuppiAK8_jet_sj2_pt           PuppiAK8_jet_sj2_pt           PuppiAK8_jet_sj2_pt                                             'F'    [16.8712673187,1498.32727051]
-PuppiAK8_jet_sj2_q            PuppiAK8_jet_sj2_q            PuppiAK8_jet_sj2_q            PuppiAK8_jet_sj2_q                                              'F'    [-1.02245438099,1.00703501701]
-PuppiAK8jet_qjet              PuppiAK8jet_qjet              PuppiAK8jet_qjet              PuppiAK8jet_qjet                                                'F'    [0,0]
-btag0Wgt                      btag0Wgt                      btag0Wgt                      btag0Wgt                                                        'F'    [0.272609740496,8.92120838165]
-costheta1_type0               costheta1_type0               costheta1_type0               costheta1_type0                                                 'F'    [-0.994204342365,0.99999910593]
-costheta1_type2               costheta1_type2               costheta1_type2               costheta1_type2                                                 'F'    [-0.994204342365,0.99999910593]
-costheta2_type0               costheta2_type0               costheta2_type0               costheta2_type0                                                 'F'    [-0.997599244118,0.999996960163]
-costheta2_type2               costheta2_type2               costheta2_type2               costheta2_type2                                                 'F'    [-0.997599244118,0.999996960163]
-costhetastar_type0            costhetastar_type0            costhetastar_type0            costhetastar_type0                                              'F'    [-0.999999642372,0.999998211861]
-costhetastar_type2            costhetastar_type2            costhetastar_type2            costhetastar_type2                                              'F'    [-0.999999642372,0.999998211861]
-deltaR_lPuppiak8jet           deltaR_lPuppiak8jet           deltaR_lPuppiak8jet           deltaR_lPuppiak8jet                                             'F'    [1.00000143051,5.71081113815]
-deltaphi_METPuppiak8jet       deltaphi_METPuppiak8jet       deltaphi_METPuppiak8jet       deltaphi_METPuppiak8jet                                         'F'    [2.86102294922e-06,3.14159250259]
-deltaphi_METmin               deltaphi_METmin               deltaphi_METmin               deltaphi_METmin                                                 'F'    [2.26497650146e-06,3.10848331451]
-deltaphi_METvbfJ1             deltaphi_METvbfJ1             deltaphi_METvbfJ1             deltaphi_METvbfJ1                                               'F'    [2.26497650146e-06,3.14159250259]
-deltaphi_METvbfJ2             deltaphi_METvbfJ2             deltaphi_METvbfJ2             deltaphi_METvbfJ2                                               'F'    [7.39097595215e-06,3.14159202576]
-deltaphi_VPuppiak8jet         deltaphi_VPuppiak8jet         deltaphi_VPuppiak8jet         deltaphi_VPuppiak8jet                                           'F'    [3.765152087e-06,3.14159154892]
-event                         event                         event                         event                                                           'F'    [1,360657120]
-genWeight                     genWeight                     genWeight                     genWeight                                                       'F'    [-1,1]
-gid                           gid                           gid                           gid                                                             'F'    [1,15]
-id_eff_Weight                 id_eff_Weight                 id_eff_Weight                 id_eff_Weight                                                   'F'    [0.78274512291,1.38491487503]
-isVBF                         isVBF                         isVBF                         isVBF                                                           'F'    [1,1]
-l_charge1                     l_charge1                     l_charge1                     l_charge1                                                       'F'    [-1,1]
-l_e1                          l_e1                          l_e1                          l_e1                                                            'F'    [27.0074100494,8021.08105469]
-l_iso1                        l_iso1                        l_iso1                        l_iso1                                                          'F'    [0,0.149997189641]
-l_phi1                        l_phi1                        l_phi1                        l_phi1                                                          'F'    [-3.14158558846,3.14159178734]
-l_pt2                         l_pt2                         l_pt2                         l_pt2                                                           'F'    [-999,-999]
-lumi                          lumi                          lumi                          lumi                                                            'F'    [1,1121480]
-mcWeight                      mcWeight                      mcWeight                      mcWeight                                                        'F'    [1.54381183393e-08,2.26943211601e-05]
-mt_lvj_type0_PuppiAK8         mt_lvj_type0_PuppiAK8         mt_lvj_type0_PuppiAK8         mt_lvj_type0_PuppiAK8                                           'F'    [287.450286865,13068.609375]
-nBTagJet_loose                nBTagJet_loose                nBTagJet_loose                nBTagJet_loose                                                  'F'    [0,12]
-nBTagJet_medium               nBTagJet_medium               nBTagJet_medium               nBTagJet_medium                                                 'F'    [0,10]
-nGoodPuppiAK8jets             nGoodPuppiAK8jets             nGoodPuppiAK8jets             nGoodPuppiAK8jets                                               'F'    [1,4]
-nPV                           nPV                           nPV                           nPV                                                             'F'    [1,118]
-nTotEvents                    nTotEvents                    nTotEvents                    nTotEvents                                                      'F'    [49999,91832424]
-njets                         njets                         njets                         njets                                                           'F'    [0,17]
-nu_pz_type0                   nu_pz_type0                   nu_pz_type0                   nu_pz_type0                                                     'F'    [-5617.39404297,3803.18408203]
-pfMET_Corr_phi                pfMET_Corr_phi                pfMET_Corr_phi                pfMET_Corr_phi                                                  'F'    [-3.14157366753,3.14158964157]
-phi1_type0                    phi1_type0                    phi1_type0                    phi1_type0                                                      'F'    [-3.14159154892,3.1415886879]
-phi1_type2                    phi1_type2                    phi1_type2                    phi1_type2                                                      'F'    [-3.14158463478,3.1415886879]
-phi_type0                     phi_type0                     phi_type0                     phi_type0                                                       'F'    [-3.14150929451,3.14140534401]
-phi_type2                     phi_type2                     phi_type2                     phi_type2                                                       'F'    [-3.14150929451,3.14139389992]
-pu_Weight                     pu_Weight                     pu_Weight                     pu_Weight                                                       'F'    [0,1.20750808716]
+MET                           MET                           MET                           MET                                                             'F'    [30.0002593994,1751.86328125]
+bosCent                       bosCent                       bosCent                       bosCent                                                         'F'    [-999,3.74968290329]
+bos_PuppiAK8_eta              bos_PuppiAK8_eta              bos_PuppiAK8_eta              bos_PuppiAK8_eta                                                'F'    [-2.39990234375,2.3994140625]
+bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr                                         'F'    [65.0625,104.9375]
+bos_PuppiAK8_pt               bos_PuppiAK8_pt               bos_PuppiAK8_pt               bos_PuppiAK8_pt                                                 'F'    [200.125,2586]
+bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1                                           'F'    [0.0223710313439,0.549965322018]
+lep1_eta                      lep1_eta                      lep1_eta                      lep1_eta                                                        'F'    [-2.49853515625,2.49951171875]
+lep1_pt                       lep1_pt                       lep1_pt                       lep1_pt                                                         'F'    [19.4197502136,1184.74499512]
+vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                                                    'F'    [-4.640625,4.97265625]
+vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                                                     'F'    [50.0824546814,2442.01953125]
+vbf2_AK4_eta                  vbf2_AK4_eta                  vbf2_AK4_eta                  vbf2_AK4_eta                                                    'F'    [-5.0771484375,5.0888671875]
+vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                                                     'F'    [50.0028877258,1170.75402832]
+vbf_m                         vbf_m                         vbf_m                         vbf_m                                                           'F'    [500.026428223,7562.96777344]
+zeppHad                       zeppHad                       zeppHad                       zeppHad                                                         'F'    [-4.53909301758,4.55796432495]
+zeppLep                       zeppLep                       zeppLep                       zeppLep                                                         'F'    [-6.87152099609,6.55586957932]
+NSpec 19
+L1PFWeight                    L1PFWeight                    L1PFWeight                    L1PFWeight                                                      'F'    [0.155793115497,1]
+bos_PuppiAK8_phi              bos_PuppiAK8_phi              bos_PuppiAK8_phi              bos_PuppiAK8_phi                                                'F'    [-3.1416015625,3.1416015625]
+btagWeight_loose              btagWeight_loose              btagWeight_loose              btagWeight_loose                                                'F'    [0.707488656044,1.77973711491]
+evt                           evt                           evt                           evt                                                             'F'    [220,235043920]
+genWeight                     genWeight                     genWeight                     genWeight                                                       'F'    [-303.359375,316.46875]
+lep1_iso                      lep1_iso                      lep1_iso                      lep1_iso                                                        'F'    [0,0.130037635565]
+lep1_m                        lep1_m                        lep1_m                        lep1_m                                                          'F'    [0.000510999991093,0.000510999991093]
+lep1_phi                      lep1_phi                      lep1_phi                      lep1_phi                                                        'F'    [-3.14111328125,3.1416015625]
+lep1_q                        lep1_q                        lep1_q                        lep1_q                                                          'F'    [-1,1]
+lep2_eta                      lep2_eta                      lep2_eta                      lep2_eta                                                        'F'    [-999,2.49951171875]
+lep2_pt                       lep2_pt                       lep2_pt                       lep2_pt                                                         'F'    [-999,258.964111328]
+mcWeight                      mcWeight                      mcWeight                      mcWeight                                                        'F'    [-1.76001336172e-07,1.40398824442e-05]
+nBtag_loose                   nBtag_loose                   nBtag_loose                   nBtag_loose                                                     'F'    [0,0]
+nBtag_medium                  nBtag_medium                  nBtag_medium                  nBtag_medium                                                    'F'    [0,0]
+nPV                           nPV                           nPV                           nPV                                                             'F'    [1,66]
+neu_pz_type0                  neu_pz_type0                  neu_pz_type0                  neu_pz_type0                                                    'F'    [-999,-999]
+puWeight                      puWeight                      puWeight                      puWeight                                                        'F'    [0,1.20750808716]
 run                           run                           run                           run                                                             'F'    [1,1]
-sid                           sid                           sid                           sid                                                             'F'    [100,1509]
-totalEventWeight              totalEventWeight              totalEventWeight              totalEventWeight                                                'F'    [-1.52919781208,1.57707238197]
-trig_eff_Weight               trig_eff_Weight               trig_eff_Weight               trig_eff_Weight                                                 'F'    [0.840653061867,1.01458156109]
-type                          type                          type                          type                                                            'F'    [0,1]
-ungroomed_PuppiAK8_jet_charge ungroomed_PuppiAK8_jet_charge ungroomed_PuppiAK8_jet_charge ungroomed_PuppiAK8_jet_charge                                   'F'    [0,1]
-ungroomed_PuppiAK8_jet_e      ungroomed_PuppiAK8_jet_e      ungroomed_PuppiAK8_jet_e      ungroomed_PuppiAK8_jet_e                                        'F'    [205.438598633,5859.43408203]
-ungroomed_PuppiAK8_jet_eta    ungroomed_PuppiAK8_jet_eta    ungroomed_PuppiAK8_jet_eta    ungroomed_PuppiAK8_jet_eta                                      'F'    [-2.39995765686,2.39997243881]
-ungroomed_PuppiAK8_jet_phi    ungroomed_PuppiAK8_jet_phi    ungroomed_PuppiAK8_jet_phi    ungroomed_PuppiAK8_jet_phi                                      'F'    [-3.14158415794,3.14159226418]
-v_mt_type0                    v_mt_type0                    v_mt_type0                    v_mt_type0                                                      'F'    [2.08445362659e-05,2531.63232422]
-v_pt_type0                    v_pt_type0                    v_pt_type0                    v_pt_type0                                                      'F'    [0.110036499798,3854.3737793]
-vbf_maxpt_jj_Deta             vbf_maxpt_jj_Deta             vbf_maxpt_jj_Deta             vbf_maxpt_jj_Deta                                               'F'    [1.79409980774e-05,9.63330078125]
+vbf_deta                      vbf_deta                      vbf_deta                      vbf_deta                                                        'F'    [2.50006103516,9.2822265625]
 
 
 ============================================================================ */
@@ -282,7 +233,7 @@ class ReadBDT : public IClassifierReader {
         fNvars( 15 )
    {
       // the training input variables
-      const char* inputVars[] = { "BosonCentrality_type0", "PuppiAK8_jet_mass_so_corr", "PuppiAK8_jet_tau2tau1", "ZeppenfeldWH", "ZeppenfeldWL_type0", "l_eta1", "l_pt1", "mass_lvj_type0_PuppiAK8", "pfMET_Corr", "ungroomed_PuppiAK8_jet_pt", "vbf_maxpt_j1_eta", "vbf_maxpt_j1_pt", "vbf_maxpt_j2_eta", "vbf_maxpt_j2_pt", "vbf_maxpt_jj_m" };
+      const char* inputVars[] = { "MET", "bosCent", "bos_PuppiAK8_eta", "bos_PuppiAK8_m_sd0_corr", "bos_PuppiAK8_pt", "bos_PuppiAK8_tau2tau1", "lep1_eta", "lep1_pt", "vbf1_AK4_eta", "vbf1_AK4_pt", "vbf2_AK4_eta", "vbf2_AK4_pt", "vbf_m", "zeppHad", "zeppLep" };
 
       // sanity checks
       if (theInputVars.size() <= 0) {
@@ -422,871 +373,3681 @@ void ReadBDT::Initialize()
   double inf = std::numeric_limits<double>::infinity();
   double nan = std::numeric_limits<double>::quiet_NaN();
   // itree = 0
-  fBoostWeights.push_back(0.253494605674067);
+  fBoostWeights.push_back(0.467993519649717);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 98.5736, 1, 1, 0.746672,-99) , 
+-1, 1.00099, 1, 1, 0.827017,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.619089,-99) , 
+-1, 0, 1, 1, 0.630125,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.474777,-99) , 
-14, 1744.17, 0, 0, 0.526952,-99) , 
-2, 0.412367, 1, 0, 0.659458,-99) , 
-NN(
+-1, 0, 1, -1, 0.370818,-99) , 
+3, 82.1518, 0, 0, 0.549202,-99) , 
+12, 1034.54, 0, 0, 0.709525,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.593451,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478107,-99) , 
-14, 725.301, 0, 0, 0.532599,-99) , 
+-1, 0.396932, 1, 1, 0.641128,-99) , 
 NN(
 0, 
 0, 
--1, 0.586217, 1, -1, 0.361584,-99) , 
-2, 0.363901, 1, 0, 0.4345,-99) , 
-14, 1138.81, 0, 0, 0.502719,-99)    );
+-1, 279.738, 0, -1, 0.282105,-99) , 
+12, 1638.75, 0, 0, 0.354252,-99) , 
+5, 0.320398, 1, 0, 0.490819,-99)    );
   // itree = 1
-  fBoostWeights.push_back(0.208531);
+  fBoostWeights.push_back(0.355233);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 96.9495, 1, 1, 0.71671,-99) , 
+-1, 1781.19, 0, 1, 0.747597,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.575912,-99) , 
+-1, 0, 1, 1, 0.571399,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.445782,-99) , 
-2, 0.560484, 1, 0, 0.529718,-99) , 
-2, 0.407467, 1, 0, 0.639556,-99) , 
+-1, 0, 1, -1, 0.322404,-99) , 
+14, 0.237787, 1, 0, 0.472219,-99) , 
+12, 832.417, 0, 0, 0.6622,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.584588,-99) , 
+-1, 0, 1, 1, 0.582087,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.478253,-99) , 
-7, 675.102, 0, 0, 0.508994,-99) , 
+-1, 0, 1, -1, 0.256706,-99) , 
+14, 1.32511, 1, 0, 0.530761,-99) , 
 NN(
 0, 
 0, 
--1, 0.570373, 1, -1, 0.354463,-99) , 
-2, 0.452351, 1, 0, 0.451028,-99) , 
-14, 1120.43, 0, 0, 0.508764,-99)    );
+-1, 0.419419, 1, -1, 0.327902,-99) , 
+12, 1172.82, 0, 0, 0.405247,-99) , 
+5, 0.321555, 1, 0, 0.506229,-99)    );
   // itree = 2
-  fBoostWeights.push_back(0.203922);
+  fBoostWeights.push_back(0.306109);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.766348,-99) , 
+-1, 2064.13, 0, 1, 0.777973,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.585871,-99) , 
+-1, 0, 1, 1, 0.581713,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.441157,-99) , 
-1, 98.5736, 1, 0, 0.557008,-99) , 
-14, 1503.71, 0, 0, 0.596437,-99) , 
+-1, 0, 1, -1, 0.333485,-99) , 
+12, 657.739, 0, 0, 0.518629,-99) , 
+12, 1163.44, 0, 0, 0.643458,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.539326,-99) , 
+-1, 0, 1, 1, 0.524392,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.380324,-99) , 
-4, 1.51654, 1, 0, 0.511806,-99) , 
+-1, 0, 1, -1, 0.317727,-99) , 
+14, -0.677071, 0, 0, 0.448283,-99) , 
 NN(
 0, 
 0, 
--1, 0.568506, 1, -1, 0.379515,-99) , 
-14, 830.837, 0, 0, 0.444683,-99) , 
-2, 0.374308, 1, 0, 0.515968,-99)    );
+-1, 1.01549, 0, -1, 0.174884,-99) , 
+6, 1.5459, 1, 0, 0.410859,-99) , 
+5, 0.348977, 1, 0, 0.517084,-99)    );
   // itree = 3
-  fBoostWeights.push_back(0.159306);
+  fBoostWeights.push_back(0.282554);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 91.2389, 1, 1, 0.717779,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490938,-99) , 
-2, 0.501354, 1, 0, 0.669479,-99) , 
+-1, 0, 1, 1, 0.84068,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 87.6775, 0, 1, 0.541928,-99) , 
+-1, 0, 1, 1, 0.663577,-99) , 
 NN(
 0, 
 0, 
--1, 0.557352, 1, -1, 0.42301,-99) , 
-2, 0.36213, 1, 0, 0.474469,-99) , 
-14, 1552.4, 0, 0, 0.50449,-99)    );
+-1, 0, 1, -1, 0.483953,-99) , 
+12, 779.232, 0, 0, 0.606178,-99) , 
+12, 1669.83, 0, 0, 0.678067,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0.418881, 1, 1, 0.709597,-99) , 
+NN(
+0, 
+0, 
+-1, 1.54806, 1, -1, 0.38751,-99) , 
+12, 2181.81, 0, 0, 0.418968,-99) , 
+5, 0.274863, 1, 0, 0.483162,-99)    );
   // itree = 4
-  fBoostWeights.push_back(0.158796);
+  fBoostWeights.push_back(0.289599);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0.363243, 1, 1, 0.659719,-99) , 
+-1, 0.593285, 1, 1, 0.75071,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.571304,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.364776,-99) , 
+14, -1.37677, 0, 0, 0.545974,-99) , 
+12, 1589.2, 0, 0, 0.60116,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.539705,-99) , 
+-1, 0, 1, 1, 0.64868,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.416433,-99) , 
-1, 104.854, 1, 0, 0.521609,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518529,-99) , 
+-1, 0, 1, -1, 0.407049,-99) , 
+4, 313.857, 0, 0, 0.51752,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.382667,-99) , 
-7, 845.659, 0, 0, 0.408353,-99) , 
-2, 0.462776, 1, 0, 0.482961,-99) , 
-14, 1552.48, 0, 0, 0.510077,-99)    );
+-1, 303.167, 0, -1, 0.311746,-99) , 
+12, 1172.82, 0, 0, 0.400009,-99) , 
+5, 0.366311, 1, 0, 0.506473,-99)    );
   // itree = 5
-  fBoostWeights.push_back(0.121636);
+  fBoostWeights.push_back(0.244862);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0.417665, 1, 1, 0.678795,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.450649,-99) , 
-1, 98.1349, 1, 0, 0.64316,-99) , 
-NN(
+-1, 98.2333, 0, 1, 0.693119,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513243,-99) , 
+-1, 0, 1, 1, 0.68163,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.386194,-99) , 
-4, 1.55834, 1, 0, 0.491537,-99) , 
+-1, 0, 1, -1, 0.404917,-99) , 
+12, 2444.43, 0, 0, 0.485082,-99) , 
+5, 0.393385, 1, 0, 0.619638,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, -0.30929, 0, -1, 0.345425,-99) , 
-4, -2.05389, 0, 0, 0.478586,-99) , 
-14, 1509.71, 0, 0, 0.505406,-99)    );
+-1, 0, 1, 1, 0.649861,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.427104,-99) , 
+12, 737.078, 0, 0, 0.587852,-99) , 
+NN(
+0, 
+0, 
+-1, 0.833496, 1, -1, 0.404999,-99) , 
+5, 0.251528, 1, 0, 0.438142,-99) , 
+12, 1495.2, 0, 0, 0.490111,-99)    );
   // itree = 6
-  fBoostWeights.push_back(0.140614);
+  fBoostWeights.push_back(0.226182);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.681167,-99) , 
+-1, 0, 1, 1, 0.747176,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.40802,-99) , 
+6, -1.54864, 0, 0, 0.694452,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.625419,-99) , 
+-1, 0, 1, 1, 0.546613,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.497716,-99) , 
-6, 115.681, 0, 0, 0.54028,-99) , 
-2, 0.322018, 1, 0, 0.592665,-99) , 
+-1, 0, 1, -1, 0.369394,-99) , 
+14, -1.25712, 0, 0, 0.509209,-99) , 
+12, 1691.19, 0, 0, 0.552383,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.546958,-99) , 
+-1, 0, 1, 1, 0.510134,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.456645,-99) , 
-7, 739.945, 0, 0, 0.477417,-99) , 
+-1, 0, 1, -1, 0.313386,-99) , 
+5, 0.370853, 1, 0, 0.424449,-99) , 
 NN(
 0, 
 0, 
--1, 130.506, 0, -1, 0.369326,-99) , 
-2, 0.548977, 1, 0, 0.456784,-99) , 
-14, 1191.26, 0, 0, 0.493494,-99)    );
+-1, 0, 1, -1, 0.150791,-99) , 
+12, 754.813, 0, 0, 0.36245,-99) , 
+14, 0.98901, 1, 0, 0.510785,-99)    );
   // itree = 7
-  fBoostWeights.push_back(0.102133);
+  fBoostWeights.push_back(0.221571);
   fForest.push_back( 
 NN(
 NN(
+NN(
+NN(
 0, 
 0, 
--1, 0.407467, 1, 1, 0.634145,-99) , 
+-1, 0, 1, 1, 0.771155,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.491184,-99) , 
+5, 0.443268, 1, 0, 0.706732,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.561513,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.402257,-99) , 
+6, -1.07115, 0, 0, 0.5204,-99) , 
+12, 1845.38, 0, 0, 0.554201,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.505673,-99) , 
+-1, 0, 1, 1, 0.625658,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.358263,-99) , 
-4, 2.15138, 1, 0, 0.492665,-99) , 
+-1, 0, 1, -1, 0.401255,-99) , 
+8, -2.14607, 1, 0, 0.459715,-99) , 
 NN(
 0, 
 0, 
--1, 0.306635, 0, -1, 0.381917,-99) , 
-4, -1.49968, 0, 0, 0.474194,-99) , 
-14, 1505.58, 0, 0, 0.500601,-99)    );
+-1, 2.03093, 1, -1, 0.238903,-99) , 
+6, 1.7138, 1, 0, 0.388492,-99) , 
+14, 1.04478, 1, 0, 0.518732,-99)    );
   // itree = 8
-  fBoostWeights.push_back(0.14457);
+  fBoostWeights.push_back(0.256775);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 0.417208, 1, 1, 0.657281,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.442824,-99) , 
-1, 97.8493, 1, 0, 0.622243,-99) , 
-NN(
+-1, 0, 1, 1, 0.640021,-99) , 
 NN(
 0, 
 0, 
--1, 769.063, 0, 1, 0.615822,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.554393,-99) , 
+-1, 0, 1, -1, 0.463827,-99) , 
+14, -1.08788, 0, 0, 0.599837,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.445384,-99) , 
-2, 0.229472, 1, 0, 0.460241,-99) , 
-6, 246.241, 0, 0, 0.470062,-99) , 
-14, 1510.1, 0, 0, 0.494667,-99)    );
+-1, 0, 1, -1, 0.347659,-99) , 
+6, 1.78153, 1, 0, 0.579507,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.658778,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.413587,-99) , 
+13, 1.69351, 0, 0, 0.442136,-99) , 
+NN(
+0, 
+0, 
+-1, -0.475852, 1, -1, 0.27884,-99) , 
+6, 0.834961, 1, 0, 0.394733,-99) , 
+12, 1095.58, 0, 0, 0.483133,-99)    );
   // itree = 9
-  fBoostWeights.push_back(0.108119);
+  fBoostWeights.push_back(0.218519);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0.315998, 1, 1, 0.600981,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.40528,-99) , 
-1, 104.747, 1, 0, 0.576782,-99) , 
-NN(
+-1, 0.819336, 1, 1, 0.685307,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504889,-99) , 
+-1, 0, 1, 1, 0.564597,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.427366,-99) , 
-1, 98.2719, 1, 0, 0.489421,-99) , 
+-1, 0, 1, -1, 0.388714,-99) , 
+5, 0.415026, 1, 0, 0.516578,-99) , 
+8, -2.13398, 1, 0, 0.55056,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 757.577, 0, -1, 0.38978,-99) , 
-2, 0.54956, 1, 0, 0.470777,-99) , 
-14, 1158.61, 0, 0, 0.500737,-99)    );
+-1, 0, 1, 1, 0.512233,-99) , 
+NN(
+0, 
+0, 
+-1, 1.06913, 1, -1, 0.302101,-99) , 
+8, -2.09756, 1, 0, 0.351065,-99) , 
+3, 72.6577, 0, 0, 0.520156,-99)    );
   // itree = 10
-  fBoostWeights.push_back(0.106923);
+  fBoostWeights.push_back(0.197571);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0.41087, 1, 1, 0.634504,-99) , 
+-1, 95.4435, 1, 1, 0.65474,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.595367,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457086,-99) , 
+12, 1495.43, 0, 0, 0.495844,-99) , 
+4, 361.923, 0, 0, 0.534558,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.549322,-99) , 
+-1, 0, 1, 1, 0.52249,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.467246,-99) , 
-9, 370.055, 0, 0, 0.487716,-99) , 
+-1, 0, 1, -1, 0.323797,-99) , 
+12, 1230.73, 0, 0, 0.393538,-99) , 
 NN(
 0, 
 0, 
--1, 0.69176, 1, -1, 0.35469,-99) , 
-2, 0.631756, 1, 0, 0.477802,-99) , 
-14, 1857.22, 0, 0, 0.492315,-99)    );
+-1, 181.513, 1, -1, 0.22262,-99) , 
+13, 0.32044, 1, 0, 0.322148,-99) , 
+6, 1.30664, 1, 0, 0.501943,-99)    );
   // itree = 11
-  fBoostWeights.push_back(0.11027);
+  fBoostWeights.push_back(0.127049);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1068.43, 0, 1, 0.628196,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491983,-99) , 
-11, 167.594, 0, 0, 0.572383,-99) , 
-NN(
+-1, 0.357835, 1, 1, 0.695568,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.525719,-99) , 
+-1, 0, 1, 1, 0.513056,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.335206,-99) , 
-4, -2.24015, 0, 0, 0.511412,-99) , 
+-1, 0, 1, -1, 0.312228,-99) , 
+5, 0.504286, 1, 0, 0.493177,-99) , 
+12, 2158.56, 0, 0, 0.518148,-99) , 
 NN(
 0, 
 0, 
--1, 1.33353, 1, -1, 0.442232,-99) , 
-14, 830.563, 0, 0, 0.476593,-99) , 
-2, 0.277327, 1, 0, 0.500231,-99)    );
+-1, 0, 1, -1, 0.154904,-99) , 
+14, 2.1327, 1, 0, 0.502786,-99)    );
   // itree = 12
-  fBoostWeights.push_back(0.103989);
+  fBoostWeights.push_back(0.150251);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0.406447, 1, 1, 0.619636,-99) , 
+-1, 0, 1, 1, 0.712773,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.494637,-99) , 
+14, 0.614457, 1, 0, 0.644715,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.588462,-99) , 
+-1, 0, 1, 1, 0.50015,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.491768,-99) , 
-0, 0.26082, 0, 0, 0.547545,-99) , 
+-1, 0, 1, -1, 0.327972,-99) , 
+12, 657.798, 0, 0, 0.47302,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.528006,-99) , 
+-1, 0, 1, 1, 0.506208,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.453758,-99) , 
-2, 0.274281, 1, 0, 0.471329,-99) , 
-6, 134.486, 0, 0, 0.48923,-99) , 
-14, 1857.99, 0, 0, 0.501311,-99)    );
+-1, 0, 1, -1, 0.31068,-99) , 
+13, -1.25074, 1, 0, 0.352057,-99) , 
+5, 0.424348, 1, 0, 0.436492,-99) , 
+12, 2158.67, 0, 0, 0.461621,-99)    );
   // itree = 13
-  fBoostWeights.push_back(0.0983078);
+  fBoostWeights.push_back(0.167158);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.65447,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485796,-99) , 
-1, 92.1496, 1, 0, 0.615876,-99) , 
+-1, 0, 1, 1, 0.768625,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.533987,-99) , 
+-1, 0, 1, 1, 0.520391,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.470903,-99) , 
-11, 175.801, 0, 0, 0.505912,-99) , 
-14, 1501.76, 0, 0, 0.524301,-99) , 
+-1, 0, 1, -1, 0.381957,-99) , 
+9, 141.692, 0, 0, 0.48419,-99) , 
+7, 304.218, 0, 0, 0.4982,-99) , 
 NN(
 0, 
 0, 
--1, -1.88872, 0, -1, 0.445285,-99) , 
-2, 0.502053, 1, 0, 0.503525,-99)    );
+-1, 0.425117, 1, -1, 0.254706,-99) , 
+14, 1.31698, 1, 0, 0.464708,-99)    );
   // itree = 14
-  fBoostWeights.push_back(0.0943274);
+  fBoostWeights.push_back(0.138199);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.65959,-99) , 
-NN(
-NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529259,-99) , 
+-1, -0.489473, 0, 1, 0.633257,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.447912,-99) , 
-4, -1.26965, 0, 0, 0.510153,-99) , 
+-1, 0, 1, 1, 0.510225,-99) , 
 NN(
 0, 
 0, 
--1, -0.394046, 1, -1, 0.39827,-99) , 
-4, 1.9387, 1, 0, 0.499408,-99) , 
-14, 2275.28, 0, 0, 0.507461,-99)    );
+-1, 0, 1, -1, 0.42612,-99) , 
+4, 313.738, 0, 0, 0.457631,-99) , 
+12, 2181.71, 0, 0, 0.475139,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.216148,-99) , 
+14, 2.19832, 1, 0, 0.46327,-99)    );
   // itree = 15
-  fBoostWeights.push_back(0.114942);
+  fBoostWeights.push_back(0.180271);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1191.26, 0, 1, 0.568458,-99) , 
+-1, 85.9464, 1, 1, 0.646491,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.550162,-99) , 
+-1, 0, 1, 1, 0.54236,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.454534,-99) , 
-9, 288.346, 0, 0, 0.483579,-99) , 
-7, 543.653, 0, 0, 0.521677,-99) , 
+-1, 0, 1, -1, 0.398438,-99) , 
+6, 0.105794, 1, 0, 0.482288,-99) , 
+4, 304, 0, 0, 0.578238,-99) , 
 NN(
 NN(
+0, 
+0, 
+-1, -1.78076, 0, -1, 0.458771,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.506046,-99) , 
+-1, 0, 1, 1, 0.577078,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.436587,-99) , 
-7, 756.192, 0, 0, 0.457675,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.359378,-99) , 
-5, 1.30953, 1, 0, 0.443977,-99) , 
-1, 91.991, 1, 0, 0.502413,-99)    );
+-1, 0, 1, -1, 0.285437,-99) , 
+13, -1.65508, 1, 0, 0.32751,-99) , 
+5, 0.424348, 1, 0, 0.421813,-99) , 
+7, 176.745, 0, 0, 0.447265,-99)    );
   // itree = 16
-  fBoostWeights.push_back(0.0741469);
+  fBoostWeights.push_back(0.166475);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 370.053, 0, 1, 0.521278,-99) , 
+-1, 1845.4, 0, 1, 0.5528,-99) , 
 NN(
 0, 
 0, 
--1, 0.270859, 1, -1, 0.413056,-99) , 
-1, 104.574, 1, 0, 0.506256,-99) , 
+-1, -0.345281, 0, -1, 0.386081,-99) , 
+6, -1.54725, 0, 0, 0.520159,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0.689708, 1, -1, 0.360179,-99) , 
-2, 0.644874, 1, 0, 0.497429,-99)    );
+-1, 0, 1, 1, 0.54531,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.373203,-99) , 
+8, 0.300874, 1, 0, 0.441838,-99) , 
+NN(
+0, 
+0, 
+-1, 0.382317, 1, -1, 0.253998,-99) , 
+3, 74.5565, 0, 0, 0.401992,-99) , 
+14, 0.704187, 1, 0, 0.486247,-99)    );
   // itree = 17
-  fBoostWeights.push_back(0.0823315);
+  fBoostWeights.push_back(0.129175);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.651569,-99) , 
+-1, 0, 1, 1, 0.688318,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.437424,-99) , 
+5, 0.420576, 1, 0, 0.622542,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.541716,-99) , 
+-1, 0, 1, 1, 0.509245,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.467688,-99) , 
-14, 666.366, 0, 0, 0.518731,-99) , 
+-1, 0, 1, -1, 0.419226,-99) , 
+6, -0.682617, 0, 0, 0.476303,-99) , 
 NN(
 0, 
 0, 
--1, 158.954, 0, -1, 0.463843,-99) , 
-7, 547.053, 0, 0, 0.490244,-99) , 
-14, 2534.41, 0, 0, 0.495397,-99)    );
+-1, 0.444192, 1, -1, 0.334151,-99) , 
+6, 1.31055, 1, 0, 0.456985,-99) , 
+12, 2165.22, 0, 0, 0.474942,-99)    );
   // itree = 18
-  fBoostWeights.push_back(0.055193);
+  fBoostWeights.push_back(0.136859);
   fForest.push_back( 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.628663,-99) , 
+-1, 103.419, 0, 1, 0.634293,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.508404,-99) , 
+-1, 0, 1, 1, 0.663083,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.4136,-99) , 
-4, -1.95361, 0, 0, 0.498484,-99) , 
+-1, 0, 1, -1, 0.483092,-99) , 
+13, 2.06792, 0, 0, 0.496491,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.373497,-99) , 
-4, 2.34594, 1, 0, 0.491835,-99) , 
-14, 2275.23, 0, 0, 0.498473,-99)    );
+-1, 0, 1, 1, 0.530059,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.345419,-99) , 
+5, 0.274854, 1, 0, 0.394005,-99) , 
+7, 63.5728, 0, 0, 0.461403,-99) , 
+12, 2158.61, 0, 0, 0.480074,-99)    );
   // itree = 19
-  fBoostWeights.push_back(0.0746467);
+  fBoostWeights.push_back(0.174742);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 1061.95, 0, 1, 0.601509,-99) , 
+-1, 0, 1, 1, 0.738927,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.655237,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.418023,-99) , 
+7, 88.1338, 0, 0, 0.530733,-99) , 
+5, 0.307049, 1, 0, 0.611671,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514045,-99) , 
+-1, 0, 1, 1, 0.53841,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.444457,-99) , 
-1, 92.0501, 1, 0, 0.49634,-99) , 
+-1, 0, 1, -1, 0.430846,-99) , 
+3, 86.5089, 1, 0, 0.486718,-99) , 
 NN(
 0, 
 0, 
--1, 1.17038, 0, -1, 0.408893,-99) , 
-2, 0.594461, 1, 0, 0.48617,-99) , 
-6, 238.442, 0, 0, 0.494369,-99)    );
+-1, 0.574893, 0, -1, 0.336186,-99) , 
+3, 72.6577, 0, 0, 0.463794,-99) , 
+12, 1826.97, 0, 0, 0.489624,-99)    );
   // itree = 20
-  fBoostWeights.push_back(0.052372);
+  fBoostWeights.push_back(0.170959);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0.243016, 1, 1, 0.603521,-99) , 
 NN(
 0, 
 0, 
--1, 0.684864, 1, -1, 0.478115,-99) , 
-14, 2204.09, 0, 0, 0.484685,-99)    );
+-1, 0, 1, 1, 0.66613,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.596049,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.453292,-99) , 
+14, -0.0703213, 0, 0, 0.518015,-99) , 
+12, 1035.35, 0, 0, 0.595919,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.540234,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.343267,-99) , 
+3, 97.3423, 1, 0, 0.514613,-99) , 
+NN(
+0, 
+0, 
+-1, -1.2998, 1, -1, 0.401111,-99) , 
+4, 286.024, 0, 0, 0.458398,-99) , 
+5, 0.248483, 1, 0, 0.482988,-99)    );
   // itree = 21
-  fBoostWeights.push_back(0.0827854);
+  fBoostWeights.push_back(0.14236);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.628132,-99) , 
+-1, -1.3241, 1, 1, 0.528591,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.524686,-99) , 
+-1, 0, 1, 1, 0.565942,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.469062,-99) , 
-14, 612.744, 0, 0, 0.505886,-99) , 
-14, 1066.87, 0, 0, 0.548091,-99) , 
+-1, 0, 1, -1, 0.343486,-99) , 
+12, 772.414, 1, 0, 0.424057,-99) , 
+6, -1.47733, 0, 0, 0.510824,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51257,-99) , 
+-1, 0, 1, 1, 0.607892,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.429836,-99) , 
-12, 2.58031, 1, 0, 0.494519,-99) , 
+-1, 0, 1, -1, 0.398794,-99) , 
+3, 87.8125, 0, 0, 0.492837,-99) , 
 NN(
 0, 
 0, 
--1, -0.332185, 1, -1, 0.409635,-99) , 
-5, 1.30953, 1, 0, 0.481837,-99) , 
-2, 0.275145, 1, 0, 0.497641,-99)    );
+-1, 89.747, 1, -1, 0.252956,-99) , 
+13, 0.202551, 1, 0, 0.383162,-99) , 
+6, 1.07171, 1, 0, 0.484276,-99)    );
   // itree = 22
-  fBoostWeights.push_back(0.0751034);
+  fBoostWeights.push_back(0.128067);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.61928,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.546887,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465308,-99) , 
-4, 0.750044, 1, 0, 0.521092,-99) , 
-14, 1113.94, 0, 0, 0.554014,-99) , 
+-1, 103.459, 0, 1, 0.604529,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.57095,-99) , 
+-1, 0, 1, 1, 0.510188,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492704,-99) , 
-14, 734.731, 0, 0, 0.540247,-99) , 
+-1, 0, 1, -1, 0.386276,-99) , 
+3, 93.3661, 1, 0, 0.4779,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 1.30944, 1, -1, 0.469469,-99) , 
-2, 0.229856, 1, 0, 0.479738,-99) , 
-7, 920.133, 0, 0, 0.489502,-99)    );
+-1, 0, 1, 1, 0.55089,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.33451,-99) , 
+7, 167.771, 0, 0, 0.372819,-99) , 
+3, 74.5565, 0, 0, 0.456171,-99) , 
+12, 2253.69, 0, 0, 0.469944,-99)    );
   // itree = 23
-  fBoostWeights.push_back(0.0742967);
+  fBoostWeights.push_back(0.1642);
   fForest.push_back( 
 NN(
 NN(
 NN(
+0, 
+0, 
+-1, -1.23133, 0, 1, 0.643285,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.603854,-99) , 
+-1, 0, 1, -1, 0.40591,-99) , 
+6, 0.82959, 1, 0, 0.578115,-99) , 
 NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471164,-99) , 
-1, 97.421, 1, 0, 0.579742,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517069,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.390826,-99) , 
-5, -0.833354, 0, 0, 0.484123,-99) , 
-2, 0.409509, 1, 0, 0.538228,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, -1.54763, 0, -1, 0.487855,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521697,-99) , 
+-1, 0, 1, 1, 0.562323,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.397622,-99) , 
-13, 63.3928, 0, 0, 0.431879,-99) , 
-12, -2.56295, 0, 0, 0.477365,-99) , 
-14, 1162.9, 0, 0, 0.494235,-99)    );
+-1, 0, 1, -1, 0.437615,-99) , 
+5, 0.228564, 1, 0, 0.455175,-99) , 
+NN(
+0, 
+0, 
+-1, 309.429, 0, -1, 0.309482,-99) , 
+10, -3.14583, 0, 0, 0.442201,-99) , 
+12, 1988.94, 0, 0, 0.460607,-99)    );
   // itree = 24
-  fBoostWeights.push_back(0.0734596);
+  fBoostWeights.push_back(0.15778);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 361.439, 0, 1, 0.527833,-99) , 
 NN(
 0, 
 0, 
--1, 1.3091, 1, -1, 0.457535,-99) , 
-1, 64.8337, 0, 0, 0.509389,-99) , 
+-1, 0, 1, 1, 0.61135,-99) , 
 NN(
 0, 
 0, 
--1, 2.10187, 1, -1, 0.42026,-99) , 
-1, 111.158, 1, 0, 0.500133,-99)    );
+-1, 0, 1, -1, 0.48471,-99) , 
+12, 1393.36, 0, 0, 0.522736,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.519397,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.354865,-99) , 
+13, -0.0748596, 0, 0, 0.412433,-99) , 
+14, -1.10852, 0, 0, 0.49249,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551481,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.373624,-99) , 
+7, 147.265, 0, 0, 0.411866,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.23279,-99) , 
+14, 2.13396, 1, 0, 0.376989,-99) , 
+14, 0.898673, 1, 0, 0.466167,-99)    );
   // itree = 25
-  fBoostWeights.push_back(0.0743875);
+  fBoostWeights.push_back(0.14666);
   fForest.push_back( 
 NN(
 NN(
+NN(
+NN(
 0, 
 0, 
--1, 1031.48, 0, 1, 0.589102,-99) , 
+-1, 0, 1, 1, 0.524658,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.394928,-99) , 
+14, -1.3471, 0, 0, 0.504339,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.354177,-99) , 
+6, 1.78557, 1, 0, 0.492865,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.52585,-99) , 
+-1, 0, 1, 1, 0.57113,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.471383,-99) , 
-2, 0.42018, 1, 0, 0.502883,-99) , 
+-1, 0, 1, -1, 0.399055,-99) , 
+2, -1.24893, 1, 0, 0.428444,-99) , 
 NN(
 0, 
 0, 
--1, 47.8214, 0, -1, 0.429451,-99) , 
-12, -3.07636, 0, 0, 0.492745,-99) , 
-6, 234.809, 0, 0, 0.499788,-99)    );
+-1, 0.355748, 1, -1, 0.278537,-99) , 
+14, 0.652671, 1, 0, 0.387669,-99) , 
+5, 0.412853, 1, 0, 0.458917,-99)    );
   // itree = 26
-  fBoostWeights.push_back(0.0344798);
+  fBoostWeights.push_back(0.152146);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.631029,-99) , 
-NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504479,-99) , 
+-1, 0, 1, 1, 0.562507,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.41702,-99) , 
-4, -2.19676, 0, 0, 0.498417,-99) , 
+-1, 0, 1, -1, 0.433507,-99) , 
+14, 0.665043, 1, 0, 0.515542,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.364322,-99) , 
-2, 0.689706, 1, 0, 0.494477,-99) , 
-14, 2550.5, 0, 0, 0.498684,-99)    );
+-1, 141.71, 0, -1, 0.424175,-99) , 
+6, -0.594215, 0, 0, 0.484691,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.278471,-99) , 
+14, 2.1327, 1, 0, 0.474584,-99)    );
   // itree = 27
-  fBoostWeights.push_back(0.0596791);
+  fBoostWeights.push_back(0.146406);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 1120.63, 0, 1, 0.566439,-99) , 
-NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504326,-99) , 
+-1, 0, 1, 1, 0.610168,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.407007,-99) , 
-12, 3.49753, 1, 0, 0.494178,-99) , 
+-1, 0, 1, -1, 0.491759,-99) , 
+0, 120.184, 1, 0, 0.57535,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511896,-99) , 
+-1, 0, 1, 1, 0.570029,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.391369,-99) , 
-13, 58.8814, 0, 0, 0.435475,-99) , 
-12, -2.6073, 0, 0, 0.481443,-99) , 
-6, 222.208, 0, 0, 0.488447,-99)    );
+-1, 0, 1, -1, 0.440077,-99) , 
+13, 0.0203253, 1, 0, 0.486374,-99) , 
+14, 0.546267, 1, 0, 0.529744,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.581238,-99) , 
+NN(
+0, 
+0, 
+-1, 70.7589, 0, -1, 0.426223,-99) , 
+8, 2.61056, 0, 0, 0.44778,-99) , 
+14, -0.60177, 0, 0, 0.502966,-99)    );
   // itree = 28
-  fBoostWeights.push_back(0.0565138);
+  fBoostWeights.push_back(0.150967);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.632204,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484191,-99) , 
-2, 0.41499, 1, 0, 0.572492,-99) , 
-NN(
+-1, 151.301, 0, 1, 0.565006,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.501856,-99) , 
+-1, 0, 1, 1, 0.501515,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.435146,-99) , 
-4, -1.44859, 0, 0, 0.488414,-99) , 
+-1, 0, 1, -1, 0.373363,-99) , 
+3, 73.8958, 0, 0, 0.42976,-99) , 
+3, 78.3542, 0, 0, 0.534426,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0.835849, 1, -1, 0.422413,-99) , 
-4, 1.67029, 1, 0, 0.479534,-99) , 
-14, 1913.53, 0, 0, 0.487296,-99)    );
+-1, 0, 1, 1, 0.579938,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.440045,-99) , 
+3, 82.125, 1, 0, 0.51813,-99) , 
+NN(
+0, 
+0, 
+-1, 0.471381, 1, -1, 0.410188,-99) , 
+8, -1.10803, 1, 0, 0.452946,-99) , 
+5, 0.343639, 1, 0, 0.491289,-99)    );
   // itree = 29
-  fBoostWeights.push_back(0.0765813);
+  fBoostWeights.push_back(0.202066);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -2.11956, 1, 1, 0.59669,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.598753,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432415,-99) , 
+8, -1.40625, 1, 0, 0.486018,-99) , 
+7, 107.367, 0, 0, 0.534798,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.677313,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.441144,-99) , 
+2, 0.572963, 0, 0, 0.526832,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.563569,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.373359,-99) , 
+8, 2.54378, 0, 0, 0.409901,-99) , 
+8, -1.81222, 1, 0, 0.441492,-99) , 
+4, 298.976, 0, 0, 0.483987,-99)    );
+  // itree = 30
+  fBoostWeights.push_back(0.164432);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 72.1726, 0, 1, 0.633857,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.532564,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.361689,-99) , 
+6, 0.116606, 1, 0, 0.448475,-99) , 
+11, 90.0419, 1, 0, 0.56792,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.552697,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.385094,-99) , 
+6, -1.54343, 0, 0, 0.529238,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.557593,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.410827,-99) , 
+5, 0.23521, 1, 0, 0.434538,-99) , 
+2, -0.48348, 1, 0, 0.472255,-99) , 
+2, 1.25716, 0, 0, 0.487173,-99)    );
+  // itree = 31
+  fBoostWeights.push_back(0.185205);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 83.6827, 0, 1, 0.710232,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.625615,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.403927,-99) , 
+6, -0.59475, 0, 0, 0.554964,-99) , 
+13, 0.618408, 0, 0, 0.622211,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.572709,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.44958,-99) , 
+8, 1.62444, 0, 0, 0.492107,-99) , 
+NN(
+0, 
+0, 
+-1, -0.110142, 1, -1, 0.398033,-99) , 
+6, 0.595192, 1, 0, 0.460707,-99) , 
+8, -2.05859, 1, 0, 0.496787,-99)    );
+  // itree = 32
+  fBoostWeights.push_back(0.0588068);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.94222, 0, 1, 0.516237,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.321964,-99) , 
+10, 3.61691, 1, 0, 0.510638,-99) , 
+NN(
+0, 
+0, 
+-1, -0.114464, 0, -1, 0.315373,-99) , 
+3, 101.14, 1, 0, 0.500538,-99)    );
+  // itree = 33
+  fBoostWeights.push_back(0.0902785);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.594038,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.497733,-99) , 
+6, -1.5469, 1, 0, 0.512559,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.327336,-99) , 
+10, -3.59514, 0, 0, 0.503611,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.515819,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.30035,-99) , 
+10, 1.69889, 1, 0, 0.448277,-99) , 
+NN(
+0, 
+0, 
+-1, 0.584008, 0, -1, 0.273844,-99) , 
+5, 0.412117, 1, 0, 0.374641,-99) , 
+3, 74.5565, 0, 0, 0.479765,-99)    );
+  // itree = 34
+  fBoostWeights.push_back(0.141576);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.585869,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.426573,-99) , 
+5, 0.435286, 1, 0, 0.547891,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.501695,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.22375,-99) , 
+8, -0.802283, 1, 0, 0.470692,-99) , 
+10, 1.18285, 1, 0, 0.516224,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.625654,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.466882,-99) , 
+2, 1.71431, 0, 0, 0.492881,-99) , 
+NN(
+0, 
+0, 
+-1, 0.323743, 1, -1, 0.33832,-99) , 
+6, 0.590239, 1, 0, 0.444456,-99) , 
+2, 0.34375, 1, 0, 0.489155,-99)    );
+  // itree = 35
+  fBoostWeights.push_back(0.14828);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.696838,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.496165,-99) , 
+12, 994.217, 0, 0, 0.624299,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.360899,-99) , 
+3, 76.4554, 0, 0, 0.587073,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.564221,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.470423,-99) , 
+11, 94.8001, 1, 0, 0.521574,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.596229,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.365517,-99) , 
+9, 104.25, 0, 0, 0.43211,-99) , 
+9, 116.902, 0, 0, 0.505563,-99) , 
+4, 397.827, 0, 0, 0.519838,-99)    );
+  // itree = 36
+  fBoostWeights.push_back(0.104758);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.528037,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.425567,-99) , 
+3, 73.1875, 0, 0, 0.511669,-99) , 
+NN(
+0, 
+0, 
+-1, -0.333636, 1, -1, 0.35127,-99) , 
+3, 99.2411, 1, 0, 0.501063,-99) , 
+NN(
+0, 
+0, 
+-1, 744.772, 1, -1, 0.363231,-99) , 
+5, 0.499656, 1, 0, 0.487475,-99)    );
+  // itree = 37
+  fBoostWeights.push_back(0.137285);
   fForest.push_back( 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.609925,-99) , 
+-1, 85.9494, 1, 1, 0.594906,-99) , 
 NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.543149,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.45202,-99) , 
+0, 111.721, 0, 0, 0.481654,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.560819,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.329928,-99) , 
+2, 1.02853, 0, 0, 0.374077,-99) , 
+12, 662.73, 0, 0, 0.46223,-99) , 
+12, 2208.04, 0, 0, 0.476628,-99)    );
+  // itree = 38
+  fBoostWeights.push_back(0.179333);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.366906, 0, 1, 0.568321,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.562244,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.379503,-99) , 
+5, 0.305517, 1, 0, 0.473382,-99) , 
+13, -0.522616, 0, 0, 0.540013,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.589508,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.362707,-99) , 
+6, 0.362932, 1, 0, 0.507905,-99) , 
+NN(
+0, 
+0, 
+-1, -1.20063, 0, -1, 0.362137,-99) , 
+11, 94.7992, 0, 0, 0.423403,-99) , 
+5, 0.424348, 1, 0, 0.507794,-99)    );
+  // itree = 39
+  fBoostWeights.push_back(0.143527);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.73629, 1, 1, 0.567682,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.673201,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.462895,-99) , 
+4, 496.679, 0, 0, 0.480889,-99) , 
+8, 0.672991, 0, 0, 0.516611,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.578606,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.391383,-99) , 
+0, 81.3999, 1, 0, 0.504823,-99) , 
+NN(
+0, 
+0, 
+-1, 0.348977, 1, -1, 0.373412,-99) , 
+10, 2.14467, 0, 0, 0.413664,-99) , 
+6, 0.834473, 1, 0, 0.490891,-99)    );
+  // itree = 40
+  fBoostWeights.push_back(0.135495);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.691645,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.387467,-99) , 
+6, 1.25039, 1, 0, 0.629501,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.571488,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.418565,-99) , 
+9, 244.528, 0, 0, 0.484174,-99) , 
+6, -0.120001, 0, 0, 0.561164,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 190.636, 0, 1, 0.56508,-99) , 
+NN(
+0, 
+0, 
+-1, 1.51412, 1, -1, 0.457131,-99) , 
+8, -2.42662, 1, 0, 0.473604,-99) , 
+2, -0.800618, 1, 0, 0.495841,-99)    );
+  // itree = 41
+  fBoostWeights.push_back(0.116485);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.715127,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.611037,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.469366,-99) , 
+14, 0.247687, 1, 0, 0.539347,-99) , 
+13, 0.901329, 0, 0, 0.607244,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.639721,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.49764,-99) , 
+5, 0.240945, 1, 0, 0.528409,-99) , 
+NN(
+0, 
+0, 
+-1, 93.5446, 1, -1, 0.446227,-99) , 
+11, 98.1858, 0, 0, 0.481362,-99) , 
+8, -2.34045, 1, 0, 0.502101,-99)    );
+  // itree = 42
+  fBoostWeights.push_back(0.095169);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, -0.226353, 1, 1, 0.643011,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.628261,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.430701,-99) , 
+6, -0.351423, 0, 0, 0.553921,-99) , 
+NN(
+0, 
+0, 
+-1, -1.30109, 0, -1, 0.473677,-99) , 
+2, -1.02867, 1, 0, 0.489396,-99) , 
+4, 540.964, 0, 0, 0.49775,-99)    );
+  // itree = 43
+  fBoostWeights.push_back(0.0993168);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0.415461, 1, 1, 0.653817,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, -2.42662, 1, 1, 0.528158,-99) , 
+NN(
+0, 
+0, 
+-1, 972.441, 1, -1, 0.401882,-99) , 
+11, 56.3987, 0, 0, 0.511791,-99) , 
+11, 184.362, 0, 0, 0.526738,-99)    );
+  // itree = 44
+  fBoostWeights.push_back(0.145242);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 735.105, 1, 1, 0.63589,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.577348,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.474018,-99) , 
+13, -0.613355, 0, 0, 0.540489,-99) , 
+3, 72.6458, 1, 0, 0.557611,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.504678,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.39799,-99) , 
+3, 76.4554, 0, 0, 0.481729,-99) , 
+NN(
+0, 
+0, 
+-1, 0.278065, 1, -1, 0.297019,-99) , 
+12, 792.463, 0, 0, 0.434625,-99) , 
+14, 0.384354, 1, 0, 0.513647,-99)    );
+  // itree = 45
+  fBoostWeights.push_back(0.150521);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 84.0506, 1, 1, 0.603642,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.56572,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.452913,-99) , 
+7, 99.9822, 0, 0, 0.497953,-99) , 
+6, -0.141276, 0, 0, 0.535431,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.661838,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.471845,-99) , 
+9, 441.357, 0, 0, 0.493747,-99) , 
+NN(
+0, 
+0, 
+-1, 1.13892, 0, -1, 0.340506,-99) , 
+13, 0.562941, 1, 0, 0.445114,-99) , 
+6, 0.59568, 1, 0, 0.505866,-99)    );
+  // itree = 46
+  fBoostWeights.push_back(0.140995);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 76.4554, 1, 1, 0.558522,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.365481,-99) , 
+14, -2.3926, 0, 0, 0.546151,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.585092,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384928,-99) , 
+11, 123.182, 1, 0, 0.536647,-99) , 
+NN(
+0, 
+0, 
+-1, 0.342773, 1, -1, 0.431448,-99) , 
+10, 1.10607, 0, 0, 0.466216,-99) , 
+14, -0.083448, 1, 0, 0.505388,-99)    );
+  // itree = 47
+  fBoostWeights.push_back(0.136857);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 186.698, 0, 1, 0.698045,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.610543,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.355471,-99) , 
+10, 1.60268, 1, 0, 0.551394,-99) , 
+8, -1.31703, 1, 0, 0.603978,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.547238,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.468929,-99) , 
+2, -0.113235, 1, 0, 0.506669,-99) , 
+NN(
+0, 
+0, 
+-1, 0.339425, 0, -1, 0.35332,-99) , 
+3, 97.3423, 1, 0, 0.491651,-99) , 
+11, 143.983, 0, 0, 0.51305,-99)    );
+  // itree = 48
+  fBoostWeights.push_back(0.138567);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.43046, 0, 1, 0.534851,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537792,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.363217,-99) , 
+12, 1233.09, 0, 0, 0.425419,-99) , 
+2, -1.02693, 0, 0, 0.516031,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.642843,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.481185,-99) , 
+7, 37.1226, 1, 0, 0.539753,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.574866,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.376898,-99) , 
+11, 156.75, 0, 0, 0.409472,-99) , 
+0, 126.144, 0, 0, 0.444148,-99) , 
+7, 71.8394, 0, 0, 0.486676,-99)    );
+  // itree = 49
+  fBoostWeights.push_back(0.0878439);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, -0.279654, 0, 1, 0.62076,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.572852,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.495825,-99) , 
+9, 195.694, 1, 0, 0.536108,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50038,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.36135,-99) , 
+5, 0.437504, 1, 0, 0.47017,-99) , 
+8, -0.750558, 1, 0, 0.501707,-99) , 
+3, 68.8601, 1, 0, 0.513875,-99)    );
+  // itree = 50
+  fBoostWeights.push_back(0.13136);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 652.4, 0, 1, 0.698147,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.626099,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409204,-99) , 
+0, 68.5711, 1, 0, 0.498778,-99) , 
+12, 792.564, 1, 0, 0.579167,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, -1.66048, 0, 1, 0.604246,-99) , 
+NN(
+0, 
+0, 
+-1, 115.887, 1, -1, 0.462903,-99) , 
+0, 193.995, 0, 0, 0.483152,-99) , 
+2, 1.02895, 0, 0, 0.50173,-99)    );
+  // itree = 51
+  fBoostWeights.push_back(0.114854);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.609787,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.570304,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.472819,-99) , 
+10, 0.742048, 1, 0, 0.520626,-99) , 
+NN(
+0, 
+0, 
+-1, 0.322104, 1, -1, 0.442489,-99) , 
+6, -0.118257, 1, 0, 0.480948,-99) , 
+12, 2492.61, 0, 0, 0.490442,-99)    );
+  // itree = 52
+  fBoostWeights.push_back(0.137838);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.676121,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.453001,-99) , 
+0, 97.4666, 1, 0, 0.616346,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.588154,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.391506,-99) , 
+4, 296.054, 0, 0, 0.469078,-99) , 
+2, 0.334961, 1, 0, 0.560913,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.577005,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.467434,-99) , 
+12, 1887.56, 0, 0, 0.485588,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.316958,-99) , 
+13, -1.87436, 0, 0, 0.476382,-99) , 
+8, 1.76823, 0, 0, 0.498768,-99)    );
+  // itree = 53
+  fBoostWeights.push_back(0.111244);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.99995, 1, 1, 0.572785,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537674,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.459769,-99) , 
+4, 281.024, 0, 0, 0.501189,-99) , 
+14, -0.477525, 1, 0, 0.530401,-99) , 
+NN(
+0, 
+0, 
+-1, 0.303979, 1, -1, 0.420717,-99) , 
+3, 97.3423, 1, 0, 0.519318,-99)    );
+  // itree = 54
+  fBoostWeights.push_back(0.134223);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.589597,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.48288,-99) , 
+2, 0.799316, 1, 0, 0.566386,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.522834,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.311033,-99) , 
+13, 0.272406, 0, 0, 0.408123,-99) , 
+3, 68.0446, 0, 0, 0.548929,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.632123,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.474173,-99) , 
+6, 1.17215, 0, 0, 0.495952,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.306746,-99) , 
+6, 1.78383, 1, 0, 0.483926,-99) , 
+3, 85.9494, 1, 0, 0.522354,-99)    );
+  // itree = 55
+  fBoostWeights.push_back(0.0937034);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 87.8482, 0, 1, 0.595253,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.634205,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.490853,-99) , 
+5, 0.45302, 0, 0, 0.502353,-99) , 
+10, 2.6542, 0, 0, 0.520907,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.586091,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.393663,-99) , 
+5, 0.51558, 0, 0, 0.456222,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.284651,-99) , 
+5, 0.531988, 1, 0, 0.423902,-99) , 
+5, 0.474564, 1, 0, 0.50717,-99)    );
+  // itree = 56
+  fBoostWeights.push_back(0.124839);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 267.738, 1, 1, 0.709869,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.573199,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.373008,-99) , 
+5, 0.466896, 1, 0, 0.528496,-99) , 
+13, 0.674616, 0, 0, 0.59109,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.568579,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.431202,-99) , 
+12, 740.412, 1, 0, 0.53533,-99) , 
+NN(
+0, 
+0, 
+-1, -1.06794, 0, -1, 0.472282,-99) , 
+12, 836.524, 1, 0, 0.495112,-99) , 
+3, 74.5565, 1, 0, 0.517023,-99)    );
+  // itree = 57
+  fBoostWeights.push_back(0.156173);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.29434, 1, 1, 0.567211,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.567248,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.36994,-99) , 
+11, 80.5194, 0, 0, 0.471659,-99) , 
+10, 2.67792, 1, 0, 0.552289,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.665156,-99) , 
+NN(
+0, 
+0, 
+-1, 0.459865, 1, -1, 0.423863,-99) , 
+4, 343.357, 0, 0, 0.471458,-99) , 
+9, 141.531, 0, 0, 0.53187,-99)    );
+  // itree = 58
+  fBoostWeights.push_back(0.122048);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.680512,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.546246,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.399375,-99) , 
+14, 2.19832, 1, 0, 0.540269,-99) , 
+7, 296.881, 0, 0, 0.548281,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.555372,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.396741,-99) , 
+14, 0.509416, 1, 0, 0.49373,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.330394,-99) , 
+14, -0.554784, 0, 0, 0.450446,-99) , 
+0, 193.989, 1, 0, 0.53762,-99)    );
+  // itree = 59
+  fBoostWeights.push_back(0.101134);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.709036,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.368753,-99) , 
+8, 0.466983, 1, 0, 0.601163,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.640024,-99) , 
+NN(
+0, 
+0, 
+-1, 74.5565, 0, -1, 0.472267,-99) , 
+8, 2.87086, 0, 0, 0.483309,-99) , 
+2, 1.48572, 0, 0, 0.495367,-99)    );
+  // itree = 60
+  fBoostWeights.push_back(0.0877518);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 117.137, 0, 1, 0.569464,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514933,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.374378,-99) , 
+5, 0.499651, 1, 0, 0.501434,-99) , 
+3, 89.747, 0, 0, 0.52221,-99) , 
+NN(
+0, 
+0, 
+-1, -1.54501, 0, -1, 0.444603,-99) , 
+2, -0.571777, 0, 0, 0.499565,-99)    );
+  // itree = 61
+  fBoostWeights.push_back(0.0757965);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.653906,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.399834,-99) , 
+8, 0.524321, 1, 0, 0.583586,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.507821,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.261869,-99) , 
+6, -1.19185, 0, 0, 0.498993,-99) , 
+6, -1.37702, 1, 0, 0.509814,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.344181,-99) , 
+6, -2.0229, 0, 0, 0.501785,-99)    );
+  // itree = 62
+  fBoostWeights.push_back(0.119237);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.01078, 0, 1, 0.730529,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.600499,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.413125,-99) , 
+9, 139.391, 0, 0, 0.561001,-99) , 
+3, 74.5565, 1, 0, 0.60658,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.649364,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.532705,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.467432,-99) , 
+8, -1.24642, 1, 0, 0.492734,-99) , 
+6, 1.77469, 0, 0, 0.500225,-99) , 
+14, 1.12111, 0, 0, 0.523845,-99)    );
+  // itree = 63
+  fBoostWeights.push_back(0.110471);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.673544,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536495,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.381545,-99) , 
+2, -1.48307, 0, 0, 0.520136,-99) , 
+NN(
+0, 
+0, 
+-1, -2.02095, 0, -1, 0.447319,-99) , 
+5, 0.321547, 1, 0, 0.47706,-99) , 
+12, 2838.23, 0, 0, 0.485632,-99)    );
+  // itree = 64
+  fBoostWeights.push_back(0.16722);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.574945,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.370447,-99) , 
+3, 69.0387, 0, 0, 0.549725,-99) , 
+NN(
+0, 
+0, 
+-1, -1.30757, 0, -1, 0.454656,-99) , 
+3, 85.9494, 1, 0, 0.510838,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.674823,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.435213,-99) , 
+8, -1.44694, 1, 0, 0.532402,-99) , 
+NN(
+0, 
+0, 
+-1, 605.705, 0, -1, 0.406693,-99) , 
+5, 0.416143, 0, 0, 0.450975,-99) , 
+12, 1055.06, 0, 0, 0.48102,-99)    );
+  // itree = 65
+  fBoostWeights.push_back(0.138133);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.676627,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.566132,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.480794,-99) , 
+2, -0.245571, 1, 0, 0.521824,-99) , 
+2, 1.71289, 0, 0, 0.533645,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.591695,-99) , 
+NN(
+0, 
+0, 
+-1, -0.271054, 1, -1, 0.343006,-99) , 
+3, 70.7589, 1, 0, 0.402043,-99) , 
+5, 0.458606, 1, 0, 0.509268,-99)    );
+  // itree = 66
+  fBoostWeights.push_back(0.138999);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.587487,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.488686,-99) , 
+2, 0.336914, 1, 0, 0.555245,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.588631,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.445233,-99) , 
+3, 89.747, 0, 0, 0.491993,-99) , 
+8, -0.0436663, 0, 0, 0.523991,-99) , 
+NN(
+0, 
+0, 
+-1, -1.75335, 1, -1, 0.3675,-99) , 
+5, 0.504286, 1, 0, 0.512868,-99)    );
+  // itree = 67
+  fBoostWeights.push_back(0.108156);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.652853,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.526528,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.459492,-99) , 
+3, 74.5565, 0, 0, 0.512814,-99) , 
+5, 0.526952, 0, 0, 0.521532,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.589052,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.392202,-99) , 
+6, 0.357073, 0, 0, 0.473952,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.296043,-99) , 
+8, -2.17906, 0, 0, 0.423416,-99) , 
+10, 2.66927, 1, 0, 0.503711,-99)    );
+  // itree = 68
+  fBoostWeights.push_back(0.153045);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.01297, 0, 1, 0.552469,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.587631,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.433115,-99) , 
+8, -2.03502, 1, 0, 0.471067,-99) , 
+4, 295.19, 0, 0, 0.513642,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.649273,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.455721,-99) , 
+5, 0.427171, 0, 0, 0.534567,-99) , 
+NN(
+0, 
+0, 
+-1, -1.54178, 0, -1, 0.391557,-99) , 
+2, 0.573591, 0, 0, 0.439755,-99) , 
+3, 80.253, 0, 0, 0.487136,-99)    );
+  // itree = 69
+  fBoostWeights.push_back(0.0770122);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 296.937, 0, 1, 0.524934,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505954,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.359257,-99) , 
+5, 0.371081, 1, 0, 0.443409,-99) , 
+6, -1.07017, 0, 0, 0.507334,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.313669,-99) , 
+14, 2.19832, 1, 0, 0.500772,-99)    );
+  // itree = 70
+  fBoostWeights.push_back(0.130601);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.540761,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.418419,-99) , 
+0, 80.5958, 1, 0, 0.516562,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.503735,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.297614,-99) , 
+12, 832.612, 0, 0, 0.444296,-99) , 
+0, 111.731, 1, 0, 0.497135,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.523567,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.323726,-99) , 
+6, -1.54663, 0, 0, 0.488179,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50288,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.288026,-99) , 
+13, -0.410084, 1, 0, 0.366346,-99) , 
+6, 0.357492, 1, 0, 0.441511,-99) , 
+3, 85.9494, 1, 0, 0.474213,-99)    );
+  // itree = 71
+  fBoostWeights.push_back(0.132676);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.104818, 0, 1, 0.625637,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.522456,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.453632,-99) , 
+6, 0.596122, 0, 0, 0.476517,-99) , 
+3, 68.8601, 1, 0, 0.488778,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.63906,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.352883,-99) , 
+10, -1.15044, 1, 0, 0.504596,-99) , 
+NN(
+0, 
+0, 
+-1, -1.18745, 0, -1, 0.330561,-99) , 
+4, 313.857, 0, 0, 0.414044,-99) , 
+5, 0.458138, 1, 0, 0.475079,-99)    );
+  // itree = 72
+  fBoostWeights.push_back(0.0953425);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.702939,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.518545,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.355324,-99) , 
+14, 1.71841, 1, 0, 0.50613,-99) , 
+NN(
+0, 
+0, 
+-1, -0.797125, 0, -1, 0.410669,-99) , 
+3, 74.5565, 0, 0, 0.487556,-99) , 
+2, 1.94234, 0, 0, 0.497449,-99)    );
+  // itree = 73
+  fBoostWeights.push_back(0.17142);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.373779, 1, 1, 0.639397,-99) , 
+NN(
+0, 
+0, 
+-1, 89.747, 1, -1, 0.405313,-99) , 
+13, -0.11942, 0, 0, 0.541184,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.557839,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.450457,-99) , 
+12, 1000.9, 0, 0, 0.509125,-99) , 
+NN(
+0, 
+0, 
+-1, 2.17034, 0, -1, 0.419032,-99) , 
+13, -0.346826, 1, 0, 0.454364,-99) , 
+6, -0.832194, 1, 0, 0.479362,-99)    );
+  // itree = 74
+  fBoostWeights.push_back(0.114252);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 77.2312, 1, 1, 0.691097,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.566451,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.412772,-99) , 
+2, -1.55028, 1, 0, 0.493914,-99) , 
+5, 0.415725, 0, 0, 0.570389,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.519487,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.402608,-99) , 
+7, 187.676, 1, 0, 0.505919,-99) , 
+NN(
+0, 
+0, 
+-1, 166.276, 0, -1, 0.419258,-99) , 
+5, 0.439297, 1, 0, 0.486179,-99) , 
+2, -1.02881, 1, 0, 0.50342,-99)    );
+  // itree = 75
+  fBoostWeights.push_back(0.105707);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.625583,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.484358,-99) , 
+4, 299.095, 1, 0, 0.565339,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.533375,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.456405,-99) , 
+5, 0.389268, 0, 0, 0.486775,-99) , 
+10, 2.39062, 0, 0, 0.505992,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.348266,-99) , 
+10, 3.63658, 1, 0, 0.500573,-99)    );
+  // itree = 76
+  fBoostWeights.push_back(0.14028);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.382859, 1, 1, 0.716465,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.587364,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.36555,-99) , 
+6, 0.358259, 1, 0, 0.506514,-99) , 
+3, 76.4554, 1, 0, 0.573262,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.635884,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.479281,-99) , 
+3, 79.6399, 1, 0, 0.491784,-99) , 
+NN(
+0, 
+0, 
+-1, 1.40983, 0, -1, 0.390345,-99) , 
+3, 78.3542, 0, 0, 0.464374,-99) , 
+2, 1.02797, 0, 0, 0.486757,-99)    );
+  // itree = 77
+  fBoostWeights.push_back(0.0698244);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.667638,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.563449,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.498137,-99) , 
+2, 0.744396, 0, 0, 0.515995,-99) , 
+2, -1.94296, 1, 0, 0.523037,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.554132,-99) , 
+NN(
+0, 
+0, 
+-1, 313.048, 0, -1, 0.383218,-99) , 
+2, 0.765299, 0, 0, 0.422058,-99) , 
+4, 427.351, 1, 0, 0.510913,-99)    );
+  // itree = 78
+  fBoostWeights.push_back(0.12993);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.963832, 0, 1, 0.616254,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.521714,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.371108,-99) , 
+0, 67.2603, 0, 0, 0.467786,-99) , 
+2, -0.113421, 0, 0, 0.549451,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.635063,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.484831,-99) , 
+9, 257.292, 1, 0, 0.58683,-99) , 
+NN(
+0, 
+0, 
+-1, 1861.16, 1, -1, 0.453441,-99) , 
+2, -1.25546, 1, 0, 0.473566,-99) , 
+5, 0.274834, 1, 0, 0.495165,-99)    );
+  // itree = 79
+  fBoostWeights.push_back(0.156823);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.630698,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.393662,-99) , 
+10, -2.15848, 0, 0, 0.59359,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.531505,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.335967,-99) , 
+6, -1.54446, 0, 0, 0.510191,-99) , 
+9, 228.09, 0, 0, 0.548731,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.661637,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.441778,-99) , 
+12, 1044.61, 1, 0, 0.566107,-99) , 
+NN(
+0, 
+0, 
+-1, 0.536133, 0, -1, 0.437553,-99) , 
+13, -1.7572, 1, 0, 0.461866,-99) , 
+2, 0.114002, 0, 0, 0.503217,-99)    );
+  // itree = 80
+  fBoostWeights.push_back(0.109201);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.46085, 1, 1, 0.60442,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.383138,-99) , 
+6, -1.30911, 0, 0, 0.573352,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.525059,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.468858,-99) , 
+10, -1.61686, 1, 0, 0.489285,-99) , 
+NN(
+0, 
+0, 
+-1, -2.62068, 0, -1, 0.389572,-99) , 
+13, 1.73794, 1, 0, 0.480926,-99) , 
+5, 0.439877, 0, 0, 0.505372,-99)    );
+  // itree = 81
+  fBoostWeights.push_back(0.130805);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 75.1014, 0, 1, 0.626615,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.550323,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.306566,-99) , 
+3, 85.9494, 1, 0, 0.457512,-99) , 
+12, 616.742, 0, 0, 0.5672,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536373,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.468576,-99) , 
+11, 98.1954, 0, 0, 0.501035,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.319468,-99) , 
+5, 0.524842, 1, 0, 0.493773,-99) , 
+12, 772.36, 1, 0, 0.517266,-99)    );
+  // itree = 82
+  fBoostWeights.push_back(0.0938875);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1196.28, 1, 1, 0.620166,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.404823,-99) , 
+6, -0.834961, 0, 0, 0.569204,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.637976,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.481614,-99) , 
+7, 296.878, 0, 0, 0.488578,-99) , 
+NN(
+0, 
+0, 
+-1, 83.4911, 1, -1, 0.413787,-99) , 
+13, 0.978107, 1, 0, 0.474102,-99) , 
+3, 97.3423, 0, 0, 0.487435,-99)    );
+  // itree = 83
+  fBoostWeights.push_back(0.110175);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.55317, 0, 1, 0.668717,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.637881,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.402541,-99) , 
+2, -0.342913, 1, 0, 0.518757,-99) , 
+8, -0.922433, 1, 0, 0.593022,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514913,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.448725,-99) , 
+6, 0.357701, 1, 0, 0.489775,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.338502,-99) , 
+9, 492.768, 1, 0, 0.481118,-99) , 
+5, 0.481077, 0, 0, 0.500603,-99)    );
+  // itree = 84
+  fBoostWeights.push_back(0.101396);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.658907,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.667311,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.486389,-99) , 
+6, -0.347796, 0, 0, 0.592314,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.533245,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.467806,-99) , 
+3, 87.8482, 0, 0, 0.492814,-99) , 
+2, -1.25684, 1, 0, 0.50805,-99) , 
+12, 2678.38, 0, 0, 0.517272,-99)    );
+  // itree = 85
+  fBoostWeights.push_back(0.132227);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 141.109, 1, 1, 0.587439,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.559443,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.464432,-99) , 
+6, 0.357352, 0, 0, 0.504083,-99) , 
+10, -2.17257, 1, 0, 0.529666,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.572255,-99) , 
+NN(
+0, 
+0, 
+-1, 1097.63, 1, -1, 0.343765,-99) , 
+2, 0.785482, 0, 0, 0.416562,-99) , 
+3, 97.3423, 1, 0, 0.517993,-99)    );
+  // itree = 86
+  fBoostWeights.push_back(0.0958693);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.57798, 0, 1, 0.539091,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.41662,-99) , 
+8, -2.73717, 0, 0, 0.531758,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.590171,-99) , 
+NN(
+0, 
+0, 
+-1, 0.460464, 1, -1, 0.442955,-99) , 
+2, 1.25081, 0, 0, 0.46884,-99) , 
+3, 89.747, 1, 0, 0.513754,-99)    );
+  // itree = 87
+  fBoostWeights.push_back(0.0820511);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 90.7981, 0, 1, 0.636581,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.587881,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.497064,-99) , 
+14, 1.36531, 0, 0, 0.508259,-99) , 
+6, -1.78488, 1, 0, 0.522971,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.520928,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.383668,-99) , 
+6, 0.828451, 1, 0, 0.487712,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505019,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.212244,-99) , 
+8, -1.96359, 1, 0, 0.322314,-99) , 
+5, 0.399202, 1, 0, 0.441417,-99) , 
+13, 0.72559, 1, 0, 0.503079,-99)    );
+  // itree = 88
+  fBoostWeights.push_back(0.074162);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.5949,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 84.0506, 0, 1, 0.587143,-99) , 
+NN(
+0, 
+0, 
+-1, 831.734, 0, -1, 0.476197,-99) , 
+2, -1.48584, 1, 0, 0.487726,-99) , 
+5, 0.206079, 1, 0, 0.498737,-99)    );
+  // itree = 89
+  fBoostWeights.push_back(0.159568);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.594979,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.353228,-99) , 
+7, 186.475, 1, 0, 0.571224,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.535279,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.433478,-99) , 
+3, 89.747, 1, 0, 0.505918,-99) , 
+13, 0.535657, 1, 0, 0.541789,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 343.464, 0, 1, 0.557033,-99) , 
+NN(
+0, 
+0, 
+-1, -1.29031, 0, -1, 0.386097,-99) , 
+6, 0.357143, 0, 0, 0.456217,-99) , 
+13, -0.721352, 0, 0, 0.518898,-99)    );
+  // itree = 90
+  fBoostWeights.push_back(0.123248);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537331,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.393862,-99) , 
+6, 1.7484, 1, 0, 0.525406,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.525985,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.292273,-99) , 
+14, -1.62603, 0, 0, 0.440617,-99) , 
+6, -1.54455, 0, 0, 0.514609,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.564425,-99) , 
+NN(
+0, 
+0, 
+-1, 0.353725, 1, -1, 0.3755,-99) , 
+10, 1.75377, 0, 0, 0.414571,-99) , 
+13, 0.978107, 1, 0, 0.495503,-99)    );
+  // itree = 91
+  fBoostWeights.push_back(0.125974);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.113537, 0, 1, 0.574001,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.586386,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.47234,-99) , 
+14, -1.20312, 1, 0, 0.498275,-99) , 
+7, 130.403, 0, 0, 0.519164,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.544113,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.292483,-99) , 
+5, 0.370974, 1, 0, 0.459752,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.251062,-99) , 
+2, 0.34382, 1, 0, 0.39736,-99) , 
+14, 1.26675, 1, 0, 0.50285,-99)    );
+  // itree = 92
+  fBoostWeights.push_back(0.0936944);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 90.0003, 0, 1, 0.706898,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536388,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.47707,-99) , 
+6, 0.860003, 1, 0, 0.520202,-99) , 
+6, -1.8048, 1, 0, 0.530997,-99) , 
+NN(
+0, 
+0, 
+-1, 89.7579, 0, -1, 0.379106,-99) , 
+6, -2.02032, 0, 0, 0.523369,-99)    );
+  // itree = 93
+  fBoostWeights.push_back(0.0926795);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.612127,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.491694,-99) , 
+14, 1.59367, 0, 0, 0.506981,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.531692,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.369588,-99) , 
+7, 185.895, 0, 0, 0.402489,-99) , 
+4, 359.351, 1, 0, 0.485762,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.289448,-99) , 
+0, 275.155, 1, 0, 0.478103,-99)    );
+  // itree = 94
+  fBoostWeights.push_back(0.113475);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.302135, 1, 1, 0.537395,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.621912,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409144,-99) , 
+6, 1.04694, 0, 0, 0.451016,-99) , 
+5, 0.264627, 0, 0, 0.51703,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.311892,-99) , 
+5, 0.526989, 1, 0, 0.509441,-99)    );
+  // itree = 95
+  fBoostWeights.push_back(0.0819061);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.65361,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.454894,-99) , 
+6, -0.119536, 0, 0, 0.572378,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.62563,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.492756,-99) , 
+2, 0.34382, 0, 0, 0.550512,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508934,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.449394,-99) , 
+8, 0.299712, 0, 0, 0.480614,-99) , 
+8, -2.38002, 1, 0, 0.492936,-99) , 
+8, 2.73493, 0, 0, 0.500146,-99)    );
+  // itree = 96
+  fBoostWeights.push_back(0.104462);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.673005,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.492758,-99) , 
+11, 69.7583, 0, 0, 0.579654,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.389066,-99) , 
+11, 96.0876, 1, 0, 0.553272,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.622515,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.461209,-99) , 
+9, 213.571, 0, 0, 0.548947,-99) , 
+NN(
+0, 
+0, 
+-1, 0.943987, 1, -1, 0.478194,-99) , 
+8, 1.73898, 0, 0, 0.495936,-99) , 
+9, 141.793, 1, 0, 0.511695,-99)    );
+  // itree = 97
+  fBoostWeights.push_back(0.142404);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.556424,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384659,-99) , 
+14, -1.85754, 0, 0, 0.546845,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.555807,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.392144,-99) , 
+5, 0.519306, 0, 0, 0.447514,-99) , 
+5, 0.45809, 1, 0, 0.528316,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.283751,-99) , 
+6, 2.02369, 1, 0, 0.519693,-99)    );
+  // itree = 98
+  fBoostWeights.push_back(0.100916);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.66707,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.465926,-99) , 
+2, -0.118606, 0, 0, 0.577224,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.708475,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.470334,-99) , 
+11, 100.4, 1, 0, 0.5747,-99) , 
+NN(
+0, 
+0, 
+-1, 222.285, 1, -1, 0.4635,-99) , 
+9, 483.774, 0, 0, 0.472652,-99) , 
+10, -3.11472, 1, 0, 0.48531,-99)    );
+  // itree = 99
+  fBoostWeights.push_back(0.0677444);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.6241,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.650983,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.4809,-99) , 
+6, -2.26065, 1, 0, 0.486236,-99) , 
+10, -3.57575, 1, 0, 0.493325,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.289869,-99) , 
+14, 2.19832, 1, 0, 0.487282,-99)    );
+  // itree = 100
+  fBoostWeights.push_back(0.128812);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.88456, 0, 1, 0.654996,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.578802,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.45377,-99) , 
+6, -1.06689, 0, 0, 0.551766,-99) , 
+5, 0.458589, 0, 0, 0.577855,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.52562,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.347779,-99) , 
+2, 1.48296, 1, 0, 0.51235,-99) , 
+NN(
+0, 
+0, 
+-1, 84.0506, 0, -1, 0.394806,-99) , 
+12, 1961.43, 1, 0, 0.498562,-99) , 
+8, -0.935593, 1, 0, 0.531815,-99)    );
+  // itree = 101
+  fBoostWeights.push_back(0.156616);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.598687,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.393508,-99) , 
+13, -1.84795, 0, 0, 0.570087,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.594342,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.389456,-99) , 
+2, -1.22328, 1, 0, 0.47485,-99) , 
+7, 104.312, 1, 0, 0.537373,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.543192,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.437313,-99) , 
+7, 74.9114, 0, 0, 0.49485,-99) , 
+NN(
+0, 
+0, 
+-1, 85.9494, 1, -1, 0.416177,-99) , 
+14, 0.509043, 1, 0, 0.471259,-99) , 
+2, -0.343052, 1, 0, 0.498119,-99)    );
+  // itree = 102
+  fBoostWeights.push_back(0.130656);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -2.0279, 1, 1, 0.615307,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.569618,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.464028,-99) , 
+13, -1.45073, 1, 0, 0.495322,-99) , 
+6, -1.30464, 1, 0, 0.522632,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537566,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.445015,-99) , 
+11, 94.0952, 0, 0, 0.487688,-99) , 
+NN(
+0, 
+0, 
+-1, 0.604427, 0, -1, 0.389992,-99) , 
+5, 0.390065, 1, 0, 0.455018,-99) , 
+2, -0.113467, 1, 0, 0.488041,-99)    );
+  // itree = 103
+  fBoostWeights.push_back(0.0870339);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.0953311, 1, 1, 0.720688,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.471131,-99) , 
+12, 1240.17, 1, 0, 0.634109,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.594622,-99) , 
+NN(
+0, 
+0, 
+-1, -1.36012, 0, -1, 0.476212,-99) , 
+10, 3.14379, 0, 0, 0.48605,-99) , 
+14, -1.75632, 1, 0, 0.502388,-99)    );
+  // itree = 104
+  fBoostWeights.push_back(0.108698);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.715409,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.592597,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.459562,-99) , 
+10, 1.93896, 0, 0, 0.546761,-99) , 
+NN(
+0, 
+0, 
+-1, -0.29069, 0, -1, 0.471165,-99) , 
+8, -0.845424, 1, 0, 0.504838,-99) , 
+6, -2.26007, 1, 0, 0.511052,-99)    );
+  // itree = 105
+  fBoostWeights.push_back(0.108825);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0.263439, 0, 1, 0.628429,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.5318,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.383918,-99) , 
+14, 1.84448, 1, 0, 0.523264,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.324373,-99) , 
+3, 101.14, 1, 0, 0.516182,-99) , 
+5, 0.223351, 1, 0, 0.532456,-99)    );
+  // itree = 106
+  fBoostWeights.push_back(0.0470116);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.709214,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.459185,-99) , 
+2, 0.112909, 0, 0, 0.606617,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.502096,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.362798,-99) , 
+3, 72.2589, 0, 0, 0.496873,-99) , 
+3, 70.6131, 1, 0, 0.507135,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.353346,-99) , 
+3, 66.9613, 0, 0, 0.50242,-99)    );
+  // itree = 107
+  fBoostWeights.push_back(0.151058);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.279804, 1, 1, 0.60334,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.34917,-99) , 
+6, -1.07066, 0, 0, 0.564405,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.593643,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.448198,-99) , 
+6, 0.356306, 1, 0, 0.543645,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.567667,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442822,-99) , 
+6, 1.54313, 0, 0, 0.460745,-99) , 
+8, -2.06785, 1, 0, 0.475702,-99) , 
+9, 141.109, 1, 0, 0.498814,-99)    );
+  // itree = 108
+  fBoostWeights.push_back(0.0530395);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.704009,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.498123,-99) , 
+10, 1.28209, 0, 0, 0.600195,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.627972,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.491704,-99) , 
+7, 296.878, 0, 0, 0.499202,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.346009,-99) , 
+5, 0.527069, 1, 0, 0.49363,-99) , 
+11, 210.118, 0, 0, 0.502131,-99)    );
+  // itree = 109
+  fBoostWeights.push_back(0.142664);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.584106,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384392,-99) , 
+2, 1.48472, 1, 0, 0.568237,-99) , 
 NN(
 NN(
 0, 
@@ -1295,191 +4056,28 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.41279,-99) , 
-12, -3.54899, 0, 0, 0.508817,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522759,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456739,-99) , 
-10, 2.09176, 0, 0, 0.466227,-99) , 
-14, 962.294, 0, 0, 0.482063,-99) , 
-14, 2540.89, 0, 0, 0.486037,-99)    );
-  // itree = 30
-  fBoostWeights.push_back(0.0390525);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.373256,-99) , 
+0, 69.9173, 1, 0, 0.487624,-99) , 
+0, 89.8778, 0, 0, 0.523147,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.634465,-99) , 
+-1, 0, 1, 1, 0.581878,-99) , 
 NN(
 0, 
 0, 
--1, -1.54756, 0, -1, 0.487816,-99) , 
-14, 2636.38, 0, 0, 0.491865,-99) , 
+-1, 0, 1, -1, 0.358702,-99) , 
+14, -0.138118, 1, 0, 0.483586,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.35266,-99) , 
-4, 2.67909, 1, 0, 0.487685,-99)    );
-  // itree = 31
-  fBoostWeights.push_back(0.0537086);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.429535, 1, 1, 0.59637,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508458,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456534,-99) , 
-12, -2.53678, 0, 0, 0.495694,-99) , 
-NN(
-0, 
-0, 
--1, -0.359704, 0, -1, 0.41185,-99) , 
-12, 3.52057, 1, 0, 0.489149,-99) , 
-7, 1189.17, 0, 0, 0.495277,-99)    );
-  // itree = 32
-  fBoostWeights.push_back(0.0626897);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.588039,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514674,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47088,-99) , 
-11, 193.58, 0, 0, 0.493997,-99) , 
-7, 1166.24, 0, 0, 0.499012,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524816,-99) , 
-NN(
-0, 
-0, 
--1, 0.426455, 1, -1, 0.392531,-99) , 
-3, 0.888777, 0, 0, 0.426708,-99) , 
-5, -1.54757, 0, 0, 0.4916,-99)    );
-  // itree = 33
-  fBoostWeights.push_back(0.0528372);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.614607,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506983,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.455385,-99) , 
-4, 1.01913, 1, 0, 0.492143,-99) , 
-NN(
-0, 
-0, 
--1, 2.09248, 1, -1, 0.422392,-99) , 
-5, -1.54762, 0, 0, 0.485045,-99) , 
-14, 2635.8, 0, 0, 0.488619,-99)    );
-  // itree = 34
-  fBoostWeights.push_back(0.0586325);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.625488, 0, 1, 0.536621,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503018,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460321,-99) , 
-9, 264.918, 0, 0, 0.481418,-99) , 
-9, 370.404, 0, 0, 0.493297,-99) , 
-NN(
-0, 
-0, 
--1, 0.520386, 0, -1, 0.420963,-99) , 
-1, 117.474, 1, 0, 0.487324,-99)    );
-  // itree = 35
-  fBoostWeights.push_back(0.0679739);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.582907,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524179,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481893,-99) , 
-10, -0.690973, 1, 0, 0.499026,-99) , 
-14, 1066.38, 0, 0, 0.527415,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.569603,-99) , 
-NN(
-0, 
-0, 
--1, -1.91943, 0, -1, 0.470438,-99) , 
-3, -2.28754, 1, 0, 0.475244,-99) , 
-2, 0.275145, 1, 0, 0.48773,-99)    );
-  // itree = 36
-  fBoostWeights.push_back(0.0368413);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.619544,-99) , 
-NN(
-0, 
-0, 
--1, 1.78562, 1, -1, 0.484394,-99) , 
-14, 2635.8, 0, 0, 0.488042,-99)    );
-  // itree = 37
-  fBoostWeights.push_back(0.0660035);
+-1, 0, 1, -1, 0.283772,-99) , 
+7, 61.9492, 0, 0, 0.418557,-99) , 
+5, 0.49969, 1, 0, 0.513254,-99)    );
+  // itree = 110
+  fBoostWeights.push_back(0.140068);
   fForest.push_back( 
 NN(
 NN(
@@ -1487,222 +4085,104 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.59342,-99) , 
+-1, 0, 1, 1, 0.568373,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.495378,-99) , 
-1, 70.2741, 0, 0, 0.558718,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530965,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486263,-99) , 
-2, 0.286676, 1, 0, 0.49803,-99) , 
-9, 376.086, 0, 0, 0.50914,-99) , 
-NN(
+-1, 0, 1, -1, 0.480799,-99) , 
+6, 0.121582, 1, 0, 0.529272,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.534573,-99) , 
+-1, 0, 1, 1, 0.51965,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.453956,-99) , 
-3, -0.981037, 1, 0, 0.469639,-99) , 
+-1, 0, 1, -1, 0.356495,-99) , 
+13, -1.1343, 1, 0, 0.441449,-99) , 
+2, -0.569475, 0, 0, 0.503379,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0.375305, 0, -1, 0.411417,-99) , 
-4, -1.24045, 0, 0, 0.457416,-99) , 
-1, 91.9875, 1, 0, 0.496316,-99)    );
-  // itree = 38
-  fBoostWeights.push_back(0.0621816);
+-1, 0, 1, 1, 0.540552,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.342571,-99) , 
+6, 0.831868, 1, 0, 0.496455,-99) , 
+NN(
+0, 
+0, 
+-1, 0.335224, 1, -1, 0.331205,-99) , 
+11, 69.056, 0, 0, 0.424434,-99) , 
+9, 141.109, 0, 0, 0.483965,-99)    );
+  // itree = 111
+  fBoostWeights.push_back(0.0760994);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1193.17, 0, 1, 0.555319,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514134,-99) , 
+-1, -0.0768462, 1, 1, 0.662331,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.434971,-99) , 
-11, 354.668, 1, 0, 0.485878,-99) , 
-0, 0.0879187, 0, 0, 0.531658,-99) , 
+-1, 0, 1, -1, 0.469396,-99) , 
+3, 85.9494, 1, 0, 0.593819,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.515566,-99) , 
+-1, 0, 1, 1, 0.682746,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.474864,-99) , 
-11, 196.326, 0, 0, 0.495772,-99) , 
+-1, 0, 1, -1, 0.479623,-99) , 
+10, 2.18039, 0, 0, 0.558035,-99) , 
 NN(
 0, 
 0, 
--1, 2.56566, 1, -1, 0.44844,-99) , 
-1, 98.5164, 1, 0, 0.487616,-99) , 
-6, 130.904, 0, 0, 0.498559,-99)    );
-  // itree = 39
-  fBoostWeights.push_back(0.0741558);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.538693,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491484,-99) , 
-7, 430.628, 0, 0, 0.523494,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521771,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.448215,-99) , 
-10, 0.221954, 0, 0, 0.474374,-99) , 
-4, -1.25983, 0, 0, 0.511376,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539009,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466819,-99) , 
-12, 0.741145, 1, 0, 0.501439,-99) , 
-NN(
-0, 
-0, 
--1, -2.12751, 0, -1, 0.413442,-99) , 
-3, -0.343648, 1, 0, 0.447382,-99) , 
-5, 1.30961, 1, 0, 0.502183,-99)    );
-  // itree = 40
-  fBoostWeights.push_back(0.0420014);
+-1, 56.7406, 0, -1, 0.481519,-99) , 
+6, 1.31017, 0, 0, 0.494694,-99) , 
+11, 190.997, 0, 0, 0.504353,-99)    );
+  // itree = 112
+  fBoostWeights.push_back(0.119348);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.603239,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51053,-99) , 
+-1, 0, 1, 1, 0.665739,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.469733,-99) , 
-1, 91.853, 1, 0, 0.500229,-99) , 
-7, 1375.18, 0, 0, 0.503482,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.396776,-99) , 
-2, 0.68528, 1, 0, 0.500085,-99)    );
-  // itree = 41
-  fBoostWeights.push_back(0.0306955);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.483679,-99) , 
+14, 0.722251, 1, 0, 0.609132,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1168.01, 0, 1, 0.507376,-99) , 
+-1, 0, 1, 1, 0.532456,-99) , 
 NN(
 0, 
 0, 
--1, -0.573041, 0, -1, 0.426821,-99) , 
-4, -2.31742, 0, 0, 0.502757,-99) , 
+-1, 0, 1, -1, 0.404078,-99) , 
+2, -1.02665, 0, 0, 0.509,-99) , 
 NN(
 0, 
 0, 
--1, 0.692687, 1, -1, 0.430429,-99) , 
-2, 0.632602, 1, 0, 0.497564,-99)    );
-  // itree = 42
-  fBoostWeights.push_back(0.0705621);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.586437,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.573991,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472393,-99) , 
-3, 0.382625, 0, 0, 0.519642,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508665,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464538,-99) , 
-10, 1.78756, 0, 0, 0.477677,-99) , 
-10, -1.60679, 1, 0, 0.488429,-99) , 
-14, 2363.68, 0, 0, 0.492432,-99)    );
-  // itree = 43
-  fBoostWeights.push_back(0.0504465);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.565132,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.543532,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484313,-99) , 
-7, 947.712, 0, 0, 0.491354,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.408027,-99) , 
-2, 0.662332, 1, 0, 0.487224,-99) , 
-2, 0.183661, 1, 0, 0.491965,-99)    );
-  // itree = 44
-  fBoostWeights.push_back(0.0617769);
+-1, 1044.54, 0, -1, 0.435581,-99) , 
+10, 1.7002, 1, 0, 0.484144,-99) , 
+8, -2.54585, 1, 0, 0.49959,-99)    );
+  // itree = 113
+  fBoostWeights.push_back(0.134586);
   fForest.push_back( 
 NN(
 NN(
@@ -1710,529 +4190,96 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.576954,-99) , 
+-1, 0, 1, 1, 0.633244,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.472865,-99) , 
-2, 0.502045, 1, 0, 0.556588,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.419702,-99) , 
-1, 60.4929, 0, 0, 0.536088,-99) , 
-NN(
+-1, 0, 1, -1, 0.49363,-99) , 
+2, -1.32108, 0, 0, 0.596392,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50782,-99) , 
+-1, 0, 1, 1, 0.514895,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.43485,-99) , 
-13, 39.0231, 0, 0, 0.492803,-99) , 
+-1, 0, 1, -1, 0.3626,-99) , 
+11, 91.4009, 0, 0, 0.439938,-99) , 
+5, 0.435166, 1, 0, 0.560078,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.424714,-99) , 
-13, 219.482, 1, 0, 0.488756,-99) , 
-14, 1446.23, 0, 0, 0.496866,-99)    );
-  // itree = 45
-  fBoostWeights.push_back(0.0247545);
+-1, 70.7589, 1, 1, 0.559939,-99) , 
+NN(
+0, 
+0, 
+-1, -1.86242, 0, -1, 0.457296,-99) , 
+6, 0.832845, 0, 0, 0.488068,-99) , 
+2, -0.343262, 1, 0, 0.517723,-99)    );
+  // itree = 114
+  fBoostWeights.push_back(0.127889);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1306.95, 0, 1, 0.504222,-99) , 
+-1, 84.2071, 0, 1, 0.727426,-99) , 
 NN(
 0, 
 0, 
--1, -0.561091, 0, -1, 0.445039,-99) , 
-1, 117.32, 1, 0, 0.499396,-99) , 
-NN(
-0, 
-0, 
--1, 0.0236997, 1, -1, 0.432987,-99) , 
-5, 1.78564, 1, 0, 0.494849,-99)    );
-  // itree = 46
-  fBoostWeights.push_back(0.0363447);
-  fForest.push_back( 
-NN(
-NN(
+-1, 0, 1, -1, 0.403216,-99) , 
+4, 268.167, 0, 0, 0.629048,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.546589,-99) , 
+-1, 0.109491, 0, 1, 0.558347,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.49634,-99) , 
-10, -2.0799, 1, 0, 0.505174,-99) , 
+-1, 0, 1, 1, 0.554658,-99) , 
 NN(
 0, 
 0, 
--1, -0.358317, 0, -1, 0.445999,-99) , 
-12, 3.50514, 1, 0, 0.500543,-99) , 
-NN(
-0, 
-0, 
--1, 0.68179, 0, -1, 0.426522,-99) , 
-2, 0.644398, 1, 0, 0.496011,-99)    );
-  // itree = 47
-  fBoostWeights.push_back(0.0344424);
+-1, 0, 1, -1, 0.457679,-99) , 
+10, -2.65667, 1, 0, 0.475833,-99) , 
+8, 2.07826, 0, 0, 0.493946,-99) , 
+6, 1.78551, 0, 0, 0.509329,-99)    );
+  // itree = 115
+  fBoostWeights.push_back(0.132543);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1913.53, 0, 1, 0.508664,-99) , 
+-1, 1.23851, 1, 1, 0.707042,-99) , 
 NN(
-0, 
-0, 
--1, 0.466865, 1, -1, 0.452459,-99) , 
-5, 1.30953, 1, 0, 0.500489,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.400441,-99) , 
-12, 3.99169, 1, 0, 0.497091,-99)    );
-  // itree = 48
-  fBoostWeights.push_back(0.0513287);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1191.94, 0, 1, 0.531281,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507623,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465804,-99) , 
-11, 167.146, 0, 0, 0.491021,-99) , 
-7, 758.072, 0, 0, 0.500105,-99) , 
-NN(
-0, 
-0, 
--1, -0.975781, 1, -1, 0.438727,-99) , 
-2, 0.595302, 1, 0, 0.493207,-99)    );
-  // itree = 49
-  fBoostWeights.push_back(0.0362847);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1037.64, 0, 1, 0.506784,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502545,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.408969,-99) , 
-3, -0.317068, 1, 0, 0.447096,-99) , 
-5, 1.53621, 1, 0, 0.499775,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511887,-99) , 
-NN(
-0, 
-0, 
--1, -0.223826, 0, -1, 0.399149,-99) , 
-3, 0.519698, 0, 0, 0.440012,-99) , 
-5, -1.54759, 0, 0, 0.493719,-99)    );
-  // itree = 50
-  fBoostWeights.push_back(0.0891349);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535322,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.449017,-99) , 
-1, 104.115, 1, 0, 0.522165,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508307,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.414929,-99) , 
-11, 77.2774, 0, 0, 0.485029,-99) , 
-11, 195.376, 0, 0, 0.501148,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.612801,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.453131,-99) , 
-10, -0.248696, 1, 0, 0.529338,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.549385,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.422772,-99) , 
-10, 1.60817, 0, 0, 0.444525,-99) , 
-3, 1.73629, 0, 0, 0.462724,-99) , 
-0, -0.115033, 0, 0, 0.489614,-99)    );
-  // itree = 51
-  fBoostWeights.push_back(0.0478646);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.60871,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498212,-99) , 
-13, 155.685, 0, 0, 0.525741,-99) , 
-NN(
-0, 
-0, 
--1, 215.138, 1, -1, 0.47967,-99) , 
-14, 1510.4, 0, 0, 0.486699,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.393497,-99) , 
-4, 2.72613, 1, 0, 0.484122,-99)    );
-  // itree = 52
-  fBoostWeights.push_back(0.0559793);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 759.691, 0, 1, 0.568375,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515805,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484082,-99) , 
-1, 82.29, 1, 0, 0.497233,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.543576,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.447465,-99) , 
-3, -1.63724, 1, 0, 0.459528,-99) , 
-1, 66.9504, 0, 0, 0.487363,-99) , 
-6, 246.24, 0, 0, 0.492587,-99)    );
-  // itree = 53
-  fBoostWeights.push_back(0.0338614);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.571349,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503933,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466727,-99) , 
-7, 373.869, 0, 0, 0.49619,-99) , 
-NN(
-0, 
-0, 
--1, 2.59963, 1, -1, 0.454531,-99) , 
-5, -1.30946, 0, 0, 0.490378,-99) , 
-7, 1347.07, 0, 0, 0.493167,-99)    );
-  // itree = 54
-  fBoostWeights.push_back(0.0407446);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.569058,-99) , 
-NN(
-NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.555206,-99) , 
+-1, 0, 1, 1, 0.589792,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487084,-99) , 
-14, 2142.21, 0, 0, 0.490985,-99) , 
+-1, 0, 1, -1, 0.382528,-99) , 
+2, -0.100423, 0, 0, 0.510439,-99) , 
+5, 0.501032, 1, 0, 0.599864,-99) , 
 NN(
-0, 
-0, 
--1, 0, 1, -1, 0.396865,-99) , 
-2, 0.68528, 1, 0, 0.488065,-99) , 
-3, -2.32565, 1, 0, 0.491718,-99)    );
-  // itree = 55
-  fBoostWeights.push_back(0.0394455);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.580108,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507767,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464077,-99) , 
-12, 2.57731, 1, 0, 0.498153,-99) , 
-NN(
-0, 
-0, 
--1, -2.56277, 0, -1, 0.460815,-99) , 
-5, 1.30952, 1, 0, 0.492897,-99) , 
-7, 1348.37, 0, 0, 0.495962,-99)    );
-  // itree = 56
-  fBoostWeights.push_back(0.0307514);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.560931,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504129,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477746,-99) , 
-0, 0.115724, 0, 0, 0.49479,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.414593,-99) , 
-2, 0.68528, 1, 0, 0.492282,-99) , 
-3, 2.25277, 0, 0, 0.495832,-99)    );
-  // itree = 57
-  fBoostWeights.push_back(0.0501441);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.573322,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.44308,-99) , 
-1, 67.8629, 0, 0, 0.534845,-99) , 
-NN(
-0, 
-0, 
--1, 2.59117, 1, -1, 0.488448,-99) , 
-9, 383.185, 0, 0, 0.49636,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508568,-99) , 
-NN(
-0, 
-0, 
--1, -1.30939, 0, -1, 0.457626,-99) , 
-10, -2.04625, 1, 0, 0.466409,-99) , 
-1, 91.991, 1, 0, 0.488931,-99)    );
-  // itree = 58
-  fBoostWeights.push_back(0.0327941);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.557056,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.541968,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491649,-99) , 
-14, 1856.7, 0, 0, 0.496216,-99) , 
 NN(
-0, 
-0, 
--1, 0, 1, -1, 0.400388,-99) , 
-2, 0.686152, 1, 0, 0.493306,-99) , 
-3, 2.21086, 0, 0, 0.496734,-99)    );
-  // itree = 59
-  fBoostWeights.push_back(0.0479371);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.581651,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529044,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487273,-99) , 
-10, 1.15399, 0, 0, 0.500514,-99) , 
-3, 1.85138, 0, 0, 0.505384,-99) , 
-NN(
-0, 
-0, 
--1, 1.05083, 1, -1, 0.46207,-99) , 
-12, -3.07978, 0, 0, 0.499439,-99)    );
-  // itree = 60
-  fBoostWeights.push_back(0.0359822);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.427644, 1, 1, 0.564352,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509386,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472966,-99) , 
-9, 233.54, 0, 0, 0.502535,-99) , 
-9, 552.171, 0, 0, 0.506151,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.420514,-99) , 
-2, 0.676758, 1, 0, 0.50312,-99)    );
-  // itree = 61
-  fBoostWeights.push_back(0.0203631);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.568325,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -2.37074, 1, 1, 0.505403,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.440771,-99) , 
-12, 3.99139, 1, 0, 0.503025,-99) , 
-3, 2.31679, 0, 0, 0.506021,-99)    );
-  // itree = 62
-  fBoostWeights.push_back(0.0308473);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.585059,-99) , 
 NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.546041,-99) , 
-NN(
-0, 
-0, 
--1, 3.04982, 1, -1, 0.489668,-99) , 
-2, 0.184004, 1, 0, 0.493074,-99) , 
-7, 1303.81, 0, 0, 0.496787,-99)    );
-  // itree = 63
-  fBoostWeights.push_back(0.020613);
-  fForest.push_back( 
-NN(
-NN(
 0, 
 0, 
--1, 0.427507, 1, 1, 0.55538,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.554025,-99) , 
-NN(
-0, 
-0, 
--1, 0.685155, 1, -1, 0.495881,-99) , 
-3, -2.12117, 1, 0, 0.499461,-99) , 
-6, 244.836, 0, 0, 0.503074,-99)    );
-  // itree = 64
-  fBoostWeights.push_back(0.0192318);
-  fForest.push_back( 
-NN(
+-1, 0, 1, 1, 0.538844,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.58121,-99) , 
+-1, 0, 1, -1, 0.451705,-99) , 
+10, -2.62765, 0, 0, 0.521615,-99) , 
 NN(
 NN(
 0, 
@@ -2241,235 +4288,154 @@ NN(
 NN(
 0, 
 0, 
--1, 1.80106, 1, -1, 0.49581,-99) , 
-2, 0.184533, 1, 0, 0.499352,-99) , 
-7, 1377.36, 0, 0, 0.502022,-99)    );
-  // itree = 65
-  fBoostWeights.push_back(0.0303241);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 1.84118, 0, 1, 0.512741,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501291,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.399724,-99) , 
-13, 40.6077, 0, 0, 0.456873,-99) , 
-12, -3.5472, 0, 0, 0.508501,-99)    );
-  // itree = 66
-  fBoostWeights.push_back(0.0555241);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54275,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489325,-99) , 
-1, 68.0443, 0, 0, 0.523484,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.550407,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481635,-99) , 
-3, 1.73629, 0, 0, 0.489648,-99) , 
-14, 815.998, 0, 0, 0.507061,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522249,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473371,-99) , 
-3, 0.713725, 0, 0, 0.486548,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.434302,-99) , 
-12, -3.08216, 0, 0, 0.479834,-99) , 
-1, 92.0384, 1, 0, 0.500269,-99)    );
-  // itree = 67
-  fBoostWeights.push_back(0.0485644);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522415,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477943,-99) , 
-0, 1.63633, 1, 0, 0.516336,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515617,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472114,-99) , 
-10, -0.720102, 1, 0, 0.485902,-99) , 
-4, 0.807924, 1, 0, 0.506846,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.438864,-99) , 
-12, 3.96941, 1, 0, 0.50438,-99)    );
-  // itree = 68
-  fBoostWeights.push_back(0.0259344);
+-1, 0, 1, -1, 0.393702,-99) , 
+9, 128.45, 1, 0, 0.435135,-99) , 
+7, 140.112, 1, 0, 0.503487,-99) , 
+5, 0.481419, 0, 0, 0.517755,-99)    );
+  // itree = 116
+  fBoostWeights.push_back(0.146546);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.585666,-99) , 
+-1, -0.757743, 0, 1, 0.63011,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50491,-99) , 
+-1, 0, 1, 1, 0.610608,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.440063,-99) , 
-1, 123.532, 1, 0, 0.500831,-99) , 
-3, 2.39329, 0, 0, 0.503631,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.43038,-99) , 
-12, -3.99233, 0, 0, 0.501084,-99)    );
-  // itree = 69
-  fBoostWeights.push_back(0.0600416);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.568087,-99) , 
+-1, 0, 1, -1, 0.412932,-99) , 
+13, -0.0137242, 0, 0, 0.493962,-99) , 
+0, 89.8801, 0, 0, 0.557787,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.521179,-99) , 
+-1, 0, 1, 1, 0.579835,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.462238,-99) , 
-13, 53.5341, 0, 0, 0.498717,-99) , 
+-1, 0, 1, -1, 0.470075,-99) , 
+11, 130.53, 0, 0, 0.501834,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.434982,-99) , 
-13, 277.11, 1, 0, 0.496493,-99) , 
-14, 2540.89, 0, 0, 0.498638,-99)    );
-  // itree = 70
-  fBoostWeights.push_back(0.0289429);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 793.749, 0, 1, 0.546373,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539566,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492105,-99) , 
-6, 182.596, 0, 0, 0.49557,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.421729,-99) , 
-2, 0.684864, 1, 0, 0.493324,-99) , 
-6, 244.835, 0, 0, 0.496731,-99)    );
-  // itree = 71
-  fBoostWeights.push_back(0.0444628);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.558134,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511285,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466816,-99) , 
-5, 1.54779, 1, 0, 0.504693,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505515,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.44593,-99) , 
-3, -0.124812, 0, 0, 0.470066,-99) , 
-4, -0.751387, 0, 0, 0.494369,-99) , 
-3, -2.28754, 1, 0, 0.497349,-99)    );
-  // itree = 72
-  fBoostWeights.push_back(0.0364077);
+-1, 767.323, 0, -1, 0.404273,-99) , 
+0, 132.981, 1, 0, 0.48032,-99) , 
+10, 2.17522, 0, 0, 0.503638,-99)    );
+  // itree = 117
+  fBoostWeights.push_back(0.104107);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.554849,-99) , 
+-1, 0.908203, 0, 1, 0.560711,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.507486,-99) , 
+-1, 0, 1, 1, 0.522301,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.480581,-99) , 
-14, 830.563, 0, 0, 0.494035,-99) , 
-3, -2.32831, 1, 0, 0.496749,-99) , 
+-1, 0, 1, -1, 0.445894,-99) , 
+4, 279.738, 0, 0, 0.487123,-99) , 
+13, 0.977424, 0, 0, 0.502919,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0.384253, 1, -1, 0.440865,-99) , 
-5, -1.78571, 0, 0, 0.493057,-99)    );
-  // itree = 73
-  fBoostWeights.push_back(0.0407813);
+-1, 0, 1, 1, 0.528895,-99) , 
+NN(
+0, 
+0, 
+-1, 208.231, 0, -1, 0.316452,-99) , 
+4, 406.661, 0, 0, 0.388224,-99) , 
+0, 189.866, 1, 0, 0.4903,-99)    );
+  // itree = 118
+  fBoostWeights.push_back(0.103236);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.69261,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.445697,-99) , 
+10, 0.620931, 0, 0, 0.587763,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.533573,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.461717,-99) , 
+11, 74.6408, 0, 0, 0.499731,-99) , 
+NN(
+0, 
+0, 
+-1, 151.649, 0, -1, 0.406823,-99) , 
+11, 136.247, 1, 0, 0.486905,-99) , 
+11, 201.117, 0, 0, 0.495543,-99)    );
+  // itree = 119
+  fBoostWeights.push_back(0.106544);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 262.786, 1, 1, 0.572743,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.522407,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.395322,-99) , 
+2, 1.48486, 1, 0, 0.513245,-99) , 
+5, 0.24847, 1, 0, 0.526401,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.580858,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.404113,-99) , 
+12, 995.414, 0, 0, 0.514306,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.506684,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.225834,-99) , 
+7, 123.684, 0, 0, 0.348088,-99) , 
+13, -0.347355, 0, 0, 0.458635,-99) , 
+3, 74.5565, 0, 0, 0.512405,-99)    );
+  // itree = 120
+  fBoostWeights.push_back(0.0622406);
   fForest.push_back( 
 NN(
 NN(
@@ -2477,142 +4443,179 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.516124,-99) , 
+-1, 0, 1, 1, 0.562487,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490969,-99) , 
-1, 85.4881, 1, 0, 0.507015,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523384,-99) , 
+-1, 0, 1, -1, 0.494036,-99) , 
+10, -2.15486, 1, 0, 0.514675,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.445062,-99) , 
-3, 0.704041, 0, 0, 0.469045,-99) , 
-5, -1.30954, 0, 0, 0.501398,-99) , 
+-1, 0, 1, -1, 0.394299,-99) , 
+14, 1.99477, 1, 0, 0.508527,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.40657,-99) , 
-4, 2.67909, 1, 0, 0.49871,-99)    );
-  // itree = 74
-  fBoostWeights.push_back(0.0348631);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.5578,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.541714,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497811,-99) , 
-8, 32.2214, 1, 0, 0.508644,-99) , 
-NN(
-0, 
-0, 
--1, 155.749, 1, -1, 0.477632,-99) , 
-8, 96.5089, 1, 0, 0.497284,-99) , 
-7, 1303.81, 0, 0, 0.499678,-99)    );
-  // itree = 75
-  fBoostWeights.push_back(0.0287559);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.548389,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493387,-99) , 
-9, 522.874, 0, 0, 0.497391,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.41041,-99) , 
-2, 0.689299, 1, 0, 0.494898,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.418656,-99) , 
-12, -3.9881, 0, 0, 0.49223,-99)    );
-  // itree = 76
-  fBoostWeights.push_back(0.0558622);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527714,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.457585,-99) , 
-1, 123.742, 1, 0, 0.523255,-99) , 
-NN(
-0, 
-0, 
--1, 31.1199, 0, -1, 0.476249,-99) , 
-13, 53.5147, 0, 0, 0.505515,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.443057,-99) , 
-13, 276.906, 1, 0, 0.503232,-99)    );
-  // itree = 77
-  fBoostWeights.push_back(0.042338);
+-1, -2.36834, 1, -1, 0.409943,-99) , 
+13, -1.8878, 0, 0, 0.502485,-99)    );
+  // itree = 121
+  fBoostWeights.push_back(0.105185);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.60718,-99) , 
+-1, 223.984, 0, 1, 0.551897,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513448,-99) , 
+-1, 0, 1, 1, 0.518554,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.457378,-99) , 
-11, 106.069, 0, 0, 0.496164,-99) , 
-3, 1.20217, 0, 0, 0.522494,-99) , 
+-1, 0, 1, -1, 0.367454,-99) , 
+4, 361.923, 1, 0, 0.490661,-99) , 
+2, -0.11449, 0, 0, 0.524717,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50397,-99) , 
+NN(
+0, 
+0, 
+-1, 88.0932, 1, -1, 0.312013,-99) , 
+12, 1288.93, 0, 0, 0.399871,-99) , 
+0, 193.436, 1, 0, 0.511732,-99)    );
+  // itree = 122
+  fBoostWeights.push_back(0.134373);
+  fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.551655,-99) , 
+-1, -0.452288, 1, 1, 0.640423,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492771,-99) , 
-2, 0.19459, 1, 0, 0.497545,-99) , 
+-1, 0, 1, 1, 0.536142,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.409467,-99) , 
-2, 0.676758, 1, 0, 0.494328,-99) , 
-10, -1.63156, 1, 0, 0.50158,-99)    );
-  // itree = 78
-  fBoostWeights.push_back(0.0539833);
+-1, 0, 1, -1, 0.451582,-99) , 
+13, 0.243009, 0, 0, 0.485528,-99) , 
+4, 263.262, 1, 0, 0.545066,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.659681,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.487249,-99) , 
+11, 84.3808, 1, 0, 0.595616,-99) , 
+NN(
+0, 
+0, 
+-1, 74.5565, 0, -1, 0.443252,-99) , 
+13, 1.71526, 0, 0, 0.458079,-99) , 
+5, 0.273596, 1, 0, 0.482118,-99)    );
+  // itree = 123
+  fBoostWeights.push_back(0.0970458);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.605498,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.545314,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.475138,-99) , 
+8, -1.04739, 1, 0, 0.503803,-99) , 
+NN(
+0, 
+0, 
+-1, 261.048, 0, -1, 0.38491,-99) , 
+6, 1.5475, 1, 0, 0.491713,-99) , 
+5, 0.206078, 1, 0, 0.503864,-99)    );
+  // itree = 124
+  fBoostWeights.push_back(0.12711);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.3757, 1, 1, 0.544868,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.311786,-99) , 
+6, -2.02093, 0, 0, 0.533895,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.527549,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.352423,-99) , 
+4, 243.845, 0, 0, 0.476549,-99) , 
+NN(
+0, 
+0, 
+-1, 0.782808, 0, -1, 0.311184,-99) , 
+4, 383.923, 1, 0, 0.454467,-99) , 
+7, 71.9597, 0, 0, 0.500701,-99)    );
+  // itree = 125
+  fBoostWeights.push_back(0.109057);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 70.2638, 0, 1, 0.623836,-99) , 
+NN(
+0, 
+0, 
+-1, 0.932137, 1, -1, 0.481408,-99) , 
+10, 3.13723, 0, 0, 0.496336,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.649347,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.429986,-99) , 
+14, 0.366268, 0, 0, 0.519104,-99) , 
+NN(
+0, 
+0, 
+-1, 287.208, 0, -1, 0.295113,-99) , 
+8, 1.41276, 0, 0, 0.381292,-99) , 
+3, 74.5565, 0, 0, 0.475416,-99)    );
+  // itree = 126
+  fBoostWeights.push_back(0.148856);
   fForest.push_back( 
 NN(
 NN(
@@ -2620,68 +4623,5453 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.587784,-99) , 
+-1, 0, 1, 1, 0.56537,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.49798,-99) , 
-10, 1.1754, 0, 0, 0.531476,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525538,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486134,-99) , 
-10, -0.236458, 1, 0, 0.50361,-99) , 
-3, -0.799252, 1, 0, 0.511419,-99) , 
+-1, 0, 1, -1, 0.444304,-99) , 
+3, 94.8125, 1, 0, 0.544094,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.543676,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507173,-99) , 
+-1, 0, 1, 1, 0.514065,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.438496,-99) , 
-12, -2.07769, 1, 0, 0.463785,-99) , 
-10, -2.04558, 1, 0, 0.483294,-99) , 
-5, -1.07143, 0, 0, 0.505839,-99)    );
-  // itree = 79
-  fBoostWeights.push_back(0.0260142);
+-1, 0, 1, -1, 0.278472,-99) , 
+11, 89.9428, 0, 0, 0.413945,-99) , 
+3, 74.5565, 0, 0, 0.522223,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.56229,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.439232,-99) , 
+5, 0.275854, 1, 0, 0.475946,-99) , 
+NN(
+0, 
+0, 
+-1, 107.205, 0, -1, 0.396653,-99) , 
+6, 0.358747, 1, 0, 0.445569,-99) , 
+2, -0.114514, 1, 0, 0.482538,-99)    );
+  // itree = 127
+  fBoostWeights.push_back(0.112687);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1347.07, 0, 1, 0.50978,-99) , 
+-1, 82.1518, 1, 1, 0.564049,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.441816,-99) , 
-2, 0.686152, 1, 0, 0.507744,-99) , 
+-1, 0, 1, 1, 0.516466,-99) , 
 NN(
 0, 
 0, 
--1, -2.09184, 0, -1, 0.461951,-99) , 
-5, -1.78571, 0, 0, 0.504714,-99)    );
-  // itree = 80
-  fBoostWeights.push_back(0.0304469);
+-1, 0, 1, -1, 0.37816,-99) , 
+9, 137.35, 0, 0, 0.484175,-99) , 
+7, 67.2289, 1, 0, 0.517164,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.292781,-99) , 
+6, 2.02355, 1, 0, 0.50922,-99)    );
+  // itree = 128
+  fBoostWeights.push_back(0.115027);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0.25583, 1, 1, 0.54617,-99) , 
+-1, 83.9911, 1, 1, 0.696944,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.558665,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.370569,-99) , 
+8, 0.546875, 1, 0, 0.487366,-99) , 
+12, 738.523, 1, 0, 0.561954,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.58807,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.484395,-99) , 
+11, 189.127, 0, 0, 0.495569,-99) , 
+NN(
+0, 
+0, 
+-1, 0.239049, 1, -1, 0.357198,-99) , 
+3, 72.6577, 0, 0, 0.477194,-99) , 
+2, 1.02783, 0, 0, 0.49495,-99)    );
+  // itree = 129
+  fBoostWeights.push_back(0.0759939);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.779939,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.61451,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.35771,-99) , 
+4, 267.929, 0, 0, 0.531773,-99) , 
+5, 0.4828, 0, 0, 0.593487,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.654902,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.506874,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.321208,-99) , 
+5, 0.527009, 1, 0, 0.500663,-99) , 
+14, -2.57619, 1, 0, 0.50628,-99) , 
+6, 1.5475, 0, 0, 0.518415,-99)    );
+  // itree = 130
+  fBoostWeights.push_back(0.153678);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.584792,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.479931,-99) , 
+14, -0.242389, 0, 0, 0.543747,-99) , 
+NN(
+0, 
+0, 
+-1, 1.51322, 0, -1, 0.405356,-99) , 
+2, 1.02979, 1, 0, 0.524237,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.540451,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.342947,-99) , 
+14, 1.18576, 1, 0, 0.510689,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.549645,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.393663,-99) , 
+12, 2133.38, 0, 0, 0.406714,-99) , 
+8, -1.88091, 1, 0, 0.449218,-99) , 
+8, 1.15509, 0, 0, 0.478437,-99)    );
+  // itree = 131
+  fBoostWeights.push_back(0.101817);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.616977,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.616556,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.475336,-99) , 
+6, -2.01855, 1, 0, 0.48425,-99) , 
+NN(
+0, 
+0, 
+-1, 0.439581, 1, -1, 0.375034,-99) , 
+3, 74.5565, 0, 0, 0.466272,-99) , 
+8, 2.89411, 0, 0, 0.476284,-99)    );
+  // itree = 132
+  fBoostWeights.push_back(0.101805);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.66847,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.630757,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.486094,-99) , 
+10, -2.12681, 1, 0, 0.528552,-99) , 
+3, 72.6577, 1, 0, 0.554633,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.642648,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.483705,-99) , 
+10, -1.30557, 0, 0, 0.516825,-99) , 
+NN(
+0, 
+0, 
+-1, -1.12751, 1, -1, 0.45097,-99) , 
+8, -0.0958891, 0, 0, 0.486407,-99) , 
+2, 1.02853, 0, 0, 0.500426,-99)    );
+  // itree = 133
+  fBoostWeights.push_back(0.136829);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.552299,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.271178,-99) , 
+11, 52.097, 0, 0, 0.534548,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.522813,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.397247,-99) , 
+2, 0.112584, 1, 0, 0.472145,-99) , 
+11, 93.9802, 1, 0, 0.508023,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.601676,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.468061,-99) , 
+2, -0.0969587, 1, 0, 0.534992,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.288497,-99) , 
+9, 233.22, 0, 0, 0.412526,-99) , 
+14, -1.58295, 0, 0, 0.498205,-99)    );
+  // itree = 134
+  fBoostWeights.push_back(0.107543);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.61129,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.460843,-99) , 
+13, -1.1218, 0, 0, 0.567087,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.540847,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.462172,-99) , 
+0, 89.8883, 0, 0, 0.49856,-99) , 
+14, -1.11693, 1, 0, 0.511137,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.52003,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.245454,-99) , 
+2, -0.138695, 1, 0, 0.377412,-99) , 
+6, -2.02253, 0, 0, 0.503963,-99)    );
+  // itree = 135
+  fBoostWeights.push_back(0.110692);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.617088,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.480279,-99) , 
+11, 91.4414, 1, 0, 0.557953,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.510562,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.350873,-99) , 
+10, 3.32706, 1, 0, 0.494974,-99) , 
+14, 0.24871, 0, 0, 0.517061,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.571544,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.42757,-99) , 
+13, 1.15766, 0, 0, 0.499654,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.503026,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.300111,-99) , 
+8, 1.65944, 0, 0, 0.411622,-99) , 
+8, 0.546875, 1, 0, 0.460076,-99) , 
+13, 0.400226, 1, 0, 0.497761,-99)    );
+  // itree = 136
+  fBoostWeights.push_back(0.0795027);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2078.18, 0, 1, 0.562177,-99) , 
+NN(
+0, 
+0, 
+-1, -1.06852, 0, -1, 0.482761,-99) , 
+10, -2.15109, 1, 0, 0.506827,-99) , 
+NN(
+0, 
+0, 
+-1, 78.3542, 0, -1, 0.39615,-99) , 
+6, -1.54662, 0, 0, 0.493468,-99)    );
+  // itree = 137
+  fBoostWeights.push_back(0.143998);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.583901,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.466904,-99) , 
+4, 342.226, 1, 0, 0.55688,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.553441,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.222911,-99) , 
+2, 0.120512, 0, 0, 0.387966,-99) , 
+14, 1.26675, 1, 0, 0.537388,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.549361,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.449787,-99) , 
+14, -0.338324, 1, 0, 0.48882,-99) , 
+NN(
+0, 
+0, 
+-1, 0.393687, 0, -1, 0.336481,-99) , 
+13, -1.46568, 0, 0, 0.472075,-99) , 
+7, 71.9481, 1, 0, 0.5011,-99)    );
+  // itree = 138
+  fBoostWeights.push_back(0.110312);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.538545,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.437341,-99) , 
+9, 115.135, 0, 0, 0.522507,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.37982,-99) , 
+9, 505.69, 1, 0, 0.516117,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.552133,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.247275,-99) , 
+6, -2.1586, 1, 0, 0.392968,-99) , 
+6, -1.78453, 0, 0, 0.506042,-99)    );
+  // itree = 139
+  fBoostWeights.push_back(0.120804);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.507253, 0, 1, 0.569945,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.512699,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.397205,-99) , 
+3, 72.375, 0, 0, 0.476889,-99) , 
+2, 0.110956, 0, 0, 0.522626,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.510782,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.421734,-99) , 
+7, 99.879, 0, 0, 0.458786,-99) , 
+NN(
+0, 
+0, 
+-1, -0.101376, 1, -1, 0.31605,-99) , 
+13, 1.40251, 1, 0, 0.443324,-99) , 
+3, 82.1518, 1, 0, 0.480904,-99)    );
+  // itree = 140
+  fBoostWeights.push_back(0.152657);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.616281, 1, 1, 0.593213,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.417114,-99) , 
+6, -1.5452, 0, 0, 0.575693,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.720621,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.455849,-99) , 
+7, 50.8471, 1, 0, 0.531918,-99) , 
+NN(
+0, 
+0, 
+-1, -0.4778, 0, -1, 0.443528,-99) , 
+9, 141.21, 1, 0, 0.470193,-99) , 
+3, 89.747, 0, 0, 0.503813,-99)    );
+  // itree = 141
+  fBoostWeights.push_back(0.0886516);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.83017, 0, 1, 0.524027,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.579346,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.225066,-99) , 
+10, 1.21926, 0, 0, 0.408129,-99) , 
+6, 1.63828, 1, 0, 0.513974,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.321555,-99) , 
+6, -2.02253, 0, 0, 0.504197,-99)    );
+  // itree = 142
+  fBoostWeights.push_back(0.119171);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.666622,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.497725,-99) , 
+14, -1.4281, 1, 0, 0.580803,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.555437,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.39658,-99) , 
+10, 2.69567, 1, 0, 0.526389,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.541983,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.445162,-99) , 
+6, -1.30815, 1, 0, 0.460837,-99) , 
+8, -1.36263, 1, 0, 0.482582,-99) , 
+10, 3.14435, 0, 0, 0.492746,-99)    );
+  // itree = 143
+  fBoostWeights.push_back(0.0845398);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.622911,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.458017,-99) , 
+12, 1069.85, 1, 0, 0.551986,-99) , 
+NN(
+0, 
+0, 
+-1, 0.418277, 1, -1, 0.482338,-99) , 
+5, 0.43572, 0, 0, 0.501234,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.346809,-99) , 
+14, 1.93352, 1, 0, 0.494076,-99)    );
+  // itree = 144
+  fBoostWeights.push_back(0.101567);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.643913,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.535826,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442438,-99) , 
+13, 0.712774, 0, 0, 0.491347,-99) , 
+12, 1332.86, 0, 0, 0.576863,-99) , 
+NN(
+0, 
+0, 
+-1, 1.3095, 1, -1, 0.457144,-99) , 
+8, -2.47149, 1, 0, 0.47312,-99)    );
+  // itree = 145
+  fBoostWeights.push_back(0.124854);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.20815, 0, 1, 0.559627,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.562406,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.458115,-99) , 
+13, 0.29752, 0, 0, 0.490945,-99) , 
+6, -0.119675, 0, 0, 0.528146,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.566802,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.394164,-99) , 
+6, -1.00868, 0, 0, 0.496263,-99) , 
+NN(
+0, 
+0, 
+-1, 1.23989, 0, -1, 0.359388,-99) , 
+6, 0.119722, 1, 0, 0.427943,-99) , 
+13, 1.26095, 1, 0, 0.514741,-99)    );
+  // itree = 146
+  fBoostWeights.push_back(0.0689892);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.59066,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.518452,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.472021,-99) , 
+12, 1163.5, 0, 0, 0.492806,-99) , 
+8, 2.77283, 0, 0, 0.500754,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.330807,-99) , 
+13, 2.1408, 1, 0, 0.494335,-99)    );
+  // itree = 147
+  fBoostWeights.push_back(0.132047);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.640908,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.459456,-99) , 
+6, 0.829915, 1, 0, 0.598965,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.549003,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.456029,-99) , 
+10, 0.220006, 1, 0, 0.507609,-99) , 
+2, 1.02818, 0, 0, 0.527325,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.554725,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.43829,-99) , 
+11, 156.823, 0, 0, 0.472665,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.341628,-99) , 
+3, 95.4435, 1, 0, 0.451896,-99) , 
+12, 1509.02, 1, 0, 0.506966,-99)    );
+  // itree = 148
+  fBoostWeights.push_back(0.0940152);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, -3.60175, 0, 1, 0.597508,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 484.964, 0, 1, 0.520503,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536309,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.424168,-99) , 
+8, -2.02214, 1, 0, 0.453903,-99) , 
+2, -0.112723, 0, 0, 0.490629,-99) , 
+10, -3.14081, 1, 0, 0.50237,-99)    );
+  // itree = 149
+  fBoostWeights.push_back(0.0952044);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.540025, 0, 1, 0.545938,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.373865,-99) , 
+5, 0.50396, 1, 0, 0.535295,-99) , 
+NN(
+0, 
+0, 
+-1, 97.3423, 1, -1, 0.454974,-99) , 
+2, -0.344029, 1, 0, 0.488247,-99)    );
+  // itree = 150
+  fBoostWeights.push_back(0.138891);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.30395, 1, 1, 0.601325,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.692756,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.456133,-99) , 
+2, -1.2583, 1, 0, 0.493726,-99) , 
+11, 98.1942, 0, 0, 0.542043,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.53773,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.43917,-99) , 
+6, 0.46031, 1, 0, 0.492874,-99) , 
+NN(
+0, 
+0, 
+-1, 94.7989, 1, -1, 0.397153,-99) , 
+6, -1.06913, 0, 0, 0.472153,-99) , 
+4, 313.738, 0, 0, 0.49975,-99)    );
+  // itree = 151
+  fBoostWeights.push_back(0.107575);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.527091, 0, 1, 0.529268,-99) , 
+NN(
+0, 
+0, 
+-1, 70.6045, 0, -1, 0.384825,-99) , 
+14, 1.13429, 1, 0, 0.50945,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.539933,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442725,-99) , 
+2, -0.874288, 1, 0, 0.492405,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.502525,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.252842,-99) , 
+5, 0.351795, 1, 0, 0.376295,-99) , 
+0, 120.184, 1, 0, 0.462672,-99) , 
+2, -0.112723, 0, 0, 0.487969,-99)    );
+  // itree = 152
+  fBoostWeights.push_back(0.1131);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.693039,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.496398,-99) , 
+13, 0.0148548, 1, 0, 0.618295,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.581157,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.480712,-99) , 
+8, 1.15783, 0, 0, 0.517063,-99) , 
+6, 1.30669, 0, 0, 0.536236,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.531834,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.435974,-99) , 
+4, 235.75, 0, 0, 0.492284,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.507689,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.281263,-99) , 
+14, 0.218297, 0, 0, 0.39526,-99) , 
+4, 283.405, 1, 0, 0.476607,-99) , 
+4, 303.167, 0, 0, 0.502675,-99)    );
+  // itree = 153
+  fBoostWeights.push_back(0.123662);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.715068,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.532593,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.415268,-99) , 
+5, 0.459951, 1, 0, 0.516505,-99) , 
+NN(
+0, 
+0, 
+-1, 1.07052, 1, -1, 0.410888,-99) , 
+3, 78.3542, 0, 0, 0.486866,-99) , 
+14, -2.39572, 1, 0, 0.49806,-99)    );
+  // itree = 154
+  fBoostWeights.push_back(0.138367);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.672799,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.441781,-99) , 
+8, 1.03287, 0, 0, 0.61282,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.518363,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.355417,-99) , 
+2, -1.02706, 0, 0, 0.494721,-99) , 
+10, -1.63965, 1, 0, 0.538167,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.542279,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.423789,-99) , 
+13, 0.676348, 1, 0, 0.51231,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.550565,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.401132,-99) , 
+7, 185.95, 0, 0, 0.428848,-99) , 
+6, 0.289516, 0, 0, 0.482235,-99) , 
+6, -0.594517, 1, 0, 0.501845,-99)    );
+  // itree = 155
+  fBoostWeights.push_back(0.155178);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.553091,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.395855,-99) , 
+0, 45.6314, 0, 0, 0.519127,-99) , 
+NN(
+0, 
+0, 
+-1, 0.367045, 1, -1, 0.43362,-99) , 
+0, 112.007, 1, 0, 0.492784,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.584013,-99) , 
+NN(
+0, 
+0, 
+-1, 87.8482, 1, -1, 0.381054,-99) , 
+8, 2.58161, 0, 0, 0.409284,-99) , 
+6, 0.833496, 1, 0, 0.472182,-99)    );
+  // itree = 156
+  fBoostWeights.push_back(0.129131);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.02393, 0, 1, 0.540893,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505467,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.298093,-99) , 
+7, 87.6426, 1, 0, 0.42308,-99) , 
+13, -1.27266, 0, 0, 0.520095,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.522542,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.400518,-99) , 
+13, 0.924202, 1, 0, 0.490738,-99) , 
+NN(
+0, 
+0, 
+-1, 747.015, 0, -1, 0.379632,-99) , 
+5, 0.34731, 1, 0, 0.43839,-99) , 
+10, 0.741071, 0, 0, 0.478231,-99)    );
+  // itree = 157
+  fBoostWeights.push_back(0.108214);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.613362,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.497863,-99) , 
+0, 33.8893, 1, 0, 0.505935,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.56562,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.363528,-99) , 
+13, 1.12881, 0, 0, 0.398981,-99) , 
+0, 111.718, 1, 0, 0.47633,-99) , 
+NN(
+0, 
+0, 
+-1, 74.5565, 0, -1, 0.420733,-99) , 
+9, 164.146, 0, 0, 0.458084,-99)    );
+  // itree = 158
+  fBoostWeights.push_back(0.137102);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.67578, 1, 1, 0.547774,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.512009,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.375378,-99) , 
+4, 303.286, 0, 0, 0.462501,-99) , 
+3, 93.5446, 1, 0, 0.532074,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.61258,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.44439,-99) , 
+5, 0.260135, 0, 0, 0.533591,-99) , 
+NN(
+0, 
+0, 
+-1, -1.14133, 1, -1, 0.403651,-99) , 
+5, 0.320358, 1, 0, 0.460998,-99) , 
+2, -0.114514, 0, 0, 0.499971,-99)    );
+  // itree = 159
+  fBoostWeights.push_back(0.108624);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.570278,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.49332,-99) , 
+5, 0.362985, 0, 0, 0.524673,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.521172,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.428685,-99) , 
+10, -2.77, 1, 0, 0.465784,-99) , 
+10, -0.70745, 0, 0, 0.497915,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.604278,-99) , 
+NN(
+0, 
+0, 
+-1, 292.143, 0, -1, 0.331623,-99) , 
+7, 176.811, 0, 0, 0.393668,-99) , 
+5, 0.481036, 1, 0, 0.485846,-99)    );
+  // itree = 160
+  fBoostWeights.push_back(0.104806);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.568184,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.485154,-99) , 
+10, 2.17171, 0, 0, 0.510543,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.535986,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.41671,-99) , 
+5, 0.274816, 1, 0, 0.451058,-99) , 
+6, -0.354841, 0, 0, 0.486091,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.316827,-99) , 
+10, -3.62486, 0, 0, 0.479596,-99)    );
+  // itree = 161
+  fBoostWeights.push_back(0.0853123);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.12457, 0, 1, 0.692755,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.615976,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.373686,-99) , 
+4, 512, 1, 0, 0.508865,-99) , 
+10, 1.29348, 0, 0, 0.594865,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.660719,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.578746,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.486397,-99) , 
+10, -3.14076, 1, 0, 0.496477,-99) , 
+5, 0.52704, 0, 0, 0.504156,-99) , 
+4, 442.536, 0, 0, 0.515074,-99)    );
+  // itree = 162
+  fBoostWeights.push_back(0.135814);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 170.056, 0, 1, 0.545252,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.366593,-99) , 
+0, 275.156, 1, 0, 0.537861,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.601178,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.371312,-99) , 
+5, 0.435136, 1, 0, 0.55622,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.531839,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.348822,-99) , 
+7, 122.218, 0, 0, 0.42092,-99) , 
+2, -0.345564, 1, 0, 0.477722,-99) , 
+9, 164.146, 0, 0, 0.51799,-99)    );
+  // itree = 163
+  fBoostWeights.push_back(0.131325);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.563421,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.404696,-99) , 
+14, -1.34904, 0, 0, 0.540625,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.516384,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.400044,-99) , 
+0, 107.915, 1, 0, 0.479392,-99) , 
+5, 0.322608, 0, 0, 0.515577,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551133,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.4355,-99) , 
+3, 80.5625, 1, 0, 0.472637,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.244103,-99) , 
+3, 70.7589, 0, 0, 0.453834,-99) , 
+7, 71.9133, 0, 0, 0.490509,-99)    );
+  // itree = 164
+  fBoostWeights.push_back(0.153632);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.17857, 0, 1, 0.627271,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.57605,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.428039,-99) , 
+8, 2.06571, 0, 0, 0.460197,-99) , 
+3, 75.1577, 0, 0, 0.525617,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.603789,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.446077,-99) , 
+4, 263.262, 1, 0, 0.511756,-99) , 
+NN(
+0, 
+0, 
+-1, -0.356515, 0, -1, 0.434386,-99) , 
+5, 0.253035, 1, 0, 0.454897,-99) , 
+3, 78.3542, 1, 0, 0.477074,-99)    );
+  // itree = 165
+  fBoostWeights.push_back(0.118917);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1288.9, 1, 1, 0.617058,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.604516,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432888,-99) , 
+9, 198.974, 1, 0, 0.504374,-99) , 
+4, 270.619, 1, 0, 0.558125,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0.993269, 1, 1, 0.531398,-99) , 
+NN(
+0, 
+0, 
+-1, 2.00139, 1, -1, 0.451138,-99) , 
+6, 0.834473, 0, 0, 0.471695,-99) , 
+2, -0.800293, 1, 0, 0.495068,-99)    );
+  // itree = 166
+  fBoostWeights.push_back(0.103291);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.684756,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.554842,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.412164,-99) , 
+7, 31.5494, 0, 0, 0.529971,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514339,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.430124,-99) , 
+9, 205.431, 0, 0, 0.474405,-99) , 
+7, 61.8678, 1, 0, 0.494438,-99) , 
+4, 654.577, 0, 0, 0.499453,-99)    );
+  // itree = 167
+  fBoostWeights.push_back(0.092014);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 80.1815, 1, 1, 0.712775,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.563502,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.429072,-99) , 
+8, -0.616862, 1, 0, 0.506138,-99) , 
+5, 0.393407, 0, 0, 0.608554,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.53839,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.482412,-99) , 
+5, 0.343355, 1, 0, 0.510374,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.338242,-99) , 
+9, 572.717, 1, 0, 0.505336,-99) , 
+13, -1.53355, 1, 0, 0.518801,-99)    );
+  // itree = 168
+  fBoostWeights.push_back(0.056461);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, -1.37272, 1, 1, 0.604147,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 87.718, 0, 1, 0.564636,-99) , 
+NN(
+0, 
+0, 
+-1, 123.118, 1, -1, 0.485829,-99) , 
+0, 193.439, 0, 0, 0.496453,-99) , 
+3, 68.8601, 1, 0, 0.50581,-99)    );
+  // itree = 169
+  fBoostWeights.push_back(0.119544);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.615421,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.47878,-99) , 
+13, 0.638083, 0, 0, 0.522445,-99) , 
+NN(
+0, 
+0, 
+-1, 74.5565, 0, -1, 0.458155,-99) , 
+5, 0.323819, 0, 0, 0.495422,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.564927,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.430389,-99) , 
+6, -0.582287, 1, 0, 0.461709,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.298034,-99) , 
+6, -1.30645, 0, 0, 0.435128,-99) , 
+12, 1495.27, 1, 0, 0.478327,-99)    );
+  // itree = 170
+  fBoostWeights.push_back(0.111006);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.546797,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.424709,-99) , 
+13, 1.32164, 1, 0, 0.535449,-99) , 
+NN(
+0, 
+0, 
+-1, 134.872, 0, -1, 0.463327,-99) , 
+3, 78.3542, 0, 0, 0.514609,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.554778,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.310574,-99) , 
+4, 311.744, 0, 0, 0.400773,-99) , 
+10, -3.1469, 0, 0, 0.503071,-99)    );
+  // itree = 171
+  fBoostWeights.push_back(0.0827572);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.607863,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.424892,-99) , 
+6, -0.594494, 0, 0, 0.561396,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.515591,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.455048,-99) , 
+7, 56.8545, 0, 0, 0.495034,-99) , 
+7, 176.679, 0, 0, 0.505502,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505958,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.33006,-99) , 
+8, 1.11947, 0, 0, 0.40998,-99) , 
+5, 0.504451, 1, 0, 0.49885,-99)    );
+  // itree = 172
+  fBoostWeights.push_back(0.058085);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.609758,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, -0.35047, 1, 1, 0.561734,-99) , 
+NN(
+0, 
+0, 
+-1, 70.7589, 0, -1, 0.479387,-99) , 
+0, 193.987, 0, 0, 0.489441,-99) , 
+2, 1.94189, 0, 0, 0.494269,-99)    );
+  // itree = 173
+  fBoostWeights.push_back(0.139466);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 93.5446, 0, 1, 0.578483,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.57608,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.465474,-99) , 
+14, 0.0976453, 0, 0, 0.501684,-99) , 
+7, 66.8711, 1, 0, 0.532758,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.680363,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.450814,-99) , 
+6, 0.958182, 1, 0, 0.54234,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.539146,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.408888,-99) , 
+14, 2.15729, 0, 0, 0.425491,-99) , 
+5, 0.441705, 0, 0, 0.456048,-99) , 
+6, 0.59568, 1, 0, 0.508894,-99)    );
+  // itree = 174
+  fBoostWeights.push_back(0.0937557);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.832787, 0, 1, 0.571409,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.632483,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.493805,-99) , 
+12, 2158.56, 0, 0, 0.511841,-99) , 
+13, -0.679218, 1, 0, 0.53021,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.549557,-99) , 
+NN(
+0, 
+0, 
+-1, 2.18666, 0, -1, 0.41192,-99) , 
+4, 390.131, 0, 0, 0.435172,-99) , 
+6, -1.06878, 0, 0, 0.510566,-99)    );
+  // itree = 175
+  fBoostWeights.push_back(0.0642792);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.207124, 1, 1, 0.615768,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.560559,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.488747,-99) , 
+1, 1.31763, 0, 0, 0.506685,-99) , 
+1, -951.261, 1, 0, 0.51239,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.364433,-99) , 
+13, 2.12136, 1, 0, 0.507276,-99)    );
+  // itree = 176
+  fBoostWeights.push_back(0.0870598);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 95.7768, 0, 1, 0.532005,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.415214,-99) , 
+2, -1.71394, 0, 0, 0.526314,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.583244,-99) , 
+NN(
+0, 
+0, 
+-1, -0.791132, 1, -1, 0.370998,-99) , 
+13, 0.952528, 0, 0, 0.424994,-99) , 
+3, 97.3423, 1, 0, 0.51549,-99)    );
+  // itree = 177
+  fBoostWeights.push_back(0.114683);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0.481172, 0, 1, 0.549072,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 496.679, 0, 1, 0.544543,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.578093,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432655,-99) , 
+2, 1.61532, 0, 0, 0.455844,-99) , 
+9, 315.718, 0, 0, 0.478986,-99) , 
+2, -0.341727, 1, 0, 0.507719,-99)    );
+  // itree = 178
+  fBoostWeights.push_back(0.130057);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.667962,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.413556,-99) , 
+2, -0.798991, 0, 0, 0.613977,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.5141,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.331122,-99) , 
+4, 271.643, 0, 0, 0.42985,-99) , 
+3, 78.3542, 0, 0, 0.569768,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.584304,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.484408,-99) , 
+4, 397.827, 0, 0, 0.503969,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500419,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.380529,-99) , 
+4, 262.905, 1, 0, 0.427514,-99) , 
+5, 0.274455, 0, 0, 0.483941,-99) , 
+14, 0.801274, 0, 0, 0.505883,-99)    );
+  // itree = 179
+  fBoostWeights.push_back(0.119689);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.01981, 0, 1, 0.578963,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.516668,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.32735,-99) , 
+3, 95.4435, 1, 0, 0.490404,-99) , 
+9, 203.807, 1, 0, 0.536529,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.525063,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.401118,-99) , 
+3, 76.4554, 0, 0, 0.497366,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.512088,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.320814,-99) , 
+14, -1.77062, 1, 0, 0.378287,-99) , 
+6, -1.06843, 0, 0, 0.472711,-99) , 
+7, 74.9728, 0, 0, 0.508447,-99)    );
+  // itree = 180
+  fBoostWeights.push_back(0.0656415);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.632322,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.511677,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384833,-99) , 
+13, -1.71471, 0, 0, 0.502127,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.372384,-99) , 
+12, 2518.04, 1, 0, 0.493099,-99) , 
+7, 290.005, 0, 0, 0.500739,-99)    );
+  // itree = 181
+  fBoostWeights.push_back(0.132764);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.15402, 0, 1, 0.568715,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.531565,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432671,-99) , 
+13, 0.218282, 1, 0, 0.492018,-99) , 
+12, 1069.57, 1, 0, 0.532345,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.62414,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.459985,-99) , 
+8, 0.896903, 0, 0, 0.531071,-99) , 
+NN(
+0, 
+0, 
+-1, 299.214, 1, -1, 0.425211,-99) , 
+3, 85.9494, 0, 0, 0.475327,-99) , 
+6, -0.118513, 0, 0, 0.506195,-99)    );
+  // itree = 182
+  fBoostWeights.push_back(0.0718115);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.718004,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.638868,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.492643,-99) , 
+5, 0.400007, 0, 0, 0.546764,-99) , 
+NN(
+0, 
+0, 
+-1, -0.113467, 0, -1, 0.472409,-99) , 
+13, -1.82307, 1, 0, 0.47859,-99) , 
+6, -2.26007, 1, 0, 0.486087,-99)    );
+  // itree = 183
+  fBoostWeights.push_back(0.134908);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.45048, 0, 1, 0.559342,-99) , 
+NN(
+0, 
+0, 
+-1, -2.39364, 0, -1, 0.393337,-99) , 
+3, 95.4435, 1, 0, 0.535091,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.651299,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.496154,-99) , 
+10, 1.45253, 1, 0, 0.55659,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.521703,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.415671,-99) , 
+2, 1.02958, 0, 0, 0.441274,-99) , 
+8, -2.69145, 1, 0, 0.461941,-99) , 
+8, 0.551153, 0, 0, 0.497248,-99)    );
+  // itree = 184
+  fBoostWeights.push_back(0.120779);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.573792,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.326595,-99) , 
+14, -1.28936, 0, 0, 0.550836,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.523412,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.458759,-99) , 
+11, 98.1957, 1, 0, 0.497199,-99) , 
+13, 0.101979, 0, 0, 0.521429,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.290368,-99) , 
+10, -3.62514, 0, 0, 0.512822,-99)    );
+  // itree = 185
+  fBoostWeights.push_back(0.0906422);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 66.6306, 0, 1, 0.633745,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.591547,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.401951,-99) , 
+6, -1.93018, 1, 0, 0.494164,-99) , 
+3, 80.253, 0, 0, 0.591012,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.503775,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.366737,-99) , 
+6, 1.77462, 1, 0, 0.492572,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.344705,-99) , 
+5, 0.209, 0, 0, 0.477583,-99) , 
+6, -1.30704, 1, 0, 0.497726,-99)    );
+  // itree = 186
+  fBoostWeights.push_back(0.153582);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.581053,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.468455,-99) , 
+9, 280.541, 1, 0, 0.549769,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551817,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.356943,-99) , 
+4, 271.476, 1, 0, 0.455639,-99) , 
+13, -0.483891, 0, 0, 0.518824,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537791,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.336433,-99) , 
+3, 68.6786, 0, 0, 0.503198,-99) , 
+NN(
+0, 
+0, 
+-1, 65.783, 0, -1, 0.414854,-99) , 
+3, 80.253, 1, 0, 0.448963,-99) , 
+6, 0.119629, 1, 0, 0.487136,-99)    );
+  // itree = 187
+  fBoostWeights.push_back(0.0751873);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0.493294, 0, 1, 0.609917,-99) , 
+NN(
+0, 
+0, 
+-1, 1.09242, 1, -1, 0.472742,-99) , 
+12, 2207.98, 0, 0, 0.489777,-99)    );
+  // itree = 188
+  fBoostWeights.push_back(0.0879849);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.894883, 1, 1, 0.603962,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.565299,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.475712,-99) , 
+8, -2.26767, 1, 0, 0.493774,-99) , 
+9, 482.954, 0, 0, 0.503134,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.313741,-99) , 
+5, 0.524812, 1, 0, 0.496389,-99)    );
+  // itree = 189
+  fBoostWeights.push_back(0.0841582);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, -0.325265, 1, 1, 0.61943,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.645855,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.488947,-99) , 
+6, -2.01879, 1, 0, 0.499785,-99) , 
+NN(
+0, 
+0, 
+-1, 202.907, 1, -1, 0.400364,-99) , 
+13, 1.01534, 1, 0, 0.482618,-99) , 
+3, 99.2411, 0, 0, 0.495321,-99)    );
+  // itree = 190
+  fBoostWeights.push_back(0.0689753);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 1.07275, 0, 1, 0.530768,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.371261,-99) , 
+13, 2.12136, 1, 0, 0.5248,-99)    );
+  // itree = 191
+  fBoostWeights.push_back(0.104707);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.542049,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.426911,-99) , 
+14, 1.21643, 1, 0, 0.525872,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.319823,-99) , 
+0, 275.981, 1, 0, 0.517786,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.510603,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.412345,-99) , 
+2, 0.804362, 1, 0, 0.488601,-99) , 
+NN(
+0, 
+0, 
+-1, -2.34807, 1, -1, 0.357931,-99) , 
+3, 91.6458, 1, 0, 0.459409,-99) , 
+8, -1.51986, 0, 0, 0.500612,-99)    );
+  // itree = 192
+  fBoostWeights.push_back(0.0767009);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0.141916, 0, 1, 0.59425,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.579373,-99) , 
+NN(
+0, 
+0, 
+-1, 143.852, 1, -1, 0.467421,-99) , 
+0, 264.338, 0, 0, 0.473361,-99) , 
+3, 101.14, 0, 0, 0.479924,-99)    );
+  // itree = 193
+  fBoostWeights.push_back(0.127712);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.590236,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.478616,-99) , 
+14, 0.377521, 1, 0, 0.551157,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551658,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.452999,-99) , 
+2, -0.831962, 1, 0, 0.481616,-99) , 
+7, 61.8018, 1, 0, 0.506844,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.543345,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.388158,-99) , 
+0, 66.5357, 1, 0, 0.456272,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.236074,-99) , 
+7, 57.0752, 0, 0, 0.400393,-99) , 
+2, 1.25635, 1, 0, 0.494179,-99)    );
+  // itree = 194
+  fBoostWeights.push_back(0.139383);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.552476,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.440627,-99) , 
+6, -1.78285, 0, 0, 0.543665,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536562,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.378965,-99) , 
+12, 1356.06, 0, 0, 0.442613,-99) , 
+3, 93.5446, 1, 0, 0.524386,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.623694,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.41736,-99) , 
+3, 87.8661, 0, 0, 0.529901,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50076,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.374217,-99) , 
+2, -1.52983, 1, 0, 0.414486,-99) , 
+4, 342.661, 0, 0, 0.447635,-99) , 
+2, -0.572521, 0, 0, 0.500968,-99)    );
+  // itree = 195
+  fBoostWeights.push_back(0.0643439);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.686139,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.49911,-99) , 
+8, 3.03362, 0, 0, 0.613633,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.77383,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.450323,-99) , 
+12, 723.774, 1, 0, 0.590785,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.5007,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.369236,-99) , 
+3, 74.0268, 0, 0, 0.488297,-99) , 
+3, 68.8601, 1, 0, 0.496102,-99) , 
+8, 2.71005, 0, 0, 0.507642,-99)    );
+  // itree = 196
+  fBoostWeights.push_back(0.0966954);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.575032,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.48619,-99) , 
+3, 97.3423, 0, 0, 0.497393,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.598215,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.424929,-99) , 
+14, -2.20665, 1, 0, 0.444198,-99) , 
+6, -0.357352, 0, 0, 0.476688,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.282494,-99) , 
+13, 2.41025, 1, 0, 0.471307,-99)    );
+  // itree = 197
+  fBoostWeights.push_back(0.083393);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.644181,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.562262,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.486206,-99) , 
+14, 1.15187, 0, 0, 0.501848,-99) , 
+14, -2.17561, 1, 0, 0.506515,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.60657,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.501928,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.322415,-99) , 
+5, 0.2998, 1, 0, 0.387232,-99) , 
+3, 95.4435, 0, 0, 0.435995,-99) , 
+10, 2.68234, 1, 0, 0.494959,-99)    );
+  // itree = 198
+  fBoostWeights.push_back(0.102064);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.650429,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.443199,-99) , 
+13, -0.90618, 0, 0, 0.595187,-99) , 
+NN(
+0, 
+0, 
+-1, 68.8601, 1, 1, 0.515822,-99) , 
+9, 310.298, 0, 0, 0.538715,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.526444,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.413208,-99) , 
+2, -0.791829, 0, 0, 0.500314,-99) , 
+NN(
+0, 
+0, 
+-1, 87.6696, 0, -1, 0.390144,-99) , 
+8, 1.91629, 1, 0, 0.479163,-99) , 
+14, -0.220303, 1, 0, 0.506317,-99)    );
+  // itree = 199
+  fBoostWeights.push_back(0.148737);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.594494,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442241,-99) , 
+2, 0.794596, 1, 0, 0.564545,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.529535,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.361345,-99) , 
+0, 109.936, 1, 0, 0.485926,-99) , 
+8, 0.646763, 0, 0, 0.526155,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.547098,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.399885,-99) , 
+12, 1887.56, 1, 0, 0.520701,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.522622,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.391467,-99) , 
+8, 2.6049, 0, 0, 0.417672,-99) , 
+8, -1.10542, 1, 0, 0.465423,-99) , 
+6, -0.35512, 0, 0, 0.502206,-99)    );
+  // itree = 200
+  fBoostWeights.push_back(0.106997);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, -0.123242, 1, 1, 0.570439,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.605672,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.481264,-99) , 
+14, 1.55399, 0, 0, 0.495273,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505791,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.388739,-99) , 
+5, 0.441039, 0, 0, 0.41632,-99) , 
+3, 85.9494, 1, 0, 0.46551,-99) , 
+5, 0.223346, 1, 0, 0.480911,-99)    );
+  // itree = 201
+  fBoostWeights.push_back(0.0664254);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.686159,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.422668,-99) , 
+5, 0.362986, 0, 0, 0.578523,-99) , 
+NN(
+0, 
+0, 
+-1, 93.6482, 0, -1, 0.484126,-99) , 
+14, 1.77544, 0, 0, 0.492609,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.348883,-99) , 
+9, 505.842, 1, 0, 0.485673,-99)    );
+  // itree = 202
+  fBoostWeights.push_back(0.122385);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.20459, 1, 1, 0.554311,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.587209,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.235437,-99) , 
+5, 0.507871, 0, 0, 0.4351,-99) , 
+5, 0.461453, 1, 0, 0.534008,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.569377,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.472988,-99) , 
+3, 78.3542, 1, 0, 0.502769,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.506859,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.398309,-99) , 
+9, 157.418, 1, 0, 0.439307,-99) , 
+12, 1095.71, 0, 0, 0.47017,-99) , 
+8, 1.19713, 0, 0, 0.494711,-99)    );
+  // itree = 203
+  fBoostWeights.push_back(0.142902);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.609128,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.423116,-99) , 
+14, -0.72223, 0, 0, 0.571409,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.55816,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.475318,-99) , 
+0, 132.677, 0, 0, 0.49566,-99) , 
+5, 0.347752, 0, 0, 0.5194,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.715113,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.467948,-99) , 
+4, 266, 1, 0, 0.595242,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.520909,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.328948,-99) , 
+3, 87.8482, 0, 0, 0.400939,-99) , 
+14, -1.18449, 1, 0, 0.448956,-99) , 
+5, 0.424348, 1, 0, 0.501217,-99)    );
+  // itree = 204
+  fBoostWeights.push_back(0.0806573);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.70524, 1, 1, 0.659389,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.542114,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384556,-99) , 
+5, 0.39585, 1, 0, 0.492262,-99) , 
+12, 965.893, 1, 0, 0.573779,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.665256,-99) , 
+NN(
+0, 
+0, 
+-1, -0.220215, 0, -1, 0.478963,-99) , 
+4, 654.577, 0, 0, 0.484751,-99) , 
+6, -1.30815, 1, 0, 0.500049,-99)    );
+  // itree = 205
+  fBoostWeights.push_back(0.0694094);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 267.809, 0, 1, 0.524913,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.544729,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.287474,-99) , 
+6, -0.123535, 1, 0, 0.421625,-99) , 
+9, 507.325, 1, 0, 0.519157,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.346475,-99) , 
+10, -3.59473, 0, 0, 0.513323,-99)    );
+  // itree = 206
+  fBoostWeights.push_back(0.0926803);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.533294,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.445889,-99) , 
+10, -3.14081, 0, 0, 0.523811,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.348482,-99) , 
+5, 0.527435, 1, 0, 0.518393,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.53687,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.35785,-99) , 
+13, 0.78624, 0, 0, 0.420774,-99) , 
+8, -2.5439, 0, 0, 0.507935,-99)    );
+  // itree = 207
+  fBoostWeights.push_back(0.101519);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.481387, 0, 1, 0.532896,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.51323,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.413804,-99) , 
+4, 313.857, 0, 0, 0.463617,-99) , 
+7, 126.028, 1, 0, 0.51443,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.520113,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.399106,-99) , 
+10, -2.20787, 1, 0, 0.447917,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.263671,-99) , 
+6, -1.07066, 0, 0, 0.417438,-99) , 
+9, 141.201, 0, 0, 0.492591,-99)    );
+  // itree = 208
+  fBoostWeights.push_back(0.0513062);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.698131,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.496394,-99) , 
+4, 405.619, 0, 0, 0.505109,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.540667,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.37315,-99) , 
+5, 0.424332, 0, 0, 0.432488,-99) , 
+4, 427.351, 1, 0, 0.496297,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.344392,-99) , 
+14, -2.39572, 0, 0, 0.492435,-99)    );
+  // itree = 209
+  fBoostWeights.push_back(0.141148);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.710349, 0, 1, 0.65858,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.582957,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.433811,-99) , 
+7, 64.0507, 1, 0, 0.494057,-99) , 
+11, 118.742, 0, 0, 0.537405,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.529062,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.427898,-99) , 
+6, 0.459612, 1, 0, 0.486216,-99) , 
+NN(
+0, 
+0, 
+-1, 50.5437, 0, -1, 0.394512,-99) , 
+6, -1.07052, 0, 0, 0.468102,-99) , 
+10, -2.17257, 1, 0, 0.489462,-99)    );
+  // itree = 210
+  fBoostWeights.push_back(0.127146);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.576433,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.41339,-99) , 
+6, 1.54601, 1, 0, 0.560231,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.391581,-99) , 
+13, 2.0752, 1, 0, 0.54289,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.539069,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.455244,-99) , 
+6, 0.122512, 0, 0, 0.494509,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.29219,-99) , 
+8, -2.69643, 0, 0, 0.482708,-99) , 
+2, 0.342564, 0, 0, 0.506627,-99)    );
+  // itree = 211
+  fBoostWeights.push_back(0.110383);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.30943, 1, 1, 0.541554,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536444,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.402339,-99) , 
+2, 0.114025, 0, 0, 0.475883,-99) , 
+5, 0.42432, 1, 0, 0.523594,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.563745,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.462198,-99) , 
+13, 0.748291, 0, 0, 0.488684,-99) , 
+NN(
+0, 
+0, 
+-1, 0.497392, 0, -1, 0.387326,-99) , 
+5, 0.39235, 1, 0, 0.456507,-99) , 
+8, 0.944754, 1, 0, 0.497258,-99)    );
+  // itree = 212
+  fBoostWeights.push_back(0.0549222);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.552734, 1, 1, 0.587995,-99) , 
+NN(
+0, 
+0, 
+-1, 200.267, 1, -1, 0.483318,-99) , 
+7, 256.773, 0, 0, 0.49118,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.343817,-99) , 
+14, 2.08007, 1, 0, 0.485253,-99)    );
+  // itree = 213
+  fBoostWeights.push_back(0.0503346);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0.377709, 0, 1, 0.606361,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50033,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.428696,-99) , 
+3, 74.5565, 0, 0, 0.488608,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500838,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.279068,-99) , 
+13, 1.8695, 0, 0, 0.382724,-99) , 
+2, 1.48551, 1, 0, 0.480159,-99) , 
+1, -951.26, 1, 0, 0.487112,-99)    );
+  // itree = 214
+  fBoostWeights.push_back(0.0976225);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.577493,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.593892,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.476824,-99) , 
+2, -0.725749, 1, 0, 0.49326,-99) , 
+NN(
+0, 
+0, 
+-1, -0.829102, 0, -1, 0.412439,-99) , 
+13, -0.749564, 0, 0, 0.474038,-99) , 
+8, 2.7619, 0, 0, 0.482597,-99)    );
+  // itree = 215
+  fBoostWeights.push_back(0.109255);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 483.227, 0, 1, 0.57094,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.550018,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.357852,-99) , 
+2, -0.115258, 1, 0, 0.456375,-99) , 
+7, 64.8351, 0, 0, 0.532706,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500396,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.367266,-99) , 
+6, 0.0856672, 1, 0, 0.483371,-99) , 
+NN(
+0, 
+0, 
+-1, 0.366274, 1, -1, 0.415191,-99) , 
+3, 89.747, 1, 0, 0.462971,-99) , 
+6, 0.358329, 0, 0, 0.491415,-99)    );
+  // itree = 216
+  fBoostWeights.push_back(0.0912706);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.0051037, 1, 1, 0.527769,-99) , 
+NN(
+0, 
+0, 
+-1, 0.54083, 0, -1, 0.383969,-99) , 
+13, 1.87597, 1, 0, 0.51599,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.54941,-99) , 
+NN(
+0, 
+0, 
+-1, 73.595, 0, -1, 0.424187,-99) , 
+8, -2.26451, 1, 0, 0.45144,-99) , 
+2, -0.57008, 0, 0, 0.496643,-99)    );
+  // itree = 217
+  fBoostWeights.push_back(0.10817);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 84.5752, 1, 1, 0.639034,-99) , 
+NN(
+0, 
+0, 
+-1, 482.825, 1, -1, 0.490583,-99) , 
+14, -1.29434, 1, 0, 0.514429,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536019,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.419338,-99) , 
+10, -1.70312, 1, 0, 0.453247,-99) , 
+NN(
+0, 
+0, 
+-1, 69.5565, 1, -1, 0.242127,-99) , 
+3, 74.5565, 0, 0, 0.422574,-99) , 
+2, 0.342773, 1, 0, 0.481068,-99)    );
+  // itree = 218
+  fBoostWeights.push_back(0.12635);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.67508, 0, 1, 0.565254,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.54729,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.440607,-99) , 
+8, -1.28288, 1, 0, 0.485235,-99) , 
+7, 114.426, 0, 0, 0.514974,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.585491,-99) , 
+NN(
+0, 
+0, 
+-1, 784.771, 0, -1, 0.431295,-99) , 
+13, -1.5955, 1, 0, 0.450689,-99) , 
+3, 87.8482, 1, 0, 0.491949,-99)    );
+  // itree = 219
+  fBoostWeights.push_back(0.108086);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -2.11677, 1, 1, 0.563722,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505414,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.365551,-99) , 
+9, 141.109, 0, 0, 0.481888,-99) , 
+12, 1172.69, 1, 0, 0.530364,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.632586,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.473875,-99) , 
+5, 0.481203, 0, 0, 0.498568,-99) , 
+NN(
+0, 
+0, 
+-1, 0.36391, 1, -1, 0.385435,-99) , 
+14, -0.868707, 0, 0, 0.468063,-99) , 
+2, 0.343192, 1, 0, 0.506735,-99)    );
+  // itree = 220
+  fBoostWeights.push_back(0.1184);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.575195, 0, 1, 0.575122,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.60794,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.42598,-99) , 
+12, 2252.36, 0, 0, 0.481076,-99) , 
+12, 1317.7, 1, 0, 0.54158,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 777.897, 1, 1, 0.530078,-99) , 
+NN(
+0, 
+0, 
+-1, 289.286, 0, -1, 0.446682,-99) , 
+8, -2.0387, 1, 0, 0.477504,-99) , 
+8, 0.993304, 0, 0, 0.504525,-99)    );
+  // itree = 221
+  fBoostWeights.push_back(0.061833);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.573586,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.497911,-99) , 
+2, 0.571731, 0, 0, 0.521773,-99) , 
+NN(
+0, 
+0, 
+-1, -1.54334, 0, -1, 0.46899,-99) , 
+8, -1.16904, 0, 0, 0.501786,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.387261,-99) , 
+14, -2.12864, 0, 0, 0.496668,-99)    );
+  // itree = 222
+  fBoostWeights.push_back(0.123202);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.578405,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.435058,-99) , 
+12, 2134.45, 1, 0, 0.561174,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.433876,-99) , 
+2, 1.01095, 1, 0, 0.544422,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.635946,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.49387,-99) , 
+9, 238.889, 0, 0, 0.56829,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.504777,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.427404,-99) , 
+12, 1332.56, 0, 0, 0.454107,-99) , 
+13, -1.64852, 1, 0, 0.46748,-99) , 
+8, 1.15783, 0, 0, 0.497831,-99)    );
+  // itree = 223
+  fBoostWeights.push_back(0.0873114);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 83.8132, 1, 1, 0.574376,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.642545,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.492055,-99) , 
+3, 68.8601, 1, 0, 0.5068,-99) , 
+NN(
+0, 
+0, 
+-1, 98.2567, 0, -1, 0.418953,-99) , 
+12, 1509.05, 1, 0, 0.483265,-99) , 
+5, 0.228571, 1, 0, 0.498846,-99)    );
+  // itree = 224
+  fBoostWeights.push_back(0.118413);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.714927,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.454628,-99) , 
+7, 84.1366, 1, 0, 0.625584,-99) , 
+NN(
+0, 
+0, 
+-1, 170.818, 0, 1, 0.522159,-99) , 
+3, 95.4435, 0, 0, 0.542717,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.684201,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.460074,-99) , 
+13, 1.81754, 0, 0, 0.47951,-99) , 
+NN(
+0, 
+0, 
+-1, -0.121257, 1, -1, 0.327234,-99) , 
+8, -2.05683, 0, 0, 0.450351,-99) , 
+5, 0.37408, 1, 0, 0.507875,-99)    );
+  // itree = 225
+  fBoostWeights.push_back(0.102038);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.698741,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.477185,-99) , 
+8, 1.47961, 1, 0, 0.593313,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.552404,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.371196,-99) , 
+3, 101.321, 1, 0, 0.533861,-99) , 
+NN(
+0, 
+0, 
+-1, 1952.5, 1, -1, 0.465163,-99) , 
+3, 89.747, 0, 0, 0.487083,-99) , 
+10, -3.14211, 1, 0, 0.498733,-99)    );
+  // itree = 226
+  fBoostWeights.push_back(0.131222);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.425503, 1, 1, 0.569623,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.577377,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384029,-99) , 
+3, 76.4554, 1, 0, 0.454619,-99) , 
+2, 0.342285, 1, 0, 0.530924,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.563123,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.453493,-99) , 
+6, 0.11756, 1, 0, 0.51145,-99) , 
+NN(
+0, 
+0, 
+-1, 772.611, 0, -1, 0.439813,-99) , 
+0, 81.3269, 0, 0, 0.474271,-99) , 
+5, 0.4124, 0, 0, 0.492796,-99)    );
+  // itree = 227
+  fBoostWeights.push_back(0.0690946);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.590254,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.507783,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.434783,-99) , 
+12, 1495.18, 1, 0, 0.487939,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.333107,-99) , 
+0, 275.982, 1, 0, 0.481823,-99) , 
+5, 0.198236, 1, 0, 0.491443,-99)    );
+  // itree = 228
+  fBoostWeights.push_back(0.0844342);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.538061,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.47004,-99) , 
+5, 0.253024, 0, 0, 0.523104,-99) , 
+NN(
+0, 
+0, 
+-1, 0.458113, 1, -1, 0.458329,-99) , 
+14, -0.704426, 0, 0, 0.503508,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.351644,-99) , 
+6, 2.02351, 1, 0, 0.497725,-99)    );
+  // itree = 229
+  fBoostWeights.push_back(0.0820255);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -2.56217, 1, 1, 0.545762,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.502005,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.396193,-99) , 
+2, -0.191005, 0, 0, 0.475248,-99) , 
+2, -0.800293, 1, 0, 0.493611,-99) , 
+NN(
+0, 
+0, 
+-1, 2.0117, 0, -1, 0.391216,-99) , 
+14, 1.39054, 1, 0, 0.482236,-99)    );
+  // itree = 230
+  fBoostWeights.push_back(0.144258);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1648.65, 0, 1, 0.536352,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.520642,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.39757,-99) , 
+0, 226.262, 0, 0, 0.440326,-99) , 
+0, 132.993, 1, 0, 0.515038,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.712078,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.395899,-99) , 
+8, -0.291434, 1, 0, 0.562543,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.559888,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.317674,-99) , 
+2, -0.80306, 1, 0, 0.40134,-99) , 
+6, 1.0678, 0, 0, 0.44144,-99) , 
+12, 797.803, 0, 0, 0.495331,-99)    );
+  // itree = 231
+  fBoostWeights.push_back(0.118041);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.30713, 1, 1, 0.537319,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.529891,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.397417,-99) , 
+5, 0.323047, 1, 0, 0.47917,-99) , 
+7, 61.1474, 0, 0, 0.517899,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.559367,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.363299,-99) , 
+4, 292.143, 0, 0, 0.466729,-99) , 
+NN(
+0, 
+0, 
+-1, 0.506755, 1, -1, 0.333488,-99) , 
+7, 102.374, 1, 0, 0.41642,-99) , 
+5, 0.449446, 1, 0, 0.49899,-99)    );
+  // itree = 232
+  fBoostWeights.push_back(0.101092);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.53502, 0, 1, 0.541998,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508427,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.358499,-99) , 
+3, 97.9018, 1, 0, 0.487045,-99) , 
+5, 0.320566, 1, 0, 0.514477,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537746,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.419984,-99) , 
+13, -0.20792, 1, 0, 0.478594,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.296126,-99) , 
+3, 78.8036, 1, 0, 0.453193,-99) , 
+3, 80.253, 0, 0, 0.492857,-99)    );
+  // itree = 233
+  fBoostWeights.push_back(0.127986);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 84.0506, 0, 1, 0.570576,-99) , 
+NN(
+0, 
+0, 
+-1, -0.567243, 1, -1, 0.384484,-99) , 
+10, -2.15109, 0, 0, 0.533143,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.535706,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.450125,-99) , 
+5, 0.243197, 1, 0, 0.472335,-99) , 
+NN(
+0, 
+0, 
+-1, 1332.79, 0, -1, 0.370239,-99) , 
+13, -1.29672, 0, 0, 0.457835,-99) , 
+5, 0.435324, 0, 0, 0.477333,-99)    );
+  // itree = 234
+  fBoostWeights.push_back(0.103937);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.710916,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.471641,-99) , 
+12, 997.111, 1, 0, 0.611726,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.540068,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.414286,-99) , 
+11, 54.6005, 0, 0, 0.521544,-99) , 
+NN(
+0, 
+0, 
+-1, 1.30657, 1, -1, 0.461153,-99) , 
+11, 98.1954, 1, 0, 0.49623,-99) , 
+13, 1.71526, 0, 0, 0.506702,-99)    );
+  // itree = 235
+  fBoostWeights.push_back(0.105525);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.321312, 0, 1, 0.527811,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.501104,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.316657,-99) , 
+4, 264.81, 1, 0, 0.419819,-99) , 
+3, 74.5565, 0, 0, 0.508806,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.586906,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.446146,-99) , 
+9, 123.097, 1, 0, 0.467519,-99) , 
+NN(
+0, 
+0, 
+-1, 81.2977, 1, -1, 0.367111,-99) , 
+12, 797.943, 0, 0, 0.440231,-99) , 
+6, 0.358747, 1, 0, 0.483634,-99)    );
+  // itree = 236
+  fBoostWeights.push_back(0.0908927);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.91732, 0, 1, 0.572056,-99) , 
+NN(
+0, 
+0, 
+-1, 357.655, 1, -1, 0.461524,-99) , 
+9, 511.378, 0, 0, 0.468566,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.344991,-99) , 
+0, 275.155, 1, 0, 0.463482,-99)    );
+  // itree = 237
+  fBoostWeights.push_back(0.129292);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.696334,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.616335,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.495967,-99) , 
+12, 2208.34, 0, 0, 0.517457,-99) , 
+3, 68.8601, 1, 0, 0.534286,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.534402,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.349434,-99) , 
+0, 267.377, 1, 0, 0.510614,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.530055,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.387783,-99) , 
+12, 1691.36, 0, 0, 0.417847,-99) , 
+0, 111.721, 0, 0, 0.449106,-99) , 
+10, -1.66178, 1, 0, 0.482176,-99)    );
+  // itree = 238
+  fBoostWeights.push_back(0.0872726);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.58265,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.61467,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.469444,-99) , 
+2, 1.94222, 0, 0, 0.476029,-99) , 
+12, 2490.3, 0, 0, 0.484273,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.344081,-99) , 
+0, 275.981, 1, 0, 0.477821,-99)    );
+  // itree = 239
+  fBoostWeights.push_back(0.134814);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.641456,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.425581,-99) , 
+6, 1.36519, 1, 0, 0.594866,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.565569,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.389319,-99) , 
+0, 112.05, 1, 0, 0.512308,-99) , 
+14, 0.865921, 0, 0, 0.553672,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.567981,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.466217,-99) , 
+5, 0.36596, 0, 0, 0.493735,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.501593,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.325049,-99) , 
+12, 947.255, 1, 0, 0.421083,-99) , 
+5, 0.43572, 1, 0, 0.476127,-99) , 
+10, -2.17257, 1, 0, 0.498714,-99)    );
+  // itree = 240
+  fBoostWeights.push_back(0.13126);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.583788,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.454254,-99) , 
+14, -0.645022, 0, 0, 0.56535,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.380287,-99) , 
+7, 231.739, 1, 0, 0.552589,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551641,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.456753,-99) , 
+8, -2.01877, 0, 0, 0.520654,-99) , 
+NN(
+0, 
+0, 
+-1, 0.4124, 1, -1, 0.435689,-99) , 
+10, 1.84842, 0, 0, 0.484811,-99) , 
+10, -1.69499, 1, 0, 0.510677,-99)    );
+  // itree = 241
+  fBoostWeights.push_back(0.10793);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.606138,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.541348,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.472028,-99) , 
+10, 1.67415, 0, 0, 0.494548,-99) , 
+14, -0.569217, 1, 0, 0.508094,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.502583,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.425955,-99) , 
+9, 212.193, 1, 0, 0.470444,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.57826,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.349788,-99) , 
+10, -2.28864, 1, 0, 0.396272,-99) , 
+11, 103.383, 1, 0, 0.444611,-99) , 
+6, -0.11749, 0, 0, 0.478926,-99)    );
+  // itree = 242
+  fBoostWeights.push_back(0.127531);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.601178,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.48534,-99) , 
+2, 0.112491, 0, 0, 0.546068,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.313497,-99) , 
+14, -1.83672, 0, 0, 0.533245,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.581287,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.467126,-99) , 
+2, -1.25174, 1, 0, 0.486729,-99) , 
+NN(
+0, 
+0, 
+-1, 0.590332, 0, -1, 0.335618,-99) , 
+8, 0.593378, 0, 0, 0.463439,-99) , 
+8, -0.775298, 1, 0, 0.496693,-99)    );
+  // itree = 243
+  fBoostWeights.push_back(0.122549);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 772.321, 1, 1, 0.58172,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.570807,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.450855,-99) , 
+6, 0.360352, 0, 0, 0.504908,-99) , 
+5, 0.263036, 0, 0, 0.562475,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.538288,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.356315,-99) , 
+9, 406.851, 1, 0, 0.522102,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500961,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.238379,-99) , 
+2, 1.0399, 1, 0, 0.448992,-99) , 
+8, -1.17001, 1, 0, 0.499077,-99) , 
+10, -1.20922, 1, 0, 0.526912,-99)    );
+  // itree = 244
+  fBoostWeights.push_back(0.0817663);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.620329,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514708,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.455705,-99) , 
+5, 0.399156, 1, 0, 0.496634,-99) , 
+7, 281.518, 0, 0, 0.503507,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.584544,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.352891,-99) , 
+12, 933.622, 1, 0, 0.456128,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.254646,-99) , 
+2, -0.339076, 0, 0, 0.390859,-99) , 
+3, 70.7589, 0, 0, 0.49348,-99)    );
+  // itree = 245
+  fBoostWeights.push_back(0.109056);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.485318, 0, 1, 0.609654,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.504307,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.359316,-99) , 
+2, 0.799805, 1, 0, 0.474476,-99) , 
+3, 76.4554, 1, 0, 0.514153,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.633476,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.475603,-99) , 
+3, 89.5, 1, 0, 0.501003,-99) , 
+NN(
+0, 
+0, 
+-1, 0.440232, 1, -1, 0.437931,-99) , 
+3, 87.8482, 0, 0, 0.463488,-99) , 
+12, 836.357, 1, 0, 0.481229,-99)    );
+  // itree = 246
+  fBoostWeights.push_back(0.0756281);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 80.3452, 1, 1, 0.623029,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.556451,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.492942,-99) , 
+13, 0.410707, 0, 0, 0.510796,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.545637,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.281653,-99) , 
+3, 80.253, 1, 0, 0.39056,-99) , 
+2, 1.25047, 1, 0, 0.50021,-99) , 
+13, 1.95881, 0, 0, 0.507893,-99)    );
+  // itree = 247
+  fBoostWeights.push_back(0.0940092);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.371477, 0, 1, 0.529917,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.544111,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.446303,-99) , 
+5, 0.273589, 1, 0, 0.47415,-99) , 
+2, 0.0484794, 1, 0, 0.502945,-99) , 
+NN(
+0, 
+0, 
+-1, -1.77806, 1, -1, 0.349505,-99) , 
+2, -1.71436, 0, 0, 0.493538,-99)    );
+  // itree = 248
+  fBoostWeights.push_back(0.130183);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 77.0781, 0, 1, 0.628886,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537699,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.278455,-99) , 
+6, 0.595703, 1, 0, 0.465958,-99) , 
+5, 0.324826, 1, 0, 0.547166,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.51746,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.437863,-99) , 
+2, 0.114025, 1, 0, 0.482927,-99) , 
+NN(
+0, 
+0, 
+-1, 304.119, 0, -1, 0.354869,-99) , 
+3, 97.3423, 1, 0, 0.469815,-99) , 
+8, 1.76823, 0, 0, 0.491204,-99)    );
+  // itree = 249
+  fBoostWeights.push_back(0.130662);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.573601,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50995,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.44192,-99) , 
+5, 0.323853, 0, 0, 0.478651,-99) , 
+12, 2286.73, 0, 0, 0.489018,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.595683,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.404659,-99) , 
+12, 1057.43, 0, 0, 0.513629,-99) , 
+NN(
+0, 
+0, 
+-1, -0.593006, 0, -1, 0.381623,-99) , 
+5, 0.297431, 1, 0, 0.42767,-99) , 
+2, -0.342983, 0, 0, 0.465457,-99)    );
+  // itree = 250
+  fBoostWeights.push_back(0.0494938);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.833008, 1, 1, 0.617216,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.585121,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.494163,-99) , 
+10, 3.15048, 0, 0, 0.50235,-99) , 
+1, -951.25, 1, 0, 0.50878,-99) , 
+NN(
+0, 
+0, 
+-1, 75.8807, 1, -1, 0.377741,-99) , 
+13, -1.93966, 0, 0, 0.501283,-99)    );
+  // itree = 251
+  fBoostWeights.push_back(0.0966457);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 83.9643, 0, 1, 0.621577,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.394799,-99) , 
+4, 325.071, 1, 0, 0.558959,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.532568,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.472545,-99) , 
+12, 1069.58, 0, 0, 0.502108,-99) , 
+NN(
+0, 
+0, 
+-1, 209.567, 1, -1, 0.404748,-99) , 
+8, -1.85286, 0, 0, 0.488626,-99) , 
+8, -2.54585, 1, 0, 0.496882,-99)    );
+  // itree = 252
+  fBoostWeights.push_back(0.112664);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537756,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.401103,-99) , 
+13, -1.69527, 0, 0, 0.530457,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.5049,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.385237,-99) , 
+0, 89.8967, 1, 0, 0.455165,-99) , 
+10, 2.18122, 1, 0, 0.509885,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.60346,-99) , 
+NN(
+0, 
+0, 
+-1, 300.135, 1, -1, 0.400891,-99) , 
+14, 0.0158078, 1, 0, 0.433868,-99) , 
+6, 0.833659, 1, 0, 0.493019,-99)    );
+  // itree = 253
+  fBoostWeights.push_back(0.182029);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.565886,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.406132,-99) , 
+4, 458.036, 1, 0, 0.552193,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.563037,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.40639,-99) , 
+3, 85.9494, 0, 0, 0.479324,-99) , 
+6, -0.358538, 0, 0, 0.52391,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.711767,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.370692,-99) , 
+14, 0.494263, 0, 0, 0.500158,-99) , 
+NN(
+0, 
+0, 
+-1, 1009.42, 0, -1, 0.363513,-99) , 
+0, 123.742, 0, 0, 0.403485,-99) , 
+5, 0.424348, 1, 0, 0.494321,-99)    );
+  // itree = 254
+  fBoostWeights.push_back(0.148041);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.547693,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.419568,-99) , 
+9, 102.452, 0, 0, 0.533312,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.330484,-99) , 
+9, 416.013, 1, 0, 0.516605,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.59836,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.387341,-99) , 
+2, 0.577125, 1, 0, 0.545306,-99) , 
+NN(
+0, 
+0, 
+-1, 58.5428, 0, -1, 0.424219,-99) , 
+11, 139.586, 0, 0, 0.452072,-99) , 
+3, 87.8482, 0, 0, 0.477998,-99)    );
+  // itree = 255
+  fBoostWeights.push_back(0.105031);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537442,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.464838,-99) , 
+3, 91.6458, 1, 0, 0.519426,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.30186,-99) , 
+10, -3.62639, 0, 0, 0.511949,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.578936,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.458225,-99) , 
+6, -1.06913, 1, 0, 0.485372,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.297427,-99) , 
+9, 136.233, 0, 0, 0.441356,-99) , 
+2, 0.800456, 1, 0, 0.495844,-99)    );
+  // itree = 256
+  fBoostWeights.push_back(0.140785);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.577357,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.352583,-99) , 
+13, -1.11658, 0, 0, 0.548396,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536449,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.370093,-99) , 
+2, -0.106585, 1, 0, 0.458358,-99) , 
+5, 0.320703, 0, 0, 0.513529,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.585741,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.459832,-99) , 
+3, 75.7589, 1, 0, 0.473233,-99) , 
+NN(
+0, 
+0, 
+-1, 0.118978, 1, -1, 0.281096,-99) , 
+3, 72.6577, 0, 0, 0.454528,-99) , 
+8, -1.40723, 1, 0, 0.475857,-99)    );
+  // itree = 257
+  fBoostWeights.push_back(0.134185);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.720264,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.478238,-99) , 
+8, 0.078311, 0, 0, 0.620884,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.629789,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.476567,-99) , 
+11, 110.92, 0, 0, 0.496037,-99) , 
+11, 130.004, 0, 0, 0.529349,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.622873,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.459294,-99) , 
+8, 1.79785, 0, 0, 0.520444,-99) , 
+NN(
+0, 
+0, 
+-1, 797.896, 0, -1, 0.432649,-99) , 
+6, 0.834961, 0, 0, 0.454981,-99) , 
+2, 0.341936, 0, 0, 0.484464,-99)    );
+  // itree = 258
+  fBoostWeights.push_back(0.152505);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.567875,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.426421,-99) , 
+12, 2103.64, 1, 0, 0.552199,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.565153,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.421069,-99) , 
+2, 0.565848, 0, 0, 0.477427,-99) , 
+7, 71.9133, 0, 0, 0.522641,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.553315,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.414534,-99) , 
+8, 0.641485, 0, 0, 0.497522,-99) , 
+NN(
+0, 
+0, 
+-1, -1.6416, 0, -1, 0.382697,-99) , 
+14, 0.874813, 0, 0, 0.454666,-99) , 
+14, 0.352704, 1, 0, 0.498899,-99)    );
+  // itree = 259
+  fBoostWeights.push_back(0.0868172);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1354.06, 0, 1, 0.589132,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.532997,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.472675,-99) , 
+2, -0.11449, 0, 0, 0.504086,-99) , 
+5, 0.474577, 0, 0, 0.516933,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.374166,-99) , 
+4, 509.357, 1, 0, 0.510129,-99)    );
+  // itree = 260
+  fBoostWeights.push_back(0.137801);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.581001,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.455499,-99) , 
+2, -0.79541, 0, 0, 0.555117,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.539842,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.322136,-99) , 
+5, 0.308572, 0, 0, 0.467235,-99) , 
+9, 140.948, 0, 0, 0.534765,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.541645,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.433022,-99) , 
+0, 126.155, 1, 0, 0.513893,-99) , 
+NN(
+0, 
+0, 
+-1, 0.370853, 1, -1, 0.42072,-99) , 
+3, 90.5089, 0, 0, 0.484114,-99) , 
+3, 85.9494, 1, 0, 0.512924,-99)    );
+  // itree = 261
+  fBoostWeights.push_back(0.118718);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.677126,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.565298,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.455419,-99) , 
+11, 83.5983, 0, 0, 0.507462,-99) , 
+14, 0.824207, 0, 0, 0.527552,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.59437,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.476477,-99) , 
+8, 0.84875, 1, 0, 0.50678,-99) , 
+NN(
+0, 
+0, 
+-1, 0.320387, 1, -1, 0.433554,-99) , 
+10, -1.97126, 1, 0, 0.468157,-99) , 
+10, 2.17034, 0, 0, 0.486255,-99)    );
+  // itree = 262
+  fBoostWeights.push_back(0.095269);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.751222,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.494981,-99) , 
+5, 0.415705, 0, 0, 0.620806,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.545613,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.406326,-99) , 
+7, 228.1, 1, 0, 0.535537,-99) , 
+NN(
+0, 
+0, 
+-1, 0.94687, 1, -1, 0.469187,-99) , 
+5, 0.390086, 1, 0, 0.513326,-99) , 
+6, 2.02369, 0, 0, 0.519182,-99)    );
+  // itree = 263
+  fBoostWeights.push_back(0.125228);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.587398,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.48316,-99) , 
+2, 0.101981, 1, 0, 0.545199,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384339,-99) , 
+14, 1.19022, 1, 0, 0.526685,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 143.992, 0, 1, 0.5495,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551142,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.434465,-99) , 
+7, 185.898, 0, 0, 0.452409,-99) , 
+3, 93.5446, 0, 0, 0.473901,-99) , 
+8, 1.08096, 0, 0, 0.494823,-99)    );
+  // itree = 264
+  fBoostWeights.push_back(0.110982);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.532486,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.430468,-99) , 
+7, 238.628, 1, 0, 0.525293,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.305667,-99) , 
+3, 67.5923, 0, 0, 0.515351,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.54919,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.407853,-99) , 
+6, 0.119722, 0, 0, 0.479256,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.287182,-99) , 
+12, 1845.95, 1, 0, 0.442895,-99) , 
+3, 91.6458, 1, 0, 0.498308,-99)    );
+  // itree = 265
+  fBoostWeights.push_back(0.112252);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 94.997, 0, 1, 0.62781,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.506757,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384455,-99) , 
+7, 241.751, 1, 0, 0.498928,-99) , 
+6, 1.54399, 0, 0, 0.516408,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.614175,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.44022,-99) , 
+2, 1.02797, 0, 0, 0.474347,-99) , 
+NN(
+0, 
+0, 
+-1, 0.797689, 1, -1, 0.375835,-99) , 
+14, -0.771812, 0, 0, 0.445202,-99) , 
+3, 84.0506, 0, 0, 0.483145,-99)    );
+  // itree = 266
+  fBoostWeights.push_back(0.064112);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.631659,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.483165,-99) , 
+6, -2.02209, 1, 0, 0.488147,-99) , 
+NN(
+0, 
+0, 
+-1, -0.564061, 1, -1, 0.400607,-99) , 
+14, -1.59961, 0, 0, 0.480002,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.337981,-99) , 
+10, -3.62486, 0, 0, 0.47576,-99)    );
+  // itree = 267
+  fBoostWeights.push_back(0.143602);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.497274, 0, 1, 0.568274,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.515966,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.240334,-99) , 
+13, -1.28061, 0, 0, 0.480171,-99) , 
+6, 0.877407, 1, 0, 0.530187,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.573921,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.435273,-99) , 
+5, 0.347561, 0, 0, 0.50583,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551464,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.374089,-99) , 
+10, -2.21875, 1, 0, 0.417642,-99) , 
+11, 94.8005, 1, 0, 0.468199,-99) , 
+6, -0.119675, 0, 0, 0.502058,-99)    );
+  // itree = 268
+  fBoostWeights.push_back(0.0900444);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.261941, 1, 1, 0.622148,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.502833,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.355638,-99) , 
+3, 87.7768, 0, 0, 0.428841,-99) , 
+13, -0.355229, 0, 0, 0.560107,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.516315,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442239,-99) , 
+13, 0.966567, 1, 0, 0.502303,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.504209,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.251823,-99) , 
+0, 78.4008, 0, 0, 0.399687,-99) , 
+3, 97.3423, 1, 0, 0.491437,-99) , 
+6, 1.30997, 0, 0, 0.502729,-99)    );
+  // itree = 269
+  fBoostWeights.push_back(0.134707);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.622595,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.480679,-99) , 
+4, 289.286, 1, 0, 0.564488,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.39696,-99) , 
+3, 74.5565, 0, 0, 0.54138,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.621271,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.481959,-99) , 
+9, 239.69, 0, 0, 0.544229,-99) , 
+NN(
+0, 
+0, 
+-1, -2.61254, 0, -1, 0.438829,-99) , 
+2, 1.02853, 0, 0, 0.459786,-99) , 
+6, -1.07052, 1, 0, 0.479281,-99)    );
+  // itree = 270
+  fBoostWeights.push_back(0.0663221);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.788201,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.599949,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.41787,-99) , 
+14, -1.69084, 0, 0, 0.524788,-99) , 
+12, 700.795, 1, 0, 0.605251,-99) , 
+NN(
+0, 
+0, 
+-1, -1.37643, 0, -1, 0.482667,-99) , 
+6, -1.78453, 1, 0, 0.496995,-99)    );
+  // itree = 271
+  fBoostWeights.push_back(0.121565);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 99.2411, 0, 1, 0.575396,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.538543,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.41257,-99) , 
+0, 37.7811, 0, 0, 0.5245,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.504948,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.329334,-99) , 
+2, 0.132789, 0, 0, 0.397863,-99) , 
+9, 120.321, 0, 0, 0.504342,-99) , 
+0, 111.718, 0, 0, 0.526193,-99)    );
+  // itree = 272
+  fBoostWeights.push_back(0.113573);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.42515, 0, 1, 0.531079,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.515413,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.372506,-99) , 
+6, 0.358398, 1, 0, 0.458799,-99) , 
+10, -1.68848, 0, 0, 0.506795,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.673968,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.477222,-99) , 
+2, -0.341448, 1, 0, 0.556765,-99) , 
+NN(
+0, 
+0, 
+-1, -2.15095, 1, -1, 0.373827,-99) , 
+4, 305.518, 0, 0, 0.4376,-99) , 
+9, 141.531, 0, 0, 0.491323,-99)    );
+  // itree = 273
+  fBoostWeights.push_back(0.0714561);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.626527,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.544761,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.475944,-99) , 
+10, -2.60086, 1, 0, 0.490241,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.343271,-99) , 
+14, 2.29387, 1, 0, 0.486324,-99) , 
+14, -2.39572, 1, 0, 0.492078,-99)    );
+  // itree = 274
+  fBoostWeights.push_back(0.0890034);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.648226,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505286,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.435833,-99) , 
+5, 0.279822, 0, 0, 0.484708,-99) , 
+6, 1.7742, 0, 0, 0.492601,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.622731,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.339782,-99) , 
+13, -0.13062, 0, 0, 0.501553,-99) , 
+NN(
+0, 
+0, 
+-1, 66.6818, 0, -1, 0.332958,-99) , 
+2, -0.34103, 1, 0, 0.415948,-99) , 
+14, 1.27331, 1, 0, 0.482987,-99)    );
+  // itree = 275
+  fBoostWeights.push_back(0.0776456);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.529182,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.469767,-99) , 
+2, -0.124465, 0, 0, 0.501511,-99) , 
+NN(
+0, 
+0, 
+-1, -2.12473, 0, -1, 0.403475,-99) , 
+6, -1.7846, 0, 0, 0.493852,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.334913,-99) , 
+2, 1.94234, 1, 0, 0.489151,-99)    );
+  // itree = 276
+  fBoostWeights.push_back(0.0693207);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.684512,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.510281,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.416388,-99) , 
+4, 394.643, 1, 0, 0.496476,-99) , 
+NN(
+0, 
+0, 
+-1, 114.071, 1, -1, 0.419538,-99) , 
+6, -1.30815, 0, 0, 0.485089,-99) , 
+4, 654.577, 0, 0, 0.491214,-99)    );
+  // itree = 277
+  fBoostWeights.push_back(0.117295);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 467.25, 0, 1, 0.524405,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.280976,-99) , 
+3, 67.2292, 0, 0, 0.5136,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.616291,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.402034,-99) , 
+11, 90.3533, 0, 0, 0.528791,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.501179,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.376335,-99) , 
+8, -2.08189, 1, 0, 0.404499,-99) , 
+4, 384.036, 0, 0, 0.436145,-99) , 
+3, 87.8482, 1, 0, 0.483975,-99)    );
+  // itree = 278
+  fBoostWeights.push_back(0.168525);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 83.4625, 1, 1, 0.54577,-99) , 
+NN(
+0, 
+0, 
+-1, 82.1518, 0, -1, 0.403852,-99) , 
+6, -0.83138, 0, 0, 0.510438,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.55989,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.416352,-99) , 
+0, 125.273, 0, 0, 0.440292,-99) , 
+NN(
+0, 
+0, 
+-1, 0.73046, 1, -1, 0.291169,-99) , 
+0, 183.947, 1, 0, 0.421987,-99) , 
+2, -0.571591, 1, 0, 0.450653,-99)    );
+  // itree = 279
+  fBoostWeights.push_back(0.112873);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -2.48289, 1, 1, 0.537623,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.540327,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.454034,-99) , 
+2, -1.1603, 1, 0, 0.475681,-99) , 
+13, 0.589809, 0, 0, 0.495588,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.610394,-99) , 
+NN(
+0, 
+0, 
+-1, 178.933, 1, -1, 0.402971,-99) , 
+11, 170.406, 0, 0, 0.434431,-99) , 
+3, 91.6458, 1, 0, 0.480632,-99)    );
+  // itree = 280
+  fBoostWeights.push_back(0.142894);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.647988,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514132,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.429425,-99) , 
+7, 59.7233, 0, 0, 0.488839,-99) , 
+6, 2.02153, 0, 0, 0.499999,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.55279,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.420281,-99) , 
+0, 67.2603, 1, 0, 0.479022,-99) , 
+NN(
+0, 
+0, 
+-1, 91.4101, 0, -1, 0.380845,-99) , 
+5, 0.343618, 1, 0, 0.430645,-99) , 
+8, 1.08738, 0, 0, 0.459119,-99)    );
+  // itree = 281
+  fBoostWeights.push_back(0.132345);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.729847,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.493182,-99) , 
+2, -0.341657, 1, 0, 0.614315,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.568844,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.460165,-99) , 
+3, 91.6458, 1, 0, 0.535019,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.628571,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.440819,-99) , 
+8, -2.94671, 1, 0, 0.452152,-99) , 
+5, 0.237701, 1, 0, 0.469156,-99) , 
+5, 0.524822, 0, 0, 0.476993,-99)    );
+  // itree = 282
+  fBoostWeights.push_back(0.0969624);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.37764, 0, 1, 0.520531,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.55745,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409142,-99) , 
+12, 784.717, 1, 0, 0.455525,-99) , 
+13, 0.48286, 1, 0, 0.498558,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.540525,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.249342,-99) , 
+8, 1.78474, 0, 0, 0.375408,-99) , 
+6, 1.78557, 1, 0, 0.49073,-99)    );
+  // itree = 283
+  fBoostWeights.push_back(0.129075);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.629209,-99) , 
+NN(
+0, 
+0, 
+-1, -0.805013, 0, -1, 0.474382,-99) , 
+0, 60.4408, 1, 0, 0.547863,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.563844,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.452307,-99) , 
+7, 61.4648, 1, 0, 0.492496,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.541731,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.424603,-99) , 
+6, 1.48005, 0, 0, 0.441264,-99) , 
+3, 82.1518, 1, 0, 0.464006,-99) , 
+6, -1.78244, 1, 0, 0.472287,-99)    );
+  // itree = 284
+  fBoostWeights.push_back(0.105925);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.546726,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.473599,-99) , 
+5, 0.263765, 0, 0, 0.530012,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.51535,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.3321,-99) , 
+3, 76.4554, 0, 0, 0.475248,-99) , 
+12, 772.253, 0, 0, 0.515609,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.518236,-99) , 
+NN(
+0, 
+0, 
+-1, 2.8018, 1, -1, 0.317921,-99) , 
+5, 0.324714, 1, 0, 0.420021,-99) , 
+8, 2.2899, 1, 0, 0.500007,-99)    );
+  // itree = 285
+  fBoostWeights.push_back(0.1134);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.62635,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.433366,-99) , 
+11, 69.7923, 0, 0, 0.570239,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.519694,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.338426,-99) , 
+3, 97.3542, 1, 0, 0.423595,-99) , 
+9, 266.733, 1, 0, 0.528839,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.621532,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.483006,-99) , 
+13, -0.353638, 1, 0, 0.499098,-99) , 
+NN(
+0, 
+0, 
+-1, -0.442538, 0, -1, 0.422773,-99) , 
+13, -0.570334, 0, 0, 0.476026,-99) , 
+3, 93.5446, 0, 0, 0.487033,-99)    );
+  // itree = 286
+  fBoostWeights.push_back(0.0782237);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.652112,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, -2.37347, 1, 1, 0.529781,-99) , 
+NN(
+0, 
+0, 
+-1, 1000.66, 0, -1, 0.460595,-99) , 
+14, 0.126866, 1, 0, 0.500186,-99) , 
+10, -3.62486, 1, 0, 0.506784,-99)    );
+  // itree = 287
+  fBoostWeights.push_back(0.122484);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.687349,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.585424,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.422916,-99) , 
+4, 274.286, 0, 0, 0.522912,-99) , 
+2, 0.288086, 1, 0, 0.554228,-99) , 
+NN(
 NN(
 NN(
 0, 
@@ -2690,450 +10078,454 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490169,-99) , 
-10, 0.717357, 0, 0, 0.499569,-99) , 
-3, 1.8755, 0, 0, 0.503111,-99) , 
+-1, 0, 1, -1, 0.427843,-99) , 
+3, 89.747, 1, 0, 0.485491,-99) , 
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, -1, 0.450277,-99) , 
-12, -3.97391, 0, 0, 0.501164,-99)    );
-  // itree = 81
-  fBoostWeights.push_back(0.0431528);
-  fForest.push_back( 
-NN(
-NN(
+-1, 0, 1, 1, 0.501373,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.579779,-99) , 
+-1, 0, 1, -1, 0.290974,-99) , 
+9, 259.183, 0, 0, 0.373147,-99) , 
+13, 0.376243, 1, 0, 0.468284,-99) , 
+13, 0.826704, 0, 0, 0.489872,-99)    );
+  // itree = 288
+  fBoostWeights.push_back(0.140248);
+  fForest.push_back( 
+NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.525305,-99) , 
+-1, 0, 1, 1, 0.591525,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.469166,-99) , 
-8, 105.834, 1, 0, 0.506965,-99) , 
-10, 1.15925, 0, 0, 0.532102,-99) , 
-NN(
+-1, 0, 1, -1, 0.473135,-99) , 
+0, 103.011, 1, 0, 0.553224,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.509483,-99) , 
+-1, 0, 1, 1, 0.541963,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.469092,-99) , 
-0, 1.97832, 1, 0, 0.506046,-99) , 
+-1, 0, 1, -1, 0.385724,-99) , 
+4, 494.952, 0, 0, 0.456194,-99) , 
+4, 401.381, 1, 0, 0.51953,-99) , 
 NN(
 NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.627884,-99) , 
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.512644,-99) , 
+-1, 0, 1, -1, 0.407672,-99) , 
+12, 1167.1, 1, 0, 0.550882,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.449982,-99) , 
-2, 0.336004, 1, 0, 0.473758,-99) , 
-5, 1.0714, 1, 0, 0.499552,-99) , 
-3, -1.25057, 1, 0, 0.505516,-99)    );
-  // itree = 82
-  fBoostWeights.push_back(0.0273972);
+-1, 83.8661, 1, -1, 0.442102,-99) , 
+3, 95.4435, 0, 0, 0.457303,-99) , 
+4, 303.167, 0, 0, 0.484577,-99)    );
+  // itree = 289
+  fBoostWeights.push_back(0.0876953);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.569492,-99) , 
+-1, 0, 1, 1, 0.67933,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.543955,-99) , 
+-1, 0, 1, 1, 0.605258,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492201,-99) , 
-7, 1189.17, 0, 0, 0.4951,-99) , 
-14, 2635.8, 0, 0, 0.497109,-99) , 
+-1, 0, 1, -1, 0.466667,-99) , 
+13, 0.307513, 0, 0, 0.52846,-99) , 
+13, 1.18982, 0, 0, 0.587726,-99) , 
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, -1, 0.408899,-99) , 
-2, 0.688011, 1, 0, 0.494606,-99)    );
-  // itree = 83
-  fBoostWeights.push_back(0.0350013);
-  fForest.push_back( 
+-1, 82.1518, 1, 1, 0.598311,-99) , 
 NN(
 NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.553508,-99) , 
 NN(
 0, 
 0, 
--1, 0.72047, 0, 1, 0.526522,-99) , 
+-1, 0, 1, -1, 0.472202,-99) , 
+10, 3.13674, 0, 0, 0.482253,-99) , 
+1, -951.25, 1, 0, 0.48887,-99) , 
+10, -3.0764, 1, 0, 0.500574,-99)    );
+  // itree = 290
+  fBoostWeights.push_back(0.0602755);
+  fForest.push_back( 
+NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.517532,-99) , 
+-1, 80.253, 1, 1, 0.521433,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.488975,-99) , 
-10, -1.14745, 1, 0, 0.498876,-99) , 
-3, -1.13988, 1, 0, 0.504572,-99) , 
+-1, 0, 1, -1, 0.335052,-99) , 
+5, 0.52704, 1, 0, 0.51574,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.440828,-99) , 
-5, -2.02376, 0, 0, 0.50238,-99)    );
-  // itree = 84
-  fBoostWeights.push_back(0.037);
+-1, 0, 1, -1, 0.338592,-99) , 
+13, 2.22379, 1, 0, 0.510141,-99)    );
+  // itree = 291
+  fBoostWeights.push_back(0.0960675);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.533655,-99) , 
+-1, 1243.8, 0, 1, 0.58004,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.463157,-99) , 
-1, 66.5743, 0, 0, 0.524809,-99) , 
+-1, 0, 1, -1, 0.425986,-99) , 
+6, -1.06968, 0, 0, 0.55556,-99) , 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506247,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.474738,-99) , 
-8, 118.37, 1, 0, 0.498419,-99) , 
-9, 376.086, 0, 0, 0.504655,-99) , 
-NN(
+-1, 0, 1, 1, 0.617521,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.517635,-99) , 
+-1, 0, 1, -1, 0.489406,-99) , 
+3, 75.7589, 1, 0, 0.505001,-99) , 
 NN(
 0, 
 0, 
--1, 0.952501, 0, -1, 0.460026,-99) , 
-3, -0.975781, 1, 0, 0.47386,-99) , 
-2, 0.595302, 1, 0, 0.501158,-99)    );
-  // itree = 85
-  fBoostWeights.push_back(0.0469763);
+-1, 273.06, 0, -1, 0.381606,-99) , 
+3, 72.6577, 0, 0, 0.491901,-99) , 
+2, 0.572289, 0, 0, 0.511828,-99)    );
+  // itree = 292
+  fBoostWeights.push_back(0.0740129);
   fForest.push_back( 
 NN(
-NN(
-0, 
-0, 
--1, 0.380915, 1, 1, 0.543726,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529618,-99) , 
+-1, 0, 1, 1, 0.562958,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.494778,-99) , 
-1, 72.5125, 0, 0, 0.516923,-99) , 
+-1, 0, 1, -1, 0.496996,-99) , 
+12, 797.842, 1, 0, 0.516943,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514324,-99) , 
+-1, 0, 1, 1, 0.534185,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.47466,-99) , 
-3, 1.2163, 0, 0, 0.482414,-99) , 
-8, 78.905, 1, 0, 0.501097,-99) , 
-7, 1100.39, 0, 0, 0.504245,-99)    );
-  // itree = 86
-  fBoostWeights.push_back(0.0523379);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.389768,-99) , 
+12, 1316.97, 0, 0, 0.448513,-99) , 
+2, -1.02909, 0, 0, 0.504213,-99) , 
 NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.358434,-99) , 
+8, 2.9594, 1, 0, 0.497583,-99)    );
+  // itree = 293
+  fBoostWeights.push_back(0.106835);
+  fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.531769,-99) , 
+-1, -2.88874, 1, 1, 0.627644,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489685,-99) , 
-0, -0.335517, 0, 0, 0.521475,-99) , 
+-1, 0, 1, -1, 0.375731,-99) , 
+4, 335.25, 1, 0, 0.571229,-99) , 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509888,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.469644,-99) , 
-11, 158.884, 0, 0, 0.496262,-99) , 
-7, 531.78, 0, 0, 0.508695,-99) , 
-NN(
+-1, 0, 1, 1, 0.532428,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.538715,-99) , 
+-1, 0, 1, -1, 0.474516,-99) , 
+13, 0.541661, 1, 0, 0.515579,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511249,-99) , 
+-1, 0, 1, 1, 0.530885,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.43319,-99) , 
-12, -2.10611, 1, 0, 0.462243,-99) , 
-10, -2.06575, 1, 0, 0.480384,-99) , 
-5, -1.0714, 0, 0, 0.503046,-99)    );
-  // itree = 87
-  fBoostWeights.push_back(0.023733);
+-1, 0, 1, -1, 0.337113,-99) , 
+2, -1.83372, 1, 0, 0.43769,-99) , 
+2, -1.48535, 0, 0, 0.508638,-99) , 
+8, -2.27386, 1, 0, 0.520434,-99)    );
+  // itree = 294
+  fBoostWeights.push_back(0.111533);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.556969,-99) , 
+-1, 378.208, 0, 1, 0.550667,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.552735,-99) , 
+-1, 0, 1, 1, 0.523785,-99) , 
 NN(
 0, 
 0, 
--1, 213.8, 1, -1, 0.491517,-99) , 
-14, 2550.43, 0, 0, 0.493349,-99) , 
-3, 2.34107, 0, 0, 0.496123,-99)    );
-  // itree = 88
-  fBoostWeights.push_back(0.0319297);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.3698,-99) , 
+4, 406.321, 1, 0, 0.498755,-99) , 
+5, 0.374101, 1, 0, 0.530353,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 361.437, 0, 1, 0.515952,-99) , 
+-1, 0, 1, 1, 0.533406,-99) , 
 NN(
 0, 
 0, 
--1, 1.54753, 1, -1, 0.489217,-99) , 
-1, 89.7869, 1, 0, 0.508066,-99) , 
+-1, 0, 1, -1, 0.407687,-99) , 
+9, 246.842, 1, 0, 0.488328,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.447629,-99) , 
-1, 47.6442, 0, 0, 0.505625,-99)    );
-  // itree = 89
-  fBoostWeights.push_back(0.0290776);
+-1, 0, 1, -1, 0.276204,-99) , 
+7, 146.921, 1, 0, 0.45269,-99) , 
+2, -0.79834, 0, 0, 0.511782,-99)    );
+  // itree = 295
+  fBoostWeights.push_back(0.114225);
   fForest.push_back( 
+NN(
+NN(
 NN(
 NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.596742,-99) , 
 NN(
 0, 
 0, 
--1, 0.407893, 0, 1, 0.534104,-99) , 
+-1, 0, 1, -1, 0.457051,-99) , 
+9, 141.793, 0, 0, 0.572559,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.502364,-99) , 
+-1, 0, 1, 1, 0.580894,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.452406,-99) , 
-2, 0.639709, 1, 0, 0.499252,-99) , 
-3, -1.30094, 1, 0, 0.505334,-99) , 
+-1, 0, 1, -1, 0.38049,-99) , 
+10, -2.94475, 1, 0, 0.458215,-99) , 
+10, -2.12026, 0, 0, 0.542696,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51378,-99) , 
+-1, 0, 1, 1, 0.522885,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.457351,-99) , 
-8, 75.1954, 1, 0, 0.488418,-99) , 
+-1, 0, 1, -1, 0.456698,-99) , 
+2, 0.110724, 1, 0, 0.495331,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.41293,-99) , 
-12, 2.57235, 1, 0, 0.471652,-99) , 
-5, -1.30948, 0, 0, 0.500487,-99)    );
-  // itree = 90
-  fBoostWeights.push_back(0.0394452);
+-1, 0, 1, -1, 0.376386,-99) , 
+3, 99.2411, 1, 0, 0.487599,-99) , 
+6, -0.594517, 1, 0, 0.507292,-99)    );
+  // itree = 296
+  fBoostWeights.push_back(0.104498);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.599889,-99) , 
+-1, 792.854, 1, 1, 0.594672,-99) , 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504379,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.462954,-99) , 
-1, 79.4507, 1, 0, 0.484389,-99) , 
-10, 0.468611, 0, 0, 0.530611,-99) , 
-NN(
+-1, 0, 1, 1, 0.550137,-99) , 
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.562106,-99) , 
+-1, 0, 1, -1, 0.479938,-99) , 
+7, 114.326, 0, 0, 0.50476,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.495265,-99) , 
-11, 315.013, 0, 0, 0.505748,-99) , 
+-1, 0, 1, 1, 0.626017,-99) , 
 NN(
 0, 
 0, 
--1, 123.084, 1, -1, 0.480666,-99) , 
-0, 0.509301, 0, 0, 0.493403,-99) , 
-3, -1.82752, 1, 0, 0.496774,-99)    );
-  // itree = 91
-  fBoostWeights.push_back(0.0142849);
+-1, 0, 1, -1, 0.406246,-99) , 
+3, 70.7589, 1, 0, 0.433013,-99) , 
+12, 797.803, 0, 0, 0.485674,-99) , 
+13, 1.82691, 0, 0, 0.494042,-99)    );
+  // itree = 297
+  fBoostWeights.push_back(0.139487);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 1.97344, 0, 1, 0.504092,-99) , 
+-1, 0, 1, 1, 0.576091,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.457094,-99) , 
-12, -3.97142, 0, 0, 0.502332,-99) , 
+-1, 0, 1, -1, 0.474603,-99) , 
+8, -1.28125, 0, 0, 0.546108,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.440632,-99) , 
-2, 0.686152, 1, 0, 0.500502,-99)    );
-  // itree = 92
-  fBoostWeights.push_back(0.053322);
-  fForest.push_back( 
+-1, 0, 1, 1, 0.575309,-99) , 
 NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.452436,-99) , 
+3, 87.8304, 0, 0, 0.474281,-99) , 
+6, -0.118141, 0, 0, 0.512727,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.5187,-99) , 
+-1, 0, 1, 1, 0.608362,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.43859,-99) , 
-5, 1.92173, 1, 0, 0.514024,-99) , 
+-1, 0, 1, -1, 0.440653,-99) , 
+4, 299.833, 0, 0, 0.540486,-99) , 
 NN(
 0, 
 0, 
--1, 0.459993, 1, -1, 0.465559,-99) , 
-5, -1.54751, 0, 0, 0.50848,-99) , 
+-1, 83.4526, 0, -1, 0.378709,-99) , 
+13, -0.720112, 1, 0, 0.434845,-99) , 
+3, 91.6458, 1, 0, 0.494757,-99)    );
+  // itree = 298
+  fBoostWeights.push_back(0.116597);
+  fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.52526,-99) , 
+-1, 0, 1, 1, 0.616413,-99) , 
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, -1, 0.477357,-99) , 
-7, 350.705, 0, 0, 0.501736,-99) , 
+-1, 0, 1, 1, 0.539237,-99) , 
 NN(
 0, 
 0, 
--1, 85.2374, 1, -1, 0.459128,-99) , 
-8, 50.9468, 1, 0, 0.478289,-99) , 
-7, 466.016, 0, 0, 0.497258,-99)    );
-  // itree = 93
-  fBoostWeights.push_back(0.0331838);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.436177,-99) , 
+14, -1.01615, 0, 0, 0.517871,-99) , 
+3, 97.3423, 0, 0, 0.532754,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1426.15, 0, 1, 0.515385,-99) , 
+-1, 0, 1, 1, 0.59042,-99) , 
 NN(
 0, 
 0, 
--1, 3.05362, 1, -1, 0.484246,-99) , 
-13, 53.5148, 0, 0, 0.503567,-99) , 
+-1, 0, 1, -1, 0.455723,-99) , 
+12, 2252.15, 0, 0, 0.472897,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.455047,-99) , 
-13, 276.906, 1, 0, 0.501819,-99)    );
-  // itree = 94
-  fBoostWeights.push_back(0.0431267);
+-1, 0, 1, -1, 0.332856,-99) , 
+14, -1.58514, 0, 0, 0.460752,-99) , 
+5, 0.320382, 1, 0, 0.492889,-99)    );
+  // itree = 299
+  fBoostWeights.push_back(0.147284);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.563294,-99) , 
+-1, 0, 1, 1, 0.738124,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.502616,-99) , 
+-1, 0, 1, 1, 0.603191,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.461995,-99) , 
-11, 108.218, 0, 0, 0.489518,-99) , 
-3, -0.935492, 1, 0, 0.511316,-99) , 
+-1, 0, 1, -1, 0.406217,-99) , 
+0, 81.3822, 0, 0, 0.522533,-99) , 
+6, -1.30425, 1, 0, 0.569816,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.510931,-99) , 
+-1, 0, 1, 1, 0.592593,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.485271,-99) , 
-3, 0.758846, 0, 0, 0.493589,-99) , 
+-1, 0, 1, -1, 0.474751,-99) , 
+0, 68.2121, 1, 0, 0.530447,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.505834,-99) , 
+-1, 0, 1, 1, 0.546854,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.43624,-99) , 
-3, 0.932659, 0, 0, 0.45591,-99) , 
-2, 0.557865, 1, 0, 0.487393,-99) , 
-10, 1.63961, 0, 0, 0.493627,-99)    );
-  // itree = 95
-  fBoostWeights.push_back(0.0346543);
+-1, 0, 1, -1, 0.417993,-99) , 
+5, 0.367246, 0, 0, 0.47903,-99) , 
+6, -0.356445, 1, 0, 0.499813,-99) , 
+3, 95.4435, 0, 0, 0.511284,-99)    );
+  // itree = 300
+  fBoostWeights.push_back(0.126217);
   fForest.push_back( 
 NN(
 NN(
@@ -3141,671 +10533,567 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.539113,-99) , 
+-1, 0, 1, 1, 0.55939,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.494716,-99) , 
-1, 105.075, 1, 0, 0.52574,-99) , 
+-1, 0, 1, -1, 0.411003,-99) , 
+5, 0.230195, 0, 0, 0.539059,-99) , 
 NN(
+NN(
 0, 
 0, 
--1, 484.18, 1, -1, 0.491323,-99) , 
-9, 345.831, 0, 0, 0.502071,-99) , 
+-1, 0, 1, 1, 0.517234,-99) , 
 NN(
 0, 
 0, 
--1, -0.173722, 1, -1, 0.448794,-99) , 
-2, 0.636881, 1, 0, 0.498657,-99)    );
-  // itree = 96
-  fBoostWeights.push_back(0.0363509);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.423673,-99) , 
+11, 94.7989, 0, 0, 0.466175,-99) , 
+0, 81.4926, 0, 0, 0.502312,-99) , 
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.570769,-99) , 
-NN(
+-1, 0.43807, 1, -1, 0.390695,-99) , 
+6, 1.31055, 1, 0, 0.488873,-99)    );
+  // itree = 301
+  fBoostWeights.push_back(0.12541);
+  fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517073,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.482668,-99) , 
-7, 412.378, 0, 0, 0.507195,-99) , 
+-1, 0, 1, 1, 0.674316,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.500665,-99) , 
+-1, 0, 1, 1, 0.587756,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.444084,-99) , 
-13, 154.174, 1, 0, 0.485662,-99) , 
-0, -0.0288198, 0, 0, 0.500522,-99) , 
-0, -1.76471, 1, 0, 0.502581,-99)    );
-  // itree = 97
-  fBoostWeights.push_back(0.0482652);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.426635,-99) , 
+10, 0.738142, 0, 0, 0.518877,-99) , 
+0, 165.242, 0, 0, 0.563798,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1522.73, 0, 1, 0.550307,-99) , 
+-1, 0, 1, 1, 0.561307,-99) , 
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.509201,-99) , 
+-1, 0, 1, -1, 0.414105,-99) , 
+10, -2.84156, 0, 0, 0.531122,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.450403,-99) , 
-11, 77.2656, 0, 0, 0.498317,-99) , 
-11, 360.702, 0, 0, 0.504669,-99) , 
+-1, 0, 1, 1, 0.511874,-99) , 
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.539025,-99) , 
+-1, 0, 1, -1, 0.431124,-99) , 
+8, -2.11696, 1, 0, 0.457421,-99) , 
+8, 1.80501, 0, 0, 0.478866,-99) , 
+9, 404.206, 0, 0, 0.49063,-99)    );
+  // itree = 302
+  fBoostWeights.push_back(0.118437);
+  fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513106,-99) , 
+-1, 1.0498, 0, 1, 0.623272,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.467417,-99) , 
-3, -1.35802, 1, 0, 0.47962,-99) , 
-10, -2.07504, 1, 0, 0.485267,-99) , 
-0, 0.26752, 0, 0, 0.496288,-99)    );
-  // itree = 98
-  fBoostWeights.push_back(0.0298238);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.466948,-99) , 
+13, 0.553707, 1, 0, 0.577447,-99) , 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.561809,-99) , 
+-1, 0, 1, 1, 0.596528,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.484267,-99) , 
-2, 0.406434, 1, 0, 0.535314,-99) , 
-NN(
+-1, 0, 1, -1, 0.474599,-99) , 
+10, 3.14276, 0, 0, 0.488818,-99) , 
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503681,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.453809,-99) , 
-13, 161.033, 1, 0, 0.497166,-99) , 
-14, 1552.48, 0, 0, 0.502811,-99) , 
+-1, 0, 1, 1, 0.522504,-99) , 
 NN(
 0, 
 0, 
--1, 1.78564, 1, -1, 0.484707,-99) , 
-1, 73.2385, 0, 0, 0.496183,-99)    );
-  // itree = 99
-  fBoostWeights.push_back(0.0259626);
+-1, 0, 1, -1, 0.28941,-99) , 
+10, -1.65462, 1, 0, 0.363799,-99) , 
+2, 1.25635, 1, 0, 0.473726,-99) , 
+5, 0.251938, 1, 0, 0.497296,-99)    );
+  // itree = 303
+  fBoostWeights.push_back(0.122805);
   fForest.push_back( 
-NN(
-NN(
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505689,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487634,-99) , 
-1, 84.0037, 1, 0, 0.498239,-99) , 
+-1, 0, 1, 1, 0.702599,-99) , 
 NN(
-0, 
-0, 
--1, 0, 1, -1, 0.444445,-99) , 
-1, 47.8781, 0, 0, 0.496061,-99) , 
 NN(
 0, 
 0, 
--1, -0.117403, 1, -1, 0.449597,-99) , 
-5, 1.78566, 1, 0, 0.493014,-99)    );
-  // itree = 100
-  fBoostWeights.push_back(0.0221793);
-  fForest.push_back( 
-NN(
+-1, 0, 1, 1, 0.588634,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.55712,-99) , 
+-1, 0, 1, -1, 0.458726,-99) , 
+6, -0.118141, 1, 0, 0.526832,-99) , 
+12, 788.24, 0, 0, 0.555651,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.545255,-99) , 
+-1, 0, 1, 1, 0.557332,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.493246,-99) , 
-0, -1.51565, 1, 0, 0.495408,-99) , 
+-1, 0, 1, -1, 0.472416,-99) , 
+8, -1.29297, 1, 0, 0.506523,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.446466,-99) , 
-5, -2.02382, 0, 0, 0.493754,-99) , 
-14, 2636.33, 0, 0, 0.495375,-99)    );
-  // itree = 101
-  fBoostWeights.push_back(0.0118469);
+-1, -0.805666, 0, -1, 0.43406,-99) , 
+3, 78.3542, 0, 0, 0.486858,-99) , 
+12, 836.357, 1, 0, 0.51056,-99)    );
+  // itree = 304
+  fBoostWeights.push_back(0.099498);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.535799,-99) , 
+-1, -0.624721, 0, 1, 0.625308,-99) , 
 NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500408,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.459108,-99) , 
-1, 136.112, 1, 0, 0.498921,-99) , 
-3, -2.22943, 1, 0, 0.500767,-99) , 
+-1, 0, 1, 1, 0.603245,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.424777,-99) , 
-5, -2.02381, 0, 0, 0.498265,-99)    );
-  // itree = 102
-  fBoostWeights.push_back(0.0328405);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.487375,-99) , 
+11, 166.434, 0, 0, 0.506451,-99) , 
+14, -1.1681, 1, 0, 0.530623,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.544581,-99) , 
-NN(
-NN(
+-1, 1009.17, 1, 1, 0.589489,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.539382,-99) , 
+-1, 91.6458, 1, -1, 0.45379,-99) , 
+14, 1.4957, 0, 0, 0.471642,-99) , 
+5, 0.343639, 1, 0, 0.502181,-99)    );
+  // itree = 305
+  fBoostWeights.push_back(0.127744);
+  fForest.push_back( 
 NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494898,-99) , 
-8, 29.1749, 1, 0, 0.503816,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0.79522, 0, -1, 0.477746,-99) , 
-8, 101.918, 1, 0, 0.494925,-99) , 
-7, 1375.18, 0, 0, 0.496518,-99)    );
-  // itree = 103
-  fBoostWeights.push_back(0.0190816);
-  fForest.push_back( 
-NN(
+-1, 109.615, 1, 1, 0.586128,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.530015,-99) , 
+-1, 0, 1, -1, 0.388287,-99) , 
+13, 1.36063, 1, 0, 0.570903,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.502233,-99) , 
+-1, 0, 1, 1, 0.600331,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.45831,-99) , 
-5, -1.88757, 0, 0, 0.49976,-99) , 
+-1, 0, 1, -1, 0.413858,-99) , 
+5, 0.412106, 1, 0, 0.559647,-99) , 
 NN(
 0, 
 0, 
--1, 0.808977, 1, -1, 0.455313,-99) , 
-5, 1.78574, 1, 0, 0.49697,-99) , 
-10, 2.57058, 0, 0, 0.500642,-99)    );
-  // itree = 104
-  fBoostWeights.push_back(0.0167507);
+-1, -0.00299363, 0, -1, 0.467032,-99) , 
+13, -0.920663, 1, 0, 0.492324,-99) , 
+9, 277.886, 0, 0, 0.519526,-99)    );
+  // itree = 306
+  fBoostWeights.push_back(0.0955479);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.528899,-99) , 
+-1, 324.655, 0, 1, 0.539144,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.540913,-99) , 
+-1, 0, 1, 1, 0.522672,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.497458,-99) , 
-3, -2.26768, 1, 0, 0.49955,-99) , 
-2, 0.196656, 1, 0, 0.501963,-99) , 
+-1, 0, 1, -1, 0.28791,-99) , 
+2, 1.52944, 0, 0, 0.451939,-99) , 
+2, 1.25753, 1, 0, 0.530071,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.427809,-99) , 
-2, 0.683991, 1, 0, 0.499742,-99)    );
-  // itree = 105
-  fBoostWeights.push_back(0.0141819);
+-1, -1.06168, 0, -1, 0.40854,-99) , 
+10, 3.13625, 1, 0, 0.519304,-99)    );
+  // itree = 307
+  fBoostWeights.push_back(0.127004);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.554695,-99) , 
+-1, 0, 1, 1, 0.674308,-99) , 
 NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497856,-99) , 
-5, -0.119163, 1, 0, 0.527654,-99) , 
 NN(
 0, 
 0, 
--1, 2203.53, 0, 1, 0.502782,-99) , 
-10, -2.5297, 1, 0, 0.505673,-99) , 
+-1, 0, 1, 1, 0.614167,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.454077,-99) , 
-4, -2.72592, 0, 0, 0.50415,-99)    );
-  // itree = 106
-  fBoostWeights.push_back(0.0424092);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.497949,-99) , 
+7, 161.829, 0, 0, 0.522877,-99) , 
+11, 187.488, 0, 0, 0.54272,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.55793,-99) , 
+-1, 0, 1, 1, 0.596033,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490208,-99) , 
-5, -0.119115, 1, 0, 0.526602,-99) , 
+-1, 0, 1, -1, 0.466167,-99) , 
+2, -0.560419, 1, 0, 0.542089,-99) , 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.52247,-99) , 
+-1, 0, 1, 1, 0.532115,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.478394,-99) , 
-7, 396.621, 0, 0, 0.510089,-99) , 
+-1, 0, 1, -1, 0.42194,-99) , 
+14, 1.06148, 0, 0, 0.436106,-99) , 
+10, -2.14955, 1, 0, 0.471285,-99) , 
+2, 0.570196, 0, 0, 0.494214,-99)    );
+  // itree = 308
+  fBoostWeights.push_back(0.157785);
+  fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525344,-99) , 
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, -1, 0.483594,-99) , 
-10, 1.99542, 0, 0, 0.48927,-99) , 
-0, 0.693138, 0, 0, 0.496952,-99) , 
-10, -2.52909, 1, 0, 0.500347,-99)    );
-  // itree = 107
-  fBoostWeights.push_back(0.0226496);
-  fForest.push_back( 
+-1, 0, 1, 1, 0.614511,-99) , 
 NN(
-NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.541717,-99) , 
+-1, 0, 1, -1, 0.384984,-99) , 
+5, 0.48372, 1, 0, 0.591623,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50607,-99) , 
+-1, 0, 1, 1, 0.540359,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489489,-99) , 
-11, 208.707, 0, 0, 0.49752,-99) , 
-3, 2.31679, 0, 0, 0.499509,-99) , 
+-1, 0, 1, -1, 0.396956,-99) , 
+3, 95.4435, 1, 0, 0.519755,-99) , 
+2, -0.11449, 0, 0, 0.5608,-99) , 
 NN(
-0, 
-0, 
--1, 0, 1, -1, 0.448044,-99) , 
-2, 0.677487, 1, 0, 0.497722,-99)    );
-  // itree = 108
-  fBoostWeights.push_back(0.0142753);
-  fForest.push_back( 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.56212,-99) , 
-NN(
+-1, 0, 1, 1, 0.558555,-99) , 
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.53835,-99) , 
+-1, 0, 1, -1, 0.422543,-99) , 
+12, 1589.49, 1, 0, 0.527936,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.497916,-99) , 
-3, -2.1275, 1, 0, 0.500084,-99) , 
+-1, 0, 1, 1, 0.526341,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.449103,-99) , 
-4, -2.63876, 0, 0, 0.498382,-99) , 
-14, 2636.12, 0, 0, 0.500121,-99)    );
-  // itree = 109
-  fBoostWeights.push_back(0.0314911);
+-1, 0, 1, -1, 0.382382,-99) , 
+10, 2.15276, 0, 0, 0.426094,-99) , 
+0, 44.7113, 0, 0, 0.49935,-99) , 
+0, 81.4906, 0, 0, 0.529075,-99)    );
+  // itree = 309
+  fBoostWeights.push_back(0.160253);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 85.8765, 0, 1, 0.547876,-99) , 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.564602,-99) , 
+-1, 0, 1, 1, 0.567788,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492726,-99) , 
-2, 0.41499, 1, 0, 0.534542,-99) , 
+-1, 0, 1, -1, 0.447702,-99) , 
+5, 0.42432, 1, 0, 0.541993,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.506485,-99) , 
+-1, 0, 1, 1, 0.57914,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.483922,-99) , 
-11, 208.731, 1, 0, 0.496492,-99) , 
-14, 1913.61, 0, 0, 0.499781,-99) , 
-0, -1.239, 1, 0, 0.503154,-99)    );
-  // itree = 110
-  fBoostWeights.push_back(0.0282787);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.386702,-99) , 
+13, 0.89176, 0, 0, 0.438324,-99) , 
+7, 140.164, 1, 0, 0.519757,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1.18482, 0, 1, 0.508717,-99) , 
+-1, 0, 1, 1, 0.583563,-99) , 
 NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.543777,-99) , 
-NN(
 0, 
 0, 
--1, 0, 1, -1, 0.477695,-99) , 
-12, 2.70212, 0, 0, 0.488132,-99) , 
-5, 0.833327, 1, 0, 0.503366,-99) , 
+-1, 0, 1, -1, 0.391641,-99) , 
+4, 372.036, 0, 0, 0.487694,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.458669,-99) , 
-12, 3.97451, 1, 0, 0.501773,-99)    );
-  // itree = 111
-  fBoostWeights.push_back(0.0399434);
+-1, 1757.48, 0, -1, 0.338274,-99) , 
+0, 90.0167, 1, 0, 0.416544,-99) , 
+9, 404.206, 1, 0, 0.507446,-99)    );
+  // itree = 310
+  fBoostWeights.push_back(0.0992122);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.549906,-99) , 
+-1, 0.573591, 0, 1, 0.681499,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.498347,-99) , 
-12, -0.202463, 1, 0, 0.52442,-99) , 
+-1, 0, 1, -1, 0.458929,-99) , 
+5, 0.395465, 0, 0, 0.593554,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511699,-99) , 
+-1, 1.31017, 0, 1, 0.531581,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.473215,-99) , 
-10, -0.271333, 1, 0, 0.489111,-99) , 
-3, 0.00546571, 1, 0, 0.503606,-99) , 
+-1, 0, 1, 1, 0.507716,-99) , 
 NN(
 0, 
 0, 
--1, 104.327, 1, -1, 0.485274,-99) , 
-4, -0.595107, 0, 0, 0.497143,-99)    );
-  // itree = 112
-  fBoostWeights.push_back(0.0386625);
+-1, 0, 1, -1, 0.432787,-99) , 
+12, 1393.44, 0, 0, 0.463728,-99) , 
+9, 141.692, 1, 0, 0.481626,-99) , 
+3, 70.7589, 1, 0, 0.494233,-99)    );
+  // itree = 311
+  fBoostWeights.push_back(0.0746006);
   fForest.push_back( 
-NN(
-NN(
 NN(
-0, 
-0, 
--1, 1201.6, 0, 1, 0.545207,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511747,-99) , 
+-1, 78.3542, 1, 1, 0.678174,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.463969,-99) , 
-11, 75.3447, 0, 0, 0.500412,-99) , 
-11, 267.877, 0, 0, 0.5092,-99) , 
+-1, 0, 1, -1, 0.465819,-99) , 
+2, -0.339774, 0, 0, 0.607603,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.554085,-99) , 
+-1, 0, 1, 1, 0.576578,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.47254,-99) , 
-2, 0.362956, 0, 0, 0.51972,-99) , 
+-1, 0, 1, -1, 0.490272,-99) , 
+6, -1.30666, 1, 0, 0.505759,-99) , 
 NN(
 0, 
 0, 
--1, 0.583091, 1, -1, 0.487983,-99) , 
-3, 1.74829, 0, 0, 0.492947,-99) , 
-0, 0.693495, 0, 0, 0.499553,-99)    );
-  // itree = 113
-  fBoostWeights.push_back(0.0183139);
+-1, 80.253, 0, -1, 0.401757,-99) , 
+5, 0.464711, 1, 0, 0.497347,-99) , 
+5, 0.5052, 0, 0, 0.507379,-99)    );
+  // itree = 312
+  fBoostWeights.push_back(0.096528);
   fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53477,-99) , 
 NN(
-NN(
-0, 
-0, 
--1, 0.66358, 1, -1, 0.497112,-99) , 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515254,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.453298,-99) , 
-3, 0.874714, 0, 0, 0.471551,-99) , 
-1, 104.83, 1, 0, 0.493727,-99) , 
-2, 0.184004, 1, 0, 0.496272,-99)    );
-  // itree = 114
-  fBoostWeights.push_back(0.0316457);
-  fForest.push_back( 
+-1, 0, 1, 1, 0.531063,-99) , 
 NN(
-NN(
-NN(
 0, 
 0, 
--1, 50.6853, 1, 1, 0.514956,-99) , 
+-1, 0, 1, -1, 0.436636,-99) , 
+12, 1961.43, 1, 0, 0.520874,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.530928,-99) , 
+-1, 0, 1, 1, 0.593932,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487392,-99) , 
-1, 53.9656, 1, 0, 0.491976,-99) , 
-8, 118.22, 1, 0, 0.508392,-99) , 
+-1, 0, 1, -1, 0.412795,-99) , 
+3, 72.6577, 1, 0, 0.440806,-99) , 
+11, 143.994, 1, 0, 0.505641,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.449976,-99) , 
-4, 2.67909, 1, 0, 0.506763,-99)    );
-  // itree = 115
-  fBoostWeights.push_back(0.0297292);
+-1, 0, 1, -1, 0.347947,-99) , 
+14, 2.1327, 1, 0, 0.500717,-99)    );
+  // itree = 313
+  fBoostWeights.push_back(0.0823164);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 751.066, 1, 1, 0.54555,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 1916.72, 0, 1, 0.512402,-99) , 
+-1, 0, 1, 1, 0.514757,-99) , 
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.530418,-99) , 
+-1, 0, 1, -1, 0.410957,-99) , 
+12, 2442.71, 1, 0, 0.508191,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489644,-99) , 
-8, 211.144, 0, 0, 0.493567,-99) , 
-11, 208.712, 0, 0, 0.502304,-99) , 
-0, -1.19002, 1, 0, 0.505586,-99)    );
-  // itree = 116
-  fBoostWeights.push_back(0.0235273);
-  fForest.push_back( 
-NN(
+-1, 0, 1, 1, 0.510554,-99) , 
 NN(
 0, 
 0, 
--1, 0.423926, 1, 1, 0.537448,-99) , 
+-1, 0, 1, -1, 0.344954,-99) , 
+9, 165.817, 1, 0, 0.412982,-99) , 
+6, -1.54662, 0, 0, 0.496363,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.506991,-99) , 
+-1, 0, 1, 1, 0.524482,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.488638,-99) , 
-8, 108.456, 1, 0, 0.501171,-99) , 
+-1, 0, 1, -1, 0.362968,-99) , 
+11, 138.135, 0, 0, 0.438541,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.452398,-99) , 
-4, -2.50362, 0, 0, 0.49919,-99) , 
-9, 540.108, 0, 0, 0.501685,-99)    );
-  // itree = 117
-  fBoostWeights.push_back(0.0478924);
+-1, 0, 1, -1, 0.26781,-99) , 
+4, 289.262, 0, 0, 0.392612,-99) , 
+9, 397.579, 1, 0, 0.483135,-99)    );
+  // itree = 314
+  fBoostWeights.push_back(0.11603);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 136.731, 0, 1, 0.532065,-99) , 
+-1, 0, 1, 1, 0.568691,-99) , 
 NN(
 0, 
 0, 
--1, 1.07164, 1, -1, 0.473375,-99) , 
-3, 0.423901, 1, 0, 0.511708,-99) , 
-NN(
+-1, 0, 1, -1, 0.498242,-99) , 
+7, 86.7488, 0, 0, 0.525145,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.538754,-99) , 
+-1, 0, 1, 1, 0.577271,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.482393,-99) , 
-10, -1.14391, 1, 0, 0.510936,-99) , 
+-1, 0, 1, -1, 0.368648,-99) , 
+5, 0.443843, 0, 0, 0.42104,-99) , 
+7, 176.679, 1, 0, 0.509473,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.535749,-99) , 
+-1, 0, 1, 1, 0.631859,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.484669,-99) , 
-12, -2.05805, 1, 0, 0.48963,-99) , 
-3, 0.805626, 0, 0, 0.496052,-99) , 
-10, 1.16134, 0, 0, 0.501459,-99)    );
-  // itree = 118
-  fBoostWeights.push_back(0.029215);
+-1, -0.832682, 0, -1, 0.409124,-99) , 
+7, 226.954, 0, 0, 0.435984,-99) , 
+2, -0.569475, 0, 0, 0.486949,-99)    );
+  // itree = 315
+  fBoostWeights.push_back(0.100325);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 1168.01, 0, 1, 0.510454,-99) , 
+-1, -1.70435, 0, 1, 0.60365,-99) , 
+NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.520143,-99) , 
+-1, 0, 1, 1, 0.567165,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.472555,-99) , 
-11, 347.78, 0, 0, 0.48644,-99) , 
-1, 98.4031, 1, 0, 0.50606,-99) , 
+-1, 0, 1, -1, 0.389092,-99) , 
+0, 158.74, 1, 0, 0.535466,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.444477,-99) , 
-2, 0.677665, 1, 0, 0.503981,-99)    );
-  // itree = 119
-  fBoostWeights.push_back(0.0393681);
+-1, -1.06738, 0, -1, 0.466363,-99) , 
+10, -2.17411, 1, 0, 0.487581,-99) , 
+14, -2.06176, 1, 0, 0.495016,-99)    );
+  // itree = 316
+  fBoostWeights.push_back(0.103157);
   fForest.push_back( 
 NN(
 NN(
@@ -3813,92 +11101,67 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.517606,-99) , 
+-1, 0, 1, 1, 0.571507,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.483608,-99) , 
-5, -0.357341, 0, 0, 0.504133,-99) , 
+-1, 0, 1, -1, 0.423572,-99) , 
+3, 97.3423, 1, 0, 0.556947,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.507779,-99) , 
+-1, 0, 1, 1, 0.600137,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.464908,-99) , 
-5, 0.119325, 1, 0, 0.487892,-99) , 
-3, 0.341549, 1, 0, 0.497578,-99) , 
+-1, 0, 1, -1, 0.476838,-99) , 
+3, 70.7589, 1, 0, 0.48919,-99) , 
+6, -0.150937, 1, 0, 0.51716,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.445358,-99) , 
-2, 0.679071, 1, 0, 0.495835,-99)    );
-  // itree = 120
-  fBoostWeights.push_back(0.0126277);
+-1, -1.68299, 0, -1, 0.407982,-99) , 
+6, -1.78202, 0, 0, 0.508385,-99)    );
+  // itree = 317
+  fBoostWeights.push_back(0.112218);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, -0.837854, 0, 1, 0.51682,-99) , 
+-1, -0.761858, 0, 1, 0.58707,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529315,-99) , 
+-1, 0, 1, 1, 0.609628,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.498321,-99) , 
-3, 2.27602, 0, 0, 0.500042,-99) , 
-4, -1.5344, 1, 0, 0.502732,-99) , 
+-1, 0, 1, -1, 0.46543,-99) , 
+3, 74.5565, 1, 0, 0.499732,-99) , 
+5, 0.273571, 1, 0, 0.526455,-99) , 
 NN(
-0, 
-0, 
--1, 0, 1, -1, 0.463599,-99) , 
-2, 0.686152, 1, 0, 0.501572,-99)    );
-  // itree = 121
-  fBoostWeights.push_back(0.0430611);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515274,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473856,-99) , 
-13, 35.9881, 0, 0, 0.51,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.548866,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471901,-99) , 
-14, 1521.18, 0, 0, 0.48824,-99) , 
-13, 155.749, 1, 0, 0.506223,-99) , 
-NN(
+-1, 0, 1, 1, 0.506578,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.516916,-99) , 
+-1, 0, 1, -1, 0.332177,-99) , 
+0, 174.774, 1, 0, 0.48832,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.453894,-99) , 
-11, 124.14, 0, 0, 0.48191,-99) , 
-0, 1.45156, 1, 0, 0.502487,-99)    );
-  // itree = 122
-  fBoostWeights.push_back(0.0375353);
+-1, 70.9048, 1, -1, 0.358033,-99) , 
+3, 74.5565, 0, 0, 0.466699,-99) , 
+14, -0.477525, 0, 0, 0.504982,-99)    );
+  // itree = 318
+  fBoostWeights.push_back(0.12052);
   fForest.push_back( 
 NN(
 NN(
@@ -3906,259 +11169,265 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.530881,-99) , 
+-1, 0, 1, 1, 0.632496,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.49577,-99) , 
-3, -0.642685, 0, 0, 0.514835,-99) , 
+-1, 0, 1, -1, 0.459169,-99) , 
+11, 62.3347, 0, 0, 0.577188,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.524531,-99) , 
+-1, 0, 1, 1, 0.518894,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.486372,-99) , 
-3, -0.709718, 1, 0, 0.494914,-99) , 
-12, 1.62312, 0, 0, 0.50204,-99) , 
+-1, 0, 1, -1, 0.426906,-99) , 
+2, -1.02706, 0, 0, 0.503467,-99) , 
+9, 137.188, 1, 0, 0.521882,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.516049,-99) , 
+-1, 0, 1, 1, 0.538378,-99) , 
 NN(
 0, 
 0, 
--1, 764.909, 1, -1, 0.463887,-99) , 
-2, 0.325852, 1, 0, 0.481644,-99) , 
-5, -1.30954, 0, 0, 0.499135,-99)    );
-  // itree = 123
-  fBoostWeights.push_back(0.0358171);
+-1, 733.004, 0, -1, 0.36888,-99) , 
+3, 93.5, 0, 0, 0.402297,-99) , 
+6, -1.07052, 0, 0, 0.49801,-99)    );
+  // itree = 319
+  fBoostWeights.push_back(0.133959);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0.707751, 0, 1, 0.518941,-99) , 
+-1, 89.747, 0, 1, 0.633088,-99) , 
 NN(
+NN(
 0, 
 0, 
--1, 387.279, 0, -1, 0.491464,-99) , 
-8, 59.1254, 1, 0, 0.505516,-99) , 
-NN(
+-1, 0, 1, 1, 0.55735,-99) , 
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.525049,-99) , 
+-1, 0, 1, -1, 0.389949,-99) , 
+6, -1.07052, 0, 0, 0.526457,-99) , 
+9, 391.788, 0, 0, 0.546513,-99) , 
+NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, -1, 0.479529,-99) , 
-8, 190.011, 0, 0, 0.499759,-99) , 
-NN(
+-1, 0, 1, 1, 0.573732,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.510512,-99) , 
+-1, 0, 1, -1, 0.464892,-99) , 
+6, -1.31024, 1, 0, 0.483304,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.451493,-99) , 
-0, 0.734248, 0, 0, 0.46777,-99) , 
-11, 208.782, 1, 0, 0.485227,-99) , 
-8, 124.127, 1, 0, 0.50029,-99)    );
-  // itree = 124
-  fBoostWeights.push_back(0.0371877);
+-1, 1055.68, 0, -1, 0.337622,-99) , 
+13, -1.28496, 0, 0, 0.463616,-99) , 
+5, 0.389268, 0, 0, 0.496815,-99)    );
+  // itree = 320
+  fBoostWeights.push_back(0.105433);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, -1.66183, 1, 1, 0.510036,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.44176,-99) , 
-10, 2.54559, 1, 0, 0.503673,-99) , 
+-1, 0, 1, 1, 0.550654,-99) , 
 NN(
-NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.543608,-99) , 
+-1, 0, 1, -1, 0.478147,-99) , 
+10, 2.65351, 1, 0, 0.533687,-99) , 
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, -1, 0.491445,-99) , 
-10, 2.11839, 0, 0, 0.503693,-99) , 
-NN(
+-1, 0, 1, 1, 0.518778,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.500149,-99) , 
+-1, 0, 1, -1, 0.281569,-99) , 
+7, 90.0005, 0, 0, 0.402955,-99) , 
+6, -1.54653, 0, 0, 0.518659,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.433844,-99) , 
-10, 0.182334, 1, 0, 0.462693,-99) , 
-3, 0.634233, 1, 0, 0.490527,-99) , 
-5, 0.119016, 1, 0, 0.497673,-99)    );
-  // itree = 125
-  fBoostWeights.push_back(0.0328117);
+-1, 1.30924, 1, -1, 0.447145,-99) , 
+12, 1069.46, 0, 0, 0.485333,-99)    );
+  // itree = 321
+  fBoostWeights.push_back(0.0971794);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1.65937, 0, 1, 0.510223,-99) , 
+-1, 116.919, 0, 1, 0.571823,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.539566,-99) , 
+-1, 0, 1, 1, 0.512157,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487023,-99) , 
-6, 202.499, 0, 0, 0.492319,-99) , 
-2, 0.411857, 0, 0, 0.500329,-99) , 
+-1, 0, 1, -1, 0.338597,-99) , 
+2, 1.71338, 1, 0, 0.504143,-99) , 
+10, -2.13379, 1, 0, 0.528129,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511234,-99) , 
+-1, 0, 1, 1, 0.545426,-99) , 
 NN(
 0, 
 0, 
--1, 1072.45, 1, -1, 0.452023,-99) , 
-2, 0.323016, 1, 0, 0.472086,-99) , 
-5, -1.30949, 0, 0, 0.496309,-99)    );
-  // itree = 126
-  fBoostWeights.push_back(0.0368593);
+-1, -0.295218, 1, -1, 0.33432,-99) , 
+5, 0.297431, 1, 0, 0.409084,-99) , 
+14, -1.305, 0, 0, 0.513223,-99)    );
+  // itree = 322
+  fBoostWeights.push_back(0.117876);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, -1.64734, 1, 1, 0.512538,-99) , 
+-1, 304.422, 0, 1, 0.5413,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.538254,-99) , 
+-1, 0, 1, 1, 0.521863,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.482407,-99) , 
-14, 1416.34, 0, 0, 0.492897,-99) , 
-2, 0.370934, 0, 0, 0.503981,-99) , 
+-1, 0, 1, -1, 0.318,-99) , 
+10, -1.48519, 1, 0, 0.401106,-99) , 
+9, 331.189, 1, 0, 0.523943,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.533216,-99) , 
+-1, 0, 1, 1, 0.558447,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490075,-99) , 
-3, -1.2072, 1, 0, 0.49876,-99) , 
+-1, 0, 1, -1, 0.434484,-99) , 
+4, 292.024, 0, 0, 0.505713,-99) , 
 NN(
 0, 
 0, 
--1, 107.839, 1, -1, 0.445191,-99) , 
-14, 1160.35, 1, 0, 0.485476,-99) , 
-1, 92.1944, 1, 0, 0.499463,-99)    );
-  // itree = 127
-  fBoostWeights.push_back(0.0192531);
+-1, -0.147496, 1, -1, 0.407238,-99) , 
+11, 96.3872, 0, 0, 0.467027,-99) , 
+12, 1316.95, 1, 0, 0.504174,-99)    );
+  // itree = 323
+  fBoostWeights.push_back(0.129668);
   fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 182.192, 1, 1, 0.565471,-99) , 
 NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.38753,-99) , 
+4, 390.131, 1, 0, 0.538317,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.534064,-99) , 
+-1, 0, 1, 1, 0.636013,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.499394,-99) , 
-12, 3.21027, 0, 0, 0.503891,-99) , 
+-1, 0, 1, -1, 0.466886,-99) , 
+4, 274.405, 1, 0, 0.553128,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, -0.485468, 0, -1, 0.48307,-99) , 
-5, -0.833334, 0, 0, 0.498464,-99) , 
+-1, 0, 1, 1, 0.512035,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.444177,-99) , 
-12, -4.01961, 0, 0, 0.496696,-99)    );
-  // itree = 128
-  fBoostWeights.push_back(0.0233415);
+-1, 0, 1, -1, 0.428226,-99) , 
+11, 150.74, 0, 0, 0.446767,-99) , 
+13, 1.88931, 0, 0, 0.455957,-99) , 
+10, 2.18429, 0, 0, 0.481048,-99)    );
+  // itree = 324
+  fBoostWeights.push_back(0.0867928);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0.835208, 1, 1, 0.529226,-99) , 
+-1, 0, 1, 1, 0.638981,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513484,-99) , 
+-1, 0, 1, 1, 0.578245,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.495832,-99) , 
-9, 361.437, 0, 0, 0.500785,-99) , 
-4, 1.59307, 0, 0, 0.505124,-99) , 
+-1, 0, 1, -1, 0.401855,-99) , 
+11, 94.1844, 0, 0, 0.500632,-99) , 
+2, -0.33796, 1, 0, 0.566132,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.452966,-99) , 
-1, 47.6564, 0, 0, 0.503052,-99)    );
-  // itree = 129
-  fBoostWeights.push_back(0.039076);
+-1, 159.155, 1, -1, 0.466418,-99) , 
+0, 189.866, 0, 0, 0.478822,-99)    );
+  // itree = 325
+  fBoostWeights.push_back(0.103562);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 1.90245, 1, 1, 0.55911,-99) , 
+-1, 0, 1, 1, 0.538912,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.47673,-99) , 
-2, 0.384946, 0, 0, 0.520566,-99) , 
-NN(
+-1, 0, 1, -1, 0.366296,-99) , 
+10, 3.05483, 1, 0, 0.529488,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.52149,-99) , 
+-1, 0, 1, 1, 0.522094,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.480341,-99) , 
-3, 1.2398, 1, 0, 0.513126,-99) , 
+-1, 0, 1, -1, 0.430758,-99) , 
+8, -1.08659, 1, 0, 0.466247,-99) , 
+13, -0.277832, 0, 0, 0.503462,-99) , 
 NN(
 0, 
 0, 
--1, 0.653668, 1, -1, 0.485935,-99) , 
-2, 0.320114, 1, 0, 0.49531,-99) , 
-3, -1.63369, 1, 0, 0.498272,-99)    );
-  // itree = 130
-  fBoostWeights.push_back(0.04061);
+-1, 0, 1, -1, 0.308948,-99) , 
+14, 2.08007, 1, 0, 0.497125,-99)    );
+  // itree = 326
+  fBoostWeights.push_back(0.129867);
   fForest.push_back( 
 NN(
 NN(
@@ -4166,241 +11435,222 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513686,-99) , 
+-1, 0, 1, 1, 0.615231,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.476561,-99) , 
-1, 119.74, 1, 0, 0.510444,-99) , 
+-1, 0, 1, -1, 0.420708,-99) , 
+3, 76.4464, 0, 0, 0.575222,-99) , 
 NN(
 0, 
 0, 
--1, 372.298, 1, -1, 0.48384,-99) , 
-2, 0.542738, 1, 0, 0.506518,-99) , 
+-1, 0, 1, -1, 0.42835,-99) , 
+3, 91.6458, 1, 0, 0.535771,-99) , 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.556028,-99) , 
-NN(
+-1, 0, 1, 1, 0.512071,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.53528,-99) , 
+-1, 0, 1, -1, 0.416189,-99) , 
+4, 256.607, 0, 0, 0.469944,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.453306,-99) , 
-3, 1.33753, 0, 0, 0.470883,-99) , 
-3, -1.43535, 1, 0, 0.484801,-99) , 
-1, 60.428, 0, 0, 0.502702,-99)    );
-  // itree = 131
-  fBoostWeights.push_back(0.0171787);
+-1, 111.499, 1, -1, 0.382435,-99) , 
+4, 331.917, 1, 0, 0.453932,-99) , 
+4, 397.94, 0, 0, 0.468794,-99)    );
+  // itree = 327
+  fBoostWeights.push_back(0.0570808);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, -1.43803, 1, 1, 0.505256,-99) , 
+-1, 0, 1, 1, 0.630457,-99) , 
 NN(
-0, 
-0, 
--1, 3.06418, 1, -1, 0.485319,-99) , 
-5, -0.992064, 0, 0, 0.500732,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.458677,-99) , 
-5, 2.0238, 1, 0, 0.499253,-99)    );
-  // itree = 132
-  fBoostWeights.push_back(0.010752);
-  fForest.push_back( 
+-1, 80.253, 1, 1, 0.589521,-99) , 
 NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.18366, 1, 1, 0.502324,-99) , 
 NN(
 0, 
 0, 
--1, 0.19154, 0, -1, 0.471023,-99) , 
-2, 0.638506, 1, 0, 0.500347,-99) , 
+-1, 0, 1, 1, 0.505027,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.455932,-99) , 
-5, -2.02369, 0, 0, 0.49883,-99)    );
-  // itree = 133
-  fBoostWeights.push_back(0.030039);
+-1, 0, 1, -1, 0.422925,-99) , 
+13, -0.952329, 0, 0, 0.491515,-99) , 
+13, -1.74656, 1, 0, 0.501111,-99) , 
+10, -3.62486, 1, 0, 0.506593,-99)    );
+  // itree = 328
+  fBoostWeights.push_back(0.0801319);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516915,-99) , 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514343,-99) , 
+-1, 0, 1, 1, 0.532705,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492712,-99) , 
-4, -0.022716, 0, 0, 0.501907,-99) , 
-NN(
+-1, 0, 1, -1, 0.464234,-99) , 
+5, 0.395444, 1, 0, 0.51172,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513668,-99) , 
+-1, 788.436, 1, -1, 0.456957,-99) , 
+12, 836.524, 0, 0, 0.494493,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.452858,-99) , 
-12, 1.63582, 0, 0, 0.477104,-99) , 
-5, 1.07137, 1, 0, 0.497166,-99) , 
-10, 2.5644, 0, 0, 0.499335,-99)    );
-  // itree = 134
-  fBoostWeights.push_back(0.0309931);
+-1, 0, 1, -1, 0.336451,-99) , 
+3, 66.9613, 0, 0, 0.490285,-99)    );
+  // itree = 329
+  fBoostWeights.push_back(0.118966);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0.432203, 1, 1, 0.532364,-99) , 
-NN(
+-1, 0, 1, 1, 0.748299,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.516238,-99) , 
+-1, 0, 1, 1, 0.672439,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.457766,-99) , 
-1, 60.5726, 0, 0, 0.509513,-99) , 
+-1, 0, 1, -1, 0.474471,-99) , 
+8, 2.23777, 0, 0, 0.524253,-99) , 
+7, 161.017, 0, 0, 0.578267,-99) , 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.500153,-99) , 
+-1, 0, 1, 1, 0.523715,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.469873,-99) , 
-1, 79.9421, 1, 0, 0.489037,-99) , 
-9, 304.675, 0, 0, 0.497685,-99) , 
-9, 566.365, 0, 0, 0.49949,-99)    );
-  // itree = 135
-  fBoostWeights.push_back(0.0465924);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.394204,-99) , 
+3, 93.5446, 1, 0, 0.502713,-99) , 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 1.82927, 1, 1, 0.563374,-99) , 
+-1, 0, 1, 1, 0.518834,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.483128,-99) , 
-2, 0.388443, 0, 0, 0.525445,-99) , 
+-1, 0, 1, -1, 0.426013,-99) , 
+12, 1691.25, 0, 0, 0.44803,-99) , 
+8, 0.71582, 0, 0, 0.472495,-99) , 
+6, 1.30913, 0, 0, 0.48915,-99)    );
+  // itree = 330
+  fBoostWeights.push_back(0.0914799);
+  fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.509154,-99) , 
+-1, 0, 1, 1, 0.691471,-99) , 
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, -1, 0.478288,-99) , 
-8, 103.236, 1, 0, 0.498898,-99) , 
-NN(
+-1, 0, 1, 1, 0.651061,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.544451,-99) , 
+-1, 0, 1, -1, 0.491999,-99) , 
+5, 0.460453, 0, 0, 0.517808,-99) , 
+4, 484.964, 0, 0, 0.535312,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.465369,-99) , 
-3, 1.58519, 0, 0, 0.477444,-99) , 
-2, 0.465915, 1, 0, 0.491908,-99) , 
-3, -1.61585, 1, 0, 0.496009,-99)    );
-  // itree = 136
-  fBoostWeights.push_back(0.0265568);
+-1, -1.12745, 0, -1, 0.454989,-99) , 
+3, 91.6458, 0, 0, 0.475515,-99)    );
+  // itree = 331
+  fBoostWeights.push_back(0.117982);
   fForest.push_back( 
 NN(
 NN(
 NN(
+0, 
+0, 
+-1, 82.1518, 1, 1, 0.59735,-99) , 
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.507981,-99) , 
+-1, 0, 1, 1, 0.625626,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.491235,-99) , 
-2, 0.374308, 0, 0, 0.500547,-99) , 
+-1, 0, 1, -1, 0.472042,-99) , 
+8, -0.40705, 0, 0, 0.483642,-99) , 
+6, 1.07206, 0, 0, 0.507571,-99) , 
+NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50581,-99) , 
+-1, 0, 1, 1, 0.540406,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.461542,-99) , 
-14, 813.987, 1, 0, 0.484238,-99) , 
-1, 91.8257, 1, 0, 0.49647,-99) , 
+-1, 0, 1, -1, 0.355137,-99) , 
+14, -1.50914, 0, 0, 0.512291,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.442112,-99) , 
-12, -3.9929, 0, 0, 0.494589,-99)    );
-  // itree = 137
-  fBoostWeights.push_back(0.0398274);
+-1, -0.908343, 1, -1, 0.42543,-99) , 
+6, -0.591797, 1, 0, 0.453897,-99) , 
+10, 0.74707, 0, 0, 0.480091,-99)    );
+  // itree = 332
+  fBoostWeights.push_back(0.110685);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54062,-99) , 
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.543082,-99) , 
+-1, 0, 1, 1, 0.648909,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.48699,-99) , 
-3, 1.72726, 0, 0, 0.49431,-99) , 
-3, -1.34462, 1, 0, 0.502066,-99) , 
-NN(
+-1, 0, 1, -1, 0.456971,-99) , 
+7, 76.2993, 0, 0, 0.57979,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51588,-99) , 
+-1, 0, 1, 1, 0.604126,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.482274,-99) , 
-9, 383.182, 0, 0, 0.488527,-99) , 
+-1, 0, 1, -1, 0.475731,-99) , 
+10, 3.14393, 0, 0, 0.491229,-99) , 
+8, 2.0392, 0, 0, 0.509151,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.437099,-99) , 
-1, 129.659, 1, 0, 0.486112,-99) , 
-2, 0.497653, 0, 0, 0.490538,-99)    );
-  // itree = 138
-  fBoostWeights.push_back(0.0208809);
+-1, 0, 1, -1, 0.321795,-99) , 
+12, 2854.37, 1, 0, 0.500925,-99)    );
+  // itree = 333
+  fBoostWeights.push_back(0.108777);
   fForest.push_back( 
 NN(
 NN(
@@ -4408,203 +11658,209 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.556538,-99) , 
+-1, 0, 1, 1, 0.576735,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.491561,-99) , 
-10, -0.452519, 0, 0, 0.5241,-99) , 
+-1, 0, 1, -1, 0.486302,-99) , 
+9, 223.831, 0, 0, 0.531217,-99) , 
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514555,-99) , 
+-1, 0, 1, -1, 0.35465,-99) , 
+0, 269.807, 1, 0, 0.523446,-99) , 
+NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, -1, 0.494967,-99) , 
-10, 2.56501, 0, 0, 0.497095,-99) , 
-4, -1.84105, 1, 0, 0.499339,-99) , 
-NN(
+-1, 0, 1, 1, 0.65279,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511222,-99) , 
+-1, 0, 1, -1, 0.473667,-99) , 
+3, 97.3423, 0, 0, 0.494787,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.429988,-99) , 
-2, 0.383742, 1, 0, 0.467996,-99) , 
-5, -1.78567, 0, 0, 0.49735,-99)    );
-  // itree = 139
-  fBoostWeights.push_back(0.019507);
+-1, 100.816, 0, -1, 0.35652,-99) , 
+6, -1.06843, 0, 0, 0.466972,-99) , 
+2, -0.341867, 0, 0, 0.501781,-99)    );
+  // itree = 334
+  fBoostWeights.push_back(0.0771342);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, -0.251547, 1, 1, 0.536501,-99) , 
+-1, 0, 1, 1, 0.596869,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.507115,-99) , 
+-1, 0, 1, 1, 0.658166,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492658,-99) , 
-3, 0.67515, 1, 0, 0.502593,-99) , 
-9, 566.363, 0, 0, 0.504347,-99) , 
+-1, 0, 1, 1, 0.52331,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.452776,-99) , 
-2, 0.689706, 1, 0, 0.502941,-99)    );
-  // itree = 140
-  fBoostWeights.push_back(0.031095);
+-1, 0, 1, -1, 0.464754,-99) , 
+11, 103.382, 1, 0, 0.501036,-99) , 
+13, 2.34305, 0, 0, 0.50703,-99) , 
+5, 0.198224, 1, 0, 0.514983,-99)    );
+  // itree = 335
+  fBoostWeights.push_back(0.124003);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.539312,-99) , 
-NN(
+-1, -0.351702, 0, 1, 0.555727,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.566828,-99) , 
+-1, 0, 1, 1, 0.56776,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.491067,-99) , 
-12, 0.587616, 0, 0, 0.51269,-99) , 
+-1, 0, 1, -1, 0.440316,-99) , 
+2, -0.661482, 1, 0, 0.492568,-99) , 
+4, 298.976, 1, 0, 0.527998,-99) , 
 NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.5272,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.527923,-99) , 
+-1, 0, 1, -1, 0.355786,-99) , 
+9, 261.334, 1, 0, 0.50463,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490176,-99) , 
-12, -3.02561, 1, 0, 0.494196,-99) , 
-3, 1.23243, 0, 0, 0.497872,-99) , 
-3, -2.32565, 1, 0, 0.499653,-99)    );
-  // itree = 141
-  fBoostWeights.push_back(0.0251218);
+-1, 0.347101, 1, -1, 0.33619,-99) , 
+9, 310.883, 1, 0, 0.468987,-99) , 
+13, 0.56982, 1, 0, 0.510504,-99)    );
+  // itree = 336
+  fBoostWeights.push_back(0.0888884);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.57014,-99) , 
+-1, 0, 1, 1, 0.521851,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.499501,-99) , 
-2, 0.425952, 1, 0, 0.533358,-99) , 
-NN(
+-1, 0, 1, -1, 0.38888,-99) , 
+1, -951.25, 0, 0, 0.515369,-99) , 
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511243,-99) , 
+-1, 0, 1, -1, 0.369431,-99) , 
+6, -0.673503, 0, 0, 0.507035,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.485296,-99) , 
-1, 127.842, 1, 0, 0.509479,-99) , 
+-1, 0, 1, 1, 0.544968,-99) , 
 NN(
 0, 
 0, 
--1, 0.83782, 1, -1, 0.48885,-99) , 
-9, 252.341, 0, 0, 0.503134,-99) , 
-9, 566.367, 0, 0, 0.50472,-99)    );
-  // itree = 142
-  fBoostWeights.push_back(0.0358795);
+-1, -2.47893, 0, -1, 0.414194,-99) , 
+4, 390.131, 0, 0, 0.436277,-99) , 
+6, -0.832194, 0, 0, 0.488621,-99)    );
+  // itree = 337
+  fBoostWeights.push_back(0.144106);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 1007.22, 0, 1, 0.527114,-99) , 
-NN(
+-1, 0, 1, 1, 0.570793,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.535377,-99) , 
+-1, 0, 1, -1, 0.436826,-99) , 
+2, -1.02518, 0, 0, 0.549624,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492984,-99) , 
-3, -1.82752, 1, 0, 0.497583,-99) , 
-2, 0.285507, 1, 0, 0.505138,-99) , 
+-1, 0, 1, -1, 0.359841,-99) , 
+3, 81.3125, 1, 0, 0.538855,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.525958,-99) , 
+-1, 0, 1, 1, 0.598381,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489037,-99) , 
-14, 806.126, 0, 0, 0.510364,-99) , 
+-1, 0, 1, -1, 0.420416,-99) , 
+13, -0.834991, 1, 0, 0.554975,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504957,-99) , 
+-1, 0, 1, 1, 0.53151,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.467185,-99) , 
-2, 0.463937, 0, 0, 0.479102,-99) , 
-11, 286.677, 0, 0, 0.489034,-99) , 
-7, 492.627, 0, 0, 0.498278,-99)    );
-  // itree = 143
-  fBoostWeights.push_back(0.0256991);
+-1, 0, 1, -1, 0.420952,-99) , 
+2, 0.767043, 0, 0, 0.456257,-99) , 
+2, -1.02658, 1, 0, 0.476279,-99) , 
+3, 82.1518, 1, 0, 0.504027,-99)    );
+  // itree = 338
+  fBoostWeights.push_back(0.118429);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.561911,-99) , 
+-1, 204.057, 1, 1, 0.596016,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.537474,-99) , 
+-1, 0, 1, 1, 0.544143,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.491584,-99) , 
-0, 0.727584, 0, 0, 0.510942,-99) , 
-12, 2.58007, 0, 0, 0.522599,-99) , 
+-1, 0, 1, -1, 0.364666,-99) , 
+3, 83.9613, 0, 0, 0.469978,-99) , 
+10, -0.803571, 0, 0, 0.555049,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.523164,-99) , 
+-1, 0, 1, 1, 0.637285,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.486852,-99) , 
-12, 2.56593, 1, 0, 0.515353,-99) , 
+-1, 0, 1, -1, 0.483215,-99) , 
+3, 79.6399, 1, 0, 0.495708,-99) , 
 NN(
 0, 
 0, 
--1, 0.637597, 1, -1, 0.496243,-99) , 
-8, 50.8236, 1, 0, 0.503087,-99) , 
-8, 177.297, 0, 0, 0.505903,-99)    );
-  // itree = 144
-  fBoostWeights.push_back(0.0179568);
+-1, 0.362276, 1, -1, 0.400148,-99) , 
+3, 78.3542, 0, 0, 0.470457,-99) , 
+13, -0.822647, 1, 0, 0.494666,-99)    );
+  // itree = 339
+  fBoostWeights.push_back(0.0643117);
   fForest.push_back( 
 NN(
 NN(
@@ -4612,254 +11868,253 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.537079,-99) , 
+-1, 0, 1, 1, 0.515642,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.464543,-99) , 
-2, 0.607792, 1, 0, 0.52155,-99) , 
+-1, 0, 1, -1, 0.43513,-99) , 
+11, 166.162, 1, 0, 0.508467,-99) , 
 NN(
 0, 
 0, 
--1, 540.106, 0, 1, 0.503328,-99) , 
-2, 0.543641, 0, 0, 0.505726,-99) , 
+-1, 0, 1, -1, 0.32764,-99) , 
+10, 3.62528, 1, 0, 0.502498,-99) , 
 NN(
 0, 
 0, 
--1, 766.855, 1, -1, 0.473496,-99) , 
-2, 0.633454, 1, 0, 0.503574,-99)    );
-  // itree = 145
-  fBoostWeights.push_back(0.0231581);
+-1, 0, 1, -1, 0.324346,-99) , 
+11, 237.97, 1, 0, 0.494153,-99)    );
+  // itree = 340
+  fBoostWeights.push_back(0.0759598);
   fForest.push_back( 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.535687,-99) , 
+-1, 0, 1, 1, 0.706682,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.531145,-99) , 
+-1, 0, 1, 1, 0.592346,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.499868,-99) , 
-12, 2.56413, 0, 0, 0.506362,-99) , 
+-1, 0, 1, -1, 0.497539,-99) , 
+6, -1.30518, 1, 0, 0.514538,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.535475,-99) , 
+-1, 0, 1, 1, 0.516257,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.480682,-99) , 
-3, 1.25182, 0, 0, 0.49108,-99) , 
-5, -0.833296, 0, 0, 0.502433,-99) , 
-3, -2.41, 1, 0, 0.503681,-99)    );
-  // itree = 146
-  fBoostWeights.push_back(0.0179092);
+-1, 0, 1, -1, 0.351619,-99) , 
+7, 140.427, 0, 0, 0.403298,-99) , 
+3, 74.5565, 0, 0, 0.497354,-99) , 
+4, 654.577, 0, 0, 0.504174,-99)    );
+  // itree = 341
+  fBoostWeights.push_back(0.0701988);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.53429,-99) , 
+-1, 0, 1, 1, 0.625547,-99) , 
+NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.503624,-99) , 
+-1, 0, 1, 1, 0.557239,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.480172,-99) , 
-0, -0.701115, 0, 0, 0.50002,-99) , 
-1, 129.992, 0, 0, 0.501854,-99) , 
+-1, 0, 1, -1, 0.48976,-99) , 
+12, 792.296, 1, 0, 0.512098,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.471399,-99) , 
-0, 1.98681, 1, 0, 0.499922,-99)    );
-  // itree = 147
-  fBoostWeights.push_back(0.0117404);
+-1, 64.7617, 0, -1, 0.442635,-99) , 
+10, 2.67676, 1, 0, 0.501024,-99) , 
+8, -2.98256, 1, 0, 0.50656,-99)    );
+  // itree = 342
+  fBoostWeights.push_back(0.102745);
   fForest.push_back( 
 NN(
 NN(
+NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.561598,-99) , 
+-1, 0, 1, 1, 0.559605,-99) , 
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.538501,-99) , 
+-1, 0, 1, -1, 0.49067,-99) , 
+14, 0.235647, 0, 0, 0.524195,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529444,-99) , 
+-1, 0, 1, 1, 0.505948,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.499393,-99) , 
-4, 2.01066, 0, 0, 0.501715,-99) , 
-3, 2.32751, 0, 0, 0.503078,-99) , 
-0, -1.7372, 1, 0, 0.504823,-99)    );
-  // itree = 148
-  fBoostWeights.push_back(0.0274855);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.320276,-99) , 
+10, 1.97112, 0, 0, 0.401029,-99) , 
+6, 1.64552, 1, 0, 0.511288,-99) , 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, -0.217514, 0, 1, 0.516421,-99) , 
+-1, 0, 1, 1, 0.545916,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.528263,-99) , 
+-1, 0, 1, 1, 0.520101,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.494761,-99) , 
-3, -0.717603, 1, 0, 0.502202,-99) , 
-12, 0.711248, 0, 0, 0.508544,-99) , 
+-1, 0, 1, -1, 0.327087,-99) , 
+3, 80.253, 1, 0, 0.40528,-99) , 
+14, -0.561275, 0, 0, 0.441556,-99) , 
+6, -1.07031, 0, 0, 0.498095,-99)    );
+  // itree = 343
+  fBoostWeights.push_back(0.101427);
+  fForest.push_back( 
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, -1, 0.460561,-99) , 
-4, -2.78329, 0, 0, 0.507307,-99)    );
-  // itree = 149
-  fBoostWeights.push_back(0.036668);
-  fForest.push_back( 
+-1, 0, 1, 1, 0.627184,-99) , 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511895,-99) , 
+-1, 0, 1, 1, 0.551591,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.470904,-99) , 
-10, 2.56754, 1, 0, 0.507954,-99) , 
+-1, 0, 1, -1, 0.484781,-99) , 
+2, 0.603806, 1, 0, 0.529324,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.515988,-99) , 
+-1, 0, 1, 1, 0.53143,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.459784,-99) , 
-3, 0.276892, 1, 0, 0.49283,-99) , 
-5, 0.595255, 1, 0, 0.503062,-99) , 
+-1, 0, 1, -1, 0.388761,-99) , 
+3, 85.9167, 1, 0, 0.466461,-99) , 
+2, -1.02867, 0, 0, 0.517156,-99) , 
+8, 2.87086, 0, 0, 0.52464,-99)    );
+  // itree = 344
+  fBoostWeights.push_back(0.112845);
+  fForest.push_back( 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.460591,-99) , 
-1, 136.326, 1, 0, 0.501586,-99)    );
-  // itree = 150
-  fBoostWeights.push_back(0.0210619);
-  fForest.push_back( 
-NN(
+-1, 98.1897, 0, 1, 0.532999,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.55619,-99) , 
+-1, 0, 1, 1, 0.544218,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.496168,-99) , 
-10, 0.128224, 1, 0, 0.5259,-99) , 
+-1, 0, 1, -1, 0.399592,-99) , 
+8, -1.92411, 1, 0, 0.433627,-99) , 
+6, 0.99728, 1, 0, 0.511564,-99) , 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0.503676, 0, 1, 0.519827,-99) , 
-NN(
+-1, 0, 1, 1, 0.619719,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.501524,-99) , 
+-1, 0, 1, -1, 0.392377,-99) , 
+12, 937.626, 1, 0, 0.50043,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.444188,-99) , 
-11, 64.0399, 0, 0, 0.497113,-99) , 
-11, 387.413, 0, 0, 0.501039,-99) , 
-3, 1.70225, 0, 0, 0.503782,-99)    );
-  // itree = 151
-  fBoostWeights.push_back(0.0160297);
+-1, -0.131255, 0, -1, 0.333813,-99) , 
+5, 0.366494, 0, 0, 0.414742,-99) , 
+6, -1.54613, 0, 0, 0.49995,-99)    );
+  // itree = 345
+  fBoostWeights.push_back(0.121347);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.540073,-99) , 
+-1, 0.0718602, 0, 1, 0.546138,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.520163,-99) , 
+-1, 0, 1, 1, 0.614097,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.496919,-99) , 
-4, -1.65409, 1, 0, 0.499572,-99) , 
-3, 2.29056, 0, 0, 0.501553,-99) , 
+-1, 0, 1, -1, 0.450218,-99) , 
+13, -1.61186, 1, 0, 0.473665,-99) , 
+5, 0.366514, 1, 0, 0.520551,-99) , 
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, -1, 0.45817,-99) , 
-4, -2.58252, 0, 0, 0.499984,-99)    );
-  // itree = 152
-  fBoostWeights.push_back(0.0353033);
-  fForest.push_back( 
-NN(
-NN(
+-1, 0, 1, 1, 0.576825,-99) , 
 NN(
 0, 
 0, 
--1, 66.9629, 1, 1, 0.544803,-99) , 
+-1, -0.806222, 1, -1, 0.420177,-99) , 
+10, -3.14318, 1, 0, 0.437773,-99) , 
+3, 80.253, 0, 0, 0.492672,-99)    );
+  // itree = 346
+  fBoostWeights.push_back(0.122637);
+  fForest.push_back( 
+NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.517933,-99) , 
+-1, 82.1518, 1, 1, 0.576231,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.463094,-99) , 
-14, 746.695, 1, 0, 0.4833,-99) , 
-10, 0.143784, 1, 0, 0.514553,-99) , 
+-1, 0, 1, -1, 0.419416,-99) , 
+9, 137.691, 0, 0, 0.545959,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.5311,-99) , 
+-1, 0, 1, 1, 0.69264,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.488945,-99) , 
-3, 0.379359, 1, 0, 0.514755,-99) , 
+-1, 0, 1, -1, 0.488045,-99) , 
+5, 0.458593, 0, 0, 0.543307,-99) , 
 NN(
 0, 
 0, 
--1, 73.1374, 0, -1, 0.490447,-99) , 
-12, -2.08695, 1, 0, 0.496472,-99) , 
-3, 1.23848, 0, 0, 0.499922,-99)    );
-  // itree = 153
-  fBoostWeights.push_back(0.0289268);
+-1, 102.551, 1, -1, 0.448891,-99) , 
+3, 91.6458, 0, 0, 0.473921,-99) , 
+5, 0.275854, 1, 0, 0.496532,-99)    );
+  // itree = 347
+  fBoostWeights.push_back(0.0875155);
   fForest.push_back( 
 NN(
 NN(
@@ -4867,42 +12122,1024 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.521032,-99) , 
+-1, 0, 1, 1, 0.594948,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.499678,-99) , 
-14, 815.903, 0, 0, 0.510841,-99) , 
+-1, 0, 1, -1, 0.466425,-99) , 
+0, 68.521, 0, 0, 0.547083,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.473907,-99) , 
-2, 0.643657, 1, 0, 0.50857,-99) , 
+-1, -1.4407, 0, -1, 0.482505,-99) , 
+7, 61.8643, 1, 0, 0.506021,-99) , 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.510947,-99) , 
+-1, 0, 1, 1, 0.513906,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.483807,-99) , 
-14, 1106.46, 1, 0, 0.503234,-99) , 
+-1, 0, 1, -1, 0.273405,-99) , 
+8, -0.893741, 1, 0, 0.38324,-99) , 
+11, 210.11, 1, 0, 0.49766,-99)    );
+  // itree = 348
+  fBoostWeights.push_back(0.115316);
+  fForest.push_back( 
 NN(
 NN(
-0, 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.547392,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.435741,-99) , 
+3, 99.2411, 1, 0, 0.539998,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.518251,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.358567,-99) , 
+10, -1.92338, 0, 0, 0.43345,-99) , 
+8, 1.89862, 1, 0, 0.532141,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.5361,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.51906,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.323636,-99) , 
+2, 0.340193, 0, 0, 0.394428,-99) , 
+11, 102.029, 0, 0, 0.450191,-99) , 
+8, 2.226, 1, 0, 0.517593,-99)    );
+  // itree = 349
+  fBoostWeights.push_back(0.133138);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 72.3731, 0, 1, 0.612427,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.562377,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.434364,-99) , 
+4, 292.143, 1, 0, 0.500366,-99) , 
+13, 0.553707, 0, 0, 0.536102,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.574539,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.456048,-99) , 
+8, -2.04046, 1, 0, 0.482582,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.287714,-99) , 
+12, 1475.7, 1, 0, 0.469712,-99) , 
+12, 1638.66, 0, 0, 0.487145,-99)    );
+  // itree = 350
+  fBoostWeights.push_back(0.130042);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 70.2898, 1, 1, 0.628028,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.529837,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.447835,-99) , 
+14, 0.372588, 1, 0, 0.493908,-99) , 
+2, -1.48405, 1, 0, 0.509504,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.567419,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.365078,-99) , 
+11, 88.0054, 1, 0, 0.477548,-99) , 
+NN(
+0, 
+0, 
+-1, 0.338746, 1, -1, 0.308796,-99) , 
+7, 61.2691, 0, 0, 0.422821,-99) , 
+6, -1.07017, 0, 0, 0.493088,-99)    );
+  // itree = 351
+  fBoostWeights.push_back(0.0985952);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 75.6096, 0, 1, 0.57788,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.40412,-99) , 
+5, 0.481008, 1, 0, 0.557903,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.542838,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.40307,-99) , 
+2, -1.25849, 0, 0, 0.525447,-99) , 
+NN(
+0, 
+0, 
+-1, -1.11388, 0, -1, 0.467773,-99) , 
+12, 1376.96, 0, 0, 0.491179,-99) , 
+9, 142.034, 1, 0, 0.507372,-99)    );
+  // itree = 352
+  fBoostWeights.push_back(0.0935552);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.54213,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.474144,-99) , 
+9, 141.127, 0, 0, 0.526613,-99) , 
+NN(
+0, 
+0, 
+-1, 2.33733, 1, -1, 0.452182,-99) , 
+0, 112.002, 1, 0, 0.505074,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.254418,-99) , 
+11, 290.921, 1, 0, 0.498325,-99)    );
+  // itree = 353
+  fBoostWeights.push_back(0.089662);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.78153, 0, 1, 0.528604,-99) , 
+NN(
+0, 
+0, 
+-1, 270.857, 1, -1, 0.4563,-99) , 
+4, 287.595, 0, 0, 0.494911,-99) , 
+NN(
+0, 
+0, 
+-1, 0.439581, 1, -1, 0.355859,-99) , 
+3, 70.7589, 0, 0, 0.483284,-99)    );
+  // itree = 354
+  fBoostWeights.push_back(0.0853246);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.665644,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.485206,-99) , 
+12, 884.536, 0, 0, 0.594953,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.502529,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.35687,-99) , 
+2, -1.48575, 0, 0, 0.490488,-99) , 
+8, 2.10142, 0, 0, 0.509399,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.515284,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.372692,-99) , 
+3, 78.3542, 0, 0, 0.474448,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.359067,-99) , 
+8, -2.0127, 0, 0, 0.442156,-99) , 
+12, 1509.02, 1, 0, 0.490992,-99)    );
+  // itree = 355
+  fBoostWeights.push_back(0.140358);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.550243,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.452905,-99) , 
+4, 337.923, 1, 0, 0.525924,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.283216,-99) , 
+0, 222.284, 1, 0, 0.512055,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.539803,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409633,-99) , 
+3, 75.003, 0, 0, 0.497924,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.588354,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.38008,-99) , 
+6, 1.5475, 0, 0, 0.40678,-99) , 
+3, 85.9494, 1, 0, 0.456492,-99) , 
+12, 1172.69, 1, 0, 0.487516,-99)    );
+  // itree = 356
+  fBoostWeights.push_back(0.112463);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.66136,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.649756,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.478934,-99) , 
+4, 348.429, 0, 0, 0.517945,-99) , 
+9, 349.761, 0, 0, 0.546707,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.527147,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.363067,-99) , 
+0, 222.286, 1, 0, 0.516189,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.528695,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.419777,-99) , 
+9, 322.678, 0, 0, 0.450486,-99) , 
+2, 0.420759, 0, 0, 0.483381,-99) , 
+2, -0.797526, 1, 0, 0.499973,-99)    );
+  // itree = 357
+  fBoostWeights.push_back(0.128428);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.644939,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.465496,-99) , 
+4, 258.625, 1, 0, 0.589575,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.466832,-99) , 
+4, 303.167, 1, 0, 0.551457,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.577868,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.485668,-99) , 
+14, -0.060021, 0, 0, 0.527486,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.621793,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.437458,-99) , 
+7, 281.518, 0, 0, 0.450275,-99) , 
+8, 1.83391, 0, 0, 0.474454,-99) , 
+8, -2.35175, 1, 0, 0.487265,-99)    );
+  // itree = 358
+  fBoostWeights.push_back(0.148191);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.647213,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.447873,-99) , 
+5, 0.291604, 0, 0, 0.604261,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537323,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.288147,-99) , 
+10, 1.2506, 1, 0, 0.428485,-99) , 
+4, 313.857, 1, 0, 0.561685,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.675943,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.484268,-99) , 
+8, 2.2876, 1, 0, 0.564497,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.518852,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.418149,-99) , 
+14, -0.083448, 0, 0, 0.47282,-99) , 
+8, 1.83984, 0, 0, 0.495573,-99) , 
+3, 76.4554, 1, 0, 0.512491,-99)    );
+  // itree = 359
+  fBoostWeights.push_back(0.100203);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.596786,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.486341,-99) , 
+3, 96.2589, 1, 0, 0.551458,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.511318,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.362014,-99) , 
+6, 0.118769, 0, 0, 0.432413,-99) , 
+2, -0.793457, 0, 0, 0.523514,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.657857,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.479649,-99) , 
+13, -1.96485, 1, 0, 0.492346,-99) , 
+NN(
+0, 
+0, 
+-1, 309.786, 0, -1, 0.338342,-99) , 
+3, 87.3423, 1, 0, 0.478024,-99) , 
+3, 89.747, 0, 0, 0.492377,-99)    );
+  // itree = 360
+  fBoostWeights.push_back(0.0794557);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 383.923, 0, 1, 0.517305,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.350119,-99) , 
+2, 1.71345, 1, 0, 0.509684,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.583206,-99) , 
+NN(
+0, 
+0, 
+-1, 626.756, 0, -1, 0.406381,-99) , 
+8, 2.11035, 0, 0, 0.443309,-99) , 
+12, 766.244, 0, 0, 0.4938,-99)    );
+  // itree = 361
+  fBoostWeights.push_back(0.109515);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.04309, 1, 1, 0.586999,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.575396,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.400262,-99) , 
+3, 73.7292, 0, 0, 0.467292,-99) , 
+4, 280.929, 1, 0, 0.540921,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.529017,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.461956,-99) , 
+5, 0.297402, 1, 0, 0.488175,-99) , 
+NN(
+0, 
+0, 
+-1, 337.82, 1, -1, 0.412943,-99) , 
+14, 1.11373, 1, 0, 0.475019,-99) , 
+3, 76.4554, 1, 0, 0.491027,-99)    );
+  // itree = 362
+  fBoostWeights.push_back(0.113453);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.89567, 1, 1, 0.56549,-99) , 
+NN(
+0, 
+0, 
+-1, 52.3085, 0, -1, 0.479867,-99) , 
+11, 98.1966, 0, 0, 0.516751,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.569129,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409759,-99) , 
+3, 80.253, 0, 0, 0.51911,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.512178,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.344541,-99) , 
+2, -1.02951, 1, 0, 0.378577,-99) , 
+12, 1509.62, 0, 0, 0.42695,-99) , 
+14, -0.824959, 0, 0, 0.494957,-99)    );
+  // itree = 363
+  fBoostWeights.push_back(0.148873);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 109.74, 1, 1, 0.641564,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.570267,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.38702,-99) , 
+5, 0.269014, 0, 0, 0.519994,-99) , 
+10, 1.70475, 0, 0, 0.567876,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.588015,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.476615,-99) , 
+2, 0.572289, 0, 0, 0.513608,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.518894,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.374984,-99) , 
+3, 84.0506, 1, 0, 0.43714,-99) , 
+5, 0.298719, 0, 0, 0.486527,-99) , 
+9, 163.984, 1, 0, 0.51488,-99)    );
+  // itree = 364
+  fBoostWeights.push_back(0.112719);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 798.237, 1, 1, 0.584967,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.559717,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.342865,-99) , 
+12, 1288.72, 0, 0, 0.462147,-99) , 
+10, -1.21666, 0, 0, 0.544254,-99) , 
+NN(
+0, 
+0, 
+-1, 74.5565, 0, -1, 0.459427,-99) , 
+5, 0.412203, 0, 0, 0.485518,-99)    );
+  // itree = 365
+  fBoostWeights.push_back(0.149552);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 89.747, 0, 1, 0.57043,-99) , 
+NN(
+0, 
+0, 
+-1, 225.304, 0, -1, 0.36342,-99) , 
+14, 1.8528, 1, 0, 0.554601,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.562572,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.478744,-99) , 
+4, 393.381, 1, 0, 0.532501,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.507863,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.355696,-99) , 
+6, -0.558594, 0, 0, 0.409575,-99) , 
+4, 299.095, 0, 0, 0.471813,-99) , 
+14, -0.536211, 0, 0, 0.527903,-99)    );
+  // itree = 366
+  fBoostWeights.push_back(0.0631145);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -2.28511, 1, 1, 0.516004,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537804,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.407697,-99) , 
+14, 0.333561, 1, 0, 0.450847,-99) , 
+10, -2.65444, 0, 0, 0.503915,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.321916,-99) , 
+14, -2.239, 0, 0, 0.498251,-99)    );
+  // itree = 367
+  fBoostWeights.push_back(0.14406);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.579085,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.467622,-99) , 
+13, 0.439096, 1, 0, 0.544698,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.561823,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.42121,-99) , 
+3, 98.9732, 0, 0, 0.446314,-99) , 
+7, 100.193, 1, 0, 0.507755,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.520127,-99) , 
+NN(
+0, 
+0, 
+-1, 298.976, 0, -1, 0.409215,-99) , 
+5, 0.267972, 1, 0, 0.434588,-99) , 
+3, 84.0506, 0, 0, 0.473624,-99)    );
+  // itree = 368
+  fBoostWeights.push_back(0.119366);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 91.6875, 0, 1, 0.606314,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.607604,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.390392,-99) , 
+10, -2.69743, 1, 0, 0.490828,-99) , 
+10, -0.190058, 0, 0, 0.553738,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.515366,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.428714,-99) , 
+4, 313.107, 1, 0, 0.49456,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.524779,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.398765,-99) , 
+13, -0.948244, 1, 0, 0.428929,-99) , 
+6, 0.358747, 1, 0, 0.469175,-99) , 
+4, 397.827, 0, 0, 0.483354,-99)    );
+  // itree = 369
+  fBoostWeights.push_back(0.126122);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 75.0802, 1, 1, 0.568967,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.389972,-99) , 
+5, 0.460435, 1, 0, 0.545977,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.639236,-99) , 
+NN(
+0, 
 0, 
--1, 0, 1, 1, 0.509533,-99) , 
+-1, 0, 1, -1, 0.454622,-99) , 
+10, 1.84647, 0, 0, 0.575911,-99) , 
 NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.507051,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.426095,-99) , 
+0, 84.3875, 0, 0, 0.457262,-99) , 
+0, 193.439, 0, 0, 0.472529,-99) , 
+10, -1.66536, 1, 0, 0.500268,-99)    );
+  // itree = 370
+  fBoostWeights.push_back(0.117641);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.633718,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.535469,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.392854,-99) , 
+7, 47.9447, 0, 0, 0.511261,-99) , 
+8, 2.81453, 0, 0, 0.540003,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.539532,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.458527,-99) , 
+13, 0.129307, 0, 0, 0.498093,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.578869,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.367502,-99) , 
+3, 91.6458, 0, 0, 0.412976,-99) , 
+5, 0.458265, 1, 0, 0.48296,-99) , 
+8, 1.67383, 0, 0, 0.499285,-99)    );
+  // itree = 371
+  fBoostWeights.push_back(0.0860204);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.544444,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.485332,-99) , 
+14, -0.238401, 0, 0, 0.51965,-99) , 
+NN(
+0, 
+0, 
+-1, 71.5904, 0, -1, 0.442784,-99) , 
+3, 93.5446, 1, 0, 0.505699,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.52092,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.32328,-99) , 
+7, 73.6261, 1, 0, 0.401186,-99) , 
+11, 201.113, 1, 0, 0.497254,-99)    );
+  // itree = 372
+  fBoostWeights.push_back(0.109875);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.981027, 1, 1, 0.532572,-99) , 
+NN(
+0, 
+0, 
+-1, 72.9543, 0, -1, 0.435079,-99) , 
+13, -1.2121, 0, 0, 0.517869,-99) , 
+NN(
+0, 
+0, 
+-1, 74.5565, 0, -1, 0.430285,-99) , 
+4, 303.167, 0, 0, 0.470997,-99)    );
+  // itree = 373
+  fBoostWeights.push_back(0.107236);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.551187, 0, 1, 0.589912,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.524845,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.295646,-99) , 
+4, 284.262, 0, 0, 0.454022,-99) , 
+10, 1.22159, 1, 0, 0.529871,-99) , 
+NN(
+0, 
+0, 
+-1, 156.751, 1, -1, 0.455376,-99) , 
+3, 93.5446, 0, 0, 0.471329,-99)    );
+  // itree = 374
+  fBoostWeights.push_back(0.141352);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 78.3542, 1, 1, 0.605277,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.561787,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.365309,-99) , 
+10, 1.29562, 0, 0, 0.473292,-99) , 
+12, 1172.78, 1, 0, 0.547575,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.606994,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.41175,-99) , 
+11, 67.2593, 0, 0, 0.518393,-99) , 
+NN(
+0, 
+0, 
+-1, 130.473, 0, -1, 0.440799,-99) , 
+10, 3.14379, 0, 0, 0.449645,-99) , 
+6, -1.30666, 1, 0, 0.466954,-99)    );
+  // itree = 375
+  fBoostWeights.push_back(0.123698);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.602742,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.458053,-99) , 
+5, 0.288779, 0, 0, 0.563368,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.538961,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.462915,-99) , 
+14, -0.0956396, 1, 0, 0.500504,-99) , 
+12, 836.524, 1, 0, 0.52177,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.571444,-99) , 
+NN(
 0, 
 0, 
--1, 0, 1, -1, 0.461953,-99) , 
-0, -0.0552889, 1, 0, 0.476135,-99) , 
-1, 84.5342, 1, 0, 0.494985,-99) , 
-7, 492.627, 0, 0, 0.502746,-99)    );
-  // itree = 154
-  fBoostWeights.push_back(0.0350442);
+-1, 78.3333, 0, -1, 0.355371,-99) , 
+6, -0.595447, 1, 0, 0.43769,-99) , 
+5, 0.481095, 1, 0, 0.512043,-99)    );
+  // itree = 376
+  fBoostWeights.push_back(0.113099);
   fForest.push_back( 
 NN(
 NN(
@@ -4910,656 +13147,353 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.516171,-99) , 
+-1, 0, 1, 1, 0.625203,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.494805,-99) , 
-3, 1.23848, 1, 0, 0.512335,-99) , 
+-1, 0, 1, -1, 0.442319,-99) , 
+11, 97.8343, 1, 0, 0.596475,-99) , 
 NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.564939,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.361014,-99) , 
+6, 0.536412, 0, 0, 0.486239,-99) , 
+14, 0.0357064, 1, 0, 0.546576,-99) , 
+NN(
+0, 
+0, 
+-1, 1.40251, 1, -1, 0.469154,-99) , 
+9, 163.984, 1, 0, 0.49572,-99)    );
+  // itree = 377
+  fBoostWeights.push_back(0.0866214);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0.821777, 0, 1, 0.571548,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.542655,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.47699,-99) , 
+8, -1.81515, 1, 0, 0.496369,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.295898,-99) , 
+6, 2.02351, 1, 0, 0.489674,-99) , 
+5, 0.251938, 1, 0, 0.508631,-99)    );
+  // itree = 378
+  fBoostWeights.push_back(0.108737);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 165.274, 0, 1, 0.563518,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.697462,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.482238,-99) , 
+6, 2.02379, 0, 0, 0.496302,-99) , 
+2, 0.115118, 1, 0, 0.532837,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.541049,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.221423,-99) , 
+12, 837.623, 1, 0, 0.372854,-99) , 
+13, -1.93993, 0, 0, 0.524485,-99)    );
+  // itree = 379
+  fBoostWeights.push_back(0.0848581);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 1.6828, 0, 1, 0.536475,-99) , 
+NN(
+0, 
+0, 
+-1, -2.35272, 1, -1, 0.373495,-99) , 
+14, -1.7234, 0, 0, 0.525882,-99)    );
+  // itree = 380
+  fBoostWeights.push_back(0.0879644);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.713287,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.659128,-99) , 
+NN(
 0, 
 0, 
--1, -2.02346, 1, -1, 0.477328,-99) , 
-5, -1.78538, 0, 0, 0.510078,-99) , 
+-1, 0, 1, -1, 0.479985,-99) , 
+2, -1.03006, 1, 0, 0.514188,-99) , 
+14, -1.5975, 1, 0, 0.542874,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.540325,-99) , 
+-1, 0, 1, 1, 0.654982,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.477733,-99) , 
-11, 167.257, 1, 0, 0.500826,-99) , 
+-1, 0, 1, -1, 0.452787,-99) , 
+6, 0.125744, 0, 0, 0.56632,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.445612,-99) , 
-14, 1161.38, 1, 0, 0.486938,-99) , 
-1, 104.654, 1, 0, 0.506966,-99)    );
-  // itree = 155
-  fBoostWeights.push_back(0.0214517);
+-1, 68.8601, 0, -1, 0.476829,-99) , 
+8, 2.57929, 0, 0, 0.489925,-99) , 
+9, 324.573, 0, 0, 0.502501,-99)    );
+  // itree = 381
+  fBoostWeights.push_back(0.0941704);
   fForest.push_back( 
 NN(
 NN(
+NN(
+0, 
+0, 
+-1, 132.629, 0, 1, 0.561387,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.519605,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.389766,-99) , 
+4, 427.351, 1, 0, 0.50393,-99) , 
+6, 0.595494, 0, 0, 0.523255,-99) , 
+NN(
+0, 
+0, 
+-1, 225.514, 0, -1, 0.415378,-99) , 
+5, 0.228571, 0, 0, 0.508379,-99)    );
+  // itree = 382
+  fBoostWeights.push_back(0.099849);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.623743,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.490335,-99) , 
+6, -0.361258, 0, 0, 0.57977,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.543447,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.475899,-99) , 
+14, -0.505589, 1, 0, 0.501374,-99) , 
+3, 97.3423, 0, 0, 0.510627,-99) , 
+NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.537292,-99) , 
+-1, 0, 1, 1, 0.562842,-99) , 
 NN(
+0, 
+0, 
+-1, 218.642, 1, -1, 0.385678,-99) , 
+9, 322.135, 0, 0, 0.424945,-99) , 
+2, -1.02846, 0, 0, 0.494952,-99)    );
+  // itree = 383
+  fBoostWeights.push_back(0.0870179);
+  fForest.push_back( 
+NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.501916,-99) , 
+-1, 0, 1, 1, 0.613921,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.479857,-99) , 
-10, -2.09553, 0, 0, 0.498183,-99) , 
+-1, 0, 1, -1, 0.492663,-99) , 
+11, 73.4322, 0, 0, 0.569645,-99) , 
+NN(
 NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.594763,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.508236,-99) , 
+-1, 0, 1, -1, 0.479947,-99) , 
+5, 0.490017, 0, 0, 0.497942,-99) , 
+5, 0.235233, 1, 0, 0.510829,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.443103,-99) , 
-14, 818.169, 1, 0, 0.477831,-99) , 
-1, 60.595, 0, 0, 0.494582,-99) , 
-3, 2.37266, 0, 0, 0.496327,-99)    );
-  // itree = 156
-  fBoostWeights.push_back(0.0232512);
+-1, 0, 1, -1, 0.335627,-99) , 
+9, 570.384, 1, 0, 0.505403,-99)    );
+  // itree = 384
+  fBoostWeights.push_back(0.102532);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, -0.232736, 1, 1, 0.533446,-99) , 
+-1, 75.6172, 0, 1, 0.586225,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.53742,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.469746,-99) , 
+2, 0.343959, 1, 0, 0.514219,-99) , 
+9, 141.784, 1, 0, 0.528469,-99) , 
+NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504367,-99) , 
+-1, 0, 1, 1, 0.615064,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.485096,-99) , 
-4, -0.326227, 0, 0, 0.496392,-99) , 
-2, 0.618772, 0, 0, 0.498582,-99) , 
+-1, 0, 1, -1, 0.467201,-99) , 
+12, 588.213, 1, 0, 0.488955,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.441634,-99) , 
-2, 0.683329, 1, 0, 0.496886,-99)    );
-  // itree = 157
-  fBoostWeights.push_back(0.0199524);
+-1, 0, 1, -1, 0.285021,-99) , 
+12, 547.538, 0, 0, 0.4647,-99) , 
+12, 831.873, 0, 0, 0.509425,-99)    );
+  // itree = 385
+  fBoostWeights.push_back(0.0813285);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.563813,-99) , 
+-1, 94.375, 1, 1, 0.643692,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.523769,-99) , 
+-1, 0, 1, 1, 0.62977,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.474474,-99) , 
-10, 0.220497, 1, 0, 0.505263,-99) , 
-11, 362.651, 0, 0, 0.517722,-99) , 
+-1, 0, 1, -1, 0.474833,-99) , 
+11, 123.167, 0, 0, 0.534198,-99) , 
+3, 87.8482, 0, 0, 0.584625,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.526077,-99) , 
+-1, 92.6464, 0, 1, 0.543444,-99) , 
 NN(
 0, 
 0, 
--1, -1.63156, 0, -1, 0.495117,-99) , 
-3, 2.2456, 0, 0, 0.496654,-99) , 
-5, -1.30948, 1, 0, 0.499821,-99)    );
-  // itree = 158
-  fBoostWeights.push_back(0.0190722);
+-1, 340.726, 1, -1, 0.475912,-99) , 
+10, -2.14746, 1, 0, 0.497464,-99) , 
+4, 427.351, 0, 0, 0.510101,-99)    );
+  // itree = 386
+  fBoostWeights.push_back(0.0912481);
   fForest.push_back( 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.530128,-99) , 
+-1, 0, 1, 1, 0.660346,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.519205,-99) , 
+-1, 496.679, 0, 1, 0.534006,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.529768,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384009,-99) , 
+7, 75.0589, 1, 0, 0.449022,-99) , 
+5, 0.458121, 1, 0, 0.520561,-99) , 
+3, 66.9613, 1, 0, 0.52595,-99)    );
+  // itree = 387
+  fBoostWeights.push_back(0.0794378);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 274.976, 1, 1, 0.581552,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.414337,-99) , 
+12, 734.567, 0, 0, 0.550734,-99) , 
+NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.52471,-99) , 
+-1, 0, 1, 1, 0.628147,-99) , 
 NN(
 0, 
 0, 
 -1, 0, 1, -1, 0.493442,-99) , 
-1, 129.822, 0, 0, 0.495073,-99) , 
-2, 0.196083, 1, 0, 0.496975,-99) , 
-3, 2.2341, 0, 0, 0.498668,-99)    );
-  // itree = 159
-  fBoostWeights.push_back(0.0309435);
-  fForest.push_back( 
+8, 2.55083, 0, 0, 0.507037,-99) , 
 NN(
-NN(
-NN(
-0, 
-0, 
--1, 48.5473, 1, 1, 0.529142,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524152,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483438,-99) , 
-12, -1.63333, 1, 0, 0.49915,-99) , 
-2, 0.468075, 0, 0, 0.515573,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50944,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487782,-99) , 
-2, 0.414127, 1, 0, 0.501798,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504449,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.441091,-99) , 
-10, -0.231685, 0, 0, 0.473982,-99) , 
-3, -1.82769, 0, 0, 0.499475,-99) , 
-1, 66.6084, 1, 0, 0.503743,-99)    );
-  // itree = 160
-  fBoostWeights.push_back(0.0257838);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.549794,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482018,-99) , 
-5, -0.119159, 1, 0, 0.51837,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52165,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497612,-99) , 
-12, 2.09273, 0, 0, 0.504041,-99) , 
-NN(
-0, 
-0, 
--1, 96.5871, 1, -1, 0.479237,-99) , 
-5, -1.07132, 0, 0, 0.499254,-99) , 
-10, -2.54012, 1, 0, 0.501396,-99)    );
-  // itree = 161
-  fBoostWeights.push_back(0.0193664);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.569049,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511903,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497926,-99) , 
-13, 70.6074, 0, 0, 0.504253,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.462351,-99) , 
-13, 243.19, 1, 0, 0.502196,-99) , 
-14, 2635.8, 0, 0, 0.503982,-99)    );
-  // itree = 162
-  fBoostWeights.push_back(0.0240571);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.552918,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.533416,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485449,-99) , 
-3, -0.646106, 1, 0, 0.504677,-99) , 
-12, -2.54976, 1, 0, 0.516234,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51765,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495478,-99) , 
-14, 1509.71, 0, 0, 0.498958,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.5158,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.442837,-99) , 
-4, -0.0154874, 0, 0, 0.48188,-99) , 
-1, 111.098, 1, 0, 0.497108,-99) , 
-2, 0.594574, 0, 0, 0.499387,-99)    );
-  // itree = 163
-  fBoostWeights.push_back(0.0235356);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 80.3717, 1, 1, 0.545512,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528081,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466779,-99) , 
-5, 1.07288, 1, 0, 0.495355,-99) , 
-3, 0.682162, 1, 0, 0.518649,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.554734,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486078,-99) , 
-12, -0.246304, 0, 0, 0.526604,-99) , 
-NN(
-0, 
-0, 
--1, 543.455, 1, -1, 0.495679,-99) , 
-5, -1.78567, 1, 0, 0.498305,-99) , 
-4, 1.59766, 0, 0, 0.501366,-99)    );
-  // itree = 164
-  fBoostWeights.push_back(0.0264687);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.641067, 0, 1, 0.512781,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482264,-99) , 
-0, 1.77384, 1, 0, 0.510006,-99)    );
-  // itree = 165
-  fBoostWeights.push_back(0.0296952);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.04658, 1, 1, 0.542741,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505864,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473424,-99) , 
-1, 54.2001, 0, 0, 0.502541,-99) , 
-4, -1.79714, 1, 0, 0.505808,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.537066,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470478,-99) , 
-0, 0.0143682, 0, 0, 0.510678,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500287,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.448233,-99) , 
-12, 2.59784, 1, 0, 0.478809,-99) , 
-5, 0.59486, 0, 0, 0.489077,-99) , 
-3, -0.799252, 0, 0, 0.501237,-99)    );
-  // itree = 166
-  fBoostWeights.push_back(0.0331213);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.533851,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516753,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491956,-99) , 
-5, 0.117144, 0, 0, 0.499057,-99) , 
-3, 1.4132, 0, 0, 0.50236,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511802,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.4726,-99) , 
-12, -0.689921, 1, 0, 0.495128,-99) , 
-NN(
-0, 
-0, 
--1, 742.277, 1, -1, 0.47127,-99) , 
-3, 0.687171, 1, 0, 0.484282,-99) , 
-4, 0.529092, 1, 0, 0.495726,-99)    );
-  // itree = 167
-  fBoostWeights.push_back(0.0212531);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.545454,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493716,-99) , 
-5, -0.119261, 0, 0, 0.522564,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519033,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494736,-99) , 
-11, 316.788, 0, 0, 0.499602,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461208,-99) , 
-11, 531.888, 1, 0, 0.497898,-99) , 
-9, 534.985, 0, 0, 0.499527,-99)    );
-  // itree = 168
-  fBoostWeights.push_back(0.0261815);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.461434, 1, 1, 0.529893,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.537706,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497634,-99) , 
-13, 131.156, 0, 0, 0.503454,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520713,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474621,-99) , 
-11, 173.883, 1, 0, 0.485257,-99) , 
-0, -0.178003, 0, 0, 0.498526,-99) , 
-9, 552.171, 0, 0, 0.500351,-99)    );
-  // itree = 169
-  fBoostWeights.push_back(0.0232864);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531891,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512959,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494607,-99) , 
-7, 389.474, 0, 0, 0.50684,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502312,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483736,-99) , 
-8, 154.038, 0, 0, 0.490383,-99) , 
-8, 84.0364, 1, 0, 0.49989,-99) , 
-8, 294.044, 0, 0, 0.501183,-99)    );
-  // itree = 170
-  fBoostWeights.push_back(0.026905);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.227732, 0, 1, 0.546092,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515173,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476718,-99) , 
-12, 3.72377, 1, 0, 0.510244,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518508,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494834,-99) , 
-4, 1.73463, 0, 0, 0.499382,-99) , 
-12, 0.713478, 0, 0, 0.504341,-99) , 
-9, 566.363, 0, 0, 0.506577,-99)    );
-  // itree = 171
-  fBoostWeights.push_back(0.0300434);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.560781,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488078,-99) , 
-5, 0.118993, 0, 0, 0.526869,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -2.09769, 1, 1, 0.514295,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504736,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482646,-99) , 
-10, 0.0827781, 1, 0, 0.494417,-99) , 
-5, -0.357152, 1, 0, 0.50256,-99) , 
-10, 2.55535, 0, 0, 0.505273,-99)    );
-  // itree = 172
-  fBoostWeights.push_back(0.013351);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.548742,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0.426336, 1, 1, 0.535126,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515627,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498643,-99) , 
-2, 0.593449, 0, 0, 0.50066,-99) , 
-5, -1.78567, 1, 0, 0.502992,-99) , 
-0, -1.65846, 1, 0, 0.50452,-99)    );
-  // itree = 173
-  fBoostWeights.push_back(0.0411225);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.508752, 0, 1, 0.513973,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.551907,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493552,-99) , 
-10, -1.16761, 0, 0, 0.509091,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530342,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469244,-99) , 
-10, -1.91899, 1, 0, 0.481743,-99) , 
-11, 195.401, 1, 0, 0.494077,-99) , 
-10, 0.693573, 0, 0, 0.502324,-99)    );
-  // itree = 174
-  fBoostWeights.push_back(0.0211452);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.538011,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507129,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491308,-99) , 
-5, 0.595212, 1, 0, 0.502032,-99) , 
-3, 2.2341, 0, 0, 0.503915,-99) , 
-NN(
 0, 
 0, 
--1, 0, 1, -1, 0.444268,-99) , 
-2, 0.685155, 1, 0, 0.502187,-99)    );
-  // itree = 175
-  fBoostWeights.push_back(0.0343492);
+-1, 94.0442, 1, -1, 0.451651,-99) , 
+14, -0.477525, 0, 0, 0.48726,-99) , 
+3, 74.5565, 1, 0, 0.499569,-99)    );
+  // itree = 388
+  fBoostWeights.push_back(0.0943234);
   fForest.push_back( 
 NN(
 NN(
@@ -5567,815 +13501,18 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513501,-99) , 
+-1, 0, 1, 1, 0.520457,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489816,-99) , 
-11, 124.506, 0, 0, 0.507782,-99) , 
+-1, 0, 1, -1, 0.432232,-99) , 
+9, 149.194, 0, 0, 0.496936,-99) , 
 NN(
 0, 
 0, 
--1, 0.419298, 1, -1, 0.471453,-99) , 
-11, 526.041, 1, 0, 0.505112,-99) , 
+-1, 0, 1, -1, 0.325334,-99) , 
+9, 569.985, 1, 0, 0.491745,-99) , 
 NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531825,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488896,-99) , 
-12, -3.01286, 1, 0, 0.514599,-99) , 
-NN(
-0, 
-0, 
--1, 0.832078, 1, -1, 0.468031,-99) , 
-14, 787.813, 1, 0, 0.484622,-99) , 
-12, -2.56919, 0, 0, 0.500627,-99)    );
-  // itree = 176
-  fBoostWeights.push_back(0.0310806);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523335,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.544541,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496486,-99) , 
-13, 70.4884, 0, 0, 0.514205,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527963,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489334,-99) , 
-3, 1.22122, 0, 0, 0.494708,-99) , 
-12, -2.13597, 1, 0, 0.499994,-99) , 
-10, 2.56844, 0, 0, 0.502536,-99)    );
-  // itree = 177
-  fBoostWeights.push_back(0.0205947);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516014,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498478,-99) , 
-12, 1.61029, 0, 0, 0.504636,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509162,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.442361,-99) , 
-12, 1.62432, 1, 0, 0.488661,-99) , 
-1, 104.834, 1, 0, 0.502467,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.453444,-99) , 
-4, -2.58252, 0, 0, 0.500747,-99)    );
-  // itree = 178
-  fBoostWeights.push_back(0.0256466);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531564,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -0.235642, 1, 1, 0.509019,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511758,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48334,-99) , 
-3, -0.0467069, 0, 0, 0.495009,-99) , 
-12, 0.691997, 1, 0, 0.502728,-99) , 
-2, 0.185669, 1, 0, 0.504564,-99)    );
-  // itree = 179
-  fBoostWeights.push_back(0.0182398);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54768,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502443,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484001,-99) , 
-0, -0.0699702, 0, 0, 0.497451,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.449619,-99) , 
-4, -2.35621, 0, 0, 0.495288,-99) , 
-0, -1.8278, 1, 0, 0.496619,-99)    );
-  // itree = 180
-  fBoostWeights.push_back(0.013556);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539059,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519761,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497463,-99) , 
-12, 3.12661, 0, 0, 0.499622,-99) , 
-14, 2203.87, 0, 0, 0.501429,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466559,-99) , 
-12, 3.9744, 1, 0, 0.500198,-99)    );
-  // itree = 181
-  fBoostWeights.push_back(0.0340658);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.39255, 1, 1, 0.561818,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.540003,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495185,-99) , 
-13, 86.5448, 0, 0, 0.50614,-99) , 
-10, -0.432822, 0, 0, 0.51551,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.544956,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.538941,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491334,-99) , 
-10, -2.09553, 1, 0, 0.496394,-99) , 
-3, -1.56393, 1, 0, 0.500169,-99) , 
-12, 1.64128, 0, 0, 0.50572,-99)    );
-  // itree = 182
-  fBoostWeights.push_back(0.0241068);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.40638, 0, 1, 0.522798,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506913,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471041,-99) , 
-11, 62.6253, 0, 0, 0.504146,-99) , 
-11, 372.316, 0, 0, 0.507657,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.46701,-99) , 
-5, 2.02376, 1, 0, 0.506219,-99)    );
-  // itree = 183
-  fBoostWeights.push_back(0.0328392);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517033,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492803,-99) , 
-0, 0.109209, 0, 0, 0.507206,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51976,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482146,-99) , 
-2, 0.542154, 0, 0, 0.489377,-99) , 
-7, 492.627, 0, 0, 0.499658,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.449106,-99) , 
-12, -4.01911, 0, 0, 0.497987,-99)    );
-  // itree = 184
-  fBoostWeights.push_back(0.0184666);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.546639,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 1162.9, 0, 1, 0.50703,-99) , 
-NN(
-0, 
-0, 
--1, 131.518, 1, -1, 0.48871,-99) , 
-1, 89.7868, 1, 0, 0.502231,-99) , 
-1, 142.737, 0, 0, 0.503485,-99)    );
-  // itree = 185
-  fBoostWeights.push_back(0.0252893);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.427043, 0, 1, 0.533797,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509971,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484968,-99) , 
-2, 0.591513, 1, 0, 0.507061,-99) , 
-3, 1.97154, 0, 0, 0.508808,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470655,-99) , 
-12, -4.01746, 0, 0, 0.507561,-99)    );
-  // itree = 186
-  fBoostWeights.push_back(0.0273108);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.07282, 0, 1, 0.535103,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51909,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494926,-99) , 
-1, 98.3245, 0, 0, 0.499612,-99) , 
-4, -1.82022, 1, 0, 0.503238,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539306,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483109,-99) , 
-3, 0.248924, 0, 0, 0.509602,-99) , 
-NN(
-0, 
-0, 
--1, 1294.8, 1, -1, 0.484824,-99) , 
-11, 303.956, 0, 0, 0.490745,-99) , 
-10, -0.673697, 0, 0, 0.498144,-99)    );
-  // itree = 187
-  fBoostWeights.push_back(0.0457674);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 83.7655, 0, 1, 0.529753,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526884,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468406,-99) , 
-3, -0.0784905, 1, 0, 0.486529,-99) , 
-5, -0.119066, 1, 0, 0.50635,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536278,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521845,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482694,-99) , 
-3, 1.22777, 0, 0, 0.487524,-99) , 
-0, -1.50066, 1, 0, 0.490038,-99) , 
-12, -1.66183, 1, 0, 0.495969,-99)    );
-  // itree = 188
-  fBoostWeights.push_back(0.0263908);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534406,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508284,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49252,-99) , 
-4, -0.547887, 0, 0, 0.504541,-99) , 
-4, -1.86625, 1, 0, 0.506227,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524086,-99) , 
-NN(
-0, 
-0, 
--1, 726.337, 1, -1, 0.457899,-99) , 
-2, 0.340393, 1, 0, 0.483778,-99) , 
-5, -1.30952, 0, 0, 0.503043,-99)    );
-  // itree = 189
-  fBoostWeights.push_back(0.0219594);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53401,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.540441,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496628,-99) , 
-9, 496.583, 0, 0, 0.497987,-99) , 
-9, 566.367, 0, 0, 0.499492,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53379,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461987,-99) , 
-14, 816.536, 1, 0, 0.498969,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.435973,-99) , 
-7, 798.152, 1, 0, 0.479639,-99) , 
-1, 104.78, 1, 0, 0.496815,-99)    );
-  // itree = 190
-  fBoostWeights.push_back(0.0308867);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.961295, 0, 1, 0.529381,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507362,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472588,-99) , 
-10, 2.57462, 1, 0, 0.503381,-99) , 
-5, 0.350485, 0, 0, 0.508064,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 816.327, 1, 1, 0.524833,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536905,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48498,-99) , 
-5, -0.594692, 1, 0, 0.489636,-99) , 
-3, -0.659959, 1, 0, 0.496288,-99) , 
-4, 0.298009, 1, 0, 0.503072,-99)    );
-  // itree = 191
-  fBoostWeights.push_back(0.0301291);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -2.12031, 1, 1, 0.541036,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532761,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.437542,-99) , 
-3, -0.587611, 0, 0, 0.484154,-99) , 
-14, 1062.04, 1, 0, 0.522791,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.547774,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494169,-99) , 
-5, 1.55344, 1, 0, 0.523075,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517138,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494055,-99) , 
-2, 0.588937, 0, 0, 0.496863,-99) , 
-4, 2.0451, 0, 0, 0.499543,-99) , 
-4, -1.5344, 1, 0, 0.503392,-99)    );
-  // itree = 192
-  fBoostWeights.push_back(0.0246008);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 819.357, 0, 1, 0.533963,-99) , 
-NN(
-0, 
-0, 
--1, 130.905, 0, -1, 0.485552,-99) , 
-7, 758.072, 1, 0, 0.52107,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.556029,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496792,-99) , 
-13, 61.8744, 1, 0, 0.52684,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502052,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479504,-99) , 
-3, -1.13829, 0, 0, 0.497494,-99) , 
-5, 1.54755, 0, 0, 0.500703,-99) , 
-11, 370.88, 0, 0, 0.504577,-99)    );
-  // itree = 193
-  fBoostWeights.push_back(0.0264025);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.568012,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49431,-99) , 
-13, 48.28, 0, 0, 0.529718,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505999,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482142,-99) , 
-7, 949.489, 1, 0, 0.503608,-99) , 
-12, 3.03464, 0, 0, 0.507435,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516567,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487369,-99) , 
-9, 355.146, 0, 0, 0.497075,-99) , 
-NN(
-0, 
-0, 
--1, 0.242792, 1, -1, 0.460775,-99) , 
-1, 66.9573, 0, 0, 0.48734,-99) , 
-5, -1.07143, 0, 0, 0.503483,-99)    );
-  // itree = 194
-  fBoostWeights.push_back(0.0378704);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529458,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492969,-99) , 
-2, 0.362225, 0, 0, 0.513657,-99) , 
-NN(
-0, 
-0, 
--1, -0.158705, 1, -1, 0.456889,-99) , 
-13, 153.425, 1, 0, 0.507018,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.543426,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497923,-99) , 
-11, 347.947, 0, 0, 0.508959,-99) , 
-NN(
-0, 
-0, 
--1, -1.07141, 0, -1, 0.480161,-99) , 
-2, 0.412367, 1, 0, 0.496529,-99) , 
-14, 815.903, 1, 0, 0.501722,-99)    );
-  // itree = 195
-  fBoostWeights.push_back(0.021082);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.16213, 0, 1, 0.513733,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501169,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466489,-99) , 
-14, 1724.3, 1, 0, 0.497719,-99) , 
-7, 492.627, 0, 0, 0.506915,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467449,-99) , 
-5, 2.02381, 1, 0, 0.505555,-99)    );
-  // itree = 196
-  fBoostWeights.push_back(0.0127867);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 3.49868, 0, 1, 0.503077,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.451657,-99) , 
-2, 0.683991, 1, 0, 0.501503,-99) , 
-NN(
-0, 
-0, 
--1, 0.376649, 0, -1, 0.464461,-99) , 
-1, 123.629, 1, 0, 0.499201,-99)    );
-  // itree = 197
-  fBoostWeights.push_back(0.0263676);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 58.8897, 1, 1, 0.520625,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501454,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481101,-99) , 
-3, 1.26062, 1, 0, 0.497776,-99) , 
-5, 1.54761, 0, 0, 0.501112,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521491,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476821,-99) , 
-2, 0.377746, 1, 0, 0.498249,-99) , 
-NN(
-0, 
-0, 
--1, 1040.71, 1, -1, 0.455411,-99) , 
-3, -0.294869, 0, 0, 0.481078,-99) , 
-5, -0.833214, 0, 0, 0.495978,-99)    );
-  // itree = 198
-  fBoostWeights.push_back(0.0263537);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53631,-99) , 
-NN(
-0, 
-0, 
--1, 0.633862, 1, -1, 0.49697,-99) , 
-12, 3.50514, 0, 0, 0.500241,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531886,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477079,-99) , 
-12, -2.08116, 1, 0, 0.490501,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.450537,-99) , 
-10, 2.10097, 1, 0, 0.484702,-99) , 
-5, -0.595226, 0, 0, 0.495225,-99)    );
-  // itree = 199
-  fBoostWeights.push_back(0.0325747);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.190991, 0, 1, 0.53935,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479002,-99) , 
-5, 0.118705, 1, 0, 0.515737,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535902,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499301,-99) , 
-12, 2.56638, 0, 0, 0.50616,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507549,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470303,-99) , 
-12, -2.13295, 1, 0, 0.483563,-99) , 
-5, -0.357145, 0, 0, 0.49759,-99) , 
-10, -2.08062, 1, 0, 0.500852,-99)    );
-  // itree = 200
-  fBoostWeights.push_back(0.0169131);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 158.068, 1, 1, 0.530804,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48726,-99) , 
-10, 2.00017, 1, 0, 0.517252,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.543168,-99) , 
 NN(
 NN(
 0, 
@@ -6384,6148 +13521,90 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.498918,-99) , 
-0, -1.66031, 1, 0, 0.500207,-99) , 
-7, 1376.55, 0, 0, 0.501634,-99) , 
-12, -2.60874, 1, 0, 0.505116,-99)    );
-  // itree = 201
-  fBoostWeights.push_back(0.02067);
-  fForest.push_back( 
+-1, 0, 1, -1, 0.401396,-99) , 
+11, 75.0135, 0, 0, 0.478205,-99) , 
 NN(
-NN(
-0, 
-0, 
--1, 1.98344, 1, 1, 0.525548,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 3.03464, 0, 1, 0.505999,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505179,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.437823,-99) , 
-2, 0.413178, 1, 0, 0.474779,-99) , 
-5, -1.54763, 0, 0, 0.503009,-99) , 
-10, -2.525, 1, 0, 0.505569,-99)    );
-  // itree = 202
-  fBoostWeights.push_back(0.0261894);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.550687,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526472,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468029,-99) , 
-8, 84.6074, 1, 0, 0.504374,-99) , 
-12, 2.1026, 0, 0, 0.518122,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519674,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502322,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484254,-99) , 
-5, -0.504525, 0, 0, 0.494953,-99) , 
-10, -2.52027, 1, 0, 0.497913,-99) , 
-5, 1.30944, 0, 0, 0.500934,-99)    );
-  // itree = 203
-  fBoostWeights.push_back(0.0250435);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.5527, 0, 1, 0.554959,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479866,-99) , 
-1, 73.0616, 0, 0, 0.527847,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527532,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49856,-99) , 
-11, 311.367, 0, 0, 0.505201,-99) , 
-NN(
-0, 
-0, 
--1, -0.10212, 1, -1, 0.488657,-99) , 
-10, 0.695857, 0, 0, 0.495785,-99) , 
-4, -2.05389, 1, 0, 0.498592,-99)    );
-  // itree = 204
-  fBoostWeights.push_back(0.0330914);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518481,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495591,-99) , 
-1, 85.6544, 1, 0, 0.509705,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530052,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489857,-99) , 
-13, 121.115, 0, 0, 0.495887,-99) , 
-0, 0.209625, 1, 0, 0.501543,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520142,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467665,-99) , 
-5, -0.833727, 0, 0, 0.496061,-99) , 
-NN(
-0, 
-0, 
--1, 0.62669, 1, -1, 0.459664,-99) , 
-4, 0.0939864, 1, 0, 0.479116,-99) , 
-2, 0.548568, 1, 0, 0.497584,-99)    );
-  // itree = 205
-  fBoostWeights.push_back(0.0276306);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.545974,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48397,-99) , 
-5, -0.121889, 1, 0, 0.517766,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -0.732678, 1, 1, 0.50742,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513762,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482486,-99) , 
-11, 200.778, 1, 0, 0.494706,-99) , 
-10, 0.298771, 0, 0, 0.501437,-99) , 
-10, -2.52122, 1, 0, 0.503261,-99)    );
-  // itree = 206
-  fBoostWeights.push_back(0.0283739);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.815694, 0, 1, 0.529412,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484926,-99) , 
-11, 110.578, 0, 0, 0.515154,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 3.04351, 0, 1, 0.504645,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524303,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470713,-99) , 
-3, 0.206277, 0, 0, 0.489031,-99) , 
-10, -0.387808, 0, 0, 0.500668,-99) , 
-10, -1.62979, 1, 0, 0.504404,-99)    );
-  // itree = 207
-  fBoostWeights.push_back(0.0369855);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 2.38008, 0, 1, 0.531341,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513487,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461859,-99) , 
-13, 35.6727, 0, 0, 0.502295,-99) , 
-13, 89.5619, 0, 0, 0.509947,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.56207,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491263,-99) , 
-1, 66.8279, 1, 0, 0.512181,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502475,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476757,-99) , 
-11, 195.344, 1, 0, 0.488086,-99) , 
-3, -0.695249, 1, 0, 0.493523,-99) , 
-12, 1.63202, 0, 0, 0.499425,-99)    );
-  // itree = 208
-  fBoostWeights.push_back(0.0245693);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.569754,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520587,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490688,-99) , 
-5, 1.68459, 1, 0, 0.508865,-99) , 
-5, 0.597448, 1, 0, 0.522031,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.542316,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497233,-99) , 
-5, -1.31264, 0, 0, 0.520265,-99) , 
-NN(
-0, 
-0, 
--1, -0.754509, 0, -1, 0.494069,-99) , 
-4, -1.55159, 1, 0, 0.499139,-99) , 
-4, 1.51578, 0, 0, 0.502912,-99)    );
-  // itree = 209
-  fBoostWeights.push_back(0.0358728);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54162,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.537233,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488437,-99) , 
-1, 97.3269, 0, 0, 0.499748,-99) , 
-14, 1356.31, 0, 0, 0.508187,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526574,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48823,-99) , 
-11, 164.921, 1, 0, 0.504393,-99) , 
-NN(
-0, 
-0, 
--1, 91.894, 1, -1, 0.486838,-99) , 
-14, 816.335, 1, 0, 0.495628,-99) , 
-2, 0.319302, 1, 0, 0.49996,-99)    );
-  // itree = 210
-  fBoostWeights.push_back(0.045156);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519205,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480811,-99) , 
-7, 293.816, 0, 0, 0.515789,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.548501,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474007,-99) , 
-11, 357.536, 0, 0, 0.494002,-99) , 
-14, 1160.36, 1, 0, 0.510051,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529039,-99) , 
-NN(
-0, 
-0, 
--1, 556.173, 0, -1, 0.479148,-99) , 
-14, 1377.37, 0, 0, 0.489139,-99) , 
-7, 761.566, 1, 0, 0.505518,-99)    );
-  // itree = 211
-  fBoostWeights.push_back(0.0199845);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 761.221, 0, 1, 0.529848,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508973,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494728,-99) , 
-2, 0.421164, 0, 0, 0.500836,-99) , 
-5, -1.54745, 1, 0, 0.503395,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456604,-99) , 
-4, -2.63876, 0, 0, 0.501898,-99)    );
-  // itree = 212
-  fBoostWeights.push_back(0.0208225);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.54869, 1, 1, 0.547073,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472706,-99) , 
-3, 1.42571, 1, 0, 0.521746,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520132,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528287,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49488,-99) , 
-14, 2195.57, 0, 0, 0.496304,-99) , 
-10, -2.54421, 1, 0, 0.498907,-99) , 
-4, 2.04996, 0, 0, 0.500842,-99)    );
-  // itree = 213
-  fBoostWeights.push_back(0.0108644);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525842,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.544782,-99) , 
-NN(
-0, 
-0, 
--1, 104.238, 1, -1, 0.497186,-99) , 
-1, 142.738, 0, 0, 0.498547,-99) , 
-2, 0.186476, 1, 0, 0.500321,-99)    );
-  // itree = 214
-  fBoostWeights.push_back(0.0379938);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523683,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487291,-99) , 
-13, 155.685, 1, 0, 0.517135,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508287,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475905,-99) , 
-4, -0.543047, 0, 0, 0.499091,-99) , 
-0, 0.793377, 1, 0, 0.510397,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54174,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490722,-99) , 
-10, 1.58393, 0, 0, 0.499013,-99) , 
-NN(
-0, 
-0, 
--1, 98.8037, 1, -1, 0.463667,-99) , 
-11, 201.217, 0, 0, 0.488532,-99) , 
-9, 376.086, 1, 0, 0.505305,-99)    );
-  // itree = 215
-  fBoostWeights.push_back(0.0371909);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.48543, 1, 1, 0.537123,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513667,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484459,-99) , 
-12, -0.232759, 1, 0, 0.49896,-99) , 
-11, 200.467, 1, 0, 0.519343,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512841,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470874,-99) , 
-1, 109.343, 1, 0, 0.507173,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506683,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468126,-99) , 
-14, 606.071, 0, 0, 0.488167,-99) , 
-14, 787.848, 0, 0, 0.498574,-99) , 
-1, 60.605, 1, 0, 0.502464,-99)    );
-  // itree = 216
-  fBoostWeights.push_back(0.0171889);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.540418,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504393,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490189,-99) , 
-0, 0.85143, 1, 0, 0.499568,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.458486,-99) , 
-12, 3.97605, 1, 0, 0.498133,-99) , 
-0, -1.66031, 1, 0, 0.49958,-99)    );
-  // itree = 217
-  fBoostWeights.push_back(0.019921);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.548264,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518465,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480494,-99) , 
-14, 768.677, 1, 0, 0.496676,-99) , 
-2, 0.340914, 1, 0, 0.516908,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527025,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510688,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493592,-99) , 
-1, 53.9899, 1, 0, 0.495436,-99) , 
-5, -2.02374, 1, 0, 0.496748,-99) , 
-4, 1.9387, 0, 0, 0.498739,-99)    );
-  // itree = 218
-  fBoostWeights.push_back(0.028958);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 1.27305, 0, 1, 0.510579,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531185,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496551,-99) , 
-3, 0.182927, 0, 0, 0.514417,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526954,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478055,-99) , 
-3, -1.89336, 1, 0, 0.48319,-99) , 
-10, -1.59281, 1, 0, 0.491744,-99) , 
-1, 73.2642, 0, 0, 0.503657,-99)    );
-  // itree = 219
-  fBoostWeights.push_back(0.0194254);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.541912,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -1.58752, 1, 1, 0.508936,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522691,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493538,-99) , 
-12, -3.50328, 1, 0, 0.496976,-99) , 
-11, 208.707, 0, 0, 0.502656,-99) , 
-0, -1.69461, 1, 0, 0.503918,-99)    );
-  // itree = 220
-  fBoostWeights.push_back(0.017266);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.222937, 0, 1, 0.527833,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532064,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498193,-99) , 
-11, 360.704, 0, 0, 0.502718,-99) , 
-NN(
-0, 
-0, 
--1, 155.749, 1, -1, 0.487189,-99) , 
-0, -0.258338, 0, 0, 0.498869,-99) , 
-9, 566.363, 0, 0, 0.500381,-99)    );
-  // itree = 221
-  fBoostWeights.push_back(0.0156847);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 1.3095, 0, 1, 0.506663,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460156,-99) , 
-12, -3.97596, 0, 0, 0.505011,-99)    );
-  // itree = 222
-  fBoostWeights.push_back(0.0141335);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.554121,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479778,-99) , 
-11, 387.717, 0, 0, 0.522485,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.540415,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498332,-99) , 
-6, 286.45, 0, 0, 0.499751,-99) , 
-NN(
-0, 
-0, 
--1, 313.792, 1, -1, 0.469619,-99) , 
-0, -1.14909, 0, 0, 0.497691,-99) , 
-9, 540.802, 0, 0, 0.499269,-99)    );
-  // itree = 223
-  fBoostWeights.push_back(0.0183472);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.55646,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -0.934427, 1, 1, 0.502779,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.548692,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477344,-99) , 
-1, 54.2835, 1, 0, 0.485885,-99) , 
-3, 1.03452, 1, 0, 0.499,-99) , 
-0, -1.83591, 1, 0, 0.50048,-99)    );
-  // itree = 224
-  fBoostWeights.push_back(0.022811);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.0138727, 0, 1, 0.531411,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508904,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478199,-99) , 
-11, 193.92, 1, 0, 0.50339,-99) , 
-11, 245.117, 0, 0, 0.511981,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532237,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499067,-99) , 
-10, -0.294728, 1, 0, 0.503563,-99) , 
-NN(
-0, 
-0, 
--1, 0.290098, 0, -1, 0.487437,-99) , 
-4, -0.230129, 0, 0, 0.496796,-99) , 
-10, -1.14297, 1, 0, 0.501996,-99)    );
-  // itree = 225
-  fBoostWeights.push_back(0.0164549);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 79.3531, 0, 1, 0.547327,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491611,-99) , 
-14, 1028.76, 1, 0, 0.527681,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539852,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496651,-99) , 
-7, 1345.31, 0, 0, 0.498056,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.457014,-99) , 
-13, 281.497, 1, 0, 0.496658,-99) , 
-4, -2.07909, 1, 0, 0.49932,-99)    );
-  // itree = 226
-  fBoostWeights.push_back(0.0215965);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523978,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -0.954301, 1, 1, 0.507088,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508204,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.459964,-99) , 
-11, 201.393, 1, 0, 0.480563,-99) , 
-2, 0.595691, 1, 0, 0.504156,-99) , 
-10, 2.57317, 0, 0, 0.506265,-99)    );
-  // itree = 227
-  fBoostWeights.push_back(0.021408);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517076,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527217,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498251,-99) , 
-9, 502.378, 0, 0, 0.500595,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.554375,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475766,-99) , 
-1, 110.659, 0, 0, 0.484705,-99) , 
-2, 0.503993, 1, 0, 0.496516,-99) , 
-10, 2.57317, 0, 0, 0.498729,-99)    );
-  // itree = 228
-  fBoostWeights.push_back(0.0124873);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.0307928, 0, 1, 0.530369,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522326,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497834,-99) , 
-7, 1008.82, 0, 0, 0.499654,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469466,-99) , 
-1, 127.611, 1, 0, 0.498261,-99) , 
-9, 566.366, 0, 0, 0.499951,-99)    );
-  // itree = 229
-  fBoostWeights.push_back(0.0370015);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.569342,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530456,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467061,-99) , 
-1, 79.2999, 0, 0, 0.499267,-99) , 
-5, -0.837852, 0, 0, 0.518157,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511322,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460252,-99) , 
-1, 110.725, 1, 0, 0.506079,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.533106,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486643,-99) , 
-1, 116.674, 0, 0, 0.490914,-99) , 
-14, 794.515, 0, 0, 0.499001,-99) , 
-4, -1.67588, 1, 0, 0.501694,-99)    );
-  // itree = 230
-  fBoostWeights.push_back(0.0229477);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535155,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473103,-99) , 
-6, 139.793, 1, 0, 0.523729,-99) , 
-NN(
-0, 
-0, 
--1, 1070.97, 0, 1, 0.506905,-99) , 
-4, 1.62935, 0, 0, 0.509391,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501262,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456906,-99) , 
-2, 0.421116, 1, 0, 0.479804,-99) , 
-11, 543.444, 1, 0, 0.507678,-99)    );
-  // itree = 231
-  fBoostWeights.push_back(0.0191801);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.544908,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528082,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475691,-99) , 
-0, -0.0882195, 0, 0, 0.49854,-99) , 
-10, -0.884486, 1, 0, 0.511643,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500896,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.462219,-99) , 
-11, 356.616, 1, 0, 0.499183,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464942,-99) , 
-11, 64.04, 0, 0, 0.49645,-99) , 
-11, 387.413, 0, 0, 0.499039,-99)    );
-  // itree = 232
-  fBoostWeights.push_back(0.0321717);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.549172,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496632,-99) , 
-10, 1.34805, 1, 0, 0.522549,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507858,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472529,-99) , 
-12, 0.219505, 0, 0, 0.497764,-99) , 
-12, -2.13469, 1, 0, 0.504799,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531423,-99) , 
-NN(
-0, 
-0, 
--1, -2.02214, 0, -1, 0.486788,-99) , 
-10, 2.56805, 0, 0, 0.49228,-99) , 
-5, -0.357182, 1, 0, 0.497324,-99)    );
-  // itree = 233
-  fBoostWeights.push_back(0.0211128);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1194.35, 0, 1, 0.51758,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50294,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478571,-99) , 
-7, 347.906, 0, 0, 0.498266,-99) , 
-7, 758.072, 0, 0, 0.502347,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514531,-99) , 
-NN(
-0, 
-0, 
--1, 1.65409, 1, -1, 0.475803,-99) , 
-1, 98.4377, 0, 0, 0.483799,-99) , 
-0, -0.784195, 0, 0, 0.499955,-99)    );
-  // itree = 234
-  fBoostWeights.push_back(0.0174179);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516953,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.573382,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483887,-99) , 
-9, 352.289, 0, 0, 0.520382,-99) , 
-NN(
-0, 
-0, 
--1, 383.184, 1, -1, 0.494891,-99) , 
-0, -1.22506, 1, 0, 0.496801,-99) , 
-10, 2.57317, 0, 0, 0.499028,-99)    );
-  // itree = 235
-  fBoostWeights.push_back(0.0271172);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.542997,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53263,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49692,-99) , 
-13, 134.24, 0, 0, 0.503848,-99) , 
-5, 1.30934, 0, 0, 0.509525,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512808,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491278,-99) , 
-5, -0.323132, 0, 0, 0.502572,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511962,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461615,-99) , 
-14, 1067.61, 0, 0, 0.479892,-99) , 
-5, 1.30946, 1, 0, 0.499312,-99) , 
-2, 0.320716, 1, 0, 0.502848,-99)    );
-  // itree = 236
-  fBoostWeights.push_back(0.0281061);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 141.001, 0, 1, 0.514501,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507037,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489355,-99) , 
-4, -0.481124, 1, 0, 0.498022,-99) , 
-12, -1.66759, 1, 0, 0.504047,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512574,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51795,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460301,-99) , 
-3, -1.1463, 1, 0, 0.476468,-99) , 
-3, 1.10617, 0, 0, 0.484475,-99) , 
-1, 60.287, 0, 0, 0.500659,-99)    );
-  // itree = 237
-  fBoostWeights.push_back(0.0309417);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.546275,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486925,-99) , 
-11, 187.609, 0, 0, 0.518282,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503055,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481876,-99) , 
-12, 1.21905, 0, 0, 0.49678,-99) , 
-10, 1.62682, 0, 0, 0.500668,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511257,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471746,-99) , 
-1, 84.9029, 1, 0, 0.496877,-99) , 
-NN(
-0, 
-0, 
--1, 0.448853, 1, -1, 0.455223,-99) , 
-5, 0.833458, 1, 0, 0.48572,-99) , 
-12, -2.14127, 0, 0, 0.496355,-99)    );
-  // itree = 238
-  fBoostWeights.push_back(0.0300059);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 155.684, 0, 1, 0.506622,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528128,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484368,-99) , 
-10, 2.09793, 0, 0, 0.492064,-99) , 
-1, 85.6684, 1, 0, 0.501462,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531277,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476091,-99) , 
-10, -0.785325, 1, 0, 0.506469,-99) , 
-NN(
-0, 
-0, 
--1, 3.546, 1, -1, 0.469436,-99) , 
-3, 0.0370985, 0, 0, 0.480241,-99) , 
-4, -1.13868, 0, 0, 0.496597,-99)    );
-  // itree = 239
-  fBoostWeights.push_back(0.0263114);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.574421,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485183,-99) , 
-13, 83.8532, 1, 0, 0.541621,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.46541,-99) , 
-14, 1160.35, 1, 0, 0.523256,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -1.13459, 1, 1, 0.507169,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524537,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488965,-99) , 
-9, 467.464, 0, 0, 0.493096,-99) , 
-1, 84.6087, 1, 0, 0.50296,-99) , 
-1, 111.103, 0, 0, 0.505205,-99)    );
-  // itree = 240
-  fBoostWeights.push_back(0.0263118);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.415879, 1, 1, 0.521551,-99) , 
-NN(
-0, 
-0, 
--1, 0.872495, 1, -1, 0.488005,-99) , 
-0, 0.284559, 1, 0, 0.502013,-99) , 
-NN(
-0, 
-0, 
--1, 0.4968, 1, -1, 0.489283,-99) , 
-12, -0.729937, 1, 0, 0.49517,-99)    );
-  // itree = 241
-  fBoostWeights.push_back(0.0211793);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 32.22, 1, 1, 0.506454,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500679,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460518,-99) , 
-5, -0.595149, 0, 0, 0.488696,-99) , 
-6, 136.62, 1, 0, 0.502411,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517069,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499362,-99) , 
-3, -0.033765, 0, 0, 0.508542,-99) , 
-NN(
-0, 
-0, 
--1, 0.223052, 1, -1, 0.475699,-99) , 
-11, 286.732, 0, 0, 0.484903,-99) , 
-2, 0.274412, 0, 0, 0.498401,-99)    );
-  // itree = 242
-  fBoostWeights.push_back(0.0209957);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530003,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503782,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489026,-99) , 
-8, 56.0358, 1, 0, 0.494418,-99) , 
-8, 294.044, 0, 0, 0.495883,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.454293,-99) , 
-5, 2.02381, 1, 0, 0.494448,-99)    );
-  // itree = 243
-  fBoostWeights.push_back(0.0111611);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526989,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501001,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486322,-99) , 
-0, 1.57092, 1, 0, 0.499049,-99) , 
-1, 47.9884, 1, 0, 0.500406,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.448101,-99) , 
-4, 2.53913, 1, 0, 0.498541,-99)    );
-  // itree = 244
-  fBoostWeights.push_back(0.0213418);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.455267, 0, 1, 0.52386,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.547228,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498131,-99) , 
-8, 16.9415, 1, 0, 0.501019,-99) , 
-8, 177.147, 0, 0, 0.50429,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513356,-99) , 
-NN(
-0, 
-0, 
--1, 0.876615, 0, -1, 0.459625,-99) , 
-2, 0.330262, 1, 0, 0.480208,-99) , 
-14, 1510.35, 1, 0, 0.500723,-99)    );
-  // itree = 245
-  fBoostWeights.push_back(0.0266904);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.63061, 0, 1, 0.507847,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479604,-99) , 
-1, 135.79, 1, 0, 0.506218,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536426,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475582,-99) , 
-2, 0.460571, 0, 0, 0.506751,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501604,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467191,-99) , 
-5, -0.119049, 1, 0, 0.483861,-99) , 
-3, -0.719679, 1, 0, 0.490975,-99) , 
-1, 73.1682, 0, 0, 0.500676,-99)    );
-  // itree = 246
-  fBoostWeights.push_back(0.0212966);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -2.45805, 1, 1, 0.521863,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513557,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492322,-99) , 
-5, 1.54762, 0, 0, 0.494626,-99) , 
-3, 1.97154, 0, 0, 0.496434,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.446695,-99) , 
-12, -4.01746, 0, 0, 0.49482,-99)    );
-  // itree = 247
-  fBoostWeights.push_back(0.00845053);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53758,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52657,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499699,-99) , 
-5, 2.02379, 0, 0, 0.500791,-99) , 
-4, -2.16832, 1, 0, 0.502321,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.453734,-99) , 
-4, -2.64815, 0, 0, 0.50081,-99)    );
-  // itree = 248
-  fBoostWeights.push_back(0.0183235);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531118,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473705,-99) , 
-12, -2.10403, 0, 0, 0.514652,-99) , 
-NN(
-0, 
-0, 
--1, 0.580338, 1, -1, 0.496817,-99) , 
-1, 60.3234, 1, 0, 0.500067,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456048,-99) , 
-4, -2.64815, 0, 0, 0.49867,-99)    );
-  // itree = 249
-  fBoostWeights.push_back(0.0297712);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516009,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492909,-99) , 
-10, -2.07722, 0, 0, 0.512301,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501187,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.452381,-99) , 
-12, 2.57164, 1, 0, 0.490763,-99) , 
-5, -1.07137, 0, 0, 0.508159,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505001,-99) , 
-NN(
-0, 
-0, 
--1, -0.226057, 1, -1, 0.465171,-99) , 
-2, 0.558695, 0, 0, 0.480924,-99) , 
-1, 54.2871, 0, 0, 0.505258,-99)    );
-  // itree = 250
-  fBoostWeights.push_back(0.0277473);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536337,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489649,-99) , 
-7, 883.559, 1, 0, 0.526257,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.457086,-99) , 
-14, 1505.63, 1, 0, 0.517178,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515612,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524488,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491777,-99) , 
-3, 2.25277, 0, 0, 0.493474,-99) , 
-14, 2059.72, 0, 0, 0.494923,-99) , 
-1, 98.1386, 0, 0, 0.499188,-99)    );
-  // itree = 251
-  fBoostWeights.push_back(0.0322163);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.3327, 1, 1, 0.516716,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508354,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.437763,-99) , 
-10, -1.86605, 1, 0, 0.47858,-99) , 
-5, -1.30947, 0, 0, 0.510067,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534324,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494025,-99) , 
-1, 123.489, 0, 0, 0.496839,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518487,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.449773,-99) , 
-0, -0.136505, 0, 0, 0.476277,-99) , 
-12, -0.242131, 1, 0, 0.492759,-99) , 
-10, -0.688748, 1, 0, 0.4999,-99)    );
-  // itree = 252
-  fBoostWeights.push_back(0.0266034);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 53.989, 1, 1, 0.507517,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509947,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.441404,-99) , 
-0, -0.573699, 0, 0, 0.500271,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529481,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470396,-99) , 
-4, 2.64542, 0, 0, 0.479686,-99) , 
-3, 0.254973, 1, 0, 0.491455,-99) , 
-5, 0.357089, 1, 0, 0.501229,-99)    );
-  // itree = 253
-  fBoostWeights.push_back(0.0214445);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527992,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504689,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480466,-99) , 
-3, 1.20008, 1, 0, 0.500116,-99) , 
-NN(
-0, 
-0, 
--1, 1.59766, 1, -1, 0.482611,-99) , 
-2, 0.503507, 1, 0, 0.495926,-99) , 
-1, 47.9692, 1, 0, 0.497447,-99)    );
-  // itree = 254
-  fBoostWeights.push_back(0.0284373);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 506.314, 1, 1, 0.531709,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493548,-99) , 
-11, 364.91, 1, 0, 0.516726,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515719,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493793,-99) , 
-5, -0.595016, 1, 0, 0.500817,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510005,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478374,-99) , 
-3, 0.462089, 0, 0, 0.486928,-99) , 
-12, 1.15957, 1, 0, 0.494997,-99) , 
-0, -0.833182, 1, 0, 0.497738,-99)    );
-  // itree = 255
-  fBoostWeights.push_back(0.0341188);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51486,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49384,-99) , 
-10, 2.01297, 1, 0, 0.507849,-99) , 
-NN(
-0, 
-0, 
--1, 0.550775, 1, -1, 0.481862,-99) , 
-10, -1.13037, 0, 0, 0.499517,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522169,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477865,-99) , 
-14, 766.975, 0, 0, 0.50232,-99) , 
-NN(
-0, 
-0, 
--1, 73.1752, 0, -1, 0.479493,-99) , 
-5, -0.595085, 1, 0, 0.487179,-99) , 
-3, 0.204118, 1, 0, 0.494123,-99)    );
-  // itree = 256
-  fBoostWeights.push_back(0.0178012);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525642,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501251,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.4547,-99) , 
-5, 2.05782, 1, 0, 0.499198,-99) , 
-10, 2.56805, 0, 0, 0.502352,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -1.01205, 0, 1, 0.516318,-99) , 
-NN(
-0, 
-0, 
--1, -0.305896, 0, -1, 0.485051,-99) , 
-4, -2.32407, 1, 0, 0.490284,-99) , 
-5, -0.595239, 0, 0, 0.498424,-99)    );
-  // itree = 257
-  fBoostWeights.push_back(0.032313);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511731,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493502,-99) , 
-5, -0.595229, 0, 0, 0.505789,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512652,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468083,-99) , 
-10, -1.13763, 1, 0, 0.482765,-99) , 
-1, 104.523, 1, 0, 0.502676,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539309,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50057,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469001,-99) , 
-6, 129.159, 0, 0, 0.476833,-99) , 
-1, 104.856, 0, 0, 0.486466,-99) , 
-3, 0.740671, 1, 0, 0.497938,-99)    );
-  // itree = 258
-  fBoostWeights.push_back(0.0422657);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524511,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483217,-99) , 
-14, 1506.29, 1, 0, 0.518777,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519741,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477514,-99) , 
-0, 0.113747, 1, 0, 0.492326,-99) , 
-5, 0.119005, 1, 0, 0.506913,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514374,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48101,-99) , 
-4, -0.98935, 0, 0, 0.505135,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523687,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475685,-99) , 
-3, -1.72882, 1, 0, 0.482428,-99) , 
-14, 790.244, 0, 0, 0.49502,-99) , 
-7, 547.903, 1, 0, 0.501329,-99)    );
-  // itree = 259
-  fBoostWeights.push_back(0.0215178);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508245,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471875,-99) , 
-1, 136.422, 1, 0, 0.506919,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504675,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466761,-99) , 
-14, 1035.69, 1, 0, 0.493151,-99) , 
-3, -1.1059, 0, 0, 0.504062,-99) , 
-NN(
-0, 
-0, 
--1, 0.118693, 1, -1, 0.477071,-99) , 
-2, 0.63396, 1, 0, 0.502248,-99)    );
-  // itree = 260
-  fBoostWeights.push_back(0.0174177);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.919042, 0, 1, 0.519679,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.55446,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497607,-99) , 
-6, 129.163, 0, 0, 0.513033,-99) , 
-NN(
-0, 
-0, 
--1, 0.587917, 1, -1, 0.493496,-99) , 
-3, 1.47381, 0, 0, 0.495796,-99) , 
-12, -3.50632, 1, 0, 0.497836,-99)    );
-  // itree = 261
-  fBoostWeights.push_back(0.0394292);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524093,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491033,-99) , 
-6, 63.54, 1, 0, 0.50794,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507054,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.435588,-99) , 
-4, -0.93648, 0, 0, 0.48338,-99) , 
-6, 136.62, 1, 0, 0.502569,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.549644,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482395,-99) , 
-12, -2.38158, 1, 0, 0.517261,-99) , 
-NN(
-0, 
-0, 
--1, 57.0974, 1, -1, 0.482466,-99) , 
-13, 93.227, 0, 0, 0.490698,-99) , 
-12, -1.67083, 0, 0, 0.498414,-99)    );
-  // itree = 262
-  fBoostWeights.push_back(0.0131548);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530504,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519112,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496927,-99) , 
-0, -1.07253, 1, 0, 0.498445,-99) , 
-5, -2.02376, 1, 0, 0.499715,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461342,-99) , 
-4, 2.47428, 1, 0, 0.498151,-99)    );
-  // itree = 263
-  fBoostWeights.push_back(0.0275356);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512486,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495662,-99) , 
-1, 98.2719, 1, 0, 0.50948,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465021,-99) , 
-0, -1.3814, 0, 0, 0.507863,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525309,-99) , 
-NN(
-0, 
-0, 
--1, -1.45049, 0, -1, 0.464584,-99) , 
-10, 0.72047, 0, 0, 0.486927,-99) , 
-3, -1.77346, 0, 0, 0.505893,-99)    );
-  // itree = 264
-  fBoostWeights.push_back(0.0256894);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.56262,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.543603,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49723,-99) , 
-9, 566.366, 0, 0, 0.505808,-99) , 
-5, -1.30922, 1, 0, 0.514852,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.547585,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499534,-99) , 
-11, 183.731, 1, 0, 0.515911,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503056,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485576,-99) , 
-2, 0.317266, 1, 0, 0.491814,-99) , 
-0, -0.311778, 1, 0, 0.496814,-99) , 
-11, 387.418, 0, 0, 0.499896,-99)    );
-  // itree = 265
-  fBoostWeights.push_back(0.0145451);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530534,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522493,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499587,-99) , 
-5, 0.595766, 1, 0, 0.506874,-99) , 
-NN(
-0, 
-0, 
--1, 118.224, 1, -1, 0.494164,-99) , 
-4, 0.814647, 0, 0, 0.498117,-99) , 
-1, 136.319, 0, 0, 0.499374,-99)    );
-  // itree = 266
-  fBoostWeights.push_back(0.0149815);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.533262,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503526,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47953,-99) , 
-2, 0.636445, 1, 0, 0.501974,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512573,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460575,-99) , 
-1, 72.9913, 1, 0, 0.481537,-99) , 
-3, -1.80323, 0, 0, 0.500288,-99) , 
-0, -1.66031, 1, 0, 0.501391,-99)    );
-  // itree = 267
-  fBoostWeights.push_back(0.0310043);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.543457,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526087,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477862,-99) , 
-14, 788.972, 0, 0, 0.50465,-99) , 
-3, 0.321534, 0, 0, 0.521131,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514114,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481648,-99) , 
-1, 104.34, 1, 0, 0.509825,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509634,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48526,-99) , 
-10, 1.1752, 0, 0, 0.493661,-99) , 
-4, -1.14689, 1, 0, 0.497943,-99) , 
-5, 1.54757, 0, 0, 0.500464,-99)    );
-  // itree = 268
-  fBoostWeights.push_back(0.0364827);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516149,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494983,-99) , 
-10, -1.5938, 0, 0, 0.510031,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505848,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461652,-99) , 
-1, 79.1816, 0, 0, 0.484268,-99) , 
-12, -2.61142, 0, 0, 0.504258,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527228,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484581,-99) , 
-10, 0.413189, 0, 0, 0.494568,-99) , 
-NN(
-0, 
-0, 
--1, 170.748, 0, -1, 0.4681,-99) , 
-10, 1.64427, 1, 0, 0.488769,-99) , 
-5, 0.119075, 0, 0, 0.49605,-99)    );
-  // itree = 269
-  fBoostWeights.push_back(0.0238943);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -2.06037, 1, 1, 0.519578,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54573,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493383,-99) , 
-2, 0.344447, 1, 0, 0.51416,-99) , 
-NN(
-0, 
-0, 
--1, -0.949898, 0, -1, 0.492137,-99) , 
-5, 1.47955, 0, 0, 0.495364,-99) , 
-5, -1.07139, 1, 0, 0.500371,-99)    );
-  // itree = 270
-  fBoostWeights.push_back(0.0342724);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.10551, 1, 1, 0.524066,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510768,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492661,-99) , 
-14, 830.131, 0, 0, 0.501047,-99) , 
-1, 91.7974, 0, 0, 0.507071,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.5299,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481662,-99) , 
-2, 0.339933, 1, 0, 0.500755,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504669,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456078,-99) , 
-13, 73.4734, 0, 0, 0.47163,-99) , 
-4, 1.13192, 0, 0, 0.48477,-99) , 
-12, -2.10978, 0, 0, 0.50062,-99)    );
-  // itree = 271
-  fBoostWeights.push_back(0.029781);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511474,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492882,-99) , 
-7, 762.323, 1, 0, 0.507486,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510858,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.443542,-99) , 
-2, 0.432236, 0, 0, 0.472553,-99) , 
-14, 518.171, 0, 0, 0.505007,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531202,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486187,-99) , 
-7, 653.525, 0, 0, 0.500851,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.452015,-99) , 
-2, 0.457542, 1, 0, 0.484848,-99) , 
-14, 1501.67, 1, 0, 0.501958,-99)    );
-  // itree = 272
-  fBoostWeights.push_back(0.0337736);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.458547, 0, 1, 0.52396,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505452,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472737,-99) , 
-11, 208.755, 1, 0, 0.492152,-99) , 
-14, 596.453, 0, 0, 0.510334,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505334,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465628,-99) , 
-3, -1.36767, 0, 0, 0.498341,-99) , 
-NN(
-0, 
-0, 
--1, 0.595244, 1, -1, 0.467366,-99) , 
-3, 1.26068, 1, 0, 0.49321,-99) , 
-14, 803.569, 1, 0, 0.501482,-99)    );
-  // itree = 273
-  fBoostWeights.push_back(0.0233186);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 816.876, 1, 1, 0.539091,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511476,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494994,-99) , 
-0, -0.0014705, 1, 0, 0.499784,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505557,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.445363,-99) , 
-0, -0.328912, 0, 0, 0.479157,-99) , 
-13, 150.347, 1, 0, 0.496526,-99) , 
-1, 129.653, 0, 0, 0.498844,-99)    );
-  // itree = 274
-  fBoostWeights.push_back(0.0193645);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.566083,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496899,-99) , 
-2, 0.460189, 0, 0, 0.521921,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505464,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492709,-99) , 
-0, 0.958906, 0, 0, 0.496561,-99) , 
-1, 117.32, 0, 0, 0.498806,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.452791,-99) , 
-12, 3.99129, 1, 0, 0.497326,-99)    );
-  // itree = 275
-  fBoostWeights.push_back(0.0202763);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 259.725, 0, 1, 0.515642,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50235,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474266,-99) , 
-1, 111.168, 1, 0, 0.499355,-99) , 
-10, -1.13626, 1, 0, 0.504302,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503406,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507639,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.441934,-99) , 
-4, -1.6231, 1, 0, 0.469204,-99) , 
-13, 49.9239, 0, 0, 0.483913,-99) , 
-12, 3.04351, 1, 0, 0.501473,-99)    );
-  // itree = 276
-  fBoostWeights.push_back(0.0334631);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 52.8274, 1, 1, 0.52509,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.45807,-99) , 
-13, 149.845, 1, 0, 0.514644,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -1.49032, 1, 1, 0.516492,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519689,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488704,-99) , 
-13, 119.82, 0, 0, 0.492104,-99) , 
-13, 155.749, 0, 0, 0.495878,-99) , 
-1, 91.991, 0, 0, 0.500744,-99)    );
-  // itree = 277
-  fBoostWeights.push_back(0.0225966);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.2405, 1, 1, 0.507247,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521411,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484193,-99) , 
-7, 916.814, 0, 0, 0.490059,-99) , 
-3, -0.774104, 0, 0, 0.502475,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.447704,-99) , 
-5, -2.02376, 0, 0, 0.500632,-99)    );
-  // itree = 278
-  fBoostWeights.push_back(0.0215743);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 78.3134, 1, 1, 0.525179,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535696,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496884,-99) , 
-3, -0.35213, 0, 0, 0.510433,-99) , 
-NN(
-0, 
-0, 
--1, 944.481, 1, -1, 0.493084,-99) , 
-12, 2.10598, 0, 0, 0.497758,-99) , 
-10, -2.5297, 1, 0, 0.50085,-99)    );
-  // itree = 279
-  fBoostWeights.push_back(0.0151426);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.548942,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498355,-99) , 
-2, 0.422786, 0, 0, 0.520688,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500028,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469955,-99) , 
-1, 54.201, 0, 0, 0.496899,-99) , 
-3, -1.27923, 1, 0, 0.500866,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456497,-99) , 
-4, -2.64815, 0, 0, 0.499446,-99)    );
-  // itree = 280
-  fBoostWeights.push_back(0.0238815);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.598924, 0, 1, 0.505789,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.452879,-99) , 
-13, 199.427, 1, 0, 0.50283,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517658,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487861,-99) , 
-4, -0.878877, 1, 0, 0.493576,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501406,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.426723,-99) , 
-12, 3.09008, 1, 0, 0.469095,-99) , 
-4, -1.74635, 0, 0, 0.490464,-99) , 
-14, 815.018, 1, 0, 0.496545,-99)    );
-  // itree = 281
-  fBoostWeights.push_back(0.0344358);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 236.693, 0, 1, 0.522352,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509411,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488027,-99) , 
-11, 186.372, 1, 0, 0.497117,-99) , 
-10, -1.64, 1, 0, 0.502899,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.554035,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512478,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469544,-99) , 
-11, 342.152, 0, 0, 0.482195,-99) , 
-6, 213.644, 0, 0, 0.489646,-99) , 
-14, 1191.68, 1, 0, 0.499551,-99)    );
-  // itree = 282
-  fBoostWeights.push_back(0.0247436);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.533157,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.5073,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496298,-99) , 
-1, 85.6627, 1, 0, 0.503373,-99) , 
-0, -1.22043, 1, 0, 0.505201,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521659,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517929,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.458541,-99) , 
-12, -2.57376, 1, 0, 0.474696,-99) , 
-10, -2.06287, 1, 0, 0.486007,-99) , 
-5, -1.0714, 0, 0, 0.501474,-99)    );
-  // itree = 283
-  fBoostWeights.push_back(0.0138747);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -0.118729, 1, 1, 0.521208,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526076,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500199,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471084,-99) , 
-0, -0.717045, 0, 0, 0.496528,-99) , 
-3, -2.19115, 1, 0, 0.498283,-99) , 
-10, -2.54726, 1, 0, 0.500845,-99)    );
-  // itree = 284
-  fBoostWeights.push_back(0.0284652);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.16053, 0, 1, 0.538287,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514791,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464858,-99) , 
-13, 155.685, 1, 0, 0.495048,-99) , 
-10, -0.502276, 1, 0, 0.511612,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54581,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499699,-99) , 
-3, 1.36337, 0, 0, 0.506794,-99) , 
-NN(
-0, 
-0, 
--1, 1715.19, 1, -1, 0.487209,-99) , 
-13, 97.8955, 0, 0, 0.492722,-99) , 
-11, 387.413, 0, 0, 0.495939,-99)    );
-  // itree = 285
-  fBoostWeights.push_back(0.018779);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507595,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474084,-99) , 
-3, 1.23866, 1, 0, 0.503359,-99) , 
-NN(
-0, 
-0, 
--1, 2.03499, 1, -1, 0.493333,-99) , 
-7, 547.053, 1, 0, 0.498704,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.46988,-99) , 
-3, 2.25277, 1, 0, 0.497399,-99)    );
-  // itree = 286
-  fBoostWeights.push_back(0.0227459);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 344.035, 0, 1, 0.525263,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 50.6243, 0, 1, 0.518275,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530523,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492327,-99) , 
-14, 2196.14, 0, 0, 0.493949,-99) , 
-12, 3.04944, 0, 0, 0.496719,-99) , 
-3, -1.72882, 1, 0, 0.499718,-99)    );
-  // itree = 287
-  fBoostWeights.push_back(0.0091803);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.370516, 1, 1, 0.528594,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530701,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499973,-99) , 
-5, 1.78561, 0, 0, 0.501399,-99) , 
-4, 2.04753, 0, 0, 0.50347,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.463982,-99) , 
-12, -4.02128, 0, 0, 0.502169,-99)    );
-  // itree = 288
-  fBoostWeights.push_back(0.0320034);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.357352, 1, 1, 0.516711,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500296,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.457141,-99) , 
-11, 372.376, 1, 0, 0.491339,-99) , 
-2, 0.558759, 1, 0, 0.509378,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 1116.88, 0, 1, 0.524788,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513732,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482424,-99) , 
-9, 352.87, 0, 0, 0.490115,-99) , 
-13, 153.453, 0, 0, 0.495345,-99) , 
-2, 0.364116, 0, 0, 0.503179,-99)    );
-  // itree = 289
-  fBoostWeights.push_back(0.0210568);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.955842, 1, 1, 0.521903,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532984,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497406,-99) , 
-12, 0.598633, 0, 0, 0.500624,-99) , 
-2, 0.504452, 0, 0, 0.506341,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504323,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47368,-99) , 
-10, -2.44065, 0, 0, 0.497561,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.452902,-99) , 
-2, 0.633788, 1, 0, 0.494716,-99) , 
-12, 1.17729, 1, 0, 0.501599,-99)    );
-  // itree = 290
-  fBoostWeights.push_back(0.0235298);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.414184, 0, 1, 0.542968,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0.272603, 1, 1, 0.527969,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513197,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492769,-99) , 
-0, 1.2264, 0, 0, 0.497267,-99) , 
-1, 50.0717, 1, 0, 0.499518,-99) , 
-1, 129.773, 0, 0, 0.501881,-99)    );
-  // itree = 291
-  fBoostWeights.push_back(0.0208977);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.549298,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522758,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524305,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494213,-99) , 
-10, -2.72363, 1, 0, 0.497156,-99) , 
-10, 2.57317, 0, 0, 0.499983,-99) , 
-1, 142.652, 0, 0, 0.501432,-99)    );
-  // itree = 292
-  fBoostWeights.push_back(0.0136176);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534274,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.543454,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497449,-99) , 
-5, -0.118613, 0, 0, 0.523042,-99) , 
-NN(
-0, 
-0, 
--1, 0.220809, 0, -1, 0.496428,-99) , 
-9, 540.802, 0, 0, 0.498175,-99) , 
-2, 0.184004, 1, 0, 0.500407,-99)    );
-  // itree = 293
-  fBoostWeights.push_back(0.0310832);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 78.9673, 1, 1, 0.5339,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539784,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495228,-99) , 
-4, -1.73038, 1, 0, 0.500944,-99) , 
-2, 0.454168, 0, 0, 0.513242,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53426,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511141,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488842,-99) , 
-9, 376.093, 0, 0, 0.494428,-99) , 
-6, 238.442, 0, 0, 0.497289,-99) , 
-14, 803.569, 1, 0, 0.504986,-99)    );
-  // itree = 294
-  fBoostWeights.push_back(0.0248008);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.681762, 0, 1, 0.529628,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506805,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468779,-99) , 
-1, 135.626, 1, 0, 0.505439,-99) , 
-0, -0.784195, 1, 0, 0.508577,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518108,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.43952,-99) , 
-2, 0.394877, 1, 0, 0.479193,-99) , 
-5, 1.78572, 1, 0, 0.506654,-99)    );
-  // itree = 295
-  fBoostWeights.push_back(0.0375433);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.54642, 1, 1, 0.514161,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521808,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.459715,-99) , 
-2, 0.285263, 0, 0, 0.498829,-99) , 
-3, -1.23319, 0, 0, 0.51142,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.551587,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496822,-99) , 
-10, 0.186611, 1, 0, 0.525447,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.555087,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483109,-99) , 
-3, -2.00986, 1, 0, 0.490239,-99) , 
-3, 0.987706, 0, 0, 0.498879,-99) , 
-2, 0.457427, 1, 0, 0.507098,-99)    );
-  // itree = 296
-  fBoostWeights.push_back(0.0250975);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.565571,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525406,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482657,-99) , 
-11, 131.895, 0, 0, 0.498771,-99) , 
-11, 224.526, 0, 0, 0.514045,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514035,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494927,-99) , 
-10, -2.54422, 1, 0, 0.49762,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.435159,-99) , 
-3, -2.32565, 0, 0, 0.495375,-99) , 
-10, 2.09176, 0, 0, 0.498817,-99)    );
-  // itree = 297
-  fBoostWeights.push_back(0.0171315);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.832942, 0, 1, 0.538885,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516966,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479681,-99) , 
-2, 0.470348, 1, 0, 0.503685,-99) , 
-3, -1.16223, 1, 0, 0.512428,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500376,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477986,-99) , 
-14, 1856.99, 1, 0, 0.498553,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.453826,-99) , 
-7, 262.054, 0, 0, 0.496442,-99) , 
-7, 760.033, 0, 0, 0.500083,-99)    );
-  // itree = 298
-  fBoostWeights.push_back(0.023582);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.56766,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53034,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498869,-99) , 
-3, 1.24381, 0, 0, 0.504728,-99) , 
-4, 2.32247, 0, 0, 0.508221,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504874,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470666,-99) , 
-1, 102.724, 1, 0, 0.498324,-99) , 
-NN(
-0, 
-0, 
--1, 1.03977, 1, -1, 0.474257,-99) , 
-1, 66.9228, 0, 0, 0.492326,-99) , 
-14, 815.903, 1, 0, 0.500217,-99)    );
-  // itree = 299
-  fBoostWeights.push_back(0.0204973);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 93.5978, 0, 1, 0.523548,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539595,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499402,-99) , 
-3, -2.0291, 1, 0, 0.501321,-99) , 
-12, 3.05853, 0, 0, 0.503808,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0.286215, 0, 1, 0.526713,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507687,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468299,-99) , 
-7, 761.566, 0, 0, 0.477438,-99) , 
-13, 155.684, 0, 0, 0.488423,-99) , 
-14, 1191.68, 1, 0, 0.499914,-99)    );
-  // itree = 300
-  fBoostWeights.push_back(0.0260322);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 555.071, 1, 1, 0.550482,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534679,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49297,-99) , 
-3, -1.06415, 1, 0, 0.503943,-99) , 
-4, 1.46212, 0, 0, 0.512609,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503804,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474057,-99) , 
-3, -1.66661, 0, 0, 0.500718,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.441533,-99) , 
-1, 130.112, 1, 0, 0.498149,-99) , 
-2, 0.451366, 0, 0, 0.503445,-99)    );
-  // itree = 301
-  fBoostWeights.push_back(0.0176694);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -3.52252, 1, 1, 0.516768,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500724,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.452778,-99) , 
-7, 1172.03, 1, 0, 0.498337,-99) , 
-14, 950.508, 0, 0, 0.5048,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503771,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.455579,-99) , 
-2, 0.417665, 1, 0, 0.483816,-99) , 
-14, 1913.53, 1, 0, 0.503186,-99)    );
-  // itree = 302
-  fBoostWeights.push_back(0.0222295);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 245.854, 0, 1, 0.507516,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51628,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512192,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.46775,-99) , 
-2, 0.299375, 1, 0, 0.480137,-99) , 
-10, -1.64325, 1, 0, 0.489926,-99) , 
-6, 136.62, 1, 0, 0.503643,-99)    );
-  // itree = 303
-  fBoostWeights.push_back(0.0271146);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 110.719, 0, 1, 0.512309,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.45362,-99) , 
-14, 1856.99, 1, 0, 0.507643,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509944,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488437,-99) , 
-0, 0.209625, 1, 0, 0.496521,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.454231,-99) , 
-3, -2.14426, 0, 0, 0.494359,-99) , 
-2, 0.452569, 0, 0, 0.499125,-99)    );
-  // itree = 304
-  fBoostWeights.push_back(0.0182313);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534741,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530438,-99) , 
-NN(
-0, 
-0, 
--1, 2.66663, 1, -1, 0.492316,-99) , 
-8, 325.376, 0, 0, 0.493412,-99) , 
-1, 141.967, 0, 0, 0.494628,-99)    );
-  // itree = 305
-  fBoostWeights.push_back(0.0132597);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -2.08099, 0, 1, 0.515915,-99) , 
-NN(
-0, 
-0, 
--1, 1.78567, 1, -1, 0.494534,-99) , 
-10, 2.55779, 0, 0, 0.496915,-99)    );
-  // itree = 306
-  fBoostWeights.push_back(0.0253392);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.513918, 0, 1, 0.517355,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504241,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47663,-99) , 
-12, 2.56253, 1, 0, 0.498778,-99) , 
-5, 0.83327, 0, 0, 0.503742,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508051,-99) , 
-NN(
-0, 
-0, 
--1, 0.72217, 0, -1, 0.449438,-99) , 
-2, 0.407924, 1, 0, 0.482857,-99) , 
-14, 1552.4, 1, 0, 0.500903,-99)    );
-  // itree = 307
-  fBoostWeights.push_back(0.0262913);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 84.4196, 0, 1, 0.519504,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50575,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456159,-99) , 
-12, 0.251111, 1, 0, 0.482971,-99) , 
-6, 136.62, 1, 0, 0.511133,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536767,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496439,-99) , 
-5, 1.54757, 0, 0, 0.500822,-99) , 
-NN(
-0, 
-0, 
--1, -0.157835, 1, -1, 0.481396,-99) , 
-3, 0.759141, 1, 0, 0.495236,-99) , 
-2, 0.499108, 0, 0, 0.499545,-99)    );
-  // itree = 308
-  fBoostWeights.push_back(0.0376075);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.541716,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.4875,-99) , 
-2, 0.292083, 0, 0, 0.528216,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507747,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477801,-99) , 
-13, 91.7128, 1, 0, 0.498189,-99) , 
-3, -0.646071, 1, 0, 0.50819,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.549673,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490171,-99) , 
-11, 285.804, 0, 0, 0.509824,-99) , 
-NN(
-0, 
-0, 
--1, -1.82108, 0, -1, 0.483848,-99) , 
-2, 0.274647, 1, 0, 0.490285,-99) , 
-14, 830.131, 1, 0, 0.499379,-99)    );
-  // itree = 309
-  fBoostWeights.push_back(0.0234163);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.537881,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498968,-99) , 
-1, 96.9833, 1, 0, 0.529302,-99) , 
-NN(
-0, 
-0, 
--1, 0.408296, 1, 1, 0.506731,-99) , 
-11, 286.693, 0, 0, 0.511578,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539919,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535812,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492253,-99) , 
-2, 0.64511, 0, 0, 0.495254,-99) , 
-4, -2.7844, 1, 0, 0.49831,-99) , 
-0, 0.209625, 0, 0, 0.506149,-99)    );
-  // itree = 310
-  fBoostWeights.push_back(0.0170803);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520887,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489018,-99) , 
-5, 0.833406, 1, 0, 0.51246,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528648,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496143,-99) , 
-7, 1192.23, 0, 0, 0.497786,-99) , 
-2, 0.523001, 0, 0, 0.500768,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467947,-99) , 
-2, 0.681506, 1, 0, 0.499747,-99)    );
-  // itree = 311
-  fBoostWeights.push_back(0.0358316);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 66.1214, 1, 1, 0.525285,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52045,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478669,-99) , 
-8, 73.1805, 1, 0, 0.499353,-99) , 
-6, 100.735, 1, 0, 0.515909,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513636,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.452494,-99) , 
-1, 117.489, 1, 0, 0.508643,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505861,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480718,-99) , 
-3, 0.858884, 0, 0, 0.488171,-99) , 
-2, 0.36467, 1, 0, 0.497429,-99) , 
-10, 1.62682, 0, 0, 0.502361,-99)    );
-  // itree = 312
-  fBoostWeights.push_back(0.0140847);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522685,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502637,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485525,-99) , 
-8, 177.297, 1, 0, 0.5003,-99) , 
-0, 1.84509, 0, 0, 0.502288,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.458181,-99) , 
-4, 2.61152, 1, 0, 0.500875,-99)    );
-  // itree = 313
-  fBoostWeights.push_back(0.0311553);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.596262, 1, 1, 0.521084,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484033,-99) , 
-10, 2.10738, 1, 0, 0.512837,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522379,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491921,-99) , 
-10, -1.62522, 1, 0, 0.501881,-99) , 
-NN(
-0, 
-0, 
--1, 0.384584, 1, -1, 0.48595,-99) , 
-5, -0.357138, 1, 0, 0.492343,-99) , 
-3, -0.671219, 1, 0, 0.498869,-99)    );
-  // itree = 314
-  fBoostWeights.push_back(0.0323441);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.60895, 0, 1, 0.535943,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508866,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.455883,-99) , 
-6, 130.904, 1, 0, 0.495091,-99) , 
-11, 197.383, 1, 0, 0.516437,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530041,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460303,-99) , 
-5, 1.07142, 1, 0, 0.516718,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502376,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484999,-99) , 
-12, 1.16813, 1, 0, 0.495042,-99) , 
-11, 370.938, 0, 0, 0.498917,-99) , 
-8, 124.312, 0, 0, 0.503637,-99)    );
-  // itree = 315
-  fBoostWeights.push_back(0.0273596);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536459,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487121,-99) , 
-9, 263.802, 1, 0, 0.51853,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524597,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495747,-99) , 
-1, 102.19, 0, 0, 0.499232,-99) , 
-1, 60.0812, 1, 0, 0.503106,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507914,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.453778,-99) , 
-1, 67.589, 0, 0, 0.498518,-99) , 
-NN(
-0, 
-0, 
--1, 144.277, 0, -1, 0.460998,-99) , 
-11, 201.325, 0, 0, 0.487445,-99) , 
-9, 367.491, 1, 0, 0.499175,-99)    );
-  // itree = 316
-  fBoostWeights.push_back(0.030841);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531586,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506174,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481825,-99) , 
-1, 78.4268, 0, 0, 0.494599,-99) , 
-11, 130.23, 0, 0, 0.511611,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511348,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469503,-99) , 
-3, -1.01426, 1, 0, 0.505234,-99) , 
-NN(
-0, 
-0, 
--1, 0.453951, 1, -1, 0.486064,-99) , 
-3, -0.799252, 1, 0, 0.492126,-99) , 
-0, 1.28287, 0, 0, 0.496093,-99)    );
-  // itree = 317
-  fBoostWeights.push_back(0.0291317);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.72023, 1, 1, 0.516765,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516922,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495603,-99) , 
-5, -1.07145, 1, 0, 0.500087,-99) , 
-1, 85.6436, 0, 0, 0.506189,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526578,-99) , 
-NN(
-0, 
-0, 
--1, 144.883, 1, -1, 0.449746,-99) , 
-13, 49.9238, 0, 0, 0.484373,-99) , 
-12, 3.05473, 1, 0, 0.503202,-99)    );
-  // itree = 318
-  fBoostWeights.push_back(0.020891);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.546958,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506273,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494932,-99) , 
-10, -0.668897, 1, 0, 0.499514,-99) , 
-2, 0.68225, 0, 0, 0.501159,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520544,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466529,-99) , 
-12, 0.268241, 0, 0, 0.495956,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.416914,-99) , 
-2, 0.500349, 1, 0, 0.474977,-99) , 
-5, -1.54763, 0, 0, 0.498536,-99)    );
-  // itree = 319
-  fBoostWeights.push_back(0.0193181);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 682.474, 1, 1, 0.542726,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487364,-99) , 
-14, 1105.27, 1, 0, 0.525804,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.554436,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496336,-99) , 
-8, 72.3543, 0, 0, 0.528301,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520577,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497391,-99) , 
-1, 117.28, 0, 0, 0.499475,-99) , 
-12, 3.51256, 0, 0, 0.50213,-99) , 
-4, 1.86148, 0, 0, 0.504704,-99)    );
-  // itree = 320
-  fBoostWeights.push_back(0.0259087);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.13245, 0, 1, 0.533481,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478795,-99) , 
-6, 129.158, 1, 0, 0.521169,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0.426743, 1, 1, 0.528939,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509802,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491848,-99) , 
-3, -0.171511, 0, 0, 0.501892,-99) , 
-7, 1070.19, 0, 0, 0.504138,-99) , 
-1, 54.1767, 1, 0, 0.506035,-99)    );
-  // itree = 321
-  fBoostWeights.push_back(0.0185783);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505522,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489952,-99) , 
-13, 41.826, 0, 0, 0.50204,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464855,-99) , 
-13, 278.345, 1, 0, 0.500633,-99) , 
-NN(
-0, 
-0, 
--1, 78.552, 1, -1, 0.477022,-99) , 
-10, -2.5216, 0, 0, 0.498065,-99)    );
-  // itree = 322
-  fBoostWeights.push_back(0.0213796);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.352002, 0, 1, 0.530011,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506703,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491442,-99) , 
-7, 492.627, 0, 0, 0.500041,-99) , 
-3, 1.82298, 0, 0, 0.50271,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.444978,-99) , 
-4, 2.72613, 1, 0, 0.501223,-99)    );
-  // itree = 323
-  fBoostWeights.push_back(0.0239199);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.698889, 0, 1, 0.508255,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471556,-99) , 
-5, 1.95572, 1, 0, 0.506415,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52666,-99) , 
-NN(
-0, 
-0, 
--1, 503.415, 1, -1, 0.47122,-99) , 
-14, 1326.11, 0, 0, 0.484469,-99) , 
-5, -1.30954, 0, 0, 0.503309,-99)    );
-  // itree = 324
-  fBoostWeights.push_back(0.0154848);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.542197,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48986,-99) , 
-5, 0.356424, 1, 0, 0.521991,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 72.3084, 1, 1, 0.522845,-99) , 
-NN(
-0, 
-0, 
--1, -2.07571, 0, -1, 0.495097,-99) , 
-5, 1.78567, 0, 0, 0.497072,-99) , 
-2, 0.639709, 0, 0, 0.498718,-99)    );
-  // itree = 325
-  fBoostWeights.push_back(0.0226181);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521903,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488962,-99) , 
-5, 1.0715, 1, 0, 0.515345,-99) , 
-NN(
-0, 
-0, 
--1, 60.8891, 0, -1, 0.47648,-99) , 
-9, 383.182, 1, 0, 0.509957,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539245,-99) , 
-NN(
-0, 
-0, 
--1, 1.92807, 1, -1, 0.495462,-99) , 
-4, 2.47428, 0, 0, 0.497393,-99) , 
-1, 72.9298, 1, 0, 0.502029,-99)    );
-  // itree = 326
-  fBoostWeights.push_back(0.0234917);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.555873,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493878,-99) , 
-2, 0.406402, 0, 0, 0.523745,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512313,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493834,-99) , 
-4, 0.566885, 0, 0, 0.503859,-99) , 
-3, -0.656674, 1, 0, 0.508547,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527767,-99) , 
-NN(
-0, 
-0, 
--1, -0.579072, 0, -1, 0.492568,-99) , 
-6, 234.012, 0, 0, 0.49513,-99) , 
-12, 0.245908, 1, 0, 0.502111,-99)    );
-  // itree = 327
-  fBoostWeights.push_back(0.0295663);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 103.179, 0, 1, 0.509807,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531423,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478457,-99) , 
-13, 145.418, 0, 0, 0.49182,-99) , 
-9, 370.053, 1, 0, 0.505495,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526106,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489345,-99) , 
-5, 0.833465, 0, 0, 0.50007,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50645,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.428014,-99) , 
-2, 0.566626, 1, 0, 0.468853,-99) , 
-2, 0.586557, 0, 0, 0.490646,-99) , 
-2, 0.548506, 1, 0, 0.502861,-99)    );
-  // itree = 328
-  fBoostWeights.push_back(0.0155259);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1102.6, 0, 1, 0.505342,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512573,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464436,-99) , 
-9, 506.758, 0, 0, 0.482384,-99) , 
-11, 512.202, 1, 0, 0.503691,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473442,-99) , 
-1, 47.9692, 0, 0, 0.502363,-99)    );
-  // itree = 329
-  fBoostWeights.push_back(0.0150705);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.238399, 0, 1, 0.528807,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 1.87344, 0, 1, 0.504859,-99) , 
-NN(
-0, 
-0, 
--1, -2.31742, 0, -1, 0.493153,-99) , 
-2, 0.337893, 1, 0, 0.498052,-99) , 
-2, 0.640727, 0, 0, 0.500103,-99)    );
-  // itree = 330
-  fBoostWeights.push_back(0.018517);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519272,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503911,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488731,-99) , 
-14, 1157.45, 1, 0, 0.499896,-99) , 
-2, 0.201317, 1, 0, 0.501825,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513574,-99) , 
-NN(
-0, 
-0, 
--1, 367.531, 1, -1, 0.470229,-99) , 
-10, 1.63645, 0, 0, 0.481584,-99) , 
-2, 0.592952, 1, 0, 0.499546,-99)    );
-  // itree = 331
-  fBoostWeights.push_back(0.030781);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54752,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50708,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.45855,-99) , 
-5, 1.78568, 1, 0, 0.504103,-99) , 
-10, 2.04888, 0, 0, 0.508666,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.555144,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497774,-99) , 
-13, 47.0438, 1, 0, 0.521808,-99) , 
-NN(
-0, 
-0, 
--1, 383.787, 0, -1, 0.484735,-99) , 
-1, 92.061, 0, 0, 0.493627,-99) , 
-11, 208.712, 0, 0, 0.500971,-99)    );
-  // itree = 332
-  fBoostWeights.push_back(0.0229609);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.547451,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.538695,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497881,-99) , 
-3, -1.41179, 1, 0, 0.505682,-99) , 
-12, -3.04268, 1, 0, 0.512174,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.537049,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494565,-99) , 
-13, 79.9637, 0, 0, 0.506412,-99) , 
-NN(
-0, 
-0, 
--1, 803.569, 0, -1, 0.491556,-99) , 
-12, 2.10719, 0, 0, 0.495966,-99) , 
-1, 66.7973, 1, 0, 0.5003,-99)    );
-  // itree = 333
-  fBoostWeights.push_back(0.0163634);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535846,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504785,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485945,-99) , 
-2, 0.230892, 0, 0, 0.502125,-99) , 
-5, 2.02373, 0, 0, 0.503318,-99) , 
-NN(
-0, 
-0, 
--1, 0.171652, 0, -1, 0.4764,-99) , 
-0, -1.239, 0, 0, 0.501625,-99)    );
-  // itree = 334
-  fBoostWeights.push_back(0.0294729);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.537055,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496013,-99) , 
-10, 1.13292, 0, 0, 0.526057,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508788,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480753,-99) , 
-10, 2.46284, 1, 0, 0.501669,-99) , 
-2, 0.508752, 0, 0, 0.50799,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534417,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493664,-99) , 
-10, -0.958076, 0, 0, 0.500705,-99) , 
-NN(
-0, 
-0, 
--1, -0.531656, 1, -1, 0.4839,-99) , 
-11, 196.454, 1, 0, 0.491898,-99) , 
-10, 0.255821, 0, 0, 0.499612,-99)    );
-  // itree = 335
-  fBoostWeights.push_back(0.0142702);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.404129, 0, 1, 0.529699,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503069,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460297,-99) , 
-3, 2.33282, 1, 0, 0.501398,-99) , 
-1, 113.858, 0, 0, 0.503252,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465372,-99) , 
-1, 136.422, 1, 0, 0.501943,-99)    );
-  // itree = 336
-  fBoostWeights.push_back(0.0190107);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52442,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.542342,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495806,-99) , 
-10, 1.16381, 0, 0, 0.511664,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50103,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476288,-99) , 
-2, 0.444407, 1, 0, 0.49535,-99) , 
-2, 0.548568, 0, 0, 0.498394,-99) , 
-0, 1.91369, 0, 0, 0.500366,-99)    );
-  // itree = 337
-  fBoostWeights.push_back(0.0268074);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.549767,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518107,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494752,-99) , 
-1, 72.5698, 1, 0, 0.503321,-99) , 
-0, -0.766306, 1, 0, 0.506897,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528136,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492856,-99) , 
-2, 0.244633, 1, 0, 0.49883,-99) , 
-NN(
-0, 
-0, 
--1, 79.5006, 0, -1, 0.48238,-99) , 
-4, -0.230129, 0, 0, 0.491944,-99) , 
-10, -1.13283, 1, 0, 0.497111,-99)    );
-  // itree = 338
-  fBoostWeights.push_back(0.0271025);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.545201,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522171,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485078,-99) , 
-11, 387.452, 0, 0, 0.498611,-99) , 
-5, -1.07116, 1, 0, 0.508314,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502562,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47727,-99) , 
-7, 395.565, 0, 0, 0.495384,-99) , 
-NN(
-0, 
-0, 
--1, 0.252061, 0, -1, 0.466284,-99) , 
-0, -0.927718, 0, 0, 0.492693,-99) , 
-9, 383.185, 0, 0, 0.496278,-99)    );
-  // itree = 339
-  fBoostWeights.push_back(0.0293512);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 494.588, 1, 1, 0.51527,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509411,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483418,-99) , 
-12, -0.696086, 1, 0, 0.495057,-99) , 
-11, 197.3, 1, 0, 0.504475,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525397,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511339,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484977,-99) , 
-14, 1447.79, 0, 0, 0.489514,-99) , 
-4, 2.30788, 0, 0, 0.49155,-99) , 
-2, 0.411084, 0, 0, 0.49739,-99)    );
-  // itree = 340
-  fBoostWeights.push_back(0.0241801);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.07133, 0, 1, 0.51083,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.459937,-99) , 
-1, 117.18, 1, 0, 0.506933,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500403,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475521,-99) , 
-0, -0.476395, 0, 0, 0.49589,-99) , 
-NN(
-0, 
-0, 
--1, 79.3826, 0, -1, 0.450575,-99) , 
-5, 1.30954, 1, 0, 0.489669,-99) , 
-3, 0.164988, 1, 0, 0.499122,-99)    );
-  // itree = 341
-  fBoostWeights.push_back(0.0378969);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532685,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513686,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486063,-99) , 
-10, -1.04933, 1, 0, 0.4953,-99) , 
-10, 1.97086, 0, 0, 0.499705,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54093,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490496,-99) , 
-7, 827.379, 0, 0, 0.498917,-99) , 
-NN(
-0, 
-0, 
--1, -2.06304, 0, -1, 0.472492,-99) , 
-11, 132.118, 0, 0, 0.48456,-99) , 
-11, 208.707, 0, 0, 0.491964,-99)    );
-  // itree = 342
-  fBoostWeights.push_back(0.0298822);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523831,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481382,-99) , 
-3, 1.97725, 1, 0, 0.516746,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480202,-99) , 
-7, 828.332, 1, 0, 0.510144,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507084,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48929,-99) , 
-3, -0.40434, 0, 0, 0.499458,-99) , 
-NN(
-0, 
-0, 
--1, -0.516659, 1, -1, 0.479163,-99) , 
-10, 1.18509, 1, 0, 0.492837,-99) , 
-4, 1.14361, 0, 0, 0.496944,-99)    );
-  // itree = 343
-  fBoostWeights.push_back(0.0206631);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504636,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478865,-99) , 
-5, 1.77429, 1, 0, 0.502599,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509326,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469869,-99) , 
-2, 0.344976, 1, 0, 0.485419,-99) , 
-5, -1.3095, 0, 0, 0.500153,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51816,-99) , 
-NN(
-0, 
-0, 
--1, 79.2354, 1, -1, 0.457259,-99) , 
-12, 1.83978, 1, 0, 0.480416,-99) , 
-3, -1.84084, 0, 0, 0.498497,-99)    );
-  // itree = 344
-  fBoostWeights.push_back(0.0215458);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515494,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499118,-99) , 
-14, 830.131, 1, 0, 0.507641,-99) , 
-NN(
-0, 
-0, 
--1, 797.131, 0, -1, 0.485051,-99) , 
-3, -0.570354, 1, 0, 0.504161,-99) , 
-NN(
-0, 
-0, 
--1, 1.54752, 1, -1, 0.488346,-99) , 
-3, -0.333139, 1, 0, 0.494775,-99)    );
-  // itree = 345
-  fBoostWeights.push_back(0.024744);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511497,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49777,-99) , 
-10, 0.854321, 1, 0, 0.504176,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529916,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481549,-99) , 
-0, -0.19368, 1, 0, 0.488713,-99) , 
-10, -1.61106, 0, 0, 0.500066,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516452,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.454058,-99) , 
-9, 332.448, 0, 0, 0.477255,-99) , 
-3, -1.80262, 0, 0, 0.498042,-99)    );
-  // itree = 346
-  fBoostWeights.push_back(0.0281372);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.74117, 0, 1, 0.550418,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523312,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482671,-99) , 
-1, 92.3267, 0, 0, 0.497215,-99) , 
-1, 66.8605, 1, 0, 0.512267,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501755,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483737,-99) , 
-1, 60.5429, 0, 0, 0.497847,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527318,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461208,-99) , 
-3, -1.47626, 1, 0, 0.473733,-99) , 
-1, 98.3263, 1, 0, 0.493591,-99) , 
-3, 1.19224, 0, 0, 0.497348,-99)    );
-  // itree = 347
-  fBoostWeights.push_back(0.0248333);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525387,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490281,-99) , 
-14, 1164.67, 1, 0, 0.51609,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511308,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.45805,-99) , 
-10, -0.558152, 1, 0, 0.486025,-99) , 
-2, 0.325852, 0, 0, 0.506049,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531442,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493415,-99) , 
-4, 2.12432, 0, 0, 0.495155,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470304,-99) , 
-4, 2.46129, 1, 0, 0.49378,-99) , 
-4, -1.07671, 1, 0, 0.496862,-99)    );
-  // itree = 348
-  fBoostWeights.push_back(0.0253261);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 109.331, 0, 1, 0.508071,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524274,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483107,-99) , 
-1, 97.6451, 1, 0, 0.505042,-99) , 
-NN(
-0, 
-0, 
--1, -0.119206, 1, -1, 0.460167,-99) , 
-1, 73.7607, 0, 0, 0.494549,-99) , 
-9, 361.271, 1, 0, 0.504463,-99)    );
-  // itree = 349
-  fBoostWeights.push_back(0.0244422);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519429,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473271,-99) , 
-0, -0.296148, 0, 0, 0.51024,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531468,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493525,-99) , 
-6, 32.2204, 1, 0, 0.496132,-99) , 
-6, 136.621, 0, 0, 0.499383,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.46339,-99) , 
-4, 2.43707, 1, 0, 0.497826,-99)    );
-  // itree = 350
-  fBoostWeights.push_back(0.0197269);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521721,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532038,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507299,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491723,-99) , 
-0, 1.04373, 0, 0, 0.494968,-99) , 
-1, 142.735, 0, 0, 0.496016,-99) , 
-0, 1.84509, 0, 0, 0.498218,-99)    );
-  // itree = 351
-  fBoostWeights.push_back(0.0175598);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 528.98, 0, 1, 0.505693,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520857,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487079,-99) , 
-1, 60.5159, 1, 0, 0.492878,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456584,-99) , 
-5, 1.30916, 1, 0, 0.488648,-99) , 
-8, 124.127, 1, 0, 0.501305,-99)    );
-  // itree = 352
-  fBoostWeights.push_back(0.00809099);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 2.16944, 0, 1, 0.501946,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469774,-99) , 
-4, 2.62675, 1, 0, 0.500895,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461587,-99) , 
-5, -2.02373, 0, 0, 0.499595,-99)    );
-  // itree = 353
-  fBoostWeights.push_back(0.0244007);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.556943,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498519,-99) , 
-2, 0.413958, 0, 0, 0.525542,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510044,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492813,-99) , 
-14, 815.903, 0, 0, 0.501808,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505453,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479553,-99) , 
-1, 66.9038, 1, 0, 0.48722,-99) , 
-3, 0.774201, 1, 0, 0.497629,-99) , 
-1, 117.325, 0, 0, 0.500051,-99)    );
-  // itree = 354
-  fBoostWeights.push_back(0.0223394);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.540869,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511368,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48568,-99) , 
-10, 0.170576, 0, 0, 0.508697,-99) , 
-8, 226.651, 0, 0, 0.511335,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502774,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461245,-99) , 
-11, 81.087, 0, 0, 0.498393,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.454514,-99) , 
-11, 566.143, 1, 0, 0.496017,-99) , 
-12, -0.727524, 1, 0, 0.503092,-99)    );
-  // itree = 355
-  fBoostWeights.push_back(0.0187571);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.548043,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530446,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497782,-99) , 
-10, -2.04643, 1, 0, 0.502113,-99) , 
-3, 1.80216, 0, 0, 0.507181,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500576,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474046,-99) , 
-13, 41.9697, 0, 0, 0.494536,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456783,-99) , 
-13, 281.369, 1, 0, 0.492544,-99) , 
-14, 790.244, 1, 0, 0.499396,-99)    );
-  // itree = 356
-  fBoostWeights.push_back(0.0300877);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.555041,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520407,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471101,-99) , 
-2, 0.323432, 0, 0, 0.504299,-99) , 
-1, 104.856, 0, 0, 0.512219,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513622,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492179,-99) , 
-14, 1121.16, 0, 0, 0.498716,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501499,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47108,-99) , 
-3, -0.795962, 1, 0, 0.481808,-99) , 
-1, 91.7706, 1, 0, 0.494541,-99) , 
-3, 1.24381, 0, 0, 0.497889,-99)    );
-  // itree = 357
-  fBoostWeights.push_back(0.0217195);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 177.438, 0, 1, 0.504844,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506765,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478341,-99) , 
-4, -0.356538, 1, 0, 0.491332,-99) , 
-10, -1.15246, 0, 0, 0.499954,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505952,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465413,-99) , 
-1, 72.605, 0, 0, 0.493993,-99) , 
-NN(
-0, 
-0, 
--1, -1.03479, 1, -1, 0.465641,-99) , 
-0, -0.485138, 0, 0, 0.483786,-99) , 
-11, 370.88, 1, 0, 0.497006,-99)    );
-  // itree = 358
-  fBoostWeights.push_back(0.0242387);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516701,-99) , 
-NN(
-0, 
-0, 
--1, 177.147, 1, -1, 0.490949,-99) , 
-1, 130.095, 0, 0, 0.492271,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512594,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484105,-99) , 
-5, 0.356459, 0, 0, 0.49617,-99) , 
-NN(
-0, 
-0, 
--1, 1037.23, 0, -1, 0.456735,-99) , 
-8, 78.8192, 0, 0, 0.47615,-99) , 
-12, -3.0785, 0, 0, 0.490078,-99)    );
-  // itree = 359
-  fBoostWeights.push_back(0.0183356);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 72.3589, 0, 1, 0.52887,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -1.611, 1, 1, 0.505476,-99) , 
-NN(
-0, 
-0, 
--1, 60.1158, 0, -1, 0.490841,-99) , 
-0, 0.22548, 1, 0, 0.496789,-99) , 
-5, -1.78562, 1, 0, 0.499066,-99)    );
-  // itree = 360
-  fBoostWeights.push_back(0.014583);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521769,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498158,-99) , 
-2, 0.521608, 0, 0, 0.501691,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.463904,-99) , 
-2, 0.607747, 1, 0, 0.50047,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501571,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.4459,-99) , 
-14, 766.855, 1, 0, 0.472251,-99) , 
-2, 0.637899, 1, 0, 0.498713,-99)    );
-  // itree = 361
-  fBoostWeights.push_back(0.0347547);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528161,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497958,-99) , 
-0, 0.930003, 1, 0, 0.5163,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511653,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479905,-99) , 
-10, -1.60462, 1, 0, 0.495527,-99) , 
-12, -1.16435, 1, 0, 0.503912,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.533474,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493966,-99) , 
-10, 2.07423, 0, 0, 0.500298,-99) , 
-NN(
-0, 
-0, 
--1, 1.35415, 0, -1, 0.464057,-99) , 
-12, -2.12425, 0, 0, 0.489365,-99) , 
-5, 0.119019, 1, 0, 0.497266,-99)    );
-  // itree = 362
-  fBoostWeights.push_back(0.0207041);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -0.727613, 1, 1, 0.509768,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478233,-99) , 
-14, 2195.57, 1, 0, 0.508238,-99)    );
-  // itree = 363
-  fBoostWeights.push_back(0.0196233);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 700.265, 0, 1, 0.508671,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524866,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49275,-99) , 
-11, 528.98, 0, 0, 0.495848,-99) , 
-14, 815.903, 1, 0, 0.50215,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456571,-99) , 
-2, 0.68528, 1, 0, 0.500837,-99)    );
-  // itree = 364
-  fBoostWeights.push_back(0.0160081);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504517,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485369,-99) , 
-3, -1.67729, 0, 0, 0.502414,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465669,-99) , 
-3, 2.2341, 1, 0, 0.500689,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456268,-99) , 
-2, 0.686444, 1, 0, 0.499446,-99)    );
-  // itree = 365
-  fBoostWeights.push_back(0.0205438);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.566135,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483787,-99) , 
-14, 806.143, 1, 0, 0.523073,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53318,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471278,-99) , 
-2, 0.475316, 0, 0, 0.5107,-99) , 
-NN(
-0, 
-0, 
--1, 0.632907, 1, -1, 0.494503,-99) , 
-1, 53.989, 1, 0, 0.496281,-99) , 
-4, -2.31742, 1, 0, 0.497898,-99)    );
-  // itree = 366
-  fBoostWeights.push_back(0.0230362);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 789.14, 1, 1, 0.527841,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505343,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.463826,-99) , 
-5, 1.94436, 1, 0, 0.496432,-99) , 
-0, 0.386059, 0, 0, 0.51142,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502361,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.462447,-99) , 
-6, 246.241, 1, 0, 0.499743,-99) , 
-NN(
-0, 
-0, 
--1, -0.701264, 0, -1, 0.483673,-99) , 
-2, 0.320031, 0, 0, 0.494302,-99) , 
-5, 0.83328, 0, 0, 0.498848,-99)    );
-  // itree = 367
-  fBoostWeights.push_back(0.011332);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.564828,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499009,-99) , 
-14, 730.503, 1, 0, 0.524982,-99) , 
-NN(
-0, 
-0, 
--1, 1.90976, 0, 1, 0.502435,-99) , 
-4, -2.02834, 1, 0, 0.50461,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477035,-99) , 
-3, 2.18074, 1, 0, 0.503188,-99)    );
-  // itree = 368
-  fBoostWeights.push_back(0.0237169);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.304759, 0, 1, 0.518693,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525954,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493915,-99) , 
-2, 0.645005, 0, 0, 0.496274,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501092,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473625,-99) , 
-9, 351.193, 0, 0, 0.482089,-99) , 
-3, 0.774201, 1, 0, 0.492208,-99) , 
-2, 0.229145, 1, 0, 0.496006,-99)    );
-  // itree = 369
-  fBoostWeights.push_back(0.021186);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -3.50945, 1, 1, 0.508365,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51992,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489981,-99) , 
-10, -1.10121, 1, 0, 0.497647,-99) , 
-0, 0.115724, 0, 0, 0.504557,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466491,-99) , 
-4, 2.61152, 1, 0, 0.50337,-99)    );
-  // itree = 370
-  fBoostWeights.push_back(0.0285112);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.16725, 1, 1, 0.524971,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.533553,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476962,-99) , 
-2, 0.559139, 0, 0, 0.488068,-99) , 
-11, 197.295, 1, 0, 0.507195,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519347,-99) , 
-NN(
-0, 
-0, 
--1, 103.366, 0, -1, 0.490201,-99) , 
-11, 543.455, 0, 0, 0.491701,-99) , 
-8, 124.038, 0, 0, 0.495864,-99)    );
-  // itree = 371
-  fBoostWeights.push_back(0.0227546);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532052,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498129,-99) , 
-1, 85.0654, 1, 0, 0.51961,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501981,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484282,-99) , 
-5, 0.776409, 1, 0, 0.498687,-99) , 
-5, 1.54733, 0, 0, 0.500887,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54608,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469298,-99) , 
-3, -0.236336, 1, 0, 0.506439,-99) , 
-NN(
-0, 
-0, 
--1, 0.627749, 1, -1, 0.46622,-99) , 
-10, 1.1393, 0, 0, 0.480624,-99) , 
-2, 0.549877, 1, 0, 0.497327,-99)    );
-  // itree = 372
-  fBoostWeights.push_back(0.0259365);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.833235, 0, 1, 0.516682,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.548546,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496512,-99) , 
-9, 474.89, 0, 0, 0.500453,-99) , 
-8, 124.168, 0, 0, 0.504793,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521359,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485057,-99) , 
-5, 1.07139, 0, 0, 0.492959,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.448437,-99) , 
-14, 1741.95, 1, 0, 0.488759,-99) , 
-2, 0.458547, 1, 0, 0.499342,-99)    );
-  // itree = 373
-  fBoostWeights.push_back(0.0176822);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -3.12299, 1, 1, 0.540395,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505383,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489734,-99) , 
-2, 0.543953, 1, 0, 0.502537,-99) , 
-4, 2.20075, 0, 0, 0.504683,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473178,-99) , 
-5, 2.02372, 1, 0, 0.503608,-99)    );
-  // itree = 374
-  fBoostWeights.push_back(0.0327798);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.544933,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527925,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49637,-99) , 
-1, 110.497, 0, 0, 0.500062,-99) , 
-14, 796.171, 0, 0, 0.503217,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52129,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475407,-99) , 
-4, -0.74403, 0, 0, 0.507126,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515592,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472837,-99) , 
-6, 42.5596, 1, 0, 0.483004,-99) , 
-6, 135.918, 0, 0, 0.488763,-99) , 
-14, 830.563, 1, 0, 0.496147,-99)    );
-  // itree = 375
-  fBoostWeights.push_back(0.0209189);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -1.58211, 1, 1, 0.507356,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513474,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470387,-99) , 
-14, 2171.49, 0, 0, 0.486718,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.447196,-99) , 
-1, 91.853, 1, 0, 0.477718,-99) , 
-14, 1552.4, 1, 0, 0.503327,-99)    );
-  // itree = 376
-  fBoostWeights.push_back(0.0172199);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521109,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499842,-99) , 
-2, 0.54778, 0, 0, 0.502521,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519095,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.453904,-99) , 
-3, -0.227984, 1, 0, 0.483837,-99) , 
-8, 177.245, 1, 0, 0.49997,-99) , 
-NN(
-0, 
-0, 
--1, -0.719687, 1, -1, 0.468143,-99) , 
-2, 0.636445, 1, 0, 0.497931,-99)    );
-  // itree = 377
-  fBoostWeights.push_back(0.0130072);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.548324,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495212,-99) , 
-10, -0.243078, 0, 0, 0.527666,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502494,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470137,-99) , 
-4, -2.4879, 0, 0, 0.501515,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476634,-99) , 
-0, 2.05085, 1, 0, 0.500033,-99) , 
-0, -1.18052, 1, 0, 0.502075,-99)    );
-  // itree = 378
-  fBoostWeights.push_back(0.0210694);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.542025,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521138,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499925,-99) , 
-3, -0.548628, 1, 0, 0.507269,-99) , 
-0, -1.19193, 1, 0, 0.509738,-99) , 
-NN(
-0, 
-0, 
--1, 845.748, 1, -1, 0.488637,-99) , 
-5, -0.119037, 0, 0, 0.500048,-99)    );
-  // itree = 379
-  fBoostWeights.push_back(0.0288689);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.555839,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524691,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48332,-99) , 
-6, 101.107, 1, 0, 0.510532,-99) , 
-2, 0.493673, 0, 0, 0.524804,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507296,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485152,-99) , 
-10, -2.50897, 0, 0, 0.50376,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51288,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482698,-99) , 
-10, -0.725393, 1, 0, 0.492624,-99) , 
-0, 0.385816, 0, 0, 0.499032,-99) , 
-4, -1.72023, 1, 0, 0.50248,-99)    );
-  // itree = 380
-  fBoostWeights.push_back(0.00710129);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 1170.95, 1, 1, 0.523153,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532944,-99) , 
-NN(
-0, 
-0, 
--1, 522.82, 1, -1, 0.498517,-99) , 
-6, 304.879, 0, 0, 0.499535,-99) , 
-11, 566.124, 0, 0, 0.500831,-99)    );
-  // itree = 381
-  fBoostWeights.push_back(0.0139961);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.549401,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 2.57594, 0, 1, 0.517197,-99) , 
-NN(
-0, 
-0, 
--1, -2.21292, 0, -1, 0.497377,-99) , 
-5, 1.07145, 0, 0, 0.501418,-99) , 
-0, -1.70039, 1, 0, 0.502955,-99)    );
-  // itree = 382
-  fBoostWeights.push_back(0.0298229);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.540528,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527662,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498532,-99) , 
-12, 2.0903, 0, 0, 0.508647,-99) , 
-4, 1.7063, 0, 0, 0.512765,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521308,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480331,-99) , 
-2, 0.381486, 0, 0, 0.51262,-99) , 
-NN(
-0, 
-0, 
--1, -0.543863, 1, -1, 0.487056,-99) , 
-3, 0.859404, 0, 0, 0.494137,-99) , 
-2, 0.320716, 1, 0, 0.500708,-99)    );
-  // itree = 383
-  fBoostWeights.push_back(0.030952);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 2.01298, 0, 1, 0.515173,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508443,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480653,-99) , 
-3, 0.746587, 1, 0, 0.500707,-99) , 
-14, 830.966, 1, 0, 0.508059,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526981,-99) , 
-NN(
-0, 
-0, 
--1, 0.595302, 1, -1, 0.464934,-99) , 
-10, -1.55244, 1, 0, 0.481782,-99) , 
-2, 0.595302, 1, 0, 0.505211,-99)    );
-  // itree = 384
-  fBoostWeights.push_back(0.0163915);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.560064,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.4775,-99) , 
-2, 0.427629, 1, 0, 0.526293,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501746,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486921,-99) , 
-2, 0.277844, 0, 0, 0.498146,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464427,-99) , 
-5, -2.09179, 0, 0, 0.497165,-99) , 
-5, 1.78566, 0, 0, 0.499235,-99)    );
-  // itree = 385
-  fBoostWeights.push_back(0.0288499);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524649,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476899,-99) , 
-5, 1.72876, 1, 0, 0.51867,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509491,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491306,-99) , 
-9, 359.933, 1, 0, 0.504917,-99) , 
-0, -0.125254, 1, 0, 0.508796,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524811,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500114,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.452896,-99) , 
-1, 77.612, 1, 0, 0.47903,-99) , 
-9, 370.406, 0, 0, 0.490943,-99) , 
-5, -1.54756, 0, 0, 0.507004,-99)    );
-  // itree = 386
-  fBoostWeights.push_back(0.0203892);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523901,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512078,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497413,-99) , 
-12, -1.18139, 1, 0, 0.503334,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509821,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.459592,-99) , 
-12, -1.16624, 0, 0, 0.487983,-99) , 
-5, 1.30948, 1, 0, 0.501048,-99) , 
-0, 1.847, 0, 0, 0.503011,-99)    );
-  // itree = 387
-  fBoostWeights.push_back(0.0160861);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505039,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491233,-99) , 
-3, -1.04683, 0, 0, 0.501787,-99) , 
-NN(
-0, 
-0, 
--1, 76.771, 0, -1, 0.48143,-99) , 
-12, -3.50632, 0, 0, 0.500159,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502131,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.44395,-99) , 
-4, -0.181473, 0, 0, 0.477653,-99) , 
-1, 123.501, 1, 0, 0.498758,-99)    );
-  // itree = 388
-  fBoostWeights.push_back(0.0120677);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 104.391, 0, 1, 0.512867,-99) , 
-NN(
-0, 
-0, 
--1, 0.496792, 1, -1, 0.497455,-99) , 
-2, 0.521545, 0, 0, 0.500636,-99) , 
-NN(
 0, 
 0, 
--1, 0, 1, -1, 0.446906,-99) , 
-2, 0.683991, 1, 0, 0.499129,-99)    );
+-1, -1.69759, 1, -1, 0.322267,-99) , 
+12, 1208.1, 1, 0, 0.405298,-99) , 
+14, -1.42962, 0, 0, 0.481291,-99)    );
   // itree = 389
-  fBoostWeights.push_back(0.0225685);
+  fBoostWeights.push_back(0.131009);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, -1.25057, 1, 1, 0.510782,-99) , 
+-1, 1172.96, 1, 1, 0.585458,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.501634,-99) , 
+-1, 0, 1, 1, 0.583307,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.471231,-99) , 
-3, -1.1387, 0, 0, 0.495726,-99) , 
-2, 0.366286, 0, 0, 0.504102,-99) , 
+-1, 0, 1, -1, 0.450513,-99) , 
+14, 0.0721436, 0, 0, 0.495962,-99) , 
+5, 0.389254, 0, 0, 0.534748,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.524747,-99) , 
+-1, 0, 1, 1, 0.562221,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.488493,-99) , 
-7, 952.228, 0, 0, 0.493064,-99) , 
+-1, 0, 1, -1, 0.433784,-99) , 
+6, 0.825521, 1, 0, 0.528983,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.449206,-99) , 
-1, 54.3049, 0, 0, 0.488836,-99) , 
-14, 1120.52, 1, 0, 0.499724,-99)    );
+-1, 287.714, 0, -1, 0.442229,-99) , 
+8, 2.15081, 0, 0, 0.471512,-99) , 
+10, 1.21057, 0, 0, 0.50052,-99)    );
   // itree = 390
-  fBoostWeights.push_back(0.0152588);
+  fBoostWeights.push_back(0.101045);
   fForest.push_back( 
 NN(
 NN(
+NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.531073,-99) , 
+-1, 0, 1, 1, 0.533673,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457101,-99) , 
+8, 2.28739, 1, 0, 0.52052,-99) , 
+NN(
+0, 
+0, 
+-1, 0.369935, 1, -1, 0.414591,-99) , 
+4, 457.929, 1, 0, 0.510386,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.500017,-99) , 
+-1, 0, 1, 1, 0.550826,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.473062,-99) , 
-3, 1.81196, 1, 0, 0.497601,-99) , 
+-1, 0, 1, -1, 0.462646,-99) , 
+10, -0.705636, 0, 0, 0.507896,-99) , 
 NN(
 0, 
 0, 
--1, -2.57167, 0, -1, 0.481002,-99) , 
-2, 0.502053, 1, 0, 0.493587,-99) , 
-1, 47.9641, 1, 0, 0.4954,-99)    );
+-1, -0.564501, 1, -1, 0.367923,-99) , 
+6, 0.595936, 0, 0, 0.415245,-99) , 
+3, 74.5565, 0, 0, 0.494671,-99)    );
   // itree = 391
-  fBoostWeights.push_back(0.0257029);
+  fBoostWeights.push_back(0.134916);
   fForest.push_back( 
 NN(
 NN(
@@ -12533,2898 +13612,480 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.509638,-99) , 
+-1, 0, 1, 1, 0.575099,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.494896,-99) , 
-2, 0.319302, 0, 0, 0.504658,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51269,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.463483,-99) , 
-12, 0.706054, 0, 0, 0.488641,-99) , 
-8, 177.257, 1, 0, 0.502282,-99) , 
+-1, 0, 1, -1, 0.468902,-99) , 
+3, 75.8125, 0, 0, 0.551324,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.524307,-99) , 
+-1, 0, 1, 1, 0.541509,-99) , 
 NN(
 0, 
 0, 
--1, 0.399647, 1, -1, 0.477805,-99) , 
-5, 0.609064, 1, 0, 0.489224,-99) , 
-4, 1.32926, 1, 0, 0.499783,-99)    );
+-1, 0, 1, -1, 0.426293,-99) , 
+4, 280.929, 0, 0, 0.49148,-99) , 
+12, 1376.87, 1, 0, 0.530749,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.587677,-99) , 
+NN(
+0, 
+0, 
+-1, 0.163496, 1, -1, 0.37643,-99) , 
+10, 2.5107, 0, 0, 0.435938,-99) , 
+3, 97.3423, 1, 0, 0.521265,-99)    );
   // itree = 392
-  fBoostWeights.push_back(0.0257988);
+  fBoostWeights.push_back(0.102042);
   fForest.push_back( 
 NN(
 NN(
 NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.670519,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.540603,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499281,-99) , 
-7, 534.07, 1, 0, 0.519723,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480588,-99) , 
-10, -1.67706, 0, 0, 0.511166,-99) , 
+-1, 0, 1, -1, 0.452478,-99) , 
+5, 0.389555, 1, 0, 0.600206,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.528987,-99) , 
+-1, 0, 1, 1, 0.519123,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.486689,-99) , 
-5, -0.358073, 1, 0, 0.508076,-99) , 
+-1, 0, 1, -1, 0.363529,-99) , 
+2, 1.48126, 1, 0, 0.509613,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, -2.02377, 0, -1, 0.492422,-99) , 
-9, 383.184, 0, 0, 0.49601,-99) , 
-4, 1.18482, 0, 0, 0.499496,-99)    );
+-1, 0, 1, 1, 0.507134,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.406159,-99) , 
+3, 82.1518, 1, 0, 0.452017,-99) , 
+8, 0.234794, 0, 0, 0.480177,-99) , 
+4, 467.25, 0, 0, 0.493694,-99)    );
   // itree = 393
-  fBoostWeights.push_back(0.0253865);
+  fBoostWeights.push_back(0.117829);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527477,-99) , 
-NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.521434,-99) , 
+-1, 0, 1, 1, 0.585987,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.49339,-99) , 
-11, 305.249, 0, 0, 0.500383,-99) , 
-5, 1.0714, 0, 0, 0.505794,-99) , 
+-1, 0, 1, -1, 0.492297,-99) , 
+6, -0.730748, 0, 0, 0.548628,-99) , 
+NN(
+0, 
+0, 
+-1, 0.781915, 1, -1, 0.45847,-99) , 
+6, 0.59568, 1, 0, 0.521525,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504704,-99) , 
+-1, 0, 1, 1, 0.523358,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487998,-99) , 
-2, 0.499108, 0, 0, 0.493897,-99) , 
+-1, 0, 1, -1, 0.412969,-99) , 
+14, 0.189019, 1, 0, 0.478582,-99) , 
 NN(
 0, 
 0, 
--1, 535.423, 0, -1, 0.469968,-99) , 
-5, 1.30942, 1, 0, 0.49049,-99) , 
-2, 0.274412, 1, 0, 0.494173,-99)    );
+-1, -0.119443, 1, -1, 0.300195,-99) , 
+5, 0.465451, 1, 0, 0.449235,-99) , 
+3, 80.253, 0, 0, 0.497026,-99)    );
   // itree = 394
-  fBoostWeights.push_back(0.0311481);
+  fBoostWeights.push_back(0.130534);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, -0.878422, 1, 1, 0.511515,-99) , 
+-1, 0, 1, 1, 0.669497,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.516051,-99) , 
+-1, 0, 1, 1, 0.520972,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490461,-99) , 
-0, -0.378838, 1, 0, 0.497016,-99) , 
-3, -0.355296, 0, 0, 0.503453,-99) , 
+-1, 0, 1, -1, 0.498955,-99) , 
+2, 0.128162, 1, 0, 0.509948,-99) , 
+5, 0.345349, 1, 0, 0.589837,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.512835,-99) , 
+-1, 0, 1, 1, 0.56287,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.458004,-99) , 
-12, -3.10242, 0, 0, 0.498231,-99) , 
+-1, 0, 1, -1, 0.456437,-99) , 
+14, -0.0727089, 0, 0, 0.515573,-99) , 
 NN(
 0, 
 0, 
--1, -1.25223, 1, -1, 0.46359,-99) , 
-8, 103.501, 1, 0, 0.486541,-99) , 
-3, 0.758846, 1, 0, 0.498556,-99)    );
+-1, -0.595145, 1, -1, 0.427132,-99) , 
+3, 85.9494, 1, 0, 0.479569,-99) , 
+10, 3.14221, 0, 0, 0.491349,-99)    );
   // itree = 395
-  fBoostWeights.push_back(0.0239156);
+  fBoostWeights.push_back(0.166682);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.522996,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482978,-99) , 
-5, -1.27545, 0, 0, 0.517805,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481843,-99) , 
-5, 1.78572, 1, 0, 0.514558,-99) , 
-NN(
+-1, 0.414712, 1, 1, 0.614191,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.501572,-99) , 
+-1, 0, 1, 1, 0.563058,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.464065,-99) , 
-3, -2.1275, 0, 0, 0.49942,-99) , 
+-1, 0, 1, -1, 0.40885,-99) , 
+14, 1.19723, 1, 0, 0.529961,-99) , 
+2, 0.795898, 0, 0, 0.550242,-99) , 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502079,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.45656,-99) , 
-10, -1.41393, 1, 0, 0.475797,-99) , 
-1, 104.658, 1, 0, 0.496186,-99) , 
-10, 1.14606, 0, 0, 0.502627,-99)    );
+-1, 0, 1, 1, 0.63225,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.448409,-99) , 
+11, 126.171, 0, 0, 0.477361,-99) , 
+NN(
+0, 
+0, 
+-1, 84.0208, 0, -1, 0.281495,-99) , 
+11, 156.745, 1, 0, 0.447511,-99) , 
+14, -0.477525, 0, 0, 0.515816,-99)    );
   // itree = 396
-  fBoostWeights.push_back(0.0290377);
+  fBoostWeights.push_back(0.0682975);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.539596,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510791,-99) , 
+-1, 0, 1, 1, 0.636251,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.496077,-99) , 
-14, 787.977, 1, 0, 0.502908,-99) , 
-4, -2.14898, 1, 0, 0.505652,-99) , 
+-1, 0, 1, -1, 0.490815,-99) , 
+5, 0.348593, 1, 0, 0.57453,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.520079,-99) , 
+-1, 0, 1, 1, 0.543762,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.476369,-99) , 
-9, 361.473, 1, 0, 0.501824,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503528,-99) , 
+-1, 0, 1, -1, 0.483677,-99) , 
+6, -0.880511, 1, 0, 0.492754,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.469258,-99) , 
-7, 352.475, 1, 0, 0.47816,-99) , 
-7, 762.494, 0, 0, 0.482635,-99) , 
-1, 73.1374, 0, 0, 0.497316,-99)    );
+-1, 80.253, 0, -1, 0.402927,-99) , 
+6, -1.54455, 0, 0, 0.483086,-99) , 
+2, 1.48619, 0, 0, 0.492266,-99)    );
   // itree = 397
-  fBoostWeights.push_back(0.0227969);
+  fBoostWeights.push_back(0.060833);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.532125,-99) , 
+-1, 0, 1, 1, 0.637375,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 322.943, 0, 1, 0.512535,-99) , 
+-1, 0, 1, 1, 0.665131,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.498587,-99) , 
+3, 66.9613, 1, 0, 0.505392,-99) , 
+10, 3.14379, 0, 0, 0.515356,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.501936,-99) , 
+-1, 0, 1, 1, 0.521897,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.486677,-99) , 
-14, 1191.36, 0, 0, 0.490689,-99) , 
-3, 1.65903, 0, 0, 0.493247,-99) , 
-5, 2.02381, 0, 0, 0.494707,-99)    );
+-1, -0.416849, 0, -1, 0.384349,-99) , 
+7, 155.43, 0, 0, 0.418966,-99) , 
+13, -1.12745, 0, 0, 0.499093,-99)    );
   // itree = 398
-  fBoostWeights.push_back(0.0235153);
+  fBoostWeights.push_back(0.119267);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.540577,-99) , 
+-1, 1.91253, 0, 1, 0.554399,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.501947,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.317474,-99) , 
+14, 0.464536, 1, 0, 0.481302,-99) , 
+10, 2.5093, 1, 0, 0.528612,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.510989,-99) , 
+-1, 0, 1, 1, 0.576999,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.495762,-99) , 
-3, 0.216499, 1, 0, 0.5042,-99) , 
+-1, 0, 1, -1, 0.425848,-99) , 
+4, 254.298, 1, 0, 0.506577,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51645,-99) , 
+-1, 0, 1, 1, 0.522235,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.471815,-99) , 
-7, 599.484, 0, 0, 0.486378,-99) , 
-0, 1.46277, 1, 0, 0.50142,-99) , 
-0, -1.54862, 1, 0, 0.503014,-99)    );
+-1, 0, 1, -1, 0.344099,-99) , 
+9, 324.922, 0, 0, 0.399322,-99) , 
+4, 313.857, 1, 0, 0.468159,-99) , 
+10, -1.66536, 0, 0, 0.507404,-99)    );
   // itree = 399
-  fBoostWeights.push_back(0.0276972);
+  fBoostWeights.push_back(0.130552);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.525001,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488645,-99) , 
-1, 104.861, 1, 0, 0.519749,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486952,-99) , 
-10, -1.59151, 0, 0, 0.511134,-99) , 
-NN(
+-1, 0.340288, 1, 1, 0.641561,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.502901,-99) , 
+-1, 0, 1, 1, 0.57859,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.451967,-99) , 
-6, 241.973, 1, 0, 0.499491,-99) , 
+-1, 0, 1, -1, 0.428953,-99) , 
+12, 1026.05, 1, 0, 0.490076,-99) , 
+2, 0.103609, 0, 0, 0.564889,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 314.852, 1, -1, 0.450524,-99) , 
-5, -1.54756, 0, 0, 0.494527,-99) , 
-2, 0.320716, 1, 0, 0.500311,-99)    );
+-1, 0, 1, 1, 0.528486,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.363412,-99) , 
+6, 1.07164, 1, 0, 0.502229,-99) , 
+NN(
+0, 
+0, 
+-1, 315.572, 1, -1, 0.445142,-99) , 
+7, 71.9869, 1, 0, 0.46992,-99) , 
+8, 2.00767, 0, 0, 0.493485,-99)    );
   // itree = 400
-  fBoostWeights.push_back(0.0201963);
+  fBoostWeights.push_back(0.12452);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 2.56413, 0, 1, 0.50708,-99) , 
-NN(
-0, 
-0, 
--1, 0.239392, 0, -1, 0.491704,-99) , 
-10, -0.681059, 0, 0, 0.501125,-99) , 
-NN(
+-1, 1.49674, 1, 1, 0.611084,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.510253,-99) , 
+-1, 0, 1, 1, 0.600201,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.481963,-99) , 
-1, 84.6562, 0, 0, 0.493659,-99) , 
+-1, 0, 1, -1, 0.46895,-99) , 
+12, 1354.84, 0, 0, 0.515002,-99) , 
+2, 0.107189, 1, 0, 0.575169,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.449141,-99) , 
-2, 0.499363, 1, 0, 0.483622,-99) , 
-0, 1.38989, 1, 0, 0.49823,-99)    );
+-1, 0, 1, 1, 0.591873,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.463695,-99) , 
+10, 3.13407, 0, 0, 0.477654,-99) , 
+NN(
+0, 
+0, 
+-1, 274.976, 1, -1, 0.381642,-99) , 
+3, 73.1875, 0, 0, 0.463127,-99) , 
+3, 93.5446, 0, 0, 0.488023,-99)    );
   // itree = 401
-  fBoostWeights.push_back(0.0156488);
+  fBoostWeights.push_back(0.13571);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511434,-99) , 
+-1, 0, 1, 1, 0.701393,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 119.626, 1, -1, 0.494018,-99) , 
-10, -2.54012, 1, 0, 0.495971,-99) , 
+-1, 0, 1, 1, 0.581505,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.458079,-99) , 
-1, 136.425, 1, 0, 0.494652,-99)    );
+-1, 0, 1, -1, 0.396179,-99) , 
+5, 0.368177, 1, 0, 0.525419,-99) , 
+5, 0.482768, 0, 0, 0.564722,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.657481,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.478116,-99) , 
+8, -1.39779, 1, 0, 0.54671,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.561923,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.449097,-99) , 
+13, 1.30915, 0, 0, 0.467738,-99) , 
+6, 1.0715, 0, 0, 0.482279,-99) , 
+4, 390.018, 0, 0, 0.497988,-99)    );
   // itree = 402
-  fBoostWeights.push_back(0.018817);
+  fBoostWeights.push_back(0.068444);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 85.7096, 0, 1, 0.524115,-99) , 
+-1, 84.0506, 0, 1, 0.628457,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.502217,-99) , 
+-1, 0, 1, 1, 0.508348,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.466698,-99) , 
-0, -0.992976, 0, 0, 0.499792,-99) , 
-4, -1.93614, 1, 0, 0.50221,-99) , 
+-1, 0, 1, -1, 0.369456,-99) , 
+13, 2.088, 1, 0, 0.501807,-99) , 
+14, -1.82705, 1, 0, 0.51037,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 1.30943, 1, -1, 0.484528,-99) , 
-2, 0.459406, 1, 0, 0.496226,-99)    );
+-1, 0, 1, 1, 0.601928,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.444191,-99) , 
+14, -1.03947, 1, 0, 0.510308,-99) , 
+NN(
+0, 
+0, 
+-1, -1.61936, 1, -1, 0.376429,-99) , 
+8, -0.936523, 1, 0, 0.436016,-99) , 
+13, -1.23559, 0, 0, 0.498933,-99)    );
   // itree = 403
-  fBoostWeights.push_back(0.0289065);
+  fBoostWeights.push_back(0.108294);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, -1.37124, 1, 1, 0.51205,-99) , 
+-1, 0, 1, 1, 0.539279,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.292391,-99) , 
+6, 1.78167, 1, 0, 0.5276,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50523,-99) , 
+-1, 0, 1, 1, 0.646494,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.452067,-99) , 
-1, 115.478, 0, 0, 0.478688,-99) , 
-7, 881.474, 1, 0, 0.505475,-99) , 
-NN(
-NN(
+-1, 0, 1, -1, 0.452384,-99) , 
+14, 1.44854, 0, 0, 0.476204,-99) , 
+9, 154.732, 0, 0, 0.511631,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.519884,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493044,-99) , 
-2, 0.244203, 0, 0, 0.502468,-99) , 
-NN(
-0, 
-0, 
--1, 53.5757, 0, -1, 0.484823,-99) , 
-2, 0.282279, 1, 0, 0.489079,-99) , 
-1, 92.0384, 0, 0, 0.49332,-99)    );
+-1, 0, 1, -1, 0.349097,-99) , 
+9, 598.894, 1, 0, 0.507057,-99)    );
   // itree = 404
-  fBoostWeights.push_back(0.0266631);
+  fBoostWeights.push_back(0.0985238);
   fForest.push_back( 
 NN(
 NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509125,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495407,-99) , 
-8, 123.142, 1, 0, 0.505396,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501525,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.4692,-99) , 
-2, 0.315823, 1, 0, 0.481474,-99) , 
-0, -0.775442, 0, 0, 0.502431,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527222,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473598,-99) , 
-3, -0.052566, 1, 0, 0.501241,-99) , 
-NN(
-0, 
-0, 
--1, 0.571818, 1, -1, 0.465031,-99) , 
-2, 0.646219, 0, 0, 0.477313,-99) , 
-2, 0.548568, 1, 0, 0.498063,-99)    );
-  // itree = 405
-  fBoostWeights.push_back(0.0237929);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.58292, 0, 1, 0.540852,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493873,-99) , 
-14, 1098.37, 1, 0, 0.51928,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531862,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496913,-99) , 
-0, -0.261096, 1, 0, 0.515419,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509902,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492516,-99) , 
-14, 1162.81, 0, 0, 0.496827,-99) , 
-3, 1.55771, 0, 0, 0.499696,-99) , 
-12, 3.03362, 0, 0, 0.502562,-99)    );
-  // itree = 406
-  fBoostWeights.push_back(0.02333);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530115,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -2.49331, 1, 1, 0.509495,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53217,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491118,-99) , 
-11, 512.217, 0, 0, 0.494593,-99) , 
-3, 0.144058, 1, 0, 0.502646,-99) , 
-0, 1.91826, 0, 0, 0.504767,-99)    );
-  // itree = 407
-  fBoostWeights.push_back(0.0188462);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528545,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512043,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49385,-99) , 
-3, -1.22822, 1, 0, 0.497266,-99) , 
-8, 265.939, 0, 0, 0.498791,-99) , 
-NN(
-0, 
-0, 
--1, 79.3808, 1, -1, 0.472312,-99) , 
-11, 543.455, 1, 0, 0.497252,-99)    );
-  // itree = 408
-  fBoostWeights.push_back(0.0133455);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.63815, 0, 1, 0.505269,-99) , 
-NN(
-0, 
-0, 
--1, 142.945, 1, -1, 0.493477,-99) , 
-10, -1.63289, 0, 0, 0.502303,-99) , 
-NN(
-0, 
-0, 
--1, 0.667855, 0, -1, 0.47693,-99) , 
-1, 123.653, 1, 0, 0.500724,-99)    );
-  // itree = 409
-  fBoostWeights.push_back(0.0215197);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.547925,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517569,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492448,-99) , 
-4, 1.05301, 1, 0, 0.509123,-99) , 
-0, -1.27999, 1, 0, 0.51176,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501484,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47809,-99) , 
-3, -0.0586735, 1, 0, 0.498401,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464979,-99) , 
-1, 123.325, 1, 0, 0.496345,-99) , 
-3, 0.204118, 0, 0, 0.503275,-99)    );
-  // itree = 410
-  fBoostWeights.push_back(0.0207823);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.02108, 0, 1, 0.505905,-99) , 
-NN(
-0, 
-0, 
--1, 1.07139, 1, -1, 0.487631,-99) , 
-1, 65.4505, 0, 0, 0.500874,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50929,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468899,-99) , 
-2, 0.375308, 0, 0, 0.489475,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.451568,-99) , 
-6, 130.906, 1, 0, 0.478792,-99) , 
-1, 104.658, 1, 0, 0.497934,-99)    );
-  // itree = 411
-  fBoostWeights.push_back(0.0280262);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 66.8669, 1, 1, 0.507983,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477741,-99) , 
-5, 1.98966, 1, 0, 0.505088,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514543,-99) , 
-NN(
-0, 
-0, 
--1, -1.9558, 0, -1, 0.482483,-99) , 
-10, -2.54234, 1, 0, 0.486481,-99) , 
-5, 0.357059, 0, 0, 0.493967,-99)    );
-  // itree = 412
-  fBoostWeights.push_back(0.0231414);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.552216,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499523,-99) , 
-0, -0.158395, 1, 0, 0.521196,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52828,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50628,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489631,-99) , 
-5, -1.54764, 1, 0, 0.491403,-99) , 
-9, 462.931, 0, 0, 0.49281,-99) , 
-9, 506.754, 0, 0, 0.495195,-99)    );
-  // itree = 413
-  fBoostWeights.push_back(0.0122533);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531082,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501191,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473537,-99) , 
-5, 1.54758, 1, 0, 0.499033,-99) , 
-4, 2.39298, 0, 0, 0.500653,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.455708,-99) , 
-1, 47.6564, 0, 0, 0.498897,-99)    );
-  // itree = 414
-  fBoostWeights.push_back(0.0228422);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.552106,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498245,-99) , 
-14, 765.819, 0, 0, 0.529101,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535633,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497166,-99) , 
-3, 0.0370985, 0, 0, 0.508483,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518387,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491467,-99) , 
-5, 1.78581, 0, 0, 0.493869,-99) , 
-4, -1.1525, 1, 0, 0.497297,-99) , 
-2, 0.644398, 0, 0, 0.499296,-99)    );
-  // itree = 415
-  fBoostWeights.push_back(0.0191993);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524476,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539861,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490461,-99) , 
-4, -2.69004, 0, 0, 0.519905,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503658,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488035,-99) , 
-5, -0.119066, 0, 0, 0.497111,-99) , 
-4, -2.14278, 1, 0, 0.498926,-99) , 
-3, 2.21086, 0, 0, 0.500274,-99)    );
-  // itree = 416
-  fBoostWeights.push_back(0.0123804);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.76342, 0, 1, 0.503455,-99) , 
-NN(
-0, 
-0, 
--1, 66.2113, 0, -1, 0.486805,-99) , 
-10, 2.0961, 1, 0, 0.500584,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475258,-99) , 
-3, -2.1275, 0, 0, 0.49922,-99)    );
-  // itree = 417
-  fBoostWeights.push_back(0.0195606);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53689,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -0.0510292, 0, 1, 0.50461,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510421,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483049,-99) , 
-8, 124.136, 0, 0, 0.490389,-99) , 
-5, 0.357128, 1, 0, 0.499071,-99) , 
-2, 0.677992, 0, 0, 0.500473,-99)    );
-  // itree = 418
-  fBoostWeights.push_back(0.0234743);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 78.3391, 0, 1, 0.543047,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494317,-99) , 
-6, 86.7718, 1, 0, 0.523172,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -0.709205, 1, 1, 0.525615,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502426,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48661,-99) , 
-12, -1.16117, 1, 0, 0.492844,-99) , 
-2, 0.636881, 0, 0, 0.495121,-99) , 
-4, 2.04753, 0, 0, 0.497539,-99)    );
-  // itree = 419
-  fBoostWeights.push_back(0.020459);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -0.0111908, 1, 1, 0.529362,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.533953,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497878,-99) , 
-11, 353.848, 0, 0, 0.505488,-99) , 
-NN(
-0, 
-0, 
--1, 110.642, 1, -1, 0.491092,-99) , 
-3, 0.271682, 0, 0, 0.497297,-99) , 
-2, 0.640968, 0, 0, 0.499411,-99)    );
-  // itree = 420
-  fBoostWeights.push_back(0.0294786);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.538785,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509534,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491096,-99) , 
-12, 0.698748, 1, 0, 0.502309,-99) , 
-10, -2.54437, 1, 0, 0.506629,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518498,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487477,-99) , 
-4, 1.05637, 1, 0, 0.511322,-99) , 
-NN(
-0, 
-0, 
--1, 138.8, 1, -1, 0.483553,-99) , 
-9, 344.467, 0, 0, 0.495334,-99) , 
-1, 79.4179, 1, 0, 0.50104,-99)    );
-  // itree = 421
-  fBoostWeights.push_back(0.0241987);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -2.09438, 0, 1, 0.534202,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52214,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.462429,-99) , 
-5, 0.119207, 1, 0, 0.499733,-99) , 
-12, -0.688674, 1, 0, 0.513806,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511785,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49298,-99) , 
-5, -1.07108, 1, 0, 0.49607,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471563,-99) , 
-4, -2.15649, 0, 0, 0.495044,-99) , 
-0, -0.677019, 1, 0, 0.497993,-99)    );
-  // itree = 422
-  fBoostWeights.push_back(0.013821);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.549869,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49903,-99) , 
-6, 105.105, 0, 0, 0.518082,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501412,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479274,-99) , 
-0, -0.927718, 0, 0, 0.499235,-99) , 
-12, 3.03442, 0, 0, 0.502008,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.457264,-99) , 
-5, -2.02381, 0, 0, 0.500503,-99)    );
-  // itree = 423
-  fBoostWeights.push_back(0.0334542);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 3.3084, 0, 1, 0.514309,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510593,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.448764,-99) , 
-12, 3.05476, 1, 0, 0.495865,-99) , 
-5, -0.357055, 0, 0, 0.506769,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.533503,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506464,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48107,-99) , 
-12, -3.10629, 1, 0, 0.488096,-99) , 
-4, 2.59636, 0, 0, 0.491139,-99) , 
-12, -0.703699, 0, 0, 0.499666,-99)    );
-  // itree = 424
-  fBoostWeights.push_back(0.0153174);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503405,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480718,-99) , 
-3, -1.98782, 0, 0, 0.501876,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467685,-99) , 
-2, 0.677487, 1, 0, 0.500771,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510131,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.436829,-99) , 
-10, 0.199898, 0, 0, 0.467163,-99) , 
-5, -1.78567, 0, 0, 0.498631,-99)    );
-  // itree = 425
-  fBoostWeights.push_back(0.025935);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.399302, 0, 1, 0.533696,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467565,-99) , 
-14, 1161.16, 1, 0, 0.518324,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509705,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486942,-99) , 
-12, -2.09532, 0, 0, 0.502764,-99) , 
-NN(
-0, 
-0, 
--1, 208.707, 0, -1, 0.489963,-99) , 
-5, -0.11905, 0, 0, 0.496872,-99) , 
-1, 110.992, 0, 0, 0.499256,-99)    );
-  // itree = 426
-  fBoostWeights.push_back(0.0181613);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.934056, 1, 1, 0.526182,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503372,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461618,-99) , 
-7, 1350.05, 1, 0, 0.501879,-99) , 
-12, 3.05853, 0, 0, 0.504887,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502386,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465936,-99) , 
-1, 79.4996, 0, 0, 0.484282,-99) , 
-0, 1.38989, 1, 0, 0.501484,-99)    );
-  // itree = 427
-  fBoostWeights.push_back(0.0237781);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.31583, 0, 1, 0.52601,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520018,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469243,-99) , 
-0, -0.220803, 1, 0, 0.499117,-99) , 
-3, -0.85482, 0, 0, 0.513407,-99) , 
-NN(
-0, 
-0, 
--1, -1.08696, 0, -1, 0.490739,-99) , 
-4, -1.5344, 1, 0, 0.494456,-99)    );
-  // itree = 428
-  fBoostWeights.push_back(0.0266355);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.356577, 1, 1, 0.509008,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467817,-99) , 
-11, 468.298, 1, 0, 0.50576,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512083,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477685,-99) , 
-1, 85.8054, 1, 0, 0.501805,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502141,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480311,-99) , 
-10, -1.59171, 1, 0, 0.486573,-99) , 
-3, -0.799252, 1, 0, 0.490911,-99) , 
-2, 0.331518, 1, 0, 0.496459,-99)    );
-  // itree = 429
-  fBoostWeights.push_back(0.0289812);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 66.3015, 0, 1, 0.529782,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475153,-99) , 
-6, 109.534, 1, 0, 0.513761,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520784,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492723,-99) , 
-1, 71.3386, 1, 0, 0.498175,-99) , 
-NN(
-0, 
-0, 
--1, 361.44, 1, -1, 0.483094,-99) , 
-2, 0.407484, 1, 0, 0.492032,-99) , 
-1, 54.2458, 1, 0, 0.494447,-99)    );
-  // itree = 430
-  fBoostWeights.push_back(0.0279174);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.70155, 0, 1, 0.526529,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511989,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478942,-99) , 
-5, -0.504423, 1, 0, 0.501097,-99) , 
-5, 0.119076, 0, 0, 0.513111,-99) , 
-NN(
-0, 
-0, 
--1, 0.543785, 1, -1, 0.490495,-99) , 
-3, 0.368266, 0, 0, 0.499703,-99)    );
-  // itree = 431
-  fBoostWeights.push_back(0.0178585);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.5454,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498232,-99) , 
-3, -1.37458, 0, 0, 0.52454,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 244.837, 0, 1, 0.50485,-99) , 
-NN(
-0, 
-0, 
--1, 370.059, 1, -1, 0.489996,-99) , 
-14, 813.221, 0, 0, 0.497438,-99) , 
-12, 3.52242, 0, 0, 0.499623,-99)    );
-  // itree = 432
-  fBoostWeights.push_back(0.0218961);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 789.941, 1, 1, 0.534063,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.5055,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465506,-99) , 
-14, 511.474, 0, 0, 0.5013,-99) , 
-14, 766.342, 0, 0, 0.504887,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51957,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492316,-99) , 
-12, 3.51477, 0, 0, 0.494906,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.458636,-99) , 
-4, -2.33513, 0, 0, 0.492958,-99) , 
-14, 815.903, 1, 0, 0.498854,-99)    );
-  // itree = 433
-  fBoostWeights.push_back(0.0260202);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511463,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49003,-99) , 
-1, 60.4118, 0, 0, 0.508233,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473773,-99) , 
-2, 0.630276, 1, 0, 0.505969,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50559,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.463179,-99) , 
-5, 1.30948, 1, 0, 0.499006,-99) , 
-NN(
-0, 
-0, 
--1, 0.436282, 1, -1, 0.469407,-99) , 
-12, -2.10025, 0, 0, 0.492321,-99) , 
-0, -0.152359, 0, 0, 0.502101,-99)    );
-  // itree = 434
-  fBoostWeights.push_back(0.0130526);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535813,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521524,-99) , 
-NN(
-0, 
-0, 
--1, 197.664, 1, -1, 0.495267,-99) , 
-13, 281.497, 0, 0, 0.496234,-99) , 
-5, 2.02376, 0, 0, 0.49776,-99)    );
-  // itree = 435
-  fBoostWeights.push_back(0.029376);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53778,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497899,-99) , 
-1, 85.5904, 1, 0, 0.521948,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508699,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48703,-99) , 
-14, 1111.58, 1, 0, 0.500742,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512526,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478349,-99) , 
-6, 46.7907, 1, 0, 0.486556,-99) , 
-0, 0.209926, 0, 0, 0.494997,-99) , 
-6, 234.808, 0, 0, 0.49694,-99)    );
-  // itree = 436
-  fBoostWeights.push_back(0.0170437);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.361736, 0, 1, 0.535798,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483042,-99) , 
-5, -1.78749, 0, 0, 0.521071,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 25.3858, 1, 1, 0.502625,-99) , 
-NN(
-0, 
-0, 
--1, 0.461118, 0, -1, 0.481573,-99) , 
-8, 177.16, 1, 0, 0.499609,-99) , 
-4, -1.67588, 1, 0, 0.502648,-99)    );
-  // itree = 437
-  fBoostWeights.push_back(0.0265504);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528684,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511686,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472878,-99) , 
-8, 28.0342, 0, 0, 0.506209,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511039,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487499,-99) , 
-11, 318.525, 0, 0, 0.492121,-99) , 
-0, -0.311778, 1, 0, 0.495595,-99) , 
-8, 294.044, 0, 0, 0.496936,-99)    );
-  // itree = 438
-  fBoostWeights.push_back(0.0164922);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52734,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526587,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497907,-99) , 
-5, 0.987683, 0, 0, 0.499486,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520246,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.463914,-99) , 
-12, 2.08728, 0, 0, 0.480689,-99) , 
-5, 1.16206, 1, 0, 0.496765,-99) , 
-5, 2.02372, 0, 0, 0.497936,-99)    );
-  // itree = 439
-  fBoostWeights.push_back(0.0196726);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.552854,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519848,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466636,-99) , 
-4, -2.44652, 0, 0, 0.509685,-99) , 
-0, -1.04574, 1, 0, 0.518203,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 736.715, 0, 1, 0.504321,-99) , 
-NN(
-0, 
-0, 
--1, 388.292, 1, -1, 0.48752,-99) , 
-0, -0.180081, 0, 0, 0.500442,-99) , 
-4, -1.5344, 1, 0, 0.503343,-99)    );
-  // itree = 440
-  fBoostWeights.push_back(0.0186531);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 86.0596, 1, 1, 0.537269,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521504,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488044,-99) , 
-5, 0.119042, 0, 0, 0.504291,-99) , 
-9, 348.178, 0, 0, 0.515588,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501725,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470773,-99) , 
-13, 209.445, 1, 0, 0.499581,-99) , 
-NN(
-0, 
-0, 
--1, 78.3429, 0, -1, 0.45292,-99) , 
-14, 518.171, 0, 0, 0.496316,-99) , 
-14, 1501.67, 0, 0, 0.499326,-99)    );
-  // itree = 441
-  fBoostWeights.push_back(0.0152588);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.699511, 1, 1, 0.534091,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502824,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48635,-99) , 
-12, -0.74291, 1, 0, 0.494779,-99) , 
-5, 0.118394, 1, 0, 0.516315,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500713,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474825,-99) , 
-1, 123.629, 1, 0, 0.49903,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50409,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461757,-99) , 
-2, 0.375507, 1, 0, 0.48457,-99) , 
-5, -1.07144, 0, 0, 0.496196,-99) , 
-2, 0.596872, 0, 0, 0.498486,-99)    );
-  // itree = 442
-  fBoostWeights.push_back(0.0222665);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528347,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501033,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474447,-99) , 
-10, -2.36377, 0, 0, 0.497381,-99) , 
-10, 2.57532, 0, 0, 0.500983,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508338,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509296,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460758,-99) , 
-3, -1.29663, 1, 0, 0.47031,-99) , 
-10, -2.08627, 1, 0, 0.479372,-99) , 
-5, -1.07144, 0, 0, 0.496762,-99)    );
-  // itree = 443
-  fBoostWeights.push_back(0.0205987);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54186,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487274,-99) , 
-5, 0.119425, 0, 0, 0.513529,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521772,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496687,-99) , 
-5, 1.54715, 0, 0, 0.499307,-99) , 
-NN(
-0, 
-0, 
--1, 0.40216, 0, -1, 0.487075,-99) , 
-11, 193.575, 0, 0, 0.493531,-99) , 
-7, 1070.97, 0, 0, 0.495129,-99)    );
-  // itree = 444
-  fBoostWeights.push_back(0.0251513);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 70.2331, 0, 1, 0.537706,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492655,-99) , 
-6, 109.535, 1, 0, 0.523375,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522448,-99) , 
-NN(
-0, 
-0, 
--1, -0.186632, 0, -1, 0.490926,-99) , 
-0, 1.73094, 0, 0, 0.494338,-99) , 
-2, 0.595578, 0, 0, 0.497737,-99)    );
-  // itree = 445
-  fBoostWeights.push_back(0.0230296);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535548,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509795,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494588,-99) , 
-0, 0.172299, 0, 0, 0.504347,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520903,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483109,-99) , 
-1, 104.521, 0, 0, 0.488031,-99) , 
-2, 0.509697, 1, 0, 0.500387,-99) , 
-3, 2.34586, 0, 0, 0.501869,-99)    );
-  // itree = 446
-  fBoostWeights.push_back(0.0266082);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 535.423, 1, 1, 0.519642,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517054,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489984,-99) , 
-14, 1104.12, 0, 0, 0.501536,-99) , 
-0, 0.400256, 1, 0, 0.509126,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517878,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496368,-99) , 
-3, -0.361054, 0, 0, 0.506329,-99) , 
-NN(
-0, 
-0, 
--1, 0.357328, 1, -1, 0.486528,-99) , 
-12, 1.63793, 0, 0, 0.498333,-99) , 
-10, 0.714325, 0, 0, 0.502801,-99)    );
-  // itree = 447
-  fBoostWeights.push_back(0.0150909);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530855,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525214,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495279,-99) , 
-9, 566.363, 0, 0, 0.496761,-99) , 
-1, 142.738, 0, 0, 0.497734,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460033,-99) , 
-12, -4.02305, 0, 0, 0.496506,-99)    );
-  // itree = 448
-  fBoostWeights.push_back(0.0130023);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535207,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504154,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484807,-99) , 
-2, 0.620573, 1, 0, 0.502989,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487082,-99) , 
-2, 0.208221, 0, 0, 0.501428,-99) , 
-2, 0.689299, 0, 0, 0.502441,-99)    );
-  // itree = 449
-  fBoostWeights.push_back(0.0283636);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.12131, 1, 1, 0.523566,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510551,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492627,-99) , 
-4, -0.595107, 0, 0, 0.503408,-99) , 
-1, 66.891, 1, 0, 0.508885,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510397,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482692,-99) , 
-1, 69.7833, 0, 0, 0.501572,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.444939,-99) , 
-1, 115.487, 1, 0, 0.497278,-99) , 
-0, 0.731029, 1, 0, 0.504451,-99)    );
-  // itree = 450
-  fBoostWeights.push_back(0.0194221);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.14069, 0, 1, 0.538742,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528121,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486484,-99) , 
-9, 349.746, 0, 0, 0.502806,-99) , 
-4, -1.5344, 1, 0, 0.514625,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508456,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495762,-99) , 
-2, 0.45388, 0, 0, 0.500126,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470071,-99) , 
-9, 566.366, 1, 0, 0.498788,-99) , 
-0, -0.677019, 1, 0, 0.501256,-99)    );
-  // itree = 451
-  fBoostWeights.push_back(0.0235218);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 104.953, 0, 1, 0.530745,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517178,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496239,-99) , 
-3, 0.848088, 0, 0, 0.502967,-99) , 
-3, -1.30079, 1, 0, 0.508028,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511835,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494412,-99) , 
-4, 0.899286, 0, 0, 0.500464,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508794,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461279,-99) , 
-3, -0.645422, 1, 0, 0.477626,-99) , 
-1, 60.6401, 0, 0, 0.496483,-99) , 
-10, -0.237014, 1, 0, 0.501944,-99)    );
-  // itree = 452
-  fBoostWeights.push_back(0.0178162);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.181579, 1, 1, 0.525699,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -1.56788, 1, 1, 0.505146,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501299,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482885,-99) , 
-5, 0.051065, 1, 0, 0.491784,-99) , 
-3, -0.269625, 1, 0, 0.497464,-99) , 
-5, -1.78564, 1, 0, 0.499456,-99)    );
-  // itree = 453
-  fBoostWeights.push_back(0.035544);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.812656, 1, 1, 0.516599,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520513,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48563,-99) , 
-10, -2.10737, 1, 0, 0.497199,-99) , 
-12, -1.15723, 1, 0, 0.505057,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539619,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489367,-99) , 
-5, 0.799293, 1, 0, 0.501895,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502772,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473069,-99) , 
-14, 1157.45, 0, 0, 0.480994,-99) , 
-4, 1.06454, 0, 0, 0.490744,-99) , 
-5, 0.119044, 1, 0, 0.498459,-99)    );
-  // itree = 454
-  fBoostWeights.push_back(0.0316348);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518259,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49417,-99) , 
-4, -0.613837, 0, 0, 0.50876,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512981,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476129,-99) , 
-7, 499.063, 1, 0, 0.490931,-99) , 
-2, 0.413412, 1, 0, 0.500693,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519448,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481864,-99) , 
-3, -0.57986, 0, 0, 0.505921,-99) , 
-NN(
-0, 
-0, 
--1, 1.00894, 0, -1, 0.486366,-99) , 
-4, -0.458886, 1, 0, 0.493147,-99) , 
-0, 0.446953, 1, 0, 0.496933,-99)    );
-  // itree = 455
-  fBoostWeights.push_back(0.0302553);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -2.91857, 0, 1, 0.541278,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521537,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485187,-99) , 
-1, 91.9702, 1, 0, 0.511601,-99) , 
-12, -2.11508, 1, 0, 0.520693,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512304,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492106,-99) , 
-6, 53.8458, 1, 0, 0.500564,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.457744,-99) , 
-6, 120.96, 1, 0, 0.497914,-99) , 
-6, 136.62, 0, 0, 0.503189,-99)    );
-  // itree = 456
-  fBoostWeights.push_back(0.0154828);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.5098,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498475,-99) , 
-3, 0.243651, 1, 0, 0.504948,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469544,-99) , 
-0, -1.66031, 0, 0, 0.503908,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47073,-99) , 
-1, 136.386, 1, 0, 0.502755,-99)    );
-  // itree = 457
-  fBoostWeights.push_back(0.0217953);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 2.65308, 0, 1, 0.552187,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529454,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473884,-99) , 
-12, 2.61826, 1, 0, 0.50334,-99) , 
-1, 85.6009, 0, 0, 0.521792,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518509,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49581,-99) , 
-12, 3.21127, 0, 0, 0.497898,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467099,-99) , 
-12, -3.97172, 0, 0, 0.496625,-99) , 
-4, -1.67588, 1, 0, 0.500146,-99)    );
-  // itree = 458
-  fBoostWeights.push_back(0.020651);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.552848,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51528,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488295,-99) , 
-3, -1.07543, 1, 0, 0.510557,-99) , 
-1, 110.754, 0, 0, 0.515371,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.541397,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497392,-99) , 
-12, -0.276235, 0, 0, 0.518348,-99) , 
-NN(
-0, 
-0, 
--1, 46.4585, 0, -1, 0.493946,-99) , 
-6, 231.315, 0, 0, 0.495741,-99) , 
-3, -0.863475, 1, 0, 0.500986,-99)    );
-  // itree = 459
-  fBoostWeights.push_back(0.0265434);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.433224, 0, 1, 0.513706,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475271,-99) , 
-1, 116.497, 1, 0, 0.510699,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506932,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479289,-99) , 
-3, 1.42398, 1, 0, 0.502109,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50813,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.437936,-99) , 
-4, -1.16653, 1, 0, 0.47346,-99) , 
-12, 0.216765, 1, 0, 0.499013,-99) , 
-10, -0.212539, 1, 0, 0.504585,-99)    );
-  // itree = 460
-  fBoostWeights.push_back(0.0327559);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.386447, 0, 1, 0.525183,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506626,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469814,-99) , 
-11, 137.605, 0, 0, 0.493129,-99) , 
-1, 72.5463, 1, 0, 0.505042,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522916,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527892,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486365,-99) , 
-3, -2.35864, 1, 0, 0.488607,-99) , 
-3, 2.08043, 0, 0, 0.491059,-99) , 
-10, -1.13459, 1, 0, 0.495885,-99)    );
-  // itree = 461
-  fBoostWeights.push_back(0.0234336);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53625,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508547,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467437,-99) , 
-5, 1.78562, 1, 0, 0.505909,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501277,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.46846,-99) , 
-5, -0.59513, 0, 0, 0.490217,-99) , 
-12, 2.10719, 1, 0, 0.501438,-99) , 
-1, 47.8781, 1, 0, 0.503102,-99)    );
-  // itree = 462
-  fBoostWeights.push_back(0.0258764);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.456794, 0, 1, 0.534813,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519616,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488627,-99) , 
-1, 79.4703, 0, 0, 0.504398,-99) , 
-5, -0.594666, 1, 0, 0.514069,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54806,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494623,-99) , 
-12, 1.23698, 1, 0, 0.520072,-99) , 
-NN(
-0, 
-0, 
--1, -1.07139, 0, -1, 0.492527,-99) , 
-1, 117.035, 0, 0, 0.494981,-99) , 
-12, -2.09984, 1, 0, 0.5008,-99)    );
-  // itree = 463
-  fBoostWeights.push_back(0.0250431);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509912,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493111,-99) , 
-2, 0.546144, 1, 0, 0.506907,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470259,-99) , 
-0, -1.3814, 0, 0, 0.505544,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509055,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465381,-99) , 
-7, 416.937, 0, 0, 0.496853,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.452339,-99) , 
-8, 147.268, 1, 0, 0.488195,-99) , 
-3, 1.1675, 1, 0, 0.502142,-99)    );
-  // itree = 464
-  fBoostWeights.push_back(0.0229749);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.695877, 0, 1, 0.512775,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519369,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493618,-99) , 
-2, 0.588824, 0, 0, 0.496656,-99) , 
-11, 362.655, 0, 0, 0.499919,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517187,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464787,-99) , 
-14, 769.968, 0, 0, 0.496706,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.436605,-99) , 
-2, 0.500755, 1, 0, 0.480725,-99) , 
-5, 1.54758, 1, 0, 0.497991,-99)    );
-  // itree = 465
-  fBoostWeights.push_back(0.0227613);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511497,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493344,-99) , 
-0, 1.12288, 1, 0, 0.507341,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527775,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492795,-99) , 
-6, 212.414, 0, 0, 0.495799,-99) , 
-3, 0.204118, 0, 0, 0.500974,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522447,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487882,-99) , 
-3, -0.654677, 1, 0, 0.498891,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460913,-99) , 
-5, -0.594929, 0, 0, 0.487247,-99) , 
-1, 104.83, 1, 0, 0.499113,-99)    );
-  // itree = 466
-  fBoostWeights.push_back(0.0177199);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534467,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519666,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492018,-99) , 
-12, 2.58351, 1, 0, 0.509381,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501107,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480228,-99) , 
-13, 150.347, 1, 0, 0.497739,-99) , 
-3, -0.608612, 1, 0, 0.501578,-99) , 
-5, 2.0238, 0, 0, 0.502869,-99)    );
-  // itree = 467
-  fBoostWeights.push_back(0.0181198);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -2.33486, 1, 1, 0.507935,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500606,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460939,-99) , 
-3, -0.018958, 1, 0, 0.48211,-99) , 
-6, 246.24, 1, 0, 0.506405,-99) , 
-NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50023,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460052,-99) , 
-0, 0.284559, 0, 0, 0.485085,-99) , 
-12, -3.54634, 0, 0, 0.504811,-99)    );
-  // itree = 468
-  fBoostWeights.push_back(0.0173764);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -0.119116, 0, 1, 0.525217,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0.247814, 0, 1, 0.510008,-99) , 
-NN(
-0, 
-0, 
--1, 1119.29, 1, -1, 0.49283,-99) , 
-2, 0.217322, 1, 0, 0.49497,-99) , 
-2, 0.640968, 0, 0, 0.496959,-99)    );
-  // itree = 469
-  fBoostWeights.push_back(0.0274791);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510059,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488248,-99) , 
-7, 721.545, 1, 0, 0.506439,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515707,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456176,-99) , 
-11, 196.626, 1, 0, 0.480923,-99) , 
-7, 950.415, 1, 0, 0.503206,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52338,-99) , 
-NN(
-0, 
-0, 
--1, -1.62586, 0, -1, 0.485485,-99) , 
-2, 0.580021, 0, 0, 0.490043,-99) , 
-0, 1.07574, 1, 0, 0.49984,-99)    );
-  // itree = 470
-  fBoostWeights.push_back(0.0221669);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536513,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497884,-99) , 
-11, 109.402, 0, 0, 0.517506,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528686,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495455,-99) , 
-4, 1.63741, 0, 0, 0.497893,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512104,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470071,-99) , 
-12, 2.56476, 0, 0, 0.480398,-99) , 
-5, 1.07148, 1, 0, 0.494539,-99) , 
-10, 2.56183, 0, 0, 0.497124,-99)    );
-  // itree = 471
-  fBoostWeights.push_back(0.0185777);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -2.54234, 1, 1, 0.50654,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524298,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493954,-99) , 
-14, 1503.33, 0, 0, 0.499805,-99) , 
-NN(
-0, 
-0, 
--1, 1.5816, 1, -1, 0.472818,-99) , 
-0, -0.36992, 0, 0, 0.493681,-99) , 
-5, 0.357133, 1, 0, 0.501509,-99)    );
-  // itree = 472
-  fBoostWeights.push_back(0.0253542);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53082,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491084,-99) , 
-5, -0.595234, 0, 0, 0.519278,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516941,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491694,-99) , 
-12, 2.12129, 0, 0, 0.497105,-99) , 
-2, 0.547763, 0, 0, 0.501382,-99) , 
-NN(
-0, 
-0, 
--1, 0.8331, 1, -1, 0.488013,-99) , 
-10, -1.59514, 0, 0, 0.497913,-99)    );
-  // itree = 473
-  fBoostWeights.push_back(0.0264876);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54221,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510708,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493029,-99) , 
-6, 136.621, 1, 0, 0.506758,-99) , 
-5, -1.78572, 1, 0, 0.508953,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520421,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501324,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474923,-99) , 
-5, 0.356804, 0, 0, 0.484548,-99) , 
-12, 1.17794, 1, 0, 0.492672,-99) , 
-10, -1.63156, 0, 0, 0.504872,-99)    );
-  // itree = 474
-  fBoostWeights.push_back(0.0201865);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.556617,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523739,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481717,-99) , 
-3, -0.0453156, 0, 0, 0.50403,-99) , 
-2, 0.559009, 1, 0, 0.513138,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535151,-99) , 
-NN(
-0, 
-0, 
--1, -1.30914, 0, -1, 0.495403,-99) , 
-4, -2.56285, 1, 0, 0.496974,-99) , 
-2, 0.53979, 0, 0, 0.500196,-99)    );
-  // itree = 475
-  fBoostWeights.push_back(0.0232102);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 2.00262, 1, 1, 0.516973,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508298,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467016,-99) , 
-12, 3.50822, 1, 0, 0.505683,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507166,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484847,-99) , 
-14, 1080.82, 0, 0, 0.492857,-99) , 
-0, 0.464188, 1, 0, 0.500317,-99) , 
-0, 1.63633, 0, 0, 0.502302,-99)    );
-  // itree = 476
-  fBoostWeights.push_back(0.0270867);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 1.45337, 1, 1, 0.530914,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511325,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471556,-99) , 
-2, 0.670419, 1, 0, 0.506994,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526405,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489602,-99) , 
-7, 1194.21, 0, 0, 0.491419,-99) , 
-2, 0.457386, 0, 0, 0.496926,-99) , 
-12, -3.50792, 1, 0, 0.499865,-99)    );
-  // itree = 477
-  fBoostWeights.push_back(0.0300258);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 3.16476, 0, 1, 0.515158,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527115,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493125,-99) , 
-13, 136.831, 0, 0, 0.497888,-99) , 
-12, -1.2019, 0, 0, 0.508092,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 66.852, 1, 1, 0.517981,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508961,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466187,-99) , 
-2, 0.663742, 0, 0, 0.477311,-99) , 
-5, 0.833282, 0, 0, 0.489157,-99) , 
-2, 0.547453, 1, 0, 0.504725,-99)    );
-  // itree = 478
-  fBoostWeights.push_back(0.0282212);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.541994, 1, 1, 0.519984,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503491,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468452,-99) , 
-3, -0.909251, 0, 0, 0.497202,-99) , 
-12, 1.61657, 0, 0, 0.506644,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519087,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492161,-99) , 
-7, 562.738, 0, 0, 0.502031,-99) , 
-NN(
-0, 
-0, 
--1, 135.929, 0, -1, 0.462501,-99) , 
-7, 944.481, 1, 0, 0.497332,-99) , 
-11, 208.707, 1, 0, 0.502148,-99)    );
-  // itree = 479
-  fBoostWeights.push_back(0.0286169);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 60.5994, 1, 1, 0.523056,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502761,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473557,-99) , 
-11, 190.735, 1, 0, 0.488411,-99) , 
-5, -0.595141, 0, 0, 0.512787,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53614,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505803,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483735,-99) , 
-2, 0.419937, 1, 0, 0.496614,-99) , 
-8, 17.8181, 1, 0, 0.499497,-99) , 
-8, 124.181, 0, 0, 0.503042,-99)    );
-  // itree = 480
-  fBoostWeights.push_back(0.023824);
-  fForest.push_back( 
-NN(
+-1, 0, 1, 1, 0.612611,-99) , 
 NN(
 NN(
 NN(
@@ -15434,38 +14095,16 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.493612,-99) , 
-1, 103.21, 1, 0, 0.525821,-99) , 
+-1, 0, 1, -1, 0.470922,-99) , 
+5, 0.320779, 1, 0, 0.494143,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.49324,-99) , 
-1, 60.1581, 0, 0, 0.520125,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504769,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478727,-99) , 
-9, 457.28, 1, 0, 0.502834,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508379,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473227,-99) , 
-10, 1.30231, 0, 0, 0.479859,-99) , 
-11, 372.309, 1, 0, 0.49861,-99) , 
-4, -1.43147, 1, 0, 0.502501,-99)    );
-  // itree = 481
-  fBoostWeights.push_back(0.0211627);
+-1, 78.805, 0, -1, 0.407421,-99) , 
+10, -2.65746, 0, 0, 0.479378,-99) , 
+5, 0.206071, 1, 0, 0.494549,-99)    );
+  // itree = 405
+  fBoostWeights.push_back(0.0825776);
   fForest.push_back( 
 NN(
 NN(
@@ -15473,24 +14112,49 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.508141,-99) , 
+-1, 0, 1, 1, 0.511808,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492783,-99) , 
-3, 0.446239, 0, 0, 0.497968,-99) , 
+-1, 0, 1, -1, 0.444611,-99) , 
+7, 75.0317, 0, 0, 0.48339,-99) , 
 NN(
 0, 
 0, 
--1, 71.9726, 1, -1, 0.481971,-99) , 
-10, -2.10044, 0, 0, 0.4951,-99) , 
+-1, 0, 1, -1, 0.307047,-99) , 
+14, -2.17203, 0, 0, 0.47801,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.456829,-99) , 
-12, -3.9929, 0, 0, 0.493775,-99)    );
-  // itree = 482
-  fBoostWeights.push_back(0.0274189);
+-1, 0, 1, -1, 0.333832,-99) , 
+11, 242.742, 1, 0, 0.471413,-99)    );
+  // itree = 406
+  fBoostWeights.push_back(0.11016);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 2.73493, 0, 1, 0.570333,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.583717,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.472051,-99) , 
+5, 0.399209, 0, 0, 0.514202,-99) , 
+NN(
+0, 
+0, 
+-1, 0.255464, 0, -1, 0.456841,-99) , 
+10, 0.741908, 0, 0, 0.484655,-99) , 
+9, 164.146, 1, 0, 0.515866,-99)    );
+  // itree = 407
+  fBoostWeights.push_back(0.106625);
   fForest.push_back( 
 NN(
 NN(
@@ -15498,42 +14162,166 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.538221,-99) , 
+-1, 0, 1, 1, 0.643405,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.495693,-99) , 
-5, 1.07154, 1, 0, 0.522831,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50771,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490781,-99) , 
-12, 0.254346, 1, 0, 0.498546,-99) , 
-7, 920.133, 0, 0, 0.501508,-99) , 
-NN(
+-1, 0, 1, -1, 0.467331,-99) , 
+3, 82.125, 0, 0, 0.564942,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.510879,-99) , 
+-1, 0, 1, 1, 0.511158,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.470255,-99) , 
-8, 103.869, 1, 0, 0.497369,-99) , 
+-1, 0, 1, -1, 0.430189,-99) , 
+8, -2.42453, 0, 0, 0.501072,-99) , 
+5, 0.449471, 0, 0, 0.514385,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0.365585, 0, -1, 0.476052,-99) , 
-14, 786.627, 0, 0, 0.487402,-99) , 
-3, 0.663116, 1, 0, 0.497056,-99)    );
-  // itree = 483
-  fBoostWeights.push_back(0.0280028);
+-1, 0, 1, 1, 0.549846,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.355468,-99) , 
+10, 2.83836, 1, 0, 0.506747,-99) , 
+NN(
+0, 
+0, 
+-1, 0.3351, 0, -1, 0.395234,-99) , 
+14, -0.736645, 1, 0, 0.461483,-99) , 
+6, -0.356236, 0, 0, 0.494553,-99)    );
+  // itree = 408
+  fBoostWeights.push_back(0.133977);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.759918, 1, 1, 0.675851,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.548838,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.376686,-99) , 
+14, 0.15731, 1, 0, 0.48513,-99) , 
+5, 0.449471, 0, 0, 0.535219,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.517993,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.446161,-99) , 
+9, 223.179, 1, 0, 0.483277,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.203767,-99) , 
+5, 0.50521, 1, 0, 0.469153,-99) , 
+2, 0.572103, 0, 0, 0.491277,-99)    );
+  // itree = 409
+  fBoostWeights.push_back(0.100324);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.5476, 0, 1, 0.522444,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.518156,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.341786,-99) , 
+6, -0.601493, 1, 0, 0.400605,-99) , 
+4, 427.351, 1, 0, 0.508157,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.547511,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.419963,-99) , 
+3, 85.9494, 1, 0, 0.493796,-99) , 
+NN(
+0, 
+0, 
+-1, 103.368, 1, -1, 0.328565,-99) , 
+8, 1.62288, 1, 0, 0.437571,-99) , 
+13, -0.791698, 0, 0, 0.489815,-99)    );
+  // itree = 410
+  fBoostWeights.push_back(0.0794873);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.612175,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.566389,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.490829,-99) , 
+11, 78.7783, 0, 0, 0.512877,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50265,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.41227,-99) , 
+6, 0.115885, 0, 0, 0.454791,-99) , 
+11, 100.372, 1, 0, 0.490701,-99) , 
+5, 0.182641, 1, 0, 0.499202,-99)    );
+  // itree = 411
+  fBoostWeights.push_back(0.104395);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.65289,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.438268,-99) , 
+6, 0.367327, 0, 0, 0.545496,-99) , 
+NN(
+0, 
+0, 
+-1, 173.846, 1, -1, 0.454729,-99) , 
+11, 194.555, 0, 0, 0.464593,-99)    );
+  // itree = 412
+  fBoostWeights.push_back(0.0723428);
   fForest.push_back( 
 NN(
 NN(
@@ -15541,48 +14329,135 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51261,-99) , 
+-1, 0, 1, 1, 0.653099,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.494196,-99) , 
-14, 1191.99, 1, 0, 0.508608,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513613,-99) , 
+-1, 0, 1, -1, 0.493206,-99) , 
+6, -0.577218, 0, 0, 0.617236,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.442549,-99) , 
-3, 0.252126, 1, 0, 0.489825,-99) , 
-5, -1.30949, 0, 0, 0.505867,-99) , 
-NN(
+-1, 0, 1, -1, 0.479134,-99) , 
+9, 138.579, 0, 0, 0.587476,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504606,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475532,-99) , 
-2, 0.496891, 1, 0, 0.497207,-99) , 
+-1, 2.02355, 0, 1, 0.50844,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.500383,-99) , 
+-1, 0, 1, 1, 0.509126,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.466198,-99) , 
-3, 0.959757, 0, 0, 0.478798,-99) , 
-5, 0.357118, 1, 0, 0.489624,-99) , 
-12, -1.20038, 0, 0, 0.499288,-99)    );
-  // itree = 484
-  fBoostWeights.push_back(0.0230814);
+-1, 0, 1, -1, 0.350648,-99) , 
+4, 246.69, 1, 0, 0.407567,-99) , 
+8, -2.18136, 0, 0, 0.491387,-99) , 
+7, 176.734, 0, 0, 0.5072,-99)    );
+  // itree = 413
+  fBoostWeights.push_back(0.105638);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.607077,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.556104,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.416811,-99) , 
+13, -1.00348, 0, 0, 0.526672,-99) , 
+NN(
+0, 
+0, 
+-1, 144.119, 1, -1, 0.45717,-99) , 
+8, 1.56445, 0, 0, 0.478116,-99) , 
+7, 281.577, 0, 0, 0.487081,-99)    );
+  // itree = 414
+  fBoostWeights.push_back(0.128835);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.944987, 0, 1, 0.646674,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.553412,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.466979,-99) , 
+6, -0.122931, 1, 0, 0.513257,-99) , 
+14, 1.57224, 0, 0, 0.524354,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.550132,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.375502,-99) , 
+5, 0.373734, 1, 0, 0.480645,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.2919,-99) , 
+6, 0.59568, 1, 0, 0.434748,-99) , 
+13, 0.968648, 1, 0, 0.506604,-99)    );
+  // itree = 415
+  fBoostWeights.push_back(0.13324);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 67.6137, 0, 1, 0.592844,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.533107,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.453662,-99) , 
+5, 0.367246, 1, 0, 0.50179,-99) , 
+9, 137.219, 1, 0, 0.524729,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.624967,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.600281,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.365788,-99) , 
+4, 220.155, 1, 0, 0.40469,-99) , 
+4, 409.357, 0, 0, 0.445872,-99) , 
+6, -1.07136, 0, 0, 0.509996,-99)    );
+  // itree = 416
+  fBoostWeights.push_back(0.0884615);
   fForest.push_back( 
 NN(
 NN(
@@ -15590,24 +14465,55 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.509929,-99) , 
+-1, 0, 1, 1, 0.536918,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.469995,-99) , 
-12, 3.40129, 1, 0, 0.507417,-99) , 
+-1, 0, 1, -1, 0.46206,-99) , 
+6, -1.54613, 0, 0, 0.528531,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.477926,-99) , 
-12, -3.03901, 0, 0, 0.504621,-99) , 
+-1, 0.882882, 1, -1, 0.435088,-99) , 
+8, -2.58329, 0, 0, 0.519969,-99) , 
 NN(
 0, 
 0, 
--1, 2.05151, 1, -1, 0.489124,-99) , 
-11, 208.731, 0, 0, 0.496743,-99)    );
-  // itree = 485
-  fBoostWeights.push_back(0.0289191);
+-1, 0, 1, -1, 0.349363,-99) , 
+13, 2.07398, 1, 0, 0.513012,-99)    );
+  // itree = 417
+  fBoostWeights.push_back(0.125791);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.676625,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.433546,-99) , 
+3, 82.1875, 0, 0, 0.596466,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.6329,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.436797,-99) , 
+11, 79.1417, 1, 0, 0.540146,-99) , 
+NN(
+0, 
+0, 
+-1, -0.743799, 1, -1, 0.452536,-99) , 
+8, 2.68378, 0, 0, 0.461476,-99) , 
+7, 229.101, 0, 0, 0.476519,-99)    );
+  // itree = 418
+  fBoostWeights.push_back(0.0676557);
   fForest.push_back( 
 NN(
 NN(
@@ -15615,259 +14521,173 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.524612,-99) , 
+-1, 0, 1, 1, 0.699343,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490425,-99) , 
-0, -0.0463066, 0, 0, 0.513046,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518667,-99) , 
+-1, 0, 1, -1, 0.468194,-99) , 
+13, -1.27194, 1, 0, 0.636809,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.459864,-99) , 
-8, 83.8485, 0, 0, 0.487021,-99) , 
-5, -0.833235, 0, 0, 0.506592,-99) , 
+-1, 0, 1, -1, 0.455952,-99) , 
+5, 0.326144, 0, 0, 0.569885,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 2.45788, 1, -1, 0.489188,-99) , 
-3, -0.646071, 1, 0, 0.494768,-99)    );
-  // itree = 486
-  fBoostWeights.push_back(0.0186059);
+-1, 0, 1, 1, 0.685304,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.494796,-99) , 
+4, 654.577, 0, 0, 0.501753,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.292405,-99) , 
+13, -1.61489, 0, 0, 0.494601,-99) , 
+2, -1.25695, 1, 0, 0.506749,-99)    );
+  // itree = 419
+  fBoostWeights.push_back(0.0893979);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529936,-99) , 
+-1, 146.378, 0, 1, 0.575861,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.505773,-99) , 
+-1, 0, 1, 1, 0.645837,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.466321,-99) , 
-8, 184.807, 1, 0, 0.500512,-99) , 
-6, 194.552, 0, 0, 0.504021,-99) , 
+-1, 0, 1, -1, 0.47782,-99) , 
+4, 579.911, 0, 0, 0.487892,-99) , 
+2, -1.02832, 1, 0, 0.505238,-99) , 
 NN(
 0, 
 0, 
--1, 0.647075, 1, -1, 0.493513,-99) , 
-0, 0.409419, 0, 0, 0.498946,-99)    );
-  // itree = 487
-  fBoostWeights.push_back(0.0177583);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510478,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496689,-99) , 
-14, 785.483, 1, 0, 0.503322,-99) , 
-NN(
-0, 
-0, 
--1, 1.61424, 1, -1, 0.483844,-99) , 
-5, -1.54762, 0, 0, 0.501359,-99) , 
-NN(
-0, 
-0, 
--1, 0.421116, 1, -1, 0.472392,-99) , 
-11, 541.32, 1, 0, 0.499652,-99)    );
-  // itree = 488
-  fBoostWeights.push_back(0.0210333);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 1.78642, 0, 1, 0.528288,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511956,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494818,-99) , 
-12, 1.65196, 1, 0, 0.505701,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514825,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492104,-99) , 
-0, 1.82144, 0, 0, 0.49464,-99) , 
-5, -0.595285, 1, 0, 0.498587,-99) , 
-4, 2.09163, 0, 0, 0.500977,-99)    );
-  // itree = 489
-  fBoostWeights.push_back(0.0227017);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535413,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491312,-99) , 
-2, 0.511683, 1, 0, 0.524807,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501577,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478771,-99) , 
-3, 0.852553, 1, 0, 0.499891,-99) , 
-4, 1.28831, 0, 0, 0.503987,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520914,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479762,-99) , 
-1, 73.3025, 1, 0, 0.496148,-99) , 
-NN(
-0, 
-0, 
--1, 0.34659, 1, -1, 0.465494,-99) , 
-4, 0.69285, 1, 0, 0.479862,-99) , 
-3, 1.16092, 1, 0, 0.499253,-99)    );
-  // itree = 490
-  fBoostWeights.push_back(0.0192461);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 40.2608, 0, 1, 0.528494,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515236,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498376,-99) , 
-0, -0.152361, 1, 0, 0.503081,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503341,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464681,-99) , 
-2, 0.335403, 1, 0, 0.479575,-99) , 
-5, 1.3095, 1, 0, 0.499797,-99) , 
-12, -3.52148, 1, 0, 0.502226,-99)    );
-  // itree = 491
-  fBoostWeights.push_back(0.0327032);
+-1, 0, 1, -1, 0.277837,-99) , 
+14, 2.12821, 1, 0, 0.497969,-99)    );
+  // itree = 420
+  fBoostWeights.push_back(0.107993);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, -0.0950422, 0, 1, 0.541191,-99) , 
+-1, 0, 1, 1, 0.621089,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.531867,-99) , 
+-1, 0, 1, 1, 0.531844,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.474417,-99) , 
-11, 186.372, 0, 0, 0.50992,-99) , 
-12, 2.59437, 0, 0, 0.524586,-99) , 
+-1, 0, 1, -1, 0.457573,-99) , 
+6, -1.07017, 0, 0, 0.51831,-99) , 
+5, 0.198236, 1, 0, 0.529212,-99) , 
 NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51114,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471541,-99) , 
-2, 0.665704, 1, 0, 0.507604,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.524326,-99) , 
+-1, 0, 1, 1, 0.573245,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490904,-99) , 
-14, 1738.84, 0, 0, 0.494519,-99) , 
-2, 0.409033, 0, 0, 0.500412,-99) , 
-4, -1.3245, 1, 0, 0.505306,-99)    );
-  // itree = 492
-  fBoostWeights.push_back(0.0193006);
+-1, 0, 1, -1, 0.391889,-99) , 
+0, 63.9664, 0, 0, 0.507053,-99) , 
+NN(
+0, 
+0, 
+-1, 235.685, 0, -1, 0.33877,-99) , 
+3, 85.9167, 1, 0, 0.435903,-99) , 
+13, -1.23559, 0, 0, 0.51579,-99)    );
+  // itree = 421
+  fBoostWeights.push_back(0.105667);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0.370955, 1, 1, 0.617576,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, -0.0130208, 1, 1, 0.542677,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.516169,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.398412,-99) , 
+10, -1.17862, 0, 0, 0.473887,-99) , 
+5, 0.323836, 0, 0, 0.512453,-99) , 
+10, -3.14076, 1, 0, 0.524152,-99)    );
+  // itree = 422
+  fBoostWeights.push_back(0.0465478);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.557801,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494096,-99) , 
-4, 2.74947, 1, 0, 0.530344,-99) , 
+-1, 0, 1, 1, 0.651116,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0.453345, 0, 1, 0.517322,-99) , 
+-1, 0, 1, 1, 0.502954,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.350028,-99) , 
+2, -1.94238, 0, 0, 0.497924,-99) , 
+8, 2.9594, 0, 0, 0.506127,-99) , 
+NN(
+0, 
+0, 
+-1, -0.074986, 1, -1, 0.338174,-99) , 
+9, 505.827, 1, 0, 0.497185,-99)    );
+  // itree = 423
+  fBoostWeights.push_back(0.073676);
+  fForest.push_back( 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.512091,-99) , 
+-1, 0, 1, 1, 0.633219,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.49643,-99) , 
-10, 1.63608, 0, 0, 0.50071,-99) , 
-4, -1.462, 1, 0, 0.50378,-99) , 
-4, 2.28153, 0, 0, 0.505368,-99)    );
-  // itree = 493
-  fBoostWeights.push_back(0.0338668);
+-1, 0, 1, 1, 0.633095,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.452972,-99) , 
+5, 0.366488, 1, 0, 0.571976,-99) , 
+NN(
+0, 
+0, 
+-1, 210.11, 1, -1, 0.476824,-99) , 
+6, -1.78285, 1, 0, 0.485839,-99) , 
+0, 269.51, 0, 0, 0.4944,-99)    );
+  // itree = 424
+  fBoostWeights.push_back(0.079844);
   fForest.push_back( 
 NN(
 NN(
@@ -15875,48 +14695,30 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.522349,-99) , 
+-1, 0, 1, 1, 0.600048,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.497229,-99) , 
-1, 66.5576, 0, 0, 0.516461,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516331,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47839,-99) , 
-4, -0.00336729, 0, 0, 0.498857,-99) , 
-10, 1.64675, 1, 0, 0.511143,-99) , 
-NN(
+-1, 0, 1, -1, 0.478016,-99) , 
+3, 93.5446, 1, 0, 0.578302,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.512671,-99) , 
+-1, 0, 1, 1, 0.600001,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.478383,-99) , 
-14, 534.771, 0, 0, 0.506086,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500262,-99) , 
+-1, 0, 1, -1, 0.491273,-99) , 
+12, 2406.12, 0, 0, 0.50351,-99) , 
+9, 138.579, 1, 0, 0.521239,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.448689,-99) , 
-12, -1.14551, 0, 0, 0.482193,-99) , 
-1, 85.4938, 1, 0, 0.497682,-99) , 
-14, 814.312, 0, 0, 0.504642,-99)    );
-  // itree = 494
-  fBoostWeights.push_back(0.0285648);
+-1, 0, 1, -1, 0.36908,-99) , 
+14, -1.8235, 0, 0, 0.513437,-99)    );
+  // itree = 425
+  fBoostWeights.push_back(0.133688);
   fForest.push_back( 
 NN(
 NN(
@@ -15924,36 +14726,42 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511622,-99) , 
+-1, 0, 1, 1, 0.624132,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492953,-99) , 
-5, 0.357138, 1, 0, 0.504369,-99) , 
-NN(
-0, 
-0, 
--1, -0.255653, 0, -1, 0.481767,-99) , 
-3, -1.15671, 0, 0, 0.500067,-99) , 
-NN(
+-1, 0, 1, -1, 0.468861,-99) , 
+14, 0.661628, 0, 0, 0.585844,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504328,-99) , 
+-1, 0, 1, 1, 0.535583,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.473747,-99) , 
-11, 196.362, 1, 0, 0.488571,-99) , 
+-1, 0, 1, -1, 0.449074,-99) , 
+12, 836.647, 0, 0, 0.50962,-99) , 
+6, 1.07059, 0, 0, 0.525534,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0.725016, 0, -1, 0.456679,-99) , 
-1, 85.649, 1, 0, 0.480316,-99) , 
-2, 0.504452, 1, 0, 0.495131,-99)    );
-  // itree = 495
-  fBoostWeights.push_back(0.0326384);
+-1, 0, 1, 1, 0.635137,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.435523,-99) , 
+9, 351.967, 0, 0, 0.489756,-99) , 
+NN(
+0, 
+0, 
+-1, 86.9363, 0, -1, 0.359706,-99) , 
+8, 0.688616, 1, 0, 0.436023,-99) , 
+3, 78.3542, 0, 0, 0.503177,-99)    );
+  // itree = 426
+  fBoostWeights.push_back(0.116524);
   fForest.push_back( 
 NN(
 NN(
@@ -15961,12 +14769,1345 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.510292,-99) , 
+-1, 0, 1, 1, 0.55058,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.482872,-99) , 
-0, 1.66916, 1, 0, 0.505298,-99) , 
+-1, 0, 1, -1, 0.377687,-99) , 
+6, -2.0865, 0, 0, 0.541638,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.604483,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457346,-99) , 
+3, 95.4435, 0, 0, 0.484079,-99) , 
+6, 0.359375, 1, 0, 0.520633,-99) , 
+NN(
+0, 
+0, 
+-1, -0.175595, 1, -1, 0.371513,-99) , 
+4, 540.964, 1, 0, 0.512898,-99)    );
+  // itree = 427
+  fBoostWeights.push_back(0.0995832);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.548212,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.476454,-99) , 
+11, 103.376, 1, 0, 0.520382,-99) , 
+NN(
+0, 
+0, 
+-1, 0.281644, 0, -1, 0.433531,-99) , 
+14, 1.21643, 1, 0, 0.508194,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.526621,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.374707,-99) , 
+6, 0.119141, 1, 0, 0.461337,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.294844,-99) , 
+8, -1.77148, 0, 0, 0.414234,-99) , 
+5, 0.481172, 1, 0, 0.497962,-99)    );
+  // itree = 428
+  fBoostWeights.push_back(0.127988);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 165.474, 0, 1, 0.585922,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.523282,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.359859,-99) , 
+3, 89.7321, 1, 0, 0.463357,-99) , 
+4, 336.208, 1, 0, 0.549413,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.622435,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.377971,-99) , 
+3, 89.7083, 1, 0, 0.572947,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.584325,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.466453,-99) , 
+13, 1.55364, 0, 0, 0.478655,-99) , 
+5, 0.458589, 0, 0, 0.497977,-99) , 
+6, 0.595494, 0, 0, 0.514458,-99)    );
+  // itree = 429
+  fBoostWeights.push_back(0.13796);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.868352, 0, 1, 0.590399,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.567073,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.403972,-99) , 
+13, 0.239325, 0, 0, 0.483594,-99) , 
+12, 1318.11, 0, 0, 0.543348,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.55678,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.470529,-99) , 
+6, 0.593099, 0, 0, 0.502163,-99) , 
+NN(
+0, 
+0, 
+-1, 1.83259, 1, -1, 0.423256,-99) , 
+13, 0.135742, 1, 0, 0.467512,-99) , 
+11, 103.376, 0, 0, 0.498774,-99)    );
+  // itree = 430
+  fBoostWeights.push_back(0.0993586);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.37407, 0, 1, 0.519945,-99) , 
+NN(
+0, 
+0, 
+-1, 1.52647, 0, -1, 0.391906,-99) , 
+13, 1.40251, 1, 0, 0.505465,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.651582,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.484095,-99) , 
+13, 1.04181, 0, 0, 0.521942,-99) , 
+NN(
+0, 
+0, 
+-1, 1.23661, 0, -1, 0.344775,-99) , 
+5, 0.484479, 0, 0, 0.431072,-99) , 
+5, 0.412414, 1, 0, 0.485319,-99)    );
+  // itree = 431
+  fBoostWeights.push_back(0.126663);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.63963,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.449741,-99) , 
+9, 128.217, 0, 0, 0.597518,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.531403,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.342977,-99) , 
+12, 626.389, 0, 0, 0.47353,-99) , 
+5, 0.389443, 0, 0, 0.525598,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 1.25074, 0, 1, 0.55072,-99) , 
+NN(
+0, 
+0, 
+-1, 68.3125, 0, -1, 0.449595,-99) , 
+3, 99.2411, 0, 0, 0.457773,-99) , 
+12, 831.734, 1, 0, 0.478826,-99)    );
+  // itree = 432
+  fBoostWeights.push_back(0.105122);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.50238, 1, 1, 0.571617,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.520223,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.451778,-99) , 
+4, 303.167, 0, 0, 0.487183,-99) , 
+3, 76.4554, 1, 0, 0.510376,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.555532,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.459349,-99) , 
+6, 0.117676, 1, 0, 0.510664,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505628,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.365825,-99) , 
+10, 1.62793, 0, 0, 0.418701,-99) , 
+0, 60.4083, 1, 0, 0.449237,-99) , 
+5, 0.273596, 0, 0, 0.493118,-99)    );
+  // itree = 433
+  fBoostWeights.push_back(0.107348);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.597749,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.426888,-99) , 
+3, 74.5565, 0, 0, 0.571835,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508757,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.332539,-99) , 
+5, 0.505228, 1, 0, 0.499751,-99) , 
+6, -0.594517, 1, 0, 0.524689,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.567789,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.425275,-99) , 
+14, 0.147195, 1, 0, 0.478107,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.291946,-99) , 
+6, -0.833984, 0, 0, 0.440614,-99) , 
+2, -1.02693, 0, 0, 0.509799,-99)    );
+  // itree = 434
+  fBoostWeights.push_back(0.1363);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.650277,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.569712,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.473493,-99) , 
+13, 0.117228, 0, 0, 0.524879,-99) , 
+2, -1.48544, 1, 0, 0.538371,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.545708,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.338245,-99) , 
+3, 93.5446, 1, 0, 0.512729,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.541704,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.398087,-99) , 
+11, 231.282, 0, 0, 0.423812,-99) , 
+0, 75.091, 1, 0, 0.467174,-99) , 
+11, 96.9967, 1, 0, 0.508706,-99)    );
+  // itree = 435
+  fBoostWeights.push_back(0.16898);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.64312,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.422552,-99) , 
+5, 0.480629, 1, 0, 0.602076,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.372586,-99) , 
+5, 0.307162, 0, 0, 0.554222,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.721421,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.443578,-99) , 
+13, -0.531442, 1, 0, 0.581155,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.532201,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.420702,-99) , 
+8, -1.61914, 1, 0, 0.459001,-99) , 
+6, 1.5475, 0, 0, 0.473538,-99) , 
+3, 74.5565, 1, 0, 0.489707,-99)    );
+  // itree = 436
+  fBoostWeights.push_back(0.120052);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.688074,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.615369,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.488427,-99) , 
+10, -2.32259, 1, 0, 0.506641,-99) , 
+0, 193.439, 0, 0, 0.530827,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.538864,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409677,-99) , 
+13, 0.32044, 1, 0, 0.482406,-99) , 
+NN(
+0, 
+0, 
+-1, 1009.01, 0, -1, 0.409532,-99) , 
+4, 313.738, 1, 0, 0.456254,-99) , 
+14, -0.0956396, 1, 0, 0.49406,-99)    );
+  // itree = 437
+  fBoostWeights.push_back(0.125699);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.673449,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.548122,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.470414,-99) , 
+14, -0.0940746, 1, 0, 0.51353,-99) , 
+6, 2.02379, 0, 0, 0.522151,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.598508,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.433374,-99) , 
+8, -0.73284, 0, 0, 0.538225,-99) , 
+NN(
+0, 
+0, 
+-1, -1.11633, 1, -1, 0.397977,-99) , 
+5, 0.389214, 0, 0, 0.452252,-99) , 
+2, -0.571475, 0, 0, 0.500153,-99)    );
+  // itree = 438
+  fBoostWeights.push_back(0.103821);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.71262,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.573411,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.479614,-99) , 
+0, 81.4929, 1, 0, 0.534786,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.524742,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.448076,-99) , 
+5, 0.424348, 0, 0, 0.468922,-99) , 
+2, -0.34368, 1, 0, 0.49674,-99) , 
+6, 2.26153, 0, 0, 0.502254,-99)    );
+  // itree = 439
+  fBoostWeights.push_back(0.102222);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -2.42378, 1, 1, 0.576137,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.43353,-99) , 
+14, 1.31176, 1, 0, 0.5608,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0.390086, 0, 1, 0.599088,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.580755,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.47012,-99) , 
+11, 161.184, 0, 0, 0.483274,-99) , 
+13, 1.74382, 0, 0, 0.49453,-99) , 
+9, 311.545, 0, 0, 0.512319,-99)    );
+  // itree = 440
+  fBoostWeights.push_back(0.142109);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.628433,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.400157,-99) , 
+14, 0.902165, 1, 0, 0.57989,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.57526,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.47419,-99) , 
+10, -1.65072, 1, 0, 0.511042,-99) , 
+2, -0.798991, 1, 0, 0.530046,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.642338,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457464,-99) , 
+12, 1967.94, 0, 0, 0.489362,-99) , 
+NN(
+0, 
+0, 
+-1, 88.8563, 1, -1, 0.370062,-99) , 
+3, 76.6339, 1, 0, 0.453997,-99) , 
+3, 80.253, 0, 0, 0.504436,-99)    );
+  // itree = 441
+  fBoostWeights.push_back(0.128904);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 698.571, 1, 1, 0.594225,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.622789,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.448745,-99) , 
+6, 1.30515, 0, 0, 0.475596,-99) , 
+11, 70.8284, 1, 0, 0.524669,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.530775,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.344251,-99) , 
+2, 1.25602, 1, 0, 0.51109,-99) , 
+NN(
+0, 
+0, 
+-1, 392.749, 1, -1, 0.437625,-99) , 
+0, 81.4929, 1, 0, 0.477204,-99) , 
+12, 1095.64, 1, 0, 0.501182,-99)    );
+  // itree = 442
+  fBoostWeights.push_back(0.0882208);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 1173.52, 1, 1, 0.618793,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.529389,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.463028,-99) , 
+7, 61.8052, 0, 0, 0.507841,-99) , 
+NN(
+0, 
+0, 
+-1, 80.253, 1, -1, 0.41131,-99) , 
+11, 190.988, 1, 0, 0.498463,-99) , 
+14, -1.78522, 1, 0, 0.508251,-99)    );
+  // itree = 443
+  fBoostWeights.push_back(0.109776);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.504476, 0, 1, 0.54271,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.371591,-99) , 
+12, 2518.04, 1, 0, 0.531977,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.621114,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.461631,-99) , 
+4, 362.262, 0, 0, 0.49986,-99) , 
+NN(
+0, 
+0, 
+-1, 1.62378, 0, -1, 0.410628,-99) , 
+2, -0.113467, 1, 0, 0.460843,-99) , 
+10, -2.1377, 0, 0, 0.512257,-99)    );
+  // itree = 444
+  fBoostWeights.push_back(0.11289);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.544407,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.354154,-99) , 
+3, 97.3423, 1, 0, 0.529281,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.593931,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.452096,-99) , 
+10, 3.3856, 0, 0, 0.47039,-99) , 
+8, -0.565151, 0, 0, 0.502546,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.341885,-99) , 
+10, -3.62639, 0, 0, 0.497783,-99)    );
+  // itree = 445
+  fBoostWeights.push_back(0.134214);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.232911, 1, 1, 0.574415,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.554095,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.422891,-99) , 
+10, 1.19057, 1, 0, 0.482754,-99) , 
+14, -0.486821, 0, 0, 0.54332,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514268,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.338085,-99) , 
+6, 1.5425, 1, 0, 0.501786,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.573851,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.36685,-99) , 
+10, -2.28995, 1, 0, 0.404307,-99) , 
+13, -0.266278, 0, 0, 0.463028,-99) , 
+5, 0.298711, 1, 0, 0.49375,-99)    );
+  // itree = 446
+  fBoostWeights.push_back(0.114066);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.638108,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.466598,-99) , 
+6, -0.83138, 0, 0, 0.595746,-99) , 
+NN(
+0, 
+0, 
+-1, 1.87152, 0, 1, 0.517011,-99) , 
+2, -0.798014, 1, 0, 0.537786,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.566458,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.369595,-99) , 
+5, 0.279753, 0, 0, 0.510381,-99) , 
+NN(
+0, 
+0, 
+-1, 76.1865, 1, -1, 0.319535,-99) , 
+9, 89.2709, 0, 0, 0.460425,-99) , 
+9, 141.531, 0, 0, 0.521025,-99)    );
+  // itree = 447
+  fBoostWeights.push_back(0.114397);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.598876,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.485035,-99) , 
+3, 82.1518, 1, 0, 0.538555,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537257,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.455478,-99) , 
+2, -0.572847, 1, 0, 0.483525,-99) , 
+7, 74.9148, 1, 0, 0.508214,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.602378,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.449292,-99) , 
+4, 242, 1, 0, 0.481121,-99) , 
+NN(
+0, 
+0, 
+-1, 1.07996, 0, -1, 0.382069,-99) , 
+3, 82.1518, 0, 0, 0.438826,-99) , 
+12, 792.296, 0, 0, 0.491106,-99)    );
+  // itree = 448
+  fBoostWeights.push_back(0.113804);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 99.9801, 0, 1, 0.538669,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.334061,-99) , 
+11, 226.095, 1, 0, 0.52826,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.573823,-99) , 
+NN(
+0, 
+0, 
+-1, 0.348977, 1, -1, 0.428344,-99) , 
+2, -1.2536, 1, 0, 0.44952,-99) , 
+6, 0.120419, 1, 0, 0.494467,-99)    );
+  // itree = 449
+  fBoostWeights.push_back(0.105827);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 89.7083, 0, 1, 0.578566,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.529444,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.350877,-99) , 
+8, 0.676758, 0, 0, 0.492847,-99) , 
+10, 1.69401, 0, 0, 0.526184,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.515243,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.416598,-99) , 
+9, 363.13, 1, 0, 0.493615,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.511208,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.345022,-99) , 
+8, 0.612584, 0, 0, 0.416591,-99) , 
+12, 772.253, 0, 0, 0.47408,-99) , 
+6, 0.357701, 0, 0, 0.493791,-99)    );
+  // itree = 450
+  fBoostWeights.push_back(0.117179);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.653001,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.467927,-99) , 
+7, 100.747, 1, 0, 0.594042,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.506689,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.394003,-99) , 
+2, -1.35326, 0, 0, 0.449081,-99) , 
+11, 98.1954, 1, 0, 0.544601,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.558424,-99) , 
+NN(
+0, 
+0, 
+-1, 74.5565, 0, -1, 0.449403,-99) , 
+5, 0.190263, 1, 0, 0.458151,-99) , 
+13, -1.30029, 1, 0, 0.472159,-99)    );
+  // itree = 451
+  fBoostWeights.push_back(0.0641209);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.516203,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.356175,-99) , 
+4, 540.964, 1, 0, 0.510036,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.543375,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.34932,-99) , 
+9, 462.12, 0, 0, 0.421962,-99) , 
+11, 210.119, 1, 0, 0.503279,-99) , 
+NN(
+0, 
+0, 
+-1, -0.0652771, 1, -1, 0.39541,-99) , 
+3, 68.8601, 0, 0, 0.497594,-99)    );
+  // itree = 452
+  fBoostWeights.push_back(0.0964889);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.527926,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.445361,-99) , 
+6, -1.54715, 0, 0, 0.519052,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.504508,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.387092,-99) , 
+8, 0.972447, 1, 0, 0.461848,-99) , 
+5, 0.412392, 1, 0, 0.504691,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.597418,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.472647,-99) , 
+13, 0.77386, 0, 0, 0.514223,-99) , 
+NN(
+0, 
+0, 
+-1, -0.901204, 1, -1, 0.329633,-99) , 
+14, 0.219121, 0, 0, 0.413366,-99) , 
+3, 74.5565, 0, 0, 0.489087,-99)    );
+  // itree = 453
+  fBoostWeights.push_back(0.147205);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.636963,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.456679,-99) , 
+8, -2.3525, 0, 0, 0.568283,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.632111,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.454054,-99) , 
+6, 1.06892, 0, 0, 0.494611,-99) , 
+3, 82.1518, 1, 0, 0.531251,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.557395,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.438044,-99) , 
+14, -0.430617, 0, 0, 0.514187,-99) , 
+NN(
+0, 
+0, 
+-1, 311.863, 0, -1, 0.424218,-99) , 
+5, 0.324821, 1, 0, 0.468255,-99) , 
+8, -1.4362, 1, 0, 0.4902,-99)    );
+  // itree = 454
+  fBoostWeights.push_back(0.163889);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 226.823, 0, 1, 0.633176,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.566621,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.410526,-99) , 
+0, 111.742, 0, 0, 0.464993,-99) , 
+8, 1.32715, 0, 0, 0.530731,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.63787,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.495548,-99) , 
+0, 68.9933, 0, 0, 0.565104,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.566729,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.425731,-99) , 
+0, 209.64, 0, 0, 0.442479,-99) , 
+14, -1.46899, 1, 0, 0.457497,-99) , 
+3, 78.3542, 1, 0, 0.478618,-99)    );
+  // itree = 455
+  fBoostWeights.push_back(0.087345);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -3.3976, 1, 1, 0.58823,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.535103,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.46708,-99) , 
+2, -0.799967, 1, 0, 0.484789,-99) , 
+14, 1.44067, 0, 0, 0.494706,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.308299,-99) , 
+6, 2.02379, 1, 0, 0.488826,-99)    );
+  // itree = 456
+  fBoostWeights.push_back(0.106684);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 60.8407, 0, 1, 0.562419,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.401693,-99) , 
+9, 416.028, 1, 0, 0.545508,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 84.0833, 0, 1, 0.603657,-99) , 
+NN(
+0, 
+0, 
+-1, -2.35175, 0, -1, 0.460691,-99) , 
+6, -1.78083, 1, 0, 0.473943,-99) , 
+10, 1.68717, 0, 0, 0.500852,-99)    );
+  // itree = 457
+  fBoostWeights.push_back(0.112531);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 1.51571, 0, 1, 0.659347,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.555603,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.480298,-99) , 
+10, -1.1849, 1, 0, 0.507836,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.631807,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.395965,-99) , 
+5, 0.482382, 0, 0, 0.432214,-99) , 
+8, 2.15806, 1, 0, 0.494236,-99) , 
+13, 1.84202, 0, 0, 0.508306,-99)    );
+  // itree = 458
+  fBoostWeights.push_back(0.107966);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551629,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.477033,-99) , 
+6, 0.590867, 1, 0, 0.528582,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.596048,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.44317,-99) , 
+9, 392.943, 0, 0, 0.464225,-99) , 
+7, 64.5208, 0, 0, 0.505975,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.358336,-99) , 
+1, -951.256, 0, 0, 0.499294,-99)    );
+  // itree = 459
+  fBoostWeights.push_back(0.0889838);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.636589,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.55566,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.479702,-99) , 
+3, 74.5565, 1, 0, 0.495361,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.531399,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.316605,-99) , 
+7, 89.2588, 0, 0, 0.413303,-99) , 
+6, -1.54653, 0, 0, 0.485871,-99) , 
+5, 0.184519, 1, 0, 0.496052,-99)    );
+  // itree = 460
+  fBoostWeights.push_back(0.153508);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 81.7946, 1, 1, 0.591482,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.560502,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.33545,-99) , 
+0, 70.6238, 0, 0, 0.469092,-99) , 
+3, 74.5565, 0, 0, 0.572584,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.556223,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.479137,-99) , 
+3, 80.253, 0, 0, 0.530597,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.552922,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.373241,-99) , 
+8, 1.97834, 0, 0, 0.450214,-99) , 
+10, -1.72201, 0, 0, 0.503011,-99) , 
+7, 74.9114, 1, 0, 0.534732,-99)    );
+  // itree = 461
+  fBoostWeights.push_back(0.0756317);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.57734, 1, 1, 0.545424,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.509977,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.338985,-99) , 
+10, -0.630115, 1, 0, 0.496364,-99) , 
+10, 0.748326, 0, 0, 0.519956,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.519742,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.32301,-99) , 
+3, 101.958, 0, 0, 0.424356,-99) , 
+3, 99.2411, 1, 0, 0.513129,-99)    );
+  // itree = 462
+  fBoostWeights.push_back(0.109157);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.413483, 1, 1, 0.615579,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.48646,-99) , 
+5, 0.329251, 0, 0, 0.555395,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.617703,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.475536,-99) , 
+8, 2.73703, 0, 0, 0.491071,-99) , 
+NN(
+0, 
+0, 
+-1, 72.9426, 0, -1, 0.359461,-99) , 
+3, 74.5565, 0, 0, 0.471437,-99) , 
+11, 146.372, 0, 0, 0.490137,-99)    );
+  // itree = 463
+  fBoostWeights.push_back(0.0713434);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.621849,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.573209,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.42109,-99) , 
+2, 0.122047, 0, 0, 0.496308,-99) , 
+0, 85.3145, 0, 0, 0.559159,-99) , 
+NN(
 NN(
 NN(
 0, 
@@ -15975,3372 +16116,1252 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.473576,-99) , 
-14, 768.677, 0, 0, 0.486744,-99) , 
-0, -0.0571385, 0, 0, 0.500202,-99) , 
+-1, 0, 1, -1, 0.357684,-99) , 
+6, -2.02209, 0, 0, 0.497408,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.348318,-99) , 
+1, -951.264, 0, 0, 0.490743,-99) , 
+5, 0.248474, 1, 0, 0.506338,-99)    );
+  // itree = 464
+  fBoostWeights.push_back(0.0793666);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.656119,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.536584,-99) , 
+-1, 0, 1, 1, 0.521048,-99) , 
 NN(
 0, 
 0, 
--1, 681.153, 0, -1, 0.477397,-99) , 
-1, 111.171, 0, 0, 0.484491,-99) , 
-3, 0.740106, 1, 0, 0.495586,-99)    );
+-1, 0, 1, -1, 0.447542,-99) , 
+2, 1.08244, 1, 0, 0.499591,-99) , 
+14, 1.83668, 0, 0, 0.510948,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500256,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.390056,-99) , 
+3, 76.4554, 0, 0, 0.476536,-99) , 
+NN(
+0, 
+0, 
+-1, 87.8125, 1, -1, 0.373707,-99) , 
+11, 156.745, 1, 0, 0.460459,-99) , 
+2, -0.11449, 0, 0, 0.487204,-99)    );
+  // itree = 465
+  fBoostWeights.push_back(0.103865);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 245.172, 0, 1, 0.529468,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.511851,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.347533,-99) , 
+5, 0.373371, 1, 0, 0.433531,-99) , 
+3, 74.5565, 0, 0, 0.51306,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.561753,-99) , 
+NN(
+0, 
+0, 
+-1, 87.8482, 1, -1, 0.408169,-99) , 
+7, 180.543, 0, 0, 0.434078,-99) , 
+13, -0.679218, 0, 0, 0.490696,-99)    );
+  // itree = 466
+  fBoostWeights.push_back(0.150893);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.614793,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.424972,-99) , 
+14, 0.831412, 1, 0, 0.580398,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.533951,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.418357,-99) , 
+7, 131.676, 0, 0, 0.459812,-99) , 
+12, 1026.24, 1, 0, 0.519108,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.558835,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.424347,-99) , 
+11, 74.865, 0, 0, 0.504599,-99) , 
+NN(
+0, 
+0, 
+-1, 0.381258, 1, -1, 0.429138,-99) , 
+10, 2.18122, 0, 0, 0.451027,-99) , 
+5, 0.399224, 0, 0, 0.474064,-99)    );
+  // itree = 467
+  fBoostWeights.push_back(0.0952812);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 249.579, 1, 1, 0.646134,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.472825,-99) , 
+3, 78.3542, 0, 0, 0.597468,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.644333,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.497743,-99) , 
+8, 2.59556, 0, 0, 0.518479,-99) , 
+NN(
+0, 
+0, 
+-1, 193.439, 1, -1, 0.439701,-99) , 
+5, 0.348964, 1, 0, 0.482706,-99) , 
+14, 1.53242, 0, 0, 0.49512,-99)    );
+  // itree = 468
+  fBoostWeights.push_back(0.122115);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.580714,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.479786,-99) , 
+6, 0.209205, 0, 0, 0.557281,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.535098,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409208,-99) , 
+12, 1815.04, 0, 0, 0.43894,-99) , 
+6, 1.25357, 1, 0, 0.528068,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.544764,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457395,-99) , 
+6, -1.70311, 1, 0, 0.477162,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.317933,-99) , 
+13, -2.12, 0, 0, 0.468486,-99) , 
+6, -0.116978, 0, 0, 0.500617,-99)    );
+  // itree = 469
+  fBoostWeights.push_back(0.0678595);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.567536,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.491361,-99) , 
+8, -1.20424, 1, 0, 0.52133,-99) , 
+NN(
+0, 
+0, 
+-1, 89.5, 0, -1, 0.471611,-99) , 
+3, 87.8482, 1, 0, 0.502654,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.37836,-99) , 
+6, 2.02355, 1, 0, 0.498081,-99)    );
+  // itree = 470
+  fBoostWeights.push_back(0.140332);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.67871, 0, 1, 0.586496,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.553383,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.449528,-99) , 
+5, 0.345131, 1, 0, 0.513107,-99) , 
+7, 64.5208, 1, 0, 0.541693,-99) , 
+NN(
+0, 
+0, 
+-1, -0.589854, 1, -1, 0.396413,-99) , 
+5, 0.481419, 1, 0, 0.52595,-99)    );
+  // itree = 471
+  fBoostWeights.push_back(0.0746598);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.646104,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500484,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.32926,-99) , 
+9, 421.278, 1, 0, 0.488655,-99) , 
+9, 569.864, 0, 0, 0.496128,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.544267,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.435818,-99) , 
+12, 1827.17, 0, 0, 0.455214,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.291231,-99) , 
+14, -0.770958, 0, 0, 0.432756,-99) , 
+13, 0.562715, 1, 0, 0.477149,-99)    );
+  // itree = 472
+  fBoostWeights.push_back(0.108633);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.584043,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.490472,-99) , 
+9, 210.83, 0, 0, 0.539649,-99) , 
+NN(
+0, 
+0, 
+-1, -0.802349, 0, -1, 0.459683,-99) , 
+2, -0.342285, 1, 0, 0.492964,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.525553,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.311177,-99) , 
+7, 119.195, 1, 0, 0.436926,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.264972,-99) , 
+7, 62.1181, 0, 0, 0.374879,-99) , 
+6, -1.54613, 0, 0, 0.480857,-99)    );
+  // itree = 473
+  fBoostWeights.push_back(0.129549);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.609325,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.456223,-99) , 
+11, 118.758, 1, 0, 0.575038,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.545144,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.453359,-99) , 
+6, -0.591495, 1, 0, 0.483384,-99) , 
+2, 0.571731, 0, 0, 0.512216,-99) , 
+NN(
+0, 
+0, 
+-1, 162.505, 1, -1, 0.42524,-99) , 
+3, 91.6458, 1, 0, 0.492624,-99)    );
+  // itree = 474
+  fBoostWeights.push_back(0.116136);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.256999, 0, 1, 0.546114,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.393388,-99) , 
+6, 1.7809, 1, 0, 0.536548,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.63528,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.443518,-99) , 
+10, 0.463309, 0, 0, 0.558703,-99) , 
+NN(
+0, 
+0, 
+-1, -2.01995, 0, -1, 0.434732,-99) , 
+2, 1.03069, 0, 0, 0.460428,-99) , 
+3, 80.253, 0, 0, 0.510784,-99)    );
+  // itree = 475
+  fBoostWeights.push_back(0.13694);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.163441, 1, 1, 0.64273,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.57294,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.444531,-99) , 
+5, 0.251491, 1, 0, 0.474056,-99) , 
+3, 76.4554, 1, 0, 0.52414,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.556096,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.458874,-99) , 
+7, 127.911, 1, 0, 0.50755,-99) , 
+NN(
+0, 
+0, 
+-1, -0.766927, 1, -1, 0.424359,-99) , 
+7, 75.0589, 0, 0, 0.47294,-99) , 
+6, -0.594517, 1, 0, 0.490153,-99)    );
+  // itree = 476
+  fBoostWeights.push_back(0.104309);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 76.4554, 1, 1, 0.574127,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537166,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.462142,-99) , 
+6, -0.35791, 0, 0, 0.513075,-99) , 
+7, 130.403, 0, 0, 0.531391,-99) , 
+NN(
+0, 
+0, 
+-1, 0.28548, 1, -1, 0.401441,-99) , 
+6, -1.78467, 0, 0, 0.522177,-99)    );
+  // itree = 477
+  fBoostWeights.push_back(0.097661);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.702358, 1, 1, 0.530405,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537535,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.390858,-99) , 
+7, 134.388, 0, 0, 0.435325,-99) , 
+8, 2.07826, 1, 0, 0.512384,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.523202,-99) , 
+NN(
+0, 
+0, 
+-1, 0.598931, 1, -1, 0.379995,-99) , 
+8, 1.36361, 0, 0, 0.428835,-99) , 
+2, -1.02881, 0, 0, 0.498764,-99)    );
+  // itree = 478
+  fBoostWeights.push_back(0.158639);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.657472,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.454648,-99) , 
+2, -0.80306, 0, 0, 0.604141,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.555519,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.370837,-99) , 
+7, 83.9794, 0, 0, 0.46472,-99) , 
+10, 1.71094, 1, 0, 0.552438,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551739,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.375575,-99) , 
+6, 1.06787, 1, 0, 0.522956,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.60002,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.428121,-99) , 
+5, 0.481139, 0, 0, 0.451262,-99) , 
+3, 78.0804, 1, 0, 0.474412,-99) , 
+3, 95.4435, 0, 0, 0.486975,-99)    );
+  // itree = 479
+  fBoostWeights.push_back(0.094925);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.562457,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.425362,-99) , 
+9, 164.928, 0, 0, 0.522936,-99) , 
+NN(
+0, 
+0, 
+-1, 76.4554, 0, -1, 0.475737,-99) , 
+10, 0.74056, 0, 0, 0.49798,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.346052,-99) , 
+10, 3.63239, 1, 0, 0.493281,-99)    );
+  // itree = 480
+  fBoostWeights.push_back(0.131812);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.680282,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.571218,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384003,-99) , 
+11, 62.6007, 0, 0, 0.528784,-99) , 
+11, 138.002, 0, 0, 0.568309,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.582385,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.477202,-99) , 
+3, 79.9583, 1, 0, 0.524007,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.531537,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.436425,-99) , 
+5, 0.257317, 1, 0, 0.458608,-99) , 
+2, 0.34361, 0, 0, 0.484671,-99) , 
+3, 93.5446, 0, 0, 0.503537,-99)    );
+  // itree = 481
+  fBoostWeights.push_back(0.0743609);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.59273, 0, 1, 0.517021,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.545017,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.33891,-99) , 
+5, 0.412364, 0, 0, 0.409452,-99) , 
+9, 102.335, 0, 0, 0.505633,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.558639,-99) , 
+NN(
+0, 
+0, 
+-1, -0.326388, 1, -1, 0.364358,-99) , 
+12, 2205.95, 0, 0, 0.419079,-99) , 
+9, 415.876, 1, 0, 0.496518,-99)    );
+  // itree = 482
+  fBoostWeights.push_back(0.109931);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.725274,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.612591,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.459034,-99) , 
+8, 2.11414, 0, 0, 0.517043,-99) , 
+11, 118.742, 0, 0, 0.558806,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.610256,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.5167,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.450611,-99) , 
+13, -0.716185, 1, 0, 0.473151,-99) , 
+1, -951.268, 1, 0, 0.48162,-99) , 
+10, -2.65667, 1, 0, 0.497983,-99)    );
+  // itree = 483
+  fBoostWeights.push_back(0.12433);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 342.798, 0, 1, 0.599788,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.504056,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.476036,-99) , 
+2, 0.781738, 0, 0, 0.489975,-99) , 
+13, 0.864184, 1, 0, 0.563401,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.528827,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.385704,-99) , 
+3, 76.4375, 0, 0, 0.502112,-99) , 
+NN(
+0, 
+0, 
+-1, 0.251499, 1, -1, 0.427203,-99) , 
+9, 232.979, 0, 0, 0.461167,-99) , 
+14, 1.20987, 0, 0, 0.477036,-99)    );
+  // itree = 484
+  fBoostWeights.push_back(0.128236);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.66129,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.53228,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.336447,-99) , 
+6, -2.02081, 0, 0, 0.523597,-99) , 
+8, -2.90532, 1, 0, 0.535279,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.595303,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.528788,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.363408,-99) , 
+2, -1.49621, 1, 0, 0.420318,-99) , 
+8, 2.39142, 0, 0, 0.461625,-99) , 
+13, -0.570334, 0, 0, 0.512843,-99)    );
+  // itree = 485
+  fBoostWeights.push_back(0.0866301);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.591453,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.560017,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.473731,-99) , 
+2, -0.341309, 1, 0, 0.509567,-99) , 
+NN(
+0, 
+0, 
+-1, 93.64, 0, -1, 0.459746,-99) , 
+7, 72.2465, 1, 0, 0.482114,-99) , 
+7, 296.878, 0, 0, 0.488393,-99)    );
+  // itree = 486
+  fBoostWeights.push_back(0.0939631);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.619044,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.619201,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.485502,-99) , 
+6, -1.07087, 1, 0, 0.514939,-99) , 
+NN(
+0, 
+0, 
+-1, -1.71115, 0, -1, 0.454965,-99) , 
+10, -1.66504, 1, 0, 0.476946,-99) , 
+8, 2.91513, 0, 0, 0.485373,-99)    );
+  // itree = 487
+  fBoostWeights.push_back(0.0903074);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.1892, 0, 1, 0.594548,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.539291,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.478779,-99) , 
+8, -0.978423, 1, 0, 0.507094,-99) , 
+10, -3.10835, 1, 0, 0.51619,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.582308,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442558,-99) , 
+0, 112.007, 0, 0, 0.490454,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.281595,-99) , 
+9, 165.052, 0, 0, 0.434781,-99) , 
+5, 0.481068, 1, 0, 0.506204,-99)    );
+  // itree = 488
+  fBoostWeights.push_back(0.133106);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.2815, 0, 1, 0.57294,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50334,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.296892,-99) , 
+13, 1.49618, 0, 0, 0.433506,-99) , 
+13, 1.08487, 1, 0, 0.550766,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.537004,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.440806,-99) , 
+2, -0.341727, 0, 0, 0.502478,-99) , 
+NN(
+0, 
+0, 
+-1, 2.67871, 1, -1, 0.396295,-99) , 
+3, 78.3542, 0, 0, 0.475215,-99) , 
+8, 0.38644, 0, 0, 0.511965,-99)    );
+  // itree = 489
+  fBoostWeights.push_back(0.106976);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.115824, 0, 1, 0.628566,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.530501,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.296724,-99) , 
+12, 611.419, 0, 0, 0.463105,-99) , 
+2, 0.122791, 1, 0, 0.55997,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508388,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.422991,-99) , 
+3, 92.9167, 1, 0, 0.488186,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.329504,-99) , 
+3, 68.8601, 0, 0, 0.479876,-99) , 
+12, 792.36, 1, 0, 0.501946,-99)    );
+  // itree = 490
+  fBoostWeights.push_back(0.0934835);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.673654,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.475324,-99) , 
+12, 1131.73, 1, 0, 0.600575,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.625397,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.480922,-99) , 
+3, 101.14, 0, 0, 0.488836,-99) , 
+14, 1.76234, 0, 0, 0.498727,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.531461,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.393903,-99) , 
+14, -0.446997, 1, 0, 0.461368,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.32701,-99) , 
+0, 124.182, 1, 0, 0.424055,-99) , 
+8, 2.00139, 1, 0, 0.483344,-99)    );
+  // itree = 491
+  fBoostWeights.push_back(0.105627);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.05697, 1, 1, 0.65301,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.463596,-99) , 
+4, 267.69, 0, 0, 0.587836,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.568663,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.533495,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.452773,-99) , 
+10, 3.15248, 0, 0, 0.461638,-99) , 
+13, 1.95881, 0, 0, 0.467834,-99) , 
+6, 1.78592, 0, 0, 0.477987,-99)    );
+  // itree = 492
+  fBoostWeights.push_back(0.100584);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.525038,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.368542,-99) , 
+14, -2.04105, 0, 0, 0.515542,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.58467,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.42848,-99) , 
+8, -2.24781, 1, 0, 0.458545,-99) , 
+6, 0.592355, 1, 0, 0.498474,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.345144,-99) , 
+13, 1.98946, 1, 0, 0.490317,-99)    );
+  // itree = 493
+  fBoostWeights.push_back(0.105609);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.652407,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.553668,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.47531,-99) , 
+5, 0.345371, 1, 0, 0.510845,-99) , 
+8, -2.2287, 1, 0, 0.539755,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0.0805897, 0, 1, 0.602081,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.502922,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.422966,-99) , 
+7, 87.4991, 0, 0, 0.461718,-99) , 
+11, 190.973, 0, 0, 0.47674,-99) , 
+3, 80.253, 1, 0, 0.499782,-99)    );
+  // itree = 494
+  fBoostWeights.push_back(0.0909607);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.678945,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.60364,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.413935,-99) , 
+14, 0.101428, 1, 0, 0.521889,-99) , 
+3, 78.3958, 1, 0, 0.570723,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.510744,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.355119,-99) , 
+4, 475.821, 1, 0, 0.50088,-99) , 
+NN(
+0, 
+0, 
+-1, 1198.76, 0, -1, 0.378987,-99) , 
+7, 138.319, 1, 0, 0.486669,-99) , 
+7, 185.898, 0, 0, 0.499866,-99)    );
+  // itree = 495
+  fBoostWeights.push_back(0.107118);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.589262,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.543244,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.443841,-99) , 
+2, 0.0993536, 0, 0, 0.490522,-99) , 
+6, 0.831706, 0, 0, 0.518707,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.574121,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.461488,-99) , 
+3, 68.8601, 1, 0, 0.470936,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.304828,-99) , 
+5, 0.292691, 0, 0, 0.462103,-99) , 
+5, 0.27982, 1, 0, 0.480075,-99)    );
   // itree = 496
-  fBoostWeights.push_back(0.0171069);
+  fBoostWeights.push_back(0.0489675);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 427.993, 1, 1, 0.513657,-99) , 
-NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.506735,-99) , 
+-1, 0, 1, 1, 0.593198,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.493928,-99) , 
-2, 0.317079, 1, 0, 0.498296,-99) , 
-4, 1.32926, 0, 0, 0.501101,-99) , 
+-1, 0, 1, -1, 0.49314,-99) , 
+6, 1.7829, 0, 0, 0.499118,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.465296,-99) , 
-12, -3.9943, 0, 0, 0.499896,-99)    );
+-1, 0, 1, -1, 0.329279,-99) , 
+6, 2.12351, 1, 0, 0.494211,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500308,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.370288,-99) , 
+5, 0.379472, 1, 0, 0.452089,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.309264,-99) , 
+7, 52.4918, 0, 0, 0.412978,-99) , 
+6, -1.54622, 0, 0, 0.485179,-99)    );
   // itree = 497
-  fBoostWeights.push_back(0.0113899);
+  fBoostWeights.push_back(0.104063);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1.32926, 0, 1, 0.50436,-99) , 
+-1, -1.12542, 1, 1, 0.533944,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.473156,-99) , 
-2, 0.685155, 1, 0, 0.503455,-99) , 
+-1, 322.364, 1, -1, 0.43605,-99) , 
+6, -1.30678, 0, 0, 0.520704,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.475734,-99) , 
-1, 136.319, 1, 0, 0.502472,-99)    );
+-1, 0, 1, 1, 0.581338,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.402178,-99) , 
+4, 259.19, 1, 0, 0.471601,-99) , 
+NN(
+0, 
+0, 
+-1, -0.646345, 1, -1, 0.31874,-99) , 
+6, 0.351074, 1, 0, 0.423114,-99) , 
+2, 1.02797, 1, 0, 0.504215,-99)    );
   // itree = 498
-  fBoostWeights.push_back(0.0254782);
+  fBoostWeights.push_back(0.111501);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, -0.235552, 1, 1, 0.540194,-99) , 
+-1, 0, 1, 1, 0.528172,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.417559,-99) , 
+6, 1.37284, 1, 0, 0.514905,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.518393,-99) , 
+-1, 0, 1, 1, 0.531685,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.474812,-99) , 
-1, 79.5346, 0, 0, 0.502475,-99) , 
-2, 0.459157, 0, 0, 0.516659,-99) , 
+-1, 0, 1, -1, 0.373912,-99) , 
+6, 0.0585356, 1, 0, 0.451299,-99) , 
+3, 91.6458, 1, 0, 0.498927,-99) , 
 NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521507,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496328,-99) , 
-8, 84.3766, 1, 0, 0.512972,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.538816,-99) , 
+-1, 0, 1, 1, 0.561171,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.493595,-99) , 
-6, 110.804, 0, 0, 0.495992,-99) , 
-6, 119.626, 0, 0, 0.500765,-99) , 
-8, 177.106, 0, 0, 0.503023,-99)    );
+-1, 0, 1, -1, 0.383843,-99) , 
+5, 0.354733, 0, 0, 0.480603,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.267159,-99) , 
+3, 84.0506, 1, 0, 0.394067,-99) , 
+6, -1.54415, 0, 0, 0.488916,-99)    );
   // itree = 499
-  fBoostWeights.push_back(0.0246425);
+  fBoostWeights.push_back(0.0821987);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0.11922, 0, 1, 0.527678,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506037,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485265,-99) , 
-5, -0.832762, 0, 0, 0.501081,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502903,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471003,-99) , 
-10, -1.1755, 1, 0, 0.477933,-99) , 
-0, -0.343951, 0, 0, 0.496001,-99) , 
-9, 566.365, 0, 0, 0.497693,-99)    );
-  // itree = 500
-  fBoostWeights.push_back(0.015467);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.551948,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48552,-99) , 
-5, 0.120711, 0, 0, 0.518163,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502448,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48549,-99) , 
-10, 2.08945, 1, 0, 0.49954,-99) , 
-NN(
-0, 
-0, 
--1, 0.233008, 1, -1, 0.47804,-99) , 
-5, 1.78571, 1, 0, 0.498075,-99) , 
-8, 236.546, 0, 0, 0.499573,-99)    );
-  // itree = 501
-  fBoostWeights.push_back(0.0216015);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510847,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494072,-99) , 
-13, 54.3113, 1, 0, 0.500756,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472747,-99) , 
-14, 1913.53, 1, 0, 0.498771,-99) , 
-NN(
-0, 
-0, 
--1, -0.0337051, 0, -1, 0.46402,-99) , 
-11, 543.455, 1, 0, 0.496769,-99)    );
-  // itree = 502
-  fBoostWeights.push_back(0.0246832);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.01894, 0, 1, 0.518166,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518001,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493681,-99) , 
-4, 1.83724, 0, 0, 0.496342,-99) , 
-1, 97.9792, 0, 0, 0.500851,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514773,-99) , 
-NN(
-0, 
-0, 
--1, 0.727094, 0, -1, 0.484223,-99) , 
-0, -1.14655, 1, 0, 0.48687,-99) , 
-2, 0.413602, 1, 0, 0.494798,-99)    );
-  // itree = 503
-  fBoostWeights.push_back(0.0226539);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525716,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508754,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.46889,-99) , 
-1, 123.778, 1, 0, 0.506297,-99) , 
-NN(
-0, 
-0, 
--1, -1.35951, 0, -1, 0.487906,-99) , 
-3, -0.823871, 0, 0, 0.502045,-99) , 
-3, -2.24619, 1, 0, 0.503201,-99)    );
-  // itree = 504
-  fBoostWeights.push_back(0.00919399);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52322,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499669,-99) , 
-6, 173.157, 0, 0, 0.501782,-99) , 
-NN(
-0, 
-0, 
--1, 0.119917, 0, -1, 0.476568,-99) , 
-6, 246.241, 1, 0, 0.500304,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468955,-99) , 
-12, -3.97431, 0, 0, 0.499185,-99)    );
-  // itree = 505
-  fBoostWeights.push_back(0.0127796);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.557524,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492994,-99) , 
-4, -0.98935, 1, 0, 0.520405,-99) , 
-NN(
-0, 
-0, 
--1, 387.413, 1, -1, 0.495331,-99) , 
-0, -1.19002, 1, 0, 0.497143,-99)    );
-  // itree = 506
-  fBoostWeights.push_back(0.0271357);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528807,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489612,-99) , 
-9, 343.291, 1, 0, 0.517719,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506734,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479529,-99) , 
-4, -1.65079, 0, 0, 0.501491,-99) , 
-14, 815.088, 1, 0, 0.509534,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.563074,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498579,-99) , 
-1, 104.439, 0, 0, 0.508203,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500393,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.462113,-99) , 
-1, 92.2207, 1, 0, 0.491141,-99) , 
-12, -0.294192, 0, 0, 0.498337,-99) , 
-3, 0.204118, 1, 0, 0.504588,-99)    );
-  // itree = 507
-  fBoostWeights.push_back(0.0264868);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525368,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493601,-99) , 
-0, 1.88494, 1, 0, 0.515458,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490263,-99) , 
-3, -0.453289, 0, 0, 0.508197,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0.229704, 0, 1, 0.518265,-99) , 
-NN(
-0, 
-0, 
--1, -3.54881, 0, -1, 0.48849,-99) , 
-2, 0.637899, 0, 0, 0.490638,-99) , 
-0, 1.07574, 0, 0, 0.495327,-99)    );
-  // itree = 508
-  fBoostWeights.push_back(0.0361308);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.541664, 0, 1, 0.513772,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510138,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480624,-99) , 
-3, -0.821308, 0, 0, 0.504628,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527275,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464799,-99) , 
-3, -0.562936, 1, 0, 0.482135,-99) , 
-2, 0.412198, 1, 0, 0.494766,-99) , 
-12, 1.15423, 0, 0, 0.502704,-99)    );
-  // itree = 509
-  fBoostWeights.push_back(0.0284861);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 315.079, 0, 1, 0.514375,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508168,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.454421,-99) , 
-1, 60.228, 0, 0, 0.49957,-99) , 
-3, -0.149562, 0, 0, 0.506177,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521491,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513383,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486286,-99) , 
-4, 2.07619, 0, 0, 0.489902,-99) , 
-3, -1.63123, 1, 0, 0.492157,-99) , 
-12, 0.691997, 0, 0, 0.498593,-99)    );
-  // itree = 510
-  fBoostWeights.push_back(0.0165403);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 129.496, 0, 1, 0.506092,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501205,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484468,-99) , 
-10, -1.11411, 0, 0, 0.49541,-99) , 
-2, 0.368456, 0, 0, 0.500583,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514849,-99) , 
-NN(
-0, 
-0, 
--1, 0.119824, 1, -1, 0.470027,-99) , 
-1, 54.3196, 1, 0, 0.483177,-99) , 
-2, 0.594139, 1, 0, 0.498664,-99)    );
-  // itree = 511
-  fBoostWeights.push_back(0.0198631);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529079,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497221,-99) , 
-6, 114.653, 1, 0, 0.520295,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508164,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475705,-99) , 
-14, 1016.23, 1, 0, 0.493533,-99) , 
-12, -3.10182, 0, 0, 0.511826,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502538,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479169,-99) , 
-5, -1.64957, 0, 0, 0.499731,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506743,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456362,-99) , 
-12, 0.749308, 1, 0, 0.47657,-99) , 
-5, 1.07142, 1, 0, 0.497495,-99) , 
-4, 1.19831, 0, 0, 0.500722,-99)    );
-  // itree = 512
-  fBoostWeights.push_back(0.0148869);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.545195,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515458,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473147,-99) , 
-12, 1.63064, 1, 0, 0.506025,-99) , 
-5, -1.54764, 1, 0, 0.513637,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501055,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475797,-99) , 
-4, 1.92793, 1, 0, 0.499324,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.452993,-99) , 
-1, 128.954, 1, 0, 0.497181,-99) , 
-0, -0.71543, 1, 0, 0.499615,-99)    );
-  // itree = 513
-  fBoostWeights.push_back(0.0241058);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506976,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.4891,-99) , 
-10, 2.1097, 1, 0, 0.503817,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511263,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489517,-99) , 
-12, 2.55888, 0, 0, 0.494478,-99) , 
-1, 81.1306, 1, 0, 0.500037,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.540064,-99) , 
-NN(
-0, 
-0, 
--1, 0.382302, 1, -1, 0.446611,-99) , 
-3, 0.670245, 0, 0, 0.480786,-99) , 
-1, 117.32, 1, 0, 0.498498,-99)    );
-  // itree = 514
-  fBoostWeights.push_back(0.0327147);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53839,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514581,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494002,-99) , 
-1, 82.5577, 0, 0, 0.500791,-99) , 
-1, 102.984, 0, 0, 0.506368,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515773,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486595,-99) , 
-10, -0.822312, 1, 0, 0.499377,-99) , 
-NN(
-0, 
-0, 
--1, 72.5493, 1, -1, 0.47791,-99) , 
-0, 0.361721, 1, 0, 0.489471,-99) , 
-10, 1.18164, 0, 0, 0.495223,-99)    );
-  // itree = 515
-  fBoostWeights.push_back(0.0296374);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.552254,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513368,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470784,-99) , 
-3, -0.308582, 0, 0, 0.502483,-99) , 
-3, -1.19921, 1, 0, 0.513225,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520097,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49638,-99) , 
-7, 767.078, 0, 0, 0.501998,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53579,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486508,-99) , 
-4, 2.39298, 0, 0, 0.488912,-99) , 
-14, 1159.63, 0, 0, 0.492589,-99) , 
-1, 60.3234, 1, 0, 0.496298,-99)    );
-  // itree = 516
-  fBoostWeights.push_back(0.0188745);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.22242, 0, 1, 0.528439,-99) , 
-NN(
-0, 
-0, 
--1, 2.89921, 1, -1, 0.494043,-99) , 
-3, 1.84371, 0, 0, 0.496573,-99) , 
-NN(
-0, 
-0, 
--1, 1.56435, 1, -1, 0.467632,-99) , 
-12, -3.55261, 0, 0, 0.494439,-99)    );
-  // itree = 517
-  fBoostWeights.push_back(0.0167548);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 3.28911, 0, 1, 0.50639,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473653,-99) , 
-12, 3.65463, 1, 0, 0.504327,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47073,-99) , 
-12, -4.02128, 0, 0, 0.503194,-99)    );
-  // itree = 518
-  fBoostWeights.push_back(0.0230127);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.548822,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518286,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48117,-99) , 
-10, 0.861597, 1, 0, 0.506154,-99) , 
-0, -0.788903, 1, 0, 0.519316,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524283,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505046,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491586,-99) , 
-13, 95.0425, 0, 0, 0.494622,-99) , 
-3, -2.3631, 1, 0, 0.495887,-99) , 
-13, 154.173, 0, 0, 0.499667,-99)    );
-  // itree = 519
-  fBoostWeights.push_back(0.0296046);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515053,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472629,-99) , 
-10, -0.402946, 0, 0, 0.51264,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512648,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475251,-99) , 
-0, 0.0794552, 1, 0, 0.491861,-99) , 
-1, 60.2508, 0, 0, 0.509068,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.540697,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492988,-99) , 
-0, -0.695995, 1, 0, 0.496615,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.449382,-99) , 
-12, 0.248081, 0, 0, 0.493225,-99) , 
-10, -0.667626, 0, 0, 0.502584,-99)    );
-  // itree = 520
-  fBoostWeights.push_back(0.021242);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529856,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492729,-99) , 
-5, 0.833713, 1, 0, 0.521427,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486366,-99) , 
-13, 155.749, 1, 0, 0.515528,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539548,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494252,-99) , 
-6, 92.2091, 0, 0, 0.514767,-99) , 
-NN(
-0, 
-0, 
--1, 62.4188, 0, -1, 0.494599,-99) , 
-8, 31.0704, 1, 0, 0.49812,-99) , 
-8, 162.733, 0, 0, 0.501058,-99)    );
-  // itree = 521
-  fBoostWeights.push_back(0.0222466);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506548,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476499,-99) , 
-1, 50.4724, 0, 0, 0.504404,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.451299,-99) , 
-1, 133.952, 1, 0, 0.502689,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528214,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485333,-99) , 
-13, 264.468, 0, 0, 0.494002,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.458478,-99) , 
-3, 1.18638, 1, 0, 0.487819,-99) , 
-11, 387.413, 1, 0, 0.500264,-99)    );
-  // itree = 522
-  fBoostWeights.push_back(0.0291292);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511396,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49503,-99) , 
-8, 59.1008, 0, 0, 0.504402,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507644,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.453871,-99) , 
-2, 0.33893, 1, 0, 0.482481,-99) , 
-8, 177.147, 1, 0, 0.501496,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528018,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482331,-99) , 
-1, 66.9228, 1, 0, 0.503754,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503545,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.454946,-99) , 
-12, -0.195006, 1, 0, 0.476147,-99) , 
-3, 0.273596, 0, 0, 0.488048,-99) , 
-2, 0.499452, 1, 0, 0.498017,-99)    );
-  // itree = 523
-  fBoostWeights.push_back(0.0214302);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 3.03464, 0, 1, 0.507952,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509385,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475537,-99) , 
-5, -0.358056, 1, 0, 0.489481,-99) , 
-3, -1.30094, 0, 0, 0.504876,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505965,-99) , 
-NN(
-0, 
-0, 
--1, 709.588, 1, -1, 0.481843,-99) , 
-14, 1100.56, 0, 0, 0.489549,-99) , 
-2, 0.27223, 0, 0, 0.501386,-99)    );
-  // itree = 524
-  fBoostWeights.push_back(0.0246848);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 107.777, 1, 1, 0.530867,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524134,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488692,-99) , 
-3, 0.835358, 0, 0, 0.50382,-99) , 
-10, 1.17672, 0, 0, 0.509664,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.540404,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497467,-99) , 
-4, 1.15931, 0, 0, 0.50159,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503241,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.463632,-99) , 
-3, -0.14737, 1, 0, 0.483275,-99) , 
-5, 0.833462, 1, 0, 0.497214,-99) , 
-0, -0.205801, 1, 0, 0.500673,-99)    );
-  // itree = 525
-  fBoostWeights.push_back(0.0255521);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.550233,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516953,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499665,-99) , 
-2, 0.331239, 1, 0, 0.506444,-99) , 
-13, 147.259, 0, 0, 0.510715,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511193,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48917,-99) , 
-12, -1.82176, 1, 0, 0.50079,-99) , 
-NN(
-0, 
-0, 
--1, 2.03797, 0, -1, 0.480766,-99) , 
-5, 0.595216, 1, 0, 0.494178,-99) , 
-12, 1.63465, 0, 0, 0.500165,-99)    );
-  // itree = 526
-  fBoostWeights.push_back(0.0150717);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.547377,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493951,-99) , 
-4, -2.3728, 0, 0, 0.522284,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502528,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482987,-99) , 
-4, -1.35887, 0, 0, 0.500451,-99) , 
-4, -1.99257, 1, 0, 0.502182,-99) , 
-NN(
-0, 
-0, 
--1, 79.6276, 0, -1, 0.470476,-99) , 
-0, -1.19002, 0, 0, 0.500065,-99)    );
-  // itree = 527
-  fBoostWeights.push_back(0.0133318);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -0.107482, 0, 1, 0.53464,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0.640727, 0, 1, 0.503365,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466878,-99) , 
-1, 47.6564, 0, 0, 0.50194,-99) , 
-5, -1.78572, 1, 0, 0.504261,-99)    );
-  // itree = 528
-  fBoostWeights.push_back(0.0264176);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519979,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539095,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492141,-99) , 
-10, -2.05945, 1, 0, 0.50348,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51071,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487672,-99) , 
-4, -1.67588, 1, 0, 0.489072,-99) , 
-5, -1.07143, 1, 0, 0.491981,-99) , 
-1, 47.8786, 1, 0, 0.493303,-99)    );
-  // itree = 529
-  fBoostWeights.push_back(0.0135721);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535785,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.5024,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47624,-99) , 
-3, 1.85661, 1, 0, 0.500086,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466701,-99) , 
-5, 2.02384, 1, 0, 0.498875,-99) , 
-4, -2.4826, 1, 0, 0.500626,-99)    );
-  // itree = 530
-  fBoostWeights.push_back(0.0124973);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524958,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499532,-99) , 
-14, 1313.41, 0, 0, 0.504875,-99) , 
-NN(
-0, 
-0, 
--1, 0.9015, 1, -1, 0.494958,-99) , 
-2, 0.43325, 0, 0, 0.498759,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.457376,-99) , 
-2, 0.688688, 1, 0, 0.497665,-99)    );
-  // itree = 531
-  fBoostWeights.push_back(0.0242251);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.543924,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519103,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491629,-99) , 
-11, 329.94, 1, 0, 0.505125,-99) , 
-4, -1.92841, 1, 0, 0.516626,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51805,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495871,-99) , 
-11, 164.643, 0, 0, 0.5059,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508966,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488152,-99) , 
-10, -1.15306, 1, 0, 0.494407,-99) , 
-0, 0.610322, 0, 0, 0.500103,-99) , 
-0, -0.869873, 1, 0, 0.502051,-99)    );
-  // itree = 532
-  fBoostWeights.push_back(0.0183879);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.541542,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 116.964, 0, 1, 0.502975,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518545,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48659,-99) , 
-5, 1.54757, 0, 0, 0.490225,-99) , 
-2, 0.392326, 1, 0, 0.497054,-99) , 
-2, 0.68528, 0, 0, 0.498517,-99)    );
-  // itree = 533
-  fBoostWeights.push_back(0.027034);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51751,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475542,-99) , 
-1, 110.906, 1, 0, 0.512909,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464893,-99) , 
-5, -1.78566, 0, 0, 0.508465,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530838,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519539,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493242,-99) , 
-5, -1.54544, 1, 0, 0.495277,-99) , 
-1, 128.065, 0, 0, 0.497094,-99) , 
-0, 0.22548, 1, 0, 0.501877,-99)    );
-  // itree = 534
-  fBoostWeights.push_back(0.0284605);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.67514, 0, 1, 0.519267,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505236,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.462814,-99) , 
-2, 0.50907, 1, 0, 0.495479,-99) , 
-0, 0.377276, 0, 0, 0.511491,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505117,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465774,-99) , 
-5, -1.78566, 0, 0, 0.502391,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503849,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.463447,-99) , 
-2, 0.209684, 1, 0, 0.479069,-99) , 
-2, 0.286516, 0, 0, 0.496832,-99) , 
-11, 208.707, 1, 0, 0.504455,-99)    );
-  // itree = 535
-  fBoostWeights.push_back(0.0153165);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535738,-99) , 
-NN(
-0, 
-0, 
--1, 1.59292, 1, -1, 0.494503,-99) , 
-5, 2.02376, 0, 0, 0.495769,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.448786,-99) , 
-4, 2.67571, 1, 0, 0.494476,-99)    );
-  // itree = 536
-  fBoostWeights.push_back(0.0315559);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 98.5317, 0, 1, 0.526761,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528171,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470004,-99) , 
-3, 0.67604, 0, 0, 0.49069,-99) , 
-10, -1.13813, 0, 0, 0.515595,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524804,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494276,-99) , 
-11, 197.295, 1, 0, 0.510408,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525496,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49122,-99) , 
-9, 467.996, 0, 0, 0.493986,-99) , 
-8, 124.127, 0, 0, 0.498395,-99) , 
-2, 0.504452, 0, 0, 0.502849,-99)    );
-  // itree = 537
-  fBoostWeights.push_back(0.0204446);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513322,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498306,-99) , 
-2, 0.412829, 0, 0, 0.504914,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523346,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456455,-99) , 
-0, 0.192348, 0, 0, 0.484881,-99) , 
-7, 1100.39, 1, 0, 0.503529,-99) , 
-NN(
-0, 
-0, 
--1, 78.84, 1, -1, 0.472335,-99) , 
-12, -3.52252, 0, 0, 0.501113,-99)    );
-  // itree = 538
-  fBoostWeights.push_back(0.0359905);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517296,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490474,-99) , 
-8, 162.87, 1, 0, 0.513144,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501453,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.440638,-99) , 
-12, -2.8046, 0, 0, 0.471322,-99) , 
-3, 2.06752, 1, 0, 0.508804,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532736,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499232,-99) , 
-14, 1166.52, 1, 0, 0.518004,-99) , 
-NN(
-0, 
-0, 
--1, -0.833325, 0, -1, 0.481375,-99) , 
-10, -1.59368, 1, 0, 0.489662,-99) , 
-3, -0.297567, 0, 0, 0.501115,-99)    );
-  // itree = 539
-  fBoostWeights.push_back(0.0349486);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.332181, 0, 1, 0.515668,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522341,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479531,-99) , 
-5, -0.833342, 1, 0, 0.491445,-99) , 
-2, 0.497414, 1, 0, 0.509329,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.545689,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499609,-99) , 
-1, 53.4314, 0, 0, 0.520974,-99) , 
-NN(
-0, 
-0, 
--1, -1.30909, 0, -1, 0.482848,-99) , 
-1, 60.6492, 1, 0, 0.490179,-99) , 
-3, 0.164988, 1, 0, 0.500742,-99)    );
-  // itree = 540
-  fBoostWeights.push_back(0.0241537);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514375,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494243,-99) , 
-4, 1.01715, 1, 0, 0.506799,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507093,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487814,-99) , 
-10, -1.58003, 1, 0, 0.492908,-99) , 
-4, -0.235641, 0, 0, 0.500261,-99) , 
-NN(
-0, 
-0, 
--1, 760.699, 1, -1, 0.473012,-99) , 
-4, 2.15607, 1, 0, 0.498421,-99)    );
-  // itree = 541
-  fBoostWeights.push_back(0.0249685);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518808,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489666,-99) , 
-11, 78.9038, 0, 0, 0.512415,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502906,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467591,-99) , 
-5, 1.54758, 1, 0, 0.50046,-99) , 
-11, 201.152, 1, 0, 0.506459,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511608,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.454708,-99) , 
-0, -0.385249, 0, 0, 0.479961,-99) , 
-4, 2.04753, 1, 0, 0.504393,-99)    );
-  // itree = 542
-  fBoostWeights.push_back(0.0202187);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517782,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52871,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505009,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489982,-99) , 
-4, -1.3245, 1, 0, 0.493036,-99) , 
-8, 325.325, 0, 0, 0.494085,-99) , 
-2, 0.185359, 1, 0, 0.495612,-99)    );
-  // itree = 543
-  fBoostWeights.push_back(0.0178527);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532289,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506409,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493834,-99) , 
-13, 155.685, 0, 0, 0.495743,-99) , 
-NN(
-0, 
-0, 
--1, 0.509746, 1, -1, 0.474744,-99) , 
-2, 0.595302, 1, 0, 0.493482,-99) , 
-6, 319.812, 0, 0, 0.494564,-99)    );
-  // itree = 544
-  fBoostWeights.push_back(0.025589);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -0.684334, 1, 1, 0.509261,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.537526,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492152,-99) , 
-3, 0.149818, 0, 0, 0.513451,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519857,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469687,-99) , 
-3, -1.72882, 1, 0, 0.479668,-99) , 
-0, 0.499749, 0, 0, 0.492787,-99) , 
-7, 761.473, 1, 0, 0.505729,-99)    );
-  // itree = 545
-  fBoostWeights.push_back(0.0156685);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528425,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498892,-99) , 
-1, 92.6475, 0, 0, 0.501978,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511221,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.442322,-99) , 
-5, 0.119386, 0, 0, 0.476167,-99) , 
-1, 101.163, 1, 0, 0.500486,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506873,-99) , 
-NN(
-0, 
-0, 
--1, 100.297, 0, -1, 0.458592,-99) , 
-2, 0.41638, 0, 0, 0.479943,-99) , 
-1, 111.098, 1, 0, 0.498386,-99)    );
-  // itree = 546
-  fBoostWeights.push_back(0.0220882);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 110.931, 0, 1, 0.510921,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507247,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488164,-99) , 
-2, 0.320031, 1, 0, 0.494824,-99) , 
-13, 55.3225, 1, 0, 0.501326,-99) , 
-NN(
-0, 
-0, 
--1, 153.453, 0, -1, 0.479063,-99) , 
-11, 566.12, 1, 0, 0.500194,-99)    );
-  // itree = 547
-  fBoostWeights.push_back(0.0210155);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.398519, 0, 1, 0.515176,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509871,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497855,-99) , 
-2, 0.392455, 1, 0, 0.504464,-99) , 
-12, 2.08824, 0, 0, 0.507666,-99) , 
-NN(
-0, 
-0, 
--1, 766.605, 1, -1, 0.468481,-99) , 
-2, 0.632907, 1, 0, 0.505076,-99)    );
-  // itree = 548
-  fBoostWeights.push_back(0.0174969);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528267,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499535,-99) , 
-10, -1.12741, 0, 0, 0.520448,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531657,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498796,-99) , 
-2, 0.636881, 0, 0, 0.501099,-99) , 
-5, 1.0714, 0, 0, 0.505118,-99) , 
-NN(
-0, 
-0, 
--1, 79.6264, 0, -1, 0.464731,-99) , 
-3, 2.03966, 1, 0, 0.502546,-99)    );
-  // itree = 549
-  fBoostWeights.push_back(0.0132426);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.542012,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504061,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478093,-99) , 
-9, 553.963, 1, 0, 0.503164,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476401,-99) , 
-11, 566.12, 1, 0, 0.501859,-99) , 
-1, 142.652, 0, 0, 0.502984,-99)    );
-  // itree = 550
-  fBoostWeights.push_back(0.0222807);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.542826,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514406,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495666,-99) , 
-1, 71.736, 0, 0, 0.504872,-99) , 
-NN(
-0, 
-0, 
--1, 1.07574, 1, -1, 0.488898,-99) , 
-1, 86.7785, 1, 0, 0.499971,-99) , 
-1, 136.42, 0, 0, 0.501658,-99)    );
-  // itree = 551
-  fBoostWeights.push_back(0.0342285);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517941,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47711,-99) , 
-13, 113.832, 1, 0, 0.512657,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520118,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469064,-99) , 
-14, 1158.98, 0, 0, 0.489458,-99) , 
-13, 155.749, 1, 0, 0.50904,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.542111,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504764,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484983,-99) , 
-5, 0.595419, 0, 0, 0.491508,-99) , 
-9, 483.612, 0, 0, 0.4955,-99) , 
-2, 0.374525, 0, 0, 0.50267,-99)    );
-  // itree = 552
-  fBoostWeights.push_back(0.0221137);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -2.52629, 1, 1, 0.511169,-99) , 
-NN(
-0, 
-0, 
--1, 0.704249, 1, -1, 0.478006,-99) , 
-14, 1773.13, 1, 0, 0.508071,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514951,-99) , 
-NN(
-0, 
-0, 
--1, -2.0738, 0, -1, 0.491111,-99) , 
-7, 886.3, 0, 0, 0.494172,-99) , 
-2, 0.36467, 0, 0, 0.501847,-99)    );
-  // itree = 553
-  fBoostWeights.push_back(0.0299718);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530553,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491522,-99) , 
-5, 0.83361, 1, 0, 0.520006,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505273,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490032,-99) , 
-5, -0.119076, 1, 0, 0.497128,-99) , 
-1, 60.5234, 1, 0, 0.501387,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526284,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515634,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465813,-99) , 
-8, 167.289, 0, 0, 0.47441,-99) , 
-13, 83.7922, 0, 0, 0.484557,-99) , 
-12, 2.58666, 1, 0, 0.497811,-99)    );
-  // itree = 554
-  fBoostWeights.push_back(0.0240311);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.117613, 0, 1, 0.531062,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508256,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481238,-99) , 
-7, 386.757, 0, 0, 0.502227,-99) , 
-1, 72.3832, 1, 0, 0.512631,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529076,-99) , 
-NN(
-0, 
-0, 
--1, 1.34003, 1, -1, 0.492935,-99) , 
-11, 566.329, 0, 0, 0.495692,-99) , 
-0, 0.835077, 0, 0, 0.501685,-99)    );
-  // itree = 555
-  fBoostWeights.push_back(0.0218929);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530887,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519728,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498931,-99) , 
-4, 0.807924, 0, 0, 0.50536,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536079,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489099,-99) , 
-3, -1.82752, 1, 0, 0.49353,-99) , 
-2, 0.367489, 1, 0, 0.499048,-99) , 
-7, 1373.32, 0, 0, 0.500085,-99)    );
-  // itree = 556
-  fBoostWeights.push_back(0.0187768);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506408,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478609,-99) , 
-5, -1.78565, 0, 0, 0.504659,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473023,-99) , 
-14, 2204.2, 1, 0, 0.50316,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465293,-99) , 
-1, 47.9889, 0, 0, 0.501573,-99)    );
-  // itree = 557
-  fBoostWeights.push_back(0.0155701);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.50031, 0, 1, 0.545539,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505449,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469017,-99) , 
-12, -0.228623, 1, 0, 0.487371,-99) , 
-2, 0.372745, 0, 0, 0.518631,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513586,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499198,-99) , 
-0, 1.25243, 0, 0, 0.502284,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461644,-99) , 
-1, 104.529, 1, 0, 0.500911,-99) , 
-1, 111.148, 0, 0, 0.50284,-99)    );
-  // itree = 558
-  fBoostWeights.push_back(0.0186398);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 128.297, 1, 1, 0.5268,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513816,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49938,-99) , 
-4, -0.326227, 1, 0, 0.505529,-99) , 
-1, 117.466, 0, 0, 0.507208,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509656,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486911,-99) , 
-4, 0.413051, 0, 0, 0.495504,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.455767,-99) , 
-2, 0.561408, 1, 0, 0.489218,-99) , 
-8, 162.819, 1, 0, 0.504318,-99)    );
-  // itree = 559
-  fBoostWeights.push_back(0.0224664);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 286.904, 0, 1, 0.524281,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503627,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.449553,-99) , 
-5, 1.93305, 1, 0, 0.498521,-99) , 
-3, 0.736308, 0, 0, 0.506427,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532292,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495316,-99) , 
-2, 0.637899, 0, 0, 0.497973,-99) , 
-NN(
-0, 
-0, 
--1, 0.407601, 1, -1, 0.477352,-99) , 
-4, 0.299569, 1, 0, 0.494107,-99) , 
-5, 0.119039, 0, 0, 0.499845,-99)    );
-  // itree = 560
-  fBoostWeights.push_back(0.0230188);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.583853, 1, 1, 0.537237,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479425,-99) , 
-5, 0.595233, 1, 0, 0.519049,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506736,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487591,-99) , 
-1, 99.8285, 1, 0, 0.503135,-99) , 
-NN(
-0, 
-0, 
--1, 0.168921, 0, -1, 0.479997,-99) , 
-2, 0.58719, 1, 0, 0.500873,-99) , 
-1, 53.989, 1, 0, 0.502858,-99)    );
-  // itree = 561
-  fBoostWeights.push_back(0.0191413);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 85.032, 0, 1, 0.515847,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501367,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476093,-99) , 
-2, 0.600203, 1, 0, 0.498753,-99) , 
-10, 0.696128, 0, 0, 0.50563,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503546,-99) , 
-NN(
-0, 
-0, 
--1, 300.256, 1, -1, 0.476999,-99) , 
-0, 1.93641, 0, 0, 0.488436,-99) , 
-0, 1.41072, 1, 0, 0.502829,-99)    );
-  // itree = 562
-  fBoostWeights.push_back(0.0265296);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 53.9415, 1, 1, 0.511103,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512025,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478763,-99) , 
-10, 1.60523, 1, 0, 0.503911,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506885,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.463434,-99) , 
-1, 72.5051, 1, 0, 0.480628,-99) , 
-3, 0.581051, 1, 0, 0.496114,-99) , 
-5, -0.595189, 0, 0, 0.506274,-99)    );
-  // itree = 563
-  fBoostWeights.push_back(0.0335999);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.562,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52076,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486941,-99) , 
-3, 0.275331, 0, 0, 0.505298,-99) , 
-3, -1.20589, 1, 0, 0.516961,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521971,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48934,-99) , 
-7, 495.099, 0, 0, 0.50845,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503606,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481928,-99) , 
-13, 98.1495, 0, 0, 0.487954,-99) , 
-11, 387.413, 0, 0, 0.491187,-99) , 
-1, 98.4579, 0, 0, 0.496029,-99)    );
-  // itree = 564
-  fBoostWeights.push_back(0.0249242);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -0.779847, 1, 1, 0.510355,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515342,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485923,-99) , 
-10, -0.713369, 1, 0, 0.501985,-99) , 
-NN(
-0, 
-0, 
--1, -0.119707, 1, -1, 0.486161,-99) , 
-0, 0.234636, 1, 0, 0.493354,-99) , 
-12, -0.721987, 1, 0, 0.501197,-99)    );
-  // itree = 565
-  fBoostWeights.push_back(0.0217038);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532592,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53667,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497055,-99) , 
-1, 66.1079, 1, 0, 0.508208,-99) , 
-NN(
-0, 
-0, 
--1, 0.406755, 0, -1, 0.490593,-99) , 
-3, -1.32939, 1, 0, 0.493535,-99) , 
-8, 294.083, 0, 0, 0.495148,-99)    );
-  // itree = 566
-  fBoostWeights.push_back(0.0189063);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.665596, 1, 1, 0.520758,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506483,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492926,-99) , 
-10, -0.218047, 1, 0, 0.499766,-99) , 
-4, 1.66121, 0, 0, 0.502467,-99) , 
-NN(
-0, 
-0, 
--1, 0.132253, 0, -1, 0.476494,-99) , 
-0, -1.27059, 0, 0, 0.500942,-99)    );
-  // itree = 567
-  fBoostWeights.push_back(0.0251875);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513083,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481364,-99) , 
-10, -1.63552, 0, 0, 0.506233,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500959,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47413,-99) , 
-7, 690.256, 1, 0, 0.49489,-99) , 
-5, -0.118974, 0, 0, 0.501007,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511983,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.459455,-99) , 
-5, 0.595182, 1, 0, 0.495996,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468602,-99) , 
-10, -1.14625, 0, 0, 0.486827,-99) , 
-8, 177.106, 1, 0, 0.499067,-99)    );
-  // itree = 568
-  fBoostWeights.push_back(0.0174927);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519819,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523589,-99) , 
-NN(
-0, 
-0, 
--1, 3.04373, 1, -1, 0.492346,-99) , 
-4, -2.13873, 1, 0, 0.493695,-99) , 
-4, -2.63876, 1, 0, 0.494612,-99)    );
-  // itree = 569
-  fBoostWeights.push_back(0.0179643);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.248598, 1, 1, 0.536293,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528764,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480522,-99) , 
-3, -0.633815, 1, 0, 0.496198,-99) , 
-2, 0.372041, 1, 0, 0.514586,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501093,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466244,-99) , 
-4, -2.64465, 0, 0, 0.499789,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507435,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.451518,-99) , 
-14, 718.319, 1, 0, 0.473739,-99) , 
-4, 1.9387, 1, 0, 0.497264,-99) , 
-13, 154.173, 0, 0, 0.500031,-99)    );
-  // itree = 570
-  fBoostWeights.push_back(0.023192);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52953,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483557,-99) , 
-6, 136.621, 1, 0, 0.519572,-99) , 
-NN(
-0, 
-0, 
--1, 0.593022, 1, -1, 0.497683,-99) , 
-12, 0.377775, 0, 0, 0.501784,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525539,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487482,-99) , 
-4, -0.998992, 1, 0, 0.498883,-99) , 
-NN(
-0, 
-0, 
--1, -1.07142, 0, -1, 0.472546,-99) , 
-0, 0.284528, 0, 0, 0.489719,-99) , 
-12, 1.63465, 1, 0, 0.497536,-99)    );
-  // itree = 571
-  fBoostWeights.push_back(0.0207858);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513393,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473377,-99) , 
-2, 0.649659, 1, 0, 0.509043,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516317,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493939,-99) , 
-4, -1.64728, 1, 0, 0.49725,-99) , 
-1, 66.8743, 1, 0, 0.500381,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.463681,-99) , 
-12, -4.01804, 0, 0, 0.499166,-99)    );
-  // itree = 572
-  fBoostWeights.push_back(0.0213024);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 84.0565, 0, 1, 0.523621,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504259,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47817,-99) , 
-2, 0.588979, 1, 0, 0.501875,-99) , 
-1, 54.3247, 1, 0, 0.504372,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526228,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493137,-99) , 
-9, 359.957, 0, 0, 0.504541,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516067,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470959,-99) , 
-11, 360.683, 0, 0, 0.48182,-99) , 
-2, 0.379299, 1, 0, 0.492556,-99) , 
-6, 135.918, 1, 0, 0.501704,-99)    );
-  // itree = 573
-  fBoostWeights.push_back(0.0249852);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52628,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497845,-99) , 
-0, 0.865992, 0, 0, 0.506996,-99) , 
-NN(
-0, 
-0, 
--1, -2.11878, 0, -1, 0.49248,-99) , 
-5, -0.357145, 1, 0, 0.498328,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512147,-99) , 
-NN(
-0, 
-0, 
--1, 61.9857, 1, -1, 0.479185,-99) , 
-1, 70.1575, 0, 0, 0.484144,-99) , 
-1, 73.1682, 0, 0, 0.493177,-99)    );
-  // itree = 574
-  fBoostWeights.push_back(0.0146727);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504617,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485196,-99) , 
-4, -1.94098, 0, 0, 0.503039,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466484,-99) , 
-12, -3.9943, 0, 0, 0.50181,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465817,-99) , 
-5, -2.02381, 0, 0, 0.500584,-99)    );
-  // itree = 575
-  fBoostWeights.push_back(0.0199426);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.547675,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511124,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497421,-99) , 
-3, -0.672087, 1, 0, 0.501263,-99) , 
-5, 2.02379, 0, 0, 0.503313,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506033,-99) , 
-NN(
-0, 
-0, 
--1, 73.1401, 0, -1, 0.450127,-99) , 
-10, 0.878242, 0, 0, 0.46613,-99) , 
-4, -1.86083, 0, 0, 0.499518,-99)    );
-  // itree = 576
-  fBoostWeights.push_back(0.0323934);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.595173, 0, 1, 0.537858,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516018,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484418,-99) , 
-5, 0.595203, 1, 0, 0.505448,-99) , 
-12, -1.1259, 0, 0, 0.510253,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514965,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491388,-99) , 
-5, -0.833258, 1, 0, 0.49817,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502808,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.445194,-99) , 
-4, -1.09602, 0, 0, 0.47263,-99) , 
-3, -1.70368, 0, 0, 0.494444,-99) , 
-12, -0.231451, 1, 0, 0.502281,-99)    );
-  // itree = 577
-  fBoostWeights.push_back(0.0267983);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.552905,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491445,-99) , 
-3, 0.024399, 0, 0, 0.523838,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504988,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47299,-99) , 
-2, 0.506177, 1, 0, 0.501207,-99) , 
-2, 0.58791, 0, 0, 0.503329,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530462,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498799,-99) , 
-12, -1.67957, 0, 0, 0.515143,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504912,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.441273,-99) , 
-8, 105.834, 0, 0, 0.463021,-99) , 
-3, 0.348383, 0, 0, 0.485286,-99) , 
-1, 60.487, 0, 0, 0.500183,-99)    );
-  // itree = 578
-  fBoostWeights.push_back(0.0275815);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.360449, 0, 1, 0.545475,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516059,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478925,-99) , 
-3, 0.471715, 0, 0, 0.499301,-99) , 
-5, 1.31132, 1, 0, 0.523098,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508756,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491302,-99) , 
-10, 1.18802, 1, 0, 0.502475,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500664,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.462324,-99) , 
-3, -0.521704, 1, 0, 0.483033,-99) , 
-0, -0.258338, 0, 0, 0.498354,-99) , 
-4, 1.62935, 0, 0, 0.501955,-99)    );
-  // itree = 579
-  fBoostWeights.push_back(0.0204126);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.188715, 0, 1, 0.535342,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511578,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494257,-99) , 
-7, 485.924, 0, 0, 0.504226,-99) , 
-NN(
-0, 
-0, 
--1, 173.475, 1, -1, 0.491748,-99) , 
-10, -1.1308, 0, 0, 0.500003,-99) , 
-1, 130.07, 0, 0, 0.501856,-99)    );
-  // itree = 580
-  fBoostWeights.push_back(0.0344064);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.12115, 0, 1, 0.510243,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50775,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471851,-99) , 
-14, 596.896, 0, 0, 0.492449,-99) , 
-14, 804.001, 0, 0, 0.501853,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529244,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476801,-99) , 
-13, 54.466, 1, 0, 0.504268,-99) , 
-NN(
-0, 
-0, 
--1, 1.17004, 1, -1, 0.467462,-99) , 
-11, 201.235, 1, 0, 0.484564,-99) , 
-1, 92.1354, 1, 0, 0.497632,-99)    );
-  // itree = 581
-  fBoostWeights.push_back(0.0239871);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.55609, 0, 1, 0.538507,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48954,-99) , 
-8, 88.9195, 1, 0, 0.520204,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520831,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496918,-99) , 
-11, 357.233, 0, 0, 0.505766,-99) , 
-NN(
-0, 
-0, 
--1, -2.61376, 0, -1, 0.489904,-99) , 
-9, 352.87, 0, 0, 0.494826,-99) , 
-1, 54.3049, 1, 0, 0.497683,-99)    );
-  // itree = 582
-  fBoostWeights.push_back(0.0245577);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.57928, 0, 1, 0.519188,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510495,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49278,-99) , 
-1, 84.5814, 0, 0, 0.499545,-99) , 
-0, 0.273882, 1, 0, 0.506682,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50877,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488599,-99) , 
-3, 0.521021, 0, 0, 0.495269,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464689,-99) , 
-12, -3.03151, 0, 0, 0.493192,-99) , 
-10, 0.717357, 0, 0, 0.498804,-99)    );
-  // itree = 583
-  fBoostWeights.push_back(0.0197303);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 2.07079, 0, 1, 0.508099,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508934,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491975,-99) , 
-10, -1.59105, 1, 0, 0.495967,-99) , 
-3, 0.204118, 0, 0, 0.501391,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511975,-99) , 
-NN(
-0, 
-0, 
--1, 0.223565, 0, -1, 0.470094,-99) , 
-3, -0.763029, 1, 0, 0.482834,-99) , 
-1, 53.9899, 0, 0, 0.499467,-99)    );
-  // itree = 584
-  fBoostWeights.push_back(0.0145786);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 635.31, 1, 1, 0.526274,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470464,-99) , 
-14, 1161.37, 1, 0, 0.51258,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500666,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470834,-99) , 
-3, -2.1275, 0, 0, 0.499058,-99) , 
-NN(
-0, 
-0, 
--1, 0.219044, 1, -1, 0.472092,-99) , 
-2, 0.632602, 1, 0, 0.497158,-99) , 
-1, 104.462, 0, 0, 0.499349,-99)    );
-  // itree = 585
-  fBoostWeights.push_back(0.0324308);
-  fForest.push_back( 
-NN(
 NN(
 NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508391,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473185,-99) , 
-4, -1.79871, 0, 0, 0.505803,-99) , 
-NN(
-0, 
-0, 
--1, 0.595372, 1, -1, 0.481853,-99) , 
-8, 177.147, 1, 0, 0.502588,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536738,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481658,-99) , 
-5, -0.356461, 0, 0, 0.516566,-99) , 
-NN(
-0, 
-0, 
--1, -0.923808, 0, -1, 0.459543,-99) , 
-13, 56.8961, 0, 0, 0.482553,-99) , 
-12, 2.58531, 1, 0, 0.498373,-99)    );
-  // itree = 586
-  fBoostWeights.push_back(0.0264072);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506285,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484438,-99) , 
-10, -2.09705, 0, 0, 0.502723,-99) , 
-NN(
-0, 
-0, 
--1, 0.22446, 0, -1, 0.48106,-99) , 
-2, 0.226902, 0, 0, 0.498864,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511605,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475616,-99) , 
-1, 46.8282, 0, 0, 0.501581,-99) , 
-NN(
-0, 
-0, 
--1, 2.12081, 1, -1, 0.478929,-99) , 
-1, 55.2072, 1, 0, 0.486381,-99) , 
-1, 73.2542, 0, 0, 0.494298,-99)    );
-  // itree = 587
-  fBoostWeights.push_back(0.0302824);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526016,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511434,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488148,-99) , 
-2, 0.317631, 0, 0, 0.503348,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510117,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483079,-99) , 
-10, 1.64446, 0, 0, 0.487863,-99) , 
-11, 197.321, 1, 0, 0.494846,-99) , 
-0, 1.7279, 0, 0, 0.498139,-99)    );
-  // itree = 588
-  fBoostWeights.push_back(0.0191498);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.558423,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493944,-99) , 
-3, -0.13384, 1, 0, 0.52418,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50069,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487935,-99) , 
-5, -0.118871, 0, 0, 0.494678,-99) , 
-2, 0.638506, 0, 0, 0.496699,-99) , 
-NN(
-0, 
-0, 
--1, 109.406, 0, -1, 0.474884,-99) , 
-10, 2.54559, 1, 0, 0.49439,-99)    );
-  // itree = 589
-  fBoostWeights.push_back(0.0275907);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530464,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511481,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468484,-99) , 
-10, -1.45312, 0, 0, 0.500002,-99) , 
-2, 0.318991, 1, 0, 0.510592,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519038,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510979,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488907,-99) , 
-2, 0.594139, 0, 0, 0.491431,-99) , 
-3, 2.27602, 0, 0, 0.493091,-99) , 
-4, -1.20867, 1, 0, 0.496995,-99)    );
-  // itree = 590
-  fBoostWeights.push_back(0.0191047);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.555559,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521355,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466874,-99) , 
-4, -0.386181, 0, 0, 0.500542,-99) , 
-2, 0.500392, 0, 0, 0.514259,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511037,-99) , 
-NN(
-0, 
 0, 
--1, 0, 1, -1, 0.497193,-99) , 
-2, 0.275145, 1, 0, 0.500479,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478856,-99) , 
-3, 2.15713, 1, 0, 0.499296,-99) , 
-1, 104.658, 0, 0, 0.501406,-99)    );
-  // itree = 591
-  fBoostWeights.push_back(0.0216393);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514587,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471582,-99) , 
-1, 48.8622, 0, 0, 0.508647,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536087,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495706,-99) , 
-8, 294.044, 0, 0, 0.497533,-99) , 
-1, 72.9883, 1, 0, 0.501658,-99) , 
-NN(
-0, 
-0, 
--1, 0.428893, 1, -1, 0.475761,-99) , 
-12, 3.50125, 1, 0, 0.499711,-99)    );
-  // itree = 592
-  fBoostWeights.push_back(0.018371);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51474,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504558,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48595,-99) , 
-10, -0.787029, 0, 0, 0.49847,-99) , 
-10, -2.56127, 1, 0, 0.500279,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470986,-99) , 
-12, -3.97431, 0, 0, 0.499233,-99)    );
-  // itree = 593
-  fBoostWeights.push_back(0.0238596);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50775,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48938,-99) , 
-1, 66.3932, 0, 0, 0.503674,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50621,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.463799,-99) , 
-9, 221.759, 0, 0, 0.479679,-99) , 
-9, 230.463, 0, 0, 0.499664,-99) , 
-NN(
-0, 
-0, 
--1, 0.215673, 1, -1, 0.478008,-99) , 
-9, 519.861, 1, 0, 0.498126,-99)    );
-  // itree = 594
-  fBoostWeights.push_back(0.0227643);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
 0, 
--1, 0.588753, 0, 1, 0.510655,-99) , 
+-1, 0, 1, 1, 0.683641,-99) , 
 NN(
 0, 
 0, 
--1, 78.5284, 0, -1, 0.474673,-99) , 
-5, -1.30949, 0, 0, 0.505361,-99) , 
+-1, 0, 1, -1, 0.487058,-99) , 
+2, 0.100888, 1, 0, 0.601767,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0.677182, 1, 1, 0.514961,-99) , 
+-1, 0, 1, 1, 0.607412,-99) , 
 NN(
 0, 
 0, 
--1, 0.914697, 0, -1, 0.489928,-99) , 
-5, -1.54752, 1, 0, 0.492495,-99) , 
-12, 1.63202, 0, 0, 0.497129,-99)    );
-  // itree = 595
-  fBoostWeights.push_back(0.0166898);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.500831, 0, 1, 0.523991,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512213,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.451524,-99) , 
-10, -0.14271, 0, 0, 0.49724,-99) , 
-12, 0.691177, 0, 0, 0.508526,-99) , 
-NN(
-0, 
-0, 
--1, 0.639524, 1, -1, 0.4949,-99) , 
-11, 372.316, 0, 0, 0.497462,-99)    );
-  // itree = 596
-  fBoostWeights.push_back(0.00987775);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.542555,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517858,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500986,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47493,-99) , 
-12, 3.50514, 1, 0, 0.499471,-99) , 
-0, 1.80488, 0, 0, 0.501203,-99) , 
-4, -2.78329, 1, 0, 0.502373,-99)    );
-  // itree = 597
-  fBoostWeights.push_back(0.0221227);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53455,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48854,-99) , 
-13, 77.3018, 1, 0, 0.519965,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467403,-99) , 
-13, 154.173, 1, 0, 0.512543,-99) , 
-NN(
-0, 
-0, 
--1, -2.02362, 0, -1, 0.492648,-99) , 
-1, 60.3221, 1, 0, 0.496222,-99)    );
-  // itree = 598
-  fBoostWeights.push_back(0.0146908);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.541485,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 2.10472, 0, 1, 0.504806,-99) , 
-NN(
-0, 
-0, 
--1, 0.0370985, 1, -1, 0.488274,-99) , 
-4, -1.74857, 0, 0, 0.502795,-99) , 
-1, 47.9571, 1, 0, 0.504627,-99)    );
-  // itree = 599
-  fBoostWeights.push_back(0.0210106);
-  fForest.push_back( 
-NN(
+-1, 0, 1, -1, 0.483214,-99) , 
+1, -951.283, 1, 0, 0.489647,-99) , 
+8, 2.44815, 0, 0, 0.50155,-99) , 
 NN(
-NN(
-0, 
-0, 
--1, 0.454852, 0, 1, 0.525436,-99) , 
 NN(
 NN(
 0, 
@@ -19349,59 +17370,16 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.467434,-99) , 
-4, 2.34609, 1, 0, 0.502986,-99) , 
-8, 177.297, 0, 0, 0.506099,-99) , 
-NN(
-NN(
+-1, 0, 1, -1, 0.353019,-99) , 
+14, -0.5373, 0, 0, 0.460981,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504564,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456814,-99) , 
-1, 59.4186, 0, 0, 0.49682,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.456197,-99) , 
-1, 104.658, 1, 0, 0.491804,-99) , 
-14, 1159.63, 1, 0, 0.502278,-99)    );
-  // itree = 600
-  fBoostWeights.push_back(0.0228864);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.5237,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536923,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49729,-99) , 
-14, 1048.5, 1, 0, 0.523794,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505621,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490313,-99) , 
-7, 761.473, 0, 0, 0.493801,-99) , 
-4, -2.07909, 1, 0, 0.496516,-99) , 
-0, 1.847, 0, 0, 0.49886,-99)    );
-  // itree = 601
-  fBoostWeights.push_back(0.0138089);
+-1, 0, 1, -1, 0.226491,-99) , 
+9, 75.3545, 0, 0, 0.428455,-99) , 
+9, 138.579, 0, 0, 0.486,-99)    );
+  // itree = 500
+  fBoostWeights.push_back(0.132539);
   fForest.push_back( 
 NN(
 NN(
@@ -19409,24 +17387,110 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.5025,-99) , 
+-1, 0, 1, 1, 0.602745,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.477798,-99) , 
-2, 0.632774, 1, 0, 0.50079,-99) , 
+-1, 0, 1, -1, 0.432582,-99) , 
+8, 2.11035, 1, 0, 0.583055,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 381.165, 1, -1, 0.475235,-99) , 
-1, 117.175, 1, 0, 0.498768,-99) , 
+-1, 0, 1, 1, 0.608462,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.464641,-99) , 
-3, 2.23755, 1, 0, 0.497183,-99)    );
-  // itree = 602
-  fBoostWeights.push_back(0.0249818);
+-1, 0, 1, -1, 0.377392,-99) , 
+13, -0.663674, 1, 0, 0.465714,-99) , 
+6, -0.830566, 0, 0, 0.556856,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.576281,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.429308,-99) , 
+14, -0.665176, 0, 0, 0.534355,-99) , 
+NN(
+0, 
+0, 
+-1, 0.460042, 1, -1, 0.465184,-99) , 
+7, 124.329, 0, 0, 0.486965,-99) , 
+12, 831.773, 1, 0, 0.51031,-99)    );
+  // itree = 501
+  fBoostWeights.push_back(0.102208);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.31265, 0, 1, 0.642381,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.600402,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.385831,-99) , 
+3, 82.1518, 0, 0, 0.51323,-99) , 
+7, 89.5625, 0, 0, 0.573171,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.555188,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.484197,-99) , 
+4, 406.208, 0, 0, 0.496987,-99) , 
+NN(
+0, 
+0, 
+-1, 82.1518, 0, -1, 0.387077,-99) , 
+14, -0.868707, 0, 0, 0.480498,-99) , 
+6, -1.30852, 1, 0, 0.49606,-99)    );
+  // itree = 502
+  fBoostWeights.push_back(0.096113);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.669356,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.549496,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.490173,-99) , 
+3, 82.1518, 0, 0, 0.525503,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.58817,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.443169,-99) , 
+3, 74.5565, 1, 0, 0.471238,-99) , 
+12, 831.797, 0, 0, 0.509476,-99) , 
+14, -2.22752, 1, 0, 0.516716,-99)    );
+  // itree = 503
+  fBoostWeights.push_back(0.157312);
   fForest.push_back( 
 NN(
 NN(
@@ -19434,588 +17498,4011 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514574,-99) , 
+-1, 0, 1, 1, 0.545556,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492604,-99) , 
-12, 2.09994, 1, 0, 0.509498,-99) , 
+-1, 0, 1, -1, 0.446066,-99) , 
+2, -1.25756, 0, 0, 0.533575,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514516,-99) , 
+-1, 0, 1, 1, 0.649746,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.467001,-99) , 
-3, 0.954853, 0, 0, 0.481316,-99) , 
-7, 829.14, 1, 0, 0.504557,-99) , 
+-1, 0, 1, -1, 0.300753,-99) , 
+8, -1.97294, 1, 0, 0.416326,-99) , 
+6, 1.30962, 1, 0, 0.519676,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 64.04, 0, -1, 0.490341,-99) , 
-11, 208.707, 0, 0, 0.497275,-99)    );
-  // itree = 603
-  fBoostWeights.push_back(0.0167465);
+-1, 0, 1, 1, 0.648536,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.363288,-99) , 
+11, 106.636, 0, 0, 0.490581,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.240455,-99) , 
+6, -0.592634, 0, 0, 0.428402,-99) , 
+7, 185.895, 1, 0, 0.50681,-99)    );
+  // itree = 504
+  fBoostWeights.push_back(0.0768566);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.54789,-99) , 
+-1, 76.4554, 1, 1, 0.572812,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.52436,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469586,-99) , 
-10, 1.11882, 0, 0, 0.49712,-99) , 
-12, 2.099, 0, 0, 0.512386,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51276,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497279,-99) , 
-4, 1.9387, 0, 0, 0.498822,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467583,-99) , 
-4, -2.50362, 0, 0, 0.497624,-99) , 
-2, 0.587823, 0, 0, 0.499449,-99)    );
-  // itree = 604
-  fBoostWeights.push_back(0.0231899);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.550819,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513907,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474261,-99) , 
-2, 0.523712, 0, 0, 0.508523,-99) , 
-8, 226.69, 0, 0, 0.512544,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523785,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499108,-99) , 
-5, 0.833741, 0, 0, 0.505642,-99) , 
-NN(
-0, 
-0, 
--1, 0.286491, 0, -1, 0.490195,-99) , 
-2, 0.2638, 1, 0, 0.494722,-99) , 
-2, 0.502053, 0, 0, 0.499445,-99)    );
-  // itree = 605
-  fBoostWeights.push_back(0.0182341);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534237,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499356,-99) , 
-3, -1.59066, 0, 0, 0.521532,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506617,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494065,-99) , 
-0, 0.487393, 1, 0, 0.500947,-99) , 
-12, 3.40262, 0, 0, 0.503175,-99) , 
-NN(
-0, 
-0, 
--1, 162.636, 1, -1, 0.483894,-99) , 
-12, -3.07978, 0, 0, 0.500536,-99)    );
-  // itree = 606
-  fBoostWeights.push_back(0.021988);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529172,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484771,-99) , 
-12, 1.89942, 0, 0, 0.516476,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536745,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498807,-99) , 
-4, -2.30862, 1, 0, 0.502434,-99) , 
-2, 0.458301, 0, 0, 0.507239,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514869,-99) , 
-NN(
-0, 
-0, 
--1, -0.957855, 0, -1, 0.490423,-99) , 
-2, 0.240294, 1, 0, 0.494426,-99) , 
-12, 0.693877, 0, 0, 0.500306,-99)    );
-  // itree = 607
-  fBoostWeights.push_back(0.0344251);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524467,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499081,-99) , 
-12, -2.55469, 0, 0, 0.517412,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478752,-99) , 
-9, 447.775, 1, 0, 0.513818,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.537886,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460583,-99) , 
-7, 768.158, 1, 0, 0.514606,-99) , 
-NN(
-0, 
-0, 
--1, 793.844, 1, -1, 0.488446,-99) , 
-5, -1.30948, 1, 0, 0.493272,-99) , 
-0, 0.693495, 0, 0, 0.501667,-99)    );
-  // itree = 608
-  fBoostWeights.push_back(0.0344498);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 123.978, 0, 1, 0.522956,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523867,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488871,-99) , 
-8, 118.459, 0, 0, 0.498174,-99) , 
-1, 79.2585, 0, 0, 0.510668,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524911,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49327,-99) , 
-4, -1.12618, 0, 0, 0.517795,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520169,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487504,-99) , 
-6, 36.2964, 1, 0, 0.492233,-99) , 
-6, 124.605, 0, 0, 0.499369,-99) , 
-14, 830.131, 1, 0, 0.505098,-99)    );
-  // itree = 609
-  fBoostWeights.push_back(0.0175427);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.362611, 0, 1, 0.529244,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497037,-99) , 
-0, 0.814395, 1, 0, 0.516391,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 33.9054, 1, 1, 0.503277,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511472,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.458302,-99) , 
-9, 367.495, 0, 0, 0.486656,-99) , 
-11, 372.298, 1, 0, 0.500416,-99) , 
-8, 177.106, 0, 0, 0.502685,-99)    );
-  // itree = 610
-  fBoostWeights.push_back(0.0241183);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.35693, 1, 1, 0.513382,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514736,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492916,-99) , 
-10, 0.674329, 0, 0, 0.50104,-99) , 
-0, 0.446953, 0, 0, 0.507253,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477229,-99) , 
-1, 136.326, 1, 0, 0.506203,-99)    );
-  // itree = 611
-  fBoostWeights.push_back(0.0151068);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.32818, 0, 1, 0.510432,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501384,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482676,-99) , 
-8, 147.039, 1, 0, 0.497628,-99) , 
-5, 0.595222, 0, 0, 0.501636,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.452033,-99) , 
-4, 2.67571, 1, 0, 0.500276,-99)    );
-  // itree = 612
-  fBoostWeights.push_back(0.0212744);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 60.6463, 0, 1, 0.52789,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.547172,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505417,-99) , 
+-1, 0, 1, 1, 0.571311,-99) , 
 NN(
 0, 
 0, 
 -1, 0, 1, -1, 0.47883,-99) , 
-5, -1.54747, 0, 0, 0.502869,-99) , 
-1, 47.8579, 1, 0, 0.504459,-99) , 
-2, 0.595578, 0, 0, 0.507178,-99)    );
+9, 392.943, 0, 0, 0.492678,-99) , 
+13, -1.35931, 1, 0, 0.503256,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.319831,-99) , 
+13, -2.34576, 0, 0, 0.498409,-99)    );
+  // itree = 505
+  fBoostWeights.push_back(0.118704);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.593149,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.538141,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.362325,-99) , 
+8, -1.89948, 0, 0, 0.51009,-99) , 
+8, -2.34638, 1, 0, 0.533731,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.667221,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.482826,-99) , 
+5, 0.504052, 0, 0, 0.499012,-99) , 
+NN(
+0, 
+0, 
+-1, 90.133, 0, -1, 0.407546,-99) , 
+4, 303.167, 1, 0, 0.461037,-99) , 
+10, 2.17522, 0, 0, 0.484742,-99)    );
+  // itree = 506
+  fBoostWeights.push_back(0.0639859);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.613167,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.586707,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.483539,-99) , 
+5, 0.476987, 0, 0, 0.48961,-99) , 
+NN(
+0, 
+0, 
+-1, -0.435857, 0, -1, 0.376817,-99) , 
+5, 0.499718, 1, 0, 0.481967,-99) , 
+10, -3.5858, 1, 0, 0.488712,-99)    );
+  // itree = 507
+  fBoostWeights.push_back(0.102387);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.527163,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.456922,-99) , 
+3, 91.6458, 1, 0, 0.508601,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.339899,-99) , 
+13, -1.6506, 0, 0, 0.494978,-99) , 
+NN(
+0, 
+0, 
+-1, 132.795, 1, -1, 0.423359,-99) , 
+5, 0.412392, 1, 0, 0.47598,-99)    );
+  // itree = 508
+  fBoostWeights.push_back(0.100161);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.545672,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.461653,-99) , 
+13, -1.32585, 0, 0, 0.534162,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.394792,-99) , 
+11, 242.735, 1, 0, 0.52812,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.37828,-99) , 
+5, 0.52704, 1, 0, 0.522845,-99)    );
+  // itree = 509
+  fBoostWeights.push_back(0.10981);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.642552,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.430094,-99) , 
+12, 716.715, 0, 0, 0.601029,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.569467,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.453768,-99) , 
+14, -0.445666, 1, 0, 0.512135,-99) , 
+10, 2.16703, 1, 0, 0.558251,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 83.4968, 1, 1, 0.593412,-99) , 
+NN(
+0, 
+0, 
+-1, 0.505004, 1, -1, 0.476934,-99) , 
+6, 1.54711, 0, 0, 0.491385,-99) , 
+8, -1.44629, 1, 0, 0.515805,-99)    );
+  // itree = 510
+  fBoostWeights.push_back(0.103688);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.351423, 1, 1, 0.672198,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.635806,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.487674,-99) , 
+2, 1.26916, 0, 0, 0.519798,-99) , 
+13, -1.2909, 1, 0, 0.549688,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.512823,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.325849,-99) , 
+5, 0.504024, 1, 0, 0.499993,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.557312,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.400311,-99) , 
+5, 0.481146, 0, 0, 0.423969,-99) , 
+0, 109.936, 1, 0, 0.476518,-99) , 
+12, 831.797, 1, 0, 0.499825,-99)    );
+  // itree = 511
+  fBoostWeights.push_back(0.106395);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.605033,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.412389,-99) , 
+6, -0.198265, 0, 0, 0.567832,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500284,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.387817,-99) , 
+8, 1.31245, 1, 0, 0.491142,-99) , 
+8, 1.59961, 0, 0, 0.514384,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.594147,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.454298,-99) , 
+8, 1.61859, 1, 0, 0.53294,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.507652,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.341128,-99) , 
+5, 0.458109, 0, 0, 0.383938,-99) , 
+10, -1.65169, 1, 0, 0.44164,-99) , 
+6, -0.83252, 0, 0, 0.496715,-99)    );
+  // itree = 512
+  fBoostWeights.push_back(0.0773873);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0.521903, 0, 1, 0.606076,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.717612,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.469473,-99) , 
+9, 183.827, 1, 0, 0.591125,-99) , 
+NN(
+0, 
+0, 
+-1, 97.3423, 1, -1, 0.47436,-99) , 
+14, -1.90969, 1, 0, 0.483093,-99) , 
+2, -1.71436, 1, 0, 0.492754,-99)    );
+  // itree = 513
+  fBoostWeights.push_back(0.093381);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.390839, 0, 1, 0.555855,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.586508,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.455565,-99) , 
+10, 2.03741, 0, 0, 0.491867,-99) , 
+11, 103.383, 1, 0, 0.532196,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.634481,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.504726,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.404144,-99) , 
+5, 0.251516, 0, 0, 0.478342,-99) , 
+3, 103.134, 0, 0, 0.487662,-99) , 
+3, 85.9494, 1, 0, 0.512279,-99)    );
+  // itree = 514
+  fBoostWeights.push_back(0.0794031);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.678244,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.464684,-99) , 
+13, -0.130467, 1, 0, 0.612262,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.516173,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.383787,-99) , 
+2, -1.93978, 0, 0, 0.511587,-99) , 
+8, 2.54371, 0, 0, 0.523839,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.373289,-99) , 
+5, 0.183149, 0, 0, 0.514057,-99)    );
+  // itree = 515
+  fBoostWeights.push_back(0.0976941);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.591797, 1, 1, 0.598326,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.54414,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.41032,-99) , 
+0, 69.4643, 1, 0, 0.474908,-99) , 
+7, 96.3225, 0, 0, 0.537998,-99) , 
+NN(
+0, 
+0, 
+-1, -2.17453, 0, -1, 0.463128,-99) , 
+13, 0.797534, 0, 0, 0.482166,-99)    );
+  // itree = 516
+  fBoostWeights.push_back(0.118085);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.68775,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.497869,-99) , 
+11, 184.798, 1, 0, 0.604078,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536576,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.439242,-99) , 
+13, 0.977256, 1, 0, 0.514125,-99) , 
+11, 142.752, 0, 0, 0.53452,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.602606,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500925,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.415852,-99) , 
+6, 0.594285, 0, 0, 0.443281,-99) , 
+5, 0.499699, 0, 0, 0.459082,-99) , 
+10, 1.23061, 1, 0, 0.503258,-99)    );
+  // itree = 517
+  fBoostWeights.push_back(0.0878642);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536166,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.42784,-99) , 
+3, 72.6577, 0, 0, 0.525106,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.395991,-99) , 
+13, -2.1101, 0, 0, 0.518719,-99) , 
+NN(
+0, 
+0, 
+-1, 0.481747, 1, -1, 0.454944,-99) , 
+8, -1.02655, 0, 0, 0.493596,-99)    );
+  // itree = 518
+  fBoostWeights.push_back(0.116177);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 103.376, 1, 1, 0.564226,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.618102,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.456164,-99) , 
+5, 0.474564, 0, 0, 0.490735,-99) , 
+2, 0.114374, 1, 0, 0.52919,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.580982,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.473131,-99) , 
+11, 138.057, 0, 0, 0.494941,-99) , 
+NN(
+0, 
+0, 
+-1, -2.63839, 1, -1, 0.35619,-99) , 
+5, 0.460491, 1, 0, 0.476828,-99) , 
+10, -1.20257, 0, 0, 0.507896,-99)    );
+  // itree = 519
+  fBoostWeights.push_back(0.073416);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1932.65, 1, 1, 0.558278,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.412041,-99) , 
+2, 1.02148, 1, 0, 0.531794,-99) , 
+NN(
+0, 
+0, 
+-1, 1577.12, 1, -1, 0.472526,-99) , 
+12, 1691.13, 0, 0, 0.487546,-99)    );
+  // itree = 520
+  fBoostWeights.push_back(0.108329);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 946.252, 1, 1, 0.620983,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.389688,-99) , 
+2, 1.96366, 1, 0, 0.575298,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.607781,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.48703,-99) , 
+14, -0.709329, 1, 0, 0.524263,-99) , 
+NN(
+0, 
+0, 
+-1, 95.4435, 1, -1, 0.455054,-99) , 
+7, 66.9913, 1, 0, 0.482967,-99) , 
+2, 1.25635, 0, 0, 0.495411,-99)    );
+  // itree = 521
+  fBoostWeights.push_back(0.117202);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 102.772, 1, 1, 0.587262,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536618,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.343968,-99) , 
+10, -1.50684, 1, 0, 0.437068,-99) , 
+6, -1.8623, 0, 0, 0.561482,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.645754,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.486965,-99) , 
+12, 997.637, 0, 0, 0.59164,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.518903,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.444059,-99) , 
+2, -0.21174, 0, 0, 0.493099,-99) , 
+2, -1.2557, 1, 0, 0.507574,-99) , 
+6, -0.593308, 1, 0, 0.526405,-99)    );
+  // itree = 522
+  fBoostWeights.push_back(0.0845093);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.628438,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.534856,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.471739,-99) , 
+3, 84.0506, 1, 0, 0.502732,-99) , 
+8, 2.60096, 0, 0, 0.511888,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.382388,-99) , 
+8, 2.9594, 1, 0, 0.506001,-99)    );
+  // itree = 523
+  fBoostWeights.push_back(0.118973);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.540262,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.380731,-99) , 
+1, -951.25, 0, 0, 0.53359,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.501572,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.278242,-99) , 
+4, 296.262, 0, 0, 0.433454,-99) , 
+9, 404.069, 1, 0, 0.522685,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.629617,-99) , 
+NN(
+0, 
+0, 
+-1, 84.0208, 1, -1, 0.3773,-99) , 
+9, 392.749, 0, 0, 0.434014,-99) , 
+5, 0.458113, 1, 0, 0.508009,-99)    );
+  // itree = 524
+  fBoostWeights.push_back(0.130958);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.60341,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.379069,-99) , 
+12, 989.331, 0, 0, 0.526808,-99) , 
+NN(
+0, 
+0, 
+-1, 1495.54, 1, -1, 0.459205,-99) , 
+13, -0.334985, 1, 0, 0.482982,-99) , 
+NN(
+0, 
+0, 
+-1, -1.01449, 1, -1, 0.434345,-99) , 
+14, -0.781381, 0, 0, 0.470692,-99)    );
+  // itree = 525
+  fBoostWeights.push_back(0.112212);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.539983,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.429834,-99) , 
+13, -1.63313, 0, 0, 0.528102,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.609513,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.408797,-99) , 
+3, 93.5625, 0, 0, 0.464145,-99) , 
+2, 1.02818, 1, 0, 0.517378,-99) , 
+NN(
+0, 
+0, 
+-1, 76.8797, 1, -1, 0.406788,-99) , 
+3, 70.7589, 0, 0, 0.5073,-99)    );
+  // itree = 526
+  fBoostWeights.push_back(0.096795);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.627763,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.494064,-99) , 
+14, -0.815696, 0, 0, 0.592054,-99) , 
+NN(
+0, 
+0, 
+-1, 270.143, 1, -1, 0.415661,-99) , 
+6, 0.835449, 1, 0, 0.555638,-99) , 
+NN(
+0, 
+0, 
+-1, 1.94237, 1, -1, 0.468261,-99) , 
+2, -0.797689, 1, 0, 0.491815,-99)    );
+  // itree = 527
+  fBoostWeights.push_back(0.0622281);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.632303,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.506609,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.357221,-99) , 
+13, -1.12418, 0, 0, 0.499311,-99) , 
+2, -0.865327, 1, 0, 0.509784,-99) , 
+NN(
+0, 
+0, 
+-1, 0.330254, 1, -1, 0.425725,-99) , 
+2, -1.02867, 0, 0, 0.49605,-99)    );
+  // itree = 528
+  fBoostWeights.push_back(0.1277);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.5691,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.4759,-99) , 
+3, 78.3542, 0, 0, 0.545407,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.55159,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.387011,-99) , 
+6, 0.585449, 0, 0, 0.44203,-99) , 
+9, 391.949, 1, 0, 0.532237,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.511355,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.357654,-99) , 
+13, -0.625425, 1, 0, 0.472717,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.324671,-99) , 
+12, 1845.43, 1, 0, 0.448543,-99) , 
+13, -0.295093, 0, 0, 0.499315,-99)    );
+  // itree = 529
+  fBoostWeights.push_back(0.155047);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.623411,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.338102,-99) , 
+6, 1.88201, 1, 0, 0.559221,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.567924,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.453423,-99) , 
+10, -2.61519, 1, 0, 0.480731,-99) , 
+6, 1.0671, 0, 0, 0.497183,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.556799,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.473401,-99) , 
+3, 80.2292, 1, 0, 0.515392,-99) , 
+NN(
+0, 
+0, 
+-1, 61.3255, 0, -1, 0.38111,-99) , 
+5, 0.517808, 0, 0, 0.410215,-99) , 
+5, 0.4149, 1, 0, 0.475513,-99)    );
+  // itree = 530
+  fBoostWeights.push_back(0.116118);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.02884, 0, 1, 0.563201,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.527608,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409898,-99) , 
+8, 0.448986, 1, 0, 0.476547,-99) , 
+0, 130.555, 1, 0, 0.518652,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.645799,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.461665,-99) , 
+2, -1.71352, 1, 0, 0.476789,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.281771,-99) , 
+6, 1.78592, 1, 0, 0.465808,-99) , 
+0, 81.4986, 0, 0, 0.491786,-99)    );
+  // itree = 531
+  fBoostWeights.push_back(0.112626);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -951.32, 1, 1, 0.566947,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536148,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.444741,-99) , 
+13, -0.31525, 0, 0, 0.501788,-99) , 
+12, 836.357, 1, 0, 0.523325,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50923,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.261007,-99) , 
+3, 82.1518, 1, 0, 0.376555,-99) , 
+6, 1.78578, 1, 0, 0.514366,-99)    );
+  // itree = 532
+  fBoostWeights.push_back(0.0977436);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.653744,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.532221,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.460649,-99) , 
+14, -0.868707, 0, 0, 0.518421,-99) , 
+6, -2.02232, 1, 0, 0.525904,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.579118,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.448074,-99) , 
+12, 1069.86, 1, 0, 0.517745,-99) , 
+NN(
+0, 
+0, 
+-1, -0.878428, 1, -1, 0.395329,-99) , 
+2, -0.117304, 0, 0, 0.471091,-99) , 
+5, 0.43575, 1, 0, 0.514498,-99)    );
+  // itree = 533
+  fBoostWeights.push_back(0.0850978);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.594666, 0, 1, 0.517539,-99) , 
+NN(
+0, 
+0, 
+-1, 1.40095, 1, -1, 0.406389,-99) , 
+13, 1.3418, 1, 0, 0.503631,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.542781,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.386552,-99) , 
+6, 0.591239, 1, 0, 0.498426,-99) , 
+NN(
+0, 
+0, 
+-1, 230.147, 0, -1, 0.344029,-99) , 
+9, 293.44, 0, 0, 0.430634,-99) , 
+11, 139.579, 1, 0, 0.488981,-99)    );
+  // itree = 534
+  fBoostWeights.push_back(0.125942);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.642977,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.55505,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.461967,-99) , 
+2, -0.800293, 1, 0, 0.488492,-99) , 
+7, 296.878, 0, 0, 0.499136,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.534114,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.410518,-99) , 
+3, 84.0833, 0, 0, 0.481446,-99) , 
+NN(
+0, 
+0, 
+-1, 832.417, 0, -1, 0.381269,-99) , 
+8, 0.21689, 0, 0, 0.435239,-99) , 
+5, 0.297441, 0, 0, 0.476357,-99)    );
+  // itree = 535
+  fBoostWeights.push_back(0.139009);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.636617,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.439167,-99) , 
+4, 335.369, 1, 0, 0.59659,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.554349,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.305896,-99) , 
+2, -0.339425, 1, 0, 0.430429,-99) , 
+8, 1.44954, 1, 0, 0.549232,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.720325,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.490778,-99) , 
+12, 764.756, 1, 0, 0.555253,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.513579,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.437186,-99) , 
+11, 129.988, 0, 0, 0.457525,-99) , 
+6, 1.30776, 0, 0, 0.473108,-99) , 
+3, 76.4554, 1, 0, 0.491062,-99)    );
+  // itree = 536
+  fBoostWeights.push_back(0.104914);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 1.98978, 1, 1, 0.576635,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.526562,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457068,-99) , 
+2, 0.811523, 1, 0, 0.503316,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.626144,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.417282,-99) , 
+5, 0.481044, 0, 0, 0.450732,-99) , 
+13, -0.552329, 0, 0, 0.486502,-99) , 
+6, 1.78578, 0, 0, 0.4927,-99)    );
+  // itree = 537
+  fBoostWeights.push_back(0.132753);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.658104,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.496127,-99) , 
+14, 1.09448, 1, 0, 0.615878,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.703475,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432097,-99) , 
+13, 1.27571, 0, 0, 0.487548,-99) , 
+6, 0.120419, 0, 0, 0.550934,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.600181,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.486369,-99) , 
+2, 0.797852, 0, 0, 0.51669,-99) , 
+NN(
+0, 
+0, 
+-1, 61.1474, 0, -1, 0.422981,-99) , 
+14, 0.54429, 1, 0, 0.487428,-99) , 
+5, 0.412414, 0, 0, 0.505934,-99)    );
+  // itree = 538
+  fBoostWeights.push_back(0.11551);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.664901,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.605623,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.448038,-99) , 
+5, 0.320697, 1, 0, 0.524184,-99) , 
+13, 1.32381, 0, 0, 0.557151,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.603511,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.484563,-99) , 
+10, -1.72786, 0, 0, 0.548935,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505462,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.427012,-99) , 
+8, 1.18461, 0, 0, 0.464506,-99) , 
+5, 0.235233, 1, 0, 0.48136,-99) , 
+8, -1.98131, 1, 0, 0.498941,-99)    );
+  // itree = 539
+  fBoostWeights.push_back(0.0995189);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.599204,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.547538,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.436699,-99) , 
+3, 99.25, 1, 0, 0.524903,-99) , 
+NN(
+0, 
+0, 
+-1, 128.607, 0, -1, 0.458493,-99) , 
+3, 87.8482, 0, 0, 0.483313,-99) , 
+5, 0.182638, 1, 0, 0.49321,-99)    );
+  // itree = 540
+  fBoostWeights.push_back(0.0983322);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, -2.22628, 0, 1, 0.627859,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.58375,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.487559,-99) , 
+7, 102.939, 0, 0, 0.530153,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.546837,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.455165,-99) , 
+9, 137.889, 1, 0, 0.476955,-99) , 
+3, 84.0506, 1, 0, 0.503445,-99) , 
+6, -2.02214, 1, 0, 0.509938,-99)    );
+  // itree = 541
+  fBoostWeights.push_back(0.108545);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 87.8482, 1, 1, 0.596421,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.582844,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.488037,-99) , 
+5, 0.449415, 0, 0, 0.508605,-99) , 
+14, 0.124851, 1, 0, 0.539778,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.610982,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.510578,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.406763,-99) , 
+3, 84.0506, 0, 0, 0.46185,-99) , 
+12, 2158.78, 0, 0, 0.48194,-99) , 
+6, -0.355608, 0, 0, 0.517908,-99)    );
+  // itree = 542
+  fBoostWeights.push_back(0.0900485);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.333825, 1, 1, 0.553654,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.414422,-99) , 
+6, -1.3119, 0, 0, 0.538063,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551551,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.472367,-99) , 
+10, -2.65699, 1, 0, 0.487467,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.323611,-99) , 
+0, 103.912, 1, 0, 0.479323,-99) , 
+0, 111.718, 0, 0, 0.497544,-99)    );
+  // itree = 543
+  fBoostWeights.push_back(0.109172);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.579377,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.619111,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.46105,-99) , 
+12, 1162.22, 1, 0, 0.565288,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.543298,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.459117,-99) , 
+2, -0.800781, 1, 0, 0.482673,-99) , 
+14, -1.04254, 1, 0, 0.499248,-99) , 
+12, 2490.46, 0, 0, 0.507131,-99)    );
+  // itree = 544
+  fBoostWeights.push_back(0.116138);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.367118, 1, 1, 0.653334,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.524266,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.393885,-99) , 
+13, 1.18248, 0, 0, 0.470403,-99) , 
+3, 84.0506, 1, 0, 0.570593,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 109.608, 0, 1, 0.603268,-99) , 
+NN(
+0, 
+0, 
+-1, 78.3542, 0, -1, 0.474231,-99) , 
+10, 3.19885, 0, 0, 0.490552,-99) , 
+13, 0.689165, 0, 0, 0.514386,-99)    );
+  // itree = 545
+  fBoostWeights.push_back(0.118033);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.585088,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.376736,-99) , 
+12, 709.24, 0, 0, 0.565749,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508252,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.361471,-99) , 
+11, 52.0344, 0, 0, 0.497693,-99) , 
+11, 92.1262, 0, 0, 0.529521,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.56865,-99) , 
+NN(
+0, 
+0, 
+-1, 89.747, 0, -1, 0.379822,-99) , 
+5, 0.307162, 1, 0, 0.456321,-99) , 
+12, 1961.41, 1, 0, 0.517573,-99)    );
+  // itree = 546
+  fBoostWeights.push_back(0.0874751);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.601463,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.486473,-99) , 
+12, 689.658, 0, 0, 0.541457,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.510121,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442647,-99) , 
+5, 0.343337, 1, 0, 0.479722,-99) , 
+12, 831.827, 1, 0, 0.498751,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.35086,-99) , 
+1, -951.25, 0, 0, 0.492349,-99)    );
+  // itree = 547
+  fBoostWeights.push_back(0.155168);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 89.6518, 0, 1, 0.556581,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.659755,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.412843,-99) , 
+13, 1.05692, 0, 0, 0.480872,-99) , 
+3, 95.4435, 1, 0, 0.546211,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.609615,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.408805,-99) , 
+9, 250.188, 1, 0, 0.533517,-99) , 
+NN(
+0, 
+0, 
+-1, 0.256543, 0, -1, 0.368028,-99) , 
+5, 0.237713, 1, 0, 0.482405,-99) , 
+5, 0.273606, 0, 0, 0.52839,-99)    );
+  // itree = 548
+  fBoostWeights.push_back(0.122628);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.692775,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.478266,-99) , 
+2, -0.124744, 1, 0, 0.593299,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.422473,-99) , 
+8, 1.15039, 1, 0, 0.548956,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551279,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.454044,-99) , 
+9, 264.083, 1, 0, 0.506797,-99) , 
+NN(
+0, 
+0, 
+-1, 54.4295, 0, -1, 0.443026,-99) , 
+11, 96.3874, 0, 0, 0.472609,-99) , 
+6, -1.30629, 1, 0, 0.484311,-99)    );
+  // itree = 549
+  fBoostWeights.push_back(0.0985103);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.571257,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.483583,-99) , 
+11, 61.4757, 0, 0, 0.542872,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.550476,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.466354,-99) , 
+4, 366.97, 0, 0, 0.489932,-99) , 
+11, 98.1897, 1, 0, 0.519978,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.399523,-99) , 
+13, 2.1408, 1, 0, 0.51516,-99)    );
+  // itree = 550
+  fBoostWeights.push_back(0.0809646);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 286.143, 1, 1, 0.581538,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.431269,-99) , 
+0, 149.821, 1, 0, 0.549515,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 136.121, 1, -1, 0.481469,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.512626,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.299466,-99) , 
+12, 1691.38, 0, 0, 0.387583,-99) , 
+12, 1510.81, 1, 0, 0.470783,-99) , 
+12, 1826.85, 0, 0, 0.487031,-99)    );
+  // itree = 551
+  fBoostWeights.push_back(0.0992006);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.38835, 1, 1, 0.61462,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.623343,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.448558,-99) , 
+2, -1.09269, 1, 0, 0.500163,-99) , 
+13, -0.398311, 0, 0, 0.560302,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.57922,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.494691,-99) , 
+7, 124.604, 0, 0, 0.512155,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.506786,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.339719,-99) , 
+4, 314.571, 1, 0, 0.425659,-99) , 
+7, 189.3, 1, 0, 0.499907,-99) , 
+10, 2.17662, 0, 0, 0.518577,-99)    );
+  // itree = 552
+  fBoostWeights.push_back(0.0639828);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.477525, 1, 1, 0.525191,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409997,-99) , 
+13, -1.81995, 0, 0, 0.519172,-99) , 
+NN(
+0, 
+0, 
+-1, 80.2054, 0, -1, 0.432159,-99) , 
+10, 3.15974, 1, 0, 0.511703,-99)    );
+  // itree = 553
+  fBoostWeights.push_back(0.093517);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.770671, 0, 1, 0.595393,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.520811,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432198,-99) , 
+14, 0.833621, 1, 0, 0.50279,-99) , 
+2, 1.2556, 0, 0, 0.516983,-99) , 
+NN(
+0, 
+0, 
+-1, 309.863, 0, -1, 0.384603,-99) , 
+10, -3.13839, 0, 0, 0.505894,-99)    );
+  // itree = 554
+  fBoostWeights.push_back(0.0943801);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 57.6582, 0, 1, 0.677773,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.545466,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.458235,-99) , 
+4, 275.708, 1, 0, 0.521555,-99) , 
+NN(
+0, 
+0, 
+-1, 203.36, 1, -1, 0.46769,-99) , 
+4, 313.738, 1, 0, 0.500335,-99) , 
+14, -2.18538, 1, 0, 0.509819,-99)    );
+  // itree = 555
+  fBoostWeights.push_back(0.145369);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.621531,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.449661,-99) , 
+10, 2.66778, 1, 0, 0.58464,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.525002,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.370201,-99) , 
+10, 1.71973, 1, 0, 0.478516,-99) , 
+11, 94.7893, 1, 0, 0.540464,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.641175,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.487006,-99) , 
+0, 60.9758, 1, 0, 0.54386,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508405,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409796,-99) , 
+8, -1.54102, 1, 0, 0.445619,-99) , 
+5, 0.280165, 1, 0, 0.47619,-99) , 
+7, 74.9148, 1, 0, 0.506287,-99)    );
+  // itree = 556
+  fBoostWeights.push_back(0.119295);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 836.647, 1, 1, 0.553371,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.581552,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.450046,-99) , 
+2, 0.801595, 0, 0, 0.484746,-99) , 
+3, 80.253, 0, 0, 0.531307,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.509039,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.282077,-99) , 
+10, -0.715681, 1, 0, 0.397761,-99) , 
+5, 0.49969, 1, 0, 0.520877,-99)    );
+  // itree = 557
+  fBoostWeights.push_back(0.105703);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.673177,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.541897,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.470815,-99) , 
+11, 103.376, 1, 0, 0.516633,-99) , 
+14, 1.6391, 0, 0, 0.526323,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.527484,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.439769,-99) , 
+10, -1.69499, 1, 0, 0.48087,-99) , 
+NN(
+0, 
+0, 
+-1, 0.371582, 1, -1, 0.32881,-99) , 
+0, 189.913, 1, 0, 0.464529,-99) , 
+13, -0.20792, 1, 0, 0.492826,-99)    );
+  // itree = 558
+  fBoostWeights.push_back(0.0613036);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.970703, 1, 1, 0.51491,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.506862,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.373971,-99) , 
+10, 1.63021, 0, 0, 0.427422,-99) , 
+9, 132.758, 0, 0, 0.499296,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.327791,-99) , 
+5, 0.526983, 1, 0, 0.494098,-99)    );
+  // itree = 559
+  fBoostWeights.push_back(0.0774997);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.509357,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.370736,-99) , 
+6, -2.02253, 0, 0, 0.503563,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.37212,-99) , 
+1, -951.264, 0, 0, 0.497654,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.534506,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.401589,-99) , 
+8, 2.55952, 0, 0, 0.466979,-99) , 
+NN(
+0, 
+0, 
+-1, -1.09319, 1, -1, 0.327113,-99) , 
+2, -0.57201, 0, 0, 0.422209,-99) , 
+8, 1.80501, 1, 0, 0.479859,-99)    );
+  // itree = 560
+  fBoostWeights.push_back(0.105587);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.691045,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.479236,-99) , 
+12, 919.476, 1, 0, 0.582733,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.598439,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.422365,-99) , 
+1, 0.700336, 0, 0, 0.543314,-99) , 
+NN(
+0, 
+0, 
+-1, 0.198236, 0, -1, 0.457909,-99) , 
+0, 193.989, 0, 0, 0.470159,-99) , 
+1, -951.25, 1, 0, 0.477068,-99)    );
+  // itree = 561
+  fBoostWeights.push_back(0.11336);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.628707,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.454762,-99) , 
+11, 63.6771, 0, 0, 0.576927,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.518662,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.402378,-99) , 
+12, 778.325, 0, 0, 0.49835,-99) , 
+9, 142.474, 1, 0, 0.514062,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.51999,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.321869,-99) , 
+9, 354.877, 1, 0, 0.498463,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.524256,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.370254,-99) , 
+3, 94.997, 0, 0, 0.411629,-99) , 
+3, 84.0506, 1, 0, 0.459519,-99) , 
+4, 298.976, 0, 0, 0.486557,-99)    );
+  // itree = 562
+  fBoostWeights.push_back(0.0795416);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.568625,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.526159,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.464859,-99) , 
+12, 1989.02, 0, 0, 0.475913,-99) , 
+13, 2.08988, 0, 0, 0.480861,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.349202,-99) , 
+0, 275.982, 1, 0, 0.475965,-99)    );
+  // itree = 563
+  fBoostWeights.push_back(0.0630874);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.706122,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.495787,-99) , 
+14, 0.340495, 0, 0, 0.586323,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.594609,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.483843,-99) , 
+2, -1.71143, 1, 0, 0.490596,-99) , 
+5, 0.504024, 0, 0, 0.498825,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.352568,-99) , 
+10, -3.59473, 0, 0, 0.493326,-99)    );
+  // itree = 564
+  fBoostWeights.push_back(0.116562);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.584725,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.443063,-99) , 
+5, 0.257296, 0, 0, 0.561555,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.527274,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.297981,-99) , 
+7, 86.309, 1, 0, 0.42286,-99) , 
+10, 2.66857, 1, 0, 0.538087,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.582154,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.469902,-99) , 
+9, 235.672, 1, 0, 0.542215,-99) , 
+NN(
+0, 
+0, 
+-1, -1.30873, 0, -1, 0.463447,-99) , 
+10, 2.68234, 0, 0, 0.479852,-99) , 
+3, 80.253, 1, 0, 0.501537,-99)    );
+  // itree = 565
+  fBoostWeights.push_back(0.104145);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 85.9494, 1, 1, 0.586983,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.611814,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.470243,-99) , 
+8, 2.4036, 0, 0, 0.494572,-99) , 
+0, 111.994, 0, 0, 0.52412,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.511863,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.449983,-99) , 
+8, -0.854492, 1, 0, 0.480292,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.293418,-99) , 
+13, 1.62971, 1, 0, 0.465533,-99) , 
+6, -0.118513, 0, 0, 0.497064,-99)    );
+  // itree = 566
+  fBoostWeights.push_back(0.113934);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.715071,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.638763,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.497094,-99) , 
+3, 76.4554, 1, 0, 0.530809,-99) , 
+13, -0.899751, 0, 0, 0.557063,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.616991,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.473616,-99) , 
+14, -0.377934, 1, 0, 0.525257,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.504364,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.410896,-99) , 
+2, 0.14588, 1, 0, 0.451416,-99) , 
+5, 0.299921, 1, 0, 0.479906,-99) , 
+13, -0.749564, 1, 0, 0.50318,-99)    );
+  // itree = 567
+  fBoostWeights.push_back(0.0846751);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 39.8043, 1, 1, 0.523583,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.369524,-99) , 
+5, 0.50489, 1, 0, 0.513871,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.552711,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.529012,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.389797,-99) , 
+13, -1.10172, 1, 0, 0.425312,-99) , 
+14, 0.817446, 0, 0, 0.455223,-99) , 
+0, 132.983, 1, 0, 0.500043,-99)    );
+  // itree = 568
+  fBoostWeights.push_back(0.142864);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.601376, 0, 1, 0.585881,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.647957,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.460754,-99) , 
+12, 628.364, 1, 0, 0.500636,-99) , 
+8, 0.845006, 1, 0, 0.553672,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.570638,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536144,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.433397,-99) , 
+11, 210.156, 0, 0, 0.44969,-99) , 
+2, -1.2536, 1, 0, 0.46777,-99) , 
+12, 1172.69, 1, 0, 0.51625,-99)    );
+  // itree = 569
+  fBoostWeights.push_back(0.140291);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.17522, 0, 1, 0.569844,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.548729,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.447549,-99) , 
+6, -0.118257, 0, 0, 0.507026,-99) , 
+2, -0.34103, 1, 0, 0.533231,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.611397,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.399341,-99) , 
+3, 85.9494, 1, 0, 0.536609,-99) , 
+NN(
+0, 
+0, 
+-1, 78.3542, 0, -1, 0.415533,-99) , 
+2, 0.341727, 0, 0, 0.469109,-99) , 
+8, -1.53353, 0, 0, 0.513332,-99)    );
+  // itree = 570
+  fBoostWeights.push_back(0.0936611);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.65351, 0, 1, 0.515055,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.382335,-99) , 
+6, 1.78551, 1, 0, 0.506553,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.54044,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.381361,-99) , 
+4, 252.381, 0, 0, 0.490764,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.53834,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.28731,-99) , 
+7, 55.4928, 1, 0, 0.366656,-99) , 
+12, 1055.06, 0, 0, 0.444723,-99) , 
+8, -1.53581, 0, 0, 0.486589,-99)    );
+  // itree = 571
+  fBoostWeights.push_back(0.0870967);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 152.881, 0, 1, 0.593462,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.473071,-99) , 
+0, 118.469, 1, 0, 0.56668,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.632881,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.492416,-99) , 
+13, 1.22552, 0, 0, 0.510921,-99) , 
+NN(
+0, 
+0, 
+-1, 1.37368, 1, -1, 0.447732,-99) , 
+10, 0.727121, 0, 0, 0.485338,-99) , 
+8, 2.226, 0, 0, 0.5003,-99)    );
+  // itree = 572
+  fBoostWeights.push_back(0.0913834);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.631272,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.525835,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.363442,-99) , 
+14, 1.42145, 1, 0, 0.513103,-99) , 
+8, -2.48289, 1, 0, 0.531429,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.555391,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.474788,-99) , 
+6, -1.30713, 1, 0, 0.488407,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.521447,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.367785,-99) , 
+8, 1.60672, 0, 0, 0.421197,-99) , 
+3, 93.5446, 1, 0, 0.475054,-99) , 
+7, 66.8711, 1, 0, 0.497715,-99)    );
+  // itree = 573
+  fBoostWeights.push_back(0.0761519);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.597245,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.522015,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.470976,-99) , 
+2, -0.341657, 0, 0, 0.502739,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.55544,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.34645,-99) , 
+13, -0.705056, 1, 0, 0.416963,-99) , 
+9, 391.788, 1, 0, 0.4938,-99) , 
+11, 251.481, 0, 0, 0.499349,-99)    );
+  // itree = 574
+  fBoostWeights.push_back(0.085123);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 450.5, 0, 1, 0.519128,-99) , 
+NN(
+0, 
+0, 
+-1, 0.321465, 1, -1, 0.416935,-99) , 
+8, 2.33733, 1, 0, 0.505631,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.546242,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409419,-99) , 
+3, 87.8482, 0, 0, 0.456868,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.325708,-99) , 
+14, 0.653293, 1, 0, 0.42619,-99) , 
+5, 0.435182, 1, 0, 0.48893,-99)    );
+  // itree = 575
+  fBoostWeights.push_back(0.0956575);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0.948614, 0, 1, 0.621931,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.528353,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.438387,-99) , 
+11, 69.1544, 0, 0, 0.50313,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.312969,-99) , 
+11, 251.478, 1, 0, 0.496572,-99) , 
+1, -951.25, 1, 0, 0.504265,-99)    );
+  // itree = 576
+  fBoostWeights.push_back(0.0772563);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.588441,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.586184,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.479137,-99) , 
+6, -1.78076, 1, 0, 0.488232,-99) , 
+NN(
+0, 
+0, 
+-1, 84.3808, 1, -1, 0.420344,-99) , 
+10, -2.63407, 0, 0, 0.476813,-99) , 
+8, 2.95638, 0, 0, 0.483508,-99)    );
+  // itree = 577
+  fBoostWeights.push_back(0.117402);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.587217,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.494941,-99) , 
+0, 78.2704, 0, 0, 0.543975,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.512683,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.370485,-99) , 
+2, 0.796875, 1, 0, 0.483637,-99) , 
+11, 96.3874, 1, 0, 0.518382,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.63633,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.361468,-99) , 
+8, 0.499651, 0, 0, 0.524165,-99) , 
+NN(
+0, 
+0, 
+-1, -0.0727089, 1, -1, 0.413133,-99) , 
+12, 744.742, 1, 0, 0.445599,-99) , 
+3, 78.3542, 0, 0, 0.499725,-99)    );
+  // itree = 578
+  fBoostWeights.push_back(0.0731281);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.407946, 1, 1, 0.573012,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.427958,-99) , 
+7, 48.01, 0, 0, 0.542793,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.509873,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.43334,-99) , 
+5, 0.458581, 1, 0, 0.496602,-99) , 
+NN(
+0, 
+0, 
+-1, -1.13528, 0, -1, 0.442051,-99) , 
+11, 138.058, 1, 0, 0.484744,-99) , 
+6, 1.0715, 0, 0, 0.495723,-99)    );
+  // itree = 579
+  fBoostWeights.push_back(0.0737271);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 88.8393, 1, 1, 0.5647,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.509476,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.398087,-99) , 
+0, 193.987, 1, 0, 0.495396,-99) , 
+NN(
+0, 
+0, 
+-1, 313.363, 0, -1, 0.382164,-99) , 
+6, -1.54653, 0, 0, 0.483421,-99) , 
+5, 0.223347, 1, 0, 0.496626,-99)    );
+  // itree = 580
+  fBoostWeights.push_back(0.12425);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.583949,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.484185,-99) , 
+3, 80.253, 0, 0, 0.552089,-99) , 
+NN(
+0, 
+0, 
+-1, -0.899077, 1, -1, 0.447242,-99) , 
+6, -0.730524, 0, 0, 0.506838,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514498,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.411799,-99) , 
+11, 78.7848, 1, 0, 0.464255,-99) , 
+NN(
+0, 
+0, 
+-1, 1.17116, 0, -1, 0.34624,-99) , 
+11, 150.74, 1, 0, 0.444067,-99) , 
+6, 0.357492, 1, 0, 0.483895,-99)    );
+  // itree = 581
+  fBoostWeights.push_back(0.127641);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.576664,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.4393,-99) , 
+8, 2.52037, 1, 0, 0.547013,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.549681,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442634,-99) , 
+6, -0.596447, 1, 0, 0.480549,-99) , 
+8, -0.620536, 0, 0, 0.517651,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.502673,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.371077,-99) , 
+3, 74.5565, 0, 0, 0.483833,-99) , 
+NN(
+0, 
+0, 
+-1, 1.18125, 1, -1, 0.386134,-99) , 
+2, 0.11563, 1, 0, 0.441309,-99) , 
+7, 74.9148, 0, 0, 0.486244,-99)    );
+  // itree = 582
+  fBoostWeights.push_back(0.135319);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.588294,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.475176,-99) , 
+6, -0.11942, 1, 0, 0.53109,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.571457,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.450748,-99) , 
+6, -1.30704, 1, 0, 0.471883,-99) , 
+4, 313.738, 0, 0, 0.494973,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.595979,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.396571,-99) , 
+11, 196.313, 0, 0, 0.506303,-99) , 
+NN(
+0, 
+0, 
+-1, -2.3594, 1, -1, 0.350859,-99) , 
+8, -1.04281, 1, 0, 0.420817,-99) , 
+11, 150.74, 1, 0, 0.481741,-99)    );
+  // itree = 583
+  fBoostWeights.push_back(0.140643);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.609507,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457852,-99) , 
+2, 0.718488, 1, 0, 0.55604,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.390412,-99) , 
+2, -0.80306, 0, 0, 0.525491,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.561186,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.507608,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.41673,-99) , 
+3, 76.4554, 1, 0, 0.440104,-99) , 
+5, 0.207345, 1, 0, 0.45378,-99) , 
+14, -0.94797, 1, 0, 0.470867,-99)    );
+  // itree = 584
+  fBoostWeights.push_back(0.133286);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.647844,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.594595,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.438281,-99) , 
+13, 1.38273, 0, 0, 0.513995,-99) , 
+5, 0.2484, 1, 0, 0.546627,-99) , 
+NN(
+0, 
+0, 
+-1, 70.7589, 0, -1, 0.44363,-99) , 
+2, 0.80013, 0, 0, 0.470141,-99)    );
+  // itree = 585
+  fBoostWeights.push_back(0.111747);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.505356, 0, 1, 0.546547,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.560661,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.453599,-99) , 
+4, 227.119, 1, 0, 0.480502,-99) , 
+4, 313.738, 0, 0, 0.508243,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.509228,-99) , 
+NN(
+0, 
+0, 
+-1, 1425.93, 0, -1, 0.32804,-99) , 
+8, -2.33296, 1, 0, 0.388208,-99) , 
+13, 1.40251, 1, 0, 0.495956,-99)    );
+  // itree = 586
+  fBoostWeights.push_back(0.0769674);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 1424.76, 1, 1, 0.612269,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.60219,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508784,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.428671,-99) , 
+2, -0.539097, 0, 0, 0.485945,-99) , 
+2, -1.71219, 1, 0, 0.494059,-99) , 
+6, 1.7839, 0, 0, 0.503645,-99)    );
+  // itree = 587
+  fBoostWeights.push_back(0.0999007);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 85.7857, 0, 1, 0.627416,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500503,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.398068,-99) , 
+11, 156.745, 1, 0, 0.483025,-99) , 
+10, -3.09705, 1, 0, 0.49681,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.564094,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.424178,-99) , 
+2, -0.472342, 0, 0, 0.47228,-99) , 
+NN(
+0, 
+0, 
+-1, 1.72297, 0, -1, 0.3676,-99) , 
+13, -0.112083, 1, 0, 0.425533,-99) , 
+8, 1.43294, 1, 0, 0.475088,-99)    );
+  // itree = 588
+  fBoostWeights.push_back(0.116124);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.574282,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.484292,-99) , 
+3, 91.6458, 0, 0, 0.510117,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.555108,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.402542,-99) , 
+5, 0.437217, 0, 0, 0.447676,-99) , 
+12, 784.678, 0, 0, 0.494553,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.523619,-99) , 
+NN(
+0, 
+0, 
+-1, 1172.78, 0, -1, 0.384543,-99) , 
+8, 1.92271, 0, 0, 0.415908,-99) , 
+6, -0.83252, 0, 0, 0.475004,-99)    );
+  // itree = 589
+  fBoostWeights.push_back(0.137783);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.83559, 1, 1, 0.608534,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.534441,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.330396,-99) , 
+7, 53.645, 0, 0, 0.483537,-99) , 
+3, 82.1518, 0, 0, 0.562142,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.548404,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.45712,-99) , 
+3, 87.8125, 1, 0, 0.516399,-99) , 
+NN(
+0, 
+0, 
+-1, 0.29873, 0, -1, 0.42987,-99) , 
+8, -0.956717, 1, 0, 0.487834,-99) , 
+8, 1.31045, 0, 0, 0.514665,-99)    );
+  // itree = 590
+  fBoostWeights.push_back(0.129369);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.22982, 1, 1, 0.629761,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.581334,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.43066,-99) , 
+4, 270.381, 1, 0, 0.500184,-99) , 
+6, 0.594913, 0, 0, 0.545286,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.533548,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.383415,-99) , 
+13, 1.48974, 1, 0, 0.516775,-99) , 
+NN(
+0, 
+0, 
+-1, 82.1518, 1, -1, 0.445767,-99) , 
+9, 234.416, 0, 0, 0.478394,-99) , 
+2, -0.571475, 1, 0, 0.501196,-99)    );
+  // itree = 591
+  fBoostWeights.push_back(0.0910429);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.644245,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.443669,-99) , 
+3, 80.253, 0, 0, 0.579006,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.68111,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.469041,-99) , 
+11, 82.2732, 1, 0, 0.575835,-99) , 
+NN(
+0, 
+0, 
+-1, -0.114746, 1, -1, 0.471222,-99) , 
+4, 467.25, 0, 0, 0.48197,-99) , 
+10, 3.1489, 0, 0, 0.49258,-99)    );
+  // itree = 592
+  fBoostWeights.push_back(0.112666);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.15388, 0, 1, 0.530942,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.304809,-99) , 
+14, -1.90172, 0, 0, 0.520211,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.556965,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.431107,-99) , 
+3, 87.8482, 1, 0, 0.514025,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.513851,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.370887,-99) , 
+9, 139.203, 1, 0, 0.399725,-99) , 
+8, -1.17643, 1, 0, 0.448562,-99) , 
+7, 66.8711, 0, 0, 0.494284,-99)    );
+  // itree = 593
+  fBoostWeights.push_back(0.12684);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.558528,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.458016,-99) , 
+8, 2.07826, 1, 0, 0.544515,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.503121,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.338747,-99) , 
+5, 0.472176, 0, 0, 0.440891,-99) , 
+5, 0.42432, 1, 0, 0.5219,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.639908,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.45638,-99) , 
+11, 80.2123, 1, 0, 0.530054,-99) , 
+NN(
+0, 
+0, 
+-1, 428.964, 1, -1, 0.434104,-99) , 
+6, 0.832682, 0, 0, 0.458689,-99) , 
+13, -0.207161, 0, 0, 0.494443,-99)    );
+  // itree = 594
+  fBoostWeights.push_back(0.124001);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.531147,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.399315,-99) , 
+6, -1.78251, 0, 0, 0.521607,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.529067,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.277244,-99) , 
+11, 84.3808, 0, 0, 0.411762,-99) , 
+13, 1.66375, 1, 0, 0.509453,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.606115,-99) , 
+NN(
+0, 
+0, 
+-1, 99.2411, 1, -1, 0.418027,-99) , 
+9, 508.079, 0, 0, 0.434321,-99) , 
+10, 1.20401, 1, 0, 0.477781,-99)    );
+  // itree = 595
+  fBoostWeights.push_back(0.104792);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.876298, 1, 1, 0.530096,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.554808,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.376443,-99) , 
+2, 0.343959, 0, 0, 0.449701,-99) , 
+8, 2.377, 1, 0, 0.521321,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.578952,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.414399,-99) , 
+2, 0.105073, 0, 0, 0.505659,-99) , 
+NN(
+0, 
+0, 
+-1, 311.783, 0, -1, 0.400071,-99) , 
+11, 79.926, 1, 0, 0.447282,-99) , 
+14, -0.69048, 0, 0, 0.501016,-99)    );
+  // itree = 596
+  fBoostWeights.push_back(0.0998322);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.659548,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.470507,-99) , 
+8, -2.3321, 1, 0, 0.613906,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.548328,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.402315,-99) , 
+10, 1.21208, 0, 0, 0.507372,-99) , 
+3, 84.0506, 0, 0, 0.561185,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.633849,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.502813,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.443692,-99) , 
+8, 1.18461, 0, 0, 0.47373,-99) , 
+4, 654.577, 0, 0, 0.480288,-99) , 
+8, -1.98131, 1, 0, 0.501572,-99)    );
+  // itree = 597
+  fBoostWeights.push_back(0.133319);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.55123,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.446749,-99) , 
+3, 93.5446, 1, 0, 0.532078,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.567388,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.324068,-99) , 
+5, 0.417852, 0, 0, 0.417946,-99) , 
+6, -1.06913, 0, 0, 0.512515,-99) , 
+NN(
+0, 
+0, 
+-1, 0.59967, 1, -1, 0.432491,-99) , 
+7, 59.7033, 0, 0, 0.488436,-99)    );
+  // itree = 598
+  fBoostWeights.push_back(0.0846515);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.521874,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.429371,-99) , 
+14, -1.61795, 0, 0, 0.51435,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.599424,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.438912,-99) , 
+2, 1.48533, 0, 0, 0.457258,-99) , 
+12, 836.357, 0, 0, 0.497778,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384652,-99) , 
+5, 0.182649, 0, 0, 0.490698,-99)    );
+  // itree = 599
+  fBoostWeights.push_back(0.139204);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.589925,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.444918,-99) , 
+9, 207.337, 1, 0, 0.546387,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.348436,-99) , 
+12, 788.305, 1, 0, 0.522025,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.531798,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.450959,-99) , 
+3, 82.1518, 1, 0, 0.487621,-99) , 
+NN(
+0, 
+0, 
+-1, 1941.79, 0, -1, 0.397027,-99) , 
+0, 109.935, 1, 0, 0.459288,-99) , 
+12, 836.357, 1, 0, 0.478744,-99)    );
+  // itree = 600
+  fBoostWeights.push_back(0.0765862);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 831.827, 1, 1, 0.52207,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.571434,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.390615,-99) , 
+13, 0.959942, 0, 0, 0.438196,-99) , 
+3, 74.5565, 0, 0, 0.508795,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.329343,-99) , 
+4, 595.53, 1, 0, 0.503651,-99)    );
+  // itree = 601
+  fBoostWeights.push_back(0.0976789);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.56481,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.491598,-99) , 
+2, -0.114746, 1, 0, 0.527884,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.519204,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.414074,-99) , 
+5, 0.306522, 1, 0, 0.461336,-99) , 
+8, 1.01297, 1, 0, 0.50137,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.353925,-99) , 
+0, 275.981, 1, 0, 0.494819,-99)    );
+  // itree = 602
+  fBoostWeights.push_back(0.10238);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.661912,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.498199,-99) , 
+8, 1.01274, 0, 0, 0.577697,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.515523,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.451248,-99) , 
+13, -0.458651, 1, 0, 0.475232,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50878,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.340206,-99) , 
+5, 0.395001, 0, 0, 0.408808,-99) , 
+7, 146.809, 1, 0, 0.461532,-99) , 
+1, -951.25, 1, 0, 0.468694,-99)    );
+  // itree = 603
+  fBoostWeights.push_back(0.137043);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.473094, 1, 1, 0.614882,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.464424,-99) , 
+8, 1.21159, 1, 0, 0.562672,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.546237,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.387475,-99) , 
+4, 390.131, 1, 0, 0.515765,-99) , 
+NN(
+0, 
+0, 
+-1, 1.54648, 1, -1, 0.436431,-99) , 
+3, 87.8482, 0, 0, 0.465984,-99) , 
+5, 0.251516, 1, 0, 0.489649,-99)    );
+  // itree = 604
+  fBoostWeights.push_back(0.0894141);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.559588,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.481092,-99) , 
+0, 111.996, 0, 0, 0.506492,-99) , 
+NN(
+0, 
+0, 
+-1, 122.829, 1, -1, 0.461814,-99) , 
+12, 1172.75, 0, 0, 0.481744,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.517679,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.386246,-99) , 
+14, 1.33455, 1, 0, 0.448217,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.247522,-99) , 
+12, 1026.17, 0, 0, 0.37849,-99) , 
+6, 1.5472, 1, 0, 0.472018,-99)    );
+  // itree = 605
+  fBoostWeights.push_back(0.1393);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.590062,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.472376,-99) , 
+7, 141.047, 1, 0, 0.561363,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.539754,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.345806,-99) , 
+14, -1.29586, 0, 0, 0.480571,-99) , 
+11, 94.7989, 1, 0, 0.530473,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.634279,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.393397,-99) , 
+13, 0.577546, 1, 0, 0.535882,-99) , 
+NN(
+0, 
+0, 
+-1, -2.58636, 0, -1, 0.442349,-99) , 
+14, 1.65287, 0, 0, 0.454152,-99) , 
+14, -0.434051, 1, 0, 0.482585,-99)    );
+  // itree = 606
+  fBoostWeights.push_back(0.0993628);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.603432,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.552141,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.377231,-99) , 
+10, -2.63081, 0, 0, 0.525903,-99) , 
+NN(
+0, 
+0, 
+-1, -0.186965, 1, -1, 0.466942,-99) , 
+6, 0.357492, 0, 0, 0.490382,-99) , 
+12, 2546.01, 0, 0, 0.49938,-99)    );
+  // itree = 607
+  fBoostWeights.push_back(0.0954008);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.527097,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.439016,-99) , 
+9, 315.718, 1, 0, 0.507977,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.524912,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.39549,-99) , 
+10, 1.21052, 0, 0, 0.463769,-99) , 
+5, 0.390806, 1, 0, 0.494072,-99) , 
+NN(
+0, 
+0, 
+-1, -0.118745, 1, -1, 0.377775,-99) , 
+3, 68.8601, 0, 0, 0.487773,-99)    );
+  // itree = 608
+  fBoostWeights.push_back(0.117607);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.622093,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.519617,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.402183,-99) , 
+8, -1.361, 0, 0, 0.485392,-99) , 
+4, 350.054, 0, 0, 0.520223,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514582,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.441738,-99) , 
+10, 0.839658, 0, 0, 0.469923,-99) , 
+NN(
+0, 
+0, 
+-1, 1173.01, 0, -1, 0.381148,-99) , 
+10, 2.67746, 1, 0, 0.453811,-99) , 
+5, 0.303884, 1, 0, 0.482147,-99)    );
+  // itree = 609
+  fBoostWeights.push_back(0.137411);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.583642,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457839,-99) , 
+0, 81.5042, 1, 0, 0.525699,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.573052,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.45051,-99) , 
+6, 0.51691, 0, 0, 0.464526,-99) , 
+11, 91.4029, 0, 0, 0.493977,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.565697,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.417507,-99) , 
+6, 1.78453, 0, 0, 0.464594,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.293013,-99) , 
+3, 76.4554, 0, 0, 0.430426,-99) , 
+6, 0.833984, 1, 0, 0.479611,-99)    );
+  // itree = 610
+  fBoostWeights.push_back(0.12192);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.0442418, 0, 1, 0.614459,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.586185,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.368759,-99) , 
+3, 85.9494, 0, 0, 0.48246,-99) , 
+2, 0.347168, 1, 0, 0.568144,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.56723,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.483914,-99) , 
+13, 0.23051, 1, 0, 0.523148,-99) , 
+NN(
+0, 
+0, 
+-1, 1.13763, 1, -1, 0.420575,-99) , 
+2, -1.02734, 0, 0, 0.504641,-99) , 
+14, -1.01142, 1, 0, 0.517774,-99)    );
+  // itree = 611
+  fBoostWeights.push_back(0.15178);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.119908, 0, 1, 0.572762,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.564923,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.436483,-99) , 
+6, -0.593541, 1, 0, 0.499037,-99) , 
+5, 0.302666, 0, 0, 0.545823,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.654927,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.450931,-99) , 
+10, 2.72942, 1, 0, 0.547669,-99) , 
+NN(
+0, 
+0, 
+-1, 1.70354, 1, -1, 0.409045,-99) , 
+10, 2.17606, 0, 0, 0.453694,-99) , 
+6, 0.832194, 1, 0, 0.524024,-99)    );
+  // itree = 612
+  fBoostWeights.push_back(0.0749884);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.623693,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.590534,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.479791,-99) , 
+0, 193.928, 0, 0, 0.488189,-99) , 
+8, -2.80952, 1, 0, 0.497259,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.335011,-99) , 
+0, 275.983, 1, 0, 0.490773,-99)    );
   // itree = 613
-  fBoostWeights.push_back(0.00766674);
+  fBoostWeights.push_back(0.116523);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.521951,-99) , 
+-1, 278.04, 0, 1, 0.542115,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529138,-99) , 
+-1, 0, 1, 1, 0.579509,-99) , 
 NN(
 0, 
 0, 
--1, 0.594574, 1, -1, 0.497857,-99) , 
-14, 2635.8, 0, 0, 0.498702,-99) , 
-1, 129.992, 0, 0, 0.499874,-99)    );
+-1, 0, 1, -1, 0.456461,-99) , 
+6, -1.30852, 1, 0, 0.480457,-99) , 
+13, -0.605077, 0, 0, 0.523237,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.556108,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.316236,-99) , 
+14, 1.24102, 1, 0, 0.507755,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505891,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.357589,-99) , 
+8, -2.47957, 1, 0, 0.406796,-99) , 
+14, -0.194652, 0, 0, 0.466949,-99) , 
+8, -1.54102, 0, 0, 0.505953,-99)    );
   // itree = 614
-  fBoostWeights.push_back(0.00884316);
+  fBoostWeights.push_back(0.107514);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.52547,-99) , 
+-1, 0, 1, 1, 0.679551,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.661073,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.491762,-99) , 
+7, 200.091, 0, 0, 0.519332,-99) , 
+13, -0.382046, 1, 0, 0.566446,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.519671,-99) , 
+-1, 0, 1, 1, 0.605512,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.499458,-99) , 
-8, 177.164, 0, 0, 0.501155,-99) , 
+-1, 0, 1, -1, 0.441159,-99) , 
+4, 269.429, 0, 0, 0.553304,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.502101,-99) , 
+-1, 0, 1, 1, 0.504069,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.451266,-99) , 
-2, 0.410735, 1, 0, 0.479433,-99) , 
-8, 247.998, 1, 0, 0.499842,-99) , 
-1, 47.8664, 1, 0, 0.501024,-99)    );
+-1, 0, 1, -1, 0.423863,-99) , 
+13, -0.729013, 0, 0, 0.479865,-99) , 
+6, 0.831868, 0, 0, 0.500203,-99) , 
+10, -2.17564, 1, 0, 0.520175,-99)    );
   // itree = 615
-  fBoostWeights.push_back(0.0238879);
+  fBoostWeights.push_back(0.0826103);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, -0.208319, 1, 1, 0.521719,-99) , 
-NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504816,-99) , 
+-1, 0, 1, 1, 0.59525,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487898,-99) , 
-4, -1.46325, 0, 0, 0.500095,-99) , 
-8, 177.291, 0, 0, 0.503229,-99) , 
-NN(
+-1, 0, 1, -1, 0.482783,-99) , 
+8, -1.74847, 1, 0, 0.511808,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.530255,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503002,-99) , 
+-1, 0.329257, 0, -1, 0.464797,-99) , 
+5, 0.277185, 1, 0, 0.480035,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.479496,-99) , 
-10, 1.63327, 0, 0, 0.486783,-99) , 
-6, 212.414, 0, 0, 0.490822,-99) , 
-5, 0.357165, 1, 0, 0.49836,-99)    );
+-1, 1.6556, 0, -1, 0.368742,-99) , 
+13, 1.81754, 1, 0, 0.473836,-99)    );
   // itree = 616
-  fBoostWeights.push_back(0.0194135);
+  fBoostWeights.push_back(0.111026);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.541156,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.493926,-99) , 
-3, -1.49482, 0, 0, 0.522088,-99) , 
+-1, 0, 1, 1, 0.671578,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.490581,-99) , 
+4, 315.167, 0, 0, 0.611016,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.434621,-99) , 
+14, 0.811877, 1, 0, 0.57201,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.5629,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.390232,-99) , 
+6, -1.54218, 0, 0, 0.541057,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.523399,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505704,-99) , 
+-1, 0, 1, 1, 0.537074,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.491819,-99) , 
-1, 66.7632, 1, 0, 0.495467,-99) , 
-4, -2.3436, 1, 0, 0.496643,-99) , 
-12, 3.52454, 0, 0, 0.498684,-99)    );
+-1, 0, 1, -1, 0.462625,-99) , 
+8, -2.47149, 1, 0, 0.478385,-99) , 
+10, -2.17718, 1, 0, 0.497249,-99) , 
+7, 199.81, 0, 0, 0.507998,-99)    );
   // itree = 617
-  fBoostWeights.push_back(0.0197097);
+  fBoostWeights.push_back(0.0945976);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 97.1302, 0, 1, 0.513721,-99) , 
-NN(
-0, 
-0, 
--1, 0.638506, 1, -1, 0.496085,-99) , 
-7, 464.825, 1, 0, 0.502977,-99) , 
+-1, 0, 1, 1, 0.596683,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514791,-99) , 
+-1, 0, 1, 1, 0.538277,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.470467,-99) , 
-5, -2.11127, 0, 0, 0.496618,-99) , 
+-1, 0, 1, -1, 0.450028,-99) , 
+7, 109.618, 1, 0, 0.506419,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.457761,-99) , 
-5, -1.81973, 1, 0, 0.481826,-99) , 
-5, -1.54762, 0, 0, 0.500879,-99)    );
+-1, 1095.85, 0, -1, 0.454723,-99) , 
+8, 0.258696, 0, 0, 0.480864,-99) , 
+13, -2.06146, 1, 0, 0.48807,-99)    );
   // itree = 618
-  fBoostWeights.push_back(0.0155213);
+  fBoostWeights.push_back(0.124229);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529993,-99) , 
+-1, 0, 1, 1, 0.540173,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.376753,-99) , 
+1, -951.281, 0, 0, 0.532555,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50416,-99) , 
+-1, 0, 1, 1, 0.587234,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.479013,-99) , 
-13, 188.106, 1, 0, 0.502633,-99) , 
-13, 267.159, 0, 0, 0.503807,-99) , 
+-1, 0, 1, -1, 0.416636,-99) , 
+2, 0.339425, 0, 0, 0.482538,-99) , 
+8, 1.25828, 1, 0, 0.514599,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.44137,-99) , 
-2, 0.682011, 1, 0, 0.502002,-99)    );
+-1, 0.714704, 0, -1, 0.380298,-99) , 
+6, 1.78551, 1, 0, 0.507777,-99)    );
   // itree = 619
-  fBoostWeights.push_back(0.0151324);
+  fBoostWeights.push_back(0.0755569);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.530501,-99) , 
+-1, 325.321, 0, 1, 0.633461,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.539432,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.379929,-99) , 
+2, 1.02923, 1, 0, 0.513765,-99) , 
+0, 120.16, 0, 0, 0.550492,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.503739,-99) , 
+-1, 0, 1, 1, 0.500018,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.475016,-99) , 
-1, 123.653, 1, 0, 0.501991,-99) , 
+-1, 0, 1, -1, 0.422226,-99) , 
+6, -1.59169, 0, 0, 0.486953,-99) , 
 NN(
 0, 
 0, 
--1, 0.863276, 1, -1, 0.48364,-99) , 
-5, 1.16212, 1, 0, 0.499365,-99) , 
-5, 2.0238, 0, 0, 0.500557,-99)    );
+-1, 0, 1, -1, 0.316361,-99) , 
+6, 0.674735, 1, 0, 0.476872,-99) , 
+6, 0.833659, 0, 0, 0.496665,-99)    );
   // itree = 620
-  fBoostWeights.push_back(0.0156941);
+  fBoostWeights.push_back(0.0737678);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.540384,-99) , 
-NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.503191,-99) , 
+-1, 0, 1, 1, 0.538154,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.473953,-99) , 
-0, -1.239, 0, 0, 0.501461,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501123,-99) , 
+-1, 0, 1, -1, 0.485207,-99) , 
+4, 264.958, 0, 0, 0.519952,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.45846,-99) , 
-10, -0.211994, 1, 0, 0.47963,-99) , 
-1, 54.8946, 0, 0, 0.498911,-99) , 
-1, 136.326, 0, 0, 0.500532,-99)    );
+-1, -0.537795, 0, -1, 0.457155,-99) , 
+2, 0.800456, 1, 0, 0.505071,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.388275,-99) , 
+4, 540.964, 1, 0, 0.499603,-99)    );
   // itree = 621
-  fBoostWeights.push_back(0.0228962);
+  fBoostWeights.push_back(0.143558);
   fForest.push_back( 
 NN(
 NN(
@@ -20023,148 +21510,184 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511359,-99) , 
+-1, 0, 1, 1, 0.560308,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.49567,-99) , 
-9, 376.086, 0, 0, 0.499666,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51063,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47231,-99) , 
-0, -0.443922, 1, 0, 0.479386,-99) , 
-12, 3.02619, 1, 0, 0.496401,-99) , 
-NN(
+-1, 0, 1, -1, 0.438798,-99) , 
+3, 74.5565, 0, 0, 0.541202,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.506765,-99) , 
+-1, 0, 1, 1, 0.541665,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.466017,-99) , 
-1, 84.5442, 1, 0, 0.490589,-99) , 
+-1, 0, 1, -1, 0.407431,-99) , 
+3, 89.747, 0, 0, 0.458049,-99) , 
+7, 104.837, 1, 0, 0.51011,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.455001,-99) , 
-2, 0.450648, 1, 0, 0.478893,-99) , 
-12, -3.07863, 0, 0, 0.494039,-99)    );
+-1, 0, 1, 1, 0.618879,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.452438,-99) , 
+4, 334.548, 0, 0, 0.509193,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500639,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384326,-99) , 
+11, 130.538, 0, 0, 0.416069,-99) , 
+14, -0.0438362, 1, 0, 0.449024,-99) , 
+10, -1.1808, 0, 0, 0.484988,-99)    );
   // itree = 622
-  fBoostWeights.push_back(0.0260959);
+  fBoostWeights.push_back(0.114228);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1501.67, 0, 1, 0.50648,-99) , 
+-1, 348.435, 0, 1, 0.644014,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.510342,-99) , 
+-1, 0, 1, 1, 0.600131,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.477038,-99) , 
-8, 96.1637, 0, 0, 0.489911,-99) , 
-12, -1.62005, 0, 0, 0.500539,-99) , 
+-1, 0, 1, -1, 0.413839,-99) , 
+10, -2.887, 0, 0, 0.475125,-99) , 
+8, 1.27374, 1, 0, 0.551859,-99) , 
 NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50661,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479808,-99) , 
-4, -0.831533, 0, 0, 0.498571,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.500612,-99) , 
+-1, 0, 1, 1, 0.508799,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.464379,-99) , 
-1, 79.2631, 0, 0, 0.478811,-99) , 
-14, 831.74, 0, 0, 0.488636,-99) , 
-2, 0.414185, 1, 0, 0.495401,-99)    );
+-1, 0, 1, -1, 0.436596,-99) , 
+12, 1007.06, 0, 0, 0.475315,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.330147,-99) , 
+12, 2629.76, 1, 0, 0.468125,-99) , 
+10, -2.65923, 1, 0, 0.486227,-99)    );
   // itree = 623
-  fBoostWeights.push_back(0.0147424);
+  fBoostWeights.push_back(0.0739073);
   fForest.push_back( 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.526456,-99) , 
+-1, 0, 1, 1, 0.705023,-99) , 
 NN(
 NN(
+0, 
+0, 
+-1, 273.238, 0, 1, 0.567152,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529959,-99) , 
+-1, 0, 1, 1, 0.622665,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.496704,-99) , 
-5, 2.02377, 0, 0, 0.497827,-99) , 
-NN(
-0, 
-0, 
--1, 363.44, 1, -1, 0.477463,-99) , 
-0, -0.747014, 0, 0, 0.495165,-99) , 
-1, 136.326, 0, 0, 0.496389,-99)    );
+-1, 0, 1, -1, 0.48987,-99) , 
+11, 251.486, 0, 0, 0.498384,-99) , 
+13, 0.817506, 0, 0, 0.516677,-99) , 
+13, -2.41709, 1, 0, 0.523472,-99)    );
   // itree = 624
-  fBoostWeights.push_back(0.0127218);
+  fBoostWeights.push_back(0.108103);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532679,-99) , 
-NN(
 NN(
 0, 
 0, 
--1, 115.487, 0, 1, 0.503805,-99) , 
+-1, 1.16943, 0, 1, 0.528223,-99) , 
 NN(
 0, 
 0, 
--1, 123.336, 1, -1, 0.488487,-99) , 
-9, 383.182, 1, 0, 0.500491,-99) , 
-2, 0.68528, 0, 0, 0.501542,-99)    );
+-1, 0, 1, -1, 0.368873,-99) , 
+6, 1.7809, 1, 0, 0.519758,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.637325,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.454192,-99) , 
+4, 328.548, 0, 0, 0.522253,-99) , 
+NN(
+0, 
+0, 
+-1, 130.011, 1, -1, 0.37676,-99) , 
+8, 0.912667, 0, 0, 0.436736,-99) , 
+13, 0.575701, 1, 0, 0.496408,-99)    );
   // itree = 625
-  fBoostWeights.push_back(0.014535);
+  fBoostWeights.push_back(0.110991);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 79.3631, 0, 1, 0.533391,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.522401,-99) , 
+-1, 0, 1, 1, 0.522483,-99) , 
 NN(
 0, 
 0, 
--1, 248.271, 1, -1, 0.495074,-99) , 
-4, -1.9484, 1, 0, 0.496485,-99) , 
-4, -2.40476, 1, 0, 0.498412,-99)    );
+-1, 0, 1, -1, 0.44212,-99) , 
+14, 1.29616, 1, 0, 0.512753,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.583299,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.357988,-99) , 
+8, 1.34147, 0, 0, 0.447055,-99) , 
+2, -1.02846, 0, 0, 0.499913,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.585673,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.513559,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.382468,-99) , 
+8, 2.09514, 0, 0, 0.41221,-99) , 
+4, 509.25, 0, 0, 0.43364,-99) , 
+5, 0.424332, 1, 0, 0.485447,-99)    );
   // itree = 626
-  fBoostWeights.push_back(0.0247469);
+  fBoostWeights.push_back(0.114311);
   fForest.push_back( 
 NN(
 NN(
@@ -20172,482 +21695,548 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.518349,-99) , 
+-1, 0, 1, 1, 0.601331,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.496936,-99) , 
-0, 0.327922, 1, 0, 0.504536,-99) , 
-NN(
-0, 
-0, 
--1, -0.987307, 0, -1, 0.485544,-99) , 
-4, -0.878422, 0, 0, 0.499142,-99) , 
-NN(
+-1, 0, 1, -1, 0.494278,-99) , 
+2, 0.347726, 1, 0, 0.564396,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50309,-99) , 
+-1, 0, 1, 1, 0.631081,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.472094,-99) , 
-9, 376.092, 0, 0, 0.487175,-99) , 
+-1, 0, 1, -1, 0.472978,-99) , 
+2, -1.2557, 1, 0, 0.496087,-99) , 
+3, 82.1518, 1, 0, 0.523136,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.450241,-99) , 
-12, -2.09963, 0, 0, 0.480139,-99) , 
-11, 372.293, 1, 0, 0.49571,-99)    );
+-1, 0, 1, 1, 0.606826,-99) , 
+NN(
+0, 
+0, 
+-1, 165.052, 0, -1, 0.43425,-99) , 
+13, 1.40782, 0, 0, 0.459195,-99) , 
+5, 0.42432, 1, 0, 0.508632,-99)    );
   // itree = 627
-  fBoostWeights.push_back(0.0201126);
+  fBoostWeights.push_back(0.0638155);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 79.3201, 0, 1, 0.51878,-99) , 
+-1, 0, 1, 1, 0.602578,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.519831,-99) , 
+-1, 0, 1, 1, 0.573336,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.49747,-99) , 
-12, 2.05629, 0, 0, 0.501312,-99) , 
-4, -0.957855, 1, 0, 0.505033,-99) , 
+-1, 0, 1, -1, 0.449084,-99) , 
+11, 70.8954, 1, 0, 0.501103,-99) , 
+12, 1226.48, 0, 0, 0.550404,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.528331,-99) , 
+-1, 0, 1, 1, 0.502367,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.494664,-99) , 
-9, 353.387, 0, 0, 0.504323,-99) , 
+-1, 0, 1, -1, 0.305667,-99) , 
+11, 136.328, 1, 0, 0.494755,-99) , 
 NN(
 0, 
 0, 
--1, 0.112056, 1, -1, 0.483168,-99) , 
-4, -0.502118, 0, 0, 0.492623,-99) , 
-3, -0.799252, 0, 0, 0.501643,-99)    );
+-1, -0.0406262, 1, -1, 0.417945,-99) , 
+11, 150.748, 1, 0, 0.481085,-99) , 
+7, 185.961, 0, 0, 0.492056,-99)    );
   // itree = 628
-  fBoostWeights.push_back(0.0192714);
+  fBoostWeights.push_back(0.084782);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 369.414, 0, 1, 0.530296,-99) , 
-NN(
 NN(
 0, 
 0, 
--1, 103.204, 0, 1, 0.506539,-99) , 
+-1, 1.49349, 0, 1, 0.522176,-99) , 
 NN(
 0, 
 0, 
--1, 370.053, 1, -1, 0.488848,-99) , 
-0, 0.266577, 0, 0, 0.499615,-99) , 
-0, -1.31846, 1, 0, 0.501418,-99)    );
+-1, 0.468796, 1, -1, 0.447581,-99) , 
+14, -0.970823, 0, 0, 0.505893,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.552973,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.456326,-99) , 
+2, 1.02881, 0, 0, 0.472455,-99) , 
+NN(
+0, 
+0, 
+-1, 1.20154, 0, -1, 0.35416,-99) , 
+7, 32.6352, 0, 0, 0.453952,-99) , 
+7, 74.9148, 0, 0, 0.484087,-99)    );
   // itree = 629
-  fBoostWeights.push_back(0.0225772);
+  fBoostWeights.push_back(0.12694);
   fForest.push_back( 
 NN(
 NN(
+NN(
+NN(
 0, 
 0, 
--1, 3.04373, 0, 1, 0.511009,-99) , 
+-1, 0, 1, 1, 0.590504,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.44215,-99) , 
+10, -3.14318, 0, 0, 0.574772,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.526042,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.328991,-99) , 
+2, 0.738616, 0, 0, 0.476257,-99) , 
+2, 0.347377, 1, 0, 0.541482,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.53431,-99) , 
+-1, 0, 1, 1, 0.586941,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.499064,-99) , 
-6, 86.314, 0, 0, 0.511176,-99) , 
+-1, 0, 1, -1, 0.45109,-99) , 
+2, -0.122954, 0, 0, 0.525331,-99) , 
 NN(
 0, 
 0, 
--1, -1.30855, 0, -1, 0.489036,-99) , 
-8, 50.7251, 1, 0, 0.49803,-99) , 
-7, 543.653, 0, 0, 0.50434,-99)    );
+-1, 0.356306, 1, -1, 0.451732,-99) , 
+5, 0.251516, 1, 0, 0.471632,-99) , 
+3, 80.253, 1, 0, 0.497237,-99)    );
   // itree = 630
-  fBoostWeights.push_back(0.017769);
+  fBoostWeights.push_back(0.113122);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, -2.14091, 1, 1, 0.506611,-99) , 
+-1, 0, 1, 1, 0.597092,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.49077,-99) , 
+0, 78.2655, 1, 0, 0.549076,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504979,-99) , 
+-1, 0, 1, 1, 0.5146,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.480224,-99) , 
-5, 0.35711, 0, 0, 0.489608,-99) , 
-0, 1.38989, 1, 0, 0.503734,-99) , 
+-1, 0, 1, -1, 0.432281,-99) , 
+2, -0.0998186, 0, 0, 0.47816,-99) , 
+5, 0.303897, 0, 0, 0.516834,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.46244,-99) , 
-1, 136.386, 1, 0, 0.502351,-99)    );
+-1, 0, 1, 1, 0.668557,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.470402,-99) , 
+5, 0.417979, 0, 0, 0.577843,-99) , 
+NN(
+0, 
+0, 
+-1, 0.0092788, 1, -1, 0.439397,-99) , 
+3, 69.125, 1, 0, 0.463275,-99) , 
+3, 82.1518, 0, 0, 0.495852,-99)    );
   // itree = 631
-  fBoostWeights.push_back(0.0192989);
+  fBoostWeights.push_back(0.0997073);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0.39959, 0, 1, 0.533996,-99) , 
+-1, 0, 1, 1, 0.601207,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.437119,-99) , 
+9, 396.946, 1, 0, 0.559468,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529298,-99) , 
+-1, 0, 1, 1, 0.515657,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.497435,-99) , 
-4, 2.31874, 0, 0, 0.4993,-99) , 
-1, 109.204, 0, 0, 0.501809,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509634,-99) , 
-NN(
+-1, 0, 1, -1, 0.449826,-99) , 
+8, -0.321289, 0, 0, 0.488542,-99) , 
+12, 1691.45, 0, 0, 0.506482,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.510389,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472733,-99) , 
-5, -1.07131, 1, 0, 0.480533,-99) , 
-3, 1.3747, 0, 0, 0.485108,-99) , 
-9, 383.182, 1, 0, 0.498132,-99)    );
+-1, 0, 1, -1, 0.386386,-99) , 
+8, -2.78883, 0, 0, 0.499016,-99)    );
   // itree = 632
-  fBoostWeights.push_back(0.019681);
+  fBoostWeights.push_back(0.107617);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 1.32825, 1, 1, 0.544142,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492204,-99) , 
-4, 2.43295, 1, 0, 0.522903,-99) , 
-NN(
+-1, 0, 1, 1, 0.580051,-99) , 
 NN(
 0, 
 0, 
--1, -0.36064, 1, 1, 0.527934,-99) , 
+-1, 0, 1, -1, 0.476995,-99) , 
+11, 103.382, 1, 0, 0.543645,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.512101,-99) , 
+-1, 0, 1, 1, 0.510802,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.495584,-99) , 
-1, 98.3245, 0, 0, 0.498602,-99) , 
-6, 234.061, 0, 0, 0.500781,-99) , 
-4, 1.86148, 0, 0, 0.50319,-99)    );
+-1, 0, 1, -1, 0.381978,-99) , 
+9, 249.667, 1, 0, 0.463469,-99) , 
+5, 0.343343, 0, 0, 0.505681,-99) , 
+NN(
+0, 
+0, 
+-1, 389.873, 1, -1, 0.447765,-99) , 
+13, -0.227791, 1, 0, 0.47355,-99)    );
   // itree = 633
-  fBoostWeights.push_back(0.0190946);
+  fBoostWeights.push_back(0.129159);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, -1.66183, 1, 1, 0.511463,-99) , 
+-1, 128.662, 1, 1, 0.595264,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.501416,-99) , 
+-1, 0, 1, 1, 0.540663,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.468028,-99) , 
-1, 60.1158, 0, 0, 0.496321,-99) , 
-0, 0.284559, 1, 0, 0.503028,-99) , 
+-1, 0, 1, -1, 0.368953,-99) , 
+5, 0.393339, 1, 0, 0.498155,-99) , 
+11, 90.275, 0, 0, 0.546657,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.45194,-99) , 
-2, 0.686152, 1, 0, 0.501632,-99)    );
+-1, 0, 1, 1, 0.52848,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.392059,-99) , 
+3, 76.4554, 0, 0, 0.51003,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.542253,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.422228,-99) , 
+4, 223.607, 1, 0, 0.448443,-99) , 
+4, 298.976, 0, 0, 0.479059,-99) , 
+10, -1.66504, 1, 0, 0.50539,-99)    );
   // itree = 634
-  fBoostWeights.push_back(0.0155814);
+  fBoostWeights.push_back(0.0951958);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.531465,-99) , 
+-1, -0.426909, 0, 1, 0.557766,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432519,-99) , 
+12, 773.198, 0, 0, 0.54104,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504397,-99) , 
+-1, 0, 1, 1, 0.51997,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490972,-99) , 
-5, 0.595326, 1, 0, 0.500046,-99) , 
+-1, 0, 1, -1, 0.447373,-99) , 
+9, 181.827, 0, 0, 0.490368,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.461557,-99) , 
-6, 240.301, 1, 0, 0.498749,-99) , 
-6, 306.965, 0, 0, 0.499812,-99)    );
+-1, 0.358054, 1, -1, 0.394108,-99) , 
+9, 393.315, 1, 0, 0.478471,-99) , 
+10, 2.18429, 0, 0, 0.497813,-99)    );
   // itree = 635
-  fBoostWeights.push_back(0.034007);
+  fBoostWeights.push_back(0.100241);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 694.313, 1, 1, 0.525474,-99) , 
+-1, 0, 1, 1, 0.694233,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.487169,-99) , 
+3, 84.0208, 0, 0, 0.610295,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.523736,-99) , 
+-1, 0, 1, 1, 0.544712,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.473823,-99) , 
-11, 177.336, 1, 0, 0.497075,-99) , 
-4, -0.757876, 0, 0, 0.511896,-99) , 
+-1, 0, 1, -1, 0.46782,-99) , 
+5, 0.366298, 0, 0, 0.500554,-99) , 
+13, 1.34115, 0, 0, 0.5151,-99) , 
 NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521414,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496101,-99) , 
-10, 0.629366, 1, 0, 0.503242,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51587,-99) , 
+-1, 0, 1, 1, 0.511967,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.477402,-99) , 
-10, -2.69554, 1, 0, 0.48784,-99) , 
-10, -0.700594, 0, 0, 0.497017,-99) , 
-3, -0.774104, 1, 0, 0.501292,-99)    );
+-1, 0, 1, -1, 0.371757,-99) , 
+0, 189.879, 1, 0, 0.496253,-99) , 
+NN(
+0, 
+0, 
+-1, 87.8482, 1, -1, 0.387371,-99) , 
+7, 59.6999, 0, 0, 0.463208,-99) , 
+12, 1069.42, 0, 0, 0.49109,-99)    );
   // itree = 636
-  fBoostWeights.push_back(0.0198769);
+  fBoostWeights.push_back(0.139685);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.522869,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499644,-99) , 
-13, 119.312, 0, 0, 0.504496,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473722,-99) , 
-11, 498.185, 1, 0, 0.50326,-99) , 
-NN(
+-1, 0, 1, 1, 0.657726,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.519836,-99) , 
+-1, 0, 1, 1, 0.553206,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.4778,-99) , 
-10, 0.505539, 1, 0, 0.502502,-99) , 
+-1, 0, 1, -1, 0.341457,-99) , 
+4, 339.167, 1, 0, 0.50349,-99) , 
+10, -2.98507, 1, 0, 0.543778,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0.555699, 1, -1, 0.477751,-99) , 
-3, 0.570254, 0, 0, 0.486416,-99) , 
-9, 367.493, 1, 0, 0.498978,-99)    );
+-1, 0, 1, 1, 0.616028,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.371811,-99) , 
+11, 97.0143, 1, 0, 0.528475,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.579234,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.448902,-99) , 
+14, -1.85747, 1, 0, 0.459672,-99) , 
+3, 95.4435, 0, 0, 0.470411,-99) , 
+13, 1.27329, 0, 0, 0.482007,-99)    );
   // itree = 637
-  fBoostWeights.push_back(0.0160269);
+  fBoostWeights.push_back(0.0521575);
   fForest.push_back( 
 NN(
 NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.650136,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.515954,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498835,-99) , 
-4, 1.16438, 0, 0, 0.503791,-99) , 
+-1, 0, 1, 1, 0.604605,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.501665,-99) , 
+-1, 0, 1, 1, 0.503023,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.471443,-99) , 
-2, 0.410039, 1, 0, 0.488171,-99) , 
-5, -1.07146, 0, 0, 0.500709,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.46601,-99) , 
-1, 136.112, 1, 0, 0.499493,-99)    );
+-1, 0, 1, -1, 0.434305,-99) , 
+3, 92.2917, 1, 0, 0.486568,-99) , 
+12, 2854.34, 0, 0, 0.491889,-99) , 
+3, 66.9613, 1, 0, 0.496977,-99)    );
   // itree = 638
-  fBoostWeights.push_back(0.0246277);
+  fBoostWeights.push_back(0.110923);
   fForest.push_back( 
 NN(
 NN(
 NN(
+0, 
+0, 
+-1, 768.138, 1, 1, 0.584709,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51371,-99) , 
+-1, 0, 1, -1, 0.40967,-99) , 
+8, -2.04469, 0, 0, 0.552814,-99) , 
 NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493711,-99) , 
-5, -1.0714, 0, 0, 0.509554,-99) , 
-NN(
-0, 
-0, 
--1, 1.43382, 1, -1, 0.48879,-99) , 
-6, 135.918, 1, 0, 0.504808,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504261,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500162,-99) , 
+-1, 0, 1, 1, 0.52307,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.471112,-99) , 
-14, 1035.03, 0, 0, 0.481578,-99) , 
-2, 0.199455, 1, 0, 0.489644,-99) , 
-2, 0.277327, 0, 0, 0.501175,-99)    );
+-1, 0, 1, -1, 0.43737,-99) , 
+13, -0.823349, 0, 0, 0.496907,-99) , 
+NN(
+0, 
+0, 
+-1, 46.9031, 0, -1, 0.423141,-99) , 
+13, 1.00656, 1, 0, 0.484214,-99) , 
+0, 118.784, 0, 0, 0.504618,-99)    );
   // itree = 639
-  fBoostWeights.push_back(0.0224845);
+  fBoostWeights.push_back(0.141801);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 430.203, 1, 1, 0.530038,-99) , 
+-1, 0.402828, 1, 1, 0.606791,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.520349,-99) , 
+-1, 0, 1, 1, 0.561776,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.48519,-99) , 
-1, 51.4224, 1, 0, 0.501545,-99) , 
-5, 0.118752, 1, 0, 0.517304,-99) , 
+-1, 0, 1, -1, 0.450848,-99) , 
+12, 771.333, 1, 0, 0.48687,-99) , 
+12, 1923.5, 0, 0, 0.506992,-99) , 
 NN(
-NN(
-0, 
-0, 
--1, -1.52308, 1, 1, 0.503196,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.507815,-99) , 
+-1, 0, 1, 1, 0.607051,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.476056,-99) , 
-12, -2.10077, 1, 0, 0.483736,-99) , 
-0, -0.0571385, 0, 0, 0.497246,-99) , 
-1, 60.2614, 1, 0, 0.500864,-99)    );
+-1, 0, 1, -1, 0.441869,-99) , 
+12, 1301.8, 0, 0, 0.518909,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.520665,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409161,-99) , 
+3, 97.3423, 0, 0, 0.427259,-99) , 
+7, 124.399, 0, 0, 0.462555,-99) , 
+4, 298.976, 1, 0, 0.486525,-99)    );
   // itree = 640
-  fBoostWeights.push_back(0.0260365);
+  fBoostWeights.push_back(0.118158);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536325,-99) , 
-NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.507418,-99) , 
+-1, 0, 1, 1, 0.58174,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.482639,-99) , 
-7, 697.584, 1, 0, 0.502054,-99) , 
-7, 1305.57, 0, 0, 0.50321,-99) , 
+-1, 0, 1, -1, 0.47919,-99) , 
+7, 61.8678, 0, 0, 0.548887,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.410209,-99) , 
+8, -2.48637, 0, 0, 0.531558,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.52938,-99) , 
+-1, 0, 1, 1, 0.520351,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.486279,-99) , 
-4, 0.580476, 0, 0, 0.502725,-99) , 
+-1, 0, 1, -1, 0.432253,-99) , 
+10, 0.751395, 0, 0, 0.480574,-99) , 
 NN(
 0, 
 0, 
--1, 0.718002, 1, -1, 0.471011,-99) , 
-9, 352.577, 1, 0, 0.485251,-99) , 
-1, 98.5125, 1, 0, 0.500026,-99)    );
+-1, 0, 1, -1, 0.254993,-99) , 
+2, -0.212681, 0, 0, 0.46695,-99) , 
+2, -0.343262, 1, 0, 0.493481,-99)    );
   // itree = 641
-  fBoostWeights.push_back(0.0210572);
+  fBoostWeights.push_back(0.114143);
   fForest.push_back( 
 NN(
 NN(
@@ -20655,289 +22244,301 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.537881,-99) , 
+-1, 0, 1, 1, 0.647355,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.4919,-99) , 
-8, 78.6476, 1, 0, 0.515926,-99) , 
-NN(
-0, 
-0, 
--1, -1.30947, 0, -1, 0.493688,-99) , 
-12, 3.04864, 0, 0, 0.495888,-99) , 
+-1, 0, 1, -1, 0.454778,-99) , 
+3, 80.253, 0, 0, 0.591412,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.501274,-99) , 
+-1, 0, 1, 1, 0.523196,-99) , 
 NN(
 0, 
 0, 
--1, 92.4252, 0, -1, 0.469706,-99) , 
-1, 66.9099, 1, 0, 0.478716,-99) , 
-3, -1.22822, 0, 0, 0.492821,-99)    );
+-1, 0, 1, -1, 0.441607,-99) , 
+11, 98.1897, 0, 0, 0.477236,-99) , 
+6, 1.30822, 0, 0, 0.492064,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.289647,-99) , 
+14, 2.1327, 1, 0, 0.486793,-99)    );
   // itree = 642
-  fBoostWeights.push_back(0.0238519);
+  fBoostWeights.push_back(0.138678);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, -0.15967, 0, 1, 0.522515,-99) , 
+-1, 0, 1, 1, 0.665428,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.512204,-99) , 
+-1, 0, 1, 1, 0.568912,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.48125,-99) , 
-3, 0.322528, 1, 0, 0.501645,-99) , 
-0, 0.809232, 1, 0, 0.514201,-99) , 
+-1, 0, 1, -1, 0.422608,-99) , 
+3, 74.5565, 0, 0, 0.548447,-99) , 
+8, 2.19657, 0, 0, 0.57045,-99) , 
 NN(
-NN(
-0, 
-0, 
--1, -0.975666, 1, 1, 0.50412,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.505659,-99) , 
+-1, 0, 1, 1, 0.592407,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.461021,-99) , 
-2, 0.3823, 0, 0, 0.483991,-99) , 
-12, 2.57269, 1, 0, 0.499798,-99) , 
-7, 449.499, 1, 0, 0.504865,-99)    );
+-1, 0, 1, -1, 0.445731,-99) , 
+12, 1431.59, 1, 0, 0.542779,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.570996,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.445023,-99) , 
+2, -1.48286, 1, 0, 0.45919,-99) , 
+6, -1.54653, 1, 0, 0.471133,-99) , 
+0, 111.994, 0, 0, 0.502599,-99)    );
   // itree = 643
-  fBoostWeights.push_back(0.0160079);
+  fBoostWeights.push_back(0.0983729);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 42.4123, 0, 1, 0.530527,-99) , 
+-1, -1.78076, 1, 1, 0.567384,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.506943,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.349751,-99) , 
+4, 475.821, 1, 0, 0.494119,-99) , 
+13, 0.133953, 0, 0, 0.517978,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.519588,-99) , 
+-1, 0, 1, 1, 0.60436,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.497785,-99) , 
-14, 1510.47, 0, 0, 0.500754,-99) , 
+-1, 0, 1, -1, 0.44746,-99) , 
+3, 76.4554, 1, 0, 0.493152,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.4704,-99) , 
-4, 2.32247, 1, 0, 0.499088,-99) , 
-12, 3.50281, 0, 0, 0.501709,-99)    );
+-1, -0.181083, 0, -1, 0.323798,-99) , 
+2, 1.18066, 0, 0, 0.43487,-99) , 
+2, 0.799642, 1, 0, 0.500859,-99)    );
   // itree = 644
-  fBoostWeights.push_back(0.0148505);
+  fBoostWeights.push_back(0.175145);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.537531,-99) , 
+-1, 0, 1, 1, 0.612378,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.418756,-99) , 
+10, -2.65909, 0, 0, 0.573408,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.500879,-99) , 
+-1, 0, 1, 1, 0.541319,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.48264,-99) , 
-1, 98.1021, 1, 0, 0.497658,-99) , 
-7, 1376.64, 0, 0, 0.498932,-99) , 
+-1, 0, 1, -1, 0.429792,-99) , 
+14, 0.541354, 0, 0, 0.470747,-99) , 
+7, 122.246, 0, 0, 0.508486,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51322,-99) , 
+-1, 0, 1, 1, 0.54898,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.472553,-99) , 
-10, 0.772675, 1, 0, 0.494198,-99) , 
+-1, 0, 1, -1, 0.404533,-99) , 
+8, 0.478678, 0, 0, 0.477206,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.44597,-99) , 
-1, 73.1518, 0, 0, 0.476265,-99) , 
-4, 1.93608, 1, 0, 0.496839,-99)    );
+-1, 0, 1, 1, 0.544248,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.349399,-99) , 
+10, -2.59375, 1, 0, 0.387921,-99) , 
+3, 85.9167, 1, 0, 0.437217,-99) , 
+9, 224.772, 1, 0, 0.474794,-99)    );
   // itree = 645
-  fBoostWeights.push_back(0.0223944);
+  fBoostWeights.push_back(0.0940903);
   fForest.push_back( 
 NN(
 NN(
 NN(
+0, 
+0, 
+-1, -1.99831, 1, 1, 0.517204,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.544906,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490796,-99) , 
-8, 90.3765, 1, 0, 0.524473,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505114,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482987,-99) , 
-10, -2.05659, 0, 0, 0.501719,-99) , 
-14, 535.074, 1, 0, 0.504838,-99) , 
+-1, 0.992397, 0, -1, 0.40659,-99) , 
+13, 0.939782, 1, 0, 0.498203,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.505685,-99) , 
+-1, 0, 1, 1, 0.516194,-99) , 
 NN(
 0, 
 0, 
--1, 0.833494, 1, -1, 0.48352,-99) , 
-10, 2.09413, 0, 0, 0.48933,-99) , 
-14, 1162.81, 1, 0, 0.500679,-99)    );
+-1, -1.57129, 0, -1, 0.418085,-99) , 
+12, 1836.31, 0, 0, 0.437693,-99) , 
+5, 0.321566, 0, 0, 0.472084,-99)    );
   // itree = 646
-  fBoostWeights.push_back(0.0265236);
+  fBoostWeights.push_back(0.142755);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.540529,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482891,-99) , 
-11, 549.137, 1, 0, 0.521651,-99) , 
-NN(
-0, 
-0, 
--1, 0.995274, 1, -1, 0.493821,-99) , 
-11, 387.452, 0, 0, 0.498845,-99) , 
-NN(
+-1, 1501.28, 0, 1, 0.586746,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.518663,-99) , 
+-1, 0, 1, 1, 0.540476,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487064,-99) , 
-1, 123.8, 0, 0, 0.48923,-99) , 
+-1, 0, 1, -1, 0.424448,-99) , 
+13, -0.682295, 1, 0, 0.468735,-99) , 
+6, 0.359375, 0, 0, 0.518161,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.446035,-99) , 
-5, -1.78537, 0, 0, 0.486744,-99) , 
-12, -0.250659, 0, 0, 0.492984,-99)    );
+-1, 0, 1, 1, 0.555224,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.439244,-99) , 
+12, 1552.07, 1, 0, 0.515359,-99) , 
+NN(
+0, 
+0, 
+-1, -1.02706, 0, -1, 0.420661,-99) , 
+8, 1.86677, 0, 0, 0.460678,-99) , 
+10, 1.69401, 0, 0, 0.48233,-99)    );
   // itree = 647
-  fBoostWeights.push_back(0.0327333);
+  fBoostWeights.push_back(0.101637);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.524864,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486166,-99) , 
-12, -3.0284, 0, 0, 0.519415,-99) , 
+-1, 3.13667, 0, 1, 0.531719,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513102,-99) , 
+-1, 0, 1, 1, 0.504756,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.463101,-99) , 
-1, 56.1093, 1, 0, 0.48875,-99) , 
-5, -0.833306, 0, 0, 0.511472,-99) , 
+-1, 0, 1, -1, 0.374314,-99) , 
+12, 1483.26, 0, 0, 0.442212,-99) , 
+13, -0.679218, 0, 0, 0.505717,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.506621,-99) , 
+-1, 0, 1, 1, 0.518891,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.45484,-99) , 
-3, 1.91682, 1, 0, 0.502955,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514169,-99) , 
+-1, 0, 1, -1, 0.400073,-99) , 
+11, 82.1293, 1, 0, 0.471525,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.479794,-99) , 
-0, 1.33475, 0, 0, 0.490277,-99) , 
-11, 201.171, 0, 0, 0.496858,-99) , 
-1, 66.9378, 1, 0, 0.500776,-99)    );
+-1, 642.193, 0, -1, 0.363106,-99) , 
+14, 0.59545, 1, 0, 0.439569,-99) , 
+12, 831.797, 0, 0, 0.48736,-99)    );
   // itree = 648
-  fBoostWeights.push_back(0.0242216);
+  fBoostWeights.push_back(0.131232);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.539524,-99) , 
+-1, 0, 1, 1, 0.618016,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457743,-99) , 
+3, 91.6458, 1, 0, 0.58281,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.512675,-99) , 
+-1, 0, 1, 1, 0.586841,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.458417,-99) , 
-5, 0.118968, 1, 0, 0.498218,-99) , 
-4, 1.59307, 0, 0, 0.510899,-99) , 
+-1, 0, 1, -1, 0.358891,-99) , 
+6, 1.58047, 0, 0, 0.432599,-99) , 
+6, 0.360282, 1, 0, 0.537569,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504762,-99) , 
+-1, 0, 1, 1, 0.584148,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.469385,-99) , 
-11, 62.6274, 0, 0, 0.500124,-99) , 
+-1, 0, 1, -1, 0.465952,-99) , 
+2, 1.71254, 0, 0, 0.473809,-99) , 
 NN(
 0, 
 0, 
--1, 123.063, 1, -1, 0.4885,-99) , 
-11, 201.173, 1, 0, 0.494812,-99) , 
-0, -0.716343, 1, 0, 0.497167,-99)    );
+-1, 0, 1, -1, 0.346271,-99) , 
+10, -1.83264, 0, 0, 0.465071,-99) , 
+10, -2.17815, 1, 0, 0.488069,-99)    );
   // itree = 649
-  fBoostWeights.push_back(0.0224943);
+  fBoostWeights.push_back(0.139603);
   fForest.push_back( 
 NN(
 NN(
@@ -20945,141 +22546,135 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.507306,-99) , 
+-1, 0, 1, 1, 0.554389,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.471883,-99) , 
-3, -2.14426, 0, 0, 0.5056,-99) , 
+-1, 0, 1, -1, 0.408543,-99) , 
+6, 1.5432, 1, 0, 0.541114,-99) , 
 NN(
 0, 
 0, 
--1, -0.119093, 0, -1, 0.487413,-99) , 
-10, 2.08945, 1, 0, 0.502382,-99) , 
+-1, 0.294374, 1, -1, 0.445434,-99) , 
+12, 1495.15, 1, 0, 0.514351,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.509851,-99) , 
+-1, 0, 1, 1, 0.52035,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.456021,-99) , 
-4, -0.994669, 0, 0, 0.491363,-99) , 
+-1, 0, 1, -1, 0.412159,-99) , 
+5, 0.451698, 0, 0, 0.457943,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.445508,-99) , 
-5, 0.833291, 1, 0, 0.47956,-99) , 
-1, 54.2001, 0, 0, 0.50001,-99)    );
+-1, -1.33426, 1, -1, 0.292666,-99) , 
+14, 0.995141, 1, 0, 0.430772,-99) , 
+5, 0.343639, 1, 0, 0.47535,-99)    );
   // itree = 650
-  fBoostWeights.push_back(0.0205905);
+  fBoostWeights.push_back(0.0945391);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.544675,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510478,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48741,-99) , 
-3, -0.167935, 1, 0, 0.50029,-99) , 
-3, 1.35323, 0, 0, 0.506386,-99) , 
+-1, 598.19, 0, 1, 0.533079,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, -3.07521, 0, -1, 0.497455,-99) , 
+-1, 0, 1, 1, 0.644726,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.503771,-99) , 
+-1, 0, 1, 1, 0.525652,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.471425,-99) , 
-5, 0.83289, 0, 0, 0.479268,-99) , 
-2, 0.510456, 1, 0, 0.493111,-99) , 
-10, 1.18276, 0, 0, 0.497663,-99)    );
+-1, 0, 1, -1, 0.410562,-99) , 
+3, 76.4554, 1, 0, 0.439978,-99) , 
+13, -1.64852, 1, 0, 0.462593,-99) , 
+0, 109.946, 1, 0, 0.512431,-99)    );
   // itree = 651
-  fBoostWeights.push_back(0.026669);
+  fBoostWeights.push_back(0.128707);
   fForest.push_back( 
 NN(
 NN(
 NN(
+0, 
+0, 
+-1, -0.127338, 1, 1, 0.639411,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513541,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487755,-99) , 
-8, 185.062, 1, 0, 0.510012,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505118,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470949,-99) , 
-0, 1.6422, 1, 0, 0.49244,-99) , 
-14, 1163.6, 1, 0, 0.503477,-99) , 
+-1, 0, 1, -1, 0.427812,-99) , 
+3, 87.8482, 1, 0, 0.561509,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.544874,-99) , 
+-1, 0, 1, 1, 0.529518,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.480632,-99) , 
-13, 50.6242, 0, 0, 0.512336,-99) , 
+-1, 0, 1, -1, 0.447546,-99) , 
+5, 0.251938, 1, 0, 0.467439,-99) , 
 NN(
 0, 
 0, 
--1, -1.30948, 0, -1, 0.489505,-99) , 
-12, 3.03267, 0, 0, 0.49226,-99) , 
-0, 0.509301, 0, 0, 0.497634,-99)    );
+-1, -1.43481, 0, -1, 0.36037,-99) , 
+14, -1.57229, 0, 0, 0.456399,-99) , 
+0, 193.436, 0, 0, 0.470033,-99)    );
   // itree = 652
-  fBoostWeights.push_back(0.0177188);
+  fBoostWeights.push_back(0.129864);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, -0.313007, 1, 1, 0.521263,-99) , 
+-1, 0.00426084, 0, 1, 0.557943,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.503911,-99) , 
+-1, 0, 1, 1, 0.543564,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489999,-99) , 
-3, -0.45886, 0, 0, 0.498699,-99) , 
-5, -1.54763, 1, 0, 0.501089,-99) , 
+-1, 0, 1, -1, 0.398425,-99) , 
+12, 833.011, 1, 0, 0.445914,-99) , 
+2, 0.571103, 1, 0, 0.523421,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.460333,-99) , 
-12, -3.98975, 0, 0, 0.499722,-99)    );
+-1, 0, 1, 1, 0.534024,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.381499,-99) , 
+6, 0.830078, 1, 0, 0.503422,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.5551,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.421976,-99) , 
+14, 1.57631, 0, 0, 0.438285,-99) , 
+4, 287.595, 1, 0, 0.469231,-99) , 
+10, 0.733677, 0, 0, 0.494865,-99)    );
   // itree = 653
-  fBoostWeights.push_back(0.0282863);
+  fBoostWeights.push_back(0.140324);
   fForest.push_back( 
 NN(
 NN(
@@ -21087,79 +22682,73 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511925,-99) , 
+-1, 0, 1, 1, 0.614976,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.46912,-99) , 
-2, 0.630485, 1, 0, 0.509135,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502003,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471434,-99) , 
-11, 111.53, 0, 0, 0.489429,-99) , 
-10, -2.06475, 0, 0, 0.505058,-99) , 
+-1, 0, 1, -1, 0.449281,-99) , 
+7, 146.566, 1, 0, 0.580397,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513852,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503307,-99) , 
+-1, 0, 1, 1, 0.566195,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.469144,-99) , 
-10, -0.486003, 1, 0, 0.48277,-99) , 
-9, 566.367, 0, 0, 0.488306,-99) , 
-11, 372.298, 1, 0, 0.502033,-99)    );
+-1, 0, 1, -1, 0.451475,-99) , 
+6, 1.17843, 0, 0, 0.482203,-99) , 
+6, -0.583043, 1, 0, 0.507641,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508487,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.357391,-99) , 
+13, 0.31155, 1, 0, 0.453886,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.300668,-99) , 
+8, 1.49544, 1, 0, 0.411965,-99) , 
+6, -1.30852, 0, 0, 0.495157,-99)    );
   // itree = 654
-  fBoostWeights.push_back(0.0282793);
+  fBoostWeights.push_back(0.0993794);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.534631,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514973,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490041,-99) , 
-1, 73.1958, 0, 0, 0.506128,-99) , 
-3, 1.15036, 0, 0, 0.509749,-99) , 
+-1, 0, 1, 1, 0.611593,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.518674,-99) , 
+-1, 0, 1, 1, 0.534399,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490919,-99) , 
-1, 54.1513, 1, 0, 0.493346,-99) , 
+-1, 0, 1, -1, 0.380851,-99) , 
+3, 70.7589, 0, 0, 0.523674,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0.656494, 0, -1, 0.467394,-99) , 
-2, 0.588193, 1, 0, 0.490263,-99) , 
-12, 0.695877, 0, 0, 0.499238,-99)    );
+-1, 0, 1, 1, 0.5658,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.450233,-99) , 
+4, 424.679, 0, 0, 0.467522,-99) , 
+6, -0.118257, 1, 0, 0.494683,-99) , 
+8, 2.97931, 0, 0, 0.50023,-99)    );
   // itree = 655
-  fBoostWeights.push_back(0.0229986);
+  fBoostWeights.push_back(0.101759);
   fForest.push_back( 
 NN(
 NN(
@@ -21167,67 +22756,55 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513751,-99) , 
+-1, 0, 1, 1, 0.568192,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.495975,-99) , 
-0, 0.361721, 1, 0, 0.504431,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472861,-99) , 
-5, 1.78565, 1, 0, 0.50232,-99) , 
-NN(
+-1, 0, 1, -1, 0.483974,-99) , 
+13, -0.770301, 1, 0, 0.504112,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.527268,-99) , 
+-1, 0, 1, 1, 0.541859,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.493113,-99) , 
-14, 1031.93, 0, 0, 0.505681,-99) , 
+-1, 0, 1, -1, 0.409335,-99) , 
+8, -2.20117, 1, 0, 0.438974,-99) , 
+6, -0.594517, 0, 0, 0.482251,-99) , 
 NN(
 0, 
 0, 
--1, 0.357554, 1, -1, 0.486828,-99) , 
-7, 760.213, 0, 0, 0.490679,-99) , 
-2, 0.368625, 0, 0, 0.497016,-99)    );
+-1, 0, 1, -1, 0.370811,-99) , 
+2, -1.71226, 0, 0, 0.475571,-99)    );
   // itree = 656
-  fBoostWeights.push_back(0.0214545);
+  fBoostWeights.push_back(0.083297);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, -1.15422, 1, 1, 0.519561,-99) , 
-NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.53335,-99) , 
+-1, 0, 1, 1, 0.55427,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.496262,-99) , 
-4, -1.27385, 1, 0, 0.505137,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501991,-99) , 
+-1, 0, 1, -1, 0.487742,-99) , 
+9, 223.729, 1, 0, 0.523777,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.483049,-99) , 
-14, 814.838, 0, 0, 0.492203,-99) , 
-10, -1.1308, 1, 0, 0.496711,-99) , 
-8, 248.4, 0, 0, 0.49821,-99)    );
+-1, 275.095, 1, -1, 0.460714,-99) , 
+2, -0.11449, 0, 0, 0.494642,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.313673,-99) , 
+6, 2.02351, 1, 0, 0.48911,-99)    );
   // itree = 657
-  fBoostWeights.push_back(0.0140111);
+  fBoostWeights.push_back(0.129208);
   fForest.push_back( 
 NN(
 NN(
@@ -21235,100 +22812,1030 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.522169,-99) , 
+-1, 0, 1, 1, 0.53855,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.498732,-99) , 
-4, -1.84105, 1, 0, 0.500708,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500286,-99) , 
+-1, 0, 1, -1, 0.386225,-99) , 
+6, -0.67234, 0, 0, 0.529106,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.477424,-99) , 
-10, -0.641563, 1, 0, 0.486279,-99) , 
-9, 376.089, 1, 0, 0.497292,-99) , 
+-1, 0, 1, -1, 0.393714,-99) , 
+9, 492.968, 1, 0, 0.520928,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0.197718, 0, -1, 0.472417,-99) , 
-5, -1.78568, 0, 0, 0.495716,-99)    );
+-1, 0, 1, 1, 0.552591,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.361997,-99) , 
+3, 78.3542, 0, 0, 0.499257,-99) , 
+NN(
+0, 
+0, 
+-1, 236.843, 1, -1, 0.31747,-99) , 
+13, -0.341779, 0, 0, 0.431727,-99) , 
+6, -0.831217, 0, 0, 0.498616,-99)    );
   // itree = 658
-  fBoostWeights.push_back(0.0210935);
+  fBoostWeights.push_back(0.115391);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.550308,-99) , 
+-1, 0, 1, 1, 0.683087,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.490213,-99) , 
+2, -0.358677, 1, 0, 0.588379,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.524844,-99) , 
+-1, 0, 1, 1, 0.576194,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.481205,-99) , 
-3, 1.02471, 1, 0, 0.506049,-99) , 
-14, 788.032, 1, 0, 0.526123,-99) , 
+-1, 0, 1, -1, 0.47172,-99) , 
+14, 1.52612, 0, 0, 0.487527,-99) , 
+3, 99.2411, 0, 0, 0.497435,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529066,-99) , 
+-1, 0, 1, 1, 0.529406,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.49725,-99) , 
-1, 72.9905, 1, 0, 0.509516,-99) , 
+-1, 0, 1, -1, 0.415383,-99) , 
+9, 166.303, 0, 0, 0.483623,-99) , 
 NN(
 0, 
 0, 
--1, 92.0336, 1, -1, 0.494353,-99) , 
-0, -0.124562, 1, 0, 0.4983,-99) , 
-4, 1.86148, 0, 0, 0.501354,-99)    );
+-1, 3.29911, 0, -1, 0.374619,-99) , 
+4, 299.095, 1, 0, 0.432548,-99) , 
+10, 1.69303, 1, 0, 0.474429,-99)    );
   // itree = 659
-  fBoostWeights.push_back(0.0194635);
+  fBoostWeights.push_back(0.1325);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0.594803, 0, 1, 0.527769,-99) , 
+-1, 0.330222, 1, 1, 0.565545,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.5234,-99) , 
+-1, 0, 1, 1, 0.525235,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.482512,-99) , 
-13, 57.3947, 0, 0, 0.501639,-99) , 
-14, 1066.96, 1, 0, 0.516407,-99) , 
+-1, 0, 1, -1, 0.434371,-99) , 
+2, -0.114955, 0, 0, 0.481299,-99) , 
+8, -0.612026, 1, 0, 0.519647,-99) , 
 NN(
 NN(
-0, 
-0, 
--1, 190.217, 0, 1, 0.503466,-99) , 
 NN(
 0, 
 0, 
--1, 104.41, 1, -1, 0.487895,-99) , 
-9, 383.184, 1, 0, 0.49996,-99) , 
-12, -2.58292, 1, 0, 0.503681,-99)    );
+-1, 0, 1, 1, 0.547228,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.384133,-99) , 
+4, 313.857, 1, 0, 0.482831,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.29019,-99) , 
+5, 0.438465, 0, 0, 0.448357,-99) , 
+5, 0.41221, 1, 0, 0.500936,-99)    );
   // itree = 660
-  fBoostWeights.push_back(0.028594);
+  fBoostWeights.push_back(0.0502609);
   fForest.push_back( 
 NN(
+0, 
+0, 
+-1, 3.6423, 1, -1, 0.474891,-99)    );
+  // itree = 661
+  fBoostWeights.push_back(0.115351);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.50592, 1, 1, 0.563621,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.448777,-99) , 
+14, 1.1092, 1, 0, 0.554512,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.622188,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.485263,-99) , 
+9, 362.924, 0, 0, 0.5066,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.569623,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.374179,-99) , 
+3, 93.5446, 0, 0, 0.420649,-99) , 
+8, 1.18548, 0, 0, 0.485989,-99) , 
+10, -0.700195, 0, 0, 0.52406,-99)    );
+  // itree = 662
+  fBoostWeights.push_back(0.133049);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 194.009, 0, 1, 0.558727,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.610877,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.478408,-99) , 
+7, 80.5557, 1, 0, 0.542771,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.595181,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.426011,-99) , 
+4, 457.929, 0, 0, 0.446897,-99) , 
+14, 0.0126901, 0, 0, 0.484796,-99) , 
+10, -1.20257, 1, 0, 0.517491,-99)    );
+  // itree = 663
+  fBoostWeights.push_back(0.120125);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 274.524, 0, 1, 0.607019,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.523472,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.398267,-99) , 
+6, 1.14188, 1, 0, 0.483167,-99) , 
+6, 0.122047, 1, 0, 0.552993,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.566374,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.399719,-99) , 
+14, 0.807714, 1, 0, 0.5343,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.513596,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.436636,-99) , 
+12, 1316.7, 0, 0, 0.459391,-99) , 
+11, 150.744, 0, 0, 0.476502,-99) , 
+10, -2.65667, 1, 0, 0.492112,-99)    );
+  // itree = 664
+  fBoostWeights.push_back(0.103959);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 283.485, 0, 1, 0.621414,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.65308,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.483484,-99) , 
+13, -1.87106, 1, 0, 0.498814,-99) , 
+2, 1.25728, 0, 0, 0.515742,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.523408,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.437265,-99) , 
+5, 0.343627, 0, 0, 0.477632,-99) , 
+NN(
+0, 
+0, 
+-1, -0.957258, 1, -1, 0.379367,-99) , 
+10, 1.71289, 1, 0, 0.440932,-99) , 
+6, -0.594517, 0, 0, 0.491377,-99)    );
+  // itree = 665
+  fBoostWeights.push_back(0.124909);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.575983,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.497231,-99) , 
+5, 0.290303, 0, 0, 0.54155,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.595138,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.411713,-99) , 
+10, -2.67411, 1, 0, 0.451439,-99) , 
+5, 0.42429, 1, 0, 0.52142,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.60352,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.455655,-99) , 
+5, 0.438155, 0, 0, 0.495467,-99) , 
+NN(
+0, 
+0, 
+-1, 104.568, 0, -1, 0.377364,-99) , 
+9, 164.237, 0, 0, 0.461841,-99) , 
+6, -0.593308, 0, 0, 0.501594,-99)    );
+  // itree = 666
+  fBoostWeights.push_back(0.0927613);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.666783, 0, 1, 0.611397,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.512035,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.397515,-99) , 
+14, -1.03485, 0, 0, 0.505494,-99) , 
+6, -0.515183, 1, 0, 0.520182,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551014,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.39916,-99) , 
+9, 251.177, 1, 0, 0.493315,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.511679,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.29841,-99) , 
+9, 322.906, 0, 0, 0.371314,-99) , 
+5, 0.366253, 1, 0, 0.446341,-99) , 
+6, -0.83252, 0, 0, 0.502129,-99)    );
+  // itree = 667
+  fBoostWeights.push_back(0.132594);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 278.056, 0, 1, 0.571442,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.52241,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.427881,-99) , 
+10, -1.86809, 1, 0, 0.483357,-99) , 
+10, 1.66243, 0, 0, 0.51549,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.612957,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.436408,-99) , 
+0, 151.827, 0, 0, 0.475912,-99) , 
+NN(
+0, 
+0, 
+-1, 272.571, 1, -1, 0.319471,-99) , 
+6, 0.831868, 1, 0, 0.436599,-99) , 
+13, -0.822647, 0, 0, 0.49479,-99)    );
+  // itree = 668
+  fBoostWeights.push_back(0.0928249);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.116211, 0, 1, 0.58761,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50423,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.386789,-99) , 
+6, -1.54415, 0, 0, 0.49223,-99) , 
+12, 766.307, 1, 0, 0.51534,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.521126,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.428491,-99) , 
+7, 143.855, 0, 0, 0.452918,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.274428,-99) , 
+2, 0.129395, 1, 0, 0.438669,-99) , 
+13, -0.409709, 0, 0, 0.488782,-99)    );
+  // itree = 669
+  fBoostWeights.push_back(0.0787065);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.65642,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.485635,-99) , 
+3, 66.9613, 1, 0, 0.492861,-99) , 
+NN(
+0, 
+0, 
+-1, 0.323813, 1, -1, 0.366693,-99) , 
+6, 1.54797, 1, 0, 0.481155,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.289471,-99) , 
+13, 2.07398, 1, 0, 0.472175,-99)    );
+  // itree = 670
+  fBoostWeights.push_back(0.097527);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536544,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.44384,-99) , 
+3, 95.4435, 1, 0, 0.523432,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.522534,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.38517,-99) , 
+14, -0.345273, 1, 0, 0.451731,-99) , 
+5, 0.458138, 1, 0, 0.512462,-99) , 
+NN(
+0, 
+0, 
+-1, 1.97714, 0, -1, 0.372641,-99) , 
+2, 1.7138, 1, 0, 0.504776,-99)    );
+  // itree = 671
+  fBoostWeights.push_back(0.122068);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 85.9494, 0, 1, 0.560709,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.515053,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.38995,-99) , 
+7, 87.5693, 1, 0, 0.456412,-99) , 
+9, 290.975, 1, 0, 0.534873,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.565722,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.458968,-99) , 
+5, 0.273596, 1, 0, 0.489621,-99) , 
+NN(
+0, 
+0, 
+-1, 85.9398, 0, -1, 0.399144,-99) , 
+3, 91.6458, 1, 0, 0.467531,-99) , 
+8, 0.646763, 0, 0, 0.498889,-99)    );
+  // itree = 672
+  fBoostWeights.push_back(0.105421);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 82.125, 1, 1, 0.640044,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.536367,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.464158,-99) , 
+2, -0.341309, 1, 0, 0.492826,-99) , 
+1, -951.25, 1, 0, 0.502635,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514018,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.335821,-99) , 
+4, 309.857, 1, 0, 0.469235,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.300262,-99) , 
+12, 1354.75, 1, 0, 0.426719,-99) , 
+9, 136.821, 0, 0, 0.4869,-99)    );
+  // itree = 673
+  fBoostWeights.push_back(0.0881087);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.624704,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.484453,-99) , 
+8, -2.37556, 1, 0, 0.502892,-99) , 
+NN(
+0, 
+0, 
+-1, 92.8611, 1, -1, 0.4365,-99) , 
+9, 138.758, 0, 0, 0.487977,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.34581,-99) , 
+2, -1.71394, 0, 0, 0.480069,-99)    );
+  // itree = 674
+  fBoostWeights.push_back(0.0865239);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.114258, 1, 1, 0.644059,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.43994,-99) , 
+11, 127.616, 1, 0, 0.602206,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.579602,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.494329,-99) , 
+2, 0.563128, 0, 0, 0.512837,-99) , 
+NN(
+0, 
+0, 
+-1, 0.430862, 0, -1, 0.423962,-99) , 
+13, 1.22077, 1, 0, 0.499809,-99) , 
+6, -1.54297, 1, 0, 0.514011,-99)    );
+  // itree = 675
+  fBoostWeights.push_back(0.115037);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -2.15732, 0, 1, 0.585812,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.625078,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.487639,-99) , 
+5, 0.229003, 1, 0, 0.510003,-99) , 
+8, 1.76823, 0, 0, 0.531685,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.613723,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.438992,-99) , 
+5, 0.329491, 1, 0, 0.531789,-99) , 
+NN(
+0, 
+0, 
+-1, 42.4425, 0, -1, 0.419988,-99) , 
+7, 116.145, 0, 0, 0.457994,-99) , 
+6, 0.594471, 1, 0, 0.509939,-99)    );
+  // itree = 676
+  fBoostWeights.push_back(0.0447227);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.645797,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.555426,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.493801,-99) , 
+9, 122.594, 1, 0, 0.504634,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.403592,-99) , 
+1, -951.264, 0, 0, 0.499473,-99) , 
+4, 654.577, 0, 0, 0.503314,-99)    );
+  // itree = 677
+  fBoostWeights.push_back(0.152984);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.768453,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.587511,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457053,-99) , 
+3, 89.747, 1, 0, 0.552914,-99) , 
+9, 483.377, 0, 0, 0.580937,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.569575,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.435474,-99) , 
+4, 238.214, 0, 0, 0.518415,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.569957,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.430693,-99) , 
+6, 1.31192, 0, 0, 0.457764,-99) , 
+4, 289.167, 1, 0, 0.487184,-99) , 
+14, -1.00317, 1, 0, 0.508545,-99)    );
+  // itree = 678
+  fBoostWeights.push_back(0.129042);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.550493,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.445556,-99) , 
+5, 0.198854, 0, 0, 0.540466,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.569966,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.376016,-99) , 
+2, 0.386184, 0, 0, 0.446224,-99) , 
+6, 1.3102, 1, 0, 0.529435,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.54722,-99) , 
+NN(
+0, 
+0, 
+-1, 1.67157, 0, -1, 0.331534,-99) , 
+9, 248.414, 0, 0, 0.420561,-99) , 
+2, 1.25672, 1, 0, 0.516954,-99)    );
+  // itree = 679
+  fBoostWeights.push_back(0.118017);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 68.8601, 1, 1, 0.564765,-99) , 
+NN(
+0, 
+0, 
+-1, 76.4554, 0, -1, 0.461172,-99) , 
+6, 0.839193, 1, 0, 0.530877,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.559753,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.446517,-99) , 
+2, -0.568569, 1, 0, 0.476977,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.345991,-99) , 
+13, -2.25079, 0, 0, 0.466349,-99) , 
+14, -0.477525, 0, 0, 0.507939,-99)    );
+  // itree = 680
+  fBoostWeights.push_back(0.140018);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.116862, 0, 1, 0.598575,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.562885,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.356995,-99) , 
+14, 0.352704, 1, 0, 0.494084,-99) , 
+4, 280.929, 0, 0, 0.555377,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.626932,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.478526,-99) , 
+8, -1.04362, 1, 0, 0.554431,-99) , 
+NN(
+0, 
+0, 
+-1, 0.114421, 1, -1, 0.459888,-99) , 
+14, -0.689056, 1, 0, 0.489333,-99) , 
+11, 103.372, 0, 0, 0.517162,-99)    );
+  // itree = 681
+  fBoostWeights.push_back(0.137661);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 85.9494, 1, 1, 0.65467,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.560986,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.479065,-99) , 
+6, -0.830566, 0, 0, 0.545404,-99) , 
+14, -1.6707, 1, 0, 0.556174,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.586113,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.427463,-99) , 
+10, 2.15827, 1, 0, 0.525156,-99) , 
+NN(
+0, 
+0, 
+-1, -0.360352, 0, -1, 0.403215,-99) , 
+10, 0.838472, 0, 0, 0.463866,-99) , 
+11, 143.991, 1, 0, 0.537928,-99)    );
+  // itree = 682
+  fBoostWeights.push_back(0.0980632);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 74.7096, 1, 1, 0.65793,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.567733,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.405619,-99) , 
+12, 1355.34, 1, 0, 0.503997,-99) , 
+14, -0.675402, 1, 0, 0.558714,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.515864,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.427371,-99) , 
+13, 0.998994, 1, 0, 0.501407,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505107,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.399881,-99) , 
+13, 0.646205, 0, 0, 0.436787,-99) , 
+8, -1.55632, 0, 0, 0.482369,-99) , 
+3, 95.4435, 0, 0, 0.495028,-99)    );
+  // itree = 683
+  fBoostWeights.push_back(0.123901);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.534549,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.390787,-99) , 
+6, 1.30273, 1, 0, 0.519118,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.546866,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.346014,-99) , 
+3, 87.8482, 0, 0, 0.43711,-99) , 
+0, 117.185, 1, 0, 0.498114,-99) , 
+NN(
+0, 
+0, 
+-1, -1.01747, 1, -1, 0.433182,-99) , 
+10, 1.7002, 1, 0, 0.474419,-99)    );
+  // itree = 684
+  fBoostWeights.push_back(0.0896452);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.677632,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.550092,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.397502,-99) , 
+3, 87.8482, 1, 0, 0.496906,-99) , 
+10, 1.76042, 0, 0, 0.573922,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514181,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.427772,-99) , 
+8, 2.16892, 1, 0, 0.50187,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.546682,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.393329,-99) , 
+3, 91.625, 0, 0, 0.432501,-99) , 
+9, 132.496, 0, 0, 0.489691,-99) , 
+0, 193.987, 0, 0, 0.500333,-99)    );
+  // itree = 685
+  fBoostWeights.push_back(0.13272);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.592843, 1, 1, 0.629077,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.450577,-99) , 
+6, -0.587216, 0, 0, 0.582701,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.656478,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.425907,-99) , 
+3, 85.9494, 1, 0, 0.56155,-99) , 
+NN(
+0, 
+0, 
+-1, 97.8008, 0, -1, 0.451987,-99) , 
+12, 2181.68, 0, 0, 0.468231,-99) , 
+2, 1.25646, 0, 0, 0.484265,-99)    );
+  // itree = 686
+  fBoostWeights.push_back(0.104967);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.633863,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.6263,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.320793,-99) , 
+8, -0.690755, 0, 0, 0.503718,-99) , 
+9, 191.003, 1, 0, 0.56404,-99) , 
 NN(
 NN(
 NN(
@@ -21338,928 +23845,16 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.488115,-99) , 
-3, -1.15671, 0, 0, 0.508363,-99) , 
+-1, 0, 1, -1, 0.456598,-99) , 
+3, 85.9494, 1, 0, 0.489942,-99) , 
 NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502397,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480741,-99) , 
-0, 0.662422, 0, 0, 0.49095,-99) , 
-2, 0.277844, 0, 0, 0.504151,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508934,-99) , 
-NN(
-0, 
-0, 
--1, 50.6235, 1, -1, 0.466702,-99) , 
-6, 97.8705, 0, 0, 0.481347,-99) , 
-5, -1.30948, 0, 0, 0.500953,-99)    );
-  // itree = 661
-  fBoostWeights.push_back(0.0169979);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 361.207, 1, 1, 0.520594,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508257,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49674,-99) , 
-12, -0.701977, 1, 0, 0.502102,-99) , 
-1, 110.814, 0, 0, 0.504162,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505585,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.462698,-99) , 
-2, 0.413178, 1, 0, 0.486311,-99) , 
-5, -1.54764, 0, 0, 0.502402,-99)    );
-  // itree = 662
-  fBoostWeights.push_back(0.0241663);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 228.869, 0, 1, 0.530699,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496541,-99) , 
-11, 134.418, 0, 0, 0.513748,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511977,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493088,-99) , 
-0, 0.14772, 1, 0, 0.501145,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503996,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469443,-99) , 
-10, 0.574554, 0, 0, 0.487937,-99) , 
-2, 0.503852, 1, 0, 0.49775,-99) , 
-10, -2.07571, 1, 0, 0.500673,-99)    );
-  // itree = 663
-  fBoostWeights.push_back(0.022252);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.541465,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508104,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488469,-99) , 
-5, -1.30948, 0, 0, 0.505381,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.447526,-99) , 
-1, 47.6442, 0, 0, 0.503348,-99) , 
-2, 0.686152, 0, 0, 0.504567,-99)    );
-  // itree = 664
-  fBoostWeights.push_back(0.0184283);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.119028, 1, 1, 0.531563,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50075,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.460948,-99) , 
-14, 837.514, 1, 0, 0.491387,-99) , 
-14, 1063.04, 0, 0, 0.50468,-99) , 
-NN(
-0, 
-0, 
--1, 566.365, 1, -1, 0.492482,-99) , 
-2, 0.549378, 0, 0, 0.494669,-99)    );
-  // itree = 665
-  fBoostWeights.push_back(0.0203395);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530783,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520044,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499632,-99) , 
-1, 104.232, 0, 0, 0.502735,-99) , 
-12, 3.50437, 0, 0, 0.505167,-99) , 
-NN(
-0, 
-0, 
--1, 1.30948, 1, -1, 0.484138,-99) , 
-2, 0.410039, 1, 0, 0.495964,-99)    );
-  // itree = 666
-  fBoostWeights.push_back(0.0206689);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.450717, 0, 1, 0.522143,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515554,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49494,-99) , 
-8, 177.147, 0, 0, 0.497942,-99) , 
-3, -1.60676, 1, 0, 0.500213,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509129,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48141,-99) , 
-1, 73.1841, 1, 0, 0.490748,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.450033,-99) , 
-2, 0.51352, 1, 0, 0.480315,-99) , 
-0, -0.709191, 0, 0, 0.497407,-99)    );
-  // itree = 667
-  fBoostWeights.push_back(0.0210925);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.258254, 1, 1, 0.518144,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504942,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49147,-99) , 
-11, 201.152, 0, 0, 0.498075,-99) , 
-8, 177.106, 0, 0, 0.501032,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512387,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.421614,-99) , 
-1, 79.6043, 0, 0, 0.468674,-99) , 
-0, -1.2685, 0, 0, 0.499131,-99)    );
-  // itree = 668
-  fBoostWeights.push_back(0.0260202);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 173.245, 1, 1, 0.519416,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50494,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467768,-99) , 
-1, 109.331, 1, 0, 0.50233,-99) , 
-7, 488.214, 1, 0, 0.511098,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508693,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490842,-99) , 
-1, 92.9545, 1, 0, 0.499847,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471531,-99) , 
-1, 67.5254, 0, 0, 0.495114,-99) , 
-9, 361.273, 1, 0, 0.506859,-99)    );
-  // itree = 669
-  fBoostWeights.push_back(0.0172485);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524658,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500447,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483021,-99) , 
-12, -2.56363, 0, 0, 0.496873,-99) , 
-0, 1.84243, 0, 0, 0.499457,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511594,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486197,-99) , 
-7, 431.49, 1, 0, 0.494189,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461724,-99) , 
-5, 1.30946, 1, 0, 0.489427,-99) , 
-2, 0.500776, 1, 0, 0.496865,-99)    );
-  // itree = 670
-  fBoostWeights.push_back(0.0157303);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523324,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510265,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487821,-99) , 
-4, -0.0806825, 1, 0, 0.499681,-99) , 
-1, 84.5945, 0, 0, 0.508696,-99) , 
-NN(
-0, 
-0, 
--1, 104.826, 1, -1, 0.493905,-99) , 
-10, 2.0961, 0, 0, 0.496601,-99)    );
-  // itree = 671
-  fBoostWeights.push_back(0.0204369);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.542335,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51905,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498063,-99) , 
-3, -0.587932, 1, 0, 0.505135,-99) , 
-6, 238.442, 0, 0, 0.507685,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502735,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484121,-99) , 
-2, 0.457741, 1, 0, 0.496391,-99) , 
-NN(
-0, 
-0, 
--1, 0.738643, 0, -1, 0.461953,-99) , 
-1, 110.898, 1, 0, 0.492898,-99) , 
-5, -0.119081, 1, 0, 0.499866,-99)    );
-  // itree = 672
-  fBoostWeights.push_back(0.0259031);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.533565,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486989,-99) , 
-9, 380.163, 1, 0, 0.526625,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489973,-99) , 
-11, 313.275, 1, 0, 0.520822,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519827,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49734,-99) , 
-3, -1.40631, 1, 0, 0.501604,-99) , 
-NN(
-0, 
-0, 
--1, -1.17684, 0, -1, 0.473128,-99) , 
-5, 1.30952, 1, 0, 0.497654,-99) , 
-12, -2.6073, 1, 0, 0.502839,-99)    );
-  // itree = 673
-  fBoostWeights.push_back(0.0270693);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523535,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493801,-99) , 
-10, 1.67159, 1, 0, 0.516253,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480412,-99) , 
-3, -1.95595, 0, 0, 0.511299,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.542553,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499915,-99) , 
-3, 0.819996, 0, 0, 0.513005,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511745,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489922,-99) , 
-10, 2.50915, 0, 0, 0.492587,-99) , 
-13, 155.684, 0, 0, 0.495897,-99) , 
-4, -0.751387, 1, 0, 0.500899,-99)    );
-  // itree = 674
-  fBoostWeights.push_back(0.0150399);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530112,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529818,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502308,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484846,-99) , 
-0, -0.152361, 0, 0, 0.498262,-99) , 
-3, -2.3686, 1, 0, 0.499588,-99) , 
-4, 2.39298, 0, 0, 0.501132,-99)    );
-  // itree = 675
-  fBoostWeights.push_back(0.0201298);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.544662,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515728,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474259,-99) , 
-2, 0.287416, 0, 0, 0.503899,-99) , 
-3, 1.09734, 0, 0, 0.513511,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528028,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497582,-99) , 
-5, -1.78567, 1, 0, 0.499453,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514341,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.462543,-99) , 
-3, -1.65325, 1, 0, 0.478309,-99) , 
-0, -0.912637, 0, 0, 0.497282,-99) , 
-1, 98.2154, 0, 0, 0.500304,-99)    );
-  // itree = 676
-  fBoostWeights.push_back(0.0234542);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 47.9571, 1, 1, 0.509117,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536365,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492218,-99) , 
-5, -0.1189, 1, 0, 0.513636,-99) , 
-NN(
-0, 
-0, 
--1, 33.9076, 0, -1, 0.483467,-99) , 
-13, 71.0291, 0, 0, 0.493339,-99) , 
-12, -2.13295, 0, 0, 0.504591,-99)    );
-  // itree = 677
-  fBoostWeights.push_back(0.0196321);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.546987,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49915,-99) , 
-14, 1167.98, 1, 0, 0.525209,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 110.148, 0, 1, 0.505144,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506849,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484468,-99) , 
-11, 329.084, 0, 0, 0.493046,-99) , 
-11, 183.202, 1, 0, 0.498758,-99) , 
-11, 566.141, 0, 0, 0.500218,-99)    );
-  // itree = 678
-  fBoostWeights.push_back(0.0350775);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52397,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487987,-99) , 
-7, 723.385, 1, 0, 0.516433,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509993,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489105,-99) , 
-1, 85.5191, 1, 0, 0.502609,-99) , 
-14, 830.226, 1, 0, 0.509195,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529606,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465061,-99) , 
-11, 348.878, 1, 0, 0.501684,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468382,-99) , 
-1, 73.1197, 0, 0, 0.489391,-99) , 
-0, -0.833182, 0, 0, 0.506863,-99)    );
-  // itree = 679
-  fBoostWeights.push_back(0.0202553);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.30871, 0, 1, 0.505649,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507844,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484098,-99) , 
-5, -0.119018, 1, 0, 0.49425,-99) , 
-10, -0.232584, 1, 0, 0.499676,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500381,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.45252,-99) , 
-3, 0.160783, 0, 0, 0.476017,-99) , 
-1, 123.778, 1, 0, 0.498254,-99)    );
-  // itree = 680
-  fBoostWeights.push_back(0.0313084);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529106,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496591,-99) , 
-9, 289.617, 0, 0, 0.518203,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51803,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488057,-99) , 
-4, -1.15543, 1, 0, 0.495215,-99) , 
-7, 622.953, 0, 0, 0.503884,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506542,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483126,-99) , 
-10, -0.144079, 0, 0, 0.495206,-99) , 
-NN(
-0, 
-0, 
--1, -1.17059, 0, -1, 0.469469,-99) , 
-5, 1.0714, 1, 0, 0.490189,-99) , 
-11, 197.3, 1, 0, 0.496886,-99)    );
-  // itree = 681
-  fBoostWeights.push_back(0.022981);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.640977, 1, 1, 0.511831,-99) , 
-NN(
-0, 
-0, 
--1, 0.588354, 1, -1, 0.493685,-99) , 
-10, 0.228279, 0, 0, 0.502369,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504278,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468675,-99) , 
-3, -0.366863, 0, 0, 0.491314,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461372,-99) , 
-0, -0.491426, 0, 0, 0.4854,-99) , 
-1, 66.7632, 0, 0, 0.498074,-99)    );
-  // itree = 682
-  fBoostWeights.push_back(0.0272365);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.961947, 1, 1, 0.537772,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512742,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464707,-99) , 
-5, 0.323557, 0, 0, 0.497994,-99) , 
-5, -0.35638, 1, 0, 0.513205,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 85.5712, 0, 1, 0.516067,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50399,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484987,-99) , 
-11, 197.335, 0, 0, 0.495711,-99) , 
-4, -1.74857, 1, 0, 0.498955,-99) , 
-12, -2.60901, 1, 0, 0.502092,-99)    );
-  // itree = 683
-  fBoostWeights.push_back(0.024419);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.547162,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518028,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489315,-99) , 
-8, 84.576, 1, 0, 0.506614,-99) , 
-1, 60.3898, 1, 0, 0.514769,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509399,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494797,-99) , 
-12, 0.0625455, 0, 0, 0.500098,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.537715,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478194,-99) , 
-10, -0.347231, 0, 0, 0.488592,-99) , 
-12, 2.57369, 1, 0, 0.497606,-99) , 
-5, 1.30949, 0, 0, 0.500129,-99)    );
-  // itree = 684
-  fBoostWeights.push_back(0.0232546);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534903,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509435,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472922,-99) , 
-9, 414.21, 1, 0, 0.504448,-99) , 
-12, 3.06699, 0, 0, 0.511883,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501983,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486891,-99) , 
-7, 493.566, 0, 0, 0.495551,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.458981,-99) , 
-4, -2.31742, 0, 0, 0.49363,-99) , 
-10, -1.1394, 1, 0, 0.499951,-99)    );
-  // itree = 685
-  fBoostWeights.push_back(0.0190709);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.533273,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496922,-99) , 
-3, 1.59468, 1, 0, 0.519405,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519078,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495836,-99) , 
-10, 2.56805, 0, 0, 0.497946,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508645,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47113,-99) , 
-6, 117.917, 0, 0, 0.482539,-99) , 
-3, -1.34109, 0, 0, 0.495293,-99) , 
-12, -3.54634, 1, 0, 0.49721,-99)    );
-  // itree = 686
-  fBoostWeights.push_back(0.0286453);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518392,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48797,-99) , 
-4, 1.58155, 1, 0, 0.513421,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513442,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482048,-99) , 
-4, 2.3292, 0, 0, 0.490056,-99) , 
-5, 1.37756, 1, 0, 0.507879,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52065,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493858,-99) , 
-12, -3.0157, 1, 0, 0.497695,-99) , 
-NN(
 0, 
 0, 
--1, 0, 1, -1, 0.450771,-99) , 
-9, 522.874, 1, 0, 0.494594,-99) , 
-5, -0.119018, 0, 0, 0.50175,-99)    );
+-1, 95.896, 1, -1, 0.351683,-99) , 
+2, -1.02072, 0, 0, 0.474982,-99) , 
+13, -1.42425, 1, 0, 0.486628,-99)    );
   // itree = 687
-  fBoostWeights.push_back(0.0208097);
+  fBoostWeights.push_back(0.113045);
   fForest.push_back( 
 NN(
 NN(
@@ -22267,365 +23862,389 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.507049,-99) , 
+-1, 0, 1, 1, 0.58885,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489204,-99) , 
-13, 155.685, 1, 0, 0.503905,-99) , 
-NN(
-0, 
-0, 
--1, 90.7215, 1, -1, 0.489187,-99) , 
-10, 1.65029, 1, 0, 0.50021,-99) , 
+-1, 0, 1, -1, 0.493143,-99) , 
+8, 0.532785, 1, 0, 0.542116,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51311,-99) , 
+-1, 0, 1, 1, 0.613105,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.462791,-99) , 
-9, 344.039, 0, 0, 0.479457,-99) , 
-3, -1.78306, 0, 0, 0.498294,-99)    );
+-1, 0, 1, -1, 0.450496,-99) , 
+11, 225.948, 0, 0, 0.46584,-99) , 
+0, 81.4986, 1, 0, 0.509153,-99) , 
+NN(
+0, 
+0, 
+-1, 76.1309, 0, -1, 0.397031,-99) , 
+10, 3.15248, 1, 0, 0.499139,-99)    );
   // itree = 688
-  fBoostWeights.push_back(0.0247081);
+  fBoostWeights.push_back(0.0938542);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 797.201, 1, 1, 0.541096,-99) , 
+-1, 0.326137, 1, 1, 0.581264,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.522,-99) , 
+-1, 0, 1, 1, 0.561158,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.454708,-99) , 
-3, -0.0326879, 1, 0, 0.489801,-99) , 
-10, -0.232413, 1, 0, 0.515548,-99) , 
-NN(
+-1, 0, 1, -1, 0.48326,-99) , 
+9, 311.545, 0, 0, 0.505014,-99) , 
+6, 1.0722, 0, 0, 0.519741,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.526859,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494705,-99) , 
-4, -2.33513, 1, 0, 0.496546,-99) , 
+-1, 0, 1, 1, 0.587983,-99) , 
 NN(
 0, 
 0, 
--1, 1.0714, 1, -1, 0.478187,-99) , 
-1, 99.8327, 1, 0, 0.493176,-99) , 
-1, 53.9899, 1, 0, 0.495603,-99)    );
+-1, 1.05311, 1, -1, 0.440887,-99) , 
+7, 229.201, 0, 0, 0.458421,-99) , 
+3, 80.253, 0, 0, 0.499833,-99)    );
   // itree = 689
-  fBoostWeights.push_back(0.0275785);
+  fBoostWeights.push_back(0.0755912);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.54169,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.547172,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498859,-99) , 
-0, -1.29729, 1, 0, 0.502514,-99) , 
-12, -3.08038, 1, 0, 0.507834,-99) , 
+-1, 0, 1, 1, 0.658003,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.54039,-99) , 
+-1, 0, 1, 1, 0.527795,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.484421,-99) , 
-5, 0.866851, 0, 0, 0.506446,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519758,-99) , 
+-1, 0, 1, -1, 0.471964,-99) , 
+5, 0.412199, 0, 0, 0.488076,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.486702,-99) , 
-11, 521.301, 0, 0, 0.488878,-99) , 
-6, 134.486, 0, 0, 0.493191,-99) , 
-5, -0.357112, 1, 0, 0.499096,-99)    );
+-1, 0, 1, -1, 0.3274,-99) , 
+13, 2.09018, 1, 0, 0.482723,-99) , 
+2, 1.94189, 0, 0, 0.489638,-99)    );
   // itree = 690
-  fBoostWeights.push_back(0.0271206);
+  fBoostWeights.push_back(0.0871415);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 1.65985, 0, 1, 0.514214,-99) , 
-NN(
-NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513469,-99) , 
+-1, 2.19378, 0, 1, 0.569331,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490843,-99) , 
-3, 0.223965, 1, 0, 0.501973,-99) , 
+-1, 0, 1, 1, 0.514071,-99) , 
 NN(
 0, 
 0, 
--1, 1007.78, 0, -1, 0.48212,-99) , 
-12, 2.10308, 1, 0, 0.496267,-99) , 
-1, 85.5606, 0, 0, 0.502858,-99)    );
+-1, 0, 1, -1, 0.356217,-99) , 
+9, 398.89, 1, 0, 0.493374,-99) , 
+5, 0.34329, 1, 0, 0.537828,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.622065,-99) , 
+NN(
+0, 
+0, 
+-1, 1.34858, 1, -1, 0.4765,-99) , 
+5, 0.524822, 0, 0, 0.485465,-99) , 
+3, 82.1518, 0, 0, 0.515904,-99)    );
   // itree = 691
-  fBoostWeights.push_back(0.0184787);
+  fBoostWeights.push_back(0.135646);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 1.34023, 0, 1, 0.506145,-99) , 
+-1, 0, 1, 1, 0.588499,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.461386,-99) , 
+13, 0.432637, 1, 0, 0.548247,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.507501,-99) , 
+-1, 0, 1, 1, 0.532661,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.476371,-99) , 
-3, -0.783437, 0, 0, 0.493809,-99) , 
-4, -0.957855, 0, 0, 0.502854,-99) , 
+-1, 0, 1, -1, 0.419596,-99) , 
+0, 49.6151, 0, 0, 0.486336,-99) , 
+0, 81.4906, 0, 0, 0.516384,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.461044,-99) , 
-2, 0.686359, 1, 0, 0.501706,-99)    );
+-1, 0, 1, 1, 0.506453,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.306612,-99) , 
+2, -0.572824, 0, 0, 0.453214,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.239072,-99) , 
+9, 138.5, 0, 0, 0.415273,-99) , 
+5, 0.449454, 1, 0, 0.498904,-99)    );
   // itree = 692
-  fBoostWeights.push_back(0.011257);
+  fBoostWeights.push_back(0.0599657);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519683,-99) , 
-NN(
-NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.501897,-99) , 
+-1, 0.755999, 0, 1, 0.656362,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.482284,-99) , 
-3, 1.9984, 1, 0, 0.500343,-99) , 
+-1, 0, 1, 1, 0.537928,-99) , 
 NN(
 0, 
 0, 
--1, -1.72873, 1, -1, 0.478363,-99) , 
-3, -1.46368, 0, 0, 0.498378,-99) , 
-3, -2.15942, 1, 0, 0.49956,-99)    );
+-1, 0, 1, -1, 0.439723,-99) , 
+2, -1.99442, 1, 0, 0.491797,-99) , 
+2, -1.69106, 0, 0, 0.584522,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.565623,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500772,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.406031,-99) , 
+6, -1.30852, 0, 0, 0.488181,-99) , 
+5, 0.184522, 1, 0, 0.494177,-99) , 
+2, -1.25546, 1, 0, 0.506672,-99)    );
   // itree = 693
-  fBoostWeights.push_back(0.0216051);
+  fBoostWeights.push_back(0.0907942);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1.26535, 0, 1, 0.509354,-99) , 
+-1, 0, 1, 1, 0.61897,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.448678,-99) , 
+3, 80.253, 0, 0, 0.567771,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.526482,-99) , 
+-1, 0, 1, 1, 0.590603,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.49208,-99) , 
-14, 1505.69, 0, 0, 0.497155,-99) , 
-1, 79.2, 1, 0, 0.50325,-99) , 
-NN(
-0, 
-0, 
--1, 1192, 1, -1, 0.479619,-99) , 
-12, 3.50514, 1, 0, 0.501441,-99)    );
+-1, 0.366521, 1, -1, 0.464321,-99) , 
+8, 2.84984, 0, 0, 0.472452,-99) , 
+10, 3.16178, 0, 0, 0.48217,-99)    );
   // itree = 694
-  fBoostWeights.push_back(0.026281);
+  fBoostWeights.push_back(0.127358);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 199.017, 0, 1, 0.518048,-99) , 
+-1, 0.825846, 0, 1, 0.548975,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51748,-99) , 
+-1, 0, 1, 1, 0.556481,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.494552,-99) , 
-12, 3.04119, 0, 0, 0.497895,-99) , 
-3, 0.956424, 0, 0, 0.503587,-99) , 
+-1, 0, 1, -1, 0.395462,-99) , 
+10, -2.17257, 1, 0, 0.457991,-99) , 
+12, 1887.6, 1, 0, 0.530109,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.500413,-99) , 
+-1, 0, 1, 1, 0.524016,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.45886,-99) , 
-10, 0.108155, 1, 0, 0.479983,-99) , 
+-1, 0, 1, -1, 0.398263,-99) , 
+9, 311.852, 1, 0, 0.498907,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.437212,-99) , 
-4, -1.37928, 0, 0, 0.463588,-99) , 
-3, -1.62194, 0, 0, 0.499237,-99)    );
+-1, 0, 1, 1, 0.58204,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.395842,-99) , 
+13, 1.3973, 0, 0, 0.42518,-99) , 
+5, 0.320345, 1, 0, 0.461979,-99) , 
+4, 295.071, 0, 0, 0.496322,-99)    );
   // itree = 695
-  fBoostWeights.push_back(0.012238);
+  fBoostWeights.push_back(0.0863722);
   fForest.push_back( 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.543637,-99) , 
+-1, 0, 1, 1, 0.670537,-99) , 
 NN(
 NN(
-0, 
-0, 
--1, -1.78564, 1, 1, 0.503366,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.46625,-99) , 
-2, 0.621252, 1, 0, 0.501491,-99) , 
-2, 0.686152, 0, 0, 0.502816,-99)    );
+-1, 0, 1, 1, 0.557218,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.336884,-99) , 
+6, -1.54492, 0, 0, 0.532278,-99) , 
+NN(
+0, 
+0, 
+-1, 1520.48, 1, -1, 0.470901,-99) , 
+12, 1691.13, 0, 0, 0.486938,-99) , 
+4, 674.857, 0, 0, 0.491846,-99)    );
   // itree = 696
-  fBoostWeights.push_back(0.0345384);
+  fBoostWeights.push_back(0.120254);
   fForest.push_back( 
 NN(
 NN(
 NN(
+0, 
+0, 
+-1, 0.797689, 0, 1, 0.582642,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.516182,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482352,-99) , 
-1, 53.9088, 0, 0, 0.51265,-99) , 
-NN(
-0, 
-0, 
--1, 0.197034, 0, -1, 0.472045,-99) , 
-7, 292.273, 0, 0, 0.507244,-99) , 
+-1, 0, 1, -1, 0.437142,-99) , 
+5, 0.482871, 1, 0, 0.564751,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.5367,-99) , 
+-1, 0, 1, 1, 0.547287,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.475923,-99) , 
-7, 863.062, 1, 0, 0.516042,-99) , 
+-1, 0, 1, -1, 0.471567,-99) , 
+8, 0.777762, 0, 0, 0.520878,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 79.634, 0, -1, 0.486407,-99) , 
-4, -1.60677, 1, 0, 0.491188,-99) , 
-7, 531.78, 1, 0, 0.499307,-99)    );
+-1, 0, 1, 1, 0.529194,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.344477,-99) , 
+5, 0.311345, 1, 0, 0.423644,-99) , 
+14, -1.05239, 0, 0, 0.502157,-99) , 
+8, -1.88686, 1, 0, 0.518912,-99)    );
   // itree = 697
-  fBoostWeights.push_back(0.0233695);
+  fBoostWeights.push_back(0.0808944);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1.83817, 0, 1, 0.508031,-99) , 
+-1, 1.31256, 0, 1, 0.5295,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.506878,-99) , 
+-1, 0, 1, 1, 0.582755,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.473749,-99) , 
-0, 0.788379, 1, 0, 0.495024,-99) , 
-2, 0.502053, 1, 0, 0.504744,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523376,-99) , 
+-1, 0, 1, -1, 0.367734,-99) , 
+4, 346.905, 0, 0, 0.448879,-99) , 
+10, -3.10993, 0, 0, 0.521182,-99) , 
 NN(
 0, 
 0, 
--1, -2.29791, 1, -1, 0.467107,-99) , 
-6, 113.335, 0, 0, 0.485597,-99) , 
-3, -1.65407, 0, 0, 0.502675,-99)    );
+-1, 0, 1, -1, 0.412159,-99) , 
+2, 1.71373, 1, 0, 0.516389,-99)    );
   // itree = 698
-  fBoostWeights.push_back(0.0233439);
+  fBoostWeights.push_back(0.0732234);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.543333,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.499389,-99) , 
-5, 0.595564, 0, 0, 0.514,-99) , 
+-1, 0, 1, 1, 0.600866,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.489717,-99) , 
+1, -951.25, 1, 0, 0.497992,-99) , 
+NN(
+0, 
+0, 
+-1, 1829.53, 1, -1, 0.422601,-99) , 
+9, 391.788, 1, 0, 0.487896,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.506876,-99) , 
+-1, 0, 1, 1, 0.587383,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.485856,-99) , 
-10, 1.64605, 1, 0, 0.501974,-99) , 
+-1, 0, 1, -1, 0.331194,-99) , 
+6, 1.91949, 0, 0, 0.449983,-99) , 
 NN(
 0, 
 0, 
--1, 200.445, 1, -1, 0.486174,-99) , 
-5, -0.118989, 1, 0, 0.493636,-99) , 
-3, 1.82298, 0, 0, 0.495549,-99)    );
+-1, 0, 1, -1, 0.295966,-99) , 
+14, 1.66598, 1, 0, 0.399418,-99) , 
+6, 1.54748, 1, 0, 0.480108,-99)    );
   // itree = 699
-  fBoostWeights.push_back(0.0286795);
+  fBoostWeights.push_back(0.139229);
   fForest.push_back( 
 NN(
 NN(
@@ -22633,228 +24252,234 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.517147,-99) , 
+-1, 0, 1, 1, 0.610455,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.49431,-99) , 
-7, 431.118, 1, 0, 0.508251,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466935,-99) , 
-3, 1.64972, 1, 0, 0.504541,-99) , 
-NN(
+-1, 0, 1, -1, 0.445455,-99) , 
+2, 0.574149, 1, 0, 0.568557,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.508514,-99) , 
+-1, 0, 1, 1, 0.664591,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489234,-99) , 
-13, 65.9282, 0, 0, 0.49751,-99) , 
+-1, 0, 1, -1, 0.460631,-99) , 
+3, 99.2411, 0, 0, 0.486726,-99) , 
+10, -0.720285, 1, 0, 0.525634,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0.375809, 1, -1, 0.461046,-99) , 
-13, 155.749, 1, 0, 0.492088,-99) , 
-7, 545.614, 1, 0, 0.498692,-99)    );
+-1, 0, 1, 1, 0.599463,-99) , 
+NN(
+0, 
+0, 
+-1, 75.744, 0, -1, 0.439555,-99) , 
+3, 68.8601, 1, 0, 0.452473,-99) , 
+0, 78.0711, 0, 0, 0.488785,-99)    );
   // itree = 700
-  fBoostWeights.push_back(0.0244585);
+  fBoostWeights.push_back(0.0806042);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 202.307, 0, 1, 0.509956,-99) , 
+-1, 0, 1, 1, 0.689242,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.480104,-99) , 
+6, -0.844401, 0, 0, 0.630153,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.446712,-99) , 
+14, 0.985462, 1, 0, 0.594968,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50642,-99) , 
+-1, 1.5828, 0, 1, 0.512918,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489233,-99) , 
-2, 0.453346, 0, 0, 0.495465,-99) , 
-5, 0.595193, 0, 0, 0.50018,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513777,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502446,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467654,-99) , 
-7, 719.219, 0, 0, 0.476707,-99) , 
-13, 84.7893, 0, 0, 0.483579,-99) , 
-12, -2.60874, 0, 0, 0.496656,-99)    );
+-1, 0, 1, -1, 0.31937,-99) , 
+14, -2.17561, 0, 0, 0.505854,-99) , 
+2, -1.02881, 1, 0, 0.523748,-99)    );
   // itree = 701
-  fBoostWeights.push_back(0.0186848);
+  fBoostWeights.push_back(0.139921);
   fForest.push_back( 
 NN(
 NN(
+NN(
+NN(
 0, 
 0, 
--1, 1.73659, 0, 1, 0.529685,-99) , 
+-1, 0, 1, 1, 0.562156,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.363835,-99) , 
+11, 54.8041, 0, 0, 0.545331,-99) , 
+NN(
+0, 
+0, 
+-1, 0.560948, 1, -1, 0.416987,-99) , 
+11, 150.751, 1, 0, 0.52306,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504547,-99) , 
+-1, 0, 1, 1, 0.54378,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.48646,-99) , 
-1, 60.287, 0, 0, 0.501426,-99) , 
+-1, 0, 1, -1, 0.442757,-99) , 
+7, 123.493, 0, 0, 0.479408,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.465941,-99) , 
-12, -3.14706, 0, 0, 0.499553,-99) , 
-12, -3.55082, 1, 0, 0.501962,-99)    );
+-1, -2.32339, 1, -1, 0.357481,-99) , 
+9, 349.287, 1, 0, 0.458691,-99) , 
+8, 0.646763, 1, 0, 0.494523,-99)    );
   // itree = 702
-  fBoostWeights.push_back(0.0211753);
+  fBoostWeights.push_back(0.0924624);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539627,-99) , 
-NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504382,-99) , 
+-1, 0, 1, 1, 0.570987,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490362,-99) , 
-7, 483.963, 0, 0, 0.498581,-99) , 
-13, 281.369, 0, 0, 0.500372,-99) , 
-NN(
-NN(
+-1, 0, 1, -1, 0.483523,-99) , 
+12, 1669.69, 0, 0, 0.505397,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.521564,-99) , 
+-1, 1.07129, 1, -1, 0.453036,-99) , 
+5, 0.317116, 1, 0, 0.477734,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489288,-99) , 
-0, -0.685187, 1, 0, 0.49251,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.452235,-99) , 
-11, 470.624, 1, 0, 0.489666,-99) , 
-10, 0.695857, 1, 0, 0.496001,-99)    );
+-1, -0.0207906, 0, -1, 0.345983,-99) , 
+5, 0.504052, 1, 0, 0.469616,-99)    );
   // itree = 703
-  fBoostWeights.push_back(0.0181273);
+  fBoostWeights.push_back(0.100954);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 3.5038, 0, 1, 0.504965,-99) , 
-NN(
-0, 
-0, 
--1, 2.08945, 1, -1, 0.488399,-99) , 
-0, -0.188303, 0, 0, 0.500764,-99) , 
+-1, 1.76447, 0, 1, 0.619797,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51341,-99) , 
+-1, 0, 1, 1, 0.550795,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.47391,-99) , 
-12, 1.13621, 0, 0, 0.492217,-99) , 
+-1, 0, 1, -1, 0.460777,-99) , 
+12, 1589.26, 1, 0, 0.526148,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.45101,-99) , 
-5, -1.81974, 1, 0, 0.476589,-99) , 
-5, -1.54763, 0, 0, 0.498379,-99)    );
+-1, 0, 1, 1, 0.503588,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.340444,-99) , 
+8, 1.92871, 1, 0, 0.463404,-99) , 
+0, 111.994, 1, 0, 0.508363,-99) , 
+2, 1.71373, 0, 0, 0.514819,-99)    );
   // itree = 704
-  fBoostWeights.push_back(0.0178267);
+  fBoostWeights.push_back(0.132935);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.537538,-99) , 
+-1, -1.57582, 0, 1, 0.637565,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.538424,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.36961,-99) , 
+2, -0.901472, 0, 0, 0.525353,-99) , 
+2, -1.24937, 1, 0, 0.545557,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.516678,-99) , 
+-1, 0, 1, 1, 0.602683,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.496433,-99) , 
-1, 98.5277, 0, 0, 0.500341,-99) , 
+-1, 0, 1, -1, 0.406259,-99) , 
+10, 2.19517, 1, 0, 0.556474,-99) , 
 NN(
 0, 
 0, 
--1, -2.85965, 0, -1, 0.489267,-99) , 
-10, -0.673697, 0, 0, 0.495856,-99) , 
-2, 0.68528, 0, 0, 0.497176,-99)    );
+-1, 0.849107, 1, -1, 0.442447,-99) , 
+7, 55.8186, 1, 0, 0.477069,-99) , 
+3, 84.0506, 0, 0, 0.513619,-99)    );
   // itree = 705
-  fBoostWeights.push_back(0.0268533);
+  fBoostWeights.push_back(0.158586);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.547308,-99) , 
+-1, 0, 1, 1, 0.561188,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.378676,-99) , 
+5, 0.48519, 1, 0, 0.542416,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.528074,-99) , 
+-1, 0, 1, 1, 0.577979,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.468438,-99) , 
-4, -0.195485, 1, 0, 0.49736,-99) , 
-11, 201.152, 1, 0, 0.521548,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -0.897926, 0, 1, 0.508402,-99) , 
+-1, 0, 1, -1, 0.396874,-99) , 
+13, -0.0353214, 1, 0, 0.472727,-99) , 
+14, 0.0736444, 1, 0, 0.51174,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511089,-99) , 
+-1, 0.0953062, 0, 1, 0.574402,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487905,-99) , 
-3, -0.389165, 1, 0, 0.49675,-99) , 
-10, -0.232584, 1, 0, 0.502305,-99) , 
-2, 0.594139, 0, 0, 0.504552,-99)    );
+-1, 97.3423, 1, -1, 0.420352,-99) , 
+4, 442.536, 0, 0, 0.4429,-99) , 
+11, 103.376, 1, 0, 0.484553,-99)    );
   // itree = 706
-  fBoostWeights.push_back(0.0282796);
+  fBoostWeights.push_back(0.0875769);
   fForest.push_back( 
 NN(
 NN(
@@ -22862,970 +24487,1060 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50673,-99) , 
+-1, 0, 1, 1, 0.526383,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.477065,-99) , 
-4, -1.27637, 0, 0, 0.5033,-99) , 
-NN(
-0, 
-0, 
--1, 2232.83, 0, -1, 0.471183,-99) , 
-14, 1724.82, 1, 0, 0.50033,-99) , 
-NN(
+-1, 0, 1, -1, 0.454812,-99) , 
+13, 1.09242, 1, 0, 0.514886,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.510983,-99) , 
+-1, 0, 1, 1, 0.563939,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.482037,-99) , 
-13, 106.793, 0, 0, 0.488881,-99) , 
+-1, 0, 1, -1, 0.349816,-99) , 
+1, 0.228631, 1, 0, 0.414898,-99) , 
+3, 97.3423, 1, 0, 0.504849,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.453108,-99) , 
-5, -1.54696, 0, 0, 0.485168,-99) , 
-12, 1.16493, 1, 0, 0.494169,-99)    );
+-1, -0.107585, 1, -1, 0.369899,-99) , 
+1, -951.25, 0, 0, 0.497776,-99)    );
   // itree = 707
-  fBoostWeights.push_back(0.0207981);
+  fBoostWeights.push_back(0.137609);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, -1.82029, 1, 1, 0.52112,-99) , 
 NN(
 0, 
 0, 
--1, 3.03464, 1, -1, 0.494948,-99) , 
-4, -2.11284, 1, 0, 0.497521,-99) , 
+-1, 0, 1, 1, 0.677183,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.499311,-99) , 
+4, 254.25, 1, 0, 0.61624,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.518821,-99) , 
+-1, 0, 1, 1, 0.590408,-99) , 
 NN(
 0, 
 0, 
--1, 0.500755, 1, -1, 0.472707,-99) , 
-5, 2.09177, 0, 0, 0.479927,-99) , 
-5, 1.07139, 1, 0, 0.494095,-99)    );
+-1, 0, 1, -1, 0.400929,-99) , 
+13, -1.88798, 1, 0, 0.450588,-99) , 
+4, 295.19, 1, 0, 0.546738,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.663702,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.492211,-99) , 
+14, 0.257704, 1, 0, 0.591981,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508705,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.435948,-99) , 
+5, 0.274848, 1, 0, 0.460511,-99) , 
+11, 182.089, 0, 0, 0.477166,-99) , 
+13, -0.721352, 1, 0, 0.497293,-99)    );
   // itree = 708
-  fBoostWeights.push_back(0.0126144);
+  fBoostWeights.push_back(0.139045);
   fForest.push_back( 
 NN(
 NN(
+NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.54001,-99) , 
+-1, 0, 1, 1, 0.618193,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.421303,-99) , 
+3, 72.6458, 0, 0, 0.593325,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.441346,-99) , 
+13, -0.407466, 0, 0, 0.561126,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504474,-99) , 
+-1, 0, 1, 1, 0.544904,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.496087,-99) , 
-10, -0.218047, 0, 0, 0.500509,-99) , 
+-1, 0, 1, -1, 0.426393,-99) , 
+13, -0.87973, 0, 0, 0.515547,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.471425,-99) , 
-5, 2.02376, 1, 0, 0.499525,-99) , 
-2, 0.677992, 0, 0, 0.500999,-99)    );
+-1, 1.06369, 1, -1, 0.442281,-99) , 
+5, 0.323833, 0, 0, 0.484557,-99) , 
+10, -2.17411, 1, 0, 0.508313,-99)    );
   // itree = 709
-  fBoostWeights.push_back(0.0227939);
+  fBoostWeights.push_back(0.141002);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 90.7551, 0, 1, 0.515995,-99) , 
+-1, 0, 1, 1, 0.653228,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.437341,-99) , 
+3, 89.747, 1, 0, 0.603595,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.500337,-99) , 
+-1, 0, 1, 1, 0.554573,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.479331,-99) , 
-2, 0.293952, 1, 0, 0.49622,-99) , 
-14, 768.721, 1, 0, 0.504856,-99) , 
+-1, 0, 1, -1, 0.392383,-99) , 
+3, 84.0506, 0, 0, 0.485306,-99) , 
+12, 1316.83, 0, 0, 0.539258,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.540583,-99) , 
+-1, 0, 1, 1, 0.606934,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.494515,-99) , 
-1, 60.5676, 1, 0, 0.50705,-99) , 
+-1, 0, 1, -1, 0.472706,-99) , 
+5, 0.474564, 0, 0, 0.494604,-99) , 
 NN(
 0, 
 0, 
--1, -1.92841, 0, -1, 0.488146,-99) , 
-3, -1.17193, 1, 0, 0.491975,-99) , 
-2, 0.323234, 1, 0, 0.496591,-99)    );
+-1, 82.1518, 1, -1, 0.418364,-99) , 
+4, 287.595, 0, 0, 0.46246,-99) , 
+13, -0.721352, 1, 0, 0.483635,-99)    );
   // itree = 710
-  fBoostWeights.push_back(0.033146);
+  fBoostWeights.push_back(0.0768885);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 642.443, 0, 1, 0.530785,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506796,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461068,-99) , 
-1, 98.2588, 1, 0, 0.499167,-99) , 
-12, 2.5708, 0, 0, 0.509494,-99) , 
+-1, 0, 1, 1, 0.652175,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.550432,-99) , 
+-1, 0, 1, 1, 0.524986,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.482946,-99) , 
-1, 78.7091, 0, 0, 0.519981,-99) , 
+-1, 0, 1, -1, 0.457811,-99) , 
+2, 0.908715, 1, 0, 0.514188,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529496,-99) , 
+-1, 0, 1, 1, 0.525721,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487141,-99) , 
-3, -2.28754, 1, 0, 0.489321,-99) , 
-14, 1028.07, 0, 0, 0.492441,-99) , 
-14, 1159.63, 0, 0, 0.497198,-99)    );
+-1, 0, 1, -1, 0.25672,-99) , 
+6, 0.131371, 1, 0, 0.422461,-99) , 
+7, 241.386, 1, 0, 0.50699,-99) , 
+2, 1.94213, 0, 0, 0.512185,-99)    );
   // itree = 711
-  fBoostWeights.push_back(0.0153029);
+  fBoostWeights.push_back(0.119426);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535946,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 89.8738, 0, 1, 0.51542,-99) , 
+-1, 0, 1, 1, 0.6257,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.495259,-99) , 
+4, 261.024, 0, 0, 0.586412,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.502333,-99) , 
+-1, 0, 1, 1, 0.544228,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.47389,-99) , 
-11, 531.888, 1, 0, 0.500451,-99) , 
-4, 1.28831, 0, 0, 0.503544,-99) , 
-1, 47.9884, 1, 0, 0.505036,-99)    );
+-1, 0, 1, -1, 0.460881,-99) , 
+6, -0.118513, 0, 0, 0.504113,-99) , 
+2, 0.799316, 0, 0, 0.526282,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.585066,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.43074,-99) , 
+2, 0.564407, 1, 0, 0.547751,-99) , 
+NN(
+0, 
+0, 
+-1, 0.262299, 0, -1, 0.439424,-99) , 
+8, 2.5106, 0, 0, 0.474048,-99) , 
+8, 1.04116, 1, 0, 0.506134,-99)    );
   // itree = 712
-  fBoostWeights.push_back(0.019963);
+  fBoostWeights.push_back(0.0722765);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.545067,-99) , 
+-1, 919.476, 1, 1, 0.597667,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529639,-99) , 
+-1, 0, 1, 1, 0.539822,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.493562,-99) , 
-2, 0.454777, 0, 0, 0.506772,-99) , 
-4, 1.72002, 0, 0, 0.518659,-99) , 
-NN(
-NN(
+-1, 0, 1, -1, 0.479014,-99) , 
+2, 0.570382, 0, 0, 0.497776,-99) , 
+1, -951.264, 1, 0, 0.504502,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513961,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468991,-99) , 
-4, 1.2652, 1, 0, 0.506978,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500488,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482946,-99) , 
-10, -0.355072, 0, 0, 0.495846,-99) , 
-10, -1.58714, 1, 0, 0.498765,-99) , 
-3, 1.60927, 0, 0, 0.501239,-99)    );
+-1, 0, 1, -1, 0.359467,-99) , 
+8, -2.86942, 0, 0, 0.498504,-99)    );
   // itree = 713
-  fBoostWeights.push_back(0.0230633);
+  fBoostWeights.push_back(0.146265);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.556996,-99) , 
+-1, 0, 1, 1, 0.580624,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.391694,-99) , 
+10, 3.35112, 1, 0, 0.563854,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.54971,-99) , 
+-1, 0, 1, 1, 0.570579,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.480192,-99) , 
-1, 86.6889, 0, 0, 0.514998,-99) , 
-1, 66.5823, 1, 0, 0.526806,-99) , 
+-1, 0, 1, -1, 0.45208,-99) , 
+5, 0.275846, 1, 0, 0.497074,-99) , 
+3, 84.0506, 1, 0, 0.53064,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.524765,-99) , 
+-1, 0, 1, 1, 0.596183,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489849,-99) , 
-2, 0.334198, 0, 0, 0.511994,-99) , 
+-1, 0, 1, -1, 0.38952,-99) , 
+2, -1.42029, 0, 0, 0.528697,-99) , 
 NN(
 0, 
 0, 
--1, 1.07133, 1, -1, 0.494977,-99) , 
-4, 1.2192, 0, 0, 0.498196,-99) , 
-3, 1.68615, 0, 0, 0.501448,-99)    );
+-1, -2.73, 1, -1, 0.435075,-99) , 
+13, 0.00436401, 1, 0, 0.473489,-99) , 
+10, -2.17564, 0, 0, 0.514633,-99)    );
   // itree = 714
-  fBoostWeights.push_back(0.0237288);
+  fBoostWeights.push_back(0.102358);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, -0.595107, 0, 1, 0.523143,-99) , 
+-1, 1009.57, 1, 1, 0.583457,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.522738,-99) , 
+-1, 0, 1, 1, 0.568421,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.483584,-99) , 
-0, 0.365494, 1, 0, 0.497524,-99) , 
-11, 200.445, 0, 0, 0.511534,-99) , 
+-1, 0, 1, -1, 0.474484,-99) , 
+9, 323.834, 0, 0, 0.49798,-99) , 
+14, 1.53203, 0, 0, 0.511912,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0.42133, 1, 1, 0.513777,-99) , 
+-1, 0, 1, 1, 0.550034,-99) , 
 NN(
 0, 
 0, 
--1, -2.09705, 0, -1, 0.49297,-99) , 
-12, -2.57647, 1, 0, 0.49772,-99) , 
-2, 0.503507, 0, 0, 0.501345,-99)    );
+-1, 140.26, 1, -1, 0.434854,-99) , 
+4, 484.964, 0, 0, 0.445851,-99) , 
+14, -0.477525, 0, 0, 0.488316,-99)    );
   // itree = 715
-  fBoostWeights.push_back(0.0247672);
+  fBoostWeights.push_back(0.122858);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.520992,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499251,-99) , 
-10, -2.41811, 0, 0, 0.512588,-99) , 
+-1, 0, 1, 1, 0.704975,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511136,-99) , 
+-1, 0, 1, 1, 0.528914,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.473125,-99) , 
-3, -0.40608, 0, 0, 0.49741,-99) , 
-11, 201.187, 1, 0, 0.504784,-99) , 
+-1, 0, 1, -1, 0.392651,-99) , 
+11, 142.752, 1, 0, 0.507945,-99) , 
+4, 442.643, 0, 0, 0.537763,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0.227282, 1, -1, 0.490685,-99) , 
-10, 0.253672, 1, 0, 0.498229,-99)    );
+-1, 0, 1, 1, 0.655646,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432505,-99) , 
+4, 335.482, 1, 0, 0.583822,-99) , 
+NN(
+0, 
+0, 
+-1, 1861.27, 1, -1, 0.45548,-99) , 
+11, 156.75, 0, 0, 0.477122,-99) , 
+13, 0.400226, 0, 0, 0.499032,-99)    );
   // itree = 716
-  fBoostWeights.push_back(0.0306277);
+  fBoostWeights.push_back(0.10706);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.515886,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483854,-99) , 
-14, 1856.62, 1, 0, 0.513165,-99) , 
+-1, -1.02373, 1, 1, 0.609866,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513854,-99) , 
+-1, 0, 1, 1, 0.579611,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.488892,-99) , 
-0, 0.564917, 0, 0, 0.498999,-99) , 
-4, 0.503271, 1, 0, 0.507886,-99) , 
+-1, 0, 1, -1, 0.453043,-99) , 
+0, 70.5766, 0, 0, 0.529817,-99) , 
+8, -1.18587, 1, 0, 0.560799,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.509881,-99) , 
+-1, 0, 1, 1, 0.56729,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.480577,-99) , 
-11, 200.476, 0, 0, 0.496468,-99) , 
+-1, 0, 1, -1, 0.338541,-99) , 
+2, 1.60486, 1, 0, 0.543968,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.459098,-99) , 
-1, 92.2134, 1, 0, 0.489774,-99) , 
-2, 0.548846, 1, 0, 0.504757,-99)    );
+-1, 97.3423, 1, -1, 0.476065,-99) , 
+14, -0.42808, 1, 0, 0.499026,-99) , 
+13, -0.721352, 1, 0, 0.516079,-99)    );
   // itree = 717
-  fBoostWeights.push_back(0.0170275);
+  fBoostWeights.push_back(0.122521);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 201.174, 1, 1, 0.506992,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487421,-99) , 
-10, 2.56913, 1, 0, 0.504802,-99) , 
+-1, 0, 1, 1, 0.594429,-99) , 
 NN(
 0, 
 0, 
--1, 1173.96, 1, -1, 0.477174,-99) , 
-11, 543.44, 1, 0, 0.503174,-99)    );
+-1, 0, 1, -1, 0.465798,-99) , 
+13, 1.08277, 1, 0, 0.570587,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.585247,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.485335,-99) , 
+5, 0.309343, 0, 0, 0.52247,-99) , 
+8, -0.0958891, 0, 0, 0.548567,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.654495,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.474142,-99) , 
+6, -1.78285, 1, 0, 0.492362,-99) , 
+NN(
+0, 
+0, 
+-1, 85.4787, 1, -1, 0.363048,-99) , 
+10, 2.66857, 1, 0, 0.469271,-99) , 
+5, 0.366311, 1, 0, 0.517712,-99)    );
   // itree = 718
-  fBoostWeights.push_back(0.0227216);
+  fBoostWeights.push_back(0.0806588);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.523349,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489125,-99) , 
-13, 153.453, 1, 0, 0.513536,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.473179,-99) , 
-1, 54.2871, 0, 0, 0.509136,-99) , 
+-1, 994.938, 1, 1, 0.618075,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0.76412, 1, 1, 0.505676,-99) , 
+-1, 0, 1, 1, 0.527954,-99) , 
 NN(
 0, 
 0, 
--1, 2.89921, 1, -1, 0.490688,-99) , 
-12, -2.14127, 1, 0, 0.495465,-99) , 
-0, -0.258338, 1, 0, 0.499003,-99)    );
+-1, 0, 1, -1, 0.424458,-99) , 
+5, 0.505165, 1, 0, 0.521749,-99) , 
+3, 68.8601, 1, 0, 0.528438,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.349998,-99) , 
+2, -1.94282, 0, 0, 0.523117,-99)    );
   // itree = 719
-  fBoostWeights.push_back(0.0135375);
+  fBoostWeights.push_back(0.129464);
   fForest.push_back( 
 NN(
 NN(
 NN(
+0, 
+0, 
+-1, -1.34115, 1, 1, 0.574665,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.561079,-99) , 
+-1, 0, 1, 1, 0.515898,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.496228,-99) , 
-1, 92.0382, 0, 0, 0.514709,-99) , 
+-1, 0, 1, -1, 0.37433,-99) , 
+14, -0.729503, 0, 0, 0.47954,-99) , 
+9, 137.112, 0, 0, 0.546572,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 111.029, 1, -1, 0.496519,-99) , 
-3, 1.68615, 0, 0, 0.498636,-99) , 
+-1, 0, 1, 1, 0.591487,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.461943,-99) , 
-4, -2.4826, 0, 0, 0.497114,-99)    );
+-1, 0, 1, -1, 0.472118,-99) , 
+2, 1.03299, 0, 0, 0.498868,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.337411,-99) , 
+14, 0.961583, 1, 0, 0.472784,-99) , 
+9, 278.126, 1, 0, 0.523512,-99)    );
   // itree = 720
-  fBoostWeights.push_back(0.0272375);
+  fBoostWeights.push_back(0.122862);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.537681,-99) , 
+-1, 78.3542, 0, 1, 0.596635,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513429,-99) , 
+-1, 0, 1, 1, 0.519862,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487635,-99) , 
-12, -2.56159, 0, 0, 0.505455,-99) , 
-1, 60.5722, 1, 0, 0.511183,-99) , 
+-1, 0, 1, -1, 0.430955,-99) , 
+6, 1.07094, 1, 0, 0.50504,-99) , 
+11, 138.055, 0, 0, 0.528096,-99) , 
 NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517314,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49475,-99) , 
-14, 786.195, 1, 0, 0.506746,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.505466,-99) , 
+-1, 0, 1, 1, 0.56111,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.482133,-99) , 
-2, 0.35917, 1, 0, 0.492332,-99) , 
-12, -0.248447, 1, 0, 0.499412,-99) , 
-0, 1.00894, 0, 0, 0.502794,-99)    );
+-1, 0, 1, -1, 0.397058,-99) , 
+7, 53.8284, 0, 0, 0.525865,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.524213,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.398612,-99) , 
+6, -1.30629, 1, 0, 0.422634,-99) , 
+12, 1509.02, 0, 0, 0.456775,-99) , 
+2, -0.113235, 0, 0, 0.496651,-99)    );
   // itree = 721
-  fBoostWeights.push_back(0.0226538);
+  fBoostWeights.push_back(0.144183);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, -0.118998, 1, 1, 0.525611,-99) , 
+-1, 0, 1, 1, 0.580341,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.472789,-99) , 
+3, 81.2054, 1, 0, 0.527074,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504453,-99) , 
+-1, 0, 1, 1, 0.603905,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.451209,-99) , 
-1, 101.025, 1, 0, 0.501737,-99) , 
-1, 110.921, 0, 0, 0.504324,-99) , 
+-1, 0, 1, -1, 0.421736,-99) , 
+13, -1.37166, 1, 0, 0.449426,-99) , 
+3, 75.997, 0, 0, 0.499074,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.515279,-99) , 
+-1, 0, 1, 1, 0.554975,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.48777,-99) , 
-6, 124.604, 0, 0, 0.494936,-99) , 
+-1, 0, 1, -1, 0.439886,-99) , 
+2, -0.349051, 1, 0, 0.484096,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, -0.118865, 0, -1, 0.466208,-99) , 
-0, -0.489648, 0, 0, 0.490222,-99) , 
-2, 0.317294, 0, 0, 0.499612,-99)    );
+-1, 0, 1, 1, 0.507589,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.323229,-99) , 
+7, 53.8327, 0, 0, 0.378975,-99) , 
+7, 64.5788, 0, 0, 0.44826,-99) , 
+3, 85.9494, 1, 0, 0.476846,-99)    );
   // itree = 722
-  fBoostWeights.push_back(0.0252874);
+  fBoostWeights.push_back(0.118227);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 93.7314, 1, 1, 0.516828,-99) , 
-NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514831,-99) , 
+-1, 0, 1, 1, 0.595601,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487178,-99) , 
-13, 61.7576, 0, 0, 0.498647,-99) , 
-1, 79.465, 1, 0, 0.508343,-99) , 
+-1, 0, 1, -1, 0.429247,-99) , 
+5, 0.482382, 1, 0, 0.580313,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.337412,-99) , 
+6, -1.54518, 0, 0, 0.556823,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.501922,-99) , 
+-1, 0, 1, 1, 0.523999,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.471951,-99) , 
-5, -1.0714, 0, 0, 0.496085,-99) , 
+-1, 0, 1, -1, 0.45964,-99) , 
+13, 0.199724, 0, 0, 0.497437,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.460478,-99) , 
-12, 3.03267, 1, 0, 0.492735,-99) , 
-11, 197.295, 1, 0, 0.500341,-99)    );
+-1, 0, 1, -1, 0.336469,-99) , 
+3, 68.8601, 0, 0, 0.488706,-99) , 
+2, -0.571475, 1, 0, 0.511629,-99)    );
   // itree = 723
-  fBoostWeights.push_back(0.0159339);
+  fBoostWeights.push_back(0.14429);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, -2.07932, 0, 1, 0.526215,-99) , 
+-1, 70.4792, 0, 1, 0.621993,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.605107,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.431188,-99) , 
+13, 0.777479, 0, 0, 0.498381,-99) , 
+14, -0.0104865, 1, 0, 0.566864,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.502795,-99) , 
+-1, 0, 1, 1, 0.609044,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.485239,-99) , 
-1, 104.841, 1, 0, 0.500499,-99) , 
+-1, 0, 1, -1, 0.439176,-99) , 
+3, 81.9167, 0, 0, 0.565788,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0.711824, 1, -1, 0.474791,-99) , 
-8, 247.959, 1, 0, 0.498915,-99) , 
-10, 2.55779, 0, 0, 0.501996,-99)    );
+-1, 0, 1, 1, 0.544521,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442282,-99) , 
+8, -1.74051, 1, 0, 0.472735,-99) , 
+5, 0.458113, 0, 0, 0.488766,-99) , 
+3, 76.4554, 1, 0, 0.507611,-99)    );
   // itree = 724
-  fBoostWeights.push_back(0.0176057);
+  fBoostWeights.push_back(0.112547);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0.592178, 0, 1, 0.509893,-99) , 
+-1, 80.253, 1, 1, 0.536381,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50048,-99) , 
+-1, 0, 1, 1, 0.532462,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.485204,-99) , 
-1, 73.1197, 0, 0, 0.494927,-99) , 
-0, 0.690831, 0, 0, 0.501072,-99) , 
+-1, 0, 1, -1, 0.415816,-99) , 
+8, -0.75, 0, 0, 0.47931,-99) , 
+13, 0.319114, 1, 0, 0.515163,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.447758,-99) , 
-12, -4.02359, 0, 0, 0.499419,-99)    );
+-1, 0, 1, 1, 0.564119,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.462634,-99) , 
+8, 2.05001, 1, 0, 0.50465,-99) , 
+NN(
+0, 
+0, 
+-1, 0.112839, 1, -1, 0.391072,-99) , 
+8, 1.4873, 0, 0, 0.428186,-99) , 
+7, 130.406, 1, 0, 0.49154,-99)    );
   // itree = 725
-  fBoostWeights.push_back(0.0240907);
+  fBoostWeights.push_back(0.1354);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, -0.0614882, 1, 1, 0.523171,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47655,-99) , 
-12, -3.55585, 0, 0, 0.513543,-99) , 
+-1, 0.248483, 1, 1, 0.540882,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.527518,-99) , 
+-1, 0, 1, 1, 0.521468,-99) , 
 NN(
 0, 
 0, 
--1, -0.833313, 0, -1, 0.490966,-99) , 
-13, 281.369, 0, 0, 0.492353,-99) , 
-3, 1.33254, 0, 0, 0.495976,-99)    );
+-1, 0, 1, -1, 0.377816,-99) , 
+2, -0.109073, 1, 0, 0.451646,-99) , 
+3, 87.8482, 1, 0, 0.50942,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.618996,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.409991,-99) , 
+8, -0.847563, 0, 0, 0.527859,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505946,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.376414,-99) , 
+5, 0.46189, 0, 0, 0.401912,-99) , 
+3, 95.4435, 0, 0, 0.424946,-99) , 
+6, -0.594215, 0, 0, 0.482516,-99)    );
   // itree = 726
-  fBoostWeights.push_back(0.0324959);
+  fBoostWeights.push_back(0.0915538);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51556,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494587,-99) , 
-14, 601.597, 0, 0, 0.509223,-99) , 
+-1, 617.412, 0, 1, 0.649434,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.522228,-99) , 
+-1, 0, 1, 1, 0.637192,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.473616,-99) , 
-2, 0.334661, 1, 0, 0.49287,-99) , 
-14, 1163.22, 1, 0, 0.505414,-99) , 
+-1, 0, 1, -1, 0.474967,-99) , 
+0, 193.439, 0, 0, 0.496162,-99) , 
+12, 746.662, 1, 0, 0.533371,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514905,-99) , 
+-1, 0, 1, 1, 0.510158,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489918,-99) , 
-10, 2.39768, 0, 0, 0.502552,-99) , 
+-1, 0, 1, -1, 0.348888,-99) , 
+13, -1.79312, 0, 0, 0.499402,-99) , 
 NN(
 0, 
 0, 
--1, -0.289911, 0, -1, 0.471264,-99) , 
-5, -0.119091, 0, 0, 0.490277,-99) , 
-10, 1.63341, 1, 0, 0.501576,-99)    );
+-1, 580.14, 0, -1, 0.428687,-99) , 
+12, 836.396, 0, 0, 0.480366,-99) , 
+3, 80.253, 1, 0, 0.499991,-99)    );
   // itree = 727
-  fBoostWeights.push_back(0.028678);
+  fBoostWeights.push_back(0.119415);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.562373,-99) , 
+-1, 0, 1, 1, 0.551445,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.473173,-99) , 
+10, 1.24549, 1, 0, 0.520045,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51048,-99) , 
+-1, 0, 1, 1, 0.607327,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492851,-99) , 
-14, 1193.16, 1, 0, 0.505964,-99) , 
-1, 47.6442, 1, 0, 0.508605,-99) , 
+-1, 0, 1, -1, 0.426334,-99) , 
+14, -1.49395, 1, 0, 0.453545,-99) , 
+5, 0.412364, 1, 0, 0.503715,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.516344,-99) , 
+-1, 0, 1, 1, 0.54198,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.469724,-99) , 
-5, 1.07127, 1, 0, 0.505395,-99) , 
+-1, 0, 1, -1, 0.337905,-99) , 
+6, -0.575405, 0, 0, 0.493807,-99) , 
 NN(
 0, 
 0, 
--1, 0.553309, 1, -1, 0.480143,-99) , 
-10, 0.601396, 0, 0, 0.490918,-99) , 
-3, 0.739334, 1, 0, 0.503433,-99)    );
+-1, 198.088, 0, -1, 0.326262,-99) , 
+7, 221.722, 0, 0, 0.439345,-99) , 
+7, 176.745, 1, 0, 0.49316,-99)    );
   // itree = 728
-  fBoostWeights.push_back(0.0209635);
+  fBoostWeights.push_back(0.0948544);
   fForest.push_back( 
 NN(
 NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.589699,-99) , 
 NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505663,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470259,-99) , 
-2, 0.617437, 1, 0, 0.503776,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.512662,-99) , 
+-1, 0, 1, 1, 0.533574,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.48125,-99) , 
-4, -0.172481, 0, 0, 0.491433,-99) , 
-12, 2.10719, 1, 0, 0.500217,-99) , 
+-1, 0, 1, -1, 0.458211,-99) , 
+7, 74.9114, 0, 0, 0.506125,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.466409,-99) , 
-2, 0.68225, 1, 0, 0.499223,-99)    );
+-1, -1.18104, 0, -1, 0.447921,-99) , 
+4, 289.167, 0, 0, 0.478895,-99) , 
+8, -2.77841, 1, 0, 0.487256,-99)    );
   // itree = 729
-  fBoostWeights.push_back(0.0255392);
+  fBoostWeights.push_back(0.113959);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522684,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.499119,-99) , 
-4, -0.219266, 0, 0, 0.511267,-99) , 
-NN(
-NN(
+-1, 0, 1, 1, 0.607234,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.512655,-99) , 
+-1, 0, 1, -1, 0.491339,-99) , 
+5, 0.348955, 1, 0, 0.55756,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.491831,-99) , 
-1, 72.4206, 1, 0, 0.499227,-99) , 
+-1, 0, 1, -1, 0.334985,-99) , 
+0, 209.644, 1, 0, 0.53961,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.506358,-99) , 
+-1, 80.3443, 1, 1, 0.591528,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.478185,-99) , 
-11, 201.173, 1, 0, 0.486916,-99) , 
-0, 0.174772, 0, 0, 0.493887,-99) , 
-10, 2.08012, 0, 0, 0.497086,-99)    );
+-1, -951.266, 0, -1, 0.457783,-99) , 
+10, 3.14435, 0, 0, 0.473154,-99) , 
+9, 278.056, 0, 0, 0.496521,-99)    );
   // itree = 730
-  fBoostWeights.push_back(0.0313715);
+  fBoostWeights.push_back(0.0513346);
   fForest.push_back( 
 NN(
 NN(
 NN(
+0, 
+0, 
+-1, 0.59568, 1, 1, 0.632778,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.548931,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499876,-99) , 
-2, 0.383867, 0, 0, 0.525,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50907,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490315,-99) , 
-2, 0.406744, 1, 0, 0.500775,-99) , 
-1, 110.858, 0, 0, 0.503487,-99) , 
-NN(
+-1, 0, 1, -1, 0.416895,-99) , 
+13, -0.591826, 0, 0, 0.577158,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.52915,-99) , 
+-1, 0, 1, 1, 0.630728,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.48462,-99) , 
-3, -1.21951, 1, 0, 0.4964,-99) , 
+-1, 0, 1, 1, 0.502919,-99) , 
 NN(
 0, 
 0, 
--1, 1.8534, 1, -1, 0.472077,-99) , 
-12, -1.1725, 0, 0, 0.485921,-99) , 
-5, 0.357175, 1, 0, 0.49665,-99)    );
+-1, 0, 1, -1, 0.325636,-99) , 
+13, 2.1928, 1, 0, 0.497318,-99) , 
+10, -3.58301, 1, 0, 0.502561,-99) , 
+6, 1.5475, 0, 0, 0.511289,-99)    );
   // itree = 731
-  fBoostWeights.push_back(0.0188765);
+  fBoostWeights.push_back(0.0948407);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 1.62214, 0, 1, 0.504468,-99) , 
 NN(
 0, 
 0, 
--1, 275.455, 0, -1, 0.475995,-99) , 
-14, 1741.66, 1, 0, 0.501714,-99) , 
+-1, 0, 1, 1, 0.537607,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.481825,-99) , 
+9, 219.902, 1, 0, 0.510841,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.519042,-99) , 
+-1, 0, 1, 1, 0.558619,-99) , 
 NN(
 0, 
 0, 
--1, 98.773, 1, -1, 0.480235,-99) , 
-11, 529.012, 0, 0, 0.487273,-99) , 
-9, 376.086, 1, 0, 0.498364,-99)    );
+-1, 0, 1, -1, 0.376506,-99) , 
+5, 0.519488, 0, 0, 0.443961,-99) , 
+5, 0.458581, 1, 0, 0.500772,-99) , 
+NN(
+0, 
+0, 
+-1, 87.8482, 1, -1, 0.365079,-99) , 
+7, 229.098, 1, 0, 0.489059,-99)    );
   // itree = 732
-  fBoostWeights.push_back(0.0244432);
+  fBoostWeights.push_back(0.126182);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 0.22986, 1, 1, 0.525088,-99) , 
-NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511054,-99) , 
+-1, 0, 1, 1, 0.546992,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.493754,-99) , 
-12, 1.61408, 0, 0, 0.500056,-99) , 
-1, 110.969, 0, 0, 0.502868,-99) , 
-NN(
+-1, 0, 1, -1, 0.406441,-99) , 
+10, 3.15048, 1, 0, 0.53251,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514757,-99) , 
+-1, 0, 1, -1, 0.380323,-99) , 
+6, -1.54504, 0, 0, 0.516929,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 75.9228, 0, -1, 0.476006,-99) , 
-2, 0.276115, 1, 0, 0.485368,-99) , 
-5, -1.07146, 0, 0, 0.499468,-99)    );
+-1, 0, 1, 1, 0.620548,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.451955,-99) , 
+3, 89.6458, 1, 0, 0.547742,-99) , 
+NN(
+0, 
+0, 
+-1, 254.339, 1, -1, 0.437565,-99) , 
+4, 484.964, 0, 0, 0.44793,-99) , 
+3, 80.253, 1, 0, 0.472335,-99)    );
   // itree = 733
-  fBoostWeights.push_back(0.0270723);
+  fBoostWeights.push_back(0.120087);
   fForest.push_back( 
 NN(
 NN(
 NN(
+0, 
+0, 
+-1, 254.254, 0, 1, 0.614648,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.507466,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480147,-99) , 
-4, 2.22363, 1, 0, 0.505728,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47199,-99) , 
-12, 3.52219, 1, 0, 0.503234,-99) , 
+-1, 0, 1, -1, 0.465417,-99) , 
+8, -1.85421, 0, 0, 0.580351,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.535247,-99) , 
+-1, 0, 1, 1, 0.584257,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.488145,-99) , 
-5, 0.119038, 0, 0, 0.511381,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522206,-99) , 
+-1, 0, 1, -1, 0.480221,-99) , 
+14, 0.918716, 0, 0, 0.499433,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.473872,-99) , 
-5, -1.3093, 1, 0, 0.481659,-99) , 
-2, 0.633199, 0, 0, 0.48985,-99) , 
-2, 0.502998, 1, 0, 0.499873,-99)    );
+-1, 84.0506, 0, -1, 0.427475,-99) , 
+0, 81.4906, 0, 0, 0.462796,-99) , 
+2, -1.25535, 1, 0, 0.482342,-99)    );
   // itree = 734
-  fBoostWeights.push_back(0.0242369);
+  fBoostWeights.push_back(0.120125);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 1.63851, 0, 1, 0.53607,-99) , 
+-1, 1.4667, 0, 1, 0.597984,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.533425,-99) , 
+-1, 0, 1, 1, 0.56034,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.484914,-99) , 
-3, -0.672588, 1, 0, 0.501021,-99) , 
-1, 66.9504, 1, 0, 0.518016,-99) , 
-NN(
+-1, 0, 1, -1, 0.481379,-99) , 
+3, 87.8482, 0, 0, 0.512728,-99) , 
+12, 1342.57, 0, 0, 0.535429,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.502219,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471466,-99) , 
-1, 54.2001, 0, 0, 0.49997,-99) , 
+-1, 0, 1, 1, 0.596377,-99) , 
 NN(
 0, 
 0, 
--1, 2.26309, 0, -1, 0.483848,-99) , 
-12, 1.63465, 1, 0, 0.494264,-99) , 
-2, 0.547537, 0, 0, 0.498685,-99)    );
+-1, 78.8261, 1, -1, 0.406306,-99) , 
+11, 201.16, 0, 0, 0.453476,-99) , 
+12, 1861.55, 1, 0, 0.520238,-99)    );
   // itree = 735
-  fBoostWeights.push_back(0.0236395);
+  fBoostWeights.push_back(0.109407);
   fForest.push_back( 
 NN(
 NN(
@@ -23833,302 +25548,326 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.521798,-99) , 
+-1, 0, 1, 1, 0.608925,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.498514,-99) , 
-3, 1.70917, 0, 0, 0.501549,-99) , 
+-1, 0, 1, -1, 0.46718,-99) , 
+2, 0.34089, 1, 0, 0.553481,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.466741,-99) , 
-8, 325.325, 1, 0, 0.499748,-99) , 
+-1, -0.226376, 1, -1, 0.483372,-99) , 
+8, -0.978423, 1, 0, 0.514814,-99) , 
 NN(
 NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.58321,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514905,-99) , 
+-1, 0, 1, 1, 0.513059,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.488662,-99) , 
-0, 1.11005, 0, 0, 0.496222,-99) , 
-NN(
-0, 
-0, 
--1, 0.119715, 0, -1, 0.468359,-99) , 
-7, 347.544, 0, 0, 0.487957,-99) , 
-7, 531.78, 0, 0, 0.493895,-99)    );
+-1, 0, 1, -1, 0.408215,-99) , 
+2, 0.787109, 0, 0, 0.436673,-99) , 
+6, 1.5475, 0, 0, 0.456272,-99) , 
+3, 87.8482, 1, 0, 0.493885,-99)    );
   // itree = 736
-  fBoostWeights.push_back(0.0320206);
+  fBoostWeights.push_back(0.114731);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.542938,-99) , 
-NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.523007,-99) , 
+-1, 0, 1, 1, 0.541488,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489957,-99) , 
-7, 618.117, 1, 0, 0.501549,-99) , 
-3, 1.3985, 0, 0, 0.508487,-99) , 
-NN(
+-1, 0, 1, -1, 0.414176,-99) , 
+14, 1.40308, 1, 0, 0.533829,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.53007,-99) , 
+-1, 0, 1, -1, 0.4025,-99) , 
+7, 241.449, 1, 0, 0.523647,-99) , 
+NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.507198,-99) , 
+-1, 0, 1, 1, 0.531669,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.48401,-99) , 
-7, 668.551, 0, 0, 0.489133,-99) , 
-11, 543.44, 0, 0, 0.491454,-99) , 
-6, 134.486, 0, 0, 0.495527,-99)    );
+-1, 0, 1, -1, 0.415408,-99) , 
+11, 75.6094, 0, 0, 0.484923,-99) , 
+NN(
+0, 
+0, 
+-1, 83.461, 1, -1, 0.368672,-99) , 
+6, 0.362235, 1, 0, 0.44599,-99) , 
+10, -2.17411, 0, 0, 0.501477,-99)    );
   // itree = 737
-  fBoostWeights.push_back(0.013254);
+  fBoostWeights.push_back(0.103581);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 78.4195, 0, 1, 0.51613,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.52464,-99) , 
+-1, 0, 1, 1, 0.53304,-99) , 
 NN(
 0, 
 0, 
--1, 0.320114, 0, -1, 0.495417,-99) , 
-13, 281.497, 0, 0, 0.496616,-99) , 
-10, -2.52843, 1, 0, 0.498836,-99)    );
+-1, 0, 1, -1, 0.311704,-99) , 
+9, 93.466, 0, 0, 0.518137,-99) , 
+NN(
+0, 
+0, 
+-1, 598.101, 1, -1, 0.402968,-99) , 
+9, 505.69, 1, 0, 0.511814,-99) , 
+NN(
+0, 
+0, 
+-1, 102.5, 1, -1, 0.379717,-99) , 
+3, 99.2411, 1, 0, 0.502561,-99)    );
   // itree = 738
-  fBoostWeights.push_back(0.014028);
+  fBoostWeights.push_back(0.102197);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54395,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.499763,-99) , 
-1, 66.7687, 0, 0, 0.52072,-99) , 
+-1, 0, 1, 1, 0.604608,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.43732,-99) , 
+6, -0.826497, 0, 0, 0.56494,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.57626,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.359957,-99) , 
+6, 0.117094, 1, 0, 0.46015,-99) , 
+2, -0.77474, 1, 0, 0.539516,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.503675,-99) , 
+-1, 0, 1, 1, 0.520165,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.481299,-99) , 
-1, 116.935, 1, 0, 0.501835,-99) , 
+-1, 0, 1, -1, 0.375603,-99) , 
+2, -0.999442, 0, 0, 0.507282,-99) , 
 NN(
 0, 
 0, 
--1, 2.58139, 1, -1, 0.491641,-99) , 
-2, 0.308305, 0, 0, 0.498421,-99) , 
-2, 0.641067, 0, 0, 0.499841,-99)    );
+-1, 0.750442, 0, -1, 0.452165,-99) , 
+4, 313.738, 1, 0, 0.485704,-99) , 
+13, -0.948093, 1, 0, 0.498119,-99)    );
   // itree = 739
-  fBoostWeights.push_back(0.0293801);
+  fBoostWeights.push_back(0.0912924);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 78.6431, 1, 1, 0.536142,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521339,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47569,-99) , 
-2, 0.427629, 1, 0, 0.501839,-99) , 
-10, -0.280416, 1, 0, 0.515382,-99) , 
+-1, 0, 1, 1, 0.636856,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.510954,-99) , 
+-1, 0, 1, 1, 0.594403,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490246,-99) , 
-12, -1.66666, 1, 0, 0.496645,-99) , 
+-1, 0, 1, -1, 0.485069,-99) , 
+4, 271.286, 1, 0, 0.534604,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0.495707, 1, -1, 0.478496,-99) , 
-3, 1.16124, 1, 0, 0.493066,-99) , 
-5, 1.30954, 0, 0, 0.496385,-99)    );
+-1, 0, 1, 1, 0.510628,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.446138,-99) , 
+11, 76.942, 1, 0, 0.472574,-99) , 
+13, -0.738645, 1, 0, 0.490887,-99) , 
+12, 2822, 0, 0, 0.49848,-99)    );
   // itree = 740
-  fBoostWeights.push_back(0.0237059);
+  fBoostWeights.push_back(0.111287);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.522293,-99) , 
+-1, -2.52395, 1, 1, 0.606013,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.505506,-99) , 
+-1, 0, 1, 1, 0.534702,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.483426,-99) , 
-5, 1.07147, 1, 0, 0.50133,-99) , 
-10, 2.5644, 0, 0, 0.503295,-99) , 
+-1, 0, 1, -1, 0.452192,-99) , 
+10, -2.17564, 0, 0, 0.515283,-99) , 
+6, -1.30862, 1, 0, 0.529022,-99) , 
 NN(
-NN(
-0, 
-0, 
--1, 0.37103, 1, 1, 0.519557,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.500267,-99) , 
+-1, 0, 1, 1, 0.552238,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.464303,-99) , 
-3, -2.04152, 1, 0, 0.475666,-99) , 
-1, 91.783, 0, 0, 0.487403,-99) , 
-3, -1.1059, 0, 0, 0.50008,-99)    );
+-1, 0, 1, -1, 0.433779,-99) , 
+2, -1.41881, 0, 0, 0.491985,-99) , 
+NN(
+0, 
+0, 
+-1, 81.2027, 0, -1, 0.362404,-99) , 
+2, -1.0272, 1, 0, 0.461216,-99) , 
+2, -0.798503, 0, 0, 0.512426,-99)    );
   // itree = 741
-  fBoostWeights.push_back(0.0280402);
+  fBoostWeights.push_back(0.136879);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 85.686, 0, 1, 0.521739,-99) , 
+-1, 287.383, 0, 1, 0.595041,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51626,-99) , 
+-1, 0, 1, 1, 0.52186,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492714,-99) , 
-10, -2.67385, 1, 0, 0.499807,-99) , 
-10, -1.32718, 0, 0, 0.507512,-99) , 
+-1, 0, 1, -1, 0.286556,-99) , 
+13, 1.02939, 1, 0, 0.467937,-99) , 
+6, 0.354632, 1, 0, 0.552271,-99) , 
 NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521356,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49431,-99) , 
-10, 2.69085, 0, 0, 0.498212,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.528187,-99) , 
+-1, 0, 1, 1, 0.517469,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.459254,-99) , 
-1, 66.5079, 1, 0, 0.479378,-99) , 
-3, -1.05265, 0, 0, 0.494348,-99) , 
-10, -0.222478, 1, 0, 0.500609,-99)    );
+-1, 0, 1, -1, 0.400574,-99) , 
+3, 78.3542, 0, 0, 0.489328,-99) , 
+NN(
+0, 
+0, 
+-1, 0.393414, 0, -1, 0.378717,-99) , 
+2, -0.572707, 0, 0, 0.459664,-99) , 
+10, -2.14537, 1, 0, 0.489755,-99)    );
   // itree = 742
-  fBoostWeights.push_back(0.0277444);
+  fBoostWeights.push_back(0.155477);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 1140.01, 0, 1, 0.523334,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.490867,-99) , 
-6, 113.839, 1, 0, 0.514151,-99) , 
-NN(
-NN(
+-1, 0, 1, 1, 0.598246,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514179,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493247,-99) , 
-10, 0.660662, 0, 0, 0.503131,-99) , 
+-1, 0, 1, -1, 0.450063,-99) , 
+12, 2390.13, 1, 0, 0.567183,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.512407,-99) , 
+-1, 0, 1, 1, 0.52124,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.481389,-99) , 
-14, 1571.83, 0, 0, 0.485512,-99) , 
-4, -0.192064, 0, 0, 0.497124,-99) , 
-4, -1.5344, 1, 0, 0.499859,-99)    );
+-1, 0, 1, -1, 0.404549,-99) , 
+6, -0.357771, 1, 0, 0.453197,-99) , 
+3, 85.9494, 1, 0, 0.516446,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 738.31, 1, 1, 0.597039,-99) , 
+NN(
+0, 
+0, 
+-1, 397.827, 1, -1, 0.425334,-99) , 
+6, -1.78411, 1, 0, 0.441443,-99) , 
+12, 1332.65, 0, 0, 0.472732,-99)    );
   // itree = 743
-  fBoostWeights.push_back(0.024526);
+  fBoostWeights.push_back(0.126878);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 54.1597, 1, 1, 0.511842,-99) , 
+-1, 183.936, 1, 1, 0.594874,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.518817,-99) , 
+-1, 0, 1, 1, 0.61687,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.487326,-99) , 
+11, 140.641, 0, 0, 0.514594,-99) , 
+7, 59.7233, 1, 0, 0.542581,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.543728,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.357015,-99) , 
+10, 2.67908, 1, 0, 0.51626,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.512647,-99) , 
+-1, 0, 1, 1, 0.548636,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.487765,-99) , 
-9, 394.663, 0, 0, 0.490855,-99) , 
-9, 492.004, 0, 0, 0.493362,-99) , 
-12, -1.19562, 0, 0, 0.504331,-99)    );
+-1, 0, 1, -1, 0.403019,-99) , 
+8, -2.26716, 1, 0, 0.440315,-99) , 
+4, 298.976, 0, 0, 0.482454,-99) , 
+5, 0.32636, 1, 0, 0.511347,-99)    );
   // itree = 744
-  fBoostWeights.push_back(0.0206216);
+  fBoostWeights.push_back(0.130221);
   fForest.push_back( 
 NN(
 NN(
@@ -24136,365 +25875,437 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.533121,-99) , 
+-1, 0, 1, 1, 0.590237,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.497805,-99) , 
-3, 1.34543, 0, 0, 0.502758,-99) , 
+-1, 0, 1, -1, 0.391848,-99) , 
+6, 1.31801, 1, 0, 0.56368,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.519171,-99) , 
+-1, 0, 1, 1, 0.502335,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489709,-99) , 
-5, 1.54753, 0, 0, 0.492236,-99) , 
-10, 1.16463, 0, 0, 0.495925,-99) , 
+-1, 0, 1, -1, 0.331919,-99) , 
+4, 284.262, 0, 0, 0.451438,-99) , 
+6, -0.591518, 0, 0, 0.531224,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.458998,-99) , 
-0, -1.7372, 0, 0, 0.49494,-99)    );
+-1, 0, 1, 1, 0.592547,-99) , 
+NN(
+0, 
+0, 
+-1, 1055.16, 0, -1, 0.444954,-99) , 
+13, -2.06146, 1, 0, 0.45374,-99) , 
+7, 124.373, 0, 0, 0.478296,-99)    );
   // itree = 745
-  fBoostWeights.push_back(0.0106231);
+  fBoostWeights.push_back(0.102125);
   fForest.push_back( 
 NN(
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.559228,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.497636,-99) , 
-12, 0.261724, 0, 0, 0.528312,-99) , 
+-1, 0, 1, 1, 0.677152,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432539,-99) , 
+3, 87.7411, 1, 0, 0.583884,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529388,-99) , 
+-1, 0, 1, 1, 0.571452,-99) , 
 NN(
 0, 
 0, 
--1, 0.678864, 1, -1, 0.49679,-99) , 
-1, 45.763, 1, 0, 0.497672,-99) , 
-1, 129.9, 0, 0, 0.499266,-99)    );
+-1, 0, 1, -1, 0.481548,-99) , 
+7, 231.645, 0, 0, 0.491574,-99) , 
+0, 193.989, 0, 0, 0.503476,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.597271,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.433449,-99) , 
+6, -1.68401, 0, 0, 0.519651,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500948,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.284537,-99) , 
+6, -1.75031, 1, 0, 0.386088,-99) , 
+12, 1486.65, 0, 0, 0.436179,-99) , 
+6, -1.07017, 0, 0, 0.490651,-99)    );
   // itree = 746
-  fBoostWeights.push_back(0.0215351);
+  fBoostWeights.push_back(0.130701);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 2.11493, 0, 1, 0.524485,-99) , 
+-1, 160.12, 0, 1, 0.594033,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.523237,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.364659,-99) , 
+7, 59.6999, 0, 0, 0.478134,-99) , 
+9, 203.549, 1, 0, 0.532129,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.506229,-99) , 
+-1, 0, 1, 1, 0.55445,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.482885,-99) , 
-2, 0.231902, 0, 0, 0.502996,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502716,-99) , 
+-1, 0, 1, -1, 0.452053,-99) , 
+10, 1.54855, 0, 0, 0.476874,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.476549,-99) , 
-6, 58.156, 0, 0, 0.489209,-99) , 
-7, 452.207, 0, 0, 0.49813,-99) , 
-5, 1.78566, 0, 0, 0.499961,-99)    );
+-1, 0.370892, 0, -1, 0.37878,-99) , 
+10, 2.65351, 1, 0, 0.46291,-99) , 
+13, -0.39439, 1, 0, 0.489796,-99)    );
   // itree = 747
-  fBoostWeights.push_back(0.0148656);
+  fBoostWeights.push_back(0.132293);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 85.7916, 0, 1, 0.526877,-99) , 
+-1, 77.9887, 0, 1, 0.678449,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 289.489, 0, 1, 0.517873,-99) , 
+-1, 0, 1, 1, 0.535883,-99) , 
 NN(
 0, 
 0, 
--1, -2.56536, 0, -1, 0.495218,-99) , 
-5, -1.54758, 1, 0, 0.497489,-99) , 
-0, -1.2685, 1, 0, 0.499382,-99)    );
+-1, 0, 1, -1, 0.332565,-99) , 
+8, 0.849822, 0, 0, 0.488273,-99) , 
+3, 78.3542, 1, 0, 0.546878,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.641211,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.46991,-99) , 
+12, 912.883, 1, 0, 0.559303,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.504374,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.411663,-99) , 
+5, 0.366265, 0, 0, 0.452679,-99) , 
+2, 1.25635, 0, 0, 0.467667,-99) , 
+10, -2.65746, 1, 0, 0.484281,-99)    );
   // itree = 748
-  fBoostWeights.push_back(0.0249364);
+  fBoostWeights.push_back(0.121096);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.537919,-99) , 
+-1, 0, 1, 1, 0.596862,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.494936,-99) , 
+12, 1172.75, 1, 0, 0.56168,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.513536,-99) , 
+-1, 0, 1, 1, 0.529105,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.486846,-99) , 
-10, 2.11023, 1, 0, 0.507553,-99) , 
-4, 1.33148, 0, 0, 0.510427,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529684,-99) , 
+-1, 0, 1, -1, 0.418139,-99) , 
+4, 281.024, 0, 0, 0.482361,-99) , 
+10, -1.20847, 0, 0, 0.531161,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.516147,-99) , 
+-1, 0, 1, 1, 0.547482,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492663,-99) , 
-10, 2.04595, 0, 0, 0.496465,-99) , 
-1, 123.473, 0, 0, 0.498752,-99) , 
-3, -0.333139, 1, 0, 0.5035,-99)    );
+-1, 1.03439, 1, -1, 0.4337,-99) , 
+5, 0.264656, 1, 0, 0.466079,-99) , 
+11, 103.4, 1, 0, 0.507093,-99)    );
   // itree = 749
-  fBoostWeights.push_back(0.0210797);
+  fBoostWeights.push_back(0.0998794);
   fForest.push_back( 
 NN(
 NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.641661,-99) , 
 NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517269,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496969,-99) , 
-4, 0.550346, 1, 0, 0.508578,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.503479,-99) , 
+-1, 0, 1, 1, 0.555148,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.475158,-99) , 
-4, -1.8466, 0, 0, 0.498356,-99) , 
-3, -0.147618, 0, 0, 0.50397,-99) , 
+-1, 0, 1, -1, 0.480394,-99) , 
+12, 1278.35, 1, 0, 0.5274,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504923,-99) , 
+-1, 0, 1, 1, 0.505057,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.452972,-99) , 
-3, -0.137973, 1, 0, 0.478458,-99) , 
-5, 1.78574, 1, 0, 0.502324,-99)    );
+-1, 0, 1, -1, 0.37867,-99) , 
+11, 97.9675, 1, 0, 0.458185,-99) , 
+14, -0.355615, 0, 0, 0.500696,-99) , 
+12, 2838.23, 0, 0, 0.508546,-99)    );
   // itree = 750
-  fBoostWeights.push_back(0.0215024);
+  fBoostWeights.push_back(0.0707369);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.559595,-99) , 
-NN(
 NN(
 0, 
 0, 
--1, 79.4326, 0, 1, 0.53745,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506481,-99) , 
+-1, -1.51658, 1, 1, 0.522958,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.488755,-99) , 
-12, -2.56482, 0, 0, 0.502998,-99) , 
-4, 2.32247, 0, 0, 0.504932,-99) , 
-2, 0.684864, 0, 0, 0.506715,-99)    );
+-1, 0.0610686, 0, -1, 0.388623,-99) , 
+6, 1.78216, 1, 0, 0.514851,-99) , 
+NN(
+0, 
+0, 
+-1, 78.3542, 1, -1, 0.365374,-99) , 
+5, 0.504267, 1, 0, 0.504988,-99)    );
   // itree = 751
-  fBoostWeights.push_back(0.0192609);
+  fBoostWeights.push_back(0.125462);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 371.079, 0, 1, 0.519809,-99) , 
+-1, 0.225489, 1, 1, 0.537821,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.51879,-99) , 
+-1, 0, 1, 1, 0.509296,-99) , 
 NN(
 0, 
 0, 
--1, -0.577882, 0, -1, 0.492108,-99) , 
-12, 3.50574, 0, 0, 0.493953,-99) , 
-14, 1856.62, 0, 0, 0.496231,-99)    );
+-1, 0, 1, -1, 0.344341,-99) , 
+8, -0.664481, 0, 0, 0.455082,-99) , 
+12, 1044.54, 0, 0, 0.50315,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.573322,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.438209,-99) , 
+3, 74.5565, 1, 0, 0.468832,-99) , 
+NN(
+0, 
+0, 
+-1, -0.634068, 1, -1, 0.367535,-99) , 
+2, -0.340262, 0, 0, 0.432304,-99) , 
+5, 0.366564, 1, 0, 0.476116,-99)    );
   // itree = 752
-  fBoostWeights.push_back(0.0168286);
+  fBoostWeights.push_back(0.0988374);
   fForest.push_back( 
 NN(
 NN(
+NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.553306,-99) , 
+-1, 0, 1, 1, 0.575481,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.47446,-99) , 
+3, 82.1518, 0, 0, 0.536547,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508551,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.433264,-99) , 
+3, 85.9494, 1, 0, 0.476349,-99) , 
+10, 1.71387, 0, 0, 0.496689,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.505359,-99) , 
+-1, 0, 1, 1, 0.520272,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.47002,-99) , 
-5, 2.02372, 1, 0, 0.504211,-99) , 
+-1, 0, 1, -1, 0.343692,-99) , 
+6, -0.58424, 0, 0, 0.47284,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.457785,-99) , 
-2, 0.677649, 1, 0, 0.502804,-99) , 
-0, -1.8297, 1, 0, 0.504077,-99)    );
+-1, 0, 1, -1, 0.320639,-99) , 
+12, 1455.37, 1, 0, 0.431583,-99) , 
+2, 1.02783, 1, 0, 0.485878,-99)    );
   // itree = 753
-  fBoostWeights.push_back(0.0343944);
+  fBoostWeights.push_back(0.071687);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0.307221, 1, 1, 0.518679,-99) , 
+-1, 0, 1, 1, 0.649993,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.477281,-99) , 
+0, 78.3265, 0, 0, 0.579426,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.526108,-99) , 
+-1, 0, 1, 1, 0.514461,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.485812,-99) , 
-3, 0.529248, 0, 0, 0.496033,-99) , 
-12, -0.72994, 1, 0, 0.505885,-99) , 
-NN(
-NN(
+-1, 0, 1, -1, 0.415216,-99) , 
+13, -1.33087, 0, 0, 0.5022,-99) , 
+3, 97.3423, 0, 0, 0.511833,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.511882,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484168,-99) , 
-3, 0.0945423, 1, 0, 0.499106,-99) , 
-NN(
-0, 
-0, 
--1, -1.14093, 1, -1, 0.476529,-99) , 
-14, 1034.37, 1, 0, 0.492513,-99) , 
-11, 208.731, 0, 0, 0.499076,-99)    );
+-1, 0, 1, -1, 0.39516,-99) , 
+6, -2.02253, 0, 0, 0.506514,-99)    );
   // itree = 754
-  fBoostWeights.push_back(0.0246612);
+  fBoostWeights.push_back(0.140841);
   fForest.push_back( 
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 78.3192, 1, 1, 0.528665,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513776,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483849,-99) , 
-3, -0.00571845, 0, 0, 0.500255,-99) , 
-12, -1.65017, 0, 0, 0.510254,-99) , 
+-1, 2.92634, 1, 1, 0.571795,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50487,-99) , 
+-1, 0, 1, 1, 0.553445,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.462112,-99) , 
-4, -2.32717, 0, 0, 0.501432,-99) , 
+-1, 0, 1, -1, 0.395419,-99) , 
+5, 0.424332, 1, 0, 0.518742,-99) , 
 NN(
 0, 
 0, 
--1, 0.517403, 1, -1, 0.485091,-99) , 
-5, 0.595222, 1, 0, 0.496629,-99) , 
-10, 1.63608, 0, 0, 0.500211,-99)    );
+-1, 0.345374, 0, -1, 0.428139,-99) , 
+9, 315.572, 0, 0, 0.45459,-99) , 
+8, 2.71005, 0, 0, 0.46585,-99)    );
   // itree = 755
-  fBoostWeights.push_back(0.0251363);
+  fBoostWeights.push_back(0.115705);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.554979,-99) , 
+-1, 0, 1, 1, 0.638903,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.496058,-99) , 
+6, -0.35791, 0, 0, 0.583249,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514085,-99) , 
+-1, 0, 1, 1, 0.513184,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.47764,-99) , 
-1, 85.6384, 1, 0, 0.505519,-99) , 
-12, -3.03925, 1, 0, 0.512989,-99) , 
+-1, 0, 1, -1, 0.393646,-99) , 
+14, 1.21643, 1, 0, 0.493453,-99) , 
+10, 2.18429, 0, 0, 0.520161,-99) , 
 NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518386,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493815,-99) , 
-13, 147.234, 0, 0, 0.49851,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.502819,-99) , 
+-1, 0, 1, 1, 0.537564,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.481777,-99) , 
-4, 0.941678, 0, 0, 0.488469,-99) , 
-10, 0.721474, 1, 0, 0.494434,-99) , 
-2, 0.548568, 0, 0, 0.497834,-99)    );
+-1, 0, 1, -1, 0.409564,-99) , 
+5, 0.348621, 1, 0, 0.489195,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.518433,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.344287,-99) , 
+4, 261.857, 1, 0, 0.397416,-99) , 
+12, 836.45, 0, 0, 0.463444,-99) , 
+3, 85.9494, 1, 0, 0.495796,-99)    );
   // itree = 756
-  fBoostWeights.push_back(0.0216041);
+  fBoostWeights.push_back(0.129775);
   fForest.push_back( 
 NN(
 NN(
@@ -24502,30 +26313,42 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.524239,-99) , 
+-1, 0, 1, 1, 0.552788,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.492683,-99) , 
-1, 92.0554, 1, 0, 0.516594,-99) , 
+-1, 0, 1, -1, 0.465918,-99) , 
+2, 0.114886, 1, 0, 0.515149,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.503952,-99) , 
+-1, 0, 1, 1, 0.544483,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489735,-99) , 
-2, 0.315491, 0, 0, 0.499172,-99) , 
-3, 0.96735, 0, 0, 0.503113,-99) , 
+-1, 0, 1, -1, 0.33101,-99) , 
+3, 72.6458, 1, 0, 0.387469,-99) , 
+5, 0.474544, 1, 0, 0.500101,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 1.56954, 0, -1, 0.479657,-99) , 
-0, -0.71543, 0, 0, 0.499847,-99)    );
+-1, 0, 1, 1, 0.525515,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.397229,-99) , 
+2, 0.348214, 0, 0, 0.445872,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.241893,-99) , 
+7, 46.6422, 0, 0, 0.409726,-99) , 
+6, -1.07017, 0, 0, 0.483942,-99)    );
   // itree = 757
-  fBoostWeights.push_back(0.01485);
+  fBoostWeights.push_back(0.0761856);
   fForest.push_back( 
 NN(
 NN(
@@ -24533,30 +26356,24 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.543389,-99) , 
+-1, 0, 1, 1, 0.650387,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.496786,-99) , 
-12, -0.721855, 0, 0, 0.523055,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502005,-99) , 
+-1, 0, 1, -1, 0.462134,-99) , 
+13, 0.210951, 1, 0, 0.574782,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.486696,-99) , 
-14, 1160.3, 1, 0, 0.497906,-99) , 
-2, 0.636881, 0, 0, 0.49961,-99) , 
+-1, -2.42453, 0, -1, 0.483455,-99) , 
+3, 97.3423, 0, 0, 0.494923,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.455762,-99) , 
-8, 325.485, 1, 0, 0.498468,-99)    );
+-1, 0.354701, 0, -1, 0.364956,-99) , 
+7, 229.151, 1, 0, 0.482404,-99)    );
   // itree = 758
-  fBoostWeights.push_back(0.0235027);
+  fBoostWeights.push_back(0.117176);
   fForest.push_back( 
 NN(
 NN(
@@ -24564,2730 +26381,28 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.523521,-99) , 
+-1, 0, 1, 1, 0.618375,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.498558,-99) , 
-3, -1.21375, 1, 0, 0.503246,-99) , 
+-1, 0, 1, -1, 0.423372,-99) , 
+13, -1.27392, 0, 0, 0.585829,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.462315,-99) , 
-1, 60.4629, 0, 0, 0.499852,-99) , 
+-1, 0, 1, -1, 0.439984,-99) , 
+12, 1772.63, 1, 0, 0.558485,-99) , 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519315,-99) , 
-NN(
-0, 
-0, 
--1, -3.03901, 0, -1, 0.483893,-99) , 
-3, 1.91757, 0, 0, 0.486832,-99) , 
-2, 0.414016, 1, 0, 0.494243,-99)    );
-  // itree = 759
-  fBoostWeights.push_back(0.00987115);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529645,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539764,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498403,-99) , 
-4, 0.375843, 1, 0, 0.524857,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534328,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499539,-99) , 
-6, 195.225, 0, 0, 0.501113,-99) , 
-6, 234.808, 0, 0, 0.502847,-99) , 
-4, 2.43707, 0, 0, 0.504077,-99)    );
-  // itree = 760
-  fBoostWeights.push_back(0.0210224);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -2.11345, 1, 1, 0.512276,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50935,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493512,-99) , 
-3, 0.585114, 0, 0, 0.498793,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.457585,-99) , 
-1, 123.802, 1, 0, 0.496267,-99) , 
-10, -1.15042, 1, 0, 0.501764,-99)    );
-  // itree = 761
-  fBoostWeights.push_back(0.0296488);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531334,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490779,-99) , 
-5, 1.94445, 1, 0, 0.523208,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505643,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474059,-99) , 
-5, 1.23018, 1, 0, 0.488941,-99) , 
-0, 0.629333, 1, 0, 0.510884,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524244,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496681,-99) , 
-2, 0.323208, 1, 0, 0.507656,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524771,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489041,-99) , 
-8, 248.259, 0, 0, 0.491491,-99) , 
-0, 1.2024, 0, 0, 0.495411,-99) , 
-5, 0.833366, 0, 0, 0.499495,-99)    );
-  // itree = 762
-  fBoostWeights.push_back(0.0183919);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523156,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51568,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497701,-99) , 
-4, 0.806977, 0, 0, 0.503546,-99) , 
-NN(
-0, 
-0, 
--1, -3.08192, 0, -1, 0.488603,-99) , 
-2, 0.502998, 1, 0, 0.499749,-99) , 
-0, 1.84121, 0, 0, 0.501798,-99)    );
-  // itree = 763
-  fBoostWeights.push_back(0.0283915);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.541245,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.4923,-99) , 
-4, -1.2272, 1, 0, 0.530708,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526474,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.479344,-99) , 
-6, 72.8546, 1, 0, 0.500588,-99) , 
-11, 196.413, 0, 0, 0.516355,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 104.78, 0, 1, 0.509773,-99) , 
-NN(
-0, 
-0, 
--1, 1.38766, 1, -1, 0.492381,-99) , 
-2, 0.456568, 0, 0, 0.498455,-99) , 
-4, -0.928732, 1, 0, 0.503529,-99)    );
-  // itree = 764
-  fBoostWeights.push_back(0.0218376);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.834581, 1, 1, 0.507036,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50499,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482367,-99) , 
-10, 0.230342, 0, 0, 0.492507,-99) , 
-0, -0.134862, 0, 0, 0.502955,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520811,-99) , 
-NN(
-0, 
-0, 
--1, 250.31, 1, -1, 0.482256,-99) , 
-9, 376.086, 0, 0, 0.488466,-99) , 
-1, 66.5576, 0, 0, 0.499271,-99)    );
-  // itree = 765
-  fBoostWeights.push_back(0.0218958);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.525927, 1, 1, 0.508696,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474283,-99) , 
-0, -1.31846, 0, 0, 0.506913,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506212,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.444177,-99) , 
-14, 762.485, 1, 0, 0.473258,-99) , 
-2, 0.639524, 1, 0, 0.50491,-99)    );
-  // itree = 766
-  fBoostWeights.push_back(0.01347);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529817,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530677,-99) , 
-NN(
-0, 
-0, 
--1, 91.8406, 1, -1, 0.494864,-99) , 
-6, 319.812, 0, 0, 0.495851,-99) , 
-13, 281.369, 0, 0, 0.497118,-99)    );
-  // itree = 767
-  fBoostWeights.push_back(0.0157372);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54818,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 1.77739, 0, 1, 0.510246,-99) , 
-NN(
-0, 
-0, 
--1, -0.718435, 0, -1, 0.49523,-99) , 
-2, 0.320716, 1, 0, 0.500555,-99) , 
-4, -2.78329, 1, 0, 0.501883,-99)    );
-  // itree = 768
-  fBoostWeights.push_back(0.0290994);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 78.4421, 1, 1, 0.520328,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482458,-99) , 
-3, 0.988167, 1, 0, 0.51414,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531315,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478998,-99) , 
-1, 66.6716, 0, 0, 0.518433,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510995,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491229,-99) , 
-5, 0.356818, 0, 0, 0.496961,-99) , 
-4, 1.51819, 0, 0, 0.500565,-99) , 
-10, 1.64123, 0, 0, 0.504107,-99)    );
-  // itree = 769
-  fBoostWeights.push_back(0.0217877);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509752,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494275,-99) , 
-14, 1472.8, 1, 0, 0.507247,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470408,-99) , 
-1, 136.422, 1, 0, 0.505996,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501117,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465967,-99) , 
-9, 332.511, 0, 0, 0.478851,-99) , 
-3, -1.78306, 0, 0, 0.503552,-99)    );
-  // itree = 770
-  fBoostWeights.push_back(0.0204883);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 760.389, 1, 1, 0.531594,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 54.3304, 1, 1, 0.507153,-99) , 
-NN(
-0, 
-0, 
--1, 0.833291, 1, -1, 0.485664,-99) , 
-2, 0.489812, 1, 0, 0.502301,-99) , 
-2, 0.641067, 0, 0, 0.504186,-99)    );
-  // itree = 771
-  fBoostWeights.push_back(0.0216623);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511956,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482525,-99) , 
-1, 54.1374, 0, 0, 0.508977,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503559,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489672,-99) , 
-12, -0.712576, 0, 0, 0.496964,-99) , 
-5, 0.119019, 1, 0, 0.503454,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.454353,-99) , 
-0, -1.69461, 0, 0, 0.502145,-99)    );
-  // itree = 772
-  fBoostWeights.push_back(0.0105337);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, -0.206694, 1, 1, 0.52069,-99) , 
-NN(
-0, 
-0, 
--1, 1303.81, 1, -1, 0.496089,-99) , 
-14, 1914.13, 0, 0, 0.498077,-99)    );
-  // itree = 773
-  fBoostWeights.push_back(0.0191119);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.527196,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -0.936217, 1, 1, 0.507123,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521476,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491614,-99) , 
-14, 1857.67, 0, 0, 0.494221,-99) , 
-5, 0.595233, 0, 0, 0.498499,-99) , 
-3, -2.30431, 1, 0, 0.49978,-99)    );
-  // itree = 774
-  fBoostWeights.push_back(0.0166313);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535479,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 1.85375, 0, 1, 0.506617,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502179,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486737,-99) , 
-0, 0.712331, 1, 0, 0.49422,-99) , 
-14, 813.316, 1, 0, 0.500276,-99) , 
-5, -2.02375, 1, 0, 0.501581,-99)    );
-  // itree = 775
-  fBoostWeights.push_back(0.0227732);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52664,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482911,-99) , 
-5, -2.08536, 0, 0, 0.517165,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505049,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491738,-99) , 
-3, -0.187022, 0, 0, 0.499182,-99) , 
-5, -1.41157, 1, 0, 0.501809,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529611,-99) , 
-NN(
-0, 
-0, 
--1, -0.674276, 0, -1, 0.475927,-99) , 
-3, 1.20965, 0, 0, 0.486412,-99) , 
-5, 1.30952, 1, 0, 0.499627,-99)    );
-  // itree = 776
-  fBoostWeights.push_back(0.0314912);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526683,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480664,-99) , 
-6, 136.62, 1, 0, 0.516386,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501737,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.470668,-99) , 
-14, 1693.86, 0, 0, 0.483029,-99) , 
-14, 1112.66, 1, 0, 0.506633,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50796,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487591,-99) , 
-14, 1105.38, 0, 0, 0.493785,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.437701,-99) , 
-1, 130.095, 1, 0, 0.491633,-99) , 
-8, 123.997, 0, 0, 0.495686,-99)    );
-  // itree = 777
-  fBoostWeights.push_back(0.0192106);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503705,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491625,-99) , 
-0, 1.07574, 1, 0, 0.500218,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472266,-99) , 
-3, -2.13793, 0, 0, 0.498733,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535822,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461607,-99) , 
-3, 0.0950543, 0, 0, 0.498984,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.457992,-99) , 
-10, 1.13506, 1, 0, 0.480606,-99) , 
-5, 1.54763, 1, 0, 0.496897,-99)    );
-  // itree = 778
-  fBoostWeights.push_back(0.0243321);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.540968,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51331,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492485,-99) , 
-14, 1138.23, 1, 0, 0.507825,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500797,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461803,-99) , 
-1, 98.2719, 1, 0, 0.492994,-99) , 
-6, 135.918, 1, 0, 0.504541,-99) , 
-12, 3.97564, 0, 0, 0.505946,-99)    );
-  // itree = 779
-  fBoostWeights.push_back(0.0226515);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524891,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526912,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507413,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489567,-99) , 
-3, -1.61665, 1, 0, 0.491524,-99) , 
-4, -2.57768, 1, 0, 0.492947,-99) , 
-5, 2.02372, 0, 0, 0.494183,-99)    );
-  // itree = 780
-  fBoostWeights.push_back(0.0306187);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.436973, 0, 1, 0.528848,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486957,-99) , 
-8, 123.43, 1, 0, 0.518035,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509896,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481978,-99) , 
-7, 761.473, 1, 0, 0.504837,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515026,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484935,-99) , 
-3, -1.04692, 1, 0, 0.491262,-99) , 
-1, 79.324, 1, 0, 0.498144,-99) , 
-10, 2.09793, 0, 0, 0.501781,-99)    );
-  // itree = 781
-  fBoostWeights.push_back(0.0122506);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 308.635, 1, 1, 0.524665,-99) , 
-NN(
-0, 
-0, 
--1, 2.61152, 1, -1, 0.495526,-99) , 
-12, 3.51996, 0, 0, 0.49791,-99)    );
-  // itree = 782
-  fBoostWeights.push_back(0.0288227);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 88.4617, 0, 1, 0.540908,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523708,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.474489,-99) , 
-10, 0.231043, 1, 0, 0.501408,-99) , 
-7, 760.079, 1, 0, 0.528324,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534297,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498454,-99) , 
-12, -3.04133, 1, 0, 0.503705,-99) , 
-NN(
-0, 
-0, 
--1, -1.7866, 0, -1, 0.487608,-99) , 
-5, -0.119081, 1, 0, 0.495205,-99) , 
-1, 98.4579, 0, 0, 0.501373,-99)    );
-  // itree = 783
-  fBoostWeights.push_back(0.0235125);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 393.064, 1, 1, 0.537584,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511335,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484303,-99) , 
-1, 97.0539, 1, 0, 0.50752,-99) , 
-2, 0.594574, 0, 0, 0.510818,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517948,-99) , 
-NN(
-0, 
-0, 
--1, 1.54752, 1, -1, 0.492834,-99) , 
-10, 2.52638, 0, 0, 0.495814,-99) , 
-7, 543.653, 1, 0, 0.503672,-99)    );
-  // itree = 784
-  fBoostWeights.push_back(0.0339466);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 1.07143, 0, 1, 0.518651,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516031,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486442,-99) , 
-2, 0.422665, 0, 0, 0.501895,-99) , 
-1, 79.175, 0, 0, 0.510444,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513955,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481279,-99) , 
-5, -0.11845, 0, 0, 0.500965,-99) , 
-NN(
-0, 
-0, 
--1, 0.268117, 0, -1, 0.479734,-99) , 
-2, 0.45433, 1, 0, 0.493877,-99) , 
-10, 1.18276, 1, 0, 0.504942,-99)    );
-  // itree = 785
-  fBoostWeights.push_back(0.0179227);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.504182,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465906,-99) , 
-5, -2.02381, 0, 0, 0.502954,-99) , 
-NN(
-0, 
-0, 
--1, 140.442, 0, -1, 0.466389,-99) , 
-1, 123.626, 1, 0, 0.500676,-99) , 
-NN(
-0, 
-0, 
--1, 1.61006, 0, -1, 0.474121,-99) , 
-2, 0.592676, 1, 0, 0.497812,-99)    );
-  // itree = 786
-  fBoostWeights.push_back(0.0258506);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.547045,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489676,-99) , 
-12, 2.10321, 1, 0, 0.531688,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520127,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475103,-99) , 
-1, 73.1844, 0, 0, 0.508512,-99) , 
-2, 0.448929, 0, 0, 0.517526,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 48.0097, 1, 1, 0.506042,-99) , 
-NN(
-0, 
-0, 
--1, 33.126, 1, -1, 0.478915,-99) , 
-6, 36.8958, 0, 0, 0.502341,-99) , 
-6, 130.904, 0, 0, 0.506114,-99)    );
-  // itree = 787
-  fBoostWeights.push_back(0.0203695);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.538377,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494402,-99) , 
-0, 0.258718, 1, 0, 0.519639,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503813,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487923,-99) , 
-2, 0.460467, 1, 0, 0.498496,-99) , 
-NN(
-0, 
-0, 
--1, 0.832528, 1, -1, 0.478218,-99) , 
-1, 97.0465, 1, 0, 0.4949,-99) , 
-9, 552.174, 0, 0, 0.496385,-99)    );
-  // itree = 788
-  fBoostWeights.push_back(0.0272241);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.00617298, 1, 1, 0.527878,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520278,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48103,-99) , 
-4, -0.896615, 1, 0, 0.493704,-99) , 
-8, 103.825, 0, 0, 0.505045,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50391,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489468,-99) , 
-5, 0.833575, 1, 0, 0.49793,-99) , 
-NN(
-0, 
-0, 
--1, 0.227596, 0, -1, 0.480951,-99) , 
-4, -0.317699, 0, 0, 0.490928,-99) , 
-1, 60.3234, 1, 0, 0.493421,-99)    );
-  // itree = 789
-  fBoostWeights.push_back(0.0238283);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534653,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496023,-99) , 
-13, 71.9162, 1, 0, 0.520428,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489861,-99) , 
-13, 155.749, 1, 0, 0.515306,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535151,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526203,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491994,-99) , 
-7, 775.797, 0, 0, 0.49375,-99) , 
-1, 129.218, 0, 0, 0.495478,-99) , 
-7, 842.429, 0, 0, 0.498829,-99)    );
-  // itree = 790
-  fBoostWeights.push_back(0.022012);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.515307, 0, 1, 0.508149,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513856,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.462391,-99) , 
-8, 78.4895, 1, 0, 0.488462,-99) , 
-5, 0.832705, 1, 0, 0.503699,-99) , 
-NN(
-0, 
-0, 
--1, -1.45696, 0, -1, 0.490172,-99) , 
-0, 0.406755, 0, 0, 0.49721,-99)    );
-  // itree = 791
-  fBoostWeights.push_back(0.0214376);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.54721,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 916.814, 0, 1, 0.508838,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476476,-99) , 
-5, 2.06916, 1, 0, 0.507848,-99) , 
-5, -2.0237, 1, 0, 0.509333,-99)    );
-  // itree = 792
-  fBoostWeights.push_back(0.0291535);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.272997, 0, 1, 0.533122,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51185,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476986,-99) , 
-8, 98.7393, 1, 0, 0.499996,-99) , 
-1, 79.3108, 0, 0, 0.511953,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.541784,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494634,-99) , 
-3, 0.718916, 0, 0, 0.510206,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51626,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489715,-99) , 
-0, -1.18422, 1, 0, 0.491488,-99) , 
-1, 66.7973, 1, 0, 0.495262,-99) , 
-2, 0.504938, 0, 0, 0.49953,-99)    );
-  // itree = 793
-  fBoostWeights.push_back(0.0153675);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 48.8909, 1, 1, 0.542268,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530868,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494345,-99) , 
-1, 49.4803, 0, 0, 0.511936,-99) , 
-5, 0.119028, 0, 0, 0.526449,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511149,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498788,-99) , 
-10, -1.61306, 1, 0, 0.502051,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.46131,-99) , 
-1, 140.032, 1, 0, 0.500795,-99) , 
-1, 54.2937, 1, 0, 0.503688,-99)    );
-  // itree = 794
-  fBoostWeights.push_back(0.0240018);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.524803,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503708,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490201,-99) , 
-0, 0.773258, 1, 0, 0.499285,-99) , 
-10, 2.10001, 0, 0, 0.501918,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521225,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48276,-99) , 
-12, -2.94776, 0, 0, 0.494665,-99) , 
-NN(
-0, 
-0, 
--1, 66.8482, 0, -1, 0.477698,-99) , 
-12, -2.61172, 1, 0, 0.488139,-99) , 
-12, -1.67083, 0, 0, 0.497062,-99)    );
-  // itree = 795
-  fBoostWeights.push_back(0.0178262);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.550966,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.498825,-99) , 
-1, 79.4323, 1, 0, 0.527005,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.517658,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493456,-99) , 
-1, 97.2617, 1, 0, 0.512424,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50403,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491646,-99) , 
-14, 814.407, 0, 0, 0.498007,-99) , 
-2, 0.242005, 1, 0, 0.500475,-99) , 
-4, 2.27837, 0, 0, 0.50206,-99)    );
-  // itree = 796
-  fBoostWeights.push_back(0.0272841);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -2.41637, 0, 1, 0.523846,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512349,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469781,-99) , 
-10, 0.65843, 1, 0, 0.506222,-99) , 
-12, -1.16935, 1, 0, 0.513648,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, -0.572606, 0, 1, 0.508954,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525329,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489601,-99) , 
-4, -0.634353, 1, 0, 0.494229,-99) , 
-5, -0.119084, 1, 0, 0.501193,-99) , 
-1, 85.6575, 0, 0, 0.505744,-99)    );
-  // itree = 797
-  fBoostWeights.push_back(0.036763);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532022,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49195,-99) , 
-13, 104.592, 1, 0, 0.522765,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.511755,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477691,-99) , 
-5, -0.595276, 1, 0, 0.495861,-99) , 
-5, 0.357089, 0, 0, 0.508658,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.52499,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.5237,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484232,-99) , 
-1, 129.992, 0, 0, 0.48638,-99) , 
-10, 0.893994, 0, 0, 0.489153,-99) , 
-10, 1.18104, 0, 0, 0.495821,-99)    );
-  // itree = 798
-  fBoostWeights.push_back(0.0254159);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528619,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49445,-99) , 
-1, 53.9645, 0, 0, 0.5204,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516002,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467454,-99) , 
-12, 0.691263, 1, 0, 0.495886,-99) , 
-9, 370.405, 1, 0, 0.513564,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539384,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49495,-99) , 
-4, 0.355952, 0, 0, 0.514397,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506449,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49222,-99) , 
-7, 745.27, 0, 0, 0.495508,-99) , 
-1, 60.61, 1, 0, 0.497897,-99) , 
-2, 0.502053, 0, 0, 0.501985,-99)    );
-  // itree = 799
-  fBoostWeights.push_back(0.0252043);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518249,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495385,-99) , 
-5, -0.835358, 0, 0, 0.507833,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507907,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486901,-99) , 
-0, 0.834538, 0, 0, 0.49446,-99) , 
-4, 0.0316302, 1, 0, 0.501306,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467902,-99) , 
-1, 129.781, 1, 0, 0.499745,-99)    );
-  // itree = 800
-  fBoostWeights.push_back(0.0194661);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.431303, 1, 1, 0.517863,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508987,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471587,-99) , 
-12, 3.03915, 1, 0, 0.504245,-99) , 
-NN(
-0, 
-0, 
--1, -3.05701, 0, -1, 0.493713,-99) , 
-2, 0.365599, 1, 0, 0.498535,-99) , 
-10, -2.52027, 1, 0, 0.500803,-99)    );
-  // itree = 801
-  fBoostWeights.push_back(0.0150279);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503068,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488307,-99) , 
-3, 0.802851, 1, 0, 0.499523,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465347,-99) , 
-12, 3.99129, 1, 0, 0.498326,-99) , 
-NN(
-0, 
-0, 
--1, 0.175404, 1, -1, 0.470227,-99) , 
-3, 2.10106, 1, 0, 0.49673,-99)    );
-  // itree = 802
-  fBoostWeights.push_back(0.0272158);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518224,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488766,-99) , 
-10, -2.04511, 0, 0, 0.513182,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478329,-99) , 
-2, 0.650064, 1, 0, 0.509035,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522558,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501586,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480783,-99) , 
-3, -0.136042, 0, 0, 0.49228,-99) , 
-6, 208.832, 0, 0, 0.49502,-99) , 
-2, 0.419937, 0, 0, 0.500988,-99)    );
-  // itree = 803
-  fBoostWeights.push_back(0.0237602);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.547684,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536319,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.465902,-99) , 
-3, 0.879515, 1, 0, 0.503329,-99) , 
-14, 753.196, 1, 0, 0.521699,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.548856,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496762,-99) , 
-3, -0.250354, 1, 0, 0.520018,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.513197,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494212,-99) , 
-2, 0.585095, 0, 0, 0.49653,-99) , 
-5, -1.54773, 1, 0, 0.499287,-99) , 
-4, 1.91676, 0, 0, 0.501546,-99)    );
-  // itree = 804
-  fBoostWeights.push_back(0.0218483);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 55.937, 1, 1, 0.506173,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.503436,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467797,-99) , 
-11, 208.794, 1, 0, 0.488,-99) , 
-1, 53.5165, 0, 0, 0.504122,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.543273,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525626,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.466262,-99) , 
-3, 1.32661, 0, 0, 0.480338,-99) , 
-3, -1.27285, 1, 0, 0.492546,-99) , 
-1, 104.348, 1, 0, 0.502542,-99)    );
-  // itree = 805
-  fBoostWeights.push_back(0.0244647);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 817.52, 1, 1, 0.52031,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507842,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475491,-99) , 
-7, 455.472, 1, 0, 0.488337,-99) , 
-2, 0.557235, 1, 0, 0.51113,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505597,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486161,-99) , 
-3, -0.985857, 0, 0, 0.501038,-99) , 
-NN(
-0, 
-0, 
--1, 0.274858, 0, -1, 0.487502,-99) , 
-10, 0.728706, 1, 0, 0.495571,-99) , 
-1, 66.9478, 1, 0, 0.499729,-99)    );
-  // itree = 806
-  fBoostWeights.push_back(0.0257861);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.269945, 0, 1, 0.525904,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490649,-99) , 
-14, 1158.17, 1, 0, 0.517394,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519295,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496068,-99) , 
-1, 74.4983, 0, 0, 0.505392,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506328,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485339,-99) , 
-14, 1191.26, 0, 0, 0.491067,-99) , 
-2, 0.42018, 0, 0, 0.49718,-99) , 
-1, 104.658, 0, 0, 0.50003,-99)    );
-  // itree = 807
-  fBoostWeights.push_back(0.0244401);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.53876,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.518348,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48252,-99) , 
-13, 64.5165, 1, 0, 0.50387,-99) , 
-2, 0.507576, 0, 0, 0.512154,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506611,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492246,-99) , 
-1, 79.1331, 1, 0, 0.499382,-99) , 
-NN(
-0, 
-0, 
--1, 74.1361, 0, -1, 0.478355,-99) , 
-5, -1.0714, 0, 0, 0.495578,-99) , 
-10, -2.0799, 1, 0, 0.498629,-99)    );
-  // itree = 808
-  fBoostWeights.push_back(0.0215714);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 60.2336, 1, 1, 0.52595,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.508352,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.457865,-99) , 
-3, -0.276037, 1, 0, 0.484639,-99) , 
-0, -0.428899, 0, 0, 0.514886,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521869,-99) , 
-NN(
-0, 
-0, 
--1, 1.6982, 1, -1, 0.493802,-99) , 
-5, 1.98975, 0, 0, 0.495244,-99) , 
-5, -1.0714, 1, 0, 0.499262,-99)    );
-  // itree = 809
-  fBoostWeights.push_back(0.0190764);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 60.6487, 0, 1, 0.529696,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505719,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.46779,-99) , 
-2, 0.606635, 1, 0, 0.504523,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50035,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471834,-99) , 
-9, 383.187, 0, 0, 0.482455,-99) , 
-8, 177.257, 1, 0, 0.501541,-99) , 
-2, 0.636881, 0, 0, 0.503446,-99)    );
-  // itree = 810
-  fBoostWeights.push_back(0.012495);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -1.30359, 1, 1, 0.503128,-99) , 
-NN(
-0, 
-0, 
--1, 2.78039, 1, -1, 0.488996,-99) , 
-10, -1.61306, 0, 0, 0.499374,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461881,-99) , 
-12, -4.01746, 0, 0, 0.498204,-99)    );
-  // itree = 811
-  fBoostWeights.push_back(0.013537);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.551317,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519838,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484586,-99) , 
-1, 132.764, 1, 0, 0.502282,-99) , 
-0, -0.210867, 1, 0, 0.517947,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50092,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481222,-99) , 
-4, -1.67588, 0, 0, 0.49836,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464249,-99) , 
-1, 106.467, 1, 0, 0.496794,-99) , 
-1, 117.325, 0, 0, 0.498612,-99)    );
-  // itree = 812
-  fBoostWeights.push_back(0.0163697);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.536804,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497015,-99) , 
-12, -1.20118, 0, 0, 0.519791,-99) , 
-NN(
-0, 
-0, 
--1, 0.488393, 1, -1, 0.495191,-99) , 
-2, 0.639524, 0, 0, 0.496807,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472537,-99) , 
-10, -2.56536, 0, 0, 0.494297,-99)    );
-  // itree = 813
-  fBoostWeights.push_back(0.0152696);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505706,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494346,-99) , 
-10, 0.244674, 1, 0, 0.500322,-99) , 
-NN(
-0, 
-0, 
--1, 78.9928, 0, -1, 0.477221,-99) , 
-6, 246.241, 1, 0, 0.498931,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468338,-99) , 
-4, -2.55407, 0, 0, 0.497799,-99)    );
-  // itree = 814
-  fBoostWeights.push_back(0.0166104);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539399,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531701,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488012,-99) , 
-2, 0.417738, 0, 0, 0.507733,-99) , 
-5, 0.595658, 0, 0, 0.518249,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501598,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.480807,-99) , 
-0, -0.752121, 0, 0, 0.49852,-99) , 
-NN(
-0, 
-0, 
--1, 77.5942, 1, -1, 0.4828,-99) , 
-10, -2.06304, 0, 0, 0.495691,-99) , 
-1, 117.077, 0, 0, 0.497631,-99)    );
-  // itree = 815
-  fBoostWeights.push_back(0.0192692);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.525616,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515546,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514083,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491912,-99) , 
-0, -1.20367, 1, 0, 0.493482,-99) , 
-2, 0.197024, 1, 0, 0.495387,-99) , 
-2, 0.68528, 0, 0, 0.496328,-99)    );
-  // itree = 816
-  fBoostWeights.push_back(0.0250286);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 82.5012, 0, 1, 0.511037,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522311,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488529,-99) , 
-9, 477.257, 0, 0, 0.495582,-99) , 
-1, 92.1354, 1, 0, 0.50752,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51909,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492991,-99) , 
-5, -0.832999, 1, 0, 0.500369,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47506,-99) , 
-0, 0.944752, 1, 0, 0.491987,-99) , 
-2, 0.276844, 0, 0, 0.503787,-99)    );
-  // itree = 817
-  fBoostWeights.push_back(0.0284055);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 762.323, 0, 1, 0.520344,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506641,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491534,-99) , 
-11, 195.34, 1, 0, 0.499018,-99) , 
-4, 0.781234, 0, 0, 0.505802,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.535498,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488466,-99) , 
-7, 769.143, 0, 0, 0.500243,-99) , 
-NN(
-0, 
-0, 
--1, 1.15364, 0, -1, 0.471126,-99) , 
-12, -1.1785, 0, 0, 0.488598,-99) , 
-2, 0.504452, 1, 0, 0.501566,-99)    );
-  // itree = 818
-  fBoostWeights.push_back(0.0132736);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.549904,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499515,-99) , 
-5, -0.356871, 1, 0, 0.521545,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526765,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523379,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496265,-99) , 
-4, 2.23449, 0, 0, 0.497655,-99) , 
-5, 2.02381, 0, 0, 0.498742,-99) , 
-2, 0.639524, 0, 0, 0.500221,-99)    );
-  // itree = 819
-  fBoostWeights.push_back(0.0232151);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 81.9197, 0, 1, 0.531033,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505556,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.461734,-99) , 
-2, 0.582551, 1, 0, 0.502219,-99) , 
-1, 83.6345, 1, 0, 0.508391,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521393,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495841,-99) , 
-12, 2.29933, 0, 0, 0.499544,-99) , 
-NN(
-0, 
-0, 
--1, 1007.82, 0, -1, 0.467167,-99) , 
-12, 3.05853, 1, 0, 0.495167,-99) , 
-1, 79.1331, 0, 0, 0.501886,-99)    );
-  // itree = 820
-  fBoostWeights.push_back(0.0167312);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.118654, 1, 1, 0.528494,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.459481,-99) , 
-0, -1.03459, 0, 0, 0.503609,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477482,-99) , 
-0, -1.31005, 0, 0, 0.502203,-99) , 
-2, 0.639766, 0, 0, 0.503908,-99)    );
-  // itree = 821
-  fBoostWeights.push_back(0.0161969);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 54.27, 1, 1, 0.503902,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50589,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.485783,-99) , 
-9, 370.403, 0, 0, 0.490937,-99) , 
-5, -0.459129, 0, 0, 0.498876,-99) , 
-NN(
-0, 
-0, 
--1, 0.387635, 1, -1, 0.476738,-99) , 
-5, 1.78568, 1, 0, 0.497475,-99)    );
-  // itree = 822
-  fBoostWeights.push_back(0.019188);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.556737,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526821,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.4967,-99) , 
-12, 2.56677, 0, 0, 0.504168,-99) , 
-3, 1.66539, 0, 0, 0.510814,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.521036,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495293,-99) , 
-11, 541.32, 0, 0, 0.496756,-99) , 
-NN(
-0, 
-0, 
--1, -0.235153, 1, -1, 0.473531,-99) , 
-1, 87.3854, 1, 0, 0.494419,-99) , 
-1, 92.1989, 0, 0, 0.498535,-99)    );
-  // itree = 823
-  fBoostWeights.push_back(0.0192284);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.541247,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.519957,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486742,-99) , 
-7, 876.206, 1, 0, 0.513296,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502267,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.48027,-99) , 
-1, 84.7497, 1, 0, 0.498591,-99) , 
-1, 91.9875, 0, 0, 0.502393,-99) , 
-2, 0.689706, 0, 0, 0.503532,-99)    );
-  // itree = 824
-  fBoostWeights.push_back(0.0248455);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.104578, 1, 1, 0.541983,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.496506,-99) , 
-8, 117.112, 1, 0, 0.527412,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505576,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.492993,-99) , 
-5, 0.595195, 1, 0, 0.501433,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.528336,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.472221,-99) , 
-13, 82.8128, 0, 0, 0.484093,-99) , 
-12, 2.55815, 1, 0, 0.497672,-99) , 
-6, 219.175, 0, 0, 0.500248,-99)    );
-  // itree = 825
-  fBoostWeights.push_back(0.0142765);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.516821,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499177,-99) , 
-12, -3.55291, 1, 0, 0.500785,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.481665,-99) , 
-10, -2.53193, 0, 0, 0.498788,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.509393,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.467779,-99) , 
-5, -1.76305, 1, 0, 0.488433,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.45588,-99) , 
-1, 66.4707, 0, 0, 0.479919,-99) , 
-5, -1.30954, 0, 0, 0.49618,-99)    );
-  // itree = 826
-  fBoostWeights.push_back(0.0252645);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 1.1393, 0, 1, 0.530961,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.529047,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486784,-99) , 
-7, 607.193, 1, 0, 0.513865,-99) , 
-NN(
-0, 
-0, 
--1, -1.54758, 0, -1, 0.491008,-99) , 
-12, -3.03775, 1, 0, 0.494448,-99) , 
-2, 0.631223, 0, 0, 0.497169,-99)    );
-  // itree = 827
-  fBoostWeights.push_back(0.0172169);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532197,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506546,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497302,-99) , 
-14, 814.744, 1, 0, 0.502059,-99) , 
-1, 130.064, 0, 0, 0.503599,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50862,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477922,-99) , 
-5, 0.1186, 0, 0, 0.492985,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.447974,-99) , 
-3, 1.836, 1, 0, 0.48187,-99) , 
-12, -3.05272, 0, 0, 0.500622,-99)    );
-  // itree = 828
-  fBoostWeights.push_back(0.0295415);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 452.272, 0, 1, 0.514278,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.500535,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.471396,-99) , 
-10, 0.0664071, 1, 0, 0.484689,-99) , 
-3, -0.961415, 0, 0, 0.507461,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512316,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484183,-99) , 
-7, 724.516, 1, 0, 0.505091,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514734,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482945,-99) , 
-12, 1.61138, 0, 0, 0.489292,-99) , 
-4, -0.52766, 1, 0, 0.497516,-99) , 
-5, 0.595265, 0, 0, 0.500772,-99)    );
-  // itree = 829
-  fBoostWeights.push_back(0.0133766);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.543898,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514994,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.483485,-99) , 
-3, 0.471572, 1, 0, 0.501466,-99) , 
-4, -0.787578, 1, 0, 0.515626,-99) , 
-NN(
-0, 
-0, 
--1, 3.52057, 1, -1, 0.495524,-99) , 
-1, 53.9899, 1, 0, 0.497683,-99)    );
-  // itree = 830
-  fBoostWeights.push_back(0.0228255);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, -0.699831, 1, 1, 0.507991,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486532,-99) , 
-4, 2.38068, 1, 0, 0.506551,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.531133,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489283,-99) , 
-1, 72.4001, 1, 0, 0.512225,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501581,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464422,-99) , 
-2, 0.31496, 1, 0, 0.484405,-99) , 
-2, 0.461026, 0, 0, 0.493256,-99) , 
-0, 0.96587, 1, 0, 0.502651,-99)    );
-  // itree = 831
-  fBoostWeights.push_back(0.0148832);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515555,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497952,-99) , 
-5, -0.765264, 1, 0, 0.502063,-99) , 
-NN(
-0, 
-0, 
--1, 77.5897, 0, -1, 0.47719,-99) , 
-5, -1.78567, 0, 0, 0.500503,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.464572,-99) , 
-1, 47.6564, 0, 0, 0.499103,-99)    );
-  // itree = 832
-  fBoostWeights.push_back(0.0206661);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.522166,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.499905,-99) , 
-0, -0.0657271, 1, 0, 0.505478,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.469522,-99) , 
-0, -1.11199, 0, 0, 0.502954,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.520506,-99) , 
-NN(
-0, 
-0, 
--1, 91.693, 1, -1, 0.48463,-99) , 
-3, 1.73701, 0, 0, 0.48857,-99) , 
-2, 0.452965, 1, 0, 0.497974,-99)    );
-  // itree = 833
-  fBoostWeights.push_back(0.0230919);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0.603141, 0, 1, 0.519081,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.506887,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491113,-99) , 
-1, 90.8051, 1, 0, 0.502896,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.46398,-99) , 
-9, 566.363, 1, 0, 0.50099,-99) , 
-5, 0.833348, 0, 0, 0.505824,-99)    );
-  // itree = 834
-  fBoostWeights.push_back(0.0286516);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.561116,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.49344,-99) , 
-11, 197.343, 0, 0, 0.526964,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.5079,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.475193,-99) , 
-1, 104.34, 1, 0, 0.503594,-99) , 
-12, -0.184572, 1, 0, 0.512938,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.532061,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.493737,-99) , 
-0, -0.07908, 0, 0, 0.518768,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.501929,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.487994,-99) , 
-5, 0.357696, 0, 0, 0.494565,-99) , 
-4, -1.06424, 1, 0, 0.498528,-99) , 
-3, -0.136042, 1, 0, 0.505201,-99)    );
-  // itree = 835
-  fBoostWeights.push_back(0.0290122);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.565441, 0, 1, 0.51939,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.510816,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478907,-99) , 
-4, 1.04031, 1, 0, 0.49814,-99) , 
-2, 0.368809, 0, 0, 0.50962,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.50805,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.489011,-99) , 
-3, 0.1795, 0, 0, 0.496021,-99) , 
-NN(
-0, 
-0, 
--1, 1.79113, 0, -1, 0.46442,-99) , 
-2, 0.587385, 1, 0, 0.492396,-99) , 
-12, -1.64331, 1, 0, 0.498751,-99)    );
-  // itree = 836
-  fBoostWeights.push_back(0.0291908);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.512137,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.477957,-99) , 
-12, -3.5223, 0, 0, 0.509461,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.502373,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.468194,-99) , 
-2, 0.628108, 1, 0, 0.488563,-99) , 
-2, 0.550314, 1, 0, 0.505986,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.538374,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.484503,-99) , 
-5, -1.87632, 1, 0, 0.504806,-99) , 
-NN(
-0, 
-0, 
--1, 0.423049, 1, -1, 0.477164,-99) , 
-8, 74.8894, 0, 0, 0.490374,-99) , 
-5, -1.30952, 0, 0, 0.503785,-99)    );
-  // itree = 837
-  fBoostWeights.push_back(0.027312);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0.119273, 1, 1, 0.53008,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.51052,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.46178,-99) , 
-4, -1.43692, 0, 0, 0.502787,-99) , 
-1, 99.7724, 1, 0, 0.512007,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523977,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.497176,-99) , 
-0, 0.0769366, 0, 0, 0.503975,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505703,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.482489,-99) , 
-7, 642.414, 0, 0, 0.488475,-99) , 
-0, 0.386059, 1, 0, 0.495827,-99) , 
-1, 91.9702, 0, 0, 0.499922,-99)    );
-  // itree = 838
-  fBoostWeights.push_back(0.023727);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 830.907, 0, 1, 0.514197,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.514355,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.478692,-99) , 
-7, 401.883, 1, 0, 0.491529,-99) , 
-4, -1.49968, 0, 0, 0.507973,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.523812,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.490394,-99) , 
-5, -0.118775, 0, 0, 0.508774,-99) , 
-NN(
-0, 
-0, 
--1, 439.546, 1, -1, 0.491852,-99) , 
-9, 383.184, 0, 0, 0.495736,-99) , 
-3, -0.698169, 1, 0, 0.499477,-99)    );
-  // itree = 839
-  fBoostWeights.push_back(0.0206932);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 187.774, 0, 1, 0.523662,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.539606,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491292,-99) , 
-14, 1341.54, 0, 0, 0.500677,-99) , 
-10, 0.26539, 0, 0, 0.51183,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.515653,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495612,-99) , 
-0, -0.927718, 1, 0, 0.497638,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.462563,-99) , 
-2, 0.480658, 1, 0, 0.495613,-99) , 
-2, 0.504452, 0, 0, 0.499744,-99)    );
-  // itree = 840
-  fBoostWeights.push_back(0.0150292);
-  fForest.push_back( 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.556786,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 107.848, 0, 1, 0.504545,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.476378,-99) , 
-1, 137.95, 1, 0, 0.50363,-99) , 
-1, 47.6442, 1, 0, 0.50605,-99)    );
-  // itree = 841
-  fBoostWeights.push_back(0.0284275);
-  fForest.push_back( 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.526214,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.507566,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.47558,-99) , 
-3, -1.15954, 0, 0, 0.491659,-99) , 
-11, 154.362, 1, 0, 0.509607,-99) , 
-NN(
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.530426,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.494084,-99) , 
-12, -0.757696, 1, 0, 0.507733,-99) , 
-NN(
-0, 
-0, 
--1, 1.89198, 1, -1, 0.48746,-99) , 
-13, 155.749, 0, 0, 0.491107,-99) , 
-12, 3.03464, 0, 0, 0.493803,-99)    );
-  // itree = 842
-  fBoostWeights.push_back(0.0273875);
-  fForest.push_back( 
 NN(
-NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.593176,-99) , 
+-1, 0, 1, 1, 0.519864,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.499895,-99) , 
-10, -1.03635, 1, 0, 0.540467,-99) , 
-NN(
+-1, 0, 1, -1, 0.395003,-99) , 
+5, 0.471641, 1, 0, 0.497916,-99) , 
 NN(
 NN(
 0, 
@@ -27296,255 +26411,3113 @@ NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.493595,-99) , 
-11, 372.316, 1, 0, 0.5076,-99) , 
+-1, 0, 1, -1, 0.395791,-99) , 
+11, 123.939, 0, 0, 0.428312,-99) , 
+5, 0.275873, 0, 0, 0.476095,-99) , 
+6, 1.0722, 0, 0, 0.491455,-99)    );
+  // itree = 759
+  fBoostWeights.push_back(0.10713);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 195.867, 1, 1, 0.675968,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.486911,-99) , 
+13, 0.437053, 0, 0, 0.601813,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.539526,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.411974,-99) , 
+6, -1.78453, 0, 0, 0.527779,-99) , 
+NN(
+0, 
+0, 
+-1, -1.02706, 0, -1, 0.451633,-99) , 
+8, -1.29297, 1, 0, 0.484122,-99) , 
+10, -3.10366, 1, 0, 0.496434,-99)    );
+  // itree = 760
+  fBoostWeights.push_back(0.0992352);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 97.0404, 0, 1, 0.565344,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.50565,-99) , 
+-1, 0, 1, 1, 0.500512,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.477593,-99) , 
-13, 73.4357, 0, 0, 0.486573,-99) , 
-12, 2.11213, 1, 0, 0.502135,-99) , 
-4, -2.31742, 1, 0, 0.504404,-99)    );
+-1, 0, 1, -1, 0.36688,-99) , 
+3, 72.6577, 0, 0, 0.482422,-99) , 
+5, 0.323833, 1, 0, 0.522963,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.506838,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.397131,-99) , 
+2, -0.833031, 1, 0, 0.466362,-99) , 
+NN(
+0, 
+0, 
+-1, 192.961, 0, -1, 0.363021,-99) , 
+12, 763.036, 0, 0, 0.444014,-99) , 
+2, -0.343262, 0, 0, 0.493139,-99)    );
+  // itree = 761
+  fBoostWeights.push_back(0.0722869);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.675149,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.491591,-99) , 
+6, -0.360003, 1, 0, 0.588344,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.572214,-99) , 
+NN(
+0, 
+0, 
+-1, 177.848, 1, -1, 0.469817,-99) , 
+0, 269.512, 0, 0, 0.475274,-99) , 
+3, 101.14, 0, 0, 0.481748,-99)    );
+  // itree = 762
+  fBoostWeights.push_back(0.11143);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.534031,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.402109,-99) , 
+14, -1.73406, 0, 0, 0.522534,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.577539,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.423095,-99) , 
+7, 40.9643, 1, 0, 0.450555,-99) , 
+13, 0.553707, 1, 0, 0.501462,-99) , 
+NN(
+0, 
+0, 
+-1, 83.5975, 0, -1, 0.386661,-99) , 
+7, 241.449, 1, 0, 0.49244,-99)    );
+  // itree = 763
+  fBoostWeights.push_back(0.0941644);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.617554,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.510603,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.356655,-99) , 
+13, 2.20955, 1, 0, 0.493892,-99) , 
+8, 2.35319, 0, 0, 0.515225,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.58307,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.473437,-99) , 
+6, -0.830078, 1, 0, 0.504964,-99) , 
+NN(
+0, 
+0, 
+-1, -0.135463, 1, -1, 0.444803,-99) , 
+11, 98.1858, 0, 0, 0.471635,-99) , 
+2, 0.572033, 0, 0, 0.485318,-99)    );
+  // itree = 764
+  fBoostWeights.push_back(0.136086);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.562754,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.602365,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.401962,-99) , 
+3, 82.1875, 0, 0, 0.539763,-99) , 
+NN(
+0, 
+0, 
+-1, -2.22149, 0, -1, 0.437981,-99) , 
+4, 427.351, 0, 0, 0.454301,-99) , 
+5, 0.206088, 1, 0, 0.467,-99)    );
+  // itree = 765
+  fBoostWeights.push_back(0.157672);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.610285,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457231,-99) , 
+7, 39.3876, 0, 0, 0.56737,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.517196,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.358662,-99) , 
+2, 0.338309, 1, 0, 0.458359,-99) , 
+5, 0.29873, 0, 0, 0.526848,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.604686,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.400629,-99) , 
+11, 109.112, 1, 0, 0.552321,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.52038,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.419056,-99) , 
+3, 74.5565, 1, 0, 0.438089,-99) , 
+2, 1.02923, 0, 0, 0.460761,-99) , 
+7, 71.8394, 1, 0, 0.48809,-99)    );
+  // itree = 766
+  fBoostWeights.push_back(0.117053);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.67462, 0, 1, 0.567364,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.556259,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.411732,-99) , 
+7, 109.109, 0, 0, 0.467909,-99) , 
+2, -0.333775, 0, 0, 0.528767,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.635483,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500073,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.422252,-99) , 
+7, 66.8711, 1, 0, 0.454313,-99) , 
+12, 1400.25, 0, 0, 0.46811,-99) , 
+12, 1495.18, 0, 0, 0.487178,-99)    );
+  // itree = 767
+  fBoostWeights.push_back(0.119685);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.633616,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.574971,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.438949,-99) , 
+10, -2.89035, 1, 0, 0.531767,-99) , 
+6, -1.04785, 1, 0, 0.554526,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.580538,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.480563,-99) , 
+8, -0.359794, 0, 0, 0.520668,-99) , 
+NN(
+0, 
+0, 
+-1, 1.8983, 1, -1, 0.440962,-99) , 
+3, 87.8482, 0, 0, 0.472359,-99) , 
+10, -2.65923, 1, 0, 0.489195,-99)    );
+  // itree = 768
+  fBoostWeights.push_back(0.0707947);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.584698,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.488888,-99) , 
+5, 0.389149, 0, 0, 0.523582,-99) , 
+NN(
+0, 
+0, 
+-1, 82.1518, 0, -1, 0.471943,-99) , 
+13, -0.721352, 1, 0, 0.487721,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.359129,-99) , 
+0, 275.155, 1, 0, 0.482667,-99)    );
+  // itree = 769
+  fBoostWeights.push_back(0.128193);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.596238, 1, 1, 0.642082,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.571345,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.480562,-99) , 
+9, 227.246, 1, 0, 0.53344,-99) , 
+2, 1.2577, 0, 0, 0.550006,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 97.3423, 0, 1, 0.538532,-99) , 
+NN(
+0, 
+0, 
+-1, 84.0506, 0, -1, 0.409057,-99) , 
+10, 0.749581, 0, 0, 0.476309,-99) , 
+7, 66.8711, 0, 0, 0.523642,-99)    );
+  // itree = 770
+  fBoostWeights.push_back(0.0782217);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.63373,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50797,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.382856,-99) , 
+5, 0.198236, 0, 0, 0.496042,-99) , 
+12, 2253.65, 0, 0, 0.50918,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.525207,-99) , 
+NN(
+0, 
+0, 
+-1, 85.9167, 1, -1, 0.35613,-99) , 
+6, 0.583217, 0, 0, 0.413101,-99) , 
+9, 391.933, 1, 0, 0.496739,-99)    );
+  // itree = 771
+  fBoostWeights.push_back(0.12682);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.545222,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.392815,-99) , 
+6, 1.54362, 1, 0, 0.533677,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.550491,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432444,-99) , 
+14, 0.509043, 0, 0, 0.473276,-99) , 
+7, 64.5173, 0, 0, 0.513132,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.56674,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.525232,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.350532,-99) , 
+3, 76.4554, 1, 0, 0.389586,-99) , 
+2, 1.87774, 0, 0, 0.427814,-99) , 
+2, 1.0293, 1, 0, 0.499153,-99)    );
+  // itree = 772
+  fBoostWeights.push_back(0.0830167);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 391.714, 1, 1, 0.61054,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 2104.57, 0, 1, 0.53525,-99) , 
+NN(
+0, 
+0, 
+-1, 253.265, 1, -1, 0.463298,-99) , 
+11, 114.15, 0, 0, 0.486447,-99) , 
+9, 505.827, 0, 0, 0.495095,-99)    );
+  // itree = 773
+  fBoostWeights.push_back(0.111233);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.535135,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.458023,-99) , 
+7, 87.6297, 1, 0, 0.501355,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.30532,-99) , 
+11, 251.478, 1, 0, 0.494651,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551386,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.317254,-99) , 
+9, 234.547, 0, 0, 0.474955,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.296886,-99) , 
+3, 82.1875, 0, 0, 0.415833,-99) , 
+4, 427.351, 1, 0, 0.483858,-99)    );
+  // itree = 774
+  fBoostWeights.push_back(0.0966368);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 916.884, 0, 1, 0.607042,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.53904,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.346397,-99) , 
+11, 149.975, 1, 0, 0.523838,-99) , 
+10, -2.24135, 1, 0, 0.542928,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508843,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.421568,-99) , 
+14, -0.848626, 0, 0, 0.486023,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.326556,-99) , 
+6, 1.78551, 1, 0, 0.477993,-99) , 
+12, 1172.75, 1, 0, 0.510841,-99)    );
+  // itree = 775
+  fBoostWeights.push_back(0.0914661);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.676986,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.435442,-99) , 
+13, 1.67536, 0, 0, 0.574778,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.632684,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.495697,-99) , 
+6, -0.833822, 1, 0, 0.544307,-99) , 
+NN(
+0, 
+0, 
+-1, -0.36556, 1, -1, 0.464991,-99) , 
+5, 0.481159, 0, 0, 0.474674,-99) , 
+2, 1.48486, 0, 0, 0.484171,-99)    );
+  // itree = 776
+  fBoostWeights.push_back(0.111977);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.582157,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.499551,-99) , 
+10, -1.69401, 0, 0, 0.547884,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.525767,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.411528,-99) , 
+7, 84.4118, 0, 0, 0.466265,-99) , 
+12, 1084.57, 0, 0, 0.511416,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.532392,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.448322,-99) , 
+11, 139.579, 0, 0, 0.468302,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.312973,-99) , 
+10, -3.11975, 0, 0, 0.455734,-99) , 
+5, 0.321555, 1, 0, 0.48212,-99)    );
+  // itree = 777
+  fBoostWeights.push_back(0.13795);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 88.2054, 0, 1, 0.553723,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.573802,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.357816,-99) , 
+14, 0.409133, 0, 0, 0.44993,-99) , 
+3, 95.4435, 1, 0, 0.539025,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.654347,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.46249,-99) , 
+3, 82.1518, 1, 0, 0.560647,-99) , 
+NN(
+0, 
+0, 
+-1, 107.601, 0, -1, 0.430821,-99) , 
+6, -1.54255, 1, 0, 0.450907,-99) , 
+8, 0.944754, 0, 0, 0.48943,-99)    );
+  // itree = 778
+  fBoostWeights.push_back(0.128006);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 507.325, 0, 1, 0.552563,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.36844,-99) , 
+0, 189.869, 1, 0, 0.532696,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.610514,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.43578,-99) , 
+3, 89.747, 1, 0, 0.55498,-99) , 
+NN(
+0, 
+0, 
+-1, -1.81403, 1, -1, 0.442271,-99) , 
+6, 1.0722, 0, 0, 0.464592,-99) , 
+10, 1.71126, 0, 0, 0.490864,-99)    );
+  // itree = 779
+  fBoostWeights.push_back(0.0598845);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.622605,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514927,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.362785,-99) , 
+7, 225.544, 1, 0, 0.509317,-99) , 
+7, 290.008, 0, 0, 0.516576,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.330335,-99) , 
+3, 66.9613, 0, 0, 0.511568,-99)    );
+  // itree = 780
+  fBoostWeights.push_back(0.110421);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 192.417, 0, 1, 0.578114,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.381772,-99) , 
+2, 0.799642, 1, 0, 0.539776,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.607787,-99) , 
+NN(
+0, 
+0, 
+-1, 0.116653, 1, -1, 0.455255,-99) , 
+14, 2.01381, 0, 0, 0.46385,-99) , 
+5, 0.458265, 0, 0, 0.477341,-99)    );
+  // itree = 781
+  fBoostWeights.push_back(0.12824);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.610219,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.456605,-99) , 
+14, -1.83926, 0, 0, 0.594075,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.555058,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.391623,-99) , 
+12, 1316.79, 1, 0, 0.488218,-99) , 
+2, -1.03654, 0, 0, 0.553085,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, -0.409725, 1, 1, 0.544331,-99) , 
+NN(
+0, 
+0, 
+-1, 0.834961, 1, -1, 0.462251,-99) , 
+0, 112.004, 0, 0, 0.486123,-99) , 
+13, -0.207161, 1, 0, 0.51639,-99)    );
+  // itree = 782
+  fBoostWeights.push_back(0.103134);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 89.8801, 1, 1, 0.539208,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.505613,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.316469,-99) , 
+11, 121.051, 1, 0, 0.463952,-99) , 
+8, -2.05859, 0, 0, 0.523683,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.561151,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.377926,-99) , 
+11, 88.3403, 0, 0, 0.486225,-99) , 
+NN(
+0, 
+0, 
+-1, 67.4388, 1, -1, 0.358767,-99) , 
+8, -0.827846, 1, 0, 0.421686,-99) , 
+3, 74.5565, 0, 0, 0.508415,-99)    );
+  // itree = 783
+  fBoostWeights.push_back(0.0827449);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.113863, 0, 1, 0.548872,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.660676,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.482751,-99) , 
+13, 1.97986, 0, 0, 0.496453,-99) , 
+9, 231.813, 0, 0, 0.52226,-99) , 
+NN(
+0, 
+0, 
+-1, -1.21796, 0, -1, 0.442407,-99) , 
+5, 0.223359, 0, 0, 0.510374,-99)    );
+  // itree = 784
+  fBoostWeights.push_back(0.146538);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 85.3006, 0, 1, 0.569141,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.56005,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.388094,-99) , 
+2, -0.12393, 0, 0, 0.463099,-99) , 
+3, 91.6458, 1, 0, 0.545006,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.667244,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.49165,-99) , 
+7, 124.079, 0, 0, 0.560427,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.550584,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.419965,-99) , 
+14, -1.20646, 1, 0, 0.452253,-99) , 
+13, 0.841217, 0, 0, 0.473652,-99) , 
+10, -2.17257, 1, 0, 0.495211,-99)    );
+  // itree = 785
+  fBoostWeights.push_back(0.0665251);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.100781, 1, 1, 0.645811,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.513177,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.328976,-99) , 
+6, -2.02209, 0, 0, 0.506537,-99) , 
+9, 485.754, 0, 0, 0.517333,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.341869,-99) , 
+4, 579.911, 1, 0, 0.511223,-99)    );
+  // itree = 786
+  fBoostWeights.push_back(0.105068);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.632761, 0, 1, 0.62555,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.575289,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.397833,-99) , 
+4, 340.601, 0, 0, 0.48293,-99) , 
+11, 94.0465, 1, 0, 0.565973,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.669062,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457884,-99) , 
+5, 0.348493, 0, 0, 0.570221,-99) , 
+NN(
+0, 
+0, 
+-1, 0.644182, 1, -1, 0.464857,-99) , 
+14, 1.77544, 0, 0, 0.472714,-99) , 
+3, 95.4435, 0, 0, 0.488292,-99)    );
+  // itree = 787
+  fBoostWeights.push_back(0.110367);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.662288,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.534162,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.455566,-99) , 
+9, 313.364, 1, 0, 0.517367,-99) , 
+12, 2584.46, 0, 0, 0.526603,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.645511,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457151,-99) , 
+6, -1.19413, 1, 0, 0.56495,-99) , 
+NN(
+0, 
+0, 
+-1, 0.41221, 1, -1, 0.413346,-99) , 
+12, 772.392, 1, 0, 0.455041,-99) , 
+14, -0.868707, 0, 0, 0.510281,-99)    );
+  // itree = 788
+  fBoostWeights.push_back(0.112732);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.574375,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.492216,-99) , 
+4, 304, 0, 0, 0.541754,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.530482,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.436016,-99) , 
+9, 234.294, 1, 0, 0.488247,-99) , 
+3, 84.0506, 0, 0, 0.516391,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.621169,-99) , 
+NN(
+0, 
+0, 
+-1, 88.8858, 0, -1, 0.423685,-99) , 
+2, -1.48179, 1, 0, 0.44902,-99) , 
+12, 836.42, 0, 0, 0.498519,-99)    );
+  // itree = 789
+  fBoostWeights.push_back(0.119254);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 96.3775, 0, 1, 0.544256,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.349739,-99) , 
+7, 273.822, 1, 0, 0.533542,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.619366,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.388226,-99) , 
+2, -1.19215, 1, 0, 0.561015,-99) , 
+NN(
+0, 
+0, 
+-1, -0.830892, 0, -1, 0.444067,-99) , 
+13, -1.50807, 1, 0, 0.47833,-99) , 
+13, -0.295093, 0, 0, 0.512136,-99)    );
+  // itree = 790
+  fBoostWeights.push_back(0.101761);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.644483,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.457785,-99) , 
+3, 102.229, 1, 0, 0.578906,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50998,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442788,-99) , 
+4, 281.024, 1, 0, 0.472495,-99) , 
+3, 99.2411, 0, 0, 0.482184,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.373952,-99) , 
+5, 0.198225, 0, 0, 0.472033,-99)    );
+  // itree = 791
+  fBoostWeights.push_back(0.139663);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.613656,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.469251,-99) , 
+9, 403.295, 1, 0, 0.575842,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.545923,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.449868,-99) , 
+10, -1.18703, 0, 0, 0.505908,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.619236,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.418607,-99) , 
+13, -2.05186, 1, 0, 0.431963,-99) , 
+5, 0.321555, 1, 0, 0.468184,-99) , 
+12, 2181.68, 0, 0, 0.481622,-99)    );
+  // itree = 792
+  fBoostWeights.push_back(0.117718);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.524706,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.332489,-99) , 
+2, -1.71436, 0, 0, 0.51425,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.525225,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.352447,-99) , 
+5, 0.207799, 1, 0, 0.44062,-99) , 
+5, 0.251528, 0, 0, 0.497691,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.600722,-99) , 
+NN(
+0, 
+0, 
+-1, 73.7811, 1, -1, 0.355894,-99) , 
+6, 1.07471, 0, 0, 0.408894,-99) , 
+8, 2.25753, 1, 0, 0.48367,-99)    );
+  // itree = 793
+  fBoostWeights.push_back(0.104174);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.781142, 1, 1, 0.621299,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.519967,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.38386,-99) , 
+3, 95.4435, 1, 0, 0.502552,-99) , 
+10, -2.66457, 1, 0, 0.524466,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.623708,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.421533,-99) , 
+3, 85.881, 1, 0, 0.543608,-99) , 
+NN(
+0, 
+0, 
+-1, 137.943, 1, -1, 0.457035,-99) , 
+7, 185.384, 0, 0, 0.471612,-99) , 
+9, 278.135, 0, 0, 0.489551,-99)    );
+  // itree = 794
+  fBoostWeights.push_back(0.107591);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.672371,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.497171,-99) , 
+8, -0.378906, 0, 0, 0.599156,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.539116,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.403849,-99) , 
+3, 95.3958, 1, 0, 0.52143,-99) , 
+7, 53.206, 1, 0, 0.542893,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, -1.60384, 1, 1, 0.563571,-99) , 
+NN(
+0, 
+0, 
+-1, 97.3423, 1, -1, 0.456015,-99) , 
+2, 1.28309, 0, 0, 0.480412,-99) , 
+13, -0.39439, 1, 0, 0.504625,-99)    );
+  // itree = 795
+  fBoostWeights.push_back(0.0859053);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 83.9911, 0, 1, 0.576694,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.512797,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.385933,-99) , 
+5, 0.380812, 1, 0, 0.475835,-99) , 
+0, 94.2578, 1, 0, 0.541808,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500617,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.38158,-99) , 
+11, 55.0886, 0, 0, 0.487719,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.561021,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.362813,-99) , 
+3, 91.6458, 0, 0, 0.411236,-99) , 
+11, 156.745, 1, 0, 0.473307,-99) , 
+8, 1.63021, 0, 0, 0.494214,-99)    );
+  // itree = 796
+  fBoostWeights.push_back(0.0588458);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508929,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.388245,-99) , 
+8, 2.87086, 1, 0, 0.5027,-99) , 
+NN(
+0, 
+0, 
+-1, 0.762347, 0, -1, 0.405382,-99) , 
+2, -1.48584, 0, 0, 0.494343,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.515166,-99) , 
+NN(
+0, 
+0, 
+-1, 0.109631, 0, -1, 0.350249,-99) , 
+2, -0.36656, 1, 0, 0.414681,-99) , 
+0, 189.866, 1, 0, 0.485699,-99)    );
+  // itree = 797
+  fBoostWeights.push_back(0.0902906);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.561867,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.464459,-99) , 
+7, 65.0548, 0, 0, 0.529669,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.538882,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.464969,-99) , 
+3, 95.4435, 0, 0, 0.478913,-99) , 
+10, -2.14537, 1, 0, 0.495592,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.357275,-99) , 
+6, 2.02153, 1, 0, 0.490748,-99)    );
+  // itree = 798
+  fBoostWeights.push_back(0.0775002);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.34849, 1, 1, 0.58446,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.431662,-99) , 
+7, 140.778, 1, 0, 0.548981,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 67.0268, 0, 1, 0.586884,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500551,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.451642,-99) , 
+4, 298.976, 0, 0, 0.476498,-99) , 
+3, 68.8601, 1, 0, 0.483609,-99) , 
+13, -1.07355, 1, 0, 0.496736,-99)    );
+  // itree = 799
+  fBoostWeights.push_back(0.119148);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.604406,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.490172,-99) , 
+2, -0.567615, 1, 0, 0.528961,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.521896,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.400646,-99) , 
+8, -1.24967, 0, 0, 0.476394,-99) , 
+4, 287.595, 0, 0, 0.503319,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.597505,-99) , 
+NN(
+0, 
+0, 
+-1, 130.53, 0, -1, 0.410368,-99) , 
+5, 0.483751, 0, 0, 0.434261,-99) , 
+6, 0.595401, 1, 0, 0.483128,-99)    );
+  // itree = 800
+  fBoostWeights.push_back(0.09995);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.563597,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.495158,-99) , 
+2, 0.114025, 0, 0, 0.528162,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.354889,-99) , 
+4, 293.202, 1, 0, 0.519006,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551275,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.654073,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442178,-99) , 
+12, 580.064, 1, 0, 0.458841,-99) , 
+12, 2181.71, 0, 0, 0.47304,-99) , 
+4, 303.167, 1, 0, 0.49859,-99)    );
+  // itree = 801
+  fBoostWeights.push_back(0.0888768);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -1.82705, 1, 1, 0.531645,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.376697,-99) , 
+13, -2.08146, 0, 0, 0.524859,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.5648,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.377364,-99) , 
+6, -0.121094, 0, 0, 0.47805,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.360473,-99) , 
+0, 118.833, 1, 0, 0.443711,-99) , 
+5, 0.474568, 1, 0, 0.514805,-99)    );
+  // itree = 802
+  fBoostWeights.push_back(0.134978);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.254929, 1, 1, 0.620349,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.593928,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.441683,-99) , 
+4, 303.292, 0, 0, 0.508263,-99) , 
+5, 0.435282, 0, 0, 0.53781,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.563699,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.481957,-99) , 
+3, 78.3542, 1, 0, 0.505705,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.535677,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.401767,-99) , 
+10, -3.15755, 1, 0, 0.432751,-99) , 
+8, -0.835845, 1, 0, 0.467502,-99) , 
+12, 831.773, 1, 0, 0.488848,-99)    );
+  // itree = 803
+  fBoostWeights.push_back(0.0446033);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.64776,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.576497,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.497437,-99) , 
+8, -2.55399, 1, 0, 0.507309,-99) , 
+14, 2.08007, 0, 0, 0.512803,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.512794,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.27174,-99) , 
+2, 1.41121, 0, 0, 0.419944,-99) , 
+13, 1.73794, 1, 0, 0.506698,-99)    );
+  // itree = 804
+  fBoostWeights.push_back(0.0834249);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.628568,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.471418,-99) , 
+11, 74.7609, 0, 0, 0.576965,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.565893,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.4866,-99) , 
+12, 1989.18, 0, 0, 0.500562,-99) , 
+NN(
+0, 
+0, 
+-1, 1234.75, 0, -1, 0.397406,-99) , 
+0, 184.471, 1, 0, 0.488856,-99) , 
+5, 0.223347, 1, 0, 0.502482,-99)    );
+  // itree = 805
+  fBoostWeights.push_back(0.0969799);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 316.5, 1, 1, 0.637734,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.54098,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.466645,-99) , 
+2, 0.570801, 1, 0, 0.518543,-99) , 
+3, 101.14, 0, 0, 0.525294,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.511172,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.298249,-99) , 
+11, 116.635, 0, 0, 0.394346,-99) , 
+4, 540.964, 1, 0, 0.517871,-99)    );
+  // itree = 806
+  fBoostWeights.push_back(0.11266);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.544731,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.47766,-99) , 
+6, 0.359375, 1, 0, 0.521205,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.315191,-99) , 
+3, 68.8601, 0, 0, 0.511984,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.608941,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.463428,-99) , 
+4, 331.256, 0, 0, 0.510669,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.506131,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.348422,-99) , 
+2, 0.575265, 0, 0, 0.381824,-99) , 
+0, 72.9065, 1, 0, 0.449035,-99) , 
+10, -2.17564, 0, 0, 0.494601,-99)    );
+  // itree = 807
+  fBoostWeights.push_back(0.108466);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 2.42042, 1, 1, 0.564948,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.51473,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.336387,-99) , 
+6, -1.78278, 0, 0, 0.503736,-99) , 
+8, -1.29297, 1, 0, 0.527143,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.602484,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.503548,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.335002,-99) , 
+2, 0.799642, 0, 0, 0.381126,-99) , 
+7, 180.633, 0, 0, 0.435314,-99) , 
+5, 0.43575, 1, 0, 0.509886,-99)    );
+  // itree = 808
+  fBoostWeights.push_back(0.142343);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.762125,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.495961,-99) , 
+2, 0.0901693, 0, 0, 0.647519,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.425395,-99) , 
+4, 328.321, 1, 0, 0.568099,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.58508,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.453583,-99) , 
+6, 0.11749, 0, 0, 0.517232,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508661,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.407139,-99) , 
+13, -0.542249, 1, 0, 0.442259,-99) , 
+5, 0.27485, 1, 0, 0.466168,-99) , 
+11, 190.973, 0, 0, 0.47733,-99)    );
+  // itree = 809
+  fBoostWeights.push_back(0.105456);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.524348,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.411204,-99) , 
+10, -3.1144, 0, 0, 0.511474,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.341263,-99) , 
+1, -951.25, 0, 0, 0.501428,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.540177,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.434173,-99) , 
+6, -0.0434338, 1, 0, 0.470763,-99) , 
+NN(
+0, 
+0, 
+-1, -0.259476, 0, -1, 0.346563,-99) , 
+6, -0.833984, 0, 0, 0.440744,-99) , 
+9, 278.135, 1, 0, 0.481715,-99)    );
+  // itree = 810
+  fBoostWeights.push_back(0.121441);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.620589,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.554184,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.406895,-99) , 
+2, -0.111677, 1, 0, 0.486912,-99) , 
+5, 0.344815, 1, 0, 0.554735,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.549608,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.413876,-99) , 
+7, 71.9008, 0, 0, 0.502255,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500443,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.389121,-99) , 
+3, 85.9494, 1, 0, 0.451182,-99) , 
+0, 69.0267, 1, 0, 0.47588,-99) , 
+0, 193.989, 0, 0, 0.485124,-99)    );
+  // itree = 811
+  fBoostWeights.push_back(0.104825);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.53832,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.4639,-99) , 
+11, 103.372, 1, 0, 0.510772,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.50815,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.422865,-99) , 
+12, 1393.6, 0, 0, 0.456094,-99) , 
+2, -0.113932, 1, 0, 0.480733,-99) , 
+NN(
+0, 
+0, 
+-1, -1.33045, 1, -1, 0.350996,-99) , 
+13, -1.70514, 0, 0, 0.471156,-99)    );
+  // itree = 812
+  fBoostWeights.push_back(0.0933002);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.709947,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.496096,-99) , 
+6, -0.109701, 0, 0, 0.628476,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.584724,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.437448,-99) , 
+3, 80.253, 1, 0, 0.503294,-99) , 
+4, 287.702, 0, 0, 0.565731,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.633378,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.599814,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.471351,-99) , 
+3, 101.14, 0, 0, 0.479273,-99) , 
+5, 0.524842, 0, 0, 0.485969,-99) , 
+2, -1.25721, 1, 0, 0.497246,-99)    );
+  // itree = 813
+  fBoostWeights.push_back(0.0788452);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.541822,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.489889,-99) , 
+7, 74.9148, 1, 0, 0.512557,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.326697,-99) , 
+6, -2.01879, 0, 0, 0.50561,-99) , 
+NN(
+0, 
+0, 
+-1, 73.5365, 1, -1, 0.345957,-99) , 
+13, -1.64852, 0, 0, 0.493036,-99)    );
+  // itree = 814
+  fBoostWeights.push_back(0.142664);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.658589,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442918,-99) , 
+4, 274.643, 0, 0, 0.598601,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551126,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.4691,-99) , 
+11, 100.372, 0, 0, 0.504102,-99) , 
+7, 150.89, 0, 0, 0.527013,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.540344,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432432,-99) , 
+4, 303.167, 0, 0, 0.484747,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.567517,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.339039,-99) , 
+2, 1.25753, 0, 0, 0.38382,-99) , 
+14, -0.814631, 0, 0, 0.451173,-99) , 
+10, 1.2414, 1, 0, 0.495217,-99)    );
+  // itree = 815
+  fBoostWeights.push_back(0.134647);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.709728, 0, 1, 0.593181,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.52724,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.415445,-99) , 
+7, 76.7835, 0, 0, 0.480283,-99) , 
+14, 0.384483, 1, 0, 0.533957,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.633929,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.490318,-99) , 
+3, 85.9167, 1, 0, 0.577222,-99) , 
+NN(
+0, 
+0, 
+-1, 97.3423, 1, -1, 0.438421,-99) , 
+14, -1.83672, 1, 0, 0.454099,-99) , 
+10, -1.65169, 1, 0, 0.484978,-99)    );
+  // itree = 816
+  fBoostWeights.push_back(0.0930927);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 89.747, 0, 1, 0.535741,-99) , 
+NN(
+0, 
+0, 
+-1, -0.38999, 1, -1, 0.452951,-99) , 
+6, -1.07171, 0, 0, 0.518471,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.56158,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.39148,-99) , 
+10, -2.92778, 1, 0, 0.469417,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.336807,-99) , 
+3, 87.8482, 1, 0, 0.422286,-99) , 
+14, 1.31698, 1, 0, 0.50795,-99)    );
+  // itree = 817
+  fBoostWeights.push_back(0.0978281);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, -1.64779, 0, 1, 0.571234,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.597447,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.489834,-99) , 
+5, 0.280346, 1, 0, 0.502615,-99) , 
+NN(
+0, 
+0, 
+-1, 0.351448, 0, -1, 0.370549,-99) , 
+11, 143.994, 1, 0, 0.47719,-99) , 
+5, 0.251924, 1, 0, 0.500145,-99)    );
+  // itree = 818
+  fBoostWeights.push_back(0.111326);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 260.333, 0, 1, 0.601109,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.587713,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.34021,-99) , 
+5, 0.382413, 0, 0, 0.461808,-99) , 
+9, 246.603, 1, 0, 0.572428,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.634836,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.493033,-99) , 
+10, -1.74003, 1, 0, 0.542129,-99) , 
+NN(
+0, 
+0, 
+-1, 70.7589, 0, -1, 0.474005,-99) , 
+11, 150.75, 0, 0, 0.492429,-99) , 
+12, 836.42, 1, 0, 0.517182,-99)    );
+  // itree = 819
+  fBoostWeights.push_back(0.127205);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.57798, 0, 1, 0.574161,-99) , 
+NN(
+0, 
+0, 
+-1, 0.680334, 1, -1, 0.452557,-99) , 
+12, 1861.57, 1, 0, 0.551974,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.609777,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.493513,-99) , 
+7, 131.825, 0, 0, 0.52544,-99) , 
+NN(
+0, 
+0, 
+-1, 0.783238, 0, -1, 0.422787,-99) , 
+14, 0.257175, 1, 0, 0.483386,-99) , 
+5, 0.297789, 0, 0, 0.527782,-99)    );
+  // itree = 820
+  fBoostWeights.push_back(0.124627);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.148299, 1, 1, 0.607893,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.518094,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.360948,-99) , 
+11, 103.461, 1, 0, 0.481811,-99) , 
+9, 216.452, 0, 0, 0.53858,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.615195,-99) , 
+NN(
+0, 
+0, 
+-1, 0.504852, 1, -1, 0.448617,-99) , 
+3, 68.8601, 1, 0, 0.460258,-99) , 
+8, -1.51986, 1, 0, 0.486967,-99)    );
+  // itree = 821
+  fBoostWeights.push_back(0.0725361);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0.38172, 0, 1, 0.62938,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.516957,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.41386,-99) , 
+5, 0.481756, 1, 0, 0.506131,-99) , 
+NN(
+0, 
+0, 
+-1, 78.3333, 0, -1, 0.413311,-99) , 
+6, 1.16171, 1, 0, 0.496226,-99) , 
+6, 2.02307, 0, 0, 0.503414,-99)    );
+  // itree = 822
+  fBoostWeights.push_back(0.122759);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.619572,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.547442,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.452363,-99) , 
+5, 0.355136, 0, 0, 0.502195,-99) , 
+5, 0.209009, 1, 0, 0.516801,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.556106,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432725,-99) , 
+10, -1.22373, 0, 0, 0.510437,-99) , 
+NN(
+0, 
+0, 
+-1, -1.98493, 0, -1, 0.427703,-99) , 
+3, 84.0506, 1, 0, 0.466656,-99) , 
+0, 81.4906, 1, 0, 0.49414,-99)    );
+  // itree = 823
+  fBoostWeights.push_back(0.0855428);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0.194595, 0, 1, 0.57486,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.584026,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.483797,-99) , 
+12, 1988.94, 0, 0, 0.500713,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.366383,-99) , 
+8, -2.72019, 0, 0, 0.490061,-99) , 
+5, 0.223346, 1, 0, 0.504514,-99)    );
+  // itree = 824
+  fBoostWeights.push_back(0.102869);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.558842,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.462288,-99) , 
+6, -0.594517, 0, 0, 0.531655,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.525856,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.432745,-99) , 
+3, 78.9792, 1, 0, 0.485021,-99) , 
+3, 85.9494, 0, 0, 0.505916,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.500188,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.312588,-99) , 
+8, 0.640067, 0, 0, 0.397661,-99) , 
+5, 0.504257, 1, 0, 0.499438,-99)    );
+  // itree = 825
+  fBoostWeights.push_back(0.0722469);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, -0.371024, 0, 1, 0.528698,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508022,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.438041,-99) , 
+2, 0.701823, 0, 0, 0.474756,-99) , 
+2, -0.147089, 1, 0, 0.498473,-99) , 
+NN(
+0, 
+0, 
+-1, 276.488, 0, -1, 0.396124,-99) , 
+2, -1.71436, 0, 0, 0.491996,-99)    );
+  // itree = 826
+  fBoostWeights.push_back(0.119222);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1691.17, 0, 1, 0.534189,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.509291,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.298075,-99) , 
+2, -0.333147, 0, 0, 0.447902,-99) , 
+3, 74.5565, 0, 0, 0.520053,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.533577,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.372563,-99) , 
+2, 0.566243, 1, 0, 0.50124,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551814,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.339061,-99) , 
+13, 1.51324, 0, 0, 0.384571,-99) , 
+9, 225.19, 0, 0, 0.443635,-99) , 
+14, 0.331856, 1, 0, 0.492298,-99)    );
+  // itree = 827
+  fBoostWeights.push_back(0.0758343);
+  fForest.push_back( 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.592659,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.597759,-99) , 
+NN(
+0, 
+0, 
+-1, 0.709263, 0, -1, 0.46767,-99) , 
+4, 612.292, 0, 0, 0.473236,-99) , 
+6, -2.02214, 1, 0, 0.478873,-99)    );
+  // itree = 828
+  fBoostWeights.push_back(0.0848406);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0.570894, 0, 1, 0.540098,-99) , 
+NN(
+0, 
+0, 
+-1, 313.738, 1, -1, 0.469161,-99) , 
+3, 82.1518, 0, 0, 0.510055,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.503497,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.214485,-99) , 
+13, -0.407776, 1, 0, 0.352518,-99) , 
+6, 1.78551, 1, 0, 0.501615,-99)    );
+  // itree = 829
+  fBoostWeights.push_back(0.146715);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.57372,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.490403,-99) , 
+12, 1467.78, 0, 0, 0.529718,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.591301,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.39156,-99) , 
+13, -1.4252, 1, 0, 0.423548,-99) , 
+5, 0.389244, 1, 0, 0.49704,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514726,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.338179,-99) , 
+5, 0.417146, 1, 0, 0.476058,-99) , 
+NN(
+0, 
+0, 
+-1, 299.095, 1, -1, 0.326662,-99) , 
+8, 0.258696, 0, 0, 0.404487,-99) , 
+12, 836.357, 0, 0, 0.472199,-99)    );
+  // itree = 830
+  fBoostWeights.push_back(0.103527);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1365.33, 1, 1, 0.542454,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.508094,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.395101,-99) , 
+12, 642.084, 1, 0, 0.449817,-99) , 
+12, 798.097, 0, 0, 0.520044,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.336716,-99) , 
+3, 68.8601, 0, 0, 0.511651,-99)    );
+  // itree = 831
+  fBoostWeights.push_back(0.0980658);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 1.71354, 0, 1, 0.536689,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.404153,-99) , 
+12, 832.228, 0, 0, 0.522739,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.68974,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.471368,-99) , 
+14, 2.06253, 0, 0, 0.481648,-99) , 
+NN(
+0, 
+0, 
+-1, 259.464, 1, -1, 0.374968,-99) , 
+2, 1.02713, 1, 0, 0.462752,-99) , 
+9, 278.04, 0, 0, 0.483152,-99)    );
+  // itree = 832
+  fBoostWeights.push_back(0.104616);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 282.4, 0, 1, 0.511709,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.548938,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.365685,-99) , 
+4, 272.095, 1, 0, 0.441582,-99) , 
+13, -0.719493, 0, 0, 0.493325,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.602799,-99) , 
+NN(
+0, 
+0, 
+-1, 0.785482, 1, -1, 0.379807,-99) , 
+14, 1.19022, 0, 0, 0.423271,-99) , 
+9, 141.201, 0, 0, 0.478383,-99)    );
+  // itree = 833
+  fBoostWeights.push_back(0.120275);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.556327,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.424776,-99) , 
+5, 0.251489, 0, 0, 0.535268,-99) , 
+NN(
+0, 
+0, 
+-1, 1.48853, 1, -1, 0.450956,-99) , 
+13, -0.287059, 1, 0, 0.485103,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.324252,-99) , 
+2, -1.71429, 0, 0, 0.476399,-99)    );
+  // itree = 834
+  fBoostWeights.push_back(0.120662);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.56922,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.410384,-99) , 
+13, -0.846316, 0, 0, 0.558433,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.512115,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.278436,-99) , 
+6, -1.30538, 0, 0, 0.482144,-99) , 
+8, -1.54102, 0, 0, 0.534708,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.632711,-99) , 
+NN(
+0, 
+0, 
+-1, -0.832496, 1, -1, 0.450353,-99) , 
+6, -1.78278, 1, 0, 0.470695,-99) , 
+2, -0.343262, 0, 0, 0.509547,-99)    );
+  // itree = 835
+  fBoostWeights.push_back(0.0771058);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.569267,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.463902,-99) , 
+3, 74.8125, 0, 0, 0.54944,-99) , 
+NN(
+0, 
+0, 
+-1, 1814.85, 1, -1, 0.480143,-99) , 
+8, -1.82785, 1, 0, 0.499571,-99) , 
+NN(
+0, 
+0, 
+-1, 0.720703, 0, -1, 0.374544,-99) , 
+3, 99.2411, 1, 0, 0.490857,-99)    );
+  // itree = 836
+  fBoostWeights.push_back(0.144053);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.568848,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.39885,-99) , 
+13, -1.65705, 0, 0, 0.546371,-99) , 
+NN(
+0, 
+0, 
+-1, 0.59568, 1, -1, 0.458831,-99) , 
+2, 0.341936, 1, 0, 0.516271,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.557068,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.426018,-99) , 
+2, 0.347377, 0, 0, 0.488816,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.549087,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.346637,-99) , 
+3, 68.2173, 1, 0, 0.390899,-99) , 
+14, -0.0727089, 1, 0, 0.440448,-99) , 
+3, 78.3542, 0, 0, 0.496306,-99)    );
+  // itree = 837
+  fBoostWeights.push_back(0.1061);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.551422,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.477444,-99) , 
+5, 0.382484, 1, 0, 0.524477,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.396605,-99) , 
+5, 0.198236, 0, 0, 0.513924,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.548357,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.454658,-99) , 
+13, 0.390147, 0, 0, 0.501252,-99) , 
+NN(
+0, 
+0, 
+-1, 146.451, 0, -1, 0.394869,-99) , 
+14, 0.399668, 0, 0, 0.437602,-99) , 
+12, 1845.35, 1, 0, 0.499396,-99)    );
+  // itree = 838
+  fBoostWeights.push_back(0.155278);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.638828,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.492425,-99) , 
+6, -1.22972, 1, 0, 0.596643,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.677242,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.442206,-99) , 
+5, 0.437562, 0, 0, 0.512052,-99) , 
+11, 103.393, 1, 0, 0.564313,-99) , 
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.548516,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.396131,-99) , 
+10, -2.42278, 0, 0, 0.520859,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.546268,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.413813,-99) , 
+6, 1.07186, 0, 0, 0.446726,-99) , 
+11, 100.382, 0, 0, 0.478988,-99) , 
+6, -0.832194, 1, 0, 0.503455,-99)    );
+  // itree = 839
+  fBoostWeights.push_back(0.0884695);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.521494,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.412077,-99) , 
+6, 0.934024, 1, 0, 0.513276,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.514181,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.326761,-99) , 
+10, 0.703125, 0, 0, 0.427642,-99) , 
+6, 1.18506, 1, 0, 0.499575,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.532913,-99) , 
+NN(
+0, 
+0, 
+-1, -1.45138, 1, -1, 0.360368,-99) , 
+13, 0.635308, 0, 0, 0.418429,-99) , 
+6, -1.54613, 0, 0, 0.490127,-99)    );
+  // itree = 840
+  fBoostWeights.push_back(0.0982721);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.665673,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.45251,-99) , 
+14, 0.00493465, 0, 0, 0.600024,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.533086,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.376524,-99) , 
+4, 303.762, 1, 0, 0.473075,-99) , 
+13, 0.375273, 0, 0, 0.536329,-99) , 
+NN(
+0, 
+0, 
+-1, 0.499718, 1, -1, 0.468189,-99) , 
+8, -1.98131, 1, 0, 0.485756,-99)    );
+  // itree = 841
+  fBoostWeights.push_back(0.122985);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.591052,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.486209,-99) , 
+2, 0.342494, 1, 0, 0.553988,-99) , 
+NN(
+0, 
+0, 
+-1, 60.383, 0, -1, 0.460187,-99) , 
+4, 320.304, 1, 0, 0.526975,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.54339,-99) , 
+NN(
+0, 
+0, 
+-1, 289.286, 0, -1, 0.415194,-99) , 
+5, 0.273596, 1, 0, 0.459784,-99) , 
+9, 278.056, 1, 0, 0.505478,-99)    );
+  // itree = 842
+  fBoostWeights.push_back(0.0918106);
+  fForest.push_back( 
+NN(
+NN(
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.604359,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.465837,-99) , 
+0, 151.84, 1, 0, 0.579293,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.516077,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.375281,-99) , 
+6, 1.256, 1, 0, 0.509684,-99) , 
+13, 0.903053, 0, 0, 0.526089,-99) , 
+NN(
+0, 
+0, 
+-1, 91.6458, 0, -1, 0.37033,-99) , 
+6, 1.5476, 1, 0, 0.51235,-99)    );
   // itree = 843
-  fBoostWeights.push_back(0.0234809);
+  fBoostWeights.push_back(0.11466);
   fForest.push_back( 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, -1.15069, 1, 1, 0.517359,-99) , 
+-1, 0.381065, 0, 1, 0.626085,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.502822,-99) , 
+-1, 0, 1, 1, 0.570592,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489871,-99) , 
-10, 0.233153, 1, 0, 0.496772,-99) , 
-1, 104.734, 0, 0, 0.499731,-99) , 
+-1, 0, 1, -1, 0.358765,-99) , 
+3, 84.0506, 0, 0, 0.485407,-99) , 
+2, 0.330497, 0, 0, 0.531675,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.527333,-99) , 
+-1, 0, 1, 1, 0.511732,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.488252,-99) , 
-1, 72.3832, 0, 0, 0.506399,-99) , 
+-1, 0, 1, -1, 0.439217,-99) , 
+13, 0.0726013, 1, 0, 0.484023,-99) , 
 NN(
 0, 
 0, 
--1, 2.10936, 0, -1, 0.464187,-99) , 
-10, 1.1414, 0, 0, 0.479417,-99) , 
-2, 0.544357, 1, 0, 0.496112,-99)    );
+-1, 94.0016, 1, -1, 0.421386,-99) , 
+10, -1.16367, 0, 0, 0.467186,-99) , 
+10, -2.63244, 1, 0, 0.480851,-99)    );
   // itree = 844
-  fBoostWeights.push_back(0.0139124);
+  fBoostWeights.push_back(0.0885534);
   fForest.push_back( 
 NN(
 NN(
-0, 
-0, 
--1, 0, 1, 1, 0.534552,-99) , 
-NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.504124,-99) , 
+-1, 0, 1, 1, 0.579949,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.49268,-99) , 
-5, 0.595388, 1, 0, 0.500275,-99) , 
+-1, 0, 1, -1, 0.489885,-99) , 
+12, 1454.08, 0, 0, 0.523277,-99) , 
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.474425,-99) , 
-4, -2.55407, 0, 0, 0.499347,-99) , 
-2, 0.677487, 0, 0, 0.500608,-99)    );
+-1, 0, 1, 1, 0.516799,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.451614,-99) , 
+13, -1.0088, 1, 0, 0.473407,-99) , 
+2, 0.344029, 0, 0, 0.49151,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.543904,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.233208,-99) , 
+8, 1.389, 0, 0, 0.378351,-99) , 
+6, 1.78578, 1, 0, 0.485202,-99)    );
   // itree = 845
-  fBoostWeights.push_back(0.0162216);
+  fBoostWeights.push_back(0.13347);
   fForest.push_back( 
 NN(
 NN(
+NN(
+NN(
 0, 
 0, 
--1, 0, 1, 1, 0.529352,-99) , 
+-1, 0, 1, 1, 0.56406,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.481618,-99) , 
+13, -0.50378, 0, 0, 0.537853,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.523876,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.3756,-99) , 
+10, 1.18959, 0, 0, 0.448301,-99) , 
+5, 0.424348, 1, 0, 0.518837,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.503306,-99) , 
+-1, 0, 1, 1, 0.565087,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.474324,-99) , 
-3, -1.78306, 0, 0, 0.500742,-99) , 
+-1, 0, 1, -1, 0.417461,-99) , 
+3, 83.2411, 1, 0, 0.469584,-99) , 
 NN(
 0, 
 0, 
--1, 0.335044, 1, -1, 0.479595,-99) , 
-1, 100.021, 1, 0, 0.497987,-99) , 
-1, 136.144, 0, 0, 0.499199,-99)    );
+-1, 0.739816, 0, -1, 0.330469,-99) , 
+3, 74.5565, 0, 0, 0.446276,-99) , 
+12, 1495.15, 1, 0, 0.496545,-99)    );
   // itree = 846
-  fBoostWeights.push_back(0.0316117);
+  fBoostWeights.push_back(0.125981);
   fForest.push_back( 
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 46.7338, 1, 1, 0.522232,-99) , 
+-1, 1168.35, 0, 1, 0.555849,-99) , 
+NN(
+NN(
+0, 
+0, 
+-1, 0, 1, 1, 0.533026,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.400292,-99) , 
+13, 0.0605498, 0, 0, 0.472139,-99) , 
+12, 1377.1, 1, 0, 0.52984,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.521121,-99) , 
+-1, 0, 1, 1, 0.536713,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.4631,-99) , 
-13, 148.579, 1, 0, 0.51134,-99) , 
-NN(
-NN(
-0, 
-0, 
--1, 0, 1, 1, 0.505828,-99) , 
+-1, 0, 1, -1, 0.429211,-99) , 
+0, 111.768, 0, 0, 0.463605,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.484757,-99) , 
-1, 86.6413, 0, 0, 0.492897,-99) , 
-7, 767.159, 0, 0, 0.497102,-99) , 
-1, 60.2614, 1, 0, 0.501644,-99)    );
+-1, 0, 1, -1, 0.314566,-99) , 
+3, 99.2411, 1, 0, 0.450374,-99) , 
+10, 1.70573, 1, 0, 0.502477,-99)    );
   // itree = 847
-  fBoostWeights.push_back(0.0206731);
+  fBoostWeights.push_back(0.0914397);
   fForest.push_back( 
 NN(
 NN(
 NN(
+NN(
 0, 
 0, 
--1, 487.818, 0, 1, 0.513876,-99) , 
+-1, 0, 1, 1, 0.659679,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.443439,-99) , 
+2, -0.356445, 1, 0, 0.567435,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.500723,-99) , 
+-1, 0, 1, 1, 0.592915,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.464881,-99) , 
-1, 52.4219, 1, 0, 0.483128,-99) , 
-1, 60.4852, 0, 0, 0.508541,-99) , 
-NN(
-NN(
+-1, 0, 1, -1, 0.477732,-99) , 
+3, 68.8601, 1, 0, 0.485784,-99) , 
+10, -2.28557, 1, 0, 0.494664,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.543687,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.495755,-99) , 
-1, 115.119, 0, 0, 0.498391,-99) , 
-NN(
-0, 
-0, 
--1, 105.059, 1, -1, 0.484166,-99) , 
-9, 383.184, 1, 0, 0.495257,-99) , 
-4, -0.831533, 1, 0, 0.49932,-99)    );
+-1, 0.2815, 1, -1, 0.415104,-99) , 
+10, -2.65444, 0, 0, 0.480159,-99)    );
   // itree = 848
-  fBoostWeights.push_back(0.0308477);
+  fBoostWeights.push_back(0.131003);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.514218,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.486882,-99) , 
-3, -0.977288, 0, 0, 0.508168,-99) , 
+-1, 0, 1, 1, 0.660152,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.503895,-99) , 
+-1, 0, 1, 1, 0.605598,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.446973,-99) , 
-2, 0.384746, 0, 0, 0.476242,-99) , 
-1, 110.987, 1, 0, 0.504902,-99) , 
+-1, 0, 1, -1, 0.443579,-99) , 
+9, 175.884, 0, 0, 0.522781,-99) , 
+3, 89.7083, 0, 0, 0.574111,-99) , 
 NN(
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.517987,-99) , 
+-1, 0, 1, 1, 0.57116,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.489554,-99) , 
-0, -0.236191, 1, 0, 0.493372,-99) , 
+-1, 0, 1, -1, 0.343914,-99) , 
+11, 55.4534, 0, 0, 0.539985,-99) , 
 NN(
 0, 
 0, 
--1, -0.595165, 0, -1, 0.455523,-99) , 
-0, -0.716343, 0, 0, 0.488786,-99) , 
-10, -0.240207, 0, 0, 0.497458,-99)    );
+-1, 0.474595, 1, -1, 0.452794,-99) , 
+9, 164.163, 1, 0, 0.479395,-99) , 
+8, 2.49828, 0, 0, 0.492214,-99)    );
   // itree = 849
-  fBoostWeights.push_back(0.0226933);
+  fBoostWeights.push_back(0.119521);
   fForest.push_back( 
 NN(
 NN(
 NN(
-NN(
 0, 
 0, 
--1, 0, 1, 1, 0.526662,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.491367,-99) , 
-3, 1.12317, 1, 0, 0.519367,-99) , 
-NN(
-0, 
-0, 
--1, 0, 1, -1, 0.488925,-99) , 
-13, 143.838, 1, 0, 0.514163,-99) , 
-NN(
+-1, 1.06836, 0, 1, 0.545447,-99) , 
 NN(
 NN(
 0, 
 0, 
--1, 0, 1, 1, 0.520212,-99) , 
+-1, 0, 1, 1, 0.552577,-99) , 
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.494831,-99) , 
-10, -2.7195, 1, 0, 0.497485,-99) , 
+-1, 0, 1, -1, 0.311371,-99) , 
+10, 0.927316, 0, 0, 0.427538,-99) , 
+7, 241.449, 1, 0, 0.536715,-99) , 
+NN(
+NN(
 NN(
 0, 
 0, 
--1, 0, 1, -1, 0.471543,-99) , 
-10, 2.56795, 1, 0, 0.494919,-99) , 
-5, 1.07138, 0, 0, 0.498849,-99)    );
+-1, 0, 1, 1, 0.532467,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.392003,-99) , 
+11, 86.9263, 1, 0, 0.465966,-99) , 
+NN(
+0, 
+0, 
+-1, 0, 1, -1, 0.326643,-99) , 
+8, -1.49121, 0, 0, 0.424649,-99) , 
+2, -1.02846, 0, 0, 0.517466,-99)    );
    return;
 };
 

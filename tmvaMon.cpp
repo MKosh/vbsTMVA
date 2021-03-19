@@ -408,10 +408,10 @@ void  tmvacmp(TmvaAnl* anl, const char* sgf, const char* varset="test"){
   Float_t tmva_max =  1.;
 
   cmpPad->cd();
-  plotvar(anl, "mass_lvj_type0_PuppiAK8",    allCuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
-   gPad->SaveAs("mass_lvj_type0_PuppiAK8_vbsWV.eps");
-   gPad->SaveAs("mass_lvj_type0_PuppiAK8_vbsWV.png");
-   gPad->SaveAs("mass_lvj_type0_PuppiAK8_vbsWV.pdf");
+  // // plotvar(anl, "mass_lvj_type0_PuppiAK8",    allCuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
+  // // gPad->SaveAs("mass_lvj_type0_PuppiAK8_vbsWV.eps");
+  // // gPad->SaveAs("mass_lvj_type0_PuppiAK8_vbsWV.png");
+  // // gPad->SaveAs("mass_lvj_type0_PuppiAK8_vbsWV.pdf");
 
    anl->setsvplots(1);
    cmpCanvas->Clear();
@@ -581,15 +581,21 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
   anl->setHframe(var,wtot*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  cout << "setHframe successfull!" << endl;
   anl->setSampleHists();
+  cout << "setSampleHists successfull!" << endl;
   anl->fillSampleHists(var,cuts,scale);
+  cout << "fillSampleHists successfull!" << endl;
 
   Float_t ymin= 0.0;
   if (flogy) ymin= pow(10,flogy*(-1));
 
-  gStyle->SetOptStat(0);   
+  gStyle->SetOptStat(0);
+  cout << "step 4-----------------" << endl;   
   anl->PlotHists(ymin); 
+  cout << "step 5-----------------" << endl; 
   anl->PlotLegend(var); 
+  cout << "step 6-----------------" << endl; 
   if(istyle==1){
     anl->PlotSgf(var);
   }else if(istyle>1){ 
@@ -602,8 +608,11 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
     sglscale->Scale(istyle);
     sglscale->Draw("hist same");
   }
+  cout << "step 7-----------------" << endl; 
   gPad->SetLogy(flogy);
+  cout << "step 8-----------------" << endl; 
   anl->PrintStat(cuts,debug);
+  cout << "step 9-----------------" << endl; 
   return 0;
 }
 //=====================================================================================================
@@ -1476,7 +1485,7 @@ TH1F* cloneHist(TH1F* hframe, const char* histname){
       //cout << "Deleted old hist " <<  newhist->GetName() << endl;
       newhist->Delete();
     }
-    newhist = (TH1F*) hframe->Clone(histname);TCut allCuts         ("allCuts",     (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ ZeppWHlt3));
+    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
 
     return newhist;
 }
@@ -1796,9 +1805,9 @@ outfname << "VarPlots_c2" << "_" <<  CutName << ".pdf";
  plotvar(anl, "costheta2_type0",    cuts,  1.0, 1, 0,  -1.2, 2.2,  0.1,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "costheta2_type0", "Events/bin");
  plotvar(anl, "costhetastar_type0", cuts,  1.0, 1, 0,  -1.2, 2.5,  0.1,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "costhetastar_type0", "Events/bin");
 
- plotvar(anl, "phi1_type0", OneMuPt50+fatjetLoose+pfMETpuppi50+mjw65to105+MjjVBF300+detajjVBF4,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,  "VBS (WV), 35.9 fb^{-1}", "phi0_type0 #phi", "Events/bin");
+// // plotvar(anl, "phi1_type0", OneMuPt50+fatjetLoose+pfMETpuppi50+mjw65to105+MjjVBF300+detajjVBF4,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,  "VBS (WV), 35.9 fb^{-1}", "phi0_type0 #phi", "Events/bin");
 
- plotvar(anl, "phi_type0", OneMuPt50+fatjetLoose+pfMETpuppi50+mjw65to105+MjjVBF300+detajjVBF4,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,  "VBS (WV), 35.9 fb^{-1}", "phi_type0", "Events/bin");
+ // // plotvar(anl, "phi_type0", OneMuPt50+fatjetLoose+pfMETpuppi50+mjw65to105+MjjVBF300+detajjVBF4,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,  "VBS (WV), 35.9 fb^{-1}", "phi_type0", "Events/bin");
 // plotvar(anl, "PuppiAK8_jet_mass",         cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 mass (GeV)",           "Events/bin");
 // plotvar(anl, "PuppiAK8_jet_mass_pr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 pruned mass (GeV)",    "Events/bin");
 // plotvar(anl, "PuppiAK8_jet_mass_so_corr", cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 Softdrop mass (GeV)",  "Events/bin");
@@ -1879,21 +1888,18 @@ void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut ba
  
      anl->cuts.Clear();
      anl->cuts  <<
-       basecuts <<
-       oneLepton <<
-       Lpt1gt50  <<
-       goodLepton <<
-       pfMETpuppi_m50e80 <<
-       fatjet <<
-       mjw65to105 <<
-       MjjVBF800 <<
-       detajjVBF4 <<
-       ptjjVBF30 <<
-       mlvj600 <<
-       BCtype0gt1 <<
-       ZeppWLlt3 <<
-       ZeppWHlt3 <<
-       antitagVBF 
+       category_selection <<
+       lep_pt <<
+       lep_eta <<
+       fatjet_pt <<
+       fatjet_eta <<
+       fatjet_tau21 <<
+       met_pt <<
+       wv_sr <<
+       btag_veto <<
+       vbs_jets_mjj <<
+       vbs_delta_eta <<
+       vbs_jets_pt 
      ;
      CanvasName <<  flowname << " : " << anl->cuts.Cut(0).GetName();
      TCut currentCut;

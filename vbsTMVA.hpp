@@ -68,85 +68,92 @@ TCut goodEl          ("goodEl",          "(l_pt1>50&&(type==1)&&((abs(l_eta1)<2.
 
 // Mark cuts --------------------------------------------------------------------------------------------------------------------------------
 // WV Signal Region (a.k.a boosted WV channel)
-TCut category_selection ("category_selection",  "lep2_pt<0 && bos_PuppiAK8_pt>0");// can be different for muon or electron, see eta cut        TCut category_selection ("category_selection",  "!isAntiIso && lep2_pt<0 && bos_PuppiAK8_pt>0")
-TCut lep_pt ("lep_pt",  "lep1_pt>25"); // can be different value, debatable// lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
-TCut lep_eta ("lep_eta",   "(lep1_m>0.105 && TMath::Abs(lep1_eta)<2.4 && TMath::Abs(lep2_eta)<2.4) || (lep1_m<0.105 && TMath::Abs(lep1_eta)<2.5 && !(TMath::Abs(lep1_eta)>1.4442) && TMath::Abs(lep1_eta)<1.566)");
-TCut fatjet_pt ("fatjet_pt",  "bos_PuppiAK8_pt>200");
-TCut fatjet_eta ("fatjet_eta",   "TMath::Abs(bos_PuppiAK8_eta)<2.4");
-TCut fatjet_tau21 ("fatjet_tau21",  "TMath::Abs(bos_PuppiAK8_tau2tau1)<0.55"); // can be different// vbs vbf are used interchangeably TCut fatjet_tau21 ("fatjet_tau21",  "bos_PuppiAK8_tau2tau1<0.55");
-TCut vbs_jets_mjj ("vbs_jets_mjj",  "vbf_m>500");
-TCut vbs_jets_pt ("vbs_jets_pt", "vbf1_AK4_pt>50 && vbf2_AK4_pt>50");
-TCut vbs_delta_eta ("vbs_delta_eta",   "vbf_deta>2.5"); // this is absolute delta eta
-TCut btag_veto ("btag_veto",  "nBtag_loose==0");// regions, sr: signal region, cr: control region
-TCut wv_sr ("wv_sr", "bos_PuppiAK8_m_sd0_corr>65 && bos_PuppiAK8_m_sd0_corr<105");
-TCut wv_cr_vjets ("wv_cr_vjets", "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150)");
-TCut wv_cr_top ("wv_cr_top",  "nBtag_loose>0");
-TCut met_pt ("met_pt",  "MET>30");
-TCut full_common ("full_common", category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
-TCut full_wv_sr ("full_wv_sr", full_common+btag_veto+wv_sr);
+TCut category_selection ("category_selection",     "lep2_pt<0 && bos_PuppiAK8_pt>0");// can be different for muon or electron, see eta cut        TCut category_selection ("category_selection",  "!isAntiIso && lep2_pt<0 && bos_PuppiAK8_pt>0")
+TCut lep_pt             ("lep_pt",                 "lep1_pt>25"); // can be different value, debatable // lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
+//TCut lep_eta            ("lep_eta",                "(lep1_m>0.105 && TMath::Abs(lep1_eta)<2.4 && TMath::Abs(lep2_eta)<2.4) || (lep1_m<0.105 && TMath::Abs(lep1_eta)<2.5 && !(TMath::Abs(lep1_eta)>1.4442 && TMath::Abs(lep1_eta)<1.566) && TMath::Abs(lep2_eta)<2.5 && !(TMath::Abs(lep2_eta)>1.4442 && TMath::Abs(lep2_eta)<1.566))");
+TCut lep_eta            ("lep_eta",                "lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566)");
+TCut fatjet_pt          ("fatjet_pt",              "bos_PuppiAK8_pt>200");
+TCut fatjet_eta         ("fatjet_eta",             "TMath::Abs(bos_PuppiAK8_eta)<2.4");
+TCut fatjet_tau21       ("fatjet_tau21",           "TMath::Abs(bos_PuppiAK8_tau2tau1)<0.55"); // can be different// vbs vbf are used interchangeably TCut fatjet_tau21 ("fatjet_tau21",  "bos_PuppiAK8_tau2tau1<0.55");
+TCut vbs_jets_mjj       ("vbs_jets_mjj",           "vbf_m>500");
+TCut vbs_jets_pt        ("vbs_jets_pt",            "vbf1_AK4_pt>50 && vbf2_AK4_pt>50");
+TCut vbs_delta_eta      ("vbs_delta_eta",          "vbf_deta>2.5"); // this is absolute delta eta
+TCut met_pt             ("met_pt",                 "MET>30");
+TCut btag_veto          ("btag_veto",              "nBtag_loose==0");// regions, sr: signal region, cr: control region
+TCut wv_sr              ("wv_sr",                  "bos_PuppiAK8_m_sd0_corr>65 && bos_PuppiAK8_m_sd0_corr<105");
+TCut wv_cr_vjets        ("wv_cr_vjets",            "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150)");
+TCut wv_cr_top          ("wv_cr_top",              "nBtag_loose>0");
+TCut dummy              ("dummy",                  "");
+TCut ZeppWLlt3          ("ZeppWLlt3",              "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
+TCut ZeppWHlt3          ("ZeppWHlt3",              "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
+
+TCut full_common        ("full_common",            category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
+TCut full_wv_sr         ("full_wv_sr",             full_common+btag_veto+wv_sr);
+
+TCut wtot               ("wtot",                   "35867.06*mcWeight*L1PFWeight*genWeight*puWeight");
+TCut wtotL1             ("wtotL1",                 "L1PFWeight*genWeight*puWeight");
+TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
 // Mark Cuts ---------------------------------------------------------------------------------------------------------------------------------
 
 
-//TCut cleanNAN_phi    ("cleanNAN_phi",    "(phi_type0>0&&phi_type2>0&&phi_type0<3.14&&phi_type2<3.14)"  ); 
-TCut cleanNAN_phi    ("cleanNAN_phi",    "(!TMath::IsNaN(run) && !TMath::IsNaN(run))"  ); // was (!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))
-TCut wtot            ("wtot",        "35867.06*mcWeight*L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
-TCut wtotL1          ("wtotL1",      "L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
+//TCut cleanNAN_phi           ("cleanNAN_phi",        "(phi_type0>0&&phi_type2>0&&phi_type0<3.14&&phi_type2<3.14)"  ); 
+//TCut cleanNAN_phi           ("cleanNAN_phi",        "(!TMath::IsNaN(run) && !TMath::IsNaN(run))"  ); // was (!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))
+//TCut wtot                   ("wtot",                "35867.06*mcWeight*L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
+//TCut wtotL1                 ("wtotL1",              "L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
 
-TCut more	     ("more",	    "(type==0||type==1)");
-TCut OneLpt          ("OneLpt", "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) || ((type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))))" );
-
-TCut dummy           ("dummy",          "");
+//TCut more	                  ("more",	               "(type==0||type==1)");
+//TCut OneLpt                 ("OneLpt",              "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) || ((type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))))" );
 
 //ramanpreet
-TCut OneMuPt50       ("OneMuPt50", "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) ) )");
-TCut fatjetLoose     ("fatjetLoose", "((ungroomed_PuppiAK8_jet_pt>200)&&(abs(ungroomed_PuppiAK8_jet_eta)<2.4))");
-//TCut antitagVBF      ("antitagVBF",  "(nBTagJet_loose==0)");
-TCut pfMETpuppi50    ("pfMETpuppi50", "((type==0)&&(pfMET_Corr>50))");
-//TCut mjw65to105      ("mjw65to105",  "((PuppiAK8_jet_mass_so_corr>65) && (PuppiAK8_jet_mass_so_corr<105))");
-TCut MjjVBF300       ("MjjVBF300",   "(vbf_maxpt_jj_m>300)");
-TCut detajjVBF2      ("detajjVBF4",  "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>2.0)");
-//
+//TCut OneMuPt50              ("OneMuPt50",           "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) ) )");
+//TCut fatjetLoose            ("fatjetLoose",         "((ungroomed_PuppiAK8_jet_pt>200)&&(abs(ungroomed_PuppiAK8_jet_eta)<2.4))");
+//TCut antitagVBF             ("antitagVBF",          "(nBTagJet_loose==0)");
+//TCut pfMETpuppi50           ("pfMETpuppi50",        "((type==0)&&(pfMET_Corr>50))");
+//TCut mjw65to105             ("mjw65to105",          "((PuppiAK8_jet_mass_so_corr>65) && (PuppiAK8_jet_mass_so_corr<105))");
+//TCut MjjVBF300              ("MjjVBF300",           "(vbf_maxpt_jj_m>300)");
+//TCut detajjVBF2             ("detajjVBF4",          "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>2.0)");
 
 //paper selections
-TCut tmvasel         ("tmvasel",   cleanNAN+more+OneLpt  ); 
-TCut pfMETpuppi_m30e80    ("pfMETpuppi_m30e80", "(((type==0)&&(pfMET_Corr>30)) || ((type==1)&&(pfMET_Corr>80)))");
-TCut pfMETpuppi_m50e80    ("pfMETpuppi_m50e80", "(((type==0)&&(pfMET_Corr>50)) || ((type==1)&&(pfMET_Corr>80)))");
+//TCut tmvasel                ("tmvasel",             cleanNAN+more+OneLpt  ); 
+//TCut pfMETpuppi_m30e80      ("pfMETpuppi_m30e80",   "(((type==0)&&(pfMET_Corr>30)) || ((type==1)&&(pfMET_Corr>80)))");
+//TCut pfMETpuppi_m50e80      ("pfMETpuppi_m50e80",   "(((type==0)&&(pfMET_Corr>50)) || ((type==1)&&(pfMET_Corr>80)))");
 
-TCut fatjet          ("fatjet",      "((ungroomed_PuppiAK8_jet_pt>200)&&(abs(ungroomed_PuppiAK8_jet_eta)<2.4)&&(PuppiAK8_jet_tau2tau1<0.55))");
-TCut mjw40to125      ("mjw40to125",  "((PuppiAK8_jet_mass_so_corr>40) && (PuppiAK8_jet_mass_so_corr<125))");
-TCut mjw65to105      ("mjw65to105",  "((PuppiAK8_jet_mass_so_corr>65) && (PuppiAK8_jet_mass_so_corr<105))");
-//
-TCut antitagVBF      ("antitagVBF",  "(nBTagJet_loose==0)");
-TCut MjjVBF800       ("MjjVBF800",   "(vbf_maxpt_jj_m>800)");
-TCut detajjVBF4	     ("detajjVBF4",  "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>4.0)");
-TCut detajjVBF3p5    ("detajjVBF3p5","(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>3.5)");
-TCut ptjjVBF30       ("ptjjVBF30",   "(vbf_maxpt_j1_pt>30) && (vbf_maxpt_j2_pt>30)");
-TCut mlvj600         ("mlvj600",     "(mass_lvj_type0_PuppiAK8>600)");
-TCut BCtype0gt1      ("BCtype0gt1",  "(BosonCentrality_type0>1.0)");
-TCut ZeppWLlt3       ("ZeppWLlt3",   "((abs(ZeppenfeldWL_type0)/abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta))<0.3)");
-TCut ZeppWHlt3       ("ZeppWHlt3",   "((abs(ZeppenfeldWH)/abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta))<0.3)" );
-TCut allCuts         ("allCuts",     (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ ZeppWHlt3));
+//TCut fatjet                 ("fatjet",              "((ungroomed_PuppiAK8_jet_pt>200)&&(abs(ungroomed_PuppiAK8_jet_eta)<2.4)&&(PuppiAK8_jet_tau2tau1<0.55))");
+//TCut mjw40to125             ("mjw40to125",          "((PuppiAK8_jet_mass_so_corr>40) && (PuppiAK8_jet_mass_so_corr<125))");
+//TCut mjw65to105             ("mjw65to105",          "((PuppiAK8_jet_mass_so_corr>65) && (PuppiAK8_jet_mass_so_corr<105))");
 
-// // TCut wtot            ("wtot",            "f_weight");
-// // TCut treff           ("treff",           "f_eff_weight");
-// //
-// TCut mqvbf           ("mqvbf",          "");
+//TCut antitagVBF             ("antitagVBF",          "(nBTagJet_loose==0)");
+//TCut MjjVBF800              ("MjjVBF800",           "(vbf_maxpt_jj_m>800)");
+//TCut detajjVBF4	            ("detajjVBF4",          "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>4.0)");
+//TCut detajjVBF3p5           ("detajjVBF3p5",        "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>3.5)");
+//TCut ptjjVBF30              ("ptjjVBF30",           "(vbf_maxpt_j1_pt>30) && (vbf_maxpt_j2_pt>30)");
+//TCut mlvj600                ("mlvj600",             "(mass_lvj_type0_PuppiAK8>600)");
+//TCut BCtype0gt1             ("BCtype0gt1",          "(BosonCentrality_type0>1.0)");
+//TCut ZeppWLlt3              ("ZeppWLlt3",           "((abs(ZeppenfeldWL_type0)/abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta))<0.3)");
+//TCut ZeppWHlt3              ("ZeppWHlt3",           "((abs(ZeppenfeldWH)/abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta))<0.3)" );
+//TCut allCuts                ("allCuts",             (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ ZeppWHlt3));
+
+// TCut wtot                  ("wtot",                "f_weight");
+// TCut treff                 ("treff",               "f_eff_weight");
+
+// TCut mqvbf                 ("mqvbf",               "");
+
 //RamansSelections
-TCut rOneLpt          ("rOneLpt", "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) || ((type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))))" );
-TCut rpfMETpuppi_m50e80    ("rpfMETpuppi_m50e80", "(((type==0)&&(pfMET_Corr>50)) || ((type==1)&&(pfMET_Corr>80)))");
-TCut rptjjVBF30       ("rptjjVBF30",   "(vbf_maxpt_j1_pt>30) && (vbf_maxpt_j2_pt>30)");
-TCut rantitagVBF      ("rantitagVBF",  "(nBTagJet_loose==0)");
-TCut rfatjetPt200     ("rfatjetPt200 ", "(ungroomed_PuppiAK8_jet_pt>200)");
-TCut rfatjetEta2p4    ("rfatjetEta2p4", "(abs(ungroomed_PuppiAK8_jet_eta)<2.4)");
-TCut rmjw65to105      ("rmjw65to105",  "((PuppiAK8_jet_mass_so_corr>65) && (PuppiAK8_jet_mass_so_corr<105))");
-TCut rMjjVBF800       ("rMjjVBF800",   "(vbf_maxpt_jj_m>800)");
-TCut rMjjVBF300       ("rMjjVBF300",   "(vbf_maxpt_jj_m>300)");
-TCut rMjjVBF500       ("rMjjVBF500",   "(vbf_maxpt_jj_m>500)");
-TCut rdetajjVBF4      ("rdetajjVBF4",  "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>4.0)");
-TCut rdetajjVBF2      ("rdetajjVBF2",  "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>2.0)");
-TCut rallCuts         ("rallCuts", (rOneLpt+ rpfMETpuppi_m50e80+rptjjVBF30+rantitagVBF+rfatjetPt200+rfatjetEta2p4+rmjw65to105+rMjjVBF800+rdetajjVBF4+mlvj600));
-TCut rallCutsr2       ("rallCuts", (rOneLpt+ rpfMETpuppi_m50e80+rptjjVBF30+rantitagVBF+rfatjetPt200+rfatjetEta2p4+rMjjVBF300+rdetajjVBF2+mlvj600));
-TCut cuts0_W          ("cuts0_W",  "(l_pt2<0 && l_pt1>0) && (ungroomed_PuppiAK8_jet_pt>200) && (vbf_maxpt_jj_m>500)" );
+//TCut rOneLpt                ("rOneLpt",             "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) || ((type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))))" );
+//TCut rpfMETpuppi_m50e80     ("rpfMETpuppi_m50e80",  "(((type==0)&&(pfMET_Corr>50)) || ((type==1)&&(pfMET_Corr>80)))");
+//TCut rptjjVBF30             ("rptjjVBF30",          "(vbf_maxpt_j1_pt>30) && (vbf_maxpt_j2_pt>30)");
+//TCut rantitagVBF            ("rantitagVBF",         "(nBTagJet_loose==0)");
+//TCut rfatjetPt200           ("rfatjetPt200 ",       "(ungroomed_PuppiAK8_jet_pt>200)");
+//TCut rfatjetEta2p4          ("rfatjetEta2p4",       "(abs(ungroomed_PuppiAK8_jet_eta)<2.4)");
+//TCut rmjw65to105            ("rmjw65to105",         "((PuppiAK8_jet_mass_so_corr>65) && (PuppiAK8_jet_mass_so_corr<105))");
+//TCut rMjjVBF800             ("rMjjVBF800",          "(vbf_maxpt_jj_m>800)");
+//TCut rMjjVBF300             ("rMjjVBF300",          "(vbf_maxpt_jj_m>300)");
+//TCut rMjjVBF500             ("rMjjVBF500",          "(vbf_maxpt_jj_m>500)");
+//TCut rdetajjVBF4            ("rdetajjVBF4",         "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>4.0)");
+//TCut rdetajjVBF2            ("rdetajjVBF2",         "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>2.0)");
+//TCut rallCuts               ("rallCuts",            (rOneLpt+ rpfMETpuppi_m50e80+rptjjVBF30+rantitagVBF+rfatjetPt200+rfatjetEta2p4+rmjw65to105+rMjjVBF800+rdetajjVBF4+mlvj600));
+//TCut rallCutsr2             ("rallCuts",            (rOneLpt+ rpfMETpuppi_m50e80+rptjjVBF30+rantitagVBF+rfatjetPt200+rfatjetEta2p4+rMjjVBF300+rdetajjVBF2+mlvj600));
+//TCut cuts0_W                ("cuts0_W",             "(l_pt2<0 && l_pt1>0) && (ungroomed_PuppiAK8_jet_pt>200) && (vbf_maxpt_jj_m>500)" );
 
 class Sample{
 
