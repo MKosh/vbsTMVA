@@ -41,7 +41,7 @@ static Int_t N;
 static bool lGauss = false;
 
 //Change me to debug
-static int Debug = 0;
+static int Debug = 1;
 
 TF1 *final_likelihood=0;
 TCanvas *confidence_canvas=0;
@@ -83,8 +83,9 @@ Double_t CalcCL95(Double_t ilum, Double_t slum, Double_t eff, Double_t seff, Dou
    N = n;
    x[0] = xmax;
 //
-   if(Debug)  cout << "CalcCL95:: A0/sA/B0/sB/epsilon = " << A0 << "/" << sA << "/" << B0 << "/"  <<  sB << "/" << epsilon   << endl;   
-  
+   if(Debug)  cout << "CalcCL95:: A0/sA/B0/sB/epsilon = " << A0 << "/" << sA << "/" << B0 << "/"  <<  sB << "/" << epsilon   << endl; 
+   if(Debug) cout << "ilum/slum/eff/bck/sbck/n = " << ilum << " / " << slum << " / " << eff << " / " << bck << " / " << sbck << " / " << n << " / " << endl;  
+  cout << "Debug Likelihood -- 0 --" << endl;
    Double_t delta = (Likelihood(x,p) - MinLike)/MinLike;
    if(Debug) cout << "CalcCL95:call Delta:: Delta/x0/p0/Minlike = " << delta << "/" << x[0] << "/" << p[0] << "/" << MinLike << endl; 
 
@@ -137,7 +138,6 @@ Double_t CalcCL95(Double_t ilum, Double_t slum, Double_t eff, Double_t seff, Dou
    cout << "Likelihood function is evaluated over [0," << xmax << "]\n";
    //
    //Double_t Norm = like->Integral(0.,xmax,p,epsilon);      // used in ROOT v5.XX
-
    like->SetParameters(p);
    Double_t Norm = like->Integral(0.,xmax,epsilon);
 
@@ -206,10 +206,13 @@ Double_t Likelihood(Double_t *x, Double_t *p)
       Double_t low = B0 > 5.*sB ? B0 - 5.*sB : 0.;
       // retval = out->Integral(low,B0+5.*sB,x,epsilon);     // used in ROOT v5.XX
       out->SetParameters(x);
-      retval = out->Integral(low,B0+5.*sB,epsilon);
-      if(Debug) cout << "  Likelihood::out, x[0]/retval = " << x[0] << "/" << retval << endl;  
+      //cout << "Debug -- Integral --" << endl;
+      cout << "low/B0+5*sB/epsilon " << low << "/" << B0+5.0*sB << "/" << epsilon << endl;
+      retval = out->Integral(low,B0+5.*sB,epsilon); // ERROR starts from here -- Step 1 ------------------------------------------------------------------------------------------------------------------------------
+      if(Debug) cout << "  Likelihood::out, x[0]/retval/ = " << x[0] << "/" << retval << endl;  
       delete out;
    }
+   cout << "retval = " << retval << endl;
    return retval;
 }
 
@@ -228,6 +231,7 @@ Double_t Outer(Double_t *x, Double_t *p)
    Double_t retval;
    if (sA == 0.) 
    {
+      cout << "Debug -- 0 --" << endl;
       if (lGauss) retval = 1./(2.*TMath::Pi()*sqrt(double(N)))/sB*exp(-(x[0]-B0)*(x[0]-B0)/2./sB/sB)*exp(-(N-x[0]-p[0]*A0)*(N-x[0]-p[0]*A0)/2./N);
       else retval = 1./sqrt(2.*TMath::Pi())/sB*exp(-(x[0]-B0)*(x[0]-B0)/2./sB/sB)*Poisson(x[0]+p[0]*A0,N);
    }
@@ -235,14 +239,13 @@ Double_t Outer(Double_t *x, Double_t *p)
    {
       Double_t sigma, par[2];
       TF1 *in = new TF1("Inner",Inner,0.,A0 + 5.*sA,2);
-      par[0]=x[0];  // background value
+      par[0]=x[0];  // background value // I don't understand how, but it gives the ?right? value. 
       par[1]=p[0];  // signal cross section value
       Double_t low = A0 > 5.*sA ? A0 - 5.*sA : 0.;
- 
+ //cout << "par[0]/par[1] = " << par[0] << " / " << par[1] << endl;
       //retval = 1./sqrt(2.*TMath::Pi())/sB*exp(-(x[0]-B0)*(x[0]-B0)/2./sB/sB)*in->Integral(low,A0+5.*sA,par,epsilon);  // used in ROOT v5.XX
-  
       in->SetParameters(par);
-      retval = 1./sqrt(2.*TMath::Pi())/sB*exp(-(x[0]-B0)*(x[0]-B0)/2./sB/sB)*in->Integral(low,A0+5.*sA,epsilon);
+      retval = 1./sqrt(2.*TMath::Pi())/sB*exp(-(x[0]-B0)*(x[0]-B0)/2./sB/sB)*in->Integral(low,A0+5.*sA,epsilon); // ERROR continues here -- step 2: Integrating over this "Inner" function
       delete in;
    }
    return retval;

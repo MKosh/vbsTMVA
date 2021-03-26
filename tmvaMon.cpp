@@ -168,11 +168,12 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   }else{
      _testTree->Project(_hf1->GetName(), var, wtot*(cuts+_samplecut), "goff");
   }
+  if(_sid == 2) _hf1->Draw();
      _hf1->GetStats(_stats);
-     npass    = _stats[0]*scale ;
+     npass    = _stats[0]*(scale) ;
      npass_err= scale*TMath::Sqrt(_stats[1]) ;
      accpt   = 100.*  npass/_ngen;
-
+     cout << "stats/scale/npass/npass_err/ngen/accpt = " << _stats[0] << " / " << scale << " / " << npass << " / " << npass_err << " / " << _ngen << " / " << accpt << endl;
  //     cout << " name/sid/scale/npass/ngen/accept = " << _hf1->GetName() << "/ " << _sid  << "/"  <<  scale << "/"  <<
 //           npass << "/" << _ngen << "/" << accpt << endl;
      // 
@@ -385,6 +386,7 @@ void tmvaMon(TString anlName="vbf_ww"){
   cout << "plotvar(anl,\"PuppiAK8_jet_mass_so_corr\",cleanNAN)" << endl;
   cout << "To examine TMVA plots:" << endl;
   cout << "tmgui()" << endl;
+
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
 }
@@ -581,21 +583,17 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
   anl->setHframe(var,wtot*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
-  cout << "setHframe successfull!" << endl;
   anl->setSampleHists();
-  cout << "setSampleHists successfull!" << endl;
   anl->fillSampleHists(var,cuts,scale);
   cout << "fillSampleHists successfull!" << endl;
 
   Float_t ymin= 0.0;
   if (flogy) ymin= pow(10,flogy*(-1));
 
-  gStyle->SetOptStat(0);
-  cout << "step 4-----------------" << endl;   
+  gStyle->SetOptStat(0);  
   anl->PlotHists(ymin); 
-  cout << "step 5-----------------" << endl; 
   anl->PlotLegend(var); 
-  cout << "step 6-----------------" << endl; 
+
   if(istyle==1){
     anl->PlotSgf(var);
   }else if(istyle>1){ 
@@ -608,11 +606,9 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
     sglscale->Scale(istyle);
     sglscale->Draw("hist same");
   }
-  cout << "step 7-----------------" << endl; 
+ 
   gPad->SetLogy(flogy);
-  cout << "step 8-----------------" << endl; 
   anl->PrintStat(cuts,debug);
-  cout << "step 9-----------------" << endl; 
   return 0;
 }
 //=====================================================================================================
@@ -1366,9 +1362,7 @@ void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
     Float_t scale_sgl=scale/_scale_sgl_tmva;
     Float_t scale_bkg=scale/_scale_bkg_tmva;
     //cout << "Applied to test sample: scale_sgl/scale_bkg = " <<  scale_sgl << "/" << scale_bkg << endl;  
-  
     _sgl->fillSampleHist(var,cuts,scale_sgl);
- 
     _bkg->fillSampleHist(var,cuts,scale_bkg);
     _data->fillSampleHist(var,cuts,scale);
 
@@ -1386,12 +1380,12 @@ void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
      if ( _sgl->npass > 20 )  _useGauss=1;
      Double_t cl95res= 0.0;
      Double_t pfluc= 0.0;
+    cout << "Debug -- limit_calc --" << endl;
      if (_bkg->npass) limit_calc( _bkg->npass, _bkg->npass , _bkg->npass_err, _sgl->accpt/100.,  0.15 * _sgl->accpt/100., _lum, 0.065*_lum , _useGauss,  cl95res, pfluc );
    
      _sgf2 =cl95res;
      //  cout << "LIMIT_CALC-RESULTS (expected, fb)/pfluc  " << _sgf2 << " / " << pfluc << endl;
      if (_debug ) cout << "_sgf0/_sgf1/_sgf2/_sgf3 = "  <<  _sgf0 << "/" << _sgf1 << "/" << _sgf2 << "/" << _sgf3 << endl;
-
  
     for( UInt_t ns=3; ns <  _vsamples.size(); ns++){
       _vsamples[ns]->fillSampleHist(var,cuts,scale_bkg);
@@ -1643,11 +1637,12 @@ Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_e
   // and call ConfidenceCmd.  sacc must be the absolute uncertainty on the
   // product of acceptance*lumi, and bkg, the absolute uncertainty on the
   // background.  We assume uncorrelated uncertainties.
+  //cl95res=0.00001;
   cl95res = CalcCL95(lumi, lumi_error, 
 			    acc, acc_error, 
 			    nbkg, sbkg, 
 			    ndata, IfGauss);
-
+cout << "Debug -- CalcCL95 Success --" << endl;
   // and compute the probability that background flucuates to at least
   // the observed data.
   pfluc = Significance(ndata, nbkg, sbkg);
