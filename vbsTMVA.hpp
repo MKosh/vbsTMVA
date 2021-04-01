@@ -8,6 +8,7 @@
 // (works with VBS4LeptonsAnalysisReduced trees)   
 // Created: Nov 2017, Sergey Uzunyan (serguei@nicadd.niu.edu)
 ////////////////////////////////////////////////////////////////////////
+#include <unistd.h> //
 #include <cstdlib>
 #include <iostream>
 #include <map>
@@ -90,7 +91,7 @@ TCut ZeppWHlt3          ("ZeppWHlt3",              "(TMath::Abs(zeppHad)/vbf_det
 TCut full_common        ("full_common",            category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
 TCut full_wv_sr         ("full_wv_sr",             full_common+btag_veto+wv_sr);
 
-TCut wtot               ("wtot",                   "35867.06*mcWeight*L1PFWeight*genWeight*puWeight");
+TCut wtot               ("wtot",                   "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
 TCut wtotL1             ("wtotL1",                 "L1PFWeight*genWeight*puWeight");
 TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
 // Mark Cuts ---------------------------------------------------------------------------------------------------------------------------------
@@ -169,7 +170,8 @@ private:
   Int_t     _nMCgenNeg;     // negative generated events (strange VBS anl thing)
   //
   TTree*    _inpTree;          // total good events for scale calculation    
-  Int_t     _ngen;          // total good events for scale calculation    
+  //Int_t     _ngen;          // total good events for scale calculation
+  Float_t _ngen;    
   Int_t     _nevents;       // events in tree
   TString   _reqlist;       // reqlist name
   Float_t   _sweight;       // _xsec/_ngen
@@ -193,14 +195,14 @@ private:
     _color     = color;
     _nMCgen    = nMCgen;
     _nMCgenNeg = nMCgenNeg;
-    _ngen      = nMCgen - 2* nMCgenNeg;
+    _ngen      = nMCgen; // - 2* nMCgenNeg;
     _nevents   = 0;
     _inpTree   = NULL;
   };
   TString   getSName(){return _sname;  };
   TString   getGName(){return _gname;  };
   TString   getReqList(){return _reqlist;};
-  Int_t     getNgen(){return _ngen;};
+  Float_t     getNgen(){return _ngen;};
   Int_t     getXsec(){return _xsec;};
   Int_t     getGid(){return _gid;};
   Int_t     getSid(){return _sid;};
@@ -479,7 +481,9 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
           vbsEvent.gid = sample->getGid();
           vbsEvent.sid = sample->getSid();
           vbsEvent.mcWeight = sample->getWeight();
-           
+
+cout << "------------------------------ mcWeight/xsec/ngen/Calc = " << vbsEvent.mcWeight << " / " << sample->getXsec() << " / " << sample->getNgen() <<" ---------------------------" << endl;
+//sleep(3);
           for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
 	      groupTree->GetEntry(ievt);
               bGroupID->Fill(); 

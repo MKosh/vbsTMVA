@@ -23,6 +23,7 @@
 //=======================================================================
 
 //#include "tmvaMon.hpp"
+#include <unistd.h>
 #include "vbsTMVA.hpp"
 #include "TPad.h"
 #include "TCanvas.h"
@@ -168,15 +169,12 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   }else{
      _testTree->Project(_hf1->GetName(), var, wtot*(cuts+_samplecut), "goff");
   }
-  if(_sid == 2) _hf1->Draw();
      _hf1->GetStats(_stats);
      npass    = _stats[0]*(scale) ;
      npass_err= scale*TMath::Sqrt(_stats[1]) ;
      accpt   = 100.*  npass/_ngen;
-     cout << "stats/scale/npass/npass_err/ngen/accpt = " << _stats[0] << " / " << scale << " / " << npass << " / " << npass_err << " / " << _ngen << " / " << accpt << endl;
- //     cout << " name/sid/scale/npass/ngen/accept = " << _hf1->GetName() << "/ " << _sid  << "/"  <<  scale << "/"  <<
-//           npass << "/" << _ngen << "/" << accpt << endl;
-     // 
+     // cout << "stats/scale/npass/npass_err/ngen/accpt = " << _stats[0] << " / " << scale << " / " << npass << " / " << npass_err << " / " << _ngen << " / " << accpt << endl;
+ 
      //ROOT V6 does not change statistics when scaling histogramms
      //(but root 5.34 does)
      //Thus we first get stats and then scale
@@ -585,7 +583,6 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   anl->setHframe(var,wtot*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
-  cout << "fillSampleHists successfull!" << endl;
 
   Float_t ymin= 0.0;
   if (flogy) ymin= pow(10,flogy*(-1));
@@ -1380,7 +1377,6 @@ void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
      if ( _sgl->npass > 20 )  _useGauss=1;
      Double_t cl95res= 0.0;
      Double_t pfluc= 0.0;
-    cout << "Debug -- limit_calc --" << endl;
      if (_bkg->npass) limit_calc( _bkg->npass, _bkg->npass , _bkg->npass_err, _sgl->accpt/100.,  0.15 * _sgl->accpt/100., _lum, 0.065*_lum , _useGauss,  cl95res, pfluc );
    
      _sgf2 =cl95res;
@@ -1642,7 +1638,7 @@ Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_e
 			    acc, acc_error, 
 			    nbkg, sbkg, 
 			    ndata, IfGauss);
-cout << "Debug -- CalcCL95 Success --" << endl;
+
   // and compute the probability that background flucuates to at least
   // the observed data.
   pfluc = Significance(ndata, nbkg, sbkg);
@@ -1677,21 +1673,21 @@ cp1->cd(1);
 plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 50, 1,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of primary vertices", "Events/bin");
 //------------    LEPTONS  	-------------------
 cp1->cd(2);
-plotvar(anl, "l_pt1",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 p_{T} (GeV)", "Events/bin");
+plotvar(anl, "lep1_pt",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 p_{T} (GeV)", "Events/bin");
 cp1->cd(3);
-plotvar(anl, "l_eta1", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 #eta", "Events/bin");
+plotvar(anl, "lep1_eta", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 #eta", "Events/bin");
 
 cp1->cd(4);
-plotvar(anl, "l_phi1", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 #phi", "Events/bin");
+plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 #phi", "Events/bin");
 
 cp1->cd(5);
-plotvar(anl, "l_charge1", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 charge", "Events/bin");
+plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 charge", "Events/bin");
 
 cp1->cd(6);
 plotvar(anl, "l_e1",    cuts,  1.0, 1, 0,   0., 600., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 energy", "Events/bin");
 
 cp1->cd(7);
-plotvar(anl, "l_iso1",  cuts,  1.0, 1, 0,   0., 0.5, 0.02,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 isolation", "Events/bin");
+plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.5, 0.02,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 isolation", "Events/bin");
 //
 
 //---------------	4 body mass	---------------
@@ -1719,32 +1715,32 @@ plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,  
 
 //-------------- 	MET	-------------------
 cp2->cd(1);
-plotvar(anl, "pfMET_Corr",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr (GeV)", "Events/bin");
+plotvar(anl, "MET",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "MET (GeV)", "Events/bin");
 
 cp2->cd(2);
-plotvar(anl, "pfMET_Corr_phi",  cuts,  1.0, 1, 0,   0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),      1, 0,  "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr_phi", "Events/bin");
+plotvar(anl, "MET_phi",  cuts,  1.0, 1, 0,   0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),      1, 0,  "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr_phi", "Events/bin");
 
 cp2->cd(3);
 plotvar(anl, "nu_pz_type0",  cuts,  1.0, 1, 0,   -500., 500., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Reconstructed Neutrino p_{Z}", "Events/bin");
 //
 //--------------	AK8 Jet		------------
+//cp2->cd(4);
+//plotvar(anl, "nGoodPuppiAK8jets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of Good AK8 jets", "Events/bin"); // //
+
 cp2->cd(4);
-plotvar(anl, "nGoodPuppiAK8jets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of Good AK8 jets", "Events/bin");
+plotvar(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   0., 1400., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 p_{T} (GeV)", "Events/bin");
 
 cp2->cd(5);
-plotvar(anl, "ungroomed_PuppiAK8_jet_pt",  cuts,  1.0, 1, 0,   0., 1400., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 p_{T} (GeV)", "Events/bin");
+plotvar(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #eta", "Events/bin");
 
 cp2->cd(6);
-plotvar(anl, "ungroomed_PuppiAK8_jet_eta", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #eta", "Events/bin");
+plotvar(anl, "bos_PuppiAK8_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #phi", "Events/bin");
 
-cp2->cd(7);
-plotvar(anl, "ungroomed_PuppiAK8_jet_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #phi", "Events/bin");
+//cp2->cd(8);
+//plotvar(anl, "ungroomed_PuppiAK8_jet_charge", cuts,  1.0, 1, 0,  -2.5, 5.5, 0.1,     1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 charge", "Events/bin"); // //
 
-cp2->cd(8);
-plotvar(anl, "ungroomed_PuppiAK8_jet_charge", cuts,  1.0, 1, 0,  -2.5, 5.5, 0.1,     1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 charge", "Events/bin");
-
-cp2->cd(9);
-plotvar(anl, "ungroomed_PuppiAK8_jet_e",    cuts,  1.0, 1, 0,   0., 1400., 20,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8  energy", "Events/bin");
+//cp2->cd(9);
+//plotvar(anl, "ungroomed_PuppiAK8_jet_e",    cuts,  1.0, 1, 0,   0., 1400., 20,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8  energy", "Events/bin"); // //
 //
 outfname << "VarPlots_c2" << "_" <<  CutName << ".pdf";
  cp2->SaveAs(outfname.str().c_str());
@@ -1791,14 +1787,16 @@ outfname << "VarPlots_c2" << "_" <<  CutName << ".pdf";
  cp3->SaveAs(outfname.str().c_str()); 
  outfname.str("");
 
+// // // Mark commented out
+// TCanvas* cp4 = (TCanvas*)gROOT->FindObject("cp4"); 
+// if(cp4) { cp4->Delete(); }
+// cp4 = new TCanvas("cp4","cp4",10,10,1000,1000);
+// cp4->Divide(3,3);
+// plotvar(anl, "costheta1_type0",    cuts,  1.0, 1, 0,  -1.2, 2.2,  0.1,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "costheta1_type0", "Events/bin");
+// plotvar(anl, "costheta2_type0",    cuts,  1.0, 1, 0,  -1.2, 2.2,  0.1,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "costheta2_type0", "Events/bin");
+// plotvar(anl, "costhetastar_type0", cuts,  1.0, 1, 0,  -1.2, 2.5,  0.1,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "costhetastar_type0", "Events/bin");
+// // // Mark commented out
 
- TCanvas* cp4 = (TCanvas*)gROOT->FindObject("cp4"); 
- if(cp4) { cp4->Delete(); }
- cp4 = new TCanvas("cp4","cp4",10,10,1000,1000);
- cp4->Divide(3,3);
- plotvar(anl, "costheta1_type0",    cuts,  1.0, 1, 0,  -1.2, 2.2,  0.1,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "costheta1_type0", "Events/bin");
- plotvar(anl, "costheta2_type0",    cuts,  1.0, 1, 0,  -1.2, 2.2,  0.1,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "costheta2_type0", "Events/bin");
- plotvar(anl, "costhetastar_type0", cuts,  1.0, 1, 0,  -1.2, 2.5,  0.1,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "costhetastar_type0", "Events/bin");
 
 // // plotvar(anl, "phi1_type0", OneMuPt50+fatjetLoose+pfMETpuppi50+mjw65to105+MjjVBF300+detajjVBF4,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,  "VBS (WV), 35.9 fb^{-1}", "phi0_type0 #phi", "Events/bin");
 
@@ -1826,12 +1824,14 @@ outfname << "VarPlots_c2" << "_" <<  CutName << ".pdf";
 // plotvar(anl, "vbf_maxpt_jj_Deta", cuts,  1.0, 1, 0,  0.0,  20.0, 0.5,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF #Delta #eta", "Events/bin");
 //
 
- outfname << "VarPlots_c4" << "_" <<  CutName  << ".pdf";
- cp4->SaveAs(outfname.str().c_str());
- outfname.str("");
- outfname << "VarPlots_c4"  << "_" << CutName << ".png";
- cp4->SaveAs(outfname.str().c_str()); 
- outfname.str("");
+// // // M comment
+// outfname << "VarPlots_c4" << "_" <<  CutName  << ".pdf";
+// cp4->SaveAs(outfname.str().c_str());
+// outfname.str("");
+// outfname << "VarPlots_c4"  << "_" << CutName << ".png";
+// cp4->SaveAs(outfname.str().c_str()); 
+// outfname.str("");
+// // // M comm.
 
  anl->setsvplots(0);
 }
