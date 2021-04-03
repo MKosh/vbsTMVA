@@ -544,7 +544,7 @@ TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
   //
   cout << " Signal x-sect, fb / Generated signal events (normalized to Lum =  " << lum_fbinv << " fb ) :: " << nsignal_xsect << "/" << nsignal_norm << endl; 
 
-
+// TmvaSample::TmvaSample(Int_t sid,Int_t scolor, const char* smplname, TCut samplecut,Float_t ngen_normfb, TTree* testTree, TTree* trainTree)
    TmvaSample* sgl  = new TmvaSample(1, kTeal+2,"sgl", "classID==0", nsignal_norm, treeSB, treeSB_train);
    TmvaSample* bkg  = new TmvaSample(2, kRed,  "bkg", "classID==1", 1.0* lum_fbinv * TmvaAnl::PB2FB, treeSB, treeSB_train);
    TmvaSample* data = new TmvaSample(3, kBlack,"data","classID==3", 1.0* lum_fbinv * TmvaAnl::PB2FB, treeData, treeData);
@@ -1690,12 +1690,18 @@ cp1->cd(7);
 plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.5, 0.02,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 isolation", "Events/bin");
 //
 
-//---------------	4 body mass	---------------
 cp1->cd(8);
-plotvar(anl, "mass_lvj_type0_PuppiAK8",    cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
+plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -6., 6., 0.5, 1, 0, "VBS (WV), 35.9 fb^{-1}", "zeppLep", "Events/bin");
 
 cp1->cd(9);
-plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
+plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -6., 6., 0.5, 1, 0, "VBS (WV), 35.9 fb^{-1}", "zeppHad", "Events/bin");
+
+//---------------	4 body mass	---------------
+//cp1->cd(8);
+//plotvar(anl, "mass_lvj_type0_PuppiAK8",    cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
+
+//cp1->cd(9);
+//plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
 //======================================================================================================================================================================
  outfname << "VarPlots_c1" << "_" << CutName << ".pdf";
  cp1->SaveAs(outfname.str().c_str());
@@ -1718,23 +1724,37 @@ cp2->cd(1);
 plotvar(anl, "MET",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "MET (GeV)", "Events/bin");
 
 cp2->cd(2);
-plotvar(anl, "MET_phi",  cuts,  1.0, 1, 0,   0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),      1, 0,  "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr_phi", "Events/bin");
+plotvar(anl, "MET_phi",  cuts,  1.0, 1, 0,   0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),      1, 0,  "VBS (WV), 35.9 fb^{-1}", "MET_phi", "Events/bin");
+
+// cp2->cd(3);
+// plotvar(anl, "nu_pz_type0",  cuts,  1.0, 1, 0,   -500., 500., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Reconstructed Neutrino p_{Z}", "Events/bin");
+//
 
 cp2->cd(3);
-plotvar(anl, "nu_pz_type0",  cuts,  1.0, 1, 0,   -500., 500., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Reconstructed Neutrino p_{Z}", "Events/bin");
-//
+plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 0., 20., 20, 1, 0, "VBS (WV), 35.9^{-1}", "vbf_deta", "Events/bin");
+
+cp2->cd(4);
+plotvar(anl, "vbf_m", cuts, 1.0, 1, 0 , 0., 3500, 20, 1, 0, "VBS (WV), 35.9 fb^{-1}", "vbf_m", "Events/bin");
+
+cp2->cd(5);
+plotvar(anl, "vbf_pt", cuts,  1.0, 1, 0,  0., 2000., 20,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "vbf_pt", "Events/bin");
+
 //--------------	AK8 Jet		------------
 //cp2->cd(4);
 //plotvar(anl, "nGoodPuppiAK8jets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of Good AK8 jets", "Events/bin"); // //
 
-cp2->cd(4);
+cp2->cd(6);
 plotvar(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   0., 1400., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 p_{T} (GeV)", "Events/bin");
 
-cp2->cd(5);
+cp2->cd(7);
 plotvar(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #eta", "Events/bin");
 
-cp2->cd(6);
+cp2->cd(8);
 plotvar(anl, "bos_PuppiAK8_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #phi", "Events/bin");
+
+cp2->cd(9);
+plotvar(anl, "bos_PuppiAK8_m_sd0_corr", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8  Mass sd0_corr", "Events/bin");
+
 
 //cp2->cd(8);
 //plotvar(anl, "ungroomed_PuppiAK8_jet_charge", cuts,  1.0, 1, 0,  -2.5, 5.5, 0.1,     1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 charge", "Events/bin"); // //
@@ -1750,10 +1770,10 @@ outfname << "VarPlots_c2" << "_" <<  CutName << ".pdf";
  outfname.str("");
 
 
- TCanvas* cp3 = (TCanvas*)gROOT->FindObject("cp3"); 
- if(cp3) { cp3->Delete(); }
- cp3 = new TCanvas("cp3","cp3",10,10,1000,1000);
- cp3->Divide(3,3);
+// TCanvas* cp3 = (TCanvas*)gROOT->FindObject("cp3"); 
+// if(cp3) { cp3->Delete(); }
+// cp3 = new TCanvas("cp3","cp3",10,10,1000,1000);
+// cp3->Divide(3,3);
 
 
 
@@ -1780,12 +1800,12 @@ outfname << "VarPlots_c2" << "_" <<  CutName << ".pdf";
 // plotvar(anl, "vbf_maxpt_jj_Deta", cuts,  1.0, 1, 0,  0.0,  20.0, 0.5,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF #Delta #eta", "Events/bin");
 //
 
- outfname << "VarPlots_c3" << "_" <<  CutName  << ".pdf";
- cp3->SaveAs(outfname.str().c_str());
- outfname.str("");
- outfname << "VarPlots_c3"  << "_" << CutName << ".png";
- cp3->SaveAs(outfname.str().c_str()); 
- outfname.str("");
+// outfname << "VarPlots_c3" << "_" <<  CutName  << ".pdf";
+// cp3->SaveAs(outfname.str().c_str());
+// outfname.str("");
+// outfname << "VarPlots_c3"  << "_" << CutName << ".png";
+// cp3->SaveAs(outfname.str().c_str()); 
+// outfname.str("");
 
 // // // Mark commented out
 // TCanvas* cp4 = (TCanvas*)gROOT->FindObject("cp4"); 
