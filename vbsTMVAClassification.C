@@ -143,7 +143,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    // TCut cleanNAN        ("cleanNAN",        "(mass_lvj_type0_PuppiAK8>0)"); 
 
    //   TCut mycuts = cleanNAN+more+OneLpt;// for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
-   TCut mycuts = full_wv_sr ;// for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
+   TCut mycuts = dummy ;// for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
    TCut mycutb = mycuts;// for example: TCut mycutb = "abs(var1)<0.5";
    //
    VbsReducedEvent vbsEvent;
@@ -335,7 +335,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
 
    //
    TMVA::Factory* factory = new TMVA::Factory( "TMVAClassification", outputFile,
-                                               "!V:!Silent:Color:DrawProgressBar:Transformations=I;P;G,D:AnalysisType=Classification" ); //I;D;P;G,D
+                                               "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification" ); //I;D;P;G,D
 
    TMVA::DataLoader* dataloader=new TMVA::DataLoader(sname);
 

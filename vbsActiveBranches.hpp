@@ -19,13 +19,25 @@ void setChainBranches (TChain* inpChain){
 // switch on required  branches
 inpChain->SetBranchStatus("L1PFWeight", 1);
 inpChain->SetBranchStatus("MET", 1);
+inpChain->SetBranchStatus("MET_phi", 1);
 inpChain->SetBranchStatus("bosCent", 1);
 inpChain->SetBranchStatus("bos_PuppiAK8_eta", 1);
+inpChain->SetBranchStatus("bos_PuppiAK8_m_sd0", 1);
 inpChain->SetBranchStatus("bos_PuppiAK8_m_sd0_corr", 1);
 inpChain->SetBranchStatus("bos_PuppiAK8_phi", 1);
 inpChain->SetBranchStatus("bos_PuppiAK8_pt", 1);
 inpChain->SetBranchStatus("bos_PuppiAK8_tau2tau1", 1);
 inpChain->SetBranchStatus("btagWeight_loose", 1);
+inpChain->SetBranchStatus("dibos_eta", 1);
+inpChain->SetBranchStatus("dibos_m", 1);
+inpChain->SetBranchStatus("dibos_mt", 1);
+inpChain->SetBranchStatus("dibos_phi", 1);
+inpChain->SetBranchStatus("dibos_pt", 1);
+inpChain->SetBranchStatus("dilep_eta", 1);
+inpChain->SetBranchStatus("dilep_m", 1);
+inpChain->SetBranchStatus("dilep_mt", 1);
+inpChain->SetBranchStatus("dilep_phi", 1);
+inpChain->SetBranchStatus("dilep_pt", 1);
 inpChain->SetBranchStatus("evt", 1);
 inpChain->SetBranchStatus("genWeight", 1);
 inpChain->SetBranchStatus("gid", 1);
@@ -50,7 +62,10 @@ inpChain->SetBranchStatus("vbf1_AK4_pt", 1);
 inpChain->SetBranchStatus("vbf2_AK4_eta", 1);
 inpChain->SetBranchStatus("vbf2_AK4_pt", 1);
 inpChain->SetBranchStatus("vbf_deta", 1);
+inpChain->SetBranchStatus("vbf_eta", 1);
 inpChain->SetBranchStatus("vbf_m", 1);
+inpChain->SetBranchStatus("vbf_phi", 1);
+inpChain->SetBranchStatus("vbf_pt", 1);
 inpChain->SetBranchStatus("zeppHad", 1);
 inpChain->SetBranchStatus("zeppLep", 1);
 }

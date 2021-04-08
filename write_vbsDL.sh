@@ -173,12 +173,12 @@ EOF
  
 if [ $2 == "new" ]; then
     # These are the variables for the new ntuples.
-    TMVAVARS="lep1_pt lep1_eta MET vbf_m vbf_pt bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 bos_PuppiAK8_m_sd0_corr vbf2_AK4_eta vbf1_AK4_eta vbf1_AK4_pt vbf2_AK4_pt bosCent zeppLep zeppHad"
+    TMVAVARS="lep1_pt lep1_eta MET vbf_m vbf_pt vbf_deta vbf_eta vbf_phi bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 bos_PuppiAK8_m_sd0_corr dibos_m dibos_eta dibos_mt dibos_phi dibos_pt vbf2_AK4_eta vbf1_AK4_eta vbf1_AK4_pt vbf2_AK4_pt bosCent zeppLep zeppHad"
     activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
-    plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi"
+    plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
-    plotVARS_Other=""
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "old" ]; then
     # These are the variables for the old ntuples
