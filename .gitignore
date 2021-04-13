@@ -1,3 +1,4 @@
 *.root
 .vscode/settings.json
 .vscode/*
+CVS/

@@ -167,6 +167,8 @@ cat >> $outfile << EOF
 #endif
 EOF
 
+rm list_of_branches.txt
+
 # --------------------------------------------------------- End - Create vbsReducedTree.hpp file - End -------------------------------------------------------------
 
 # --------------------------------------------------------- Start - Create vbsDL.hpp file - Start -----------------------------------------------------------------
@@ -304,7 +306,7 @@ EOF
 # --------------------------------------------------------- Start - Create vbsActiveBranches.hpp - Start ------------------------------------------------------------
 echo "Creating $ActiveBranchesOutfile"
 
-if [ -f $ActiveBranchesOutfile ]; then /bin/mv -f  ${ActiveBranchesOutfile} ${ActiveBranchesOutfile}.save; fi
+if [ -f $ActiveBranchesOutfile ]; then /bin/rm -f  ${ActiveBranchesOutfile}; fi
 cat >> $ActiveBranchesOutfile <<EOF
 #ifndef vbsActiveBranches_hpp
 #define vbsActiveBranches_hpp
