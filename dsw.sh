@@ -115,10 +115,10 @@ for skim in $SKIMS; do
 # This file is where the information like xsec (cross section) and nMCgen come from 
     #SamplesInpFile="./macros/cplots/DibosonBoostedElMuSamples13TeV_2019_03_23_03h56.txt"
     #DatasetInpFile="./lists/datasets_2016.json"
-    if [ $1 == "old" ]; then
-        DatasetInpFile="./lists/oldData.json"
-    elif [ $1 == "new" ]; then
-        DatasetInpFile="./lists/datasets_2016.json"
+    if [ $2 == "old" ]; then
+        DatasetInpFile="./datasets/oldData.json"
+    elif [ $2 == "new" ]; then
+        DatasetInpFile="./datasets/datasets_$3.json"
     fi
     SamplesOutfile="vbsSamples.cpp"
     echo "Creating $SamplesOutfile"
@@ -133,68 +133,79 @@ void getSamples(std::vector<Sample*>& dataSamples, std::vector<Sample*>& sglSamp
 EOF
 
 # WV_EWK->VBS_EWK | Diboson->VBS_QCD | top->Top | Wjets->WJets_HT | Zjets->DYJets_HT
-    #LISTREQ="$(cat $SamplesInpFile | grep data | grep -v "#" | awk '{print $1"--"$2}'  | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g')"
-    # Make one big list of all of the file names and the group they belong to
-    Groups="data EWK QCD Top WJets ZJets"
-    for group in $Groups; do
-        if [ "$group" == "data" ]; then
-            TempListData="$(cat $DatasetInpFile | grep Data | awk '{print $2}' | sed 's/"//g' | sed 's/^/data--/g' | sed 's/_noDup//g')"
-        elif [ "$group" == "EWK" ]; then
-            TempListEWK="$(cat $DatasetInpFile | grep $group | grep -v VBS_EWK | awk '{print $2}' | sed 's/"//g' | sed 's/^/WV_EWK--/g')"
-        elif [ "$group" == "QCD" ]; then
-            TempListQCD="$(cat $DatasetInpFile | grep $group | grep -v VBS_QCD | awk '{print $2}' | sed 's/"//g' | sed 's/^/Diboson--/g')"
-        elif [ "$group" == "Top" ]; then
-            TempListTop="$(cat $DatasetInpFile | grep name | grep -v EWK | grep -v QCD | grep -v WJetsToLNu_HT | grep -v DY | grep -v Data | awk '{print $2}' | sed 's/"//g' | sed 's/^/top--/g')"
-        elif [ "$group" == "WJets" ]; then
-            TempListWjets="$(cat $DatasetInpFile | grep $group | grep -v WJets_HT | grep -v TT | awk '{print $2}' | sed 's/"//g' | sed 's/^/Wjets--/g')"
-        elif [ "$group" == "ZJets" ]; then
-            TempListZjets="$(cat $DatasetInpFile | grep Jets | grep -v DYJets | grep -v WJets | awk '{print $2}' | sed 's/"//g' | sed 's/^/Zjets--/g')"
-        fi
-    done
 
-    #LIST="$(echo $TempListData $TempListEWK $TempListQCD $TempListTop $TempListWjets $TempListZjets)"
+# Basically ignore this large block of comments. Everything being done here was replaced with a one liner for LIST below.
+# Only use this if you're working on a subset of all of the data and don't have at least one file per process from the .json data files
+    #LISTREQ="$(cat $SamplesInpFile | grep data | grep -v "#" | awk '{print $1"--"$2}'  | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g')"
+    # # Make one big list of all of the file names and the group they belong to
+    # # This Does the same job as the code below it. Redundant, but possibly helpful so they can stay in here as comments for now.
+    #Groups="data EWK QCD Top WJets ZJets"
+    #for group in $Groups; do
+    #    if [ "$group" == "data" ]; then
+    #        TempListData="$(cat $DatasetInpFile | grep Data | awk '{print $2}' | sed 's/"//g' | sed 's/^/data--/g' | sed 's/_noDup//g')"
+    #    elif [ "$group" == "EWK" ]; then
+    #        TempListEWK="$(cat $DatasetInpFile | grep $group | grep -v VBS_EWK | awk '{print $2}' | sed 's/"//g' | sed 's/^/WV_EWK--/g')"
+    #    elif [ "$group" == "QCD" ]; then
+    #        TempListQCD="$(cat $DatasetInpFile | grep $group | grep -v VBS_QCD | awk '{print $2}' | sed 's/"//g' | sed 's/^/Diboson--/g')"
+    #    elif [ "$group" == "Top" ]; then
+    #        TempListTop="$(cat $DatasetInpFile | grep name | grep -v EWK | grep -v QCD | grep -v WJetsToLNu_HT | grep -v DY | grep -v Data | awk '{print $2}' | sed 's/"//g' | sed 's/^/top--/g')"
+    #    elif [ "$group" == "WJets" ]; then
+    #        TempListWjets="$(cat $DatasetInpFile | grep $group | grep -v WJets_HT | grep -v TT | awk '{print $2}' | sed 's/"//g' | sed 's/^/Wjets--/g')"
+    #    elif [ "$group" == "ZJets" ]; then
+    #        TempListZjets="$(cat $DatasetInpFile | grep Jets | grep -v DYJets | grep -v WJets | awk '{print $2}' | sed 's/"//g' | sed 's/^/Zjets--/g')"
+    #    fi
+    #done
+
+    # #LIST="$(echo $TempListData $TempListEWK $TempListQCD $TempListTop $TempListWjets $TempListZjets)"
     
-    #LIST=$LISTREQ
+    # #LIST=$LISTREQ
+
 # --------------------------------------------------------------- Start - Temporary work around zone - Start ------------------------------------------------------------------------------
-# Issue with testing, the json file the script is pulling the data from tells it to look for all of the files, but since that's 400GB worth of data
-# I don't have it stored locally, meaning the script is looking for files that don't exist. Work around idea for this is to look at the skims that got made
-# and only include the LISTREQ variables that show up on that list, then make that a tempLISTREQ
+# # Issue with testing: The json file the script is pulling the data from tells it to look for all of the files, but since that's 400GB worth of data
+# # I don't have it stored locally, meaning the script is looking for files that don't exist. Work around idea for this is to look at the skims that got made
+# # and only include the LISTREQ variables that show up on that list, then make that a tempLISTREQ
+
+# # Ugh that works but only solves half the problem, I have to apply the above code to group these temp lists, otherwise the Sample() doesn't have a group and just the smpl twice 
+
+# # I think the issues with this are solved, turns out the files are more like 40-80GB, large but managable. I'm going to leave this mess in here for posterity
+# # or in case I run (or you) run into the same issue. 
+    #if [ $2 == "new" ]; then
+    #    echo "Don't forget to remove the temporary work around for reading the skims when you move to the proper data files"
+    #    echo ""
+    #    skim_folder="skims/vbs_ww"
+    #    tempLISTREQ=()
+    #    for f in $skim_folder/*.root; do
+    #        samp="$(echo ${f} | sed 's/skims\/vbs_ww\///g' | sed 's/.root//g')"
+    #        #echo $samp
+    #        #echo ""
+    #        if [[ "$samp" == *"Data"* ]]; then
+    #            add="$(echo $samp | sed 's/^/data--/g')"
+    #        elif [[ "$samp" == *"WJets"* ]]; then
+    #            add="$(echo $samp | sed 's/^/Wjets--/g')"
+    #        elif [[ "$samp" == *"DYJets"* ]]; then
+    #            add="$(echo $samp | sed 's/^/Zjets--/g')"
+    #        elif [[ "$samp" == *"EWK_LO_SM"* ]]; then
+    #            add="$(echo $samp | sed 's/^/WV_EWK--/g')"
+    #        elif [[ "$samp" == *"QCD_LO_SM"* ]]; then
+    #            add="$(echo $samp | sed 's/^/Diboson--/g')"
+    #        elif [[ "$samp" == *"TTTo"* ]] || [[ "$samp" == *"ST_"* && "$samp" != *"ST_s-channel_antitop"* ]]; then
+    #            add="$(echo $samp | sed 's/^/top--/g')"
+    #        elif [[ "$samp" == *"aQGC"* ]]; then
+    #            add="$(echo $samp | sed 's/^/aQGC--/g')"
+    #       else
+    #            echo "------------- Here's a sample that doesn't have a group ---------------"
+    #            echo "$samp"
+    #            echo ""
+    #            add=""
+    #        fi
+    #        tempLISTREQ+=($add)
+    #    done
+    #    LIST=${tempLISTREQ[@]}
+    #    #echo $LIST
+    #fi
 #
-# Ugh that works but only solves half the problem, I have to apply the above code to group these temp lists, otherwise the Sample() doesn't have a group and just the smpl twice 
-if [ $2 == "new" ]; then
-    echo "Don't forget to remove the temporary work around for reading the skims when you move to the proper data files"
-    echo ""
-    skim_folder="skims/vbs_ww"
-    tempLISTREQ=()
-    for f in $skim_folder/*.root; do
-        samp="$(echo ${f} | sed 's/skims\/vbs_ww\///g' | sed 's/.root//g')"
-        #echo $samp
-        #echo ""
-        if [[ "$samp" == *"Data"* ]]; then
-            add="$(echo $samp | sed 's/^/data--/g')"
-        elif [[ "$samp" == *"WJets"* ]]; then
-            add="$(echo $samp | sed 's/^/Wjets--/g')"
-        elif [[ "$samp" == *"DYJets"* ]]; then
-            add="$(echo $samp | sed 's/^/Zjets--/g')"
-        elif [[ "$samp" == *"EWK_LO_SM"* ]]; then
-            add="$(echo $samp | sed 's/^/WV_EWK--/g')"
-        elif [[ "$samp" == *"QCD_LO_SM"* ]]; then
-            add="$(echo $samp | sed 's/^/Diboson--/g')"
-        elif [[ "$samp" == *"TTTo"* ]] || [[ "$samp" == *"ST_"* && "$samp" != *"ST_s-channel_antitop"* ]]; then
-            add="$(echo $samp | sed 's/^/top--/g')"
-        elif [[ "$samp" == *"aQGC"* ]]; then
-            add="$(echo $samp | sed 's/^/aQGC--/g')"
-        else
-            echo "------------- Here's a sample that doesn't have a group ---------------"
-            echo "$samp"
-            echo ""
-            add=""
-        fi
-        tempLISTREQ+=($add)
-    done
-    LIST=${tempLISTREQ[@]}
-    #echo $LIST
-fi
+
+LIST=$(cat $DatasetInpFile | grep name | sed 's/"//g' | awk '{print $17"--"$2}' | sed 's/_noDup//g')
 
 # ---------------------------------------------------------------- End - Temporary work around zone - End ---------------------------------------------------------------------------------
     sid_sgl="100"
@@ -202,34 +213,14 @@ fi
     signal="ewk";
 
     for req in $LIST; do
-        #echo "$req"
-        grp="$(echo $req | sed 's/--/ /g'| awk '{print $1}')"  
-        smpl="$(echo $req | sed 's/'${grp}'--//g')"
-        #echo $grp $smpl  
-        #echo "===== req_${req}.lst"
-        #echo  skims/$skim/*${smpl}*root
-        #ls -l skims/$skim/WWTree*${smpl}*root  | awk '{print $NF}'
+        grp="$(echo $req | sed 's/--/ /g'| awk '{print $1}')"  # Save the list of groups as grp
+        smpl="$(echo $req | sed 's/'${grp}'--//g')" # Save the list of samples as smpl
 
         if  [ "$grp" == "data" ];     then
-            #cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "dataSamples.push_back( new Sample(\""$1"\",\t  \""$2"\",\t    1,\t  1,  gid_data,  gid_data,   "$7",  "$5",  "$6") );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g' >> $SamplesOutfile
             cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "dataSamples.push_back( new Sample(\"'${grp}'\",\t "$2" ,\t 1,\t 1,\t gid_data, gid_data,\t" $14 ",\t" $8 ",\t" $11") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
-            #echo ls -l skims/$skim/${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim/rqs_${req}_data.lst
             ls -l skims/$skim/${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim/rqs_${req}_data.lst
-
-        elif [ "$grp" == "CH_WZToLL_M500" ] || [ "$grp" == "CH_WZToLNu_M500" ]  || [ "$grp" == "DCH_WW_M500" ]; then
-
-            if  [ "$signal" == "higgs" ]; then
-            cat $SamplesInpFile | grep $smpl | grep -v "#" | awk '{print "sglSamples.push_back( new Sample(\""$1"\",\t  \""$2"\",\t    "$3",\t  1, gid_sgl,  '${sid_sgl}',  '${sid_color}',  "$5",  "$6") );"  }'   | sed 's/\.\/data\///g'  | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
-            let sid_sgl=${sid_sgl}+1;
-            #echo =${sid_sgl}
-            #echo ls -l skims/$skim/${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim/rqs_${req}_sgl.lst
-            ls -l skims/$skim/${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim/rqs_${req}_sgl.lst
-            fi
-
         else
-
             if  [ "$grp" == "WV_EWK" ]; then # WV_EWK
-
                 if  [ "$signal" != "ewk" ]; then 
                     cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "bkgSamples.push_back( new Sample(\"'${grp}'\",\t  "$2",\t"$5",\t  1,  gid_'${grp}',  1100,   "$14",\t"$8",\t"$11") );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
                 else

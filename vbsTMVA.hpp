@@ -195,7 +195,7 @@ private:
     _color     = color;
     _nMCgen    = nMCgen;
     _nMCgenNeg = nMCgenNeg;
-    _ngen      = nMCgen; // - 2* nMCgenNeg;
+    _ngen      = nMCgen - 2* nMCgenNeg;
     _nevents   = 0;
     _inpTree   = NULL;
   };

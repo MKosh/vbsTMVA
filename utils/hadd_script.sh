@@ -54,3 +54,5 @@ end_time=$(date +%s)
 diff=$(echo "$end_time-$start_time" | bc)
 minutes=$(echo "scale=2; $diff/60" | bc)
 echo "Done! Finished in about $minutes minutes!"
+
+# If you want you can add a step to remove the _01 for the files that get copied, but I just use PowerRename from Windows PowerToys to remove it
