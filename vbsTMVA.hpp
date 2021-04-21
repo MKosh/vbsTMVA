@@ -55,7 +55,8 @@ TCut cut_TT          ("cut_TT",         "(gid ==  15)");
 
 //Cuts
 //from MyControlPlots.C
-TCut cleanNAN       ("cleanNAN",        "(run>0)"); // was mass_lvj_type0_PuppiAK8
+// TCut cleanNAN       ("cleanNAN",        "(run>0)"); // was mass_lvj_type0_PuppiAK8
+TCut cleanNAN       ("cleanNAN",        "!TMath::IsNaN(bos_PuppiAK8_tau2tau1)");
 TCut mVVgt0         ("mVVgt0",          "(mass_lvj_type0_PuppiAK8>0)"); 
 TCut oneLepton      ("oneLepton",       "(lep2_pt<0)"); 
 TCut Lpt1gt50       ("Lpt1gt50",        "(lep1_pt>50)"); 
