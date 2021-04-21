@@ -565,6 +565,10 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
 
    std::cout << "==> TMVAClassificationApplication is done!" << endl << std::endl;
    std::cout << "==> Use root -l tmvaMon.cpp\\(\\\"" << sname << "\\\"\\)  to analyse..." << std::endl;
+   std::cout << "==> Use one of the following as a second argument for the luminosity" << std::endl;
+   std::cout << "==> 2016 Samples -> " << lum_2016/1000 << std::endl;
+   std::cout << "==> 2017 Samples -> " << lum_2017/1000 << std::endl;
+   std::cout << "==> 2018 Samples -> " << lum_2018/1000 << std::endl;
 }
 
 int main( int argc, char** argv )

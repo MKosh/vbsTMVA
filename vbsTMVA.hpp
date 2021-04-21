@@ -30,7 +30,10 @@
 //
 using namespace std;
 //luminosity
-const Float_t lum =  35867.06; //pb-1
+const Float_t lum = 35867.06;
+const Float_t lum_2016 = 35867.06; //pb-1
+const Float_t lum_2017 = 41530.0; //pb-1
+const Float_t lum_2018 = 59740.0; //pb-1
 //
 //Background groups
 #define  gid_sgl      1
@@ -93,6 +96,8 @@ TCut full_common        ("full_common",            category_selection+lep_pt+lep
 TCut full_wv_sr         ("full_wv_sr",             full_common+btag_veto+wv_sr);
 
 TCut wtot               ("wtot",                   "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
+TCut wtot_2017          ("wtot_2017",              "41530*genWeight*mcWeight*L1PFWeight*puWeight"); // 41530
+TCut wtot_2018          ("wtot_2018",              "59740*genWeight*mcWeight*L1PFWeight*puWeight"); // 59740
 TCut wtotL1             ("wtotL1",                 "L1PFWeight*genWeight*puWeight");
 TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
 // Mark Cuts ---------------------------------------------------------------------------------------------------------------------------------
