@@ -58,8 +58,8 @@ TCut cut_TT          ("cut_TT",         "(gid ==  15)");
 
 //Cuts
 //from MyControlPlots.C
-// TCut cleanNAN       ("cleanNAN",        "(run>0)"); // was mass_lvj_type0_PuppiAK8
-TCut cleanNAN       ("cleanNAN",        "!TMath::IsNaN(bos_PuppiAK8_tau2tau1)");
+TCut cleanNAN       ("cleanNAN",        "(run>0)"); // was mass_lvj_type0_PuppiAK8
+//TCut cleanNAN       ("cleanNAN",        "!TMath::IsNaN(bos_PuppiAK8_tau2tau1)");
 TCut mVVgt0         ("mVVgt0",          "(mass_lvj_type0_PuppiAK8>0)"); 
 TCut oneLepton      ("oneLepton",       "(lep2_pt<0)"); 
 TCut Lpt1gt50       ("Lpt1gt50",        "(lep1_pt>50)"); 
@@ -104,7 +104,7 @@ TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_
 
 
 //TCut cleanNAN_phi           ("cleanNAN_phi",        "(phi_type0>0&&phi_type2>0&&phi_type0<3.14&&phi_type2<3.14)"  ); 
-//TCut cleanNAN_phi           ("cleanNAN_phi",        "(!TMath::IsNaN(run) && !TMath::IsNaN(run))"  ); // was (!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))
+TCut cleanNAN_phi           ("cleanNAN_phi",        "(!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))"  ); // was (!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))
 //TCut wtot                   ("wtot",                "35867.06*mcWeight*L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
 //TCut wtotL1                 ("wtotL1",              "L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
 

@@ -143,7 +143,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    // TCut cleanNAN        ("cleanNAN",        "(mass_lvj_type0_PuppiAK8>0)"); 
 
    //   TCut mycuts = cleanNAN+more+OneLpt;// for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
-   TCut mycuts = cleanNAN; // dummy;// for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
+   TCut mycuts = cleanNAN+cleanNAN_phi; // dummy;// for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
    TCut mycutb = mycuts;// for example: TCut mycutb = "abs(var1)<0.5";
    //
    VbsReducedEvent vbsEvent;
@@ -155,7 +155,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
 // Selector - Surprise, surprise it selects things. Look at the vbsSamples.cpp after you run the dsw script and copy the samples to the appropriate spot
 // This is just for ease of use when running the classification over different datasets
-int selector = 2018; // 0 = old, 2016, 2017, 2018
+int selector = 0; // 0 = old, 2016, 2017, 2018
 
 if (selector == 0){
    dataSamples.push_back( new Sample("data",	  "Data",	    1,	  1,  gid_data,  gid_data,   1,  1,  0) );
@@ -353,14 +353,14 @@ if (selector == 0){
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8",	5.366,	  1,  gid_Wjets,  1100,   924,	 8357922.5,	  0) );
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8",	1.074,	  1,  gid_Wjets,  1100,   924,	 7567070.5,	  0) );
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8",	0.008001,	  1,  gid_Wjets,  1100,   924,	 3189396.0,	  0) );
-   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-70to100_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	167.33,	  1,  gid_Zjets,  1100,   924,	 10010341.0,	  0) );
-   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-100to200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	161.1,	  1,  gid_Zjets,  1100,   924,	 11516746.0,	  0) );
-   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-200to400_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	48.66,	  1,  gid_Zjets,  1100,   924,	 10840079.0,	  0) );
-   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-400to600_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	6.968,	  1,  gid_Zjets,  1100,   924,	 46027504.0,	  0) );
-   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-600to800_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	1.743,	  1,  gid_Zjets,  1100,   924,	 8826238.0,	  0) );
-   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-800to1200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	0.8052,	  1,  gid_Zjets,  1100,   924,	 3120982.0,	  0) );
-   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-1200to2500_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	0.1933,	  1,  gid_Zjets,  1100,   924,	 531566.875,	  0) );
-   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-2500toInf_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	0.003468,	  1,  gid_Zjets,  1100,   924,	 415517.0,	  0) );
+   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-70to100_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	167.33,	  1,  gid_Zjets,  1100,   4,	 10010341.0,	  0) );
+   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-100to200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	161.1,	  1,  gid_Zjets,  1100,   4,	 11516746.0,	  0) );
+   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-200to400_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	48.66,	  1,  gid_Zjets,  1100,   4,	 10840079.0,	  0) );
+   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-400to600_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	6.968,	  1,  gid_Zjets,  1100,   4,	 46027504.0,	  0) );
+   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-600to800_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	1.743,	  1,  gid_Zjets,  1100,   4,	 8826238.0,	  0) );
+   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-800to1200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	0.8052,	  1,  gid_Zjets,  1100,   4,	 3120982.0,	  0) );
+   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-1200to2500_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	0.1933,	  1,  gid_Zjets,  1100,   4,	 531566.875,	  0) );
+   bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-2500toInf_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	0.003468,	  1,  gid_Zjets,  1100,   4,	 415517.0,	  0) );
 } else {
    cout << "There's an issue with your sample choice. Check -vbsTMVAClassification.C- somewhere around line 150 - 250" << endl;
 }
@@ -375,7 +375,7 @@ for (UInt_t ns=0; ns< dataSamples.size();ns++){
    if ( dataSamples[ns]->getLoadFlag()){ 
        cout << "register "  << dataSamples[ns]->getReqList() << " data samples" << endl;
     
-     dataSamples[ns]->setInpTree( chain2tree("Events", dataSamples[ns]->getReqList(), "DataTree", "DataTree" ) );
+     dataSamples[ns]->setInpTree( chain2tree("otree", dataSamples[ns]->getReqList(), "DataTree", "DataTree" ) );
 
      if( dataSamples[ns]->getInpTree() ){
     
@@ -394,7 +394,7 @@ for (UInt_t ns=0; ns<sglSamples.size();ns++){
    if ( sglSamples[ns]->getLoadFlag()){ 
      // cout << "register  "  << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << " signal samples" << endl;
 
-     sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
+     sglSamples[ns]->setInpTree( chain2tree("otree", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
 
      if( sglSamples[ns]->getInpTree() ){
          fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]); 
@@ -410,7 +410,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    if ( bkgSamples[ns]->getLoadFlag()){ 
      //  cout << "register  "  << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << " background  samples" << endl;
 
-     bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
+     bkgSamples[ns]->setInpTree( chain2tree("otree", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
 
      if( bkgSamples[ns]->getInpTree() ){   
          fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]); 
