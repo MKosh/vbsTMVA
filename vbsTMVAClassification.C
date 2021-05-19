@@ -143,7 +143,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    // TCut cleanNAN        ("cleanNAN",        "(mass_lvj_type0_PuppiAK8>0)"); 
 
    //   TCut mycuts = cleanNAN+more+OneLpt;// for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
-   TCut mycuts = cleanNAN+cleanNAN_phi; // dummy;// for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
+   TCut mycuts = cleanNAN; // dummy; // cleanNAN+cleanNAN_phi; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
    TCut mycutb = mycuts;// for example: TCut mycutb = "abs(var1)<0.5";
    //
    VbsReducedEvent vbsEvent;
@@ -155,7 +155,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
 // Selector - Surprise, surprise it selects things. Look at the vbsSamples.cpp after you run the dsw script and copy the samples to the appropriate spot
 // This is just for ease of use when running the classification over different datasets
-int selector = 0; // 0 = old, 2016, 2017, 2018
+int selector = 2016; // 0 = old, 2016, 2017, 2018
 
 if (selector == 0){
    dataSamples.push_back( new Sample("data",	  "Data",	    1,	  1,  gid_data,  gid_data,   1,  1,  0) );
@@ -375,7 +375,7 @@ for (UInt_t ns=0; ns< dataSamples.size();ns++){
    if ( dataSamples[ns]->getLoadFlag()){ 
        cout << "register "  << dataSamples[ns]->getReqList() << " data samples" << endl;
     
-     dataSamples[ns]->setInpTree( chain2tree("otree", dataSamples[ns]->getReqList(), "DataTree", "DataTree" ) );
+     dataSamples[ns]->setInpTree( chain2tree("Events", dataSamples[ns]->getReqList(), "DataTree", "DataTree" ) );
 
      if( dataSamples[ns]->getInpTree() ){
     
@@ -394,7 +394,7 @@ for (UInt_t ns=0; ns<sglSamples.size();ns++){
    if ( sglSamples[ns]->getLoadFlag()){ 
      // cout << "register  "  << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << " signal samples" << endl;
 
-     sglSamples[ns]->setInpTree( chain2tree("otree", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
+     sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
 
      if( sglSamples[ns]->getInpTree() ){
          fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]); 
@@ -410,7 +410,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    if ( bkgSamples[ns]->getLoadFlag()){ 
      //  cout << "register  "  << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << " background  samples" << endl;
 
-     bkgSamples[ns]->setInpTree( chain2tree("otree", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
+     bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
 
      if( bkgSamples[ns]->getInpTree() ){   
          fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]); 
@@ -794,7 +794,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
 
    if (Use["BDT"])  // Adaptive Boost
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT",
-                           "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:NegWeightTreatment=IgnoreNegWeightsInTraining" );
+                           "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
 
    if (Use["BDTB"]) // Bagging
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDTB",

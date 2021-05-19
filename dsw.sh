@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# args #1=root file location #2= new or old variables
+# args #1=root file location #2= new or old variables #3 year
 # ------------------------------------------------------------------- Start System Check ----------------------------------------------------------------------------------------------
 
 DD_VBS_REDUCED="/eos/uscms/store/user/rsingh/wv_vbs_ntuples/WVJJTree_2020_Dec_12"

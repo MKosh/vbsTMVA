@@ -58,8 +58,8 @@ TCut cut_TT          ("cut_TT",         "(gid ==  15)");
 
 //Cuts
 //from MyControlPlots.C
-TCut cleanNAN       ("cleanNAN",        "(run>0)"); // was mass_lvj_type0_PuppiAK8
-//TCut cleanNAN       ("cleanNAN",        "!TMath::IsNaN(bos_PuppiAK8_tau2tau1)");
+//TCut cleanNAN       ("cleanNAN",        "(mass_lvj_type0_PuppiAK8>0)"); // Use this NAN cut for the old data
+TCut cleanNAN       ("cleanNAN",        "!TMath::IsNaN(bos_PuppiAK8_tau2tau1)"); // Use this one for the new data
 TCut mVVgt0         ("mVVgt0",          "(mass_lvj_type0_PuppiAK8>0)"); 
 TCut oneLepton      ("oneLepton",       "(lep2_pt<0)"); 
 TCut Lpt1gt50       ("Lpt1gt50",        "(lep1_pt>50)"); 
@@ -85,15 +85,16 @@ TCut vbs_jets_pt        ("vbs_jets_pt",            "vbf1_AK4_pt>50 && vbf2_AK4_p
 TCut vbs_delta_eta      ("vbs_delta_eta",          "vbf_deta>2.5"); // this is absolute delta eta
 TCut met_pt             ("met_pt",                 "MET>30");
 TCut btag_veto          ("btag_veto",              "nBtag_loose==0");// regions, sr: signal region, cr: control region
-TCut wv_sr              ("wv_sr",                  "bos_PuppiAK8_m_sd0_corr>65 && bos_PuppiAK8_m_sd0_corr<105");
+TCut wv_sr              ("wv_sr",                  "(bos_PuppiAK8_m_sd0_corr>65 && bos_PuppiAK8_m_sd0_corr<105)&&!(gid==3)");
 TCut wv_cr_vjets        ("wv_cr_vjets",            "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150)");
 TCut wv_cr_top          ("wv_cr_top",              "nBtag_loose>0");
 TCut dummy              ("dummy",                  "");
 TCut ZeppWLlt3          ("ZeppWLlt3",              "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
 TCut ZeppWHlt3          ("ZeppWHlt3",              "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
+TCut noData             ("noData",                 "!(gid==3)");
 
 TCut full_common        ("full_common",            category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
-TCut full_wv_sr         ("full_wv_sr",             full_common+btag_veto+wv_sr);
+TCut full_wv_sr         ("full_wv_sr",             full_common+btag_veto+wv_sr+noData);
 
 TCut wtot               ("wtot",                   "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
 TCut wtot_2017          ("wtot_2017",              "41530*genWeight*mcWeight*L1PFWeight*puWeight"); // 41530
