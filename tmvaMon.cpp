@@ -17,7 +17,7 @@
 //anl->optCutScan("sgf1",cleanNAN+allCuts,"BDT",-1, 1, 0.1,0.0005, 20)
 //
 // control plost
-//cplots(anl, allCuts, "allCuts")
+// cplots(anl, allCuts, "allCuts")
 //
 //printCutflow(anl, "mass_lvj_type0_PuppiAK8", "paperCuts", dummy,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
 //=======================================================================
@@ -376,6 +376,8 @@ void  printCutflow( TmvaAnl* anl, const char* var, const char* flowname="", TCut
 	       Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0,
 	       const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
 
+void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test");
+
 TCut  splitCuts (const char* strcuts);
 //=====================================================================================================
 TmvaAnl* anl;
@@ -402,7 +404,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut = "", TSt
   cout << "tmgui()" << endl;
   cout << "" << endl;
 
-//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and grep to change whether this line actually runs
+cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);

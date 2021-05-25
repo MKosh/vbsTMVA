@@ -30,18 +30,7 @@ fi
 
 if [ "0$(echo $SNAME | grep MM)" != "0" ] || [ "0$(echo $SNAME | grep Mark)" != "0" ]; then # If running on my personal machine
     DD_VBS_REDUCED="/mnt/$1" # d/2016/haddedFiles (g if on my desktop) - This uses the data stored on a flash drive, don't forget to mount it (_ = some letter) use:~$ mkdir /mnt/_ ~$ sudo mount -t drvfs _: /mnt/_
-    if [ $2 == "new" ]; then
-        echo "Using new variables!"
-        DatasetInpFile="./lists/datasets_2016.json"
-    elif [ $2 == "old" ]; then
-        echo "Using old variables!"
-        # DD_VBS_REDUCED="/mnt/e/Research/ntuples/vbs_ww_old"
-        DatasetInpFile="./lists/oldData.json"
-    else
-        echo "You didn't specify so I'm using the new ntuples"
-        DatasetInpFile="./lists/datasets_2016.json"
-    fi
-    # conda activate root_env # Start the ROOT environment - nevermind, this only works as long as the script runs
+    DatasetInpFile="./lists/datasets_$2.json"
 fi
 
 if [ ! -d $DD_VBS_REDUCED ]; then
@@ -114,12 +103,6 @@ for skim in $SKIMS; do
 
 # This file is where the information like xsec (cross section) and nMCgen come from 
     #SamplesInpFile="./macros/cplots/DibosonBoostedElMuSamples13TeV_2019_03_23_03h56.txt"
-    #DatasetInpFile="./lists/datasets_2016.json"
-    if [ $2 == "old" ]; then
-        DatasetInpFile="./datasets/oldData.json"
-    elif [ $2 == "new" ]; then
-        DatasetInpFile="./datasets/datasets_$3.json"
-    fi
     SamplesOutfile="vbsSamples.cpp"
     echo "Creating $SamplesOutfile"
     if [ -f $SamplesOutfile ]; then /bin/rm -f $SamplesOutfile; fi;
