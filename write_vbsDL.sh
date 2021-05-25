@@ -16,14 +16,14 @@
 
 # Once things are finalized, this will probably be changed to selecting the subfolder based on the year
 
-if [ $2 == "new" ]; then
+#if [ $2 == "new" ]; then
     # rootFiles="/mnt/e/Research/ntuples/NEW/ntuples/" # Location of the ntuples on my personal machine
-    Trees="Events"
-elif [ $2 == "old" ]; then
+#    Trees="Events"
+if [ $2 == "old" ]; then
     # rootFiles="/mnt/e/Research/ntuples/vbs_ww_old/"
     Trees="otree"
 else
-    echo "Nothing specified - Using new ntuples"
+#    echo "Nothing specified - Using new ntuples"
     Trees="Events"
 fi
 
@@ -173,8 +173,24 @@ rm list_of_branches.txt
 
 # --------------------------------------------------------- Start - Create vbsDL.hpp file - Start -----------------------------------------------------------------
  
-if [ $2 == "new" ]; then
+if [ $2 == "set1" ]; then
     # These are the variables for the new ntuples.
+    TMVAVARS="lep1_pt lep1_eta MET vbf_m vbf_pt vbf_deta vbf_eta vbf_phi bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 bos_PuppiAK8_m_sd0_corr dibos_m dibos_eta dibos_phi dibos_pt vbf2_AK4_eta vbf1_AK4_eta vbf1_AK4_pt vbf2_AK4_pt bosCent zeppLep zeppHad"
+    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
+    plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
+    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0"
+    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt"
+    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
+elif [ $2 == "set2" ]; then
+    TMVAVARS="lep1_pt lep1_eta MET vbf_m vbf_pt vbf_deta vbf_eta vbf_phi bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 bos_PuppiAK8_m_sd0_corr dibos_m dibos_eta dibos_phi dibos_pt vbf2_AK4_eta vbf1_AK4_eta vbf1_AK4_pt vbf2_AK4_pt bosCent zeppLep zeppHad"
+    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
+    plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
+    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0"
+    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt"
+    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
+elif [ $2 == "set3" ]; then
     TMVAVARS="lep1_pt lep1_eta MET vbf_m vbf_pt vbf_deta vbf_eta vbf_phi bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 bos_PuppiAK8_m_sd0_corr dibos_m dibos_eta dibos_phi dibos_pt vbf2_AK4_eta vbf1_AK4_eta vbf1_AK4_pt vbf2_AK4_pt bosCent zeppLep zeppHad"
     activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
     plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
@@ -192,7 +208,7 @@ elif [ $2 == "old" ]; then
     plotVARS_Other="deltaR_lPuppiak8jet deltaphi_METPuppiak8jet deltaphi_METvbfJ1 deltaphi_METvbfJ2 deltaphi_METmin deltaphi_VPuppiak8jet PtBalance_type0 BosonCentrality_type0  costheta1_type0 costheta2_type0 costhetastar_type0  phi_type0 phi1_type0  PtBalance_type2 costheta1_type2 costheta2_type2 costhetastar_type2 phi_type2 phi1_type2"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet}  ${plotVARS_Other} | sort | tr -s '\ '  '\n'  | sort | uniq )"
 else
-    echo "Pick from the premade variable lists: 'old' or 'new' OR make a new list"
+    echo "Pick from the premade variable lists or make a new list"
     return 0;
 fi
 
