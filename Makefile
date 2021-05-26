@@ -12,16 +12,28 @@ cut ?= "dummy"
 cutName ?= "test"
 
 init:
+	@echo ""
 	@echo "-------------------------------------------------------- Makefile Arguments --------------------------------------------------------"
-	@echo "loc ----- location of the .root data files				methods - TMVA methods (Fisher, BDT, DNN_GPU, etc.)"
-	@echo "vars ---- variable set (set1, etc., old)				lumi ---- 2016 -> 35.867 | 2017 -> 41.53 | 2018 -> 59.74"
-	@echo "year ---- (2016, 2017, 2018)"
-	@echo "cut ----- the cut you want to apply for the plots			cutName - The name of the cut applied (used for labeling)"
+	@echo "loc ----- location of the .root data files			 |	methods - TMVA methods (Fisher, BDT, DNN_GPU, etc.)"
+	@echo "vars ---- variable set (set1, etc., old)			 |	lumi ---- 2016 -> 35.867 | 2017 -> 41.53 | 2018 -> 59.74"
+	@echo "year ---- (2016, 2017, 2018)					 |"
+	@echo "cut ----- the cut you want to apply for the plots		 |	cutName - The name of the cut applied (used for labeling)"
+	@echo ""
 	@echo "--------------------------------------------------------- Makefile targets ---------------------------------------------------------"
-	@echo "If you want plots:"
-	@echo "	trainAndPlot - loc, year, vars, methods, lumi, cut, cutName"
-	@echo "If you don't want plots:"
-	@echo "	trainNoPlot - loc, year, vars, methods, lumi, cut, cutName"
+	@echo "If you want to train and output plots:				 |	If you want to train but not create plots:"
+	@echo "---- trainAndPlot - loc, year, vars, methods, lumi, cut, cutName |	---- trainNoPlot - loc, year, vars, methods, lumi, cut, cutName"
+	@echo "If you just want to make and save the cplots			 |	If you just want to run the tmvaMon program and make individual plots"
+	@echo "---- plot - year, lumi, cut, cutName				 |	---- Mon - year, lumi, cut, cutName"
+	@echo ""
+
+test:
+	@echo "loc = $(loc)"
+	@echo "vars = $(vars)"
+	@echo "year = $(year)"
+	@echo "methods = $(methods)"
+	@echo "lumi = $(lumi)"
+	@echo "cut = $(cut)"
+	@echo "cutName = $(cutName)"
 
 trainNoPlot: update_$(year)
 	@cd skims/
@@ -44,21 +56,14 @@ trainAndPlot: update_$(year)
 	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(year)\",\"$(methods)\"\)
 	@sed -i 's|//cplots(anl, cut, cutName); // XXX|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	@($(CONDA_ACTIVATE) root_env ; root -q tmvMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\)
-	
-tmvaMon.cpp: vbsTMVAClassificationApplication.C
-	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(year)\",\"$(methods)\"\)
-	
-vbsTMVAClassificationApplication.C: vbsTMVAClassification.C
-	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(year)\",\"$(methods)\"\)
 
-vbsTMVAClassification.C: write_vbsDL.sh
-	@./write_vbsDL.sh "$(loc)" "$(vars)"
+plot: update_$(year)
+	@sed -i 's|//cplots(anl, cut, cutName); // XXX|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	@($(CONDA_ACTIVATE) root_env ; root -q tmvMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\)
 
-write_vbsDL.sh: dsw.sh
-	cd skims/
-	rm -r vbs_ww
-	cd ..
-	@./dsw.sh "$(loc)" "$(year)"
+Mon: update_$(year)
+	@sed -i 's|cplots(anl, cut, cutName); // XXX|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	@($(CONDA_ACTIVATE) root_env ; root -q tmvMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\)
 
 update_2016: 
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.C
