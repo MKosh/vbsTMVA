@@ -7,4 +7,4 @@ plots/*/archive/*.pdf
 plots/*/archive/*.png
 plots/*/cutflows/*.pdf
 plots/*/cutflows/*.png
-plots/garbage
+plots/garbage/*/*
