@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Run when you first get all of the data and there's files called something like:
+#       SampleToSomething_FORCE-100To200_Tune_13TeV-pythia8_01.root, SampleToSomething_FORCE-100To200_Tune_13TeV-pythia8_02.root, etc.
+#
+#   Purpose:
+#       - Script to hadd all of the sample data files together based on their group
+#   Usage:
+#       ./hadd_script.sh "location/to/input" "location/to/output"
 # arg 1 = input file locations # somthing like "2017"
 # arg 2 = output file locations # something like "haddedFiles"
 

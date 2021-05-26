@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#   Purpose:
+#       Used to download data in bulk from the LPC
+#
+#   Usage:
+#       ./download_script.sh "location/of/data" "location/to/download"
+#
 # arg1 = location on lpc # something like "vbs/2016"
 # arg2 = year # Whatever year you used above
 

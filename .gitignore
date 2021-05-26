@@ -2,4 +2,9 @@
 .vscode/settings.json
 .vscode/*
 CVS/*
-*.png
+*.ps
+plots/*/archive/*.pdf
+plots/*/archive/*.png
+plots/*/cutflows/*.pdf
+plots/*/cutflows/*.png
+plots/garbage

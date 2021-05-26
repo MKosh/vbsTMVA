@@ -1,6 +1,14 @@
 #!/bin/bash
 
-# args #1=root file location #2= new or old variables #3 year
+#   Initial script to run in the frame work.
+#   Purpose: 
+#       - Does a system check to see if your running the code on the Fermilab LPC, the NIU NICADD cluster, or on a personal machine
+#       - Sets up ROOT and CUDA if you're on a cluster (doesn't if you're on a personal machine)
+#       - Creates links to the data files
+#       - Writes vbsSamples.cpp
+#   Usage:
+#       ./dsw.sh "location/of/data" "year"
+
 # ------------------------------------------------------------------- Start System Check ----------------------------------------------------------------------------------------------
 
 DD_VBS_REDUCED="/eos/uscms/store/user/rsingh/wv_vbs_ntuples/WVJJTree_2020_Dec_12"

@@ -36,34 +36,39 @@ test:
 	@echo "cutName = $(cutName)"
 
 trainNoPlot: update_$(year)
-	@cd skims/
-	@rm -r vbs_ww
-	@cd ..
+	@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)"
 	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(year)\",\"$(methods)\"\)
 	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(year)\",\"$(methods)\"\)
-	@sed -i 's|cplots(anl, cut, cutName); // XXX|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
-	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\)
+	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 
 trainAndPlot: update_$(year)
-	@cd skims/
-	@rm -r vbs_ww
-	@cd ..
+	@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)"
 	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(year)\",\"$(methods)\"\)
 	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(year)\",\"$(methods)\"\)
-	@sed -i 's|//cplots(anl, cut, cutName); // XXX|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	@./utils/plot_sort.sh "$(year)"
 	@($(CONDA_ACTIVATE) root_env ; root -q tmvMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\)
+	@pdflatex docs/plots.text >/dev/null
 
 plot: update_$(year)
-	@sed -i 's|//cplots(anl, cut, cutName); // XXX|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	@./utils/plot_sort.sh "$(year)"
 	@($(CONDA_ACTIVATE) root_env ; root -q tmvMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\)
 
 Mon: update_$(year)
-	@sed -i 's|cplots(anl, cut, cutName); // XXX|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
-	@($(CONDA_ACTIVATE) root_env ; root -q tmvMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\)
+	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	@./utils/plot_sort.sh "$(year)"
+	@($(CONDA_ACTIVATE) root_env ; root tmvMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
+
+root:
+	@($(CONDA_ACTIVATE) root_env ; root -q)
+
+genReport:
+	@pdflatex docs/plots.text >/dev/null
 
 update_2016: 
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.C
@@ -92,3 +97,5 @@ update_0000:
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/0000/c1_old|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/0000/c1_old|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/0000/c1_old|g' tmvaMon.cpp
+
+# 	@sed -i 's|//cplots(anl, cut, cutName); // XXX|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp

@@ -1,20 +1,18 @@
 #!/bin/bash
-# script to run the macro for reading and writing the list_of_branches.txt file
-# Then uses that file to write the vbsReducedTree.hpp file, the vbsDL.hpp file
-# and the vbsActiveBranches.hpp file
-# 
-# Arguments #1-location of rootfiles #2-old or new variable lists
-#
-# Usage
-#   Update rootFiles, and subFolders to point to the data being used
-#   Update the variable lists under the vbsDL.hpp section
+
+# Runs second after dsw.sh.
+#   Purpose:
+#       - Creates a ROOT macro "write_list.C" to read in one of the .root data files
+#       - Creates a list of variables (branches) from that .root file
+#       - The writes vbsReducedTree.hpp with all of those variable names
+#       - Takes a list of variables (from the list generated) to use as discriminating variables
+#       and spectators in the TMVA step
+#       - Creates vbsActiveBranches.hpp from the list of what's a variable and what's a spectator
+
+#   Usage:
+#       ./write_vbsDL.sh "location/of/data" "variable_set"
 
 # --------------------------------------------------------- Start - Create the write_list C++ macro - Start -------------------------------------------------------------------
-
-# Writes a macro file that reads in all of the root files in the folder
-# rootFiles/subFolders, then writes a list of all of the names of the branches and their types
-
-# Once things are finalized, this will probably be changed to selecting the subfolder based on the year
 
 #if [ $2 == "new" ]; then
     # rootFiles="/mnt/e/Research/ntuples/NEW/ntuples/" # Location of the ntuples on my personal machine

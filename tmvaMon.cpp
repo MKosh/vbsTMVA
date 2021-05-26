@@ -395,16 +395,16 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut = "", TSt
   anl = getAnl(anlName,lum_fb);
   g_lum = lum_fb;
   cout << "" << endl;
-  cout << " Luminosity = " << g_lum << " fb^-1" << endl;
+  cout << "Luminosity = " << g_lum << " fb^-1" << endl;
   cout << "To plot all control plot variables with a particular cut (or for no cuts exclude args 2 and 3) use" << endl;
-  cout << "cplots(anl, cut, \"cutname\")" << endl;
+  cout << "  cplots(anl, cut, \"cutname\")" << endl;
   cout << "To plot, for example,  PuppiAK8_jet_mass_so_corr  using \"cleanNAN\" set of cuts " << endl;
   cout << "plotvar(anl,\"PuppiAK8_jet_mass_so_corr\",cleanNAN)" << endl;
   cout << "To examine TMVA plots:" << endl;
   cout << "tmgui()" << endl;
   cout << "" << endl;
 
-cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -513,7 +513,7 @@ TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
      anl_dir->cd();
      cout <<  "Using analysis directory " << anlName << endl;
    }else{
-     cout <<  "Can not found the analysis directory " <<  anlName << endl;
+     cout <<  "Can not find the analysis directory " <<  anlName << endl;
      exit(1);
    }
   
@@ -1789,10 +1789,10 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   //cp2->cd(9);
   //plotvar(anl, "ungroomed_PuppiAK8_jet_e",    cuts,  1.0, 1, 0,   0., 1400., 20,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8  energy", "Events/bin"); // //
   //
-  outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
+  outfname << "plots/2016/c1_2016" << "_" <<  CutName << ".pdf";
    cp2->SaveAs(outfname.str().c_str());
    outfname.str("");
-   outfname << "plots/2016/c2_2016"  << "_" << CutName << ".png";
+   outfname << "plots/2016/c1_2016"  << "_" << CutName << ".png";
    cp2->SaveAs(outfname.str().c_str()); 
    outfname.str("");
 
@@ -1852,10 +1852,10 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   // plotvar(anl, "vbf_maxpt_jj_Deta", cuts,  1.0, 1, 0,  0.0,  20.0, 0.5,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF #Delta #eta", "Events/bin");
   //
 
-  outfname << "plots/2016/c3_2016" << "_" <<  CutName  << ".pdf";
+  outfname << "plots/2016/c1_2016" << "_" <<  CutName  << ".pdf";
   cp3->SaveAs(outfname.str().c_str());
   outfname.str("");
-  outfname << "plots/2016/c3_2016"  << "_" << CutName << ".png";
+  outfname << "plots/2016/c1_2016"  << "_" << CutName << ".png";
   cp3->SaveAs(outfname.str().c_str()); 
   outfname.str("");
 
