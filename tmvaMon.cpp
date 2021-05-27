@@ -376,7 +376,7 @@ void  printCutflow( TmvaAnl* anl, const char* var, const char* flowname="", TCut
 	       Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0,
 	       const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
 
-void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test");
+void cplots(TmvaAnl* anl, TCut cuts, TString CutName);
 
 TCut  splitCuts (const char* strcuts);
 //=====================================================================================================
@@ -388,7 +388,7 @@ TH1F* xCloneHist(TH1F* hframe, const char* cloneName, Int_t cloneNum);
 TGraphErrors*  map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& opthist,  Float_t& best_cutval, Float_t& sgf_at_bestcut );
 Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_error, double lumi, double lumi_error,  bool IfGauss,double& cl95res, double&  pfluc );
 //=====================================================================================================
-void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut = "", TString cutName = "test"){
+void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TString cutName="test"){
   //
   TH1::StatOverflows(kTRUE);  //To force the underflows and overflows in the getStat() computations
   TGaxis::SetMaxDigits(3);
@@ -404,7 +404,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut = "", TSt
   cout << "tmgui()" << endl;
   cout << "" << endl;
 
-//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -1730,10 +1730,10 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   //cp1->cd(9);
   //plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
   //======================================================================================================================================================================
-   outfname << "plots/2016/c1_2016" << "_" << CutName << ".pdf";
+   outfname << "plots/2017/c1_2017" << "_" << CutName << ".pdf";
    cp1->SaveAs(outfname.str().c_str());
    outfname.str("");
-   outfname << "plots/2016/c1_2016"  << "_" << CutName << ".png";
+   outfname << "plots/2017/c1_2017"  << "_" << CutName << ".png";
    cp1->SaveAs(outfname.str().c_str()); 
    outfname.str("");
 
@@ -1789,10 +1789,10 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   //cp2->cd(9);
   //plotvar(anl, "ungroomed_PuppiAK8_jet_e",    cuts,  1.0, 1, 0,   0., 1400., 20,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8  energy", "Events/bin"); // //
   //
-  outfname << "plots/2016/c1_2016" << "_" <<  CutName << ".pdf";
+  outfname << "plots/2017/c2_2017" << "_" <<  CutName << ".pdf";
    cp2->SaveAs(outfname.str().c_str());
    outfname.str("");
-   outfname << "plots/2016/c1_2016"  << "_" << CutName << ".png";
+   outfname << "plots/2017/c2_2017"  << "_" << CutName << ".png";
    cp2->SaveAs(outfname.str().c_str()); 
    outfname.str("");
 
@@ -1852,10 +1852,10 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   // plotvar(anl, "vbf_maxpt_jj_Deta", cuts,  1.0, 1, 0,  0.0,  20.0, 0.5,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF #Delta #eta", "Events/bin");
   //
 
-  outfname << "plots/2016/c1_2016" << "_" <<  CutName  << ".pdf";
+  outfname << "plots/2017/c3_2017" << "_" <<  CutName  << ".pdf";
   cp3->SaveAs(outfname.str().c_str());
   outfname.str("");
-  outfname << "plots/2016/c1_2016"  << "_" << CutName << ".png";
+  outfname << "plots/2017/c3_2017"  << "_" << CutName << ".png";
   cp3->SaveAs(outfname.str().c_str()); 
   outfname.str("");
 
