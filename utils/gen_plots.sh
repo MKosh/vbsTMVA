@@ -10,7 +10,10 @@ if [[ $1 == 2016 || $1 == 2017 || $1 == 2018 || $1 == old ]]; then
     for file in plots/$1/*.pdf; do
 		cut=$(echo $file | sed 's|^.*\([0-9]\{4\}_\)||g' | sed 's|.pdf||g') # 'cut' pulls out the end of the file name which corresponds to the cutName used
         yr_count=$(cat docs/plots.tex | grep "section\*{$1}" | wc -l)
-        
+        for iter in {1..3}; do
+            graphics_count=$(cat docs/plots.tex | grep includegraphics{$1/c$iter\_$1\_$cut.pdf} | wc -l)
+            if [ graphics_count == 0]; then
+                
         echo "file = $file"
     done
 else

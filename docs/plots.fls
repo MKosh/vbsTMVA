@@ -46,6 +46,9 @@ INPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/../plots/2017/c1
 INPUT ../plots/2017/c1_2017_test.pdf
 OUTPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/plots.pdf
 INPUT ../plots/2017/c1_2017_test.pdf
+INPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/../plots/2017/c2_2017_test.pdf
+INPUT ../plots/2017/c2_2017_test.pdf
+INPUT ../plots/2017/c2_2017_test.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/plots.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
