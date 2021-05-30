@@ -9,7 +9,7 @@
 #	Usage:
 #		./plot_sort.sh "year"
 
-if [[ $1 == 2016 || $1 == 2017 || $1 == 2018 || $1 == old ]]; then
+if [[ $1 == 2016 || $1 == 2017 || $1 == 2018 || $1 == 0000 ]]; then
 
 	echo "Starting plot sort"
 	for file in plots/$1/*.pdf; do

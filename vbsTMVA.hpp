@@ -58,8 +58,8 @@ TCut cut_TT          ("cut_TT",         "(gid ==  15)");
 
 //Cuts
 //from MyControlPlots.C
-//TCut cleanNAN       ("cleanNAN",        "(mass_lvj_type0_PuppiAK8>0)"); // Use this NAN cut for the old data
-TCut cleanNAN       ("cleanNAN",        "!TMath::IsNaN(bos_PuppiAK8_tau2tau1)"); // Use this one for the new data
+TCut cleanNAN       ("cleanNAN",        "(mass_lvj_type0_PuppiAK8>0)"); // Use this NAN cut for the old data
+TCut cleanNAN_tau   ("cleanNAN_tau",    "!TMath::IsNaN(bos_PuppiAK8_tau2tau1)"); // Use this one for the new data
 TCut mVVgt0         ("mVVgt0",          "(mass_lvj_type0_PuppiAK8>0)"); 
 TCut oneLepton      ("oneLepton",       "(lep2_pt<0)"); 
 TCut Lpt1gt50       ("Lpt1gt50",        "(lep1_pt>50)"); 
@@ -68,8 +68,8 @@ TCut badEleta       ("badEleta",        "(type==1)&&!(abs(l_eta1)>1.4442 && abs(
 TCut etaMu2p4       ("etaMu2p4",        "((type==0)&&(abs(l_eta1)<2.4))");
 TCut etaEl2p5       ("etaEl2p5",        "((type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))");
 TCut goodLepton     ("goodLepton",       Lpt1gt50+( etaMu2p4|| etaEl2p5) );
-TCut goodMu          ("goodMu",          "(l_pt1>50&&(type==0)&&(abs(l_eta1)<2.4))");
-TCut goodEl          ("goodEl",          "(l_pt1>50&&(type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))");
+TCut goodMu         ("goodMu",          "(l_pt1>50&&(type==0)&&(abs(l_eta1)<2.4))");
+TCut goodEl         ("goodEl",          "(l_pt1>50&&(type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))");
 
 // Mark cuts --------------------------------------------------------------------------------------------------------------------------------
 // WV Signal Region (a.k.a boosted WV channel)
@@ -89,14 +89,14 @@ TCut wv_sr              ("wv_sr",                  "(bos_PuppiAK8_m_sd0_corr>65 
 TCut wv_cr_vjets        ("wv_cr_vjets",            "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150)");
 TCut wv_cr_top          ("wv_cr_top",              "nBtag_loose>0");
 TCut dummy              ("dummy",                  "");
-TCut ZeppWLlt3          ("ZeppWLlt3",              "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
-TCut ZeppWHlt3          ("ZeppWHlt3",              "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
+TCut ZeppWL          ("ZeppWLlt3",              "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
+TCut ZeppWH          ("ZeppWHlt3",              "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
 TCut noData             ("noData",                 "!(gid==3)");
 
 TCut full_common        ("full_common",            category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
 TCut full_wv_sr         ("full_wv_sr",             full_common+btag_veto+wv_sr+noData);
 
-TCut wtot               ("wtot",                   "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
+TCut wtot_2016          ("wtot_2016",                   "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
 TCut wtot_2017          ("wtot_2017",              "41530*genWeight*mcWeight*L1PFWeight*puWeight"); // 41530
 TCut wtot_2018          ("wtot_2018",              "59740*genWeight*mcWeight*L1PFWeight*puWeight"); // 59740
 TCut wtotL1             ("wtotL1",                 "L1PFWeight*genWeight*puWeight");
@@ -106,11 +106,11 @@ TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_
 
 //TCut cleanNAN_phi           ("cleanNAN_phi",        "(phi_type0>0&&phi_type2>0&&phi_type0<3.14&&phi_type2<3.14)"  ); 
 TCut cleanNAN_phi           ("cleanNAN_phi",        "(!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))"  ); // was (!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))
-//TCut wtot                   ("wtot",                "35867.06*mcWeight*L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
-//TCut wtotL1                 ("wtotL1",              "L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
+TCut wtot_old                   ("wtot_old",                "35867.06*mcWeight*L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
+TCut wtotL1_old               ("wtotL1_old",              "L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
 
-//TCut more	                  ("more",	               "(type==0||type==1)");
-//TCut OneLpt                 ("OneLpt",              "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) || ((type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))))" );
+TCut more	                  ("more",	               "(type==0||type==1)");
+TCut OneLpt                 ("OneLpt",              "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) || ((type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))))" );
 
 //ramanpreet
 //TCut OneMuPt50              ("OneMuPt50",           "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) ) )");
@@ -124,24 +124,24 @@ TCut cleanNAN_phi           ("cleanNAN_phi",        "(!TMath::IsNaN(phi_type0) &
 //paper selections
 //TCut tmvasel                ("tmvasel",             cleanNAN+more+OneLpt  ); 
 //TCut pfMETpuppi_m30e80      ("pfMETpuppi_m30e80",   "(((type==0)&&(pfMET_Corr>30)) || ((type==1)&&(pfMET_Corr>80)))");
-//TCut pfMETpuppi_m50e80      ("pfMETpuppi_m50e80",   "(((type==0)&&(pfMET_Corr>50)) || ((type==1)&&(pfMET_Corr>80)))");
+TCut pfMETpuppi_m50e80      ("pfMETpuppi_m50e80",   "(((type==0)&&(pfMET_Corr>50)) || ((type==1)&&(pfMET_Corr>80)))");
 
-//TCut fatjet                 ("fatjet",              "((ungroomed_PuppiAK8_jet_pt>200)&&(abs(ungroomed_PuppiAK8_jet_eta)<2.4)&&(PuppiAK8_jet_tau2tau1<0.55))");
+TCut fatjet                 ("fatjet",              "((ungroomed_PuppiAK8_jet_pt>200)&&(abs(ungroomed_PuppiAK8_jet_eta)<2.4)&&(PuppiAK8_jet_tau2tau1<0.55))");
 //TCut mjw40to125             ("mjw40to125",          "((PuppiAK8_jet_mass_so_corr>40) && (PuppiAK8_jet_mass_so_corr<125))");
-//TCut mjw65to105             ("mjw65to105",          "((PuppiAK8_jet_mass_so_corr>65) && (PuppiAK8_jet_mass_so_corr<105))");
+TCut mjw65to105             ("mjw65to105",          "((PuppiAK8_jet_mass_so_corr>65) && (PuppiAK8_jet_mass_so_corr<105))");
 
-//TCut antitagVBF             ("antitagVBF",          "(nBTagJet_loose==0)");
-//TCut MjjVBF800              ("MjjVBF800",           "(vbf_maxpt_jj_m>800)");
-//TCut detajjVBF4	            ("detajjVBF4",          "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>4.0)");
+TCut antitagVBF             ("antitagVBF",          "(nBTagJet_loose==0)");
+TCut MjjVBF800              ("MjjVBF800",           "(vbf_maxpt_jj_m>800)");
+TCut detajjVBF4	            ("detajjVBF4",          "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>4.0)");
 //TCut detajjVBF3p5           ("detajjVBF3p5",        "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>3.5)");
-//TCut ptjjVBF30              ("ptjjVBF30",           "(vbf_maxpt_j1_pt>30) && (vbf_maxpt_j2_pt>30)");
-//TCut mlvj600                ("mlvj600",             "(mass_lvj_type0_PuppiAK8>600)");
-//TCut BCtype0gt1             ("BCtype0gt1",          "(BosonCentrality_type0>1.0)");
-//TCut ZeppWLlt3              ("ZeppWLlt3",           "((abs(ZeppenfeldWL_type0)/abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta))<0.3)");
-//TCut ZeppWHlt3              ("ZeppWHlt3",           "((abs(ZeppenfeldWH)/abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta))<0.3)" );
-//TCut allCuts                ("allCuts",             (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ ZeppWHlt3));
+TCut ptjjVBF30              ("ptjjVBF30",           "(vbf_maxpt_j1_pt>30) && (vbf_maxpt_j2_pt>30)");
+TCut mlvj600                ("mlvj600",             "(mass_lvj_type0_PuppiAK8>600)");
+TCut BCtype0gt1             ("BCtype0gt1",          "(BosonCentrality_type0>1.0)");
+TCut ZeppWLlt3              ("ZeppWLlt3",           "((abs(ZeppenfeldWL_type0)/abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta))<0.3)");
+TCut ZeppWHlt3              ("ZeppWHlt3",           "((abs(ZeppenfeldWH)/abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta))<0.3)" );
+//TCut allCuts                ("allCuts",             (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));
 
-// TCut wtot                  ("wtot",                "f_weight");
+//TCut wtot                  ("wtot",                "f_weight");
 // TCut treff                 ("treff",               "f_eff_weight");
 
 // TCut mqvbf                 ("mqvbf",               "");
@@ -464,7 +464,7 @@ Int_t getVbsReqStat(const char* filelist) {
        TTree* mtree  = (TTree*) gROOT->FindObject("VBS4LeptonsAnalysisReduced");
 	 nInitReqEvt_w+=cutflow_w->GetBinContent(1);
 	 nInitReqEvt  +=cutflow->GetBinContent(1);
-	 getStat(mtree,"f_mass4l",wtot,stats);
+	 getStat(mtree,"f_mass4l",wtot_2018,stats);
          nNtpReqEvt    += stats[0];
 	 nNtpReqEvt_w2 += stats[1]*stats[1];
       }else{
