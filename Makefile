@@ -54,17 +54,21 @@ trainAndPlot: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	-@./utils/plot_sort.sh "$(year)"
 	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
+	-@./utils/plot_resort.sh "$(year)"
 	@pdflatex docs/plots.text >/dev/null
 
 plot: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	-@./utils/plot_sort.sh "$(year)"
 	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
+	-@./utils/plot_resort.sh "$(year)"
 
 mon: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	-@./utils/plot_sort.sh "$(year)"
+	@echo "Don't forget to run the plot_resort.sh script after generating new plots"
 	@($(CONDA_ACTIVATE) root_env ; root tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
+	
 
 genReport:
 	@pdflatex docs/plots.text >/dev/null
