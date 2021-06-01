@@ -7,16 +7,19 @@
 
 plot_file="docs/plots2.tex"
 
-if [ ! -f $plot_file ]; then touch $plot_file; fi
+if [ -f $plot_file ]; then rm -f $plot_file; fi
+touch $plot_file
 
 cat > $plot_file << EOF
 \documentclass{article}
-\usepackage[margin=1in, letterpaper]{geometry}
+\usepackage[margin=0.4in, letterpaper]{geometry}
+\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{float}
 
-\begin{doucment}
+\begin{document}
     \graphicspath{ {../plots/} }
+    \listoffigures
 EOF
 
 Cuts=()
@@ -29,35 +32,31 @@ for files in plots/*/*.pdf; do
     canvas=$(echo $files | sed 's|^.*\([0-9]\{4\}/\)||g' | sed "s|_$year\_$cut.pdf||g")
 
     if [[ ! "${Years[@]}" =~ "$year" ]]; then
-        ${Years}+=("$year")
+        Years+=("$year")
     fi
     if [[ ! "${Cuts[@]}" =~ "$cut" ]]; then
-        ${Cuts}+=("$cut")
+        Cuts+=("$cut")
+    fi
+    if [[ ! "${Canvases[@]}" =~ "$canvas" ]]; then
+        Canvases+=("$canvas")
     fi
 done
 
 for yrs in ${Years[@]}; do
-    echo "  \section*{$yrs}" >> $plot_file
+    echo "    \section*{$yrs}" >> $plot_file
     for cts in ${Cuts[@]}; do
-        cat >> $plot_file <<- EOF
-                \subsection*{$cts}
-                    \begin{figure}[H]
-                        \centering
-                        \includegraphics{$yrs/c1_$yrs_$cts.pdf}
-                        \caption{c1 plot for $yrs using the $cts cut}
-                    \end{figure}
-                        \begin{figure}[H]
-                        \centering
-                        \includegraphics{$yrs/c2_$yrs_$cts.pdf}
-                        \caption{c2 plot for $yrs using the $cts cut}
-                    \end{figure}
-                    \begin{figure}[H]
-                        \centering
-                        \includegraphics{$yrs/c3_$yrs_$cts.pdf}
-                        \caption{c3 plot for $yrs using the $cts cut}
-                    \end{figure}
+    echo "      \subsection*{$cts}" >> $plot_file
+        for cvs in ${Canvases[@]}; do
+            cat >> $plot_file <<- EOF
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=\textwidth]{$yrs/${cvs}_${yrs}_$cts.pdf}
+                \caption{${yrs} plot of ${cvs} variables using cut: \`\`$cts"}
+            \end{figure}
 EOF
+        done
     done
 done
+echo "\end{document}" >> $plot_file
     
 
