@@ -5,7 +5,7 @@
 #       Reads the contents of the plots/####/ folders and adds an \includegraphics 
 #       command and a caption for each plot found
 
-plot_file="docs/plots2.tex"
+plot_file="docs/plots.tex"
 
 if [ -f $plot_file ]; then rm -f $plot_file; fi
 touch $plot_file
@@ -50,8 +50,8 @@ for yrs in ${Years[@]}; do
             cat >> $plot_file <<- EOF
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=\textwidth]{$yrs/${cvs}_${yrs}_$cts.pdf}
                 \caption{${yrs} plot of ${cvs} variables using cut: \`\`$cts"}
+                \includegraphics[width=\textwidth]{$yrs/${cvs}_${yrs}_$cts.pdf}
             \end{figure}
 EOF
         done

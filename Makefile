@@ -55,6 +55,7 @@ trainAndPlot: update_$(year)
 	-@./utils/plot_sort.sh "$(year)"
 	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
 	-@./utils/plot_resort.sh "$(year)"
+	@./utils/gen_plots.sh
 	@pdflatex docs/plots.text >/dev/null
 
 plot: update_$(year)
@@ -62,6 +63,7 @@ plot: update_$(year)
 	-@./utils/plot_sort.sh "$(year)"
 	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
 	-@./utils/plot_resort.sh "$(year)"
+	@./utils/gen_plots.sh
 
 mon: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
@@ -70,8 +72,8 @@ mon: update_$(year)
 	@($(CONDA_ACTIVATE) root_env ; root tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
 	
 
-genReport:
-	@pdflatex docs/plots.text >/dev/null
+genPlots:
+	@./utils/gen_plots.sh
 
 update_2016: 
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.C
@@ -145,4 +147,4 @@ update_0000:
 # 	@sed -i 's|//cplots(anl, cut, cutName); // XXX|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 #    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
 #    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));
- 
+#	@pdflatex docs/plots.text >/dev/null
