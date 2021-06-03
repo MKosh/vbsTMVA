@@ -172,7 +172,7 @@ rm list_of_branches.txt
  
 if [ $2 == "set2016" ]; then
     # These are the variables for the new ntuples.
-    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0"
+    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0"
     activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
     plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0"

@@ -21,7 +21,7 @@ init:
 	@echo ""
 	@echo "--------------------------------------------------------- Makefile targets ---------------------------------------------------------"
 	@echo "If you want to train and output plots:				 |	If you want to train but not create plots:"
-	@echo "---- trainAndPlot - loc, year, vars, methods, lumi, cut, cutName |	---- trainNoPlot - loc, year, vars, methods, lumi, cut, cutName"
+	@echo "---- trainAndPlot - loc, year, vars, methods, lumi, cut, cutName |	---- trainNoPlot - loc, year, vars, methods"
 	@echo "If you just want to make and save the cplots			 |	If you just want to run the tmvaMon program and make individual plots"
 	@echo "---- plot - year, lumi, cut, cutName				 |	---- mon - year, lumi, cut, cutName"
 	@echo "If you just want to update the pdf with all the plots		 |"

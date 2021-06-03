@@ -113,7 +113,7 @@ Float_t  xSignal    = xWminusTo2JZTo2LJJ_EWK_LO_SM       + \
                       xWplusToLNuWplusTo2JJJ_EWK_LO_SM + \
                       xWplusToLNuZTo2JJJ_EWK_LO_SM + \
                       xZTo2LZTo2JJJ_EWK_LO_SM ;
-
+// 2.32484
 }
 
 Float_t g_lum;
@@ -142,6 +142,7 @@ private:
   Float_t  npass; // npass/ngen ( _xsect (fb) * lum (fb-1) )  
   Float_t  npass_err;
   Float_t  accpt;
+  Float_t  nrm; // MM added ngen/npass
 
   Float_t fillSampleHist(const char* var, TCut cuts, Float_t scale=1.0);
   //  Float_t calcSgf(const char* sgfName);
@@ -166,7 +167,7 @@ TmvaSample::TmvaSample(Int_t sid,Int_t scolor, const char* smplname, TCut sample
 //=====================================================================================================
 Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
 //
-std::string smpselector = "new"; // XXX
+//std::string smpselector = "new"; // XXX
 /*
   if(_sid == 3){
      _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
@@ -192,18 +193,26 @@ std::string smpselector = "new"; // XXX
   } else {
           _testTree->Project(_hf1->GetName(), var, wtot_2016*(cuts+_samplecut), "goff");
   }
-     _hf1->GetStats(_stats);
-     npass    = _stats[0]*(scale) ;
-     npass_err= scale*TMath::Sqrt(_stats[1]) ;
-     accpt   = 100.*  npass/_ngen;
-     // cout << "stats/scale/npass/npass_err/ngen/accpt = " << _stats[0] << " / " << scale << " / " << npass << " / " << npass_err << " / " << _ngen << " / " << accpt << endl;
- 
-     //ROOT V6 does not change statistics when scaling histogramms
-     //(but root 5.34 does)
-     //Thus we first get stats and then scale
-     _hf1->GetStats(_stats);
-     _hf1->Scale(scale);
-     return npass;
+    _hf1->GetStats(_stats);
+    npass    = _stats[0]*(scale) ;
+    npass_err= scale*TMath::Sqrt(_stats[1]) ;
+    nrm = _ngen/npass;
+    accpt   = 100.*  npass/_ngen;
+    cout << "------------------------------------------------------------" << endl;
+    cout << " scale = " << scale << endl;
+    cout << " npass = stats[0]*scale = " << npass << endl;
+    cout << " ngen = ngen_normfb = " << _ngen << endl;
+    cout << " nrm = ngen/npass = " << nrm << endl;
+    cout << " accpt = 100*npass/ngen = " << accpt << endl;
+    cout << "------------------------------------------------------------" << endl;
+    // cout << "stats/scale/npass/npass_err/ngen/accpt = " << _stats[0] << " / " << scale << " / " << npass << " / " << npass_err << " / " << _ngen << " / " << accpt << endl;
+
+    //ROOT V6 does not change statistics when scaling histogramms
+    //(but root 5.34 does)
+    //Thus we first get stats and then scale
+    _hf1->GetStats(_stats);
+    _hf1->Scale(scale);
+    return npass;
 }
 //=====================================================================================================
 class CutList {
@@ -416,7 +425,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "tmgui()" << endl;
   cout << "" << endl;
 
-cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -576,6 +585,7 @@ TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
   Float_t  nsignal_xsect =  TmvaAnl::PB2FB*xsect::xSignal;
   //
   cout << " Signal x-sect, fb / Generated signal events (normalized to Lum =  " << lum_fbinv << " fb ) :: " << nsignal_xsect << "/" << nsignal_norm << endl; 
+  cout << " 1.0 * lum_fbinv * PB2FB = " << 1.0*lum_fbinv*TmvaAnl::PB2FB << endl;
 
 // TmvaSample::TmvaSample(Int_t sid,Int_t scolor, const char* smplname, TCut samplecut,Float_t ngen_normfb, TTree* testTree, TTree* trainTree)
    TmvaSample* sgl  = new TmvaSample(1, kTeal+5,"sgl", "classID==0", nsignal_norm, treeSB, treeSB_train); // new color = kTeal+5 | old color = kTeal+2
