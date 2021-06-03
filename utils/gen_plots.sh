@@ -25,11 +25,13 @@ EOF
 Cuts=()
 Years=()
 Canvases=()
+YearCuts=()
 
 for files in plots/*/*.pdf; do 
     cut=$(echo $files | sed 's|^.*\([0-9]\{4\}_\)||g' | sed 's|.pdf||g')
     year=$(echo $files | sed 's|^.*\(c[1-3]_\)||g' | sed "s|_$cut.pdf||g")
     canvas=$(echo $files | sed 's|^.*\([0-9]\{4\}/\)||g' | sed "s|_$year\_$cut.pdf||g")
+    yearCut="${year}_$cut"
 
     if [[ ! "${Years[@]}" =~ "$year" ]]; then
         Years+=("$year")
@@ -40,23 +42,34 @@ for files in plots/*/*.pdf; do
     if [[ ! "${Canvases[@]}" =~ "$canvas" ]]; then
         Canvases+=("$canvas")
     fi
+    if [[ ! "${YearCuts[@]}" =~ "$yearCut" ]]; then
+        YearCuts+=("$yearCut")
+    fi
 done
 
 for yrs in ${Years[@]}; do
-    echo "    \section*{$yrs}" >> $plot_file
-    for cts in ${Cuts[@]}; do
-    echo "      \subsection*{$cts}" >> $plot_file
-        for cvs in ${Canvases[@]}; do
-            cat >> $plot_file <<- EOF
-            \begin{figure}[H]
-                \centering
-                \caption{${yrs} plot of ${cvs} variables using cut: \`\`$cts"}
-                \includegraphics[width=\textwidth]{$yrs/${cvs}_${yrs}_$cts.pdf}
-            \end{figure}
+    if [[ "${YearCuts[@]}" =~ "$yrs" ]]; then
+        echo "    \section*{$yrs}" >> $plot_file
+        for cts in ${Cuts[@]}; do
+            if [[ "${YearCuts[@]}" =~ "${yrs}_$cts" ]]; then
+                slashCut="$(echo $cts | sed 's|_|\\_|g')"
+                echo "      \subsection*{$slashCut}" >> $plot_file
+                for cvs in ${Canvases[@]}; do
+                    if [[ -f "plots/$yrs/${cvs}_${yrs}_${cts}.pdf" ]]; then
+                        cat >> $plot_file <<- EOF
+                        \begin{figure}[H]
+                            \centering
+                            \caption{${yrs} plot of ${cvs} variables using cut: \`\`$slashCut"}
+                            \includegraphics[width=\textwidth]{$yrs/${cvs}_${yrs}_$cts.pdf}
+                        \end{figure}    
 EOF
+                    fi
+                done
+            fi
         done
-    done
+    fi
 done
+
 echo "\end{document}" >> $plot_file
     
 
