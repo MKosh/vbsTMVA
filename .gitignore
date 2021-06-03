@@ -9,3 +9,4 @@ plots/*/cutflows/*.pdf
 plots/*/cutflows/*.png
 plots/garbage/*/*
 *.log
+vbs_ww_*/plots/*

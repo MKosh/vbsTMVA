@@ -142,7 +142,6 @@ private:
   Float_t  npass; // npass/ngen ( _xsect (fb) * lum (fb-1) )  
   Float_t  npass_err;
   Float_t  accpt;
-  Float_t  nrm; // MM added ngen/npass
 
   Float_t fillSampleHist(const char* var, TCut cuts, Float_t scale=1.0);
   //  Float_t calcSgf(const char* sgfName);
@@ -196,15 +195,15 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
     _hf1->GetStats(_stats);
     npass    = _stats[0]*(scale) ;
     npass_err= scale*TMath::Sqrt(_stats[1]) ;
-    nrm = _ngen/npass;
     accpt   = 100.*  npass/_ngen;
+  /*
     cout << "------------------------------------------------------------" << endl;
     cout << " scale = " << scale << endl;
     cout << " npass = stats[0]*scale = " << npass << endl;
     cout << " ngen = ngen_normfb = " << _ngen << endl;
-    cout << " nrm = ngen/npass = " << nrm << endl;
     cout << " accpt = 100*npass/ngen = " << accpt << endl;
     cout << "------------------------------------------------------------" << endl;
+  */
     // cout << "stats/scale/npass/npass_err/ngen/accpt = " << _stats[0] << " / " << scale << " / " << npass << " / " << npass_err << " / " << _ngen << " / " << accpt << endl;
 
     //ROOT V6 does not change statistics when scaling histogramms
@@ -425,7 +424,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "tmgui()" << endl;
   cout << "" << endl;
 
-//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -1718,7 +1717,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   // title: VBS (WV), 35.9fb^{-1}
 
   std::string selector = "new";
-  if(selector == "old"){
+  if(selector == "old"){ // These are for the cplots for the OLD ntuples, don't confuse them for the cplot for the new ntuples
 //------------   VERTICES  	-------------------
 cp1->cd(1);
 plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 50, 1,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of primary vertices", "Events/bin");
@@ -1754,7 +1753,7 @@ plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,  
  outfname << "plots/2016/c1_2016"  << "_" << CutName << ".png";
  cp1->SaveAs(outfname.str().c_str()); 
  outfname.str("");
-
+// OLD - reminder
 
  //============================
 
@@ -1763,7 +1762,7 @@ plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,  
  cp2 = new TCanvas("cp2","cp2",10,10,1000,1000);
  cp2->Divide(3,3);
 
-
+// OLD - reminder
 //-------------- 	MET	-------------------
 cp2->cd(1);
 plotvar(anl, "pfMET_Corr",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr (GeV)", "Events/bin");
@@ -1800,7 +1799,7 @@ outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
  cp2->SaveAs(outfname.str().c_str()); 
  outfname.str("");
 
-
+// OLD - reminder
  TCanvas* cp3 = (TCanvas*)gROOT->FindObject("cp3"); 
  if(cp3) { cp3->Delete(); }
  cp3 = new TCanvas("cp3","cp3",10,10,1000,1000);
@@ -1857,7 +1856,7 @@ outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
 
   cp3->cd(9);
   plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0, title_str, "zeppHad", "Events/bin");
-
+  // OLD - reminder
  outfname << "plots/2016/c3_2016" << "_" <<  CutName  << ".pdf";
  cp3->SaveAs(outfname.str().c_str());
  outfname.str("");
@@ -1865,35 +1864,35 @@ outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
  cp3->SaveAs(outfname.str().c_str()); 
  outfname.str("");
 
-  } else {
+  } else { // These are the cplots for the NEW ntuples
   std::cout << "cuts = " << cuts << " Lumi = " << g_lum << std::endl;
   //------------   VERTICES  	-------------------
   cp1->cd(1);
-  plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 80, 1,       0, 0,  title_str, "Number of primary vertices", "Events/bin");
+  plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 60, 1,       1, 0,  title_str, "Number of primary vertices", "Events/bin");
   //------------    LEPTONS  	-------------------
   cp1->cd(2);
-  plotvar(anl, "lep1_pt",  cuts,  1.0, 1, 0,   0., 1000., 10,      1, 0,  title_str, "Lepton_1 p_{T} (GeV)", "Events/bin");
+  plotvar(anl, "lep1_pt",  cuts,  1.0, 1, 0,   0., 1000., 30,      1, 0,  title_str, "Lepton_1 p_{T} (GeV)", "Events/bin");
   cp1->cd(3);
   plotvar(anl, "lep1_eta", cuts,  1.0, 1, 0,  -3.,  3., 0.25,   0, 0,  title_str, "Lepton_1 #eta", "Events/bin");
 
   cp1->cd(4);
-  plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,  title_str, "Lepton_1 #phi", "Events/bin");
+  plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  -1.8*TMath::Pi(), 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,  title_str, "Lepton_1 #phi", "Events/bin");
 
   cp1->cd(5);
   plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     1, 0,  title_str, "Lepton_1 charge", "Events/bin");
 
   cp1->cd(6);
-  plotvar(anl, "lep1_dz",    cuts,  1.0, 1, 0,   0., 600., 10,       1, 0,  title_str, "Lepton_1 dz", "Events/bin");
+  plotvar(anl, "lep1_pt_scaleDown",    cuts,  1.0, 1, 0,   0., 600., 10,       1, 0,  title_str, "Lepton_1 pt scale down", "Events/bin");
 
   cp1->cd(7);
   plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.5, 0.02,       1, 0,  title_str, "Lepton_1 isolation", "Events/bin");
   //
 
   cp1->cd(8);
-  plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0, title_str, "zeppLep", "Events/bin");
+  plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -5., 5., 0.25, 0, 0, title_str, "zeppLep", "Events/bin");
 
   cp1->cd(9);
-  plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0, title_str, "zeppHad", "Events/bin");
+  plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -5., 5., 0.25, 0, 0, title_str, "zeppHad", "Events/bin");
 
   //---------------	4 body mass	---------------
   //cp1->cd(8);
@@ -1920,39 +1919,39 @@ outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
 
   //-------------- 	MET	-------------------
   cp2->cd(1);
-  plotvar(anl, "MET",  cuts,  1.0, 1, 0,   0., 800., 10,      1, 0,  title_str, "MET (GeV)", "Events/bin");
+  plotvar(anl, "MET",  cuts,  1.0, 1, 0,   0., 800., 25,      1, 0,  title_str, "MET (GeV)", "Events/bin");
 
   cp2->cd(2);
-  plotvar(anl, "MET_phi",  cuts,  1.0, 1, 0,   0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),      1, 0,  title_str, "MET_phi", "Events/bin");
+  plotvar(anl, "MET_phi",  cuts,  1.0, 1, 0,   -1.8*TMath::Pi(), 1.8*TMath::Pi(), 0.125*TMath::Pi(),      1, 0,  title_str, "MET_phi", "Events/bin");
 
   // cp2->cd(3);
   // plotvar(anl, "nu_pz_type0",  cuts,  1.0, 1, 0,   -500., 500., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Reconstructed Neutrino p_{Z}", "Events/bin");
   //
 
   cp2->cd(3);
-  plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 0., 20., 1, 0, 0, title_str, "vbf_deta", "Events/bin");
+  plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 0., 10., 0.25, 0, 0, title_str, "vbf_deta", "Events/bin");
 
   cp2->cd(4);
-  plotvar(anl, "vbf_m", cuts, 1.0, 1, 0 , 0., 4500, 20, 1, 0, title_str, "vbf_m", "Events/bin");
+  plotvar(anl, "vbf_m", cuts, 1.0, 1, 0 , 0., 4500, 150, 1, 0, title_str, "vbf_m", "Events/bin");
 
   cp2->cd(5);
-  plotvar(anl, "vbf_pt", cuts,  1.0, 1, 0,  0., 2000., 20,   1, 0,  title_str, "vbf_pt", "Events/bin");
+  plotvar(anl, "vbf_pt", cuts,  1.0, 1, 0,  0., 2000., 50,   1, 0,  title_str, "vbf_pt", "Events/bin");
 
   //--------------	AK8 Jet		------------
   //cp2->cd(4);
   //plotvar(anl, "nGoodPuppiAK8jets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of Good AK8 jets", "Events/bin"); // //
 
   cp2->cd(6);
-  plotvar(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   0., 1800., 20,      1, 0,  title_str, "AK8 p_{T} (GeV)", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   0., 1600., 20,      1, 0,  title_str, "AK8 p_{T} (GeV)", "Events/bin");
 
   cp2->cd(7);
-  plotvar(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -3.5, 3.5, .25,   0, 0,  title_str, "AK8 #eta", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -3.0, 3.0, .2,   0, 0,  title_str, "AK8 #eta", "Events/bin");
 
   cp2->cd(8);
-  plotvar(anl, "bos_PuppiAK8_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,  title_str, "AK8 #phi", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_phi", cuts,  1.0, 1, 0,  -1.8*TMath::Pi(), 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,  title_str, "AK8 #phi", "Events/bin");
 
   cp2->cd(9);
-  plotvar(anl, "bos_PuppiAK8_m_sd0_corr", cuts,  1.0, 1, 0,  0., 200, 10,   1, 0,  title_str, "AK8  Mass sd0_corr", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_m_sd0_corr", cuts,  1.0, 1, 0,  20., 180, 5,   1, 0,  title_str, "AK8  Mass sd0_corr", "Events/bin");
 
 
   //cp2->cd(8);
@@ -1975,31 +1974,31 @@ outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
   cp3->Divide(3,3);
 
   cp3->cd(1);
-  plotvar(anl, "dibos_m", cuts,  1.0, 1, 0,  0., 1500, 20,   1, 0,  title_str, "Diboson Mass", "Events/bin");
+  plotvar(anl, "dibos_m", cuts,  1.0, 1, 0,  0., 1500, 50,   1, 0,  title_str, "Diboson Mass", "Events/bin");
 
   cp3->cd(2);
-  plotvar(anl, "dibos_mt", cuts, 1.0, 1, 0, 0., 2000, 20, 1, 0, title_str, "Diboson mt", "Events/bin");
+  plotvar(anl, "dibos_mt", cuts, 1.0, 1, 0, 0., 2000, 50, 1, 0, title_str, "Diboson mt", "Events/bin");
 
   cp3->cd(3);
-  plotvar(anl, "dibos_pt", cuts, 1.0, 1, 0, 0., 1000, 20, 1, 0, title_str, "Diboson pt", "Events/bin");
+  plotvar(anl, "dibos_pt", cuts, 1.0, 1, 0, 0., 1000, 25, 1, 0, title_str, "Diboson pt", "Events/bin");
 
   cp3->cd(4);
-  plotvar(anl, "dibos_eta", cuts, 1.0, 1, 0, -6., 6., 0.25, 0, 0, title_str, "Diboson eta", "Events/bin");
+  plotvar(anl, "dibos_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, title_str, "Diboson eta", "Events/bin");
 
   cp3->cd(5);
-  plotvar(anl, "dibos_phi", cuts, 1.0, 1, 0, -6., 6., 0.25, 0, 0, title_str, "Diboson phi", "Events/bin");
+  plotvar(anl, "dibos_phi", cuts, 1.0, 1, 0, -4., 4., 0.25, 0, 0, title_str, "Diboson phi", "Events/bin");
 
   cp3->cd(6);
-  plotvar(anl, "dilep_mt", cuts, 1.0, 1, 0, 0., 1000, 20, 1, 0, title_str, "Dilepton mt", "Events/bin");
+  plotvar(anl, "dilep_mt", cuts, 1.0, 1, 0, 0., 1000, 25, 1, 0, title_str, "Dilepton mt", "Events/bin");
 
   cp3->cd(7);
-  plotvar(anl, "dilep_m", cuts, 1.0, 1, 0, 0., 1000, 20, 1, 0, title_str, "Dilepton mass", "Events/bin");
+  plotvar(anl, "dilep_m", cuts, 1.0, 1, 0, 0., 1000, 25, 1, 0, title_str, "Dilepton mass", "Events/bin");
 
   cp3->cd(8);
-  plotvar(anl, "dilep_eta", cuts, 1.0, 1, 0, -8., 8., 1, 0, 0, title_str, "Dilepton eta", "Events/bin");
+  plotvar(anl, "dilep_eta", cuts, 1.0, 1, 0, -4., 4., 0.25, 0, 0, title_str, "Dilepton eta", "Events/bin");
 
   cp3->cd(9);
-  plotvar(anl, "dilep_pt", cuts, 1.0, 1, 0, 0., 800, 20, 1, 0, title_str, "Dilepton pt", "Events/bin");
+  plotvar(anl, "dilep_pt", cuts, 1.0, 1, 0, 0., 1200, 25, 1, 0, title_str, "Dilepton pt", "Events/bin");
 
   // plotvar(anl, "PuppiAK8_jet_mass",         cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 mass (GeV)",           "Events/bin");
   // plotvar(anl, "PuppiAK8_jet_mass_pr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 pruned mass (GeV)",    "Events/bin");
