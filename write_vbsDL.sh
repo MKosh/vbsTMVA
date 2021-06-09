@@ -25,7 +25,7 @@ else
     Trees="Events"
 fi
 
-rootFiles="/mnt/$1/" # $1 = d/2016 or g/2016 on my desktop
+rootFiles="/mnt/$1/" # $1 = g/2016/haddedFiles on my flashdrive, or on my desktop e/Research/ntuples/NEW/2016/haddedFiles
 now=$(date)
 
 macroFile="write_list.C"
@@ -58,7 +58,6 @@ done
 cat >> $macroFile << EOF
     };
 
-    // string location="~/documents/ntuples/"; // on my personal laptop
     string location="$rootFiles"; // on my personal desktop
     //TFile *outfile = new TFile("var_list.txt", "RECREATE");
     std::ofstream ofs ("var_list.txt", std::ofstream::out);
@@ -170,35 +169,35 @@ rm list_of_branches.txt
 
 # --------------------------------------------------------- Start - Create vbsDL.hpp file - Start -----------------------------------------------------------------
  
-if [ $2 == "set2016" ]; then
+if [ $2 == "set1" ]; then
     # These are the variables for the new ntuples.
-    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0"
-    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
-    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
-    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0"
+    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt dibos_m dilep_eta dilep_m bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_pt bos_AK4AK4_m"
+    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta $TMVAVARS"
+    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad"
+    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
     plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "set2" ]; then
-    TMVAVARS="lep1_pt lep1_eta MET vbf_m vbf_pt vbf_deta vbf_eta vbf_phi bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 bos_PuppiAK8_m_sd0_corr dibos_m dibos_eta dibos_phi dibos_pt vbf2_AK4_eta vbf1_AK4_eta vbf1_AK4_pt vbf2_AK4_pt bosCent zeppLep zeppHad"
-    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
-    plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
-    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0"
+    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0 vbf1_AK4_axis2 bos_AK4AK4_m bos_AK4AK4_pt bos_AK4AK4_eta bos_AK4AK4_phi"
+    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose LHEWeight lep1_idEffWeight lep1_trigEffWeight bos_AK4AK4_phi bos_AK4AK4_eta $TMVAVARS"
+    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad"
+    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_AK4AK4_m bos_AK4AK4_phi bos_AK4AK4_pt bos_AK4AK4_eta"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $2 == "set3" ]; then
-    TMVAVARS="lep1_pt lep1_eta MET vbf_m vbf_pt vbf_deta vbf_eta vbf_phi bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 bos_PuppiAK8_m_sd0_corr dibos_m dibos_eta dibos_phi dibos_pt vbf2_AK4_eta vbf1_AK4_eta vbf1_AK4_pt vbf2_AK4_pt bosCent zeppLep zeppHad"
-    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
-    plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
-    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0"
+elif [ $2 == "set3" ]; then # set2 backup
+    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0 vbf1_AK4_axis2 bos_AK4AK4_m bos_AK4AK4_pt bos_AK4AK4_eta bos_AK4AK4_phi"
+    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose LHEWeight lep1_idEffWeight lep1_trigEffWeight bos_AK4AK4_phi bos_AK4AK4_eta $TMVAVARS"
+    plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad"
+    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_AK4AK4_m bos_AK4AK4_phi bos_AK4AK4_pt bos_AK4AK4_eta"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $2 == "set4" ]; then
-    TMVAVARS="lep1_pt lep1_eta MET vbf_m vbf_pt vbf_deta vbf_eta vbf_phi bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 bos_PuppiAK8_m_sd0_corr dibos_m dibos_eta dibos_phi dibos_pt vbf2_AK4_eta vbf1_AK4_eta vbf1_AK4_pt vbf2_AK4_pt bosCent zeppLep zeppHad"
+elif [ $2 == "set4" ]; then # set2016 backup
+    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0"
     activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
-    plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
+    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
     plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt"

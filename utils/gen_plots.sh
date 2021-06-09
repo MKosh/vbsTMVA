@@ -5,6 +5,8 @@
 #       Reads the contents of the plots/####/ folders and adds an \includegraphics 
 #       command and a caption for each plot found
 
+echo "Starting to generate the plots.tex file"
+
 plot_file="docs/plots.tex"
 
 if [ -f $plot_file ]; then rm -f $plot_file; fi
@@ -72,4 +74,5 @@ done
 
 echo "\end{document}" >> $plot_file
     
+echo "Done generating plots.tex file"
 

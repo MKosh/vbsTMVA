@@ -10,7 +10,7 @@ Method         : Fisher::Fisher
 TMVA Release   : 4.2.1         [262657]
 ROOT Release   : 6.22/02       [398850]
 Creator        : mmekosh
-Date           : Tue May 18 19:14:31 2021
+Date           : Tue Jun  8 21:01:18 2021
 Host           : Linux 7ed0a80d5e2e 4.15.0-1092-azure #102~16.04.1-Ubuntu SMP Tue Jul 14 20:28:23 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 Dir            : /home/mmekosh/documents/research/vbstmva_new/vbsTMVA
 Training events: 8191819
@@ -33,39 +33,36 @@ IgnoreNegWeightsInTraining: "False" [Events with negative weights are ignored in
 
 #VAR -*-*-*-*-*-*-*-*-*-*-*-* variables *-*-*-*-*-*-*-*-*-*-*-*-
 
-NVar 23
-MET                           MET                           MET                           MET                                                             'F'    [0.0256986822933,5291.51220703]
-bosCent                       bosCent                       bosCent                       bosCent                                                         'F'    [-999,4.9907951355]
-bos_PuppiAK8_eta              bos_PuppiAK8_eta              bos_PuppiAK8_eta              bos_PuppiAK8_eta                                                'F'    [-999,2.39990234375]
+NVar 17
+bos_AK4AK4_m                  bos_AK4AK4_m                  bos_AK4AK4_m                  bos_AK4AK4_m                                                    'F'    [-999,149.999969482]
 bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr                                         'F'    [-999,150]
 bos_PuppiAK8_pt               bos_PuppiAK8_pt               bos_PuppiAK8_pt               bos_PuppiAK8_pt                                                 'F'    [-999,4148]
 bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1                                           'F'    [-999,0.971002459526]
-dibos_eta                     dibos_eta                     dibos_eta                     dibos_eta                                                       'F'    [-8.52828121185,9.63391304016]
 dibos_m                       dibos_m                       dibos_m                       dibos_m                                                         'F'    [64.0818557739,6769.03027344]
-dibos_phi                     dibos_phi                     dibos_phi                     dibos_phi                                                       'F'    [-3.14159250259,3.14159250259]
 dibos_pt                      dibos_pt                      dibos_pt                      dibos_pt                                                        'F'    [0.0340717732906,5471.32373047]
+dilep_eta                     dilep_eta                     dilep_eta                     dilep_eta                                                       'F'    [-7.98851013184,8.1737985611]
+dilep_m                       dilep_m                       dilep_m                       dilep_m                                                         'F'    [0.136729747057,4681.63037109]
 lep1_eta                      lep1_eta                      lep1_eta                      lep1_eta                                                        'F'    [-2.5,2.5]
 lep1_pt                       lep1_pt                       lep1_pt                       lep1_pt                                                         'F'    [19.4175376892,2898.93847656]
-vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                                                    'F'    [-6.3095703125,8.09375]
 vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                                                     'F'    [28.2938537598,5627.08105469]
 vbf2_AK4_eta                  vbf2_AK4_eta                  vbf2_AK4_eta                  vbf2_AK4_eta                                                    'F'    [-7.2998046875,8.48828125]
 vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                                                     'F'    [15.640625,4346.08251953]
 vbf_deta                      vbf_deta                      vbf_deta                      vbf_deta                                                        'F'    [0.0011616833508,11.8237304688]
-vbf_eta                       vbf_eta                       vbf_eta                       vbf_eta                                                         'F'    [-10.2593603134,10.7364139557]
 vbf_m                         vbf_m                         vbf_m                         vbf_m                                                           'F'    [500,14693.4345703]
-vbf_phi                       vbf_phi                       vbf_phi                       vbf_phi                                                         'F'    [-3.14159250259,3.1415913105]
 vbf_pt                        vbf_pt                        vbf_pt                        vbf_pt                                                          'F'    [0.0345152169466,5624.41992188]
-zeppHad                       zeppHad                       zeppHad                       zeppHad                                                         'F'    [-10.4547739029,8.45154094696]
 zeppLep                       zeppLep                       zeppLep                       zeppLep                                                         'F'    [-9.65757751465,8.77977752686]
-NSpec 28
+NSpec 33
 L1PFWeight                    L1PFWeight                    L1PFWeight                    L1PFWeight                                                      'F'    [0.0752711370587,1]
+MET                           MET                           MET                           MET                                                             'F'    [0.0256986822933,5291.51220703]
 MET_phi                       MET_phi                       MET_phi                       MET_phi                                                         'F'    [-3.14159178734,3.14159035683]
+bos_AK4AK4_eta                bos_AK4AK4_eta                bos_AK4AK4_eta                bos_AK4AK4_eta                                                  'F'    [-999,8.17678928375]
+bos_PuppiAK8_eta              bos_PuppiAK8_eta              bos_PuppiAK8_eta              bos_PuppiAK8_eta                                                'F'    [-999,2.39990234375]
 bos_PuppiAK8_m_sd0            bos_PuppiAK8_m_sd0            bos_PuppiAK8_m_sd0            bos_PuppiAK8_m_sd0                                              'F'    [-999,150]
 bos_PuppiAK8_phi              bos_PuppiAK8_phi              bos_PuppiAK8_phi              bos_PuppiAK8_phi                                                'F'    [-999,3.1416015625]
 btagWeight_loose              btagWeight_loose              btagWeight_loose              btagWeight_loose                                                'F'    [0.620844304562,2.22360301018]
+dibos_eta                     dibos_eta                     dibos_eta                     dibos_eta                                                       'F'    [-8.52828121185,9.63391304016]
 dibos_mt                      dibos_mt                      dibos_mt                      dibos_mt                                                        'F'    [94.3282012939,6801.25732422]
-dilep_eta                     dilep_eta                     dilep_eta                     dilep_eta                                                       'F'    [-7.98851013184,8.1737985611]
-dilep_m                       dilep_m                       dilep_m                       dilep_m                                                         'F'    [0.136729747057,4681.63037109]
+dibos_phi                     dibos_phi                     dibos_phi                     dibos_phi                                                       'F'    [-3.14159250259,3.14159250259]
 dilep_mt                      dilep_mt                      dilep_mt                      dilep_mt                                                        'F'    [20.1207351685,5499.26757812]
 dilep_phi                     dilep_phi                     dilep_phi                     dilep_phi                                                       'F'    [-3.1415913105,3.14159154892]
 dilep_pt                      dilep_pt                      dilep_pt                      dilep_pt                                                        'F'    [0.0419543683529,5344.53173828]
@@ -86,6 +83,8 @@ neu_pz_type0                  neu_pz_type0                  neu_pz_type0        
 puWeight                      puWeight                      puWeight                      puWeight                                                        'F'    [0,1.20750808716]
 run                           run                           run                           run                                                             'F'    [1,1]
 sid                           sid                           sid                           sid                                                             'F'    [100,1100]
+vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                                                    'F'    [-6.3095703125,8.09375]
+zeppHad                       zeppHad                       zeppHad                       zeppHad                                                         'F'    [-10.4547739029,8.45154094696]
 
 
 ============================================================================ */
@@ -128,10 +127,10 @@ class ReadFisher : public IClassifierReader {
    ReadFisher( std::vector<std::string>& theInputVars )
       : IClassifierReader(),
         fClassName( "ReadFisher" ),
-        fNvars( 23 )
+        fNvars( 17 )
    {
       // the training input variables
-      const char* inputVars[] = { "MET", "bosCent", "bos_PuppiAK8_eta", "bos_PuppiAK8_m_sd0_corr", "bos_PuppiAK8_pt", "bos_PuppiAK8_tau2tau1", "dibos_eta", "dibos_m", "dibos_phi", "dibos_pt", "lep1_eta", "lep1_pt", "vbf1_AK4_eta", "vbf1_AK4_pt", "vbf2_AK4_eta", "vbf2_AK4_pt", "vbf_deta", "vbf_eta", "vbf_m", "vbf_phi", "vbf_pt", "zeppHad", "zeppLep" };
+      const char* inputVars[] = { "bos_AK4AK4_m", "bos_PuppiAK8_m_sd0_corr", "bos_PuppiAK8_pt", "bos_PuppiAK8_tau2tau1", "dibos_m", "dibos_pt", "dilep_eta", "dilep_m", "lep1_eta", "lep1_pt", "vbf1_AK4_pt", "vbf2_AK4_eta", "vbf2_AK4_pt", "vbf_deta", "vbf_m", "vbf_pt", "zeppLep" };
 
       // sanity checks
       if (theInputVars.size() <= 0) {
@@ -189,18 +188,6 @@ class ReadFisher : public IClassifierReader {
       fVmax[15] = 0;
       fVmin[16] = 0;
       fVmax[16] = 0;
-      fVmin[17] = 0;
-      fVmax[17] = 0;
-      fVmin[18] = 0;
-      fVmax[18] = 0;
-      fVmin[19] = 0;
-      fVmax[19] = 0;
-      fVmin[20] = 0;
-      fVmax[20] = 0;
-      fVmin[21] = 0;
-      fVmax[21] = 0;
-      fVmin[22] = 0;
-      fVmax[22] = 0;
 
       // initialize input variable types
       fType[0] = 'F';
@@ -220,12 +207,6 @@ class ReadFisher : public IClassifierReader {
       fType[14] = 'F';
       fType[15] = 'F';
       fType[16] = 'F';
-      fType[17] = 'F';
-      fType[18] = 'F';
-      fType[19] = 'F';
-      fType[20] = 'F';
-      fType[21] = 'F';
-      fType[22] = 'F';
 
       // initialize constants
       Initialize();
@@ -255,15 +236,15 @@ class ReadFisher : public IClassifierReader {
    char   GetType( int ivar ) const { return fType[ivar]; }
 
    // normalisation of input variables
-   double fVmin[23];
-   double fVmax[23];
+   double fVmin[17];
+   double fVmax[17];
    double NormVariable( double x, double xmin, double xmax ) const {
       // normalise to output range: [-1, 1]
       return 2*(x - xmin)/(xmax - xmin) - 1.0;
    }
 
    // type of input variable: 'F' or 'I'
-   char   fType[23];
+   char   fType[17];
 
    // initialize internal variables
    void Initialize();
@@ -276,30 +257,24 @@ class ReadFisher : public IClassifierReader {
 
 inline void ReadFisher::Initialize() 
 {
-   fFisher0 = 0.0852143093209;
-   fFisherCoefficients.push_back( -2.00741348422e-08 );
-   fFisherCoefficients.push_back( 2.37652050447e-05 );
-   fFisherCoefficients.push_back( 0.00653276639025 );
-   fFisherCoefficients.push_back( 0.000783928142024 );
-   fFisherCoefficients.push_back( -4.9867388209e-05 );
-   fFisherCoefficients.push_back( -0.00731765926948 );
-   fFisherCoefficients.push_back( -0.0013002987269 );
-   fFisherCoefficients.push_back( 3.31948897065e-05 );
-   fFisherCoefficients.push_back( 4.71789261254e-05 );
-   fFisherCoefficients.push_back( 5.77320387349e-05 );
-   fFisherCoefficients.push_back( -0.000383997927225 );
-   fFisherCoefficients.push_back( 8.01979916684e-07 );
-   fFisherCoefficients.push_back( 0.000919212138898 );
-   fFisherCoefficients.push_back( -0.000176879957776 );
-   fFisherCoefficients.push_back( 0.000733247705761 );
-   fFisherCoefficients.push_back( -0.000154736497586 );
-   fFisherCoefficients.push_back( -0.0449474910057 );
-   fFisherCoefficients.push_back( -0.000150871125785 );
-   fFisherCoefficients.push_back( 9.82568828711e-05 );
-   fFisherCoefficients.push_back( 0.000171208412016 );
-   fFisherCoefficients.push_back( -1.34720372846e-05 );
-   fFisherCoefficients.push_back( 0.000419274137321 );
-   fFisherCoefficients.push_back( 0.000928578313896 );
+   fFisher0 = -0.124424810086;
+   fFisherCoefficients.push_back( -0.000219740395079 );
+   fFisherCoefficients.push_back( 0.000779103590845 );
+   fFisherCoefficients.push_back( -0.00011147560578 );
+   fFisherCoefficients.push_back( -0.000952610414363 );
+   fFisherCoefficients.push_back( 9.46352961045e-05 );
+   fFisherCoefficients.push_back( 8.27300847724e-05 );
+   fFisherCoefficients.push_back( 0.00037777324068 );
+   fFisherCoefficients.push_back( -0.000328674455041 );
+   fFisherCoefficients.push_back( -0.000667620442957 );
+   fFisherCoefficients.push_back( 1.08529155637e-05 );
+   fFisherCoefficients.push_back( -0.000169815895426 );
+   fFisherCoefficients.push_back( -9.13179170965e-05 );
+   fFisherCoefficients.push_back( -0.000149161383854 );
+   fFisherCoefficients.push_back( -0.0439684253562 );
+   fFisherCoefficients.push_back( 9.74540940976e-05 );
+   fFisherCoefficients.push_back( -1.74402002168e-05 );
+   fFisherCoefficients.push_back( 9.73859725247e-05 );
 
    // sanity check
    if (fFisherCoefficients.size() != fNvars) {

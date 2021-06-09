@@ -4,11 +4,11 @@
     <Info name="TMVA Release" value="4.2.1 [262657]"/>
     <Info name="ROOT Release" value="6.22/02 [398850]"/>
     <Info name="Creator" value="mmekosh"/>
-    <Info name="Date" value="Sun May 30 15:28:07 2021"/>
+    <Info name="Date" value="Tue Jun  8 09:19:50 2021"/>
     <Info name="Host" value="Linux 7ed0a80d5e2e 4.15.0-1092-azure #102~16.04.1-Ubuntu SMP Tue Jul 14 20:28:23 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux"/>
     <Info name="Dir" value="/home/mmekosh/documents/research/vbstmva_new/vbsTMVA"/>
     <Info name="Training events" value="1503261"/>
-    <Info name="TrainingTime" value="6.19831548e+02"/>
+    <Info name="TrainingTime" value="5.91556789e+02"/>
     <Info name="AnalysisType" value="Classification"/>
   </GeneralInfo>
   <Options>

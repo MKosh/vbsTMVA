@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<MethodSetup Method="Fisher::Fisher">
+  <GeneralInfo>
+    <Info name="TMVA Release" value="4.2.1 [262657]"/>
+    <Info name="ROOT Release" value="6.22/02 [398850]"/>
+    <Info name="Creator" value="mmekosh"/>
+    <Info name="Date" value="Wed Jun  9 15:19:18 2021"/>
+    <Info name="Host" value="Linux 7ed0a80d5e2e 4.15.0-1092-azure #102~16.04.1-Ubuntu SMP Tue Jul 14 20:28:23 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux"/>
+    <Info name="Dir" value="/home/mmekosh/documents/research/vbstmva_new/vbsTMVA"/>
+    <Info name="Training events" value="14837800"/>
+    <Info name="TrainingTime" value="3.29187350e+01"/>
+    <Info name="AnalysisType" value="Classification"/>
+  </GeneralInfo>
+  <Options>
+    <Option name="V" modified="Yes">False</Option>
+    <Option name="VerbosityLevel" modified="No">Default</Option>
+    <Option name="VarTransform" modified="Yes">None</Option>
+    <Option name="H" modified="Yes">True</Option>
+    <Option name="CreateMVAPdfs" modified="Yes">True</Option>
+    <Option name="IgnoreNegWeightsInTraining" modified="No">False</Option>
+    <Option name="Method" modified="Yes">Fisher</Option>
+  </Options>
+  <Variables NVar="17">
+    <Variable VarIndex="0" Expression="bos_AK4AK4_m" Label="bos_AK4AK4_m" Title="bos_AK4AK4_m" Unit="" Internal="bos_AK4AK4_m" Type="F" Min="-9.99000000e+02" Max="1.50000000e+02"/>
+    <Variable VarIndex="1" Expression="bos_PuppiAK8_m_sd0_corr" Label="bos_PuppiAK8_m_sd0_corr" Title="bos_PuppiAK8_m_sd0_corr" Unit="" Internal="bos_PuppiAK8_m_sd0_corr" Type="F" Min="-9.99000000e+02" Max="1.50000000e+02"/>
+    <Variable VarIndex="2" Expression="bos_PuppiAK8_pt" Label="bos_PuppiAK8_pt" Title="bos_PuppiAK8_pt" Unit="" Internal="bos_PuppiAK8_pt" Type="F" Min="-9.99000000e+02" Max="4.92000000e+03"/>
+    <Variable VarIndex="3" Expression="bos_PuppiAK8_tau2tau1" Label="bos_PuppiAK8_tau2tau1" Title="bos_PuppiAK8_tau2tau1" Unit="" Internal="bos_PuppiAK8_tau2tau1" Type="F" Min="-9.99000000e+02" Max="9.69037652e-01"/>
+    <Variable VarIndex="4" Expression="dibos_m" Label="dibos_m" Title="dibos_m" Unit="" Internal="dibos_m" Type="F" Min="5.50915222e+01" Max="7.57008496e+03"/>
+    <Variable VarIndex="5" Expression="dibos_pt" Label="dibos_pt" Title="dibos_pt" Unit="" Internal="dibos_pt" Type="F" Min="8.39652307e-03" Max="4.87662012e+03"/>
+    <Variable VarIndex="6" Expression="dilep_eta" Label="dilep_eta" Title="dilep_eta" Unit="" Internal="dilep_eta" Type="F" Min="-8.59750462e+00" Max="8.84435940e+00"/>
+    <Variable VarIndex="7" Expression="dilep_m" Label="dilep_m" Title="dilep_m" Unit="" Internal="dilep_m" Type="F" Min="6.07198849e-02" Max="3.50788818e+03"/>
+    <Variable VarIndex="8" Expression="lep1_eta" Label="lep1_eta" Title="lep1_eta" Unit="" Internal="lep1_eta" Type="F" Min="-2.50000000e+00" Max="2.50000000e+00"/>
+    <Variable VarIndex="9" Expression="lep1_pt" Label="lep1_pt" Title="lep1_pt" Unit="" Internal="lep1_pt" Type="F" Min="1.94176655e+01" Max="3.41438184e+03"/>
+    <Variable VarIndex="10" Expression="vbf1_AK4_pt" Label="vbf1_AK4_pt" Title="vbf1_AK4_pt" Unit="" Internal="vbf1_AK4_pt" Type="F" Min="2.78281002e+01" Max="5.47295166e+03"/>
+    <Variable VarIndex="11" Expression="vbf2_AK4_eta" Label="vbf2_AK4_eta" Title="vbf2_AK4_eta" Unit="" Internal="vbf2_AK4_eta" Type="F" Min="-7.25976562e+00" Max="9.30859375e+00"/>
+    <Variable VarIndex="12" Expression="vbf2_AK4_pt" Label="vbf2_AK4_pt" Title="vbf2_AK4_pt" Unit="" Internal="vbf2_AK4_pt" Type="F" Min="1.57265625e+01" Max="3.15847290e+03"/>
+    <Variable VarIndex="13" Expression="vbf_deta" Label="vbf_deta" Title="vbf_deta" Unit="" Internal="vbf_deta" Type="F" Min="2.25853920e-03" Max="1.25283203e+01"/>
+    <Variable VarIndex="14" Expression="vbf_m" Label="vbf_m" Title="vbf_m" Unit="" Internal="vbf_m" Type="F" Min="5.00000031e+02" Max="2.01787988e+04"/>
+    <Variable VarIndex="15" Expression="vbf_pt" Label="vbf_pt" Title="vbf_pt" Unit="" Internal="vbf_pt" Type="F" Min="1.76219400e-02" Max="5.42689160e+03"/>
+    <Variable VarIndex="16" Expression="zeppLep" Label="zeppLep" Title="zeppLep" Unit="" Internal="zeppLep" Type="F" Min="-9.25741673e+00" Max="9.88655758e+00"/>
+  </Variables>
+  <Spectators NSpec="33">
+    <Spectator SpecIndex="0" Expression="L1PFWeight" Label="L1PFWeight" Title="L1PFWeight" Unit="" Internal="L1PFWeight" Type="F" Min="1.00000000e+00" Max="1.00000000e+00"/>
+    <Spectator SpecIndex="1" Expression="MET" Label="MET" Title="MET" Unit="" Internal="MET" Type="F" Min="1.89485718e-02" Max="4.80310596e+03"/>
+    <Spectator SpecIndex="2" Expression="MET_phi" Label="MET_phi" Title="MET_phi" Unit="" Internal="MET_phi" Type="F" Min="-3.14159250e+00" Max="3.14159203e+00"/>
+    <Spectator SpecIndex="3" Expression="bos_AK4AK4_eta" Label="bos_AK4AK4_eta" Title="bos_AK4AK4_eta" Unit="" Internal="bos_AK4AK4_eta" Type="F" Min="-9.99000000e+02" Max="9.09597969e+00"/>
+    <Spectator SpecIndex="4" Expression="bos_PuppiAK8_eta" Label="bos_PuppiAK8_eta" Title="bos_PuppiAK8_eta" Unit="" Internal="bos_PuppiAK8_eta" Type="F" Min="-9.99000000e+02" Max="2.39990234e+00"/>
+    <Spectator SpecIndex="5" Expression="bos_PuppiAK8_m_sd0" Label="bos_PuppiAK8_m_sd0" Title="bos_PuppiAK8_m_sd0" Unit="" Internal="bos_PuppiAK8_m_sd0" Type="F" Min="-9.99000000e+02" Max="1.50000000e+02"/>
+    <Spectator SpecIndex="6" Expression="bos_PuppiAK8_phi" Label="bos_PuppiAK8_phi" Title="bos_PuppiAK8_phi" Unit="" Internal="bos_PuppiAK8_phi" Type="F" Min="-9.99000000e+02" Max="3.14160156e+00"/>
+    <Spectator SpecIndex="7" Expression="btagWeight_loose" Label="btagWeight_loose" Title="btagWeight_loose" Unit="" Internal="btagWeight_loose" Type="F" Min="4.41323757e-01" Max="1.32104187e+01"/>
+    <Spectator SpecIndex="8" Expression="dibos_eta" Label="dibos_eta" Title="dibos_eta" Unit="" Internal="dibos_eta" Type="F" Min="-1.14983072e+01" Max="9.29842663e+00"/>
+    <Spectator SpecIndex="9" Expression="dibos_mt" Label="dibos_mt" Title="dibos_mt" Unit="" Internal="dibos_mt" Type="F" Min="9.98344116e+01" Max="7.57543213e+03"/>
+    <Spectator SpecIndex="10" Expression="dibos_phi" Label="dibos_phi" Title="dibos_phi" Unit="" Internal="dibos_phi" Type="F" Min="-3.14159250e+00" Max="3.14159226e+00"/>
+    <Spectator SpecIndex="11" Expression="dilep_mt" Label="dilep_mt" Title="dilep_mt" Unit="" Internal="dilep_mt" Type="F" Min="2.04362717e+01" Max="5.02220166e+03"/>
+    <Spectator SpecIndex="12" Expression="dilep_phi" Label="dilep_phi" Title="dilep_phi" Unit="" Internal="dilep_phi" Type="F" Min="-3.14159226e+00" Max="3.14159250e+00"/>
+    <Spectator SpecIndex="13" Expression="dilep_pt" Label="dilep_pt" Title="dilep_pt" Unit="" Internal="dilep_pt" Type="F" Min="1.04713691e-02" Max="4.83545410e+03"/>
+    <Spectator SpecIndex="14" Expression="evt" Label="evt" Title="evt" Unit="" Internal="evt" Type="F" Min="1.00000000e+00" Max="2.00000000e+08"/>
+    <Spectator SpecIndex="15" Expression="genWeight" Label="genWeight" Title="genWeight" Unit="" Internal="genWeight" Type="F" Min="-3.16468750e+02" Max="3.16468750e+02"/>
+    <Spectator SpecIndex="16" Expression="gid" Label="gid" Title="gid" Unit="" Internal="gid" Type="F" Min="1.00000000e+00" Max="1.50000000e+01"/>
+    <Spectator SpecIndex="17" Expression="lep1_iso" Label="lep1_iso" Title="lep1_iso" Unit="" Internal="lep1_iso" Type="F" Min="0.00000000e+00" Max="2.49999657e-01"/>
+    <Spectator SpecIndex="18" Expression="lep1_m" Label="lep1_m" Title="lep1_m" Unit="" Internal="lep1_m" Type="F" Min="5.10999991e-04" Max="1.05658375e-01"/>
+    <Spectator SpecIndex="19" Expression="lep1_phi" Label="lep1_phi" Title="lep1_phi" Unit="" Internal="lep1_phi" Type="F" Min="-3.14160156e+00" Max="3.14160156e+00"/>
+    <Spectator SpecIndex="20" Expression="lep1_q" Label="lep1_q" Title="lep1_q" Unit="" Internal="lep1_q" Type="F" Min="-1.00000000e+00" Max="1.00000000e+00"/>
+    <Spectator SpecIndex="21" Expression="lep2_eta" Label="lep2_eta" Title="lep2_eta" Unit="" Internal="lep2_eta" Type="F" Min="-9.99000000e+02" Max="2.50000000e+00"/>
+    <Spectator SpecIndex="22" Expression="lep2_pt" Label="lep2_pt" Title="lep2_pt" Unit="" Internal="lep2_pt" Type="F" Min="-9.99000000e+02" Max="1.49877551e+03"/>
+    <Spectator SpecIndex="23" Expression="mcWeight" Label="mcWeight" Title="mcWeight" Unit="" Internal="mcWeight" Type="F" Min="2.50862531e-09" Max="4.74720946e-05"/>
+    <Spectator SpecIndex="24" Expression="nBtag_loose" Label="nBtag_loose" Title="nBtag_loose" Unit="" Internal="nBtag_loose" Type="F" Min="0.00000000e+00" Max="1.00000000e+01"/>
+    <Spectator SpecIndex="25" Expression="nBtag_medium" Label="nBtag_medium" Title="nBtag_medium" Unit="" Internal="nBtag_medium" Type="F" Min="0.00000000e+00" Max="7.00000000e+00"/>
+    <Spectator SpecIndex="26" Expression="nPV" Label="nPV" Title="nPV" Unit="" Internal="nPV" Type="F" Min="1.00000000e+00" Max="1.31000000e+02"/>
+    <Spectator SpecIndex="27" Expression="neu_pz_type0" Label="neu_pz_type0" Title="neu_pz_type0" Unit="" Internal="neu_pz_type0" Type="F" Min="-9.99000000e+02" Max="-9.99000000e+02"/>
+    <Spectator SpecIndex="28" Expression="puWeight" Label="puWeight" Title="puWeight" Unit="" Internal="puWeight" Type="F" Min="0.00000000e+00" Max="4.69509277e+01"/>
+    <Spectator SpecIndex="29" Expression="run" Label="run" Title="run" Unit="" Internal="run" Type="F" Min="1.00000000e+00" Max="1.00000000e+00"/>
+    <Spectator SpecIndex="30" Expression="sid" Label="sid" Title="sid" Unit="" Internal="sid" Type="F" Min="1.00000000e+02" Max="1.10000000e+03"/>
+    <Spectator SpecIndex="31" Expression="vbf1_AK4_eta" Label="vbf1_AK4_eta" Title="vbf1_AK4_eta" Unit="" Internal="vbf1_AK4_eta" Type="F" Min="-5.52148438e+00" Max="8.47460938e+00"/>
+    <Spectator SpecIndex="32" Expression="zeppHad" Label="zeppHad" Title="zeppHad" Unit="" Internal="zeppHad" Type="F" Min="-1.07694626e+01" Max="9.97235775e+00"/>
+  </Spectators>
+  <Classes NClass="2">
+    <Class Name="Signal" Index="0"/>
+    <Class Name="Background" Index="1"/>
+  </Classes>
+  <Transformations NTransformations="0"/>
+  <MVAPdfs>
+    <PDF Name="Fisher_PDFSig" MinNSmooth="10" MaxNSmooth="10" InterpolMethod="2" KDE_type="1" KDE_iter="1" KDE_border="1" KDE_finefactor="1.0000000000000000e+00">
+      <Histogram Name="Fisher_tr_S_original" NBins="50" XMin="-9.2059546709060669e-01" XMax="2.2457346916198730e+00" HasEquidistantBins="1">
+        0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 2.89221518e-05 0.00000000e+00 5.97148793e-05 2.34473045e-04 2.45815807e-03 2.45510992e-01 3.13233295e+00 5.97953129e+00 4.31788915e+00 1.42121874e+00 4.24544812e-01 1.52092674e-01 6.40932579e-02 2.81799370e-02 1.22973117e-02 5.79346411e-03 2.71650182e-03 1.09477129e-03 5.04152078e-04 4.04177625e-04 1.26819785e-04 3.94776452e-05 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 
+      </Histogram>
+    </PDF>
+    <PDF Name="Fisher_PDFBkg" MinNSmooth="10" MaxNSmooth="10" InterpolMethod="2" KDE_type="1" KDE_iter="1" KDE_border="1" KDE_finefactor="1.0000000000000000e+00">
+      <Histogram Name="Fisher_tr_B_original" NBins="50" XMin="-9.2059546709060669e-01" XMax="2.2457346916198730e+00" HasEquidistantBins="1">
+        4.47495801e-07 2.55140753e-07 3.41276933e-07 2.56114072e-07 4.07460626e-07 2.30919182e-06 5.35217123e-06 1.04070880e-05 6.62080773e-05 1.44997942e-04 7.50472617e-04 1.40793620e-02 1.20212840e+00 6.15004729e+00 5.48082991e+00 2.31386170e+00 5.01084100e-01 9.40431104e-02 2.27657303e-02 7.53704823e-03 2.02360046e-03 9.13175917e-04 4.57746581e-04 2.26042987e-04 1.65234476e-04 5.20053716e-06 1.75235236e-06 2.04277250e-08 0.00000000e+00 0.00000000e+00 8.52540940e-07 0.00000000e+00 1.36184833e-08 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 
+      </Histogram>
+    </PDF>
+  </MVAPdfs>
+  <Weights NCoeff="18">
+    <Coefficient Index="0" Value="-1.5929855899789741e-01"/>
+    <Coefficient Index="1" Value="-2.8176040456627402e-04"/>
+    <Coefficient Index="2" Value="1.5370923757635486e-03"/>
+    <Coefficient Index="3" Value="-1.3839407858840932e-04"/>
+    <Coefficient Index="4" Value="-1.7920674303141741e-03"/>
+    <Coefficient Index="5" Value="1.0483890022311112e-04"/>
+    <Coefficient Index="6" Value="1.3695755194358900e-04"/>
+    <Coefficient Index="7" Value="-4.4036701567806919e-04"/>
+    <Coefficient Index="8" Value="-3.9130712765304902e-04"/>
+    <Coefficient Index="9" Value="3.1234348435424041e-05"/>
+    <Coefficient Index="10" Value="5.0361894888184584e-06"/>
+    <Coefficient Index="11" Value="-2.9851171567915494e-04"/>
+    <Coefficient Index="12" Value="9.6199819079102332e-05"/>
+    <Coefficient Index="13" Value="-1.7571299871130142e-04"/>
+    <Coefficient Index="14" Value="-6.2901219333241290e-02"/>
+    <Coefficient Index="15" Value="1.3696979685919215e-04"/>
+    <Coefficient Index="16" Value="3.4251207393720618e-06"/>
+    <Coefficient Index="17" Value="5.0150123738581392e-04"/>
+  </Weights>
+</MethodSetup>

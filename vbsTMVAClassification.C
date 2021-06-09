@@ -143,7 +143,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    // TCut cleanNAN        ("cleanNAN",        "(mass_lvj_type0_PuppiAK8>0)"); 
 
    //   TCut mycuts = cleanNAN+more+OneLpt;// for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
-   Tcut mycuts = clearnNAN_tau; // dummy; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
+   TCut mycuts = cleanNAN_tau; // dummy; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
    TCut mycutb = mycuts;// for example: TCut mycutb = "abs(var1)<0.5";
    //
    VbsReducedEvent vbsEvent;
@@ -155,9 +155,9 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
 // Selector - Surprise, surprise it selects things. Look at the vbsSamples.cpp after you run the dsw script and copy the samples to the appropriate spot
 // This is just for ease of use when running the classification over different datasets
-int selector = 0; // 0 = old, 2016, 2017, 2018
+int selector = 2018; // 0000 = old, 2016, 2017, 2018
 
-if (selector == 0){
+if (selector == 0000){
    dataSamples.push_back( new Sample("data",	  "Data",	    1,	  1,  gid_data,  gid_data,   1,  1,  0) );
 // // bkgSamples.push_back( new Sample("WV_EWK",	  "WminusTo2JZTo2LJJ_EWK_LO_SM",	    0.02982,	  1,  gid_ewkWV,    1100,    840,  189086.0,  0.0) );
 // // bkgSamples.push_back( new Sample("WV_EWK",	  "WminusToLNuWminusTo2JJJ_EWK_LO_SM",      0.03259,	  1,  gid_ewkWV,    1101,    840,  189560.0,  0.0) );

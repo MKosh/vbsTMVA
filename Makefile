@@ -5,7 +5,7 @@ CONDA_ACTIVATE=source $$(conda info --base)/etc/profile.d/conda.sh ; conda activ
 
 loc ?= "g/Research/ntuples/NEW/2016/haddedFiles"
 year ?= "2016"
-vars ?= "set1"
+vars ?= "set2016"
 methods ?= "BDT"
 lumi ?= 35.867
 cut ?= "dummy"
@@ -56,7 +56,6 @@ trainAndPlot: update_$(year)
 	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
 	-@./utils/plot_resort.sh "$(year)"
 	@./utils/gen_plots.sh
-	@pdflatex docs/plots.text >/dev/null
 
 plot: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
@@ -128,7 +127,7 @@ update_2018:
 update_0000:
 	@sed -i 's|chain2tree("Events",|chain2tree("otree",|g' vbsTMVAClassification.C
 	@sed -i 's|TCut mycuts = [A-z]\+;|TCut mycuts = cleanNAN+cleanNAN_phi;|g' vbsTMVAClassification.C
-	@sed -i 's|int selector = [0-9]\{4\}|int selector = 0|g' vbsTMVAClassification.C
+	@sed -i 's|int selector = [0-9]\{4\}|int selector = 0000|g' vbsTMVAClassification.C
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/0000/c1_0000|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/0000/c2_0000|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/0000/c3_0000|g' tmvaMon.cpp
