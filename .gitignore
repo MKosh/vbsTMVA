@@ -10,3 +10,5 @@ plots/*/cutflows/*.png
 plots/garbage/*/*
 *.log
 vbs_ww_*/plots/*
+plots/*/*.png
+plots/*/*.pdf

@@ -165,36 +165,15 @@ TmvaSample::TmvaSample(Int_t sid,Int_t scolor, const char* smplname, TCut sample
 //=====================================================================================================
 //=====================================================================================================
 Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
-//
-//std::string smpselector = "new"; // XXX
-/*
-  if(_sid == 3){
-     _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
-  }else{
-    if (g_lum == 41.53f) {
-      _testTree->Project(_hf1->GetName(), var, wtot_2018*(cuts+_samplecut), "goff");
-    } else if (g_lum == 59.74f) {
-      _testTree->Project(_hf1->GetName(), var, wtot_2018*(cuts+_samplecut), "goff");
-    } else if (g_lum == 35.867f || g_lum == 35.8671f || g_lum == 35.86706f || g_lum == 35.87f) {
-      if (smpselector == "old"){
-              _testTree->Project(_hf1->GetName(), var, wtot_2018*(cuts+_samplecut), "goff");
-      } else{
-      _testTree->Project(_hf1->GetName(), var, wtot_2018*(cuts+_samplecut), "goff");
-      }
-    } else {
-      std::cout << "g_lum = " << g_lum << "fb^-1, is something I don't recognize check the fillSampleHist function" << std::endl;
-     _testTree->Project(_hf1->GetName(), var, wtot_2018*(cuts+_samplecut), "goff");
-    }
-  }
-*/
+
   if(_sid == 3) {
     _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
   } else {
           _testTree->Project(_hf1->GetName(), var, wtot_2018*(cuts+_samplecut), "goff");
   }
     _hf1->GetStats(_stats);
-    npass    = _stats[0]*(scale) ;
-    npass_err= scale*TMath::Sqrt(_stats[1]) ;
+    npass    = _stats[0]*(scale);
+    npass_err= scale*TMath::Sqrt(_stats[1]);
     accpt   = 100.*  npass/_ngen;
   /*
     cout << "------------------------------------------------------------" << endl;
