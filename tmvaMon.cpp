@@ -171,6 +171,10 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   } else {
           _testTree->Project(_hf1->GetName(), var, wtot_2018*(cuts+_samplecut), "goff");
   }
+
+  if (_sid == 13) {
+    scale = 
+  }
     _hf1->GetStats(_stats);
     npass    = _stats[0]*(scale);
     npass_err= scale*TMath::Sqrt(_stats[1]);
@@ -1378,7 +1382,7 @@ void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
 //
 
     Float_t scale_sgl=scale/_scale_sgl_tmva;
-    Float_t scale_bkg=scale/_scale_bkg_tmva;
+    Float_t scale_bkg=scale/_scale_bkg_tmva; // 2018 W+jets CR scale 0.78418 to whole bkg |
     //cout << "Applied to test sample: scale_sgl/scale_bkg = " <<  scale_sgl << "/" << scale_bkg << endl;  
     _sgl->fillSampleHist(var,cuts,scale_sgl);
     _bkg->fillSampleHist(var,cuts,scale_bkg);
@@ -1883,7 +1887,7 @@ outfname << "plots/2018/c2_2018" << "_" <<  CutName << ".pdf";
    outfname << "plots/2018/c1_2018" << "_" << CutName << ".pdf";
    cp1->SaveAs(outfname.str().c_str());
    outfname.str("");
-   outfname << "plots/2018/c1_2018"  << "_" << CutName << ".png";
+   outfname << "plots/2018/c1_2018"  << "_" << CutName << ".root";
    cp1->SaveAs(outfname.str().c_str()); 
    outfname.str("");
 
@@ -1942,7 +1946,7 @@ outfname << "plots/2018/c2_2018" << "_" <<  CutName << ".pdf";
   outfname << "plots/2018/c2_2018" << "_" <<  CutName << ".pdf";
    cp2->SaveAs(outfname.str().c_str());
    outfname.str("");
-   outfname << "plots/2018/c2_2018"  << "_" << CutName << ".png";
+   outfname << "plots/2018/c2_2018"  << "_" << CutName << ".root";
    cp2->SaveAs(outfname.str().c_str()); 
    outfname.str("");
 
@@ -2005,7 +2009,7 @@ outfname << "plots/2018/c2_2018" << "_" <<  CutName << ".pdf";
   outfname << "plots/2018/c3_2018" << "_" <<  CutName  << ".pdf";
   cp3->SaveAs(outfname.str().c_str());
   outfname.str("");
-  outfname << "plots/2018/c3_2018"  << "_" << CutName << ".png";
+  outfname << "plots/2018/c3_2018"  << "_" << CutName << ".root";
   cp3->SaveAs(outfname.str().c_str()); 
   outfname.str("");
 

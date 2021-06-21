@@ -87,14 +87,18 @@ TCut vbs_delta_eta      ("vbs_delta_eta",          "vbf_deta>2.5"); // this is a
 TCut met_pt             ("met_pt",                 "MET>30");
 TCut btag_veto          ("btag_veto",              "nBtag_loose==0");// regions, sr: signal region, cr: control region
 TCut wv_sr              ("wv_sr",                  "(bos_PuppiAK8_m_sd0_corr>65 && bos_PuppiAK8_m_sd0_corr<105)");
-TCut wv_cr_vjets        ("wv_cr_vjets",            "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150)");
+TCut wv_cr_vjets        ("wv_cr_vjets",            "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150) && nBtag_loose==0");
 TCut wv_cr_top          ("wv_cr_top",              "nBtag_loose>0");
 TCut dummy              ("dummy",                  "");
-TCut ZeppWL             ("ZeppWLlt3",              "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
-TCut ZeppWH             ("ZeppWHlt3",              "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
+TCut ZeppWLlt3          ("ZeppWLlt3",              "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
+TCut ZeppWHlt3          ("ZeppWHlt3",              "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
 TCut noData             ("noData",                 "!(gid==3)");
 
+TCut common             ("common",                 "(isAntiIso==0) && (bosCent > 0.0)");
+TCut bos_common         ("bos_common",             fatjet_pt+fatjet_eta+fatjet_tau21);
 TCut full_common        ("full_common",            category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
+TCut full_vjets_CR      ("full_vjets_CR",          bos_common+wv_cr_vjets);
+TCut full_top_CR        ("full_top_CR",            full_common+wv_cr_top);
 TCut full_wv_sr         ("full_wv_sr",             full_common+btag_veto+wv_sr);//+noData);
 
 TCut wtot_2016          ("wtot_2016",              "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
