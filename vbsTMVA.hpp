@@ -77,7 +77,7 @@ TCut category_selection ("category_selection",     "lep2_pt<0 && bos_PuppiAK8_pt
 //TCut category_selection ("category_selection",  "!isAntiIso && lep2_pt<0 && bos_PuppiAK8_pt>0")
 TCut lep_pt             ("lep_pt",                 "lep1_pt>25"); // can be different value, debatable // lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
 //TCut lep_eta            ("lep_eta",                "(lep1_m>0.105 && TMath::Abs(lep1_eta)<2.4 && TMath::Abs(lep2_eta)<2.4) || (lep1_m<0.105 && TMath::Abs(lep1_eta)<2.5 && !(TMath::Abs(lep1_eta)>1.4442 && TMath::Abs(lep1_eta)<1.566) && TMath::Abs(lep2_eta)<2.5 && !(TMath::Abs(lep2_eta)>1.4442 && TMath::Abs(lep2_eta)<1.566))");
-TCut lep_eta            ("lep_eta",                "lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566)");
+TCut lep_eta            ("lep_eta",                "lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566)"); // muon || electron
 TCut fatjet_pt          ("fatjet_pt",              "bos_PuppiAK8_pt>200");
 TCut fatjet_eta         ("fatjet_eta",             "TMath::Abs(bos_PuppiAK8_eta)<2.4");
 TCut fatjet_tau21       ("fatjet_tau21",           "TMath::Abs(bos_PuppiAK8_tau2tau1)<0.55"); // can be different// vbs vbf are used interchangeably TCut fatjet_tau21 ("fatjet_tau21",  "bos_PuppiAK8_tau2tau1<0.55");
@@ -90,15 +90,15 @@ TCut wv_sr              ("wv_sr",                  "(bos_PuppiAK8_m_sd0_corr>65 
 TCut wv_cr_vjets        ("wv_cr_vjets",            "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150) && nBtag_loose==0");
 TCut wv_cr_top          ("wv_cr_top",              "nBtag_loose>0");
 TCut dummy              ("dummy",                  "");
-TCut ZeppWLlt3          ("ZeppWLlt3",              "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
-TCut ZeppWHlt3          ("ZeppWHlt3",              "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
+TCut ZeppWL             ("ZeppWLlt3",              "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
+TCut ZeppWH             ("ZeppWHlt3",              "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
 TCut noData             ("noData",                 "!(gid==3)");
 
 TCut common             ("common",                 "(isAntiIso==0) && (bosCent > 0.0)");
 TCut bos_common         ("bos_common",             fatjet_pt+fatjet_eta+fatjet_tau21);
 TCut full_common        ("full_common",            category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
-TCut full_vjets_CR      ("full_vjets_CR",          bos_common+wv_cr_vjets);
-TCut full_top_CR        ("full_top_CR",            full_common+wv_cr_top);
+TCut full_vjets_CR      ("full_vjets_CR",          full_common+btag_veto+wv_cr_vjets);
+TCut full_top_CR        ("full_top_CR",            full_common+wv_cr_top+wv_sr);
 TCut full_wv_sr         ("full_wv_sr",             full_common+btag_veto+wv_sr);//+noData);
 
 TCut wtot_2016          ("wtot_2016",              "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"

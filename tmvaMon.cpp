@@ -173,7 +173,7 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   }
 
   if (_sid == 13) {
-    scale = 
+   // scale = 
   }
     _hf1->GetStats(_stats);
     npass    = _stats[0]*(scale);
