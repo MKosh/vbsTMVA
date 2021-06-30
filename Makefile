@@ -79,6 +79,7 @@ update_2016:
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.C
 	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_tau;|g' vbsTMVAClassification.C
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2016|g' vbsTMVAClassification.C
+	@sed -i 's|int year = [0-9]\{4\}|int year = 2016|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2016/c1_2016|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2016/c2_2016|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2016/c3_2016|g' tmvaMon.cpp
@@ -96,6 +97,7 @@ update_2017:
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.C
 	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_tau;|g' vbsTMVAClassification.C
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2017|g' vbsTMVAClassification.C
+	@sed -i 's|int year = [0-9]\{4\}|int year = 2017|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2017/c1_2017|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2017/c2_2017|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2017/c3_2017|g' tmvaMon.cpp
@@ -112,6 +114,7 @@ update_2018:
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.C
 	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_tau;|g' vbsTMVAClassification.C
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2018|g' vbsTMVAClassification.C
+	@sed -i 's|int year = [0-9]\{4\}|int year = 2018|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2018/c1_2018|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2018/c2_2018|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2018/c3_2018|g' tmvaMon.cpp
@@ -128,6 +131,7 @@ update_0000:
 	@sed -i 's|chain2tree("Events",|chain2tree("otree",|g' vbsTMVAClassification.C
 	@sed -i 's|TCut mycuts = [A-z]\+;|TCut mycuts = cleanNAN+cleanNAN_phi;|g' vbsTMVAClassification.C
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 0000|g' vbsTMVAClassification.C
+	@sed -i 's|int year = [0-9]\{4\}|int year = 0000|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/0000/c1_0000|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/0000/c2_0000|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/0000/c3_0000|g' tmvaMon.cpp

@@ -97,8 +97,8 @@ TCut noData             ("noData",                 "!(gid==3)");
 TCut common             ("common",                 "(isAntiIso==0) && (bosCent > 0.0)");
 TCut bos_common         ("bos_common",             fatjet_pt+fatjet_eta+fatjet_tau21);
 TCut full_common        ("full_common",            category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
-TCut full_vjets_CR      ("full_vjets_CR",          full_common+btag_veto+wv_cr_vjets);
-TCut full_top_CR        ("full_top_CR",            full_common+wv_cr_top+wv_sr);
+TCut full_vjets_cr      ("full_vjets_cr",          full_common+btag_veto+wv_cr_vjets);
+TCut full_top_cr        ("full_top_cr",            full_common+wv_cr_top+wv_sr);
 TCut full_wv_sr         ("full_wv_sr",             full_common+btag_veto+wv_sr);//+noData);
 
 TCut wtot_2016          ("wtot_2016",              "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
@@ -469,7 +469,7 @@ Int_t getVbsReqStat(const char* filelist) {
        TTree* mtree  = (TTree*) gROOT->FindObject("VBS4LeptonsAnalysisReduced");
 	 nInitReqEvt_w+=cutflow_w->GetBinContent(1);
 	 nInitReqEvt  +=cutflow->GetBinContent(1);
-	 getStat(mtree,"f_mass4l",wtot_2018,stats);
+	 getStat(mtree,"f_mass4l",wtot_2016,stats);
          nNtpReqEvt    += stats[0];
 	 nNtpReqEvt_w2 += stats[1]*stats[1];
       }else{
