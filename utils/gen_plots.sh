@@ -31,7 +31,7 @@ YearCuts=()
 
 for files in plots/*/*.pdf; do 
     cut=$(echo $files | sed 's|^.*\([0-9]\{4\}_\)||g' | sed 's|.pdf||g')
-    year=$(echo $files | sed 's|^.*\(c[1-3]_\)||g' | sed "s|_$cut.pdf||g")
+    year=$(echo $files | sed 's|^.*\(c[1-4]_\)||g' | sed "s|_$cut.pdf||g")
     canvas=$(echo $files | sed 's|^.*\([0-9]\{4\}/\)||g' | sed "s|_$year\_$cut.pdf||g")
     yearCut="${year}_$cut"
 

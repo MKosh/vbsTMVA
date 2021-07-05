@@ -31,6 +31,7 @@ if [[ $1 == 2016 || $1 == 2017 || $1 == 2018 || $1 == 0000 ]]; then
 			mv plots/$1/archive/c1_$1_$cuts$current.pdf plots/$1/c1_$1_$cuts.pdf
 			mv plots/$1/archive/c2_$1_$cuts$current.pdf plots/$1/c2_$1_$cuts.pdf
 			mv plots/$1/archive/c3_$1_$cuts$current.pdf plots/$1/c3_$1_$cuts.pdf
+			mv plots/$1/archive/c4_$1_$cuts$current.pdf plots/$1/c4_$1_$cuts.pdf
 		elif [[ $plot_count == "1" ]]; then
 			echo ".pdf plots with cut: $cuts already exist in the plots/$1 folder, skipping these."
 		else

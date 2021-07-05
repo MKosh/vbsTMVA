@@ -5,6 +5,7 @@
 // File:    tmvaMon.cpp
 // Purpose: tmva event processor 
 // Created: Dec 2017, Sergey Uzunyan (serguei@nicadd.niu.edu)
+// Updated: 2021, Mark M. 
 // root -l tmvaMon.cpp\(\"vbs_ww\"\)
 // root[1]  plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN,  1.00, 0, 0,     0., 400., 5.);
 // root[2]  plotvar(anl,"BDT"    ,  tmvasel,  1.0,  0, 0,     -1.0, 1.0, 0.05);
@@ -169,10 +170,10 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   if(_sid == 3) {
     _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
   } else {
-          _testTree->Project(_hf1->GetName(), var, wtot_2016*(cuts+_samplecut), "goff");
+          _testTree->Project(_hf1->GetName(), var, wtot_2018*(cuts+_samplecut), "goff");
   }
 
-  int year = 2016;
+  int year = 2018;
   if (_sid == 15 && year == 2018) {
     scale *= 0.6875; // 2018 Scale ttbar 
   } else if (_sid == 13 && year == 2018) {
@@ -186,7 +187,6 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   } else if (_sid == 13 && year == 2017) {
     scale *= 1.303;
   }
-    std::cout << _sid << " scale = " << scale << std::endl;
 
     _hf1->GetStats(_stats);
     npass    = _stats[0]*(scale);
@@ -343,9 +343,9 @@ public:
      _scale_sgl_tmva = scale_sgl_tmva;
      _scale_bkg_tmva = scale_bkg_tmva;
    }
-   Int_t ArrangeHtms();
+   Int_t ArrangeHtms(Int_t flogy=0);
    void  StackHtms(Int_t& imax, Float_t& ymin);
-   void  PlotHists(Float_t ymin);
+   void  PlotHists(Float_t ymin, Int_t flogy=0);
    void  PlotLegend(const char* var);
    void  PlotSgf(const char* var); 
    void  sdb(Int_t dbl){ _debug=dbl; };
@@ -420,7 +420,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "tmgui()" << endl;
   cout << "" << endl;
 
-cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -583,8 +583,8 @@ TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
   cout << " 1.0 * lum_fbinv * PB2FB = " << 1.0*lum_fbinv*TmvaAnl::PB2FB << endl;
 
 // TmvaSample::TmvaSample(Int_t sid,Int_t scolor, const char* smplname, TCut samplecut,Float_t ngen_normfb, TTree* testTree, TTree* trainTree)
-   TmvaSample* sgl  = new TmvaSample(1, kTeal+5,"sgl", "classID==0", nsignal_norm, treeSB, treeSB_train); // new color = kTeal+5 | old color = kTeal+2
-   TmvaSample* bkg  = new TmvaSample(2, kRed,  "bkg", "classID==1", 1.0* lum_fbinv * TmvaAnl::PB2FB, treeSB, treeSB_train); 
+   TmvaSample* sgl  = new TmvaSample(1, kRed-6,"sgl", "classID==0", nsignal_norm, treeSB, treeSB_train); // new color = kTeal+5 | old color = kTeal+2
+   TmvaSample* bkg  = new TmvaSample(2, kWhite,  "bkg", "classID==1", 1.0* lum_fbinv * TmvaAnl::PB2FB, treeSB, treeSB_train); 
    TmvaSample* data = new TmvaSample(3, kBlack,"data","classID==3", 1.0* lum_fbinv * TmvaAnl::PB2FB, treeData, treeData);
   //
 //   TmvaSample* ewkWV    = new TmvaSample(gid_ewkWV,   910,  "ewkWV",    cut_ewkWV,    1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train);
@@ -593,12 +593,15 @@ TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
 //   TmvaSample* DiBosons = new TmvaSample(gid_Diboson, 400,  "DiBosons", cut_DiBosons, 1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train);
 //   TmvaSample* TT       = new TmvaSample(gid_top,     592,  "TT",       cut_TT  ,     1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train);
 
+// Color order: old = kOrange-4 (zjets) -> kMagenta-10 (dibos) -> kAzure-4 (tt) -> kCyan-3 (wjets) -> kRed-5 (sgl)
+// Color order: new = kMagenta-10 -> kTeal+3 -> kOrange-2 -> kAzure-4 -> kRed-6 | pink -> green -> yellow -> blue -> red
+
   TmvaSample* Zjets    = new TmvaSample(gid_Zjets,   kOrange-4,    "Zjets",    cut_Zjets,    1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train); // new color = kOrange-4 | old color = kYellow
-  //  TmvaSample* ewkWV    = new TmvaSample(gid_ewkWV,   kRed-10,       "ewkWV",    cut_ewkWV,    1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train);
-  TmvaSample* DiBosons = new TmvaSample(gid_Diboson, kMagenta-10,  "DiBosons", cut_DiBosons, 1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train); // new color = kMagenta-10 | old color = kOrange+4
-  TmvaSample* TT       = new TmvaSample(gid_top,     kAzure-4,   "TT",       cut_TT  ,     1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train); // new color = kAzure-4 | old color = kAzure+7
-  TmvaSample* Wjets    = new TmvaSample(gid_Wjets,   kCyan-10,      "Wjets",    cut_Wjets,    1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train); // new color = kCyan-10 | old color = kCyan-10
-  //  TmvaSample* QCD  = new TmvaSample(17,kPink+1,         "QCD",     "gid==17",    1.0* lum_fbinv* TmvaAnl::PB2FB,   treeSB, treeSB_train);
+//  TmvaSample* ewkWV    = new TmvaSample(gid_ewkWV,   kRed-10,       "ewkWV",    cut_ewkWV,    1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train);
+  TmvaSample* DiBosons = new TmvaSample(gid_Diboson, kTeal+2,  "DiBosons", cut_DiBosons, 1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train); // new color = kMagenta-10 | old color = kOrange+4 ... kTeal-8 also pretty good here
+  TmvaSample* TT       = new TmvaSample(gid_top,     kMagenta-10,   "TT",       cut_TT  ,     1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train); // new color = kAzure-4 | old color = kAzure+7
+  TmvaSample* Wjets    = new TmvaSample(gid_Wjets,   kAzure-4,      "Wjets",    cut_Wjets,    1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train); // new color = kCyan-3 | old color = kCyan-10
+//  TmvaSample* QCD  = new TmvaSample(17,kPink+1,         "QCD",     "gid==17",    1.0* lum_fbinv* TmvaAnl::PB2FB,   treeSB, treeSB_train);
 
   anl_samples.push_back(sgl);
   anl_samples.push_back(bkg);
@@ -618,7 +621,7 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
-  anl->setHframe(var,wtot_2016*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,wtot_2018*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
 
@@ -626,7 +629,7 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   if (flogy) ymin= pow(10,flogy*(-1));
 
   gStyle->SetOptStat(0);  
-  anl->PlotHists(ymin); 
+  anl->PlotHists(ymin, flogy); 
   anl->PlotLegend(var); 
 
   if(istyle==1){
@@ -652,7 +655,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
-  anl->setHframe(var,wtot_2016*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,wtot_2018*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
   anl->setsvplots(1);
@@ -669,7 +672,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 
   plotCanvas->cd(1);
   gPad->SetLogy(1);
-  anl->PlotHists(ymin); 
+  anl->PlotHists(ymin, flogy); 
   anl->PlotLegend(var); 
   if(istyle==1){
     anl->PlotSgf(var);
@@ -687,7 +690,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   plotCanvas->cd(2); 
   // hdata->SetMaximum(npmax*1.2);
    anl->getDataSample()->_hf1->SetMaximum(anl->getDataSample()->_hf1->GetMaximum()/1.2);
-  anl->PlotHists(ymin); 
+  anl->PlotHists(ymin, flogy); 
   anl->PlotLegend(var); 
   if(istyle==1){
     anl->PlotSgf(var);
@@ -906,7 +909,7 @@ Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* c
        cutval = cutvar_min+ nprobe*stepw;
        cutvar_cut.str("");
        cutvar_cut << "(" << cutvar << " > " <<  cutval  << " ) " ;   
-       setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+       setHframe("njets",wtot_2018*(basecuts+cut_bkg),0.0,10.0, 1.0);
        setSampleHists();
        fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
        sgf_curr =  optParVal(optParName);
@@ -966,7 +969,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
     //check left point
    cutvar_cut.str("");
    cutvar_cut << "(" << cutvar << " > " <<  cutval_left << " ) " ;   
-   setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+   setHframe("njets",wtot_2018*(basecuts+cut_bkg),0.0,10.0, 1.0);
    setSampleHists();
    fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
    sgf_curr_left=  optParVal(optParName);
@@ -974,7 +977,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
     //check right point
    cutvar_cut.str("");
    cutvar_cut << "(" << cutvar << " > " <<  cutval_right << " ) " ;   
-   setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+   setHframe("njets",wtot_2018*(basecuts+cut_bkg),0.0,10.0, 1.0);
    setSampleHists();
    fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
    sgf_curr_right= optParVal(optParName);
@@ -1085,40 +1088,40 @@ TH1F* TmvaAnl::makeHist(const char* hname, const char* hvar, Int_t nbins, Float_
   return hist;
 }
 //=====================================================================================================
-void TmvaAnl::PlotHists(Float_t ymin){
+void TmvaAnl::PlotHists(Float_t ymin, Int_t flogy){
   bkg_hists.clear();
  //Stack backgrounds
   for(UInt_t ns=3; ns <  _vsamples.size(); ns++){
     bkg_hists.push_back(_vsamples[ns]->_hf1);
   }
   //
-  Int_t imax = ArrangeHtms(); 
+  Int_t imax = ArrangeHtms(flogy); 
   //cout << "# bkgs = " <<  bkg_hists.size() << endl;
   StackHtms(imax,ymin);
   if (_fsaveplots) _nstackplots++;
 
 }
 //=====================================================================================================
-Int_t TmvaAnl::ArrangeHtms(){
+Int_t TmvaAnl::ArrangeHtms(Int_t flogy){
 
   //Signal
   TH1F* hdata = _data->_hf1;
   TH1F* hbkg  = _bkg->_hf1;
   TH1F* hsgl  = _sgl->_hf1;
 
-  hsgl->SetFillStyle(3001); // Updated from 3001
+  hsgl->SetFillStyle(1001); // Updated from 3001
 //   hsgl->SetFillColor(kGreen);
 //   hsgl->SetLineColor(kGreen+2);
-  hsgl->SetLineWidth(1);
+  hsgl->SetLineWidth(0); // was 1
   hsgl->SetLineStyle(1);
 
   //Bkg // Sum of all backgrounds
-  hbkg->SetFillStyle(3001); // Updated from 3001
-  hbkg->SetFillColor(kRed);
+  hbkg->SetFillStyle(1001); // Updated from 3001
+  hbkg->SetFillColor(0); //kRed-7
   //hbkg->SetMarkerStyle(20);
-  hbkg->SetMarkerColor(2);
-  hbkg->SetLineColor(2);
-  hbkg->SetLineWidth(2);
+  //hbkg->SetMarkerColor(2);
+  hbkg->SetLineColor(1);
+  hbkg->SetLineWidth(1); // was 2
   hbkg->SetLineStyle(1);
 
 
@@ -1127,7 +1130,8 @@ Int_t TmvaAnl::ArrangeHtms(){
   hdata->SetFillColor(0);
   hdata->SetMarkerStyle(20);
   hdata->SetMarkerColor(1);
-  hdata->SetMarkerSize(0.6);
+  hdata->SetMarkerSize(0.4); // was 0.6
+  hdata->SetLineWidth(1); // MM
   hdata->SetLineColor(1);
 
 
@@ -1147,7 +1151,11 @@ Int_t TmvaAnl::ArrangeHtms(){
   }
 //   cout << "imax/npmax = " << imax << "/" << npmax << endl;
 //   cout << "-------- " << endl;
-  hdata->SetMaximum(npmax*1.2);
+if (flogy == 1) {
+  hdata->SetMaximum(npmax*20);
+} else if (flogy == 0) {
+  hdata->SetMaximum(npmax*1.35); // MM was 1.2 I changed that, added the flogy argument and the if statement
+}
   return imax;
 }
 //=====================================================================================================
@@ -1161,12 +1169,13 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin){
   stringstream sNameHstack;
   sNameHstack << "hstack_bkg_" << _nstackplots;
 
+  TH1F* sum_bkg_hists = (TH1F*)gROOT->FindObject("sum_bkg_hists");
+  if (sum_bkg_hists) { sum_bkg_hists->Delete(); }
+
+  sum_bkg_hists = (TH1F*)_hframe->Clone("sum_bkg_hists");
 
   THStack*  hstack_bkg = (THStack*)gROOT->FindObject(sNameHstack.str().c_str()); 
-  if( hstack_bkg){
-      //cout << "Deleted old hist " <<  newhist->GetName() << endl;
-       hstack_bkg->Delete();
-  }
+  if( hstack_bkg){ hstack_bkg->Delete(); }
 
   hstack_bkg = new THStack(sNameHstack.str().c_str(),sNameHstack.str().c_str()); 
   hstack_bkg->SetTitle(hsgl->GetTitle());
@@ -1189,37 +1198,47 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin){
   //  hstack_bkg->Add(hbkg);
   //  Int_t bkg_colors[7]={kYellow+1,kPink+1,kOrange-3,kAzure+1,kCyan,kRed,kGreen-1};
   //   Int_t bkg_colors[7]={kGreen-1,kRed,kCyan,kAzure+1,kOrange-3,kPink+1,kYellow+1};
-  for(UInt_t ih=0; ih< bkg_hists.size(); ih++){
-    //  hists[ih]->SetFillStyle(3001);
-    //  bkg_hists[ih]->SetFillColor(bkg_colors[ih-3]);
-    // cout <<  bkg_hists[ih]->GetFillColor() << endl; 
+
+  for(UInt_t ih=0; ih< bkg_hists.size(); ih++){ 
+    sum_bkg_hists->Add(bkg_hists[ih]);
     hstack_bkg->Add(bkg_hists[ih]);
   } 
 
   hstack_bkg->Add(hsgl);
+  sum_bkg_hists->Add(hsgl);
+
+  TGraphAsymmErrors* errors_hist = new TGraphAsymmErrors(sum_bkg_hists->Clone("errors_hist"));
+  errors_hist->SetFillStyle(3335);
+  errors_hist->SetMarkerStyle(0);
+  errors_hist->SetFillColor(1);
+  errors_hist->SetLineColor(1);
+
 
   if(imax==0){
-       hdata->Draw("E");
-       hstack_bkg->Draw("hist same");
-
+    hdata->Draw("E1");
+    hstack_bkg->Draw("hist same");
+    errors_hist->Draw("E2");
   }else if( imax == 1) {
     //strange but this combo does plot axis labeles accurately
     //  hstack_bkg->Draw();
     // hdata->Draw("E same");
-     hdata->Draw("E");
-     hstack_bkg->Draw("hist same");
-  
-  }else{
-    hdata->Draw("E");
+    hdata->Draw("E1");
     hstack_bkg->Draw("hist same");
+    errors_hist->Draw("E2");
+  }else{
+    hdata->Draw("E1");
+    hstack_bkg->Draw("hist same");
+    errors_hist->Draw("E2");
   }  
-       gPad->RedrawAxis();
-    hdata->Draw("E same");
+  gPad->RedrawAxis();
+  hdata->Draw("E1 same");
+  errors_hist->Draw("2");
     //   cout <<"imax = " << imax << endl;
+
+
 }
 //===========================================================
 void TmvaAnl::PlotLegend(const char* var){
-
 
   TH1F* hdata = _data->_hf1;
   TH1F* hbkg  = _bkg->_hf1;
@@ -1234,98 +1253,126 @@ void TmvaAnl::PlotLegend(const char* var){
    if ( (strcmp(var,"f_dphi") ==0 ) ){
     legend = new TLegend(.10, .58, .40, .88);
    }else{
-    legend = new TLegend(.63, .58, .88, .88);
+    //legend = new TLegend(.63, .58, .88, .88);
+    legend = new TLegend(.29, .73, .9, .88);
    } 
     legend->SetName(sNameLegend.str().c_str());
     legend->SetFillColor(0);
     legend->SetLineColor(0);
+    legend->SetNColumns(2);
+    legend->SetFillStyle(0);
+    legend->SetBorderSize(0);
 // 
+  TLegend* cms_leg = (TLegend*)gROOT->FindObject("cms_leg");
+  if (cms_leg) { cms_leg->Delete(); }
+  TLegend* cms_leg2 = (TLegend*)gROOT->FindObject("cms_leg2");
+  if (cms_leg2) { cms_leg2->Delete(); }
+
+  cms_leg = new TLegend(0.11, 0.81, 0.24, 0.9);
+  cms_leg2 = new TLegend(0.11, 0.78, 0.24, 0.83);
+
+  cms_leg->SetFillStyle(0);
+  cms_leg->SetFillColor(0);
+  cms_leg->SetLineColor(0);
+  cms_leg->SetBorderSize(0);
+  cms_leg->SetTextFont(62);
+
+  cms_leg2->SetFillStyle(0);
+  cms_leg2->SetFillColor(0);
+  cms_leg2->SetLineColor(0);
+  cms_leg2->SetBorderSize(0);
+  cms_leg2->SetTextFont(52);
+
+  cms_leg->AddEntry((TObject*)0,"CMS", "");
+  cms_leg2->AddEntry((TObject*)0,"Preliminary", "");
+
     stringstream ss; ss.str("");
     ss.setf(ios::fixed);                            // set fixed format
     std::streamsize ss_cout_prec = ss.precision();  // store original precision
     ss.str("");
-      if (_data->npass) {
-         ss.precision(0);
-         ss <<setw(4)<< "Data" <<" "<< setw(6)<< _data->npass;
-         legend->AddEntry(hdata , ss.str().c_str());
-      }
 
-      if (_sgl->npass) {
-         ss.str("");
-         ss.precision(1);
-	 //         ss <<setw(4)<<  "H^{#pm} #rightarrow WV"  <<" " << setw(6) <<_sgl->npass << "(" <<setw(4)  <<setprecision(2)<< _sgl->accpt << ")";
-         ss <<setw(4)<<  "SM(EW) WV"  <<" " << setw(6) <<_sgl->npass << "(" <<setw(4)  <<setprecision(2)<< _sgl->accpt << ")";
-         legend->AddEntry(hsgl, ss.str().c_str());
-      }
-     float_t sum_bkg = 0;
-     for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
-       sum_bkg += _vsamples[ns]->npass;
-     }
+    if (_data->npass) {
+       ss.precision(0);
+       ss <<setw(4)<< "Data" <<" "<< setw(6)<< _data->npass;
+       legend->AddEntry(hdata , ss.str().c_str());
+    }
+    if (_sgl->npass) {
+       ss.str("");
+       ss.precision(1);
+       ss <<setw(4)<<  "SM(EW) WV"  <<" " << setw(6) <<_sgl->npass << "(" <<setw(4)  <<setprecision(2)<< _sgl->accpt << ")";
+       legend->AddEntry(hsgl, ss.str().c_str(), "f");
+    }
 
-    std::cout << "======================================================" << std::endl;
-    std::cout << " bkg npass = " << _bkg->npass << std::endl;
-    std::cout << " Sum bkg = " << sum_bkg << std::endl;
-    std::cout << "======================================================" << std::endl;
+    float_t sum_bkg = 0.0;
+    float_t sum_err = 0.0;
+
+
+    for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
+      sum_bkg += _vsamples[ns]->npass;
+      sum_err += _vsamples[ns]->npass_err*_vsamples[ns]->npass_err;
+    }
+    float_t tot_err = sqrt(sum_err);
+
+    //std::cout << "======================================================" << std::endl;
+    //std::cout << " bkg npass = " << _bkg->npass << " / bkg err = " << _bkg->npass_err << std::endl;
+    //std::cout << " Sum bkg = " << sum_bkg << " / tot err = " << tot_err << std::endl;
+    //std::cout << "======================================================" << std::endl;
  
     if ( _bkg->npass) {
-         ss.str("");
-         ss.precision(1);
-	   ss <<setw(4)<< "#Sigma bkg"   <<" " << setw(6) << sum_bkg << " #pm" <<setw(4)<<  _bkg->npass_err; // setw(6) << _bkg->npass << "#pm" 
-	 // ss << setw(6) << npass_scal_bkg << " +- " <<setw(4)<< error_scal_bkg;
-         legend->AddEntry( hbkg, ss.str().c_str());
-      }
-
-  float_t topscale = 0.6875;
-  float_t wjetscale = 1.0;
-  float_t diboscale = 1.0;
-  float_t zjetscale = 1.0;
+      ss.str("");
+      ss.precision(1);
+	    ss <<setw(4)<< "#Sigma bkg"   <<" " << setw(6) << sum_bkg << " #pm" <<setw(4)<<  tot_err; // setw(6) << _bkg->npass << "#pm" << setw(4) << _bkg->npass_err;
+      legend->AddEntry( hbkg, ss.str().c_str(), "f");
+    }
 
   for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
     if( strcmp(_vsamples[ns]->_name,"ewkWV") ==0 ){
          ss.str("");
          ss.precision(1);
          ss <<setw(4)<<  "SM EW WV"  <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
-         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str());
+         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
     }else 
     if( strcmp(_vsamples[ns]->_name,"Wjets") ==0 ){
          ss.str("");
          ss.precision(1);
          ss <<setw(4)<<  "Wjets\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
-         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str());
+         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
     }else
     if( strcmp(_vsamples[ns]->_name,"Zjets") ==0 ){
          ss.str("");
          ss.precision(1);
          ss <<setw(4)<<  "Zjets\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
-         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str());
+         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
     }else
     if( strcmp(_vsamples[ns]->_name,"DiBosons") ==0 ){
          ss.str("");
          ss.precision(1);
          ss <<setw(4)<<  "DiBosons\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
-         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str());
+         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
     }else
     if( strcmp(_vsamples[ns]->_name,"TT") ==0 ){
          ss.str("");
          ss.precision(1);
          ss <<setw(4)<<  "tt\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
-         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str());
+         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
     }else
     if( strcmp(_vsamples[ns]->_name,"QCD") ==0 ){
          ss.str("");
          ss.precision(1);
          ss <<setw(4)<<  "QCD\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
-         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str());
+         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
     }else{;
     }
-
-  
    }
 
-
-
-
-   legend->Draw();
+  //ss.str("");
+  //ss.precision(1);
+  //ss << setw(4) << "Sys Unc.";
+  //legend->AddEntry(errors_hist, ss.str().c_str(), "f");
+  
+  legend->Draw();
+  cms_leg->Draw();
+  cms_leg2->Draw();
 }
 //=====================================================================================================
 
@@ -1432,7 +1479,7 @@ void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
      _sgf2 =cl95res;
      //  cout << "LIMIT_CALC-RESULTS (expected, fb)/pfluc  " << _sgf2 << " / " << pfluc << endl;
      if (_debug ) cout << "_sgf0/_sgf1/_sgf2/_sgf3 = "  <<  _sgf0 << "/" << _sgf1 << "/" << _sgf2 << "/" << _sgf3 << endl;
-     int year = 2016;
+     int year = 2018;
     
     for( UInt_t ns=3; ns <  _vsamples.size(); ns++){
      // if (_vsamples[ns]->_sid == 13 && year == 2018){
@@ -1452,6 +1499,7 @@ void  TmvaAnl::setSampleHists(){
       _vsamples[ns]->_hf1->SetFillStyle(1001); // Updated from 3001
       _vsamples[ns]->_hf1->SetFillColor(_vsamples[ns]->_scolor);
        setHistStyle(_vsamples[ns]->_hf1);
+      //_vsamples[ns]->_hf1->SetLineWidth(0);
       // cout << " Sample/color = " <<  _vsamples[ns]->_name << "/" << _vsamples[ns]->_scolor << endl;
     }
 }
@@ -1470,7 +1518,7 @@ void  TmvaAnl::setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax,
        Float_t ymax= _hframe->GetMaximum()/_scale_bkg_tmva;
        //  cout << "xxxxx ymax = " <<   ymax << endl;
        _hframe->Reset();
-       _hframe->SetMaximum(1.5 * ymax); // MM - was 1.3 * ymax
+       _hframe->SetMaximum(1.3 * ymax); // MM - was 1.3 * ymax
        bw=_hframe->GetBinWidth(1);
 
      }else{
@@ -1509,6 +1557,11 @@ void  TmvaAnl::setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax,
         Ytitle   << yTitle;    
     }   
      _hframe->GetYaxis()->SetTitle(Ytitle.str().c_str());
+
+     gStyle->SetErrorX(0);
+     gStyle->SetHatchesSpacing(2.5);
+     gStyle->SetHatchesLineWidth(1);
+
     setHistStyle(_hframe);
     //   cout << Htitle.str().c_str()<< "/" << Ytitle.str().c_str() << endl; 
     // return hframe;
@@ -1552,7 +1605,7 @@ void setHistStyle(TH1F* hist){
     hist->GetXaxis()->SetTitleOffset(1.2);
     hist->SetLineColor(1);
     hist->SetFillStyle(1001);
-    hist->SetLineWidth(2);
+    hist->SetLineWidth(0); // was 2
 }
 
 //================================================================================
@@ -1571,7 +1624,7 @@ void  TmvaAnl::setHistStyle(TH1F* hist){
     hist->GetXaxis()->SetTitleOffset(1.2);
     hist->SetLineColor(1);
     hist->SetFillStyle(1001); // Set the style for each background process
-    hist->SetLineWidth(1);
+    hist->SetLineWidth(0); // was 1
 }
 //======================================================================
 void tmgui(){
@@ -1760,12 +1813,12 @@ plotvar(anl, "mass_lvj_type0_PuppiAK8",    cuts,  1.0, 1, 0,  0.0,  2500., 50,  
 cp1->cd(9);
 plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
 //======================================================================================================================================================================
- outfname << "plots/2016/c1_2016" << "_" << CutName << ".pdf";
+ outfname << "plots/2018/c1_2018" << "_" << CutName << ".pdf";
  cp1->SaveAs(outfname.str().c_str());
  outfname.str("");
- outfname << "plots/2016/c1_2016"  << "_" << CutName << ".png";
- cp1->SaveAs(outfname.str().c_str()); 
- outfname.str("");
+ //outfname << "plots/2018/c1_2018"  << "_" << CutName << ".png";
+ //cp1->SaveAs(outfname.str().c_str()); 
+ //outfname.str("");
 // OLD - reminder
 
  //============================
@@ -1805,12 +1858,12 @@ plotvar(anl, "ungroomed_PuppiAK8_jet_charge", cuts,  1.0, 1, 0,  -2.5, 5.5, 0.1,
 cp2->cd(9);
 plotvar(anl, "ungroomed_PuppiAK8_jet_e",    cuts,  1.0, 1, 0,   0., 1400., 20,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8  energy", "Events/bin");
 //
-outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
+outfname << "plots/2018/c2_2018" << "_" <<  CutName << ".pdf";
  cp2->SaveAs(outfname.str().c_str());
  outfname.str("");
- outfname << "plots/2016/c2_2016"  << "_" << CutName << ".png";
- cp2->SaveAs(outfname.str().c_str()); 
- outfname.str("");
+// outfname << "plots/2018/c2_2018"  << "_" << CutName << ".png";
+// cp2->SaveAs(outfname.str().c_str()); 
+// outfname.str("");
 
 // OLD - reminder
  TCanvas* cp3 = (TCanvas*)gROOT->FindObject("cp3"); 
@@ -1870,42 +1923,49 @@ outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
   cp3->cd(9);
   plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0, title_str, "zeppHad", "Events/bin");
   // OLD - reminder
- outfname << "plots/2016/c3_2016" << "_" <<  CutName  << ".pdf";
+ outfname << "plots/2018/c3_2018" << "_" <<  CutName  << ".pdf";
  cp3->SaveAs(outfname.str().c_str());
  outfname.str("");
- outfname << "plots/2016/c3_2016"  << "_" << CutName << ".png";
- cp3->SaveAs(outfname.str().c_str()); 
- outfname.str("");
+ //outfname << "plots/2018/c3_2018"  << "_" << CutName << ".png";
+ //cp3->SaveAs(outfname.str().c_str()); 
+ //outfname.str("");
 
-  } else { // These are the cplots for the NEW ntuples
+
+  } else { 
+    
+//Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t debug, Int_t istyle,
+	             //Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
+	             //const char hTitle[], const char xTitle[], const char yTitle[])
+
+  // ---------------- These are the cplots for the NEW ntuples ----------------------
   std::cout << "cuts = " << cuts << " Lumi = " << g_lum << std::endl;
   //------------   VERTICES  	-------------------
   cp1->cd(1);
   plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 60, 1,       1, 0,  title_str, "Number of primary vertices", "Events/bin");
-  //------------    LEPTONS  	-------------------
+
   cp1->cd(2);
-  plotvar(anl, "lep1_pt",  cuts,  1.0, 1, 0,   0., 1000., 30,      1, 0,  title_str, "Lepton_1 p_{T} (GeV)", "Events/bin");
+  plotvar(anl, "bosCent", cuts, 1.0, 1, 0, -4, 4, 0.25, 0, 0, title_str, "Boson Centrality", "Events/bin");
+  //------------    LEPTONS  	-------------------
   cp1->cd(3);
-  plotvar(anl, "lep1_eta", cuts,  1.0, 1, 0,  -3.,  4., 0.25,   0, 0,  title_str, "Lepton_1 #eta", "Events/bin");
+  plotvar(anl, "lep1_pt",  cuts,  1.0, 1, 0,   0., 1000., 30,      1, 0,  title_str, "Lepton_1 p_{T} (GeV)", "Events/bin");
 
   cp1->cd(4);
-  plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  -4, 6, 0.125*TMath::Pi(),   0, 0,  title_str, "Lepton_1 #phi", "Events/bin");
+  plotvar(anl, "lep1_eta", cuts,  1.0, 1, 0,  -2.5, 2.5, 0.2,   0, 0,  title_str, "Lepton_1 #eta", "Events/bin");
 
   cp1->cd(5);
-  plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     1, 0,  title_str, "Lepton_1 charge", "Events/bin");
+  plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  -3.75, 3.75, 0.25,   0, 0,  title_str, "Lepton_1 #phi", "Events/bin");
 
   cp1->cd(6);
-  plotvar(anl, "neu_pz_type0",    cuts,  1.0, 1, 0,   -1001., 500., 20,       1, 0,  title_str, "neu_pz_type0", "Events/bin");
+  plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     0, 0,  title_str, "Lepton_1 charge", "Events/bin");
 
   cp1->cd(7);
   plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.4, 0.02,       1, 0,  title_str, "Lepton_1 isolation", "Events/bin");
-  //
 
   cp1->cd(8);
-  plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -5., 5., 0.25, 0, 0, title_str, "zeppLep", "Events/bin");
+  plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, title_str, "zeppLep", "Events/bin");
 
   cp1->cd(9);
-  plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -5., 5., 0.25, 0, 0, title_str, "zeppHad", "Events/bin");
+  plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, title_str, "zeppHad", "Events/bin");
 
   //---------------	4 body mass	---------------
   //cp1->cd(8);
@@ -1914,12 +1974,12 @@ outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
   //cp1->cd(9);
   //plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
   //======================================================================================================================================================================
-   outfname << "plots/2016/c1_2016" << "_" << CutName << ".pdf";
+   outfname << "plots/2018/c1_2018" << "_" << CutName << ".pdf";
    cp1->SaveAs(outfname.str().c_str());
    outfname.str("");
-   outfname << "plots/2016/c1_2016"  << "_" << CutName << ".root";
-   cp1->SaveAs(outfname.str().c_str()); 
-   outfname.str("");
+   //outfname << "plots/2018/c1_2018"  << "_" << CutName << ".root";
+   //cp1->SaveAs(outfname.str().c_str()); 
+   //outfname.str("");
 
 
    //============================
@@ -1931,55 +1991,49 @@ outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
 
 
   //-------------- 	MET	-------------------
-  cp2->cd(1);
-  plotvar(anl, "MET",  cuts,  1.0, 1, 0,   0., 800., 25,      1, 0,  title_str, "MET (GeV)", "Events/bin");
-
-  cp2->cd(2);
-  plotvar(anl, "MET_phi",  cuts,  1.0, 1, 0,   -4, 6, 0.125*TMath::Pi(),      1, 0,  title_str, "MET_phi", "Events/bin");
 
   // cp2->cd(3);
   // plotvar(anl, "nu_pz_type0",  cuts,  1.0, 1, 0,   -500., 500., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Reconstructed Neutrino p_{Z}", "Events/bin");
-  //
+
+  cp2->cd(1);
+  plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 2., 10., 0.25, 0, 0, title_str, "vbf_deta #Delta#eta^{vbs}", "Events/bin");
+
+  cp2->cd(2);
+  plotvar(anl, "vbf_m", cuts, 1.0, 1, 0 , 0., 4500, 150, 1, 0, title_str, "m^{vbs}_{jj} (GeV)", "Events/bin");
 
   cp2->cd(3);
-  plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 0., 10., 0.25, 0, 0, title_str, "vbf_deta", "Events/bin");
+  plotvar(anl, "vbf_pt", cuts,  1.0, 1, 0,  0., 2000., 50,   1, 0,  title_str, "p_T^{vbs} (GeV)", "Events/bin");
 
   cp2->cd(4);
-  plotvar(anl, "vbf_m", cuts, 1.0, 1, 0 , 0., 4500, 150, 1, 0, title_str, "vbf_m", "Events/bin");
+  plotvar(anl, "vbf1_AK4_pt", cuts, 1.0, 1, 0, 0., 1000., 25, 1, 0, title_str, "p^{T}_{j1} (GeV)", "Events/bin");
 
   cp2->cd(5);
-  plotvar(anl, "vbf_pt", cuts,  1.0, 1, 0,  0., 2000., 50,   1, 0,  title_str, "vbf_pt", "Events/bin");
+  plotvar(anl, "vbf1_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, title_str, "#eta_{j1}", "Events/bin");
+
+  cp2->cd(6);
+  plotvar(anl, "vbf1_AK4_phi", cuts, 1.0, 1, 0, -3.75, 3.75, 0.25, 1, 0, title_str, "#phi_{j1}", "Events/bin");
+
+  cp2->cd(7);
+  plotvar(anl, "vbf2_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 1, 0, title_str, "p^{T}_{j2} (GeV)", "Events/bin");
+
+  cp2->cd(8);
+  plotvar(anl, "vbf2_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, title_str, "#eta_{j2}", "Events/bin");
+
+  cp2->cd(9);
+  plotvar(anl, "vbf2_AK4_phi", cuts, 1.0, 1, 0, -3.75, 3.75, 0.25, 1, 0, title_str, "#phi_{j2}", "Events/bin");
 
   //--------------	AK8 Jet		------------
   //cp2->cd(4);
   //plotvar(anl, "nGoodPuppiAK8jets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of Good AK8 jets", "Events/bin"); // //
 
-  cp2->cd(6);
-  plotvar(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   0., 1600., 20,      1, 0,  title_str, "AK8 p_{T} (GeV)", "Events/bin");
-
-  cp2->cd(7);
-  plotvar(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -3.0, 4.0, .2,   0, 0,  title_str, "AK8 #eta", "Events/bin");
-
-  cp2->cd(8);
-  plotvar(anl, "bos_PuppiAK8_phi", cuts,  1.0, 1, 0,  -4, 6, 0.125*TMath::Pi(),   1, 0,  title_str, "AK8 #phi", "Events/bin");
-
-  cp2->cd(9);
-  plotvar(anl, "bos_PuppiAK8_m_sd0", cuts,  1.0, 1, 0,  40., 200, 5,   1, 0,  title_str, "AK8  Mass sd0", "Events/bin");
 
 
-  //cp2->cd(8);
-  //plotvar(anl, "ungroomed_PuppiAK8_jet_charge", cuts,  1.0, 1, 0,  -2.5, 5.5, 0.1,     1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 charge", "Events/bin"); // //
-
-  //cp2->cd(9);
-  //plotvar(anl, "ungroomed_PuppiAK8_jet_e",    cuts,  1.0, 1, 0,   0., 1400., 20,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8  energy", "Events/bin"); // //
-  //
-  outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
+  outfname << "plots/2018/c2_2018" << "_" <<  CutName << ".pdf";
    cp2->SaveAs(outfname.str().c_str());
    outfname.str("");
-   outfname << "plots/2016/c2_2016"  << "_" << CutName << ".root";
-   cp2->SaveAs(outfname.str().c_str()); 
-   outfname.str("");
-
+   //outfname << "plots/2018/c2_2018"  << "_" << CutName << ".root";
+   //cp2->SaveAs(outfname.str().c_str()); 
+   //outfname.str("");
 
   TCanvas* cp3 = (TCanvas*)gROOT->FindObject("cp3"); 
   if(cp3) { cp3->Delete(); }
@@ -1987,31 +2041,33 @@ outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
   cp3->Divide(3,3);
 
   cp3->cd(1);
-  plotvar(anl, "dibos_m", cuts,  1.0, 1, 0,  0., 1500, 50,   1, 0,  title_str, "Diboson Mass", "Events/bin");
+  plotvar(anl, "MET",  cuts,  1.0, 1, 0,   0., 800., 25,      1, 0,  title_str, "MET (GeV)", "Events/bin");
 
   cp3->cd(2);
-  plotvar(anl, "dibos_mt", cuts, 1.0, 1, 0, 0., 2000, 50, 1, 0, title_str, "Diboson mt", "Events/bin");
+  plotvar(anl, "MET_phi",  cuts,  1.0, 1, 0, -3.75, 3.75, 0.25, 0, 0,  title_str, "MET_{phi}", "Events/bin"); //0.125*TMath::Pi()
 
   cp3->cd(3);
-  plotvar(anl, "dibos_pt", cuts, 1.0, 1, 0, 0., 1000, 25, 1, 0, title_str, "Diboson pt", "Events/bin");
+  plotvar(anl, "bos_j1_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 0, 0, title_str, "p^{T}_{J1} (GeV)", "Events/bin");
 
   cp3->cd(4);
-  plotvar(anl, "dibos_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, title_str, "Diboson #eta", "Events/bin");
+  plotvar(anl, "bos_j1_AK4_eta", cuts, 1.0, 1, 0, -2.5, 2.5, 0.2, 0, 0, title_str, "#eta_{J1}", "Events/bin");
 
   cp3->cd(5);
-  plotvar(anl, "dibos_phi", cuts, 1.0, 1, 0, -4., 6., 0.25, 0, 0, title_str, "Diboson #phi", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_tau2tau1", cuts, 1.0, 1, 0, 0., 1.0, 0.04, 0, 0, title_str, "V #tau_{21}", "Events/bin");
 
   cp3->cd(6);
-  plotvar(anl, "dilep_mt", cuts, 1.0, 1, 0, 0., 1000, 25, 1, 0, title_str, "Dilepton mt", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   0., 1600., 20,      0, 0,  title_str, "AK8 p_{T} (GeV)", "Events/bin");
 
   cp3->cd(7);
-  plotvar(anl, "dilep_m", cuts, 1.0, 1, 0, 0., 1000, 25, 1, 0, title_str, "Dilepton mass", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -2.5, 2.5, .2,   0, 0,  title_str, "AK8 #eta", "Events/bin");
 
   cp3->cd(8);
-  plotvar(anl, "dilep_eta", cuts, 1.0, 1, 0, -4., 4., 0.25, 0, 0, title_str, "Dilepton #eta", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_phi", cuts,  1.0, 1, 0,  -3.75, 3.75, 0.25,   0, 0,  title_str, "AK8 #phi", "Events/bin");
 
   cp3->cd(9);
-  plotvar(anl, "dilep_pt", cuts, 1.0, 1, 0, 0., 1200, 25, 1, 0, title_str, "Dilepton pt", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_m_sd0_corr", cuts,  1.0, 1, 0,  40., 200, 5,   0, 0,  title_str, "AK8  Mass sd0 corr", "Events/bin");
+
+
 
   // plotvar(anl, "PuppiAK8_jet_mass",         cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 mass (GeV)",           "Events/bin");
   // plotvar(anl, "PuppiAK8_jet_mass_pr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 pruned mass (GeV)",    "Events/bin");
@@ -2036,22 +2092,46 @@ outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
   // plotvar(anl, "vbf_maxpt_jj_Deta", cuts,  1.0, 1, 0,  0.0,  20.0, 0.5,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF #Delta #eta", "Events/bin");
   //
 
-  outfname << "plots/2016/c3_2016" << "_" <<  CutName  << ".pdf";
+  outfname << "plots/2018/c3_2018" << "_" <<  CutName  << ".pdf";
   cp3->SaveAs(outfname.str().c_str());
   outfname.str("");
-  outfname << "plots/2016/c3_2016"  << "_" << CutName << ".root";
-  cp3->SaveAs(outfname.str().c_str()); 
-  outfname.str("");
+  //outfname << "plots/2018/c3_2018"  << "_" << CutName << ".root";
+  //cp3->SaveAs(outfname.str().c_str()); 
+  //outfname.str("");
 
-  // // // Mark commented out
-  // TCanvas* cp4 = (TCanvas*)gROOT->FindObject("cp4"); 
-  // if(cp4) { cp4->Delete(); }
-  // cp4 = new TCanvas("cp4","cp4",10,10,1000,1000);
-  // cp4->Divide(3,3);
-  // plotvar(anl, "costheta1_type0",    cuts,  1.0, 1, 0,  -1.2, 2.2,  0.1,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "costheta1_type0", "Events/bin");
-  // plotvar(anl, "costheta2_type0",    cuts,  1.0, 1, 0,  -1.2, 2.2,  0.1,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "costheta2_type0", "Events/bin");
-  // plotvar(anl, "costhetastar_type0", cuts,  1.0, 1, 0,  -1.2, 2.5,  0.1,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "costhetastar_type0", "Events/bin");
-  // // // Mark commented out
+  // // Mark commented out
+  TCanvas* cp4 = (TCanvas*)gROOT->FindObject("cp4"); 
+  if(cp4) { cp4->Delete(); }
+  cp4 = new TCanvas("cp4","cp4",10,10,1000,1000);
+  cp4->Divide(3,3);
+
+  cp4->cd(1);
+  plotvar(anl, "dibos_m", cuts,  1.0, 1, 0,  0., 1500, 50,   0, 0,  title_str, "Diboson Mass", "Events/bin");
+
+  cp4->cd(2);
+  plotvar(anl, "dibos_mt", cuts, 1.0, 1, 0, 0., 2000, 50, 0, 0, title_str, "Diboson mt", "Events/bin");
+
+  cp4->cd(3);
+  plotvar(anl, "dibos_pt", cuts, 1.0, 1, 0, 0., 1000, 25, 0, 0, title_str, "Diboson pt", "Events/bin");
+
+  cp4->cd(4);
+  plotvar(anl, "dibos_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, title_str, "Diboson #eta", "Events/bin");
+
+  cp4->cd(5);
+  plotvar(anl, "dibos_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, title_str, "Diboson #phi", "Events/bin");
+
+  cp4->cd(6);
+  plotvar(anl, "dilep_mt", cuts, 1.0, 1, 0, 0., 1000, 25, 0, 0, title_str, "Dilepton mt", "Events/bin");
+
+  cp4->cd(7);
+  plotvar(anl, "dilep_m", cuts, 1.0, 1, 0, 0., 1000, 25, 0, 0, title_str, "Dilepton mass", "Events/bin");
+
+  cp4->cd(8);
+  plotvar(anl, "dilep_eta", cuts, 1.0, 1, 0, -4., 4., 0.25, 0, 0, title_str, "Dilepton #eta", "Events/bin");
+
+  cp4->cd(9);
+  plotvar(anl, "dilep_pt", cuts, 1.0, 1, 0, 0., 1200, 25, 0, 0, title_str, "Dilepton pt", "Events/bin");
+  // // Mark commented out
 
 
   // // plotvar(anl, "phi1_type0", OneMuPt50+fatjetLoose+pfMETpuppi50+mjw65to105+MjjVBF300+detajjVBF4,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,  "VBS (WV), 35.9 fb^{-1}", "phi0_type0 #phi", "Events/bin");
@@ -2080,10 +2160,10 @@ outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
   // plotvar(anl, "vbf_maxpt_jj_Deta", cuts,  1.0, 1, 0,  0.0,  20.0, 0.5,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF #Delta #eta", "Events/bin");
   //
 
-  // // // M comment
-  // outfname << "VarPlots_c4" << "_" <<  CutName  << ".pdf";
-  // cp4->SaveAs(outfname.str().c_str());
-  // outfname.str("");
+  // // M comment
+  outfname << "plots/2018/c4_2018" << "_" <<  CutName  << ".pdf";
+  cp4->SaveAs(outfname.str().c_str());
+  outfname.str("");
   // outfname << "VarPlots_c4"  << "_" << CutName << ".png";
   // cp4->SaveAs(outfname.str().c_str()); 
   // outfname.str("");

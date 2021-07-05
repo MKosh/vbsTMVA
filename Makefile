@@ -83,6 +83,7 @@ update_2016:
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2016/c1_2016|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2016/c2_2016|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2016/c3_2016|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/c4_[0-9]\{4\}|plots/2016/c4_2016|g' tmvaMon.cpp
 	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cpp
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cpp
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cpp
@@ -101,6 +102,7 @@ update_2017:
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2017/c1_2017|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2017/c2_2017|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2017/c3_2017|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/c4_[0-9]\{4\}|plots/2017/c4_2017|g' tmvaMon.cpp
 	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cpp
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cpp
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cpp
@@ -118,6 +120,7 @@ update_2018:
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2018/c1_2018|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2018/c2_2018|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2018/c3_2018|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/c4_[0-9]\{4\}|plots/2018/c4_2018|g' tmvaMon.cpp
 	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cpp
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cpp
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cpp
