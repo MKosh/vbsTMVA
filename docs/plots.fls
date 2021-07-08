@@ -272,12 +272,6 @@ INPUT ../plots/2018/c3_2018_Full_Wjets_CR.pdf
 INPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/../plots/2018/c1_2018_Full_Wjets_CRscaled.pdf
 INPUT ../plots/2018/c1_2018_Full_Wjets_CRscaled.pdf
 INPUT ../plots/2018/c1_2018_Full_Wjets_CRscaled.pdf
-INPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/../plots/2018/c2_2018_Full_Wjets_CRscaled.pdf
-INPUT ../plots/2018/c2_2018_Full_Wjets_CRscaled.pdf
-INPUT ../plots/2018/c2_2018_Full_Wjets_CRscaled.pdf
-INPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/../plots/2018/c3_2018_Full_Wjets_CRscaled.pdf
-INPUT ../plots/2018/c3_2018_Full_Wjets_CRscaled.pdf
-INPUT ../plots/2018/c3_2018_Full_Wjets_CRscaled.pdf
 INPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/../plots/2018/c1_2018_Full_SRscaled.pdf
 INPUT ../plots/2018/c1_2018_Full_SRscaled.pdf
 INPUT ../plots/2018/c1_2018_Full_SRscaled.pdf
@@ -299,6 +293,9 @@ INPUT ../plots/2018/c2_2018_Full_Top_CRscaled.pdf
 INPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/../plots/2018/c3_2018_Full_Top_CRscaled.pdf
 INPUT ../plots/2018/c3_2018_Full_Top_CRscaled.pdf
 INPUT ../plots/2018/c3_2018_Full_Top_CRscaled.pdf
+INPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/../plots/2018/c4_2018_Full_Top_CRscaled.pdf
+INPUT ../plots/2018/c4_2018_Full_Top_CRscaled.pdf
+INPUT ../plots/2018/c4_2018_Full_Top_CRscaled.pdf
 INPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/plots.aux
 INPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/plots.out
 INPUT /home/mmekosh/documents/research/vbstmva_new/vbsTMVA/docs/plots.out
