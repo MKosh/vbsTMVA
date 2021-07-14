@@ -5,7 +5,7 @@ CONDA_ACTIVATE=source $$(conda info --base)/etc/profile.d/conda.sh ; conda activ
 
 loc ?= "g/Research/ntuples/NEW/2016/haddedFiles"
 year ?= "2016"
-vars ?= "set2016"
+vars ?= "set1"
 methods ?= "BDT"
 lumi ?= 35.867
 cut ?= "dummy"
@@ -23,7 +23,7 @@ init:
 	@echo "If you want to train and output plots:				 |	If you want to train but not create plots:"
 	@echo "---- trainAndPlot - loc, year, vars, methods, lumi, cut, cutName |	---- trainNoPlot - loc, year, vars, methods"
 	@echo "If you just want to make and save the cplots			 |	If you just want to run the tmvaMon program and make individual plots"
-	@echo "---- plot - year, lumi, cut, cutName				 |	---- mon - year, lumi, cut, cutName"
+	@echo "---- plots - year, lumi, cut, cutName				 |	---- mon - year, lumi, cut, cutName"
 	@echo "If you just want to update the pdf with all the plots		 |"
 	@echo "---- genReport - 					 	 |"
 	@echo ""
@@ -57,7 +57,7 @@ trainAndPlot: update_$(year)
 	-@./utils/plot_resort.sh "$(year)"
 	@./utils/gen_plots.sh
 
-plot: update_$(year)
+plots: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	-@./utils/plot_sort.sh "$(year)"
 	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
@@ -72,8 +72,7 @@ mon: update_$(year)
 	
 
 genPlots:
-	@./utils/gen_plots.sh
-	
+	@./utils/gen_plots.sh	
 
 update_2016: 
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.C

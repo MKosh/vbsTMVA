@@ -1157,7 +1157,7 @@ Int_t TmvaAnl::ArrangeHtms(Int_t flogy){
 if (flogy == 1) {
   hdata->SetMaximum(npmax*20);
 } else if (flogy == 0) {
-  hdata->SetMaximum(npmax*1.35); // MM was 1.2 I changed that, added the flogy argument and the if statement
+  hdata->SetMaximum(npmax*1.45); // MM was 1.2 I changed that, added the flogy argument and the if statement
 }
   return imax;
 }
@@ -1347,7 +1347,7 @@ void TmvaAnl::PlotLegend(const char* var){
   if(legend) delete legend;
 
   //legend = new TLegend(.63, .58, .88, .88);
-  legend = new TLegend(.29, .73, .9, .88);
+  legend = new TLegend(.29, .73, .89, .88);
 
   legend->SetName(sNameLegend.str().c_str());
   legend->SetFillColor(0);
@@ -2080,9 +2080,9 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
    outfname << "plots/2018/c1_2018" << "_" << CutName << ".pdf";
    cp1->SaveAs(outfname.str().c_str());
    outfname.str("");
-   outfname << "plots/2018/c1_2018"  << "_" << CutName << ".root";
-   cp1->SaveAs(outfname.str().c_str()); 
-   outfname.str("");
+   //outfname << "plots/2018/c1_2018"  << "_" << CutName << ".root";
+   //cp1->SaveAs(outfname.str().c_str()); 
+   //outfname.str("");
 
 
    //============================
