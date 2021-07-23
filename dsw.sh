@@ -36,11 +36,12 @@ if [ "0$(echo  $SNAME | grep suv)" != "0" ]; then
     module load root/root-6.10.08-SL7-x64-cvmfs
 fi
 
-if [ "0$(echo $SNAME | grep MM)" != "0" ] || [ "0$(echo $SNAME | grep Mark)" != "0" ]; then # If running on my personal machine
-    DD_VBS_REDUCED="/mnt/$1" # d/2016/haddedFiles (g if on my desktop) - This uses the data stored on a flash drive, don't forget to mount it (_ = some letter) use:~$ mkdir /mnt/_ ~$ sudo mount -t drvfs _: /mnt/_
+# If running on my personal machine - First condition is windows, second is, well... Manjaro Linux
+if [ "0$(echo $SNAME | grep MM)" != "0" ] || [ "0$(echo $SNAME | grep Mark)" != "0" ]; then 
+    DD_VBS_REDUCED="/mnt/$1" # d/2016/haddedFiles (g if on my desktop) - If using the data stored on a flash drive, don't forget to mount it (_ = some letter) use:~$ mkdir /mnt/_ ~$ sudo mount -t drvfs _: /mnt/_
     DatasetInpFile="./datasets/datasets_$2.json"
 elif [ "0$(echo $SNAME | grep Manjaro)" != "0" ]; then
-    DD_VBS_REDUCED=""
+    DD_VBS_REDUCED="~/Documents/research/ntuples/$2/haddedFiles"
     DatasetInpFile="./datasets/datasets_$2.json"
 fi
 

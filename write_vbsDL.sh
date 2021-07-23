@@ -10,22 +10,23 @@
 #       - Creates vbsActiveBranches.hpp from the list of what's a variable and what's a spectator
 
 #   Usage:
-#       ./write_vbsDL.sh "location/of/data" "variable_set"
+#       ./write_vbsDL.sh "location/of/data" "variable_set" "year"
 
 # --------------------------------------------------------- Start - Create the write_list C++ macro - Start -------------------------------------------------------------------
 
-#if [ $2 == "new" ]; then
-    # rootFiles="/mnt/e/Research/ntuples/NEW/ntuples/" # Location of the ntuples on my personal machine
-#    Trees="Events"
+
 if [ $2 == "old" ]; then
-    # rootFiles="/mnt/e/Research/ntuples/vbs_ww_old/"
     Trees="otree"
 else
-#    echo "Nothing specified - Using new ntuples"
     Trees="Events"
 fi
 
-rootFiles="/mnt/$1/" # $1 = g/2016/haddedFiles on my flashdrive, or on my desktop e/Research/ntuples/NEW/2016/haddedFiles
+if [[ "0$1" == "0" ]]; then
+    rootFiles="~/Documents/research/ntuples/$3/haddedFiles/"
+else
+    rootFiles="/mnt/$1/" # $1 = g/2016/haddedFiles on my flashdrive, or on my desktop e/Research/ntuples/NEW/2016/haddedFiles
+fi
+
 now=$(date)
 
 macroFile="write_list.C"

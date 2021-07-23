@@ -26,6 +26,7 @@ init:
 	@echo "---- plots - year, lumi, cut, cutName				 |	---- mon - year, lumi, cut, cutName"
 	@echo "If you just want to update the pdf with all the plots		 |"
 	@echo "---- genReport - 					 	 |"
+	@echo "Add _wsl to each of these target names if running on WSL" 
 	@echo ""
 
 test:
@@ -40,12 +41,53 @@ test:
 trainNoPlot: update_$(year)
 	@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
+	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
+	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(year)\",\"$(methods)\"\))
+	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(year)\",\"$(methods)\"\))
+	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+
+trainAndPlot: update_$(year)
+	@rm -r skims/vbs_ww
+	@./dsw.sh "$(loc)" "$(year)"
+	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
+	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(year)\",\"$(methods)\"\)
+	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(year)\",\"$(methods)\"\)
+	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	-@./utils/plot_sort.sh "$(year)"
+	@root -q tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\)
+	-@./utils/plot_resort.sh "$(year)"
+	@./utils/gen_plots.sh
+
+plots: update_$(year)
+	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	-@./utils/plot_sort.sh "$(year)"
+	@root -q tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\)
+	-@./utils/plot_resort.sh "$(year)"
+	@./utils/gen_plots.sh
+
+mon: update_$(year)
+	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	-@./utils/plot_sort.sh "$(year)"
+	@echo "Don't forget to run the plot_resort.sh script after generating new plots"
+	@root tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\)
+	
+
+genPlots:
+	@./utils/gen_plots.sh
+
+# ----------------------------------------------------------------------------------------------------------------------------
+# These makefile targets are for when make is run on WSL. They need the special CONDA_ACTIVATE command so root can be used
+# vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+trainNoPlot_wsl: update_$(year)
+	@rm -r skims/vbs_ww
+	@./dsw.sh "$(loc)" "$(year)"
 	@($(CONDA_ACTIVATE) root_env ; ./write_vbsDL.sh "$(loc)" "$(vars)")
 	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(year)\",\"$(methods)\"\))
 	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(year)\",\"$(methods)\"\))
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 
-trainAndPlot: update_$(year)
+trainAndPlot_wsl: update_$(year)
 	@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@($(CONDA_ACTIVATE) root_env ; ./write_vbsDL.sh "$(loc)" "$(vars)")
@@ -57,22 +99,26 @@ trainAndPlot: update_$(year)
 	-@./utils/plot_resort.sh "$(year)"
 	@./utils/gen_plots.sh
 
-plots: update_$(year)
+plots_wsl: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	-@./utils/plot_sort.sh "$(year)"
 	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
 	-@./utils/plot_resort.sh "$(year)"
 	@./utils/gen_plots.sh
 
-mon: update_$(year)
+mon_wsl: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	-@./utils/plot_sort.sh "$(year)"
 	@echo "Don't forget to run the plot_resort.sh script after generating new plots"
 	@($(CONDA_ACTIVATE) root_env ; root tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
-	
 
-genPlots:
-	@./utils/gen_plots.sh	
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# These makefile targets are for when make is run on WSL. They need the special CONDA_ACTIVATE command so root can be used
+# --------------------------------------------------------------------------------------------------------------------------
+
+# --------------------------------------------------------------------------------------------------------------------------
+#                 These makefile targets update the different files for whichever year specified
+#                 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
 update_2016: 
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.C
@@ -145,6 +191,13 @@ update_0000:
 	@sed -i 's|wtot.*\(\*\)|wtot_old*|g' tmvaMon.cpp
 	@sed -i 's|wtot.*\(,stats\)|wtot_old,stats|g' vbsTMVA.hpp
 
+#                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#                 These makefile targets update the different files for whichever year specified
+# -----------------------------------------------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------------------------------------------
+#                                                This is junk
+#                                                vvvvvvvvvvvv
 
 # 	@sed -i 's|//cplots(anl, cut, cutName); // XXX|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 #    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
