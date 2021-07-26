@@ -41,7 +41,7 @@ if [ "0$(echo $SNAME | grep MM)" != "0" ] || [ "0$(echo $SNAME | grep Mark)" != 
     DD_VBS_REDUCED="/mnt/$1" # d/2016/haddedFiles (g if on my desktop) - If using the data stored on a flash drive, don't forget to mount it (_ = some letter) use:~$ mkdir /mnt/_ ~$ sudo mount -t drvfs _: /mnt/_
     DatasetInpFile="./datasets/datasets_$2.json"
 elif [ "0$(echo $SNAME | grep Manjaro)" != "0" ]; then
-    DD_VBS_REDUCED="~/Documents/research/ntuples/$2/haddedFiles"
+    DD_VBS_REDUCED="/mnt/Storage/Research/ntuples/NEW/$2/haddedFiles"
     DatasetInpFile="./datasets/datasets_$2.json"
 fi
 

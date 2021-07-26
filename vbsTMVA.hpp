@@ -59,7 +59,8 @@ TCut cut_TT          ("cut_TT",         "(gid ==  15)");
 //Cuts
 //from MyControlPlots.C
 TCut cleanNAN       ("cleanNAN",        "(mass_lvj_type0_PuppiAK8>0)"); // Use this NAN cut for the old data
-TCut cleanNAN_tau   ("cleanNAN_tau",    "!TMath::IsNaN(bos_PuppiAK8_tau2tau1)"); // Use this one for the new data
+TCut cleanNAN_tau   ("cleanNAN_tau",    "!(TMath::IsNaN(bos_PuppiAK8_tau2tau1))"); // Use this one for the new data
+TCut cleanNAN_qgid  ("cleanNAN_qgid",   "!(TMath::IsNaN(vbf1_AK4_qgid))&&!(TMath::IsNaN(vbf2_AK4_qgid))");
 TCut mVVgt0         ("mVVgt0",          "(mass_lvj_type0_PuppiAK8>0)"); 
 TCut oneLepton      ("oneLepton",       "(lep2_pt<0)"); 
 TCut Lpt1gt50       ("Lpt1gt50",        "(lep1_pt>50)"); 
@@ -504,7 +505,7 @@ Int_t getVbsReqStat(const char* filelist) {
        TTree* mtree  = (TTree*) gROOT->FindObject("VBS4LeptonsAnalysisReduced");
 	 nInitReqEvt_w+=cutflow_w->GetBinContent(1);
 	 nInitReqEvt  +=cutflow->GetBinContent(1);
-	 getStat(mtree,"f_mass4l",wtot_2018,stats);
+	 getStat(mtree,"f_mass4l",wtot_2016,stats);
          nNtpReqEvt    += stats[0];
 	 nNtpReqEvt_w2 += stats[1]*stats[1];
       }else{

@@ -39,15 +39,15 @@ test:
 	@echo "cutName = $(cutName)"
 
 trainNoPlot: update_$(year)
-	@rm -r skims/vbs_ww
+	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
-	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(year)\",\"$(methods)\"\))
-	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(year)\",\"$(methods)\"\))
+	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(year)\",\"$(methods)\"\)
+	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(year)\",\"$(methods)\"\)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 
 trainAndPlot: update_$(year)
-	@rm -r skims/vbs_ww
+	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
 	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(year)\",\"$(methods)\"\)
@@ -122,7 +122,7 @@ mon_wsl: update_$(year)
 
 update_2016: 
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.C
-	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_tau;|g' vbsTMVAClassification.C
+	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.C
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2016|g' vbsTMVAClassification.C
 	@sed -i 's|int year = [0-9]\{4\}|int year = 2016|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2016/c1_2016|g' tmvaMon.cpp
@@ -141,7 +141,7 @@ update_2016:
 
 update_2017:
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.C
-	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_tau;|g' vbsTMVAClassification.C
+	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.C
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2017|g' vbsTMVAClassification.C
 	@sed -i 's|int year = [0-9]\{4\}|int year = 2017|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2017/c1_2017|g' tmvaMon.cpp
@@ -159,7 +159,7 @@ update_2017:
 
 update_2018:
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.C
-	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_tau;|g' vbsTMVAClassification.C
+	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.C
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2018|g' vbsTMVAClassification.C
 	@sed -i 's|int year = [0-9]\{4\}|int year = 2018|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2018/c1_2018|g' tmvaMon.cpp
