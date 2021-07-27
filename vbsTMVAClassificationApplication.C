@@ -375,7 +375,7 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    sw.Start();
    for (Long64_t ievt=0; ievt< inpDataTree->GetEntries();ievt++) {
 
-      if (ievt%1000 == 0) std::cout << "--- ... Processing event: " << ievt << std::endl;
+      if (ievt%10000 == 0) std::cout << "--- ... Processing event: " << ievt << std::endl;
 
       inpDataTree->GetEntry(ievt);
 
@@ -564,11 +564,12 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    delete reader;
 
    std::cout << "==> TMVAClassificationApplication is done!" << endl << std::endl;
-   std::cout << "==> Use root -l tmvaMon.cpp\\(\\\"" << sname << "\\\"\\)  to analyse..." << std::endl;
+   std::cout << "==> Use root -l tmvaMon.cpp\\(\\\"" << sname << "\\\",lumi,cut,\\\"cutName\\\"\\)  to analyse..." << std::endl;
    std::cout << "==> Use one of the following as a second argument for the luminosity" << std::endl;
-   std::cout << "==> 2016 Samples -> " << lum_2016/1000 << std::endl;
-   std::cout << "==> 2017 Samples -> " << lum_2017/1000 << std::endl;
-   std::cout << "==> 2018 Samples -> " << lum_2018/1000 << std::endl;
+   std::cout << "Lumies:" << std::endl;
+   std::cout << "  ==> 2016 Samples -> " << lum_2016/1000 << std::endl;
+   std::cout << "  ==> 2017 Samples -> " << lum_2017/1000 << std::endl;
+   std::cout << "  ==> 2018 Samples -> " << lum_2018/1000 << std::endl;
 }
 
 int main( int argc, char** argv )
