@@ -10,7 +10,7 @@ Method         : DL::DNN_GPU
 TMVA Release   : 4.2.1         [262657]
 ROOT Release   : 6.24/02       [399362]
 Creator        : markm
-Date           : Mon Jul 26 07:58:20 2021
+Date           : Tue Jul 27 14:23:19 2021
 Host           : Linux Manjaro-Desktop 5.10.52-1-MANJARO #1 SMP PREEMPT Tue Jul 20 20:32:02 UTC 2021 x86_64 GNU/Linux
 Dir            : /home/markm/Documents/research/vbsTMVA
 Training events: 8181033
@@ -49,7 +49,7 @@ bos_j1_AK4_pt                 bos_j1_AK4_pt                 bos_j1_AK4_pt       
 bos_j2_AK4_pt                 bos_j2_AK4_pt                 bos_j2_AK4_pt                 bos_j2_AK4_pt                                                   'F'    [-999,333.18157959]
 lep1_eta                      lep1_eta                      lep1_eta                      lep1_eta                                                        'F'    [-2.5,2.5]
 lep1_pt                       lep1_pt                       lep1_pt                       lep1_pt                                                         'F'    [19.4175376892,2898.93847656]
-nJet30                        nJet30                        nJet30                        nJet30                                                          'F'    [0,18]
+nJet30f                       nJet30f                       nJet30f                       nJet30f                                                         'F'    [0,18]
 vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                                                     'F'    [28.2939491272,3001.70092773]
 vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                                                     'F'    [18.265625,2466.53149414]
 vbf_deta                      vbf_deta                      vbf_deta                      vbf_deta                                                        'F'    [0.0011616833508,11.8237304688]
@@ -57,7 +57,7 @@ vbf_eta                       vbf_eta                       vbf_eta             
 vbf_m                         vbf_m                         vbf_m                         vbf_m                                                           'F'    [500.000091553,14693.4345703]
 zeppHad                       zeppHad                       zeppHad                       zeppHad                                                         'F'    [-9.3388299942,9.18382453918]
 zeppLep                       zeppLep                       zeppLep                       zeppLep                                                         'F'    [-9.711561203,9.07499504089]
-NSpec 48
+NSpec 49
 bos_AK4AK4_pt                 bos_AK4AK4_pt                 bos_AK4AK4_pt                 bos_AK4AK4_pt                                                   'F'    [-999,1903.09631348]
 bos_j1_AK4_eta                bos_j1_AK4_eta                bos_j1_AK4_eta                bos_j1_AK4_eta                                                  'F'    [-999,2.39990234375]
 bos_j2_AK4_eta                bos_j2_AK4_eta                bos_j2_AK4_eta                bos_j2_AK4_eta                                                  'F'    [-999,2.39990234375]
@@ -94,6 +94,7 @@ MET_phi                       MET_phi                       MET_phi             
 nBtag_loose                   nBtag_loose                   nBtag_loose                   nBtag_loose                                                     'F'    [0,9]
 nBtag_medium                  nBtag_medium                  nBtag_medium                  nBtag_medium                                                    'F'    [0,8]
 neu_pz_type0                  neu_pz_type0                  neu_pz_type0                  neu_pz_type0                                                    'F'    [-999,-999]
+nJet30                        nJet30                        nJet30                        nJet30                                                          'F'    [0,18]
 nJet50                        nJet50                        nJet50                        nJet50                                                          'F'    [0,13]
 nPV                           nPV                           nPV                           nPV                                                             'F'    [1,142]
 puWeight                      puWeight                      puWeight                      puWeight                                                        'F'    [0,1.20750808716]
@@ -151,7 +152,7 @@ class ReadDNN_GPU : public IClassifierReader {
         fNvars( 15 )
    {
       // the training input variables
-      const char* inputVars[] = { "bos_AK4AK4_eta", "bos_AK4AK4_m", "bosCent", "bos_j1_AK4_pt", "bos_j2_AK4_pt", "lep1_eta", "lep1_pt", "nJet30", "vbf1_AK4_pt", "vbf2_AK4_pt", "vbf_deta", "vbf_eta", "vbf_m", "zeppHad", "zeppLep" };
+      const char* inputVars[] = { "bos_AK4AK4_eta", "bos_AK4AK4_m", "bosCent", "bos_j1_AK4_pt", "bos_j2_AK4_pt", "lep1_eta", "lep1_pt", "nJet30f", "vbf1_AK4_pt", "vbf2_AK4_pt", "vbf_deta", "vbf_eta", "vbf_m", "zeppHad", "zeppLep" };
 
       // sanity checks
       if (theInputVars.size() <= 0) {

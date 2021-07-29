@@ -173,7 +173,7 @@ rm list_of_branches.txt
 if [ $2 == "set1" ]; then
     # These are the variables for the new ntuples.
     TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt dibos_m dilep_eta dilep_m bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_pt bos_AK4AK4_m"
-    activeVARS="gid sid run evt isAntiIso bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta $TMVAVARS"
+    activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta $TMVAVARS"
     plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad nJet30 nJet50"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi"
@@ -185,11 +185,11 @@ elif [ $2 == "set2" ]; then
     activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta $TMVAVARS" # isAntiIso should go here, but it's a bool and AddSpectator expects a Float_t or Int_t
     plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad nJet30 nJet50"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
-    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi"
+    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt"
     plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
     plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $2 == "set3" ]; then # set2 backup
+elif [ $2 == "set3" ]; then 
     TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0 vbf1_AK4_axis2 bos_AK4AK4_m bos_AK4AK4_pt bos_AK4AK4_eta bos_AK4AK4_phi"
     activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose LHEWeight lep1_idEffWeight lep1_trigEffWeight bos_AK4AK4_phi bos_AK4AK4_eta $TMVAVARS"
     plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad"
@@ -197,7 +197,7 @@ elif [ $2 == "set3" ]; then # set2 backup
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
     plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_AK4AK4_m bos_AK4AK4_phi bos_AK4AK4_pt bos_AK4AK4_eta"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $2 == "set4" ]; then # set2016 backup
+elif [ $2 == "set4" ]; then 
     TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0"
     activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
     plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
@@ -280,7 +280,7 @@ for var in $SUanlVARS; do
     if [ $isVariable == "1" ]; then
         isVariable="0";
         echo "//TMVA variable" >> $outfile_DL
-        echo "if(dataloader) dataloader->AddVariable(\"$var\", \"$var\", \"\", '$typevar');" >> $outfile_DL # '$typevar'
+        echo "if(dataloader) dataloader->AddVariable(\"$var\", \"$var\", \"\", '$typevar');" >> $outfile_DL 
         if [ "0$isVarArray" == "0" ]; then
             echo "if(datareader) datareader->AddVariable(\"$var\",    &vbsEvent.$var        );" >> $outfile_DL
         else

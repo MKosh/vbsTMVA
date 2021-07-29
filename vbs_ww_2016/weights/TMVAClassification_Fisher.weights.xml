@@ -4,11 +4,11 @@
     <Info name="TMVA Release" value="4.2.1 [262657]"/>
     <Info name="ROOT Release" value="6.24/02 [399362]"/>
     <Info name="Creator" value="markm"/>
-    <Info name="Date" value="Mon Jul 26 11:03:46 2021"/>
+    <Info name="Date" value="Tue Jul 27 11:37:29 2021"/>
     <Info name="Host" value="Linux Manjaro-Desktop 5.10.52-1-MANJARO #1 SMP PREEMPT Tue Jul 20 20:32:02 UTC 2021 x86_64 GNU/Linux"/>
     <Info name="Dir" value="/home/markm/Documents/research/vbsTMVA"/>
     <Info name="Training events" value="8181033"/>
-    <Info name="TrainingTime" value="1.35088570e+01"/>
+    <Info name="TrainingTime" value="1.32741570e+01"/>
     <Info name="AnalysisType" value="Classification"/>
   </GeneralInfo>
   <Options>
@@ -28,7 +28,7 @@
     <Variable VarIndex="4" Expression="bos_j2_AK4_pt" Label="bos_j2_AK4_pt" Title="bos_j2_AK4_pt" Unit="" Internal="bos_j2_AK4_pt" Type="F" Min="-9.99000000e+02" Max="3.33181580e+02"/>
     <Variable VarIndex="5" Expression="lep1_eta" Label="lep1_eta" Title="lep1_eta" Unit="" Internal="lep1_eta" Type="F" Min="-2.50000000e+00" Max="2.50000000e+00"/>
     <Variable VarIndex="6" Expression="lep1_pt" Label="lep1_pt" Title="lep1_pt" Unit="" Internal="lep1_pt" Type="F" Min="1.94175377e+01" Max="2.89893848e+03"/>
-    <Variable VarIndex="7" Expression="nJet30" Label="nJet30" Title="nJet30" Unit="" Internal="nJet30" Type="F" Min="0.00000000e+00" Max="1.80000000e+01"/>
+    <Variable VarIndex="7" Expression="nJet30f" Label="nJet30f" Title="nJet30f" Unit="" Internal="nJet30f" Type="F" Min="0.00000000e+00" Max="1.80000000e+01"/>
     <Variable VarIndex="8" Expression="vbf1_AK4_pt" Label="vbf1_AK4_pt" Title="vbf1_AK4_pt" Unit="" Internal="vbf1_AK4_pt" Type="F" Min="2.82939491e+01" Max="3.00170093e+03"/>
     <Variable VarIndex="9" Expression="vbf2_AK4_pt" Label="vbf2_AK4_pt" Title="vbf2_AK4_pt" Unit="" Internal="vbf2_AK4_pt" Type="F" Min="1.82656250e+01" Max="2.46653149e+03"/>
     <Variable VarIndex="10" Expression="vbf_deta" Label="vbf_deta" Title="vbf_deta" Unit="" Internal="vbf_deta" Type="F" Min="1.16168335e-03" Max="1.18237305e+01"/>
@@ -37,7 +37,7 @@
     <Variable VarIndex="13" Expression="zeppHad" Label="zeppHad" Title="zeppHad" Unit="" Internal="zeppHad" Type="F" Min="-9.33882999e+00" Max="9.18382454e+00"/>
     <Variable VarIndex="14" Expression="zeppLep" Label="zeppLep" Title="zeppLep" Unit="" Internal="zeppLep" Type="F" Min="-9.71156120e+00" Max="9.07499504e+00"/>
   </Variables>
-  <Spectators NSpec="48">
+  <Spectators NSpec="49">
     <Spectator SpecIndex="0" Expression="bos_AK4AK4_pt" Label="bos_AK4AK4_pt" Title="bos_AK4AK4_pt" Unit="" Internal="bos_AK4AK4_pt" Type="F" Min="-9.99000000e+02" Max="1.90309631e+03"/>
     <Spectator SpecIndex="1" Expression="bos_j1_AK4_eta" Label="bos_j1_AK4_eta" Title="bos_j1_AK4_eta" Unit="" Internal="bos_j1_AK4_eta" Type="F" Min="-9.99000000e+02" Max="2.39990234e+00"/>
     <Spectator SpecIndex="2" Expression="bos_j2_AK4_eta" Label="bos_j2_AK4_eta" Title="bos_j2_AK4_eta" Unit="" Internal="bos_j2_AK4_eta" Type="F" Min="-9.99000000e+02" Max="2.39990234e+00"/>
@@ -74,18 +74,19 @@
     <Spectator SpecIndex="33" Expression="nBtag_loose" Label="nBtag_loose" Title="nBtag_loose" Unit="" Internal="nBtag_loose" Type="F" Min="0.00000000e+00" Max="9.00000000e+00"/>
     <Spectator SpecIndex="34" Expression="nBtag_medium" Label="nBtag_medium" Title="nBtag_medium" Unit="" Internal="nBtag_medium" Type="F" Min="0.00000000e+00" Max="8.00000000e+00"/>
     <Spectator SpecIndex="35" Expression="neu_pz_type0" Label="neu_pz_type0" Title="neu_pz_type0" Unit="" Internal="neu_pz_type0" Type="F" Min="-9.99000000e+02" Max="-9.99000000e+02"/>
-    <Spectator SpecIndex="36" Expression="nJet50" Label="nJet50" Title="nJet50" Unit="" Internal="nJet50" Type="F" Min="0.00000000e+00" Max="1.30000000e+01"/>
-    <Spectator SpecIndex="37" Expression="nPV" Label="nPV" Title="nPV" Unit="" Internal="nPV" Type="F" Min="1.00000000e+00" Max="1.42000000e+02"/>
-    <Spectator SpecIndex="38" Expression="puWeight" Label="puWeight" Title="puWeight" Unit="" Internal="puWeight" Type="F" Min="0.00000000e+00" Max="1.20750809e+00"/>
-    <Spectator SpecIndex="39" Expression="run" Label="run" Title="run" Unit="" Internal="run" Type="F" Min="1.00000000e+00" Max="1.00000000e+00"/>
-    <Spectator SpecIndex="40" Expression="sid" Label="sid" Title="sid" Unit="" Internal="sid" Type="F" Min="1.00000000e+02" Max="1.10000000e+03"/>
-    <Spectator SpecIndex="41" Expression="vbf1_AK4_eta" Label="vbf1_AK4_eta" Title="vbf1_AK4_eta" Unit="" Internal="vbf1_AK4_eta" Type="F" Min="-6.23144531e+00" Max="8.09375000e+00"/>
-    <Spectator SpecIndex="42" Expression="vbf1_AK4_phi" Label="vbf1_AK4_phi" Title="vbf1_AK4_phi" Unit="" Internal="vbf1_AK4_phi" Type="F" Min="-3.14160156e+00" Max="3.14160156e+00"/>
-    <Spectator SpecIndex="43" Expression="vbf1_AK4_qgid" Label="vbf1_AK4_qgid" Title="vbf1_AK4_qgid" Unit="" Internal="vbf1_AK4_qgid" Type="F" Min="-1.00000000e+00" Max="1.00000000e+00"/>
-    <Spectator SpecIndex="44" Expression="vbf2_AK4_eta" Label="vbf2_AK4_eta" Title="vbf2_AK4_eta" Unit="" Internal="vbf2_AK4_eta" Type="F" Min="-7.29980469e+00" Max="7.39746094e+00"/>
-    <Spectator SpecIndex="45" Expression="vbf2_AK4_phi" Label="vbf2_AK4_phi" Title="vbf2_AK4_phi" Unit="" Internal="vbf2_AK4_phi" Type="F" Min="-3.14160156e+00" Max="3.14160156e+00"/>
-    <Spectator SpecIndex="46" Expression="vbf2_AK4_qgid" Label="vbf2_AK4_qgid" Title="vbf2_AK4_qgid" Unit="" Internal="vbf2_AK4_qgid" Type="F" Min="-1.00000000e+00" Max="1.00000000e+00"/>
-    <Spectator SpecIndex="47" Expression="vbf_phi" Label="vbf_phi" Title="vbf_phi" Unit="" Internal="vbf_phi" Type="F" Min="-3.14159250e+00" Max="3.14159155e+00"/>
+    <Spectator SpecIndex="36" Expression="nJet30" Label="nJet30" Title="nJet30" Unit="" Internal="nJet30" Type="F" Min="0.00000000e+00" Max="1.80000000e+01"/>
+    <Spectator SpecIndex="37" Expression="nJet50" Label="nJet50" Title="nJet50" Unit="" Internal="nJet50" Type="F" Min="0.00000000e+00" Max="1.30000000e+01"/>
+    <Spectator SpecIndex="38" Expression="nPV" Label="nPV" Title="nPV" Unit="" Internal="nPV" Type="F" Min="1.00000000e+00" Max="1.42000000e+02"/>
+    <Spectator SpecIndex="39" Expression="puWeight" Label="puWeight" Title="puWeight" Unit="" Internal="puWeight" Type="F" Min="0.00000000e+00" Max="1.20750809e+00"/>
+    <Spectator SpecIndex="40" Expression="run" Label="run" Title="run" Unit="" Internal="run" Type="F" Min="1.00000000e+00" Max="1.00000000e+00"/>
+    <Spectator SpecIndex="41" Expression="sid" Label="sid" Title="sid" Unit="" Internal="sid" Type="F" Min="1.00000000e+02" Max="1.10000000e+03"/>
+    <Spectator SpecIndex="42" Expression="vbf1_AK4_eta" Label="vbf1_AK4_eta" Title="vbf1_AK4_eta" Unit="" Internal="vbf1_AK4_eta" Type="F" Min="-6.23144531e+00" Max="8.09375000e+00"/>
+    <Spectator SpecIndex="43" Expression="vbf1_AK4_phi" Label="vbf1_AK4_phi" Title="vbf1_AK4_phi" Unit="" Internal="vbf1_AK4_phi" Type="F" Min="-3.14160156e+00" Max="3.14160156e+00"/>
+    <Spectator SpecIndex="44" Expression="vbf1_AK4_qgid" Label="vbf1_AK4_qgid" Title="vbf1_AK4_qgid" Unit="" Internal="vbf1_AK4_qgid" Type="F" Min="-1.00000000e+00" Max="1.00000000e+00"/>
+    <Spectator SpecIndex="45" Expression="vbf2_AK4_eta" Label="vbf2_AK4_eta" Title="vbf2_AK4_eta" Unit="" Internal="vbf2_AK4_eta" Type="F" Min="-7.29980469e+00" Max="7.39746094e+00"/>
+    <Spectator SpecIndex="46" Expression="vbf2_AK4_phi" Label="vbf2_AK4_phi" Title="vbf2_AK4_phi" Unit="" Internal="vbf2_AK4_phi" Type="F" Min="-3.14160156e+00" Max="3.14160156e+00"/>
+    <Spectator SpecIndex="47" Expression="vbf2_AK4_qgid" Label="vbf2_AK4_qgid" Title="vbf2_AK4_qgid" Unit="" Internal="vbf2_AK4_qgid" Type="F" Min="-1.00000000e+00" Max="1.00000000e+00"/>
+    <Spectator SpecIndex="48" Expression="vbf_phi" Label="vbf_phi" Title="vbf_phi" Unit="" Internal="vbf_phi" Type="F" Min="-3.14159250e+00" Max="3.14159155e+00"/>
   </Spectators>
   <Classes NClass="2">
     <Class Name="Signal" Index="0"/>

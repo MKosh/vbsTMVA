@@ -170,10 +170,10 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   if(_sid == 3) {
     _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
   } else {
-          _testTree->Project(_hf1->GetName(), var, wtot_2016*(cuts+_samplecut), "goff");
+          _testTree->Project(_hf1->GetName(), var, wtot_2017*(cuts+_samplecut), "goff");
   }
 
-  int year = 2016;
+  int year = 2017;
   if (_sid == 15 && year == 2018) {
     scale *= 0.6875; // 2018 Scale ttbar 
   } else if (_sid == 13 && year == 2018) {
@@ -376,6 +376,10 @@ TmvaAnl::TmvaAnl(TString anlname, Float_t lum_fbinv, std::vector<TmvaSample*> ve
    _sgf3=0;
 }
 //=====================================================================================================
+Int_t plotSingleVariable(TmvaAnl* anl, const char* var, TCut cut, const char* cutName, Float_t scale=1.0, Int_t debug=0, Int_t istyle=0,
+        Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0,
+	      const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
+
 Int_t plotvar( TmvaAnl* anl, const char* var, TCut cut, Float_t scale=1.0, Int_t debug=0, Int_t istyle=0,
 	       Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0,
 	       const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
@@ -414,8 +418,9 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "Luminosity = " << g_lum << " fb^-1" << endl;
   cout << "To plot all control plot variables with a particular cut (or for no cuts exclude args 2 and 3) use" << endl;
   cout << "  cplots(anl, cut, \"cutname\")" << endl;
-  cout << "To plot, for example,  PuppiAK8_jet_mass_so_corr  using \"cleanNAN\" set of cuts " << endl;
-  cout << "plotvar(anl,\"PuppiAK8_jet_mass_so_corr\",cleanNAN)" << endl;
+  cout << "To plot, for example,  vbf1_AK4_qgid  using \"cleanNAN\" set of cuts " << endl;
+  cout << "plotvar(anl,\"vbf1_AK4_qgid\",cleanNAN)" << endl;
+  cout << "plotSingleVariable(anl, \"vbf1_AK4_qgid\", dummy, \"dummy\", 1.0, 1, 0, xmin, xmax, binwidth, logy, logx, \"hist title\", \"xtitle\", \"ytitle\")" << endl;
   cout << "To examine TMVA plots:" << endl;
   cout << "tmgui()" << endl;
   cout << "" << endl;
@@ -617,11 +622,51 @@ TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
   return new TmvaAnl(anlName,lum_fbinv,anl_samples,scale_sgl_tmva,scale_bkg_tmva); 
 }
 //=====================================================================================================
+Int_t plotSingleVariable( TmvaAnl* anl, const char* var, TCut cuts, const char* cutName, Float_t scale, Int_t debug, Int_t istyle,
+	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
+	       const char hTitle[], const char xTitle[], const char yTitle[]){
+  
+  anl->setHframe(var,wtot_2017*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setSampleHists();
+  anl->fillSampleHists(var,cuts,scale);
+
+  Float_t ymin= 0.0;
+  if (flogy) ymin= pow(10,flogy*(-1));
+
+  gStyle->SetOptStat(0);
+  TCanvas* canvas1 = (TCanvas*)gROOT->FindObject("canvas1");
+  if (canvas1) { canvas1->Delete(); }
+  canvas1 = new TCanvas("canvas1","canvas1", 10,10, 1000,1000);
+  anl->PlotHists(ymin, flogy); 
+  anl->PlotLegend(var);
+
+  if(istyle==1){
+    anl->PlotSgf(var);
+  }else if(istyle>1){ 
+    TH1F* sglscale =  (TH1F*) gROOT->FindObject("sglscale"); 
+    if(sglscale){
+     sglscale->Delete();
+    }
+    sglscale= (TH1F*) anl->getSglSample()->_hf1->Clone();
+    sglscale->SetName("sglscale");
+    sglscale->Scale(istyle);
+    sglscale->Draw("hist same");
+  }
+
+  gPad->SetLogy(flogy);
+  anl->PrintStat(cuts,debug);
+
+  stringstream outPlotname;
+  outPlotname << "Plot_" << var << "_" << cutName << ".pdf";
+  canvas1->SaveAs(outPlotname.str().c_str());
+  return 0;
+}
+
 Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t debug, Int_t istyle,
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
-  anl->setHframe(var,wtot_2016*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,wtot_2017*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
 
@@ -655,7 +700,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
-  anl->setHframe(var,wtot_2016*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,wtot_2017*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
   anl->setsvplots(1);
@@ -909,7 +954,7 @@ Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* c
        cutval = cutvar_min+ nprobe*stepw;
        cutvar_cut.str("");
        cutvar_cut << "(" << cutvar << " > " <<  cutval  << " ) " ;   
-       setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+       setHframe("njets",wtot_2017*(basecuts+cut_bkg),0.0,10.0, 1.0);
        setSampleHists();
        fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
        sgf_curr =  optParVal(optParName);
@@ -969,7 +1014,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
     //check left point
    cutvar_cut.str("");
    cutvar_cut << "(" << cutvar << " > " <<  cutval_left << " ) " ;   
-   setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+   setHframe("njets",wtot_2017*(basecuts+cut_bkg),0.0,10.0, 1.0);
    setSampleHists();
    fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
    sgf_curr_left=  optParVal(optParName);
@@ -977,7 +1022,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
     //check right point
    cutvar_cut.str("");
    cutvar_cut << "(" << cutvar << " > " <<  cutval_right << " ) " ;   
-   setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+   setHframe("njets",wtot_2017*(basecuts+cut_bkg),0.0,10.0, 1.0);
    setSampleHists();
    fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
    sgf_curr_right= optParVal(optParName);
@@ -1133,7 +1178,7 @@ Int_t TmvaAnl::ArrangeHtms(Int_t flogy){
 
   hdata->SetMarkerStyle(20);
   hdata->SetMarkerColor(1);
-  hdata->SetMarkerSize(0.6); // was 0.6 then 0.4
+  hdata->SetMarkerSize(0.5); // was 0.6
   hdata->SetLineWidth(1); // MM
   hdata->SetLineColor(1);
 
@@ -1232,7 +1277,7 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin){
     ratio_plot->GetLowerRefYaxis()->SetLabelSize(0.035);
     ratio_plot->GetLowerRefYaxis()->SetTitle("Data/MC");
     ratio_plot->GetLowerRefGraph()->SetMarkerStyle(20);
-    ratio_plot->GetLowerRefGraph()->SetMarkerSize(0.6);
+    ratio_plot->GetLowerRefGraph()->SetMarkerSize(0.5);
     ratio_plot->GetLowerRefGraph()->SetMinimum(0);
     ratio_plot->GetLowerRefGraph()->SetMaximum(2);
 
@@ -1242,7 +1287,7 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin){
 
     errors_hist->SetFillStyle(3145);
     errors_hist->SetMarkerStyle(0);
-    errors_hist->SetFillColor(kGray+1);
+    errors_hist->SetFillColor(kGray+2);
     errors_hist->SetLineColor(1);
 
    TGraphAsymmErrors* errors_ratio = (TGraphAsymmErrors*)gROOT->FindObject("errors_ratio"); // Error bars for the ratio plot
@@ -1295,11 +1340,15 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin){
   //  hstack_bkg->Draw("hist same");
   //  errors_hist->Draw("E2 same");
   //}  
-  gPad->RedrawAxis();
+  
     hdata->Draw("E1 a");
     hstack_bkg->Draw("a hist same");
     errors_hist->Draw("2 same");
     hdata->Draw("E1 same");
+
+
+    gPad->SetTicks(2,2);
+    gPad->RedrawAxis();
 
   } else {
 
@@ -1347,7 +1396,7 @@ void TmvaAnl::PlotLegend(const char* var){
   if(legend) delete legend;
 
   //legend = new TLegend(.63, .58, .88, .88);
-  legend = new TLegend(.29, .73, .89, .88);
+  legend = new TLegend(.29, .73, .88, .87);
 
   legend->SetName(sNameLegend.str().c_str());
   legend->SetFillColor(0);
@@ -1581,7 +1630,7 @@ void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
      _sgf2 =cl95res;
      //  cout << "LIMIT_CALC-RESULTS (expected, fb)/pfluc  " << _sgf2 << " / " << pfluc << endl;
      if (_debug ) cout << "_sgf0/_sgf1/_sgf2/_sgf3 = "  <<  _sgf0 << "/" << _sgf1 << "/" << _sgf2 << "/" << _sgf3 << endl;
-     int year = 2016;
+     int year = 2017;
     
     for( UInt_t ns=3; ns <  _vsamples.size(); ns++){
      // if (_vsamples[ns]->_sid == 13 && year == 2018){
@@ -1661,6 +1710,7 @@ void  TmvaAnl::setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax,
      _hframe->GetYaxis()->SetTitle(Ytitle.str().c_str());
 
      //gStyle->SetErrorX(0);
+     gStyle->SetLineScalePS(0.5);
      gStyle->SetHatchesSpacing(2.5);
      gStyle->SetHatchesLineWidth(1);
 
@@ -1873,7 +1923,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   anl->setsvplots(1);
   TCanvas* cp1 = (TCanvas*)gROOT->FindObject("cp1"); 
   if(cp1) { cp1->Delete(); }
-  cp1 = new TCanvas("cp1","cp1",10,10,1000,1000);
+  cp1 = new TCanvas("cp1","cp1",10,10,1200,1200);
   cp1->Divide(3,3);
 
   stringstream outfname;
@@ -1915,10 +1965,10 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
     cp1->cd(9);
     plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
     //======================================================================================================================================================================
-     outfname << "plots/2016/c1_2016" << "_" << CutName << ".pdf";
+     outfname << "plots/2017/c1_2017" << "_" << CutName << ".pdf";
      cp1->SaveAs(outfname.str().c_str());
      outfname.str("");
-     //outfname << "plots/2016/c1_2016"  << "_" << CutName << ".png";
+     //outfname << "plots/2017/c1_2017"  << "_" << CutName << ".png";
      //cp1->SaveAs(outfname.str().c_str()); 
      //outfname.str("");
     // OLD - reminder
@@ -1960,10 +2010,10 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
     cp2->cd(9);
     plotvar(anl, "ungroomed_PuppiAK8_jet_e",    cuts,  1.0, 1, 0,   0., 1400., 20,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8  energy", "Events/bin");
     //
-    outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
+    outfname << "plots/2017/c2_2017" << "_" <<  CutName << ".pdf";
      cp2->SaveAs(outfname.str().c_str());
      outfname.str("");
-    // outfname << "plots/2016/c2_2016"  << "_" << CutName << ".png";
+    // outfname << "plots/2017/c2_2017"  << "_" << CutName << ".png";
     // cp2->SaveAs(outfname.str().c_str()); 
     // outfname.str("");
 
@@ -2025,10 +2075,10 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
       cp3->cd(9);
       plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0, title_str, "zeppHad", "Events/bin");
       // OLD - reminder
-     outfname << "plots/2016/c3_2016" << "_" <<  CutName  << ".pdf";
+     outfname << "plots/2017/c3_2017" << "_" <<  CutName  << ".pdf";
      cp3->SaveAs(outfname.str().c_str());
      outfname.str("");
-     //outfname << "plots/2016/c3_2016"  << "_" << CutName << ".png";
+     //outfname << "plots/2017/c3_2017"  << "_" << CutName << ".png";
      //cp3->SaveAs(outfname.str().c_str()); 
      //outfname.str("");
 
@@ -2058,18 +2108,20 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   cp1->cd(5);
   plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  -3.75, 3.75, 0.25,   0, 0,  title_str, "Lepton_1 #phi", "Events/bin");
 
-  cp1->cd(6);
-  plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     0, 0,  title_str, "Lepton_1 charge", "Events/bin");
+  //cp1->cd(6);
+  //plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     0, 0,  title_str, "Lepton_1 charge", "Events/bin");
 
-  cp1->cd(7);
+  cp1->cd(6);
   plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.4, 0.02,       1, 0,  title_str, "Lepton_1 isolation", "Events/bin");
 
-  cp1->cd(8);
+  cp1->cd(7);
   plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, title_str, "zeppLep", "Events/bin");
 
-  cp1->cd(9);
+  cp1->cd(8);
   plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, title_str, "zeppHad", "Events/bin");
 
+  cp1->cd(9);
+  plotvar(anl, "vbf1_AK4_qgid", cuts, 1.0, 1, 0, 0., 1., 0.025, 0, 0, title_str, "Qgl VBF_{j1}");
   //---------------	4 body mass	---------------
   //cp1->cd(8);
   //plotvar(anl, "mass_lvj_type0_PuppiAK8",    cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
@@ -2077,10 +2129,10 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   //cp1->cd(9);
   //plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
   //======================================================================================================================================================================
-   outfname << "plots/2016/c1_2016" << "_" << CutName << ".pdf";
+   outfname << "plots/2017/c1_2017" << "_" << CutName << ".pdf";
    cp1->SaveAs(outfname.str().c_str());
    outfname.str("");
-   //outfname << "plots/2016/c1_2016"  << "_" << CutName << ".root";
+   //outfname << "plots/2017/c1_2017"  << "_" << CutName << ".root";
    //cp1->SaveAs(outfname.str().c_str()); 
    //outfname.str("");
 
@@ -2089,7 +2141,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
 
    TCanvas* cp2 = (TCanvas*)gROOT->FindObject("cp2"); 
    if(cp2) { cp2->Delete(); }
-   cp2 = new TCanvas("cp2","cp2",10,10,1000,1000);
+   cp2 = new TCanvas("cp2","cp2",10,10,1200,1200);
    cp2->Divide(3,3);
 
 
@@ -2099,7 +2151,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   // plotvar(anl, "nu_pz_type0",  cuts,  1.0, 1, 0,   -500., 500., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Reconstructed Neutrino p_{Z}", "Events/bin");
 
   cp2->cd(1);
-  plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 2., 10., 0.25, 0, 0, title_str, "vbf_deta #Delta#eta^{vbs}", "Events/bin");
+  plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 2.4, 8., 0.2, 0, 0, title_str, "#Delta#eta^{vbs}", "Events/bin");
 
   cp2->cd(2);
   plotvar(anl, "vbf_m", cuts, 1.0, 1, 0 , 0., 4500, 150, 1, 0, title_str, "m^{vbs}_{jj} (GeV)", "Events/bin");
@@ -2131,16 +2183,16 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
 
 
 
-  outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
+  outfname << "plots/2017/c2_2017" << "_" <<  CutName << ".pdf";
    cp2->SaveAs(outfname.str().c_str());
    outfname.str("");
-   //outfname << "plots/2016/c2_2016"  << "_" << CutName << ".root";
+   //outfname << "plots/2017/c2_2017"  << "_" << CutName << ".root";
    //cp2->SaveAs(outfname.str().c_str()); 
    //outfname.str("");
 
   TCanvas* cp3 = (TCanvas*)gROOT->FindObject("cp3"); 
   if(cp3) { cp3->Delete(); }
-  cp3 = new TCanvas("cp3","cp3",10,10,1000,1000);
+  cp3 = new TCanvas("cp3","cp3",10,10,1200,1200);
   cp3->Divide(3,3);
 
   cp3->cd(1);
@@ -2159,7 +2211,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   plotvar(anl, "bos_PuppiAK8_tau2tau1", cuts, 1.0, 1, 0, 0., 1.0, 0.04, 0, 0, title_str, "V #tau_{21}", "Events/bin");
 
   cp3->cd(6);
-  plotvar(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   0., 1600., 20,      1, 0,  title_str, "AK8 p_{T} (GeV)", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   0., 800., 25, 1, 0,  title_str, "AK8 p_{T} (GeV)", "Events/bin");
 
   cp3->cd(7);
   plotvar(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -2.5, 2.5, .2,   0, 0,  title_str, "AK8 #eta", "Events/bin");
@@ -2195,17 +2247,17 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   // plotvar(anl, "vbf_maxpt_jj_Deta", cuts,  1.0, 1, 0,  0.0,  20.0, 0.5,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF #Delta #eta", "Events/bin");
   //
 
-  outfname << "plots/2016/c3_2016" << "_" <<  CutName  << ".pdf";
+  outfname << "plots/2017/c3_2017" << "_" <<  CutName  << ".pdf";
   cp3->SaveAs(outfname.str().c_str());
   outfname.str("");
-  //outfname << "plots/2016/c3_2016"  << "_" << CutName << ".root";
+  //outfname << "plots/2017/c3_2017"  << "_" << CutName << ".root";
   //cp3->SaveAs(outfname.str().c_str()); 
   //outfname.str("");
 
   // // Mark commented out
   TCanvas* cp4 = (TCanvas*)gROOT->FindObject("cp4"); 
   if(cp4) { cp4->Delete(); }
-  cp4 = new TCanvas("cp4","cp4",10,10,1000,1000);
+  cp4 = new TCanvas("cp4","cp4",10,10,1200,1200);
   cp4->Divide(3,3);
 
   cp4->cd(1);
@@ -2264,7 +2316,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   //
 
   // // M comment
-  outfname << "plots/2016/c4_2016" << "_" <<  CutName  << ".pdf";
+  outfname << "plots/2017/c4_2017" << "_" <<  CutName  << ".pdf";
   cp4->SaveAs(outfname.str().c_str());
   outfname.str("");
   // outfname << "VarPlots_c4"  << "_" << CutName << ".png";

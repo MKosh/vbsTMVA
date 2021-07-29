@@ -8,12 +8,12 @@
 
 Method         : Fisher::Fisher
 TMVA Release   : 4.2.1         [262657]
-ROOT Release   : 6.22/02       [398850]
-Creator        : mmekosh
-Date           : Wed Jun  9 15:19:18 2021
-Host           : Linux 7ed0a80d5e2e 4.15.0-1092-azure #102~16.04.1-Ubuntu SMP Tue Jul 14 20:28:23 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
-Dir            : /home/mmekosh/documents/research/vbstmva_new/vbsTMVA
-Training events: 14837800
+ROOT Release   : 6.24/02       [399362]
+Creator        : markm
+Date           : Wed Jul 28 07:52:41 2021
+Host           : Linux Manjaro-Desktop 5.10.52-1-MANJARO #1 SMP PREEMPT Tue Jul 20 20:32:02 UTC 2021 x86_64 GNU/Linux
+Dir            : /home/markm/Documents/research/vbsTMVA
+Training events: 14824363
 Analysis type  : [Classification]
 
 
@@ -33,58 +33,72 @@ IgnoreNegWeightsInTraining: "False" [Events with negative weights are ignored in
 
 #VAR -*-*-*-*-*-*-*-*-*-*-*-* variables *-*-*-*-*-*-*-*-*-*-*-*-
 
-NVar 17
-bos_AK4AK4_m                  bos_AK4AK4_m                  bos_AK4AK4_m                  bos_AK4AK4_m                                                    'F'    [-999,150]
-bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr                                         'F'    [-999,150]
-bos_PuppiAK8_pt               bos_PuppiAK8_pt               bos_PuppiAK8_pt               bos_PuppiAK8_pt                                                 'F'    [-999,4920]
-bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1                                           'F'    [-999,0.969037652016]
-dibos_m                       dibos_m                       dibos_m                       dibos_m                                                         'F'    [55.0915222168,7570.08496094]
-dibos_pt                      dibos_pt                      dibos_pt                      dibos_pt                                                        'F'    [0.00839652307332,4876.62011719]
-dilep_eta                     dilep_eta                     dilep_eta                     dilep_eta                                                       'F'    [-8.59750461578,8.84435939789]
-dilep_m                       dilep_m                       dilep_m                       dilep_m                                                         'F'    [0.060719884932,3507.88818359]
+NVar 15
+bos_AK4AK4_eta                bos_AK4AK4_eta                bos_AK4AK4_eta                bos_AK4AK4_eta                                                  'F'    [-999,9.09101009369]
+bos_AK4AK4_m                  bos_AK4AK4_m                  bos_AK4AK4_m                  bos_AK4AK4_m                                                    'F'    [-999,149.999969482]
+bosCent                       bosCent                       bosCent                       bosCent                                                         'F'    [-999,4.95617389679]
+bos_j1_AK4_pt                 bos_j1_AK4_pt                 bos_j1_AK4_pt                 bos_j1_AK4_pt                                                   'F'    [-999,2167.07666016]
+bos_j2_AK4_pt                 bos_j2_AK4_pt                 bos_j2_AK4_pt                 bos_j2_AK4_pt                                                   'F'    [-999,318.380462646]
 lep1_eta                      lep1_eta                      lep1_eta                      lep1_eta                                                        'F'    [-2.5,2.5]
-lep1_pt                       lep1_pt                       lep1_pt                       lep1_pt                                                         'F'    [19.4176654816,3414.38183594]
-vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                                                     'F'    [27.8281002045,5472.95166016]
-vbf2_AK4_eta                  vbf2_AK4_eta                  vbf2_AK4_eta                  vbf2_AK4_eta                                                    'F'    [-7.259765625,9.30859375]
-vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                                                     'F'    [15.7265625,3158.47290039]
-vbf_deta                      vbf_deta                      vbf_deta                      vbf_deta                                                        'F'    [0.00225853919983,12.5283203125]
-vbf_m                         vbf_m                         vbf_m                         vbf_m                                                           'F'    [500.000030518,20178.7988281]
-vbf_pt                        vbf_pt                        vbf_pt                        vbf_pt                                                          'F'    [0.0176219400018,5426.89160156]
-zeppLep                       zeppLep                       zeppLep                       zeppLep                                                         'F'    [-9.25741672516,9.88655757904]
-NSpec 33
-L1PFWeight                    L1PFWeight                    L1PFWeight                    L1PFWeight                                                      'F'    [1,1]
-MET                           MET                           MET                           MET                                                             'F'    [0.0189485717565,4803.10595703]
-MET_phi                       MET_phi                       MET_phi                       MET_phi                                                         'F'    [-3.14159250259,3.14159202576]
-bos_AK4AK4_eta                bos_AK4AK4_eta                bos_AK4AK4_eta                bos_AK4AK4_eta                                                  'F'    [-999,9.09597969055]
+lep1_pt                       lep1_pt                       lep1_pt                       lep1_pt                                                         'F'    [19.4174842834,3161.32519531]
+nJet30f                       nJet30f                       nJet30f                       nJet30f                                                         'F'    [0,26]
+vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                                                     'F'    [27.8280277252,3555.62988281]
+vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                                                     'F'    [16.546875,2312.06396484]
+vbf_deta                      vbf_deta                      vbf_deta                      vbf_deta                                                        'F'    [0.0010843873024,10.1987304688]
+vbf_eta                       vbf_eta                       vbf_eta                       vbf_eta                                                         'F'    [-11.8072061539,11.6897687912]
+vbf_m                         vbf_m                         vbf_m                         vbf_m                                                           'F'    [500.000061035,11301.7998047]
+zeppHad                       zeppHad                       zeppHad                       zeppHad                                                         'F'    [-10.7694625854,9.97235774994]
+zeppLep                       zeppLep                       zeppLep                       zeppLep                                                         'F'    [-9.25741672516,8.75490951538]
+NSpec 49
+bos_AK4AK4_pt                 bos_AK4AK4_pt                 bos_AK4AK4_pt                 bos_AK4AK4_pt                                                   'F'    [-999,2198.28173828]
+bos_j1_AK4_eta                bos_j1_AK4_eta                bos_j1_AK4_eta                bos_j1_AK4_eta                                                  'F'    [-999,2.39990234375]
+bos_j2_AK4_eta                bos_j2_AK4_eta                bos_j2_AK4_eta                bos_j2_AK4_eta                                                  'F'    [-999,2.39990234375]
 bos_PuppiAK8_eta              bos_PuppiAK8_eta              bos_PuppiAK8_eta              bos_PuppiAK8_eta                                                'F'    [-999,2.39990234375]
 bos_PuppiAK8_m_sd0            bos_PuppiAK8_m_sd0            bos_PuppiAK8_m_sd0            bos_PuppiAK8_m_sd0                                              'F'    [-999,150]
+bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr                                         'F'    [-999,150]
 bos_PuppiAK8_phi              bos_PuppiAK8_phi              bos_PuppiAK8_phi              bos_PuppiAK8_phi                                                'F'    [-999,3.1416015625]
-btagWeight_loose              btagWeight_loose              btagWeight_loose              btagWeight_loose                                                'F'    [0.441323757172,13.2104187012]
-dibos_eta                     dibos_eta                     dibos_eta                     dibos_eta                                                       'F'    [-11.4983072281,9.29842662811]
-dibos_mt                      dibos_mt                      dibos_mt                      dibos_mt                                                        'F'    [99.8344116211,7575.43212891]
+bos_PuppiAK8_pt               bos_PuppiAK8_pt               bos_PuppiAK8_pt               bos_PuppiAK8_pt                                                 'F'    [-999,3986]
+bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1                                           'F'    [-999,0.969037652016]
+btagWeight_loose              btagWeight_loose              btagWeight_loose              btagWeight_loose                                                'F'    [0.426146447659,13.2104187012]
+dibos_eta                     dibos_eta                     dibos_eta                     dibos_eta                                                       'F'    [-9.42530059814,9.29842662811]
+dibos_m                       dibos_m                       dibos_m                       dibos_m                                                         'F'    [55.0915222168,6349.87402344]
+dibos_mt                      dibos_mt                      dibos_mt                      dibos_mt                                                        'F'    [93.8312911987,6592.33203125]
 dibos_phi                     dibos_phi                     dibos_phi                     dibos_phi                                                       'F'    [-3.14159250259,3.14159226418]
-dilep_mt                      dilep_mt                      dilep_mt                      dilep_mt                                                        'F'    [20.4362716675,5022.20166016]
-dilep_phi                     dilep_phi                     dilep_phi                     dilep_phi                                                       'F'    [-3.14159226418,3.14159250259]
-dilep_pt                      dilep_pt                      dilep_pt                      dilep_pt                                                        'F'    [0.0104713691399,4835.45410156]
-evt                           evt                           evt                           evt                                                             'F'    [1,200000000]
-genWeight                     genWeight                     genWeight                     genWeight                                                       'F'    [-316.46875,316.46875]
+dibos_pt                      dibos_pt                      dibos_pt                      dibos_pt                                                        'F'    [0.0206768997014,3506.91577148]
+dilep_eta                     dilep_eta                     dilep_eta                     dilep_eta                                                       'F'    [-8.59750461578,8.84435939789]
+dilep_m                       dilep_m                       dilep_m                       dilep_m                                                         'F'    [0.0440930239856,3624.40258789]
+dilep_mt                      dilep_mt                      dilep_mt                      dilep_mt                                                        'F'    [20.4362716675,3920.70727539]
+dilep_phi                     dilep_phi                     dilep_phi                     dilep_phi                                                       'F'    [-3.14159226418,3.14159226418]
+dilep_pt                      dilep_pt                      dilep_pt                      dilep_pt                                                        'F'    [0.0736786872149,3272.65698242]
+evt                           evt                           evt                           evt                                                             'F'    [3,200000000]
+genWeight                     genWeight                     genWeight                     genWeight                                                       'F'    [-316.46875,326.71875]
 gid                           gid                           gid                           gid                                                             'F'    [1,15]
-lep1_iso                      lep1_iso                      lep1_iso                      lep1_iso                                                        'F'    [0,0.249999657273]
+L1PFWeight                    L1PFWeight                    L1PFWeight                    L1PFWeight                                                      'F'    [1,1]
+lep1_iso                      lep1_iso                      lep1_iso                      lep1_iso                                                        'F'    [0,0.249999508262]
 lep1_m                        lep1_m                        lep1_m                        lep1_m                                                          'F'    [0.000510999991093,0.105658374727]
 lep1_phi                      lep1_phi                      lep1_phi                      lep1_phi                                                        'F'    [-3.1416015625,3.1416015625]
 lep1_q                        lep1_q                        lep1_q                        lep1_q                                                          'F'    [-1,1]
 lep2_eta                      lep2_eta                      lep2_eta                      lep2_eta                                                        'F'    [-999,2.5]
 lep2_pt                       lep2_pt                       lep2_pt                       lep2_pt                                                         'F'    [-999,1498.7755127]
 mcWeight                      mcWeight                      mcWeight                      mcWeight                                                        'F'    [2.50862530748e-09,4.74720945931e-05]
+MET                           MET                           MET                           MET                                                             'F'    [0.0237521547824,2828.22509766]
+MET_phi                       MET_phi                       MET_phi                       MET_phi                                                         'F'    [-3.14159250259,3.14159202576]
 nBtag_loose                   nBtag_loose                   nBtag_loose                   nBtag_loose                                                     'F'    [0,10]
 nBtag_medium                  nBtag_medium                  nBtag_medium                  nBtag_medium                                                    'F'    [0,7]
-nPV                           nPV                           nPV                           nPV                                                             'F'    [1,131]
 neu_pz_type0                  neu_pz_type0                  neu_pz_type0                  neu_pz_type0                                                    'F'    [-999,-999]
+nJet30                        nJet30                        nJet30                        nJet30                                                          'F'    [0,26]
+nJet50                        nJet50                        nJet50                        nJet50                                                          'F'    [0,14]
+nPV                           nPV                           nPV                           nPV                                                             'F'    [1,131]
 puWeight                      puWeight                      puWeight                      puWeight                                                        'F'    [0,46.9509277344]
 run                           run                           run                           run                                                             'F'    [1,1]
 sid                           sid                           sid                           sid                                                             'F'    [100,1100]
-vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                                                    'F'    [-5.521484375,8.474609375]
-zeppHad                       zeppHad                       zeppHad                       zeppHad                                                         'F'    [-10.7694625854,9.97235774994]
+vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                                                    'F'    [-6.5361328125,7.876953125]
+vbf1_AK4_phi                  vbf1_AK4_phi                  vbf1_AK4_phi                  vbf1_AK4_phi                                                    'F'    [-3.1416015625,3.1416015625]
+vbf1_AK4_qgid                 vbf1_AK4_qgid                 vbf1_AK4_qgid                 vbf1_AK4_qgid                                                   'F'    [-1,1]
+vbf2_AK4_eta                  vbf2_AK4_eta                  vbf2_AK4_eta                  vbf2_AK4_eta                                                    'F'    [-7.259765625,8.572265625]
+vbf2_AK4_phi                  vbf2_AK4_phi                  vbf2_AK4_phi                  vbf2_AK4_phi                                                    'F'    [-3.1416015625,3.1416015625]
+vbf2_AK4_qgid                 vbf2_AK4_qgid                 vbf2_AK4_qgid                 vbf2_AK4_qgid                                                   'F'    [-1,1]
+vbf_phi                       vbf_phi                       vbf_phi                       vbf_phi                                                         'F'    [-3.14159274101,3.14159250259]
 
 
 ============================================================================ */
@@ -127,10 +141,10 @@ class ReadFisher : public IClassifierReader {
    ReadFisher( std::vector<std::string>& theInputVars )
       : IClassifierReader(),
         fClassName( "ReadFisher" ),
-        fNvars( 17 )
+        fNvars( 15 )
    {
       // the training input variables
-      const char* inputVars[] = { "bos_AK4AK4_m", "bos_PuppiAK8_m_sd0_corr", "bos_PuppiAK8_pt", "bos_PuppiAK8_tau2tau1", "dibos_m", "dibos_pt", "dilep_eta", "dilep_m", "lep1_eta", "lep1_pt", "vbf1_AK4_pt", "vbf2_AK4_eta", "vbf2_AK4_pt", "vbf_deta", "vbf_m", "vbf_pt", "zeppLep" };
+      const char* inputVars[] = { "bos_AK4AK4_eta", "bos_AK4AK4_m", "bosCent", "bos_j1_AK4_pt", "bos_j2_AK4_pt", "lep1_eta", "lep1_pt", "nJet30f", "vbf1_AK4_pt", "vbf2_AK4_pt", "vbf_deta", "vbf_eta", "vbf_m", "zeppHad", "zeppLep" };
 
       // sanity checks
       if (theInputVars.size() <= 0) {
@@ -184,10 +198,6 @@ class ReadFisher : public IClassifierReader {
       fVmax[13] = 0;
       fVmin[14] = 0;
       fVmax[14] = 0;
-      fVmin[15] = 0;
-      fVmax[15] = 0;
-      fVmin[16] = 0;
-      fVmax[16] = 0;
 
       // initialize input variable types
       fType[0] = 'F';
@@ -205,8 +215,6 @@ class ReadFisher : public IClassifierReader {
       fType[12] = 'F';
       fType[13] = 'F';
       fType[14] = 'F';
-      fType[15] = 'F';
-      fType[16] = 'F';
 
       // initialize constants
       Initialize();
@@ -236,15 +244,15 @@ class ReadFisher : public IClassifierReader {
    char   GetType( int ivar ) const { return fType[ivar]; }
 
    // normalisation of input variables
-   double fVmin[17];
-   double fVmax[17];
+   double fVmin[15];
+   double fVmax[15];
    double NormVariable( double x, double xmin, double xmax ) const {
       // normalise to output range: [-1, 1]
       return 2*(x - xmin)/(xmax - xmin) - 1.0;
    }
 
    // type of input variable: 'F' or 'I'
-   char   fType[17];
+   char   fType[15];
 
    // initialize internal variables
    void Initialize();
@@ -257,24 +265,22 @@ class ReadFisher : public IClassifierReader {
 
 inline void ReadFisher::Initialize() 
 {
-   fFisher0 = -0.159298558998;
-   fFisherCoefficients.push_back( -0.000281760404566 );
-   fFisherCoefficients.push_back( 0.00153709237576 );
-   fFisherCoefficients.push_back( -0.000138394078588 );
-   fFisherCoefficients.push_back( -0.00179206743031 );
-   fFisherCoefficients.push_back( 0.000104838900223 );
-   fFisherCoefficients.push_back( 0.000136957551944 );
-   fFisherCoefficients.push_back( -0.000440367015678 );
-   fFisherCoefficients.push_back( -0.000391307127653 );
-   fFisherCoefficients.push_back( 3.12343484354e-05 );
-   fFisherCoefficients.push_back( 5.03618948882e-06 );
-   fFisherCoefficients.push_back( -0.000298511715679 );
-   fFisherCoefficients.push_back( 9.61998190791e-05 );
-   fFisherCoefficients.push_back( -0.000175712998711 );
-   fFisherCoefficients.push_back( -0.0629012193332 );
-   fFisherCoefficients.push_back( 0.000136969796859 );
-   fFisherCoefficients.push_back( 3.42512073937e-06 );
-   fFisherCoefficients.push_back( 0.000501501237386 );
+   fFisher0 = 0.0175510621665;
+   fFisherCoefficients.push_back( -0.00183297265942 );
+   fFisherCoefficients.push_back( -0.000349200490789 );
+   fFisherCoefficients.push_back( 4.00523774267e-05 );
+   fFisherCoefficients.push_back( 0.000151966196711 );
+   fFisherCoefficients.push_back( 0.00189949284385 );
+   fFisherCoefficients.push_back( 0.000549253652772 );
+   fFisherCoefficients.push_back( 2.58867811041e-05 );
+   fFisherCoefficients.push_back( 0.0268064368463 );
+   fFisherCoefficients.push_back( -0.000251411175178 );
+   fFisherCoefficients.push_back( -0.000183577235987 );
+   fFisherCoefficients.push_back( -0.060524616333 );
+   fFisherCoefficients.push_back( 0.000269635933261 );
+   fFisherCoefficients.push_back( 0.000131298534513 );
+   fFisherCoefficients.push_back( 0.00140330890305 );
+   fFisherCoefficients.push_back( -0.000570472634522 );
 
    // sanity check
    if (fFisherCoefficients.size() != fNvars) {
