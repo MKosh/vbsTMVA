@@ -7,7 +7,8 @@
     /////////////////////////////////////////////////////
     // Copied from write_list_macro.sh
     // Purpose: Add a new branch for nJet30 as a Float_t
-    // instead of as an Int_t
+    // instead of as an Int_t because TMVA::Reader::AddVariable
+	// doesn't like ints
     // Mon Jul 26 10:52:52 AM EDT 2021
     /////////////////////////////////////////////////////
 

@@ -170,7 +170,7 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   if(_sid == 3) {
     _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
   } else {
-          _testTree->Project(_hf1->GetName(), var, wtot_2017*(cuts+_samplecut), "goff");
+    _testTree->Project(_hf1->GetName(), var, wtot_2017*(cuts+_samplecut), "goff");
   }
 
   int year = 2017;
@@ -344,8 +344,8 @@ public:
      _scale_bkg_tmva = scale_bkg_tmva;
    }
    Int_t ArrangeHtms(Int_t flogy=0);
-   void  StackHtms(Int_t& imax, Float_t& ymin);
-   void  PlotHists(Float_t ymin, Int_t flogy=0);
+   void  StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy=0, Int_t overFlow=0);
+   void  PlotHists(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
    void  PlotLegend(const char* var);
    void  PlotSgf(const char* var); 
    void  sdb(Int_t dbl){ _debug=dbl; };
@@ -377,11 +377,11 @@ TmvaAnl::TmvaAnl(TString anlname, Float_t lum_fbinv, std::vector<TmvaSample*> ve
 }
 //=====================================================================================================
 Int_t plotSingleVariable(TmvaAnl* anl, const char* var, TCut cut, const char* cutName, Float_t scale=1.0, Int_t debug=0, Int_t istyle=0,
-        Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0,
+        Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0, Int_t overFlow=0,
 	      const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
 
 Int_t plotvar( TmvaAnl* anl, const char* var, TCut cut, Float_t scale=1.0, Int_t debug=0, Int_t istyle=0,
-	       Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0,
+	       Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0, Int_t overFlow=0,
 	       const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
 
 Int_t cplotvar( TmvaAnl* anl, const char* var, TCut cut, Float_t scale=1.0, Int_t debug=0, Int_t istyle=0,
@@ -412,6 +412,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   //
   TH1::StatOverflows(kTRUE);  //To force the underflows and overflows in the getStat() computations
   TGaxis::SetMaxDigits(3);
+  gErrorIgnoreLevel = kWarning; // Ignore "Info in ..." printouts in ROOT session, helpful for making the cutflow tables
   anl = getAnl(anlName,lum_fb);
   g_lum = lum_fb;
   cout << "" << endl;
@@ -419,13 +420,16 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "To plot all control plot variables with a particular cut (or for no cuts exclude args 2 and 3) use" << endl;
   cout << "  cplots(anl, cut, \"cutname\")" << endl;
   cout << "To plot, for example,  vbf1_AK4_qgid  using \"cleanNAN\" set of cuts " << endl;
-  cout << "plotvar(anl,\"vbf1_AK4_qgid\",cleanNAN)" << endl;
-  cout << "plotSingleVariable(anl, \"vbf1_AK4_qgid\", dummy, \"dummy\", 1.0, 1, 0, xmin, xmax, binwidth, logy, logx, \"hist title\", \"xtitle\", \"ytitle\")" << endl;
+  cout << "  plotvar(anl,\"vbf1_AK4_qgid\",cleanNAN)" << endl;
+  cout << "  plotSingleVariable(anl, \"vbf1_AK4_qgid\", dummy, \"dummy\", 1.0, 1, 0, xmin, xmax, binwidth, logy, logx, \"hist title\", \"xtitle\", \"ytitle\")" << endl;
+  cout << "To view cutflow tables use: " << endl;
+  cout << "  printCutflow(anl, \"lep1_pt\",  \"testCuts\", dummy,  1.0, 1, 0,   20., 400., 20, 1, 0, \"VBS (WV), 35.867fb^{-1}\", \"Lepton_1 p_{T} (GeV)\", \"Events/bin\")" << endl;
   cout << "To examine TMVA plots:" << endl;
-  cout << "tmgui()" << endl;
+  cout << "  tmgui()" << endl;
   cout << "" << endl;
 
-cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -455,8 +459,8 @@ void  tmvacmp(TmvaAnl* anl, const char* sgf, const char* varset="test"){
   // // gPad->SaveAs("mass_lvj_type0_PuppiAK8_vbsWV.png");
   // // gPad->SaveAs("mass_lvj_type0_PuppiAK8_vbsWV.pdf");
 
-   anl->setsvplots(1);
-   cmpCanvas->Clear();
+  anl->setsvplots(1);
+  cmpCanvas->Clear();
   cmpCanvas->Divide(2,ntmva);
 
   for ( Int_t iset=0; iset<ntmva; iset++ ){
@@ -474,9 +478,9 @@ void  tmvacmp(TmvaAnl* anl, const char* sgf, const char* varset="test"){
     opt_cut = anl->optCutScan(sgf,cleanNAN, TMVAset[iset], tmva_min, tmva_max, 0.1,0.0005, 10); //s/sqrt(b)
 
      cmpCanvas->cd(2*iset+1);
-    plotvar(anl, TMVAset[iset], allCuts,  1.00, 0, 0,     tmva_min,   tmva_max, 0.1,  1, 0, "VBS (WV), 35.9 fb^{-1}", TMVAset[iset]);
+    plotvar(anl, TMVAset[iset], allCuts,  1.00, 0, 0,     tmva_min,   tmva_max, 0.1,  1, 0, 0, 0, "VBS (WV), 35.9 fb^{-1}", TMVAset[iset]);
       cmpPad->cd();
-    plotvar(anl, TMVAset[iset], allCuts,  1.00, 0, 0,     tmva_min,   tmva_max, 0.1,  1, 0, "VBS (WV), 35.9 fb^{-1}", TMVAset[iset]);
+    plotvar(anl, TMVAset[iset], allCuts,  1.00, 0, 0,     tmva_min,   tmva_max, 0.1,  1, 0, 0, 0, "VBS (WV), 35.9 fb^{-1}", TMVAset[iset]);
 
 
     ofname <<  TMVAset[iset] << "_" << varset << "_" << sgf << ".pdf";
@@ -496,9 +500,9 @@ void  tmvacmp(TmvaAnl* anl, const char* sgf, const char* varset="test"){
     htitle.str("");
     htitle << "VBS (WV), 35.9 fb^{-1}, " <<  tmvacut.str().c_str();
 
-    plotvar(anl,"PuppiAK8_jet_mass_so_corr", allCuts+tmvacut.str().c_str(),  1.00, 0, 1,        111., 147., 4.,  0, 0, htitle.str().c_str(), "m_{4l} (GeV)");
+    plotvar(anl,"PuppiAK8_jet_mass_so_corr", allCuts+tmvacut.str().c_str(),  1.00, 0, 1,        111., 147., 4.,  0, 0, 0, htitle.str().c_str(), "m_{4l} (GeV)");
     cmpPad->cd();
-    plotvar(anl,"PuppiAK8_jet_mass_so_corr", allCuts+tmvacut.str().c_str(),  1.00, 0, 1,        111., 147., 4.,  0, 0, htitle.str().c_str(), "m_{4l} (GeV)");
+    plotvar(anl,"PuppiAK8_jet_mass_so_corr", allCuts+tmvacut.str().c_str(),  1.00, 0, 1,        111., 147., 4.,  0, 0, 0, htitle.str().c_str(), "m_{4l} (GeV)");
     ofname << "mass_lvj_type0_PuppiAK8_vbsWV_" << TMVAset[iset] <<  "_" << sgf << "Max_" << varset << ".pdf";
     gPad->SaveAs(ofname.str().c_str());
     ofname.str("");
@@ -623,7 +627,7 @@ TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
 }
 //=====================================================================================================
 Int_t plotSingleVariable( TmvaAnl* anl, const char* var, TCut cuts, const char* cutName, Float_t scale, Int_t debug, Int_t istyle,
-	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
+	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
   
   anl->setHframe(var,wtot_2017*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
@@ -636,8 +640,8 @@ Int_t plotSingleVariable( TmvaAnl* anl, const char* var, TCut cuts, const char* 
   gStyle->SetOptStat(0);
   TCanvas* canvas1 = (TCanvas*)gROOT->FindObject("canvas1");
   if (canvas1) { canvas1->Delete(); }
-  canvas1 = new TCanvas("canvas1","canvas1", 10,10, 1000,1000);
-  anl->PlotHists(ymin, flogy); 
+  canvas1 = new TCanvas("canvas1","canvas1", 10,10, 800,800);
+  anl->PlotHists(ymin, flogy, overFlow); 
   anl->PlotLegend(var);
 
   if(istyle==1){
@@ -663,7 +667,7 @@ Int_t plotSingleVariable( TmvaAnl* anl, const char* var, TCut cuts, const char* 
 }
 
 Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t debug, Int_t istyle,
-	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
+	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
   anl->setHframe(var,wtot_2017*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
@@ -674,7 +678,7 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   if (flogy) ymin= pow(10,flogy*(-1));
 
   gStyle->SetOptStat(0);  
-  anl->PlotHists(ymin, flogy); 
+  anl->PlotHists(ymin, flogy, overFlow); 
   anl->PlotLegend(var); 
 
   if(istyle==1){
@@ -763,20 +767,31 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 //===========================================================================================
 void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 
+  Float_t sum_bkg = 0;
+  Float_t sum_err = 0;
+  Float_t tot_err = 0;
+
+    for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
+      sum_bkg += _vsamples[ns]->npass;
+      sum_err += _vsamples[ns]->npass_err*_vsamples[ns]->npass_err;
+    }
+    tot_err = sqrt(sum_err);
+
    if (debug>1){ 
 
-    cout     << "|----------------------------------------------------------------------------------------|"      << endl;
-    cout     << "|-------------|------------|--------------|----------------------|-------------| 95% CL, |"      << endl;
-    cout     << "|    Cut      |   DATA     |  Total_bkg   | Total_sgl (accpt)    | S/sqrt(S+B) | exp(fb) |"      << endl;
-    cout     << "|-------------|------------|--------------|----------------------|-------------|---------|"      << endl;
+    cout     << "|--------------------------------------------------------------------------------------------------------------------|"      << endl;
+    cout     << "|-----------------------|--------------|------------------------|----------------------------|-------------| 95% CL, |"      << endl;
+    cout     << "|         Cut           |    DATA      |       Total_bkg        |      Total_sgl (accpt)     | S/sqrt(S+B) | exp(fb) |"      << endl;
+    cout     << "|-----------------------|--------------|------------------------|----------------------------|-------------|---------|"      << endl;
     //
    }
    if (debug>0){ 
-    cout     << "|----------------------------------------------------------------------------------------|"      << endl;
-     cout        <<  "|  "    << setw(10) <<  cuts.GetName(); 
-     printf(" |  %6.0f    | %3.1f+/-%3.1f   | %4.2f+/-%4.2f (%5.2f) |    %4.2f    | %4.2f     |\n",
-	    _data->npass, _bkg->npass , _bkg->npass_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, _sgf1,  _sgf3);      
-    cout     << "|----------------------------------------------------------------------------------------|"      << endl;
+    cout     << "|--------------------------------------------------------------------------------------------------------------------|"      << endl;
+
+     cout        <<  "|  "    << setw(20) <<  cuts.GetName(); 
+     printf(" |  %6.0f    |    %3.1f+/-%3.1f      |    %4.2f+/-%4.2f (%5.2f)    |    %4.2f    | %4.2f   |\n",
+	    _data->npass, sum_bkg , tot_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, _sgf1,  _sgf3);     // _data->npass, _bkg->npass , _bkg->npass_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, _sgf1,  _sgf3); 
+    cout     << "|--------------------------------------------------------------------------------------------------------------------|"      << endl;
    }
    if (debug>1){ 
      cout << ".!limit_calc  " << " " <<  _bkg->npass << " " <<_bkg->npass << " " << setprecision(5) << _bkg->npass_err  << " "
@@ -1133,7 +1148,7 @@ TH1F* TmvaAnl::makeHist(const char* hname, const char* hvar, Int_t nbins, Float_
   return hist;
 }
 //=====================================================================================================
-void TmvaAnl::PlotHists(Float_t ymin, Int_t flogy){
+void TmvaAnl::PlotHists(Float_t ymin, Int_t flogy, Int_t overFlow){
 
 
   bkg_hists.clear();
@@ -1144,7 +1159,7 @@ void TmvaAnl::PlotHists(Float_t ymin, Int_t flogy){
   //
   Int_t imax = ArrangeHtms(flogy); 
   //cout << "# bkgs = " <<  bkg_hists.size() << endl;
-  StackHtms(imax,ymin);
+  StackHtms(imax,ymin,flogy,overFlow);
   if (_fsaveplots) _nstackplots++;
 
 }
@@ -1207,7 +1222,7 @@ if (flogy == 1) {
   return imax;
 }
 //=====================================================================================================
-void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin){
+void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow){
 //
 //
   TH1F* hdata = _data->_hf1;
@@ -1232,14 +1247,25 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin){
   hdata->SetMinimum(ymin);
   hsgl->SetMinimum(ymin);
 
+  
+
   Float_t ymax = _data->_hf1->GetMaximum();
   if ( imax == 1){
-       ymax = _bkg->_hf1->GetMaximum();
+    ymax = _bkg->_hf1->GetMaximum();
   }else{
-       ymax = _sgl->_hf1->GetMaximum();
+    ymax = _sgl->_hf1->GetMaximum();
+  }
+
+  if (overFlow == 1) {
+    hdata->SetBinContent(hdata->GetNbinsX(), hdata->GetBinContent(hdata->GetNbinsX()) + hdata->GetBinContent(hdata->GetNbinsX()+1) );
   }
 
   for(UInt_t ih=0; ih< bkg_hists.size(); ih++){ 
+    //std::string xtemp(bkg_hists[ih]->GetXaxis()->GetTitle());
+    //if ( xtemp.find("pt") != std::string::npos || xtemp.find("pT") != std::string::npos || xtemp.find("p_{T}") != std::string::npos || xtemp.find("p^{T}") != std::string::npos) {
+    if (overFlow == 1) {
+      bkg_hists[ih]->SetBinContent(bkg_hists[ih]->GetNbinsX(), bkg_hists[ih]->GetBinContent(bkg_hists[ih]->GetNbinsX()) + bkg_hists[ih]->GetBinContent(bkg_hists[ih]->GetNbinsX()+1));
+    }
     sum_bkg_hists->Add(bkg_hists[ih]);
     hstack_bkg->Add(bkg_hists[ih]);
   } 
@@ -1278,7 +1304,7 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin){
     ratio_plot->GetLowerRefYaxis()->SetTitle("Data/MC");
     ratio_plot->GetLowerRefGraph()->SetMarkerStyle(20);
     ratio_plot->GetLowerRefGraph()->SetMarkerSize(0.5);
-    ratio_plot->GetLowerRefGraph()->SetMinimum(0);
+    ratio_plot->GetLowerRefGraph()->SetMinimum(0.1);
     ratio_plot->GetLowerRefGraph()->SetMaximum(2);
 
     TGraphAsymmErrors* errors_hist = (TGraphAsymmErrors*)gROOT->FindObject("errors_hist"); // Error bars for the sum of the backgrounds
@@ -1290,24 +1316,33 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin){
     errors_hist->SetFillColor(kGray+2);
     errors_hist->SetLineColor(1);
 
-   TGraphAsymmErrors* errors_ratio = (TGraphAsymmErrors*)gROOT->FindObject("errors_ratio"); // Error bars for the ratio plot
-   if (errors_ratio) { errors_ratio->Delete(); }
-   errors_ratio = new TGraphAsymmErrors((TH1F*)sum_bkg_hists->Clone("errors_ratio"));
 
-   errors_ratio->SetFillStyle(1001);
-   errors_ratio->SetMarkerStyle(0);
-   errors_ratio->SetFillColor(kGray+1);
+    TGraphAsymmErrors* errors_on_ratio = (TGraphAsymmErrors*)gROOT->FindObject("errors_on_ratio"); // Error bars for the ratio plot
+    if (errors_on_ratio) { errors_on_ratio->Delete(); }
+    errors_on_ratio = new TGraphAsymmErrors((TH1F*)sum_bkg_hists->Clone("errors_on_ratio"));
 
-   for (int ibin=1; ibin<=sum_bkg_hists->GetNbinsX(); ibin++) {
-     errors_ratio->SetPointY(ibin, 1.0);
-     if (errors_hist->GetPointY(ibin) != 0.0) {
-       errors_ratio->SetPointEYhigh(ibin, errors_hist->GetErrorYhigh(ibin)/errors_hist->GetPointY(ibin));
-       errors_ratio->SetPointEYlow(ibin, errors_hist->GetErrorYlow(ibin)/errors_hist->GetPointY(ibin));
-     } else {
-       errors_ratio->SetPointEYhigh(ibin, 0.0);
-       errors_ratio->SetPointEYlow(ibin, 0.0);
-     }
-   }
+    errors_on_ratio->SetFillStyle(1001);
+    errors_on_ratio->SetMarkerStyle(0);
+    errors_on_ratio->SetFillColor(kGray+1);
+
+/*
+    TGraphErrors* data_hist = (TGraphErrors*) gROOT->FindObject("data_hist");
+    if (data_hist) { data_hist->Delete(); }
+    data_hist = new TGraphErrors(hdata);
+    data_hist->SetMinimum(ymin);
+*/
+    for (int ibin=1; ibin<=sum_bkg_hists->GetNbinsX(); ibin++) {
+      errors_on_ratio->SetPointY(ibin, 1.0);
+//     Float_t err_y = data_hist->GetErrorY(ibin); //
+//      data_hist->SetPointError(ibin, 0.0, err_y); //
+      if (errors_hist->GetPointY(ibin) != 0.0) {
+        errors_on_ratio->SetPointEYhigh(ibin, errors_hist->GetErrorYhigh(ibin)/errors_hist->GetPointY(ibin));
+        errors_on_ratio->SetPointEYlow(ibin, errors_hist->GetErrorYlow(ibin)/errors_hist->GetPointY(ibin));
+      } else {
+        errors_on_ratio->SetPointEYhigh(ibin, 0.0);
+        errors_on_ratio->SetPointEYlow(ibin, 0.0);
+      }
+    }
 
     TVirtualPad* lower = (TVirtualPad*)gROOT->FindObject("lower");
     if (lower) { lower->Delete(); }
@@ -1318,37 +1353,24 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin){
     upper = ratio_plot->GetUpperPad();
 
     lower->cd();
-    errors_ratio->Draw("2");
+    errors_on_ratio->Draw("2");
     ratio_plot->GetLowerRefGraph()->Draw("p same");
-
+    
     upper->cd();
-
-  //if(imax==0){
-  //  hdata->Draw("E1 same"); // E1 same
-  //  hstack_bkg->Draw("hist same");
-  //  errors_hist->Draw("E2 same");
-  //}else if( imax == 1) {
-  //  //strange but this combo does plot axis labeles accurately
-  //  //  hstack_bkg->Draw();
-  //  // hdata->Draw("E same");
-////
-  //  hdata->Draw("E1same");
-  //  hstack_bkg->Draw("hist same");
-  //  errors_hist->Draw("E2 same");
-  //}else{
-  //  hdata->Draw("E1same");
-  //  hstack_bkg->Draw("hist same");
-  //  errors_hist->Draw("E2 same");
-  //}  
-  
-    hdata->Draw("E1 a");
-    hstack_bkg->Draw("a hist same");
-    errors_hist->Draw("2 same");
-    hdata->Draw("E1 same");
-
-
     gPad->SetTicks(2,2);
+    
+    hdata->Draw("E1 a");
+    //data_hist->Draw("P");
+    //data_hist->SetMinimum(ymin);
+    //data_hist->SetMaximum(hdata->GetMaximum());
+    hstack_bkg->Draw("A hist same");
+    errors_hist->Draw("2 same");
+    hdata->Draw("E1 same");  
+    //data_hist->Draw("P same");
+
     gPad->RedrawAxis();
+    gPad->SetLogy(flogy);
+
 
   } else {
 
@@ -1396,7 +1418,7 @@ void TmvaAnl::PlotLegend(const char* var){
   if(legend) delete legend;
 
   //legend = new TLegend(.63, .58, .88, .88);
-  legend = new TLegend(.29, .73, .88, .87);
+  legend = new TLegend(.29, .73, .89, .87);
 
   legend->SetName(sNameLegend.str().c_str());
   legend->SetFillColor(0);
@@ -1630,28 +1652,20 @@ void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
      _sgf2 =cl95res;
      //  cout << "LIMIT_CALC-RESULTS (expected, fb)/pfluc  " << _sgf2 << " / " << pfluc << endl;
      if (_debug ) cout << "_sgf0/_sgf1/_sgf2/_sgf3 = "  <<  _sgf0 << "/" << _sgf1 << "/" << _sgf2 << "/" << _sgf3 << endl;
-     int year = 2017;
+
     
     for( UInt_t ns=3; ns <  _vsamples.size(); ns++){
-     // if (_vsamples[ns]->_sid == 13 && year == 2018){
-     //   std::cout << "Scaling" << std::endl;
-     //   _vsamples[ns]->fillSampleHist(var,cuts,0.6875*scale_bkg);
-     // } else {
         _vsamples[ns]->fillSampleHist(var,cuts,scale_bkg);
-     // }
     }
  }
 //=====================================================================================================
 //=====================================================================================================
 void  TmvaAnl::setSampleHists(){
     for( UInt_t ns=0; ns <  _vsamples.size(); ns++){
-      //      _vsamples[ns]->_hf1 = cloneHist(_hframe,_vsamples[ns]->_name);
       _vsamples[ns]->_hf1 = xCloneHist(_hframe,_vsamples[ns]->_name,_nstackplots);
       _vsamples[ns]->_hf1->SetFillStyle(1001); // Updated from 3001
       _vsamples[ns]->_hf1->SetFillColor(_vsamples[ns]->_scolor);
        setHistStyle(_vsamples[ns]->_hf1);
-      //_vsamples[ns]->_hf1->SetLineWidth(0);
-      // cout << " Sample/color = " <<  _vsamples[ns]->_name << "/" << _vsamples[ns]->_scolor << endl;
     }
 }
 //=====================================================================================================
@@ -1661,27 +1675,26 @@ void  TmvaAnl::setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax,
     _hframe = (TH1F*)gROOT->FindObject("hframe"); 
     if(_hframe) _hframe->Delete();
     if(bw == -1.){
-       _hframe=0;       
-       //Set range of the hframe template based on the background histogram
-       //
-       (_bkg->getTestTree())->Draw(var, cuts, "goff");
-       _hframe= (TH1F*) (_bkg->getTestTree())->GetHistogram()->Clone("hframe");
-       Float_t ymax= _hframe->GetMaximum()/_scale_bkg_tmva;
-       //  cout << "xxxxx ymax = " <<   ymax << endl;
-       _hframe->Reset();
-       _hframe->SetMaximum(1.3 * ymax); // MM - was 1.3 * ymax
-       bw=_hframe->GetBinWidth(1);
+      _hframe=0;       
+      //Set range of the hframe template based on the background histogram
+      //
+      (_bkg->getTestTree())->Draw(var, cuts, "goff");
+      _hframe= (TH1F*) (_bkg->getTestTree())->GetHistogram()->Clone("hframe");
+      Float_t ymax= _hframe->GetMaximum()/_scale_bkg_tmva;
+      //  cout << "xxxxx ymax = " <<   ymax << endl;
+      _hframe->Reset();
+      _hframe->SetMaximum(1.3 * ymax); // MM - was 1.3 * ymax
+      bw=_hframe->GetBinWidth(1);
 
-     }else{
-     //Use requested xmin,xmax
-      Int_t   nbins=(xmax-xmin)/bw;
- 
+    }else{
+      //Use requested xmin,xmax
+      Int_t   nbins=(xmax-xmin)/bw;    
       Float_t xmin_hist=xmin;
       if ( (strcmp(var,"floatNbjets") ==0 )|| (strcmp(var,"floatNgood") ==0 ) || (strcmp(var,"f_category") ==0 ) || (strcmp(var,"f_njets_pass") ==0 ) ){
-         Float_t xmin_hist=xmin-0.5*bw;
-     }
+        Float_t xmin_hist=xmin-0.5*bw;
+      }
       Float_t xmax_hist=xmin_hist+nbins*bw;
-     _hframe = new TH1F("hframe",var, nbins, xmin_hist, xmax_hist);
+      _hframe = new TH1F("hframe",var, nbins, xmin_hist, xmax_hist); //xmax_hist
     }
 
     stringstream Htitle;
@@ -1732,12 +1745,10 @@ TH1F* xCloneHist(TH1F* hfr, const char* cloneName, Int_t cloneNum ){
 TH1F* cloneHist(TH1F* hframe, const char* histname){
   //
     TH1F* newhist = (TH1F*)gROOT->FindObject(histname); 
-    if(newhist){
-      //cout << "Deleted old hist " <<  newhist->GetName() << endl;
-      newhist->Delete();
-    }
-    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
-//    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));
+    if(newhist){ newhist->Delete(); }
+    newhist = (TH1F*) hframe->Clone(histname); 
+    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
+//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));
     return newhist;
 }
 
@@ -1796,7 +1807,7 @@ stringstream var;
 
  c2->cd(1);
  var<< "f_D_jet"; 
- plotvar(anl,var.str().c_str(), cuts, 1, 0, 0,    0.,3.6, 0.08, 2, 0, "Djet dscr, VBF selections,  35.9 fb^{-1}");
+ plotvar(anl,var.str().c_str(), cuts, 1, 0, 0,    0.,3.6, 0.08, 2, 0, 0, "Djet dscr, VBF selections,  35.9 fb^{-1}");
  outfname << var.str().c_str() << "_" << hname << ".pdf";
  gPad->SaveAs(outfname.str().c_str());
  outfname.str("");
@@ -1807,7 +1818,7 @@ stringstream var;
 
  c2->cd(2);
  var<< "f_Djet_VAJHU"; 
- plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    0., 1.8, 0.04, 2, 0, "MELA dscr, VBF selections,  35.9 fb^{-1}");
+ plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    0., 1.8, 0.04, 2, 0, 0, "MELA dscr, VBF selections,  35.9 fb^{-1}");
  outfname << var.str().c_str() << "_" << hname << ".pdf";
  gPad->SaveAs(outfname.str().c_str());
  outfname.str("");
@@ -1817,7 +1828,7 @@ stringstream var;
 
  c2->cd(3);
  var<< "BDT"; 
- plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.5, 1.3, 0.04, 2, 0, "BDT dscr, VBF selections,  35.9 fb^{-1}");
+ plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.5, 1.3, 0.04, 2, 0, 0, "BDT dscr, VBF selections,  35.9 fb^{-1}");
  outfname << var.str().c_str() << "_" << hname << ".pdf";
  gPad->SaveAs(outfname.str().c_str());
  outfname.str("");
@@ -1827,7 +1838,7 @@ stringstream var;
 
  c2->cd(4);
  var<< "MLPBFGS"; 
- plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.1, 1.7, 0.04, 2, 0, "MLPBFGS dscr, VBF selections,  35.9 fb^{-1}");
+ plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.1, 1.7, 0.04, 2, 0, 0, "MLPBFGS dscr, VBF selections,  35.9 fb^{-1}");
  outfname << var.str().c_str() << "_" << hname << ".pdf";
  gPad->SaveAs(outfname.str().c_str());
  outfname.str("");
@@ -1837,7 +1848,7 @@ stringstream var;
 
  c2->cd(5);
  var<< "DNN_GPU"; 
- plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.1, 1.7, 0.04, 2, 0, "DNN dscr, VBF selections,  35.9 fb^{-1}");
+ plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.1, 1.7, 0.04, 2, 0, 0, "DNN dscr, VBF selections,  35.9 fb^{-1}");
  outfname << var.str().c_str() << "_" << hname << ".pdf";
  gPad->SaveAs(outfname.str().c_str());
  outfname.str("");
@@ -1850,7 +1861,7 @@ stringstream var;
  c2->cd(6);
  //cut on the best classifyer (max significance), MELA for combo case
  var<< "PuppiAK8_jet_mass_so_corr"; 
- plotvar(anl,"PuppiAK8_jet_mass_so_corr",cleanNAN+"f_Djet_VAJHU>0.480",1.0,0,1, 110,150,2, 0,0, "VBF, f_Djet_VAJHU>0.480, 35.9 fb^{-1}","m_{4l} (GeV)");
+ plotvar(anl,"PuppiAK8_jet_mass_so_corr",cleanNAN+"f_Djet_VAJHU>0.480",1.0,0,1, 110,150,2, 0,0,0, "VBF, f_Djet_VAJHU>0.480, 35.9 fb^{-1}","m_{4l} (GeV)");
  outfname << var.str().c_str() << "_" << hname << "MELAtheBest.png";
 gPad->SaveAs(outfname.str().c_str());
  var.str(""); outfname.str("");
@@ -1938,32 +1949,32 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   if(selector == "old"){ // These are for the cplots for the OLD ntuples, don't confuse them for the cplot for the new ntuples
     //------------   VERTICES  	-------------------
     cp1->cd(1);
-    plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 50, 1,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of primary vertices", "Events/bin");
+    plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 50, 1,       1, 0, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of primary vertices", "Events/bin");
     //------------    LEPTONS  	-------------------
     cp1->cd(2);
-    plotvar(anl, "l_pt1",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 p_{T} (GeV)", "Events/bin");
+    plotvar(anl, "l_pt1",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0, 0, "VBS (WV), 35.9 fb^{-1}", "Lepton_1 p_{T} (GeV)", "Events/bin");
     cp1->cd(3);
-    plotvar(anl, "l_eta1", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 #eta", "Events/bin");
+    plotvar(anl, "l_eta1", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 #eta", "Events/bin");
 
     cp1->cd(4);
-    plotvar(anl, "l_phi1", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 #phi", "Events/bin");
+    plotvar(anl, "l_phi1", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 #phi", "Events/bin");
 
     cp1->cd(5);
-    plotvar(anl, "l_charge1", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 charge", "Events/bin");
+    plotvar(anl, "l_charge1", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 charge", "Events/bin");
 
     cp1->cd(6);
-    plotvar(anl, "l_e1",    cuts,  1.0, 1, 0,   0., 600., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 energy", "Events/bin");
+    plotvar(anl, "l_e1",    cuts,  1.0, 1, 0,   0., 600., 10,       1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 energy", "Events/bin");
 
     cp1->cd(7);
-    plotvar(anl, "l_iso1",  cuts,  1.0, 1, 0,   0., 0.5, 0.02,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 isolation", "Events/bin");
+    plotvar(anl, "l_iso1",  cuts,  1.0, 1, 0,   0., 0.5, 0.02,       1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 isolation", "Events/bin");
     //
 
     //---------------	4 body mass	---------------
     cp1->cd(8);
-    plotvar(anl, "mass_lvj_type0_PuppiAK8",    cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
+    plotvar(anl, "mass_lvj_type0_PuppiAK8",    cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
 
     cp1->cd(9);
-    plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
+    plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
     //======================================================================================================================================================================
      outfname << "plots/2017/c1_2017" << "_" << CutName << ".pdf";
      cp1->SaveAs(outfname.str().c_str());
@@ -1983,32 +1994,32 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
     // OLD - reminder
     //-------------- 	MET	-------------------
     cp2->cd(1);
-    plotvar(anl, "pfMET_Corr",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr (GeV)", "Events/bin");
+    plotvar(anl, "pfMET_Corr",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr (GeV)", "Events/bin");
 
     cp2->cd(2);
-    plotvar(anl, "pfMET_Corr_phi",  cuts,  1.0, 1, 0,   0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),      1, 0,  "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr_phi", "Events/bin");
+    plotvar(anl, "pfMET_Corr_phi",  cuts,  1.0, 1, 0,   0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),      1, 0, 0, "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr_phi", "Events/bin");
 
     cp2->cd(3);
-    plotvar(anl, "nu_pz_type0",  cuts,  1.0, 1, 0,   -500., 500., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Reconstructed Neutrino p_{Z}", "Events/bin");
+    plotvar(anl, "nu_pz_type0",  cuts,  1.0, 1, 0,   -500., 500., 20,      1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Reconstructed Neutrino p_{Z}", "Events/bin");
     //
     //--------------	AK8 Jet		------------
     cp2->cd(4);
-    plotvar(anl, "nGoodPuppiAK8jets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of Good AK8 jets", "Events/bin");
+    plotvar(anl, "nGoodPuppiAK8jets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Number of Good AK8 jets", "Events/bin");
 
     cp2->cd(5);
-    plotvar(anl, "ungroomed_PuppiAK8_jet_pt",  cuts,  1.0, 1, 0,   0., 1400., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 p_{T} (GeV)", "Events/bin");
+    plotvar(anl, "ungroomed_PuppiAK8_jet_pt",  cuts,  1.0, 1, 0,   0., 1400., 20,      1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8 p_{T} (GeV)", "Events/bin");
 
     cp2->cd(6);
-    plotvar(anl, "ungroomed_PuppiAK8_jet_eta", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #eta", "Events/bin");
+    plotvar(anl, "ungroomed_PuppiAK8_jet_eta", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #eta", "Events/bin");
 
     cp2->cd(7);
-    plotvar(anl, "ungroomed_PuppiAK8_jet_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #phi", "Events/bin");
+    plotvar(anl, "ungroomed_PuppiAK8_jet_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #phi", "Events/bin");
 
     cp2->cd(8);
-    plotvar(anl, "ungroomed_PuppiAK8_jet_charge", cuts,  1.0, 1, 0,  -2.5, 5.5, 0.1,     1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8 charge", "Events/bin");
+    plotvar(anl, "ungroomed_PuppiAK8_jet_charge", cuts,  1.0, 1, 0,  -2.5, 5.5, 0.1,     1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8 charge", "Events/bin");
 
     cp2->cd(9);
-    plotvar(anl, "ungroomed_PuppiAK8_jet_e",    cuts,  1.0, 1, 0,   0., 1400., 20,       1, 0,  "VBS (WV), 35.9 fb^{-1}", "AK8  energy", "Events/bin");
+    plotvar(anl, "ungroomed_PuppiAK8_jet_e",    cuts,  1.0, 1, 0,   0., 1400., 20,       1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8  energy", "Events/bin");
     //
     outfname << "plots/2017/c2_2017" << "_" <<  CutName << ".pdf";
      cp2->SaveAs(outfname.str().c_str());
@@ -2049,31 +2060,31 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
     //
       //------------   VERTICES  	-------------------
       cp3->cd(1);
-      plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 80, 1,       0, 0,  title_str, "Number of primary vertices", "Events/bin");
+      plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 80, 1,       0, 0,0,  title_str, "Number of primary vertices", "Events/bin");
       //------------    LEPTONS  	-------------------
       cp3->cd(2);
-      plotvar(anl, "ZeppenfeldWH",  cuts,  1.0, 1, 0,   0., 1000., 10,      1, 0,  title_str, "ZeppenfeldWH (GeV)", "Events/bin");
+      plotvar(anl, "ZeppenfeldWH",  cuts,  1.0, 1, 0,   0., 1000., 10,      1, 0,0,  title_str, "ZeppenfeldWH (GeV)", "Events/bin");
       cp3->cd(3);
-      plotvar(anl, "ZeppenfeldWL_2Lep", cuts,  1.0, 1, 0,  -3.,  3., 0.25,   0, 0,  title_str, "ZeppenfeldWL_2Lep", "Events/bin");
+      plotvar(anl, "ZeppenfeldWL_2Lep", cuts,  1.0, 1, 0,  -3.,  3., 0.25,   0, 0,0,  title_str, "ZeppenfeldWL_2Lep", "Events/bin");
 
       cp3->cd(4);
-      plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,  title_str, "Lepton_1 #phi", "Events/bin");
+      plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,0,  title_str, "Lepton_1 #phi", "Events/bin");
 
       cp3->cd(5);
-      plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     1, 0,  title_str, "Lepton_1 charge", "Events/bin");
+      plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     1, 0, 0, title_str, "Lepton_1 charge", "Events/bin");
 
       cp3->cd(6);
-      plotvar(anl, "lep1_dz",    cuts,  1.0, 1, 0,   0., 600., 10,       1, 0,  title_str, "Lepton_1 dz", "Events/bin");
+      plotvar(anl, "lep1_dz",    cuts,  1.0, 1, 0,   0., 600., 10,       1, 0, 0, title_str, "Lepton_1 dz", "Events/bin");
 
       cp3->cd(7);
-      plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.5, 0.02,       1, 0,  title_str, "Lepton_1 isolation", "Events/bin");
+      plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.5, 0.02,       1, 0,0,  title_str, "Lepton_1 isolation", "Events/bin");
       //
 
       cp3->cd(8);
-      plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0, title_str, "zeppLep", "Events/bin");
+      plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0,0, title_str, "zeppLep", "Events/bin");
 
       cp3->cd(9);
-      plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0, title_str, "zeppHad", "Events/bin");
+      plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0,0, title_str, "zeppHad", "Events/bin");
       // OLD - reminder
      outfname << "plots/2017/c3_2017" << "_" <<  CutName  << ".pdf";
      cp3->SaveAs(outfname.str().c_str());
@@ -2094,34 +2105,34 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   std::cout << "" << std::endl;
   //------------   VERTICES  	-------------------
   cp1->cd(1);
-  plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 60, 2,       1, 0,  title_str, "Number of primary vertices", "Events/bin");
+  plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 60, 2,       1, 0, 0, title_str, "Number of primary vertices", "Events/bin");
 
   cp1->cd(2);
-  plotvar(anl, "bosCent", cuts, 1.0, 1, 0, -4, 4, 0.25, 0, 0, title_str, "Boson Centrality", "Events/bin");
+  plotvar(anl, "bosCent", cuts, 1.0, 1, 0, -4, 4, 0.25, 0, 0, 0, title_str, "Boson Centrality", "Events/bin");
   //------------    LEPTONS  	-------------------
   cp1->cd(3);
-  plotvar(anl, "lep1_pt",  cuts,  1.0, 1, 0,   0., 1000., 30,      1, 0,  title_str, "Lepton_1 p_{T} (GeV)", "Events/bin");
+  plotvar(anl, "lep1_pt",  cuts,  1.0, 1, 0,   20., 400., 20, 1, 0, 1, title_str, "Lepton_1 p_{T} (GeV)", "Events/bin"); // was 0.,1000., 30 
 
   cp1->cd(4);
-  plotvar(anl, "lep1_eta", cuts,  1.0, 1, 0,  -2.5, 2.5, 0.2,   0, 0,  title_str, "Lepton_1 #eta", "Events/bin");
+  plotvar(anl, "lep1_eta", cuts,  1.0, 1, 0,  -2.4, 2.4, 0.16,   0, 0, 0, title_str, "Lepton_1 #eta", "Events/bin");
 
   cp1->cd(5);
-  plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  -3.75, 3.75, 0.25,   0, 0,  title_str, "Lepton_1 #phi", "Events/bin");
+  plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  -3.2, 3.2, 0.2,   0, 0, 0, title_str, "Lepton_1 #phi", "Events/bin");
 
   //cp1->cd(6);
   //plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     0, 0,  title_str, "Lepton_1 charge", "Events/bin");
 
   cp1->cd(6);
-  plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.4, 0.02,       1, 0,  title_str, "Lepton_1 isolation", "Events/bin");
+  plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.4, 0.02, 1, 0, 0, title_str, "Lepton_1 isolation", "Events/bin");
 
   cp1->cd(7);
-  plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, title_str, "zeppLep", "Events/bin");
+  plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, 0, title_str, "zeppLep", "Events/bin");
 
   cp1->cd(8);
-  plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, title_str, "zeppHad", "Events/bin");
+  plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, 0, title_str, "zeppHad", "Events/bin");
 
   cp1->cd(9);
-  plotvar(anl, "vbf1_AK4_qgid", cuts, 1.0, 1, 0, 0., 1., 0.025, 0, 0, title_str, "Qgl VBF_{j1}");
+  plotvar(anl, "vbf1_AK4_qgid", cuts, 1.0, 1, 0, 0., 1., 0.025, 0, 0, 0, title_str, "Qgl VBF_{j1}");
   //---------------	4 body mass	---------------
   //cp1->cd(8);
   //plotvar(anl, "mass_lvj_type0_PuppiAK8",    cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
@@ -2151,31 +2162,31 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   // plotvar(anl, "nu_pz_type0",  cuts,  1.0, 1, 0,   -500., 500., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Reconstructed Neutrino p_{Z}", "Events/bin");
 
   cp2->cd(1);
-  plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 2.4, 8., 0.2, 0, 0, title_str, "#Delta#eta^{vbs}", "Events/bin");
+  plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 2.4, 8., 0.2, 0, 0, 1, title_str, "#Delta#eta^{vbs}", "Events/bin");
 
   cp2->cd(2);
-  plotvar(anl, "vbf_m", cuts, 1.0, 1, 0 , 0., 4500, 150, 1, 0, title_str, "m^{vbs}_{jj} (GeV)", "Events/bin");
+  plotvar(anl, "vbf_m", cuts, 1.0, 1, 0 , 500., 4000, 150, 1, 0, 1, title_str, "m^{vbs}_{jj} (GeV)", "Events/bin");
 
   cp2->cd(3);
-  plotvar(anl, "vbf_pt", cuts,  1.0, 1, 0,  0., 2000., 50,   1, 0,  title_str, "p_T^{vbs} (GeV)", "Events/bin");
+  plotvar(anl, "vbf_pt", cuts,  1.0, 1, 0,  0., 2000., 50,   1, 0, 1, title_str, "p_{T}^{vbs} (GeV)", "Events/bin");
 
   cp2->cd(4);
-  plotvar(anl, "vbf1_AK4_pt", cuts, 1.0, 1, 0, 0., 1000., 25, 1, 0, title_str, "p^{T}_{j1} (GeV)", "Events/bin");
+  plotvar(anl, "vbf1_AK4_pt", cuts, 1.0, 1, 0, 0., 800., 25, 1, 0, 1, title_str, "VBS p^{T}_{j1} (GeV)", "Events/bin");
 
   cp2->cd(5);
-  plotvar(anl, "vbf1_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, title_str, "#eta_{j1}", "Events/bin");
+  plotvar(anl, "vbf1_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "VBS #eta_{j1}", "Events/bin");
 
   cp2->cd(6);
-  plotvar(anl, "vbf1_AK4_phi", cuts, 1.0, 1, 0, -3.75, 3.75, 0.25, 1, 0, title_str, "#phi_{j1}", "Events/bin");
+  plotvar(anl, "vbf1_AK4_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "VBS #phi_{j1}", "Events/bin");
 
   cp2->cd(7);
-  plotvar(anl, "vbf2_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 1, 0, title_str, "p^{T}_{j2} (GeV)", "Events/bin");
+  plotvar(anl, "vbf2_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 1, 0, 1, title_str, "VBS p^{T}_{j2} (GeV)", "Events/bin");
 
   cp2->cd(8);
-  plotvar(anl, "vbf2_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, title_str, "#eta_{j2}", "Events/bin");
+  plotvar(anl, "vbf2_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "VBS #eta_{j2}", "Events/bin");
 
   cp2->cd(9);
-  plotvar(anl, "vbf2_AK4_phi", cuts, 1.0, 1, 0, -3.75, 3.75, 0.25, 1, 0, title_str, "#phi_{j2}", "Events/bin");
+  plotvar(anl, "vbf2_AK4_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "VBS #phi_{j2}", "Events/bin");
 
   //--------------	AK8 Jet		------------
   //cp2->cd(4);
@@ -2196,31 +2207,31 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   cp3->Divide(3,3);
 
   cp3->cd(1);
-  plotvar(anl, "MET",  cuts,  1.0, 1, 0,   0., 800., 25,      1, 0,  title_str, "MET (GeV)", "Events/bin");
+  plotvar(anl, "MET",  cuts,  1.0, 1, 0,   30., 200., 8., 1, 0, 1,  title_str, "MET (GeV)", "Events/bin");
 
   cp3->cd(2);
-  plotvar(anl, "MET_phi",  cuts,  1.0, 1, 0, -3.75, 3.75, 0.25, 0, 0,  title_str, "MET #phi", "Events/bin"); //0.125*TMath::Pi()
+  plotvar(anl, "MET_phi",  cuts,  1.0, 1, 0, -3.75, 3.75, 0.25, 0, 0, 0,  title_str, "MET #phi", "Events/bin"); //0.125*TMath::Pi()
 
   cp3->cd(3);
-  plotvar(anl, "bos_j1_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 0, 0, title_str, "p^{T}_{J1} (GeV)", "Events/bin");
+  plotvar(anl, "bos_j1_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 0, 0, 1, title_str, "V p^{T}_{J1} (GeV)", "Events/bin");
 
   cp3->cd(4);
-  plotvar(anl, "bos_j1_AK4_eta", cuts, 1.0, 1, 0, -2.5, 2.5, 0.2, 0, 0, title_str, "#eta_{J1}", "Events/bin");
+  plotvar(anl, "bos_j1_AK4_eta", cuts, 1.0, 1, 0, -2.5, 2.5, 0.2, 0, 0, 0, title_str, "#V eta_{J1}", "Events/bin");
 
   cp3->cd(5);
-  plotvar(anl, "bos_PuppiAK8_tau2tau1", cuts, 1.0, 1, 0, 0., 1.0, 0.04, 0, 0, title_str, "V #tau_{21}", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_tau2tau1", cuts, 1.0, 1, 0, 0., 1.0, 0.04, 0, 0, 0, title_str, "AK8 #tau_{21}", "Events/bin");
 
   cp3->cd(6);
-  plotvar(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   0., 800., 25, 1, 0,  title_str, "AK8 p_{T} (GeV)", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   200., 800., 25, 1, 0, 1,  title_str, "AK8 p_{T} (GeV)", "Events/bin");
 
   cp3->cd(7);
-  plotvar(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -2.5, 2.5, .2,   0, 0,  title_str, "AK8 #eta", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -2.5, 2.5, .2,   0, 0, 0,  title_str, "AK8 #eta", "Events/bin");
 
   cp3->cd(8);
-  plotvar(anl, "bos_PuppiAK8_phi", cuts,  1.0, 1, 0,  -3.75, 3.75, 0.25,   0, 0,  title_str, "AK8 #phi", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_phi", cuts,  1.0, 1, 0,  -3.2, 3.2, 0.2,   0, 0, 0, title_str, "AK8 #phi", "Events/bin"); // was -3.75, 3.75, 0.25
 
   cp3->cd(9);
-  plotvar(anl, "bos_PuppiAK8_m_sd0_corr", cuts,  1.0, 1, 0,  40., 150, 5,   0, 0,  title_str, "AK8  Mass sd0 corr", "Events/bin");
+  plotvar(anl, "bos_PuppiAK8_m_sd0_corr", cuts,  1.0, 1, 0,  40., 150, 5,   0, 0, 0,  title_str, "AK8  Mass sd0 corr", "Events/bin");
 
 
 
@@ -2261,31 +2272,31 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   cp4->Divide(3,3);
 
   cp4->cd(1);
-  plotvar(anl, "dibos_m", cuts,  1.0, 1, 0,  0., 1500, 50,   0, 0,  title_str, "Diboson Mass", "Events/bin");
+  plotvar(anl, "dibos_m", cuts,  1.0, 1, 0,  0., 1500, 50,   0, 0, 1, title_str, "Diboson Mass", "Events/bin");
 
   cp4->cd(2);
-  plotvar(anl, "dibos_mt", cuts, 1.0, 1, 0, 0., 2000, 50, 0, 0, title_str, "Diboson mt", "Events/bin");
+  plotvar(anl, "dibos_mt", cuts, 1.0, 1, 0, 0., 2000, 50, 0, 0, 1, title_str, "Diboson mt", "Events/bin");
 
   cp4->cd(3);
-  plotvar(anl, "dibos_pt", cuts, 1.0, 1, 0, 0., 1000, 25, 0, 0, title_str, "Diboson pt", "Events/bin");
+  plotvar(anl, "dibos_pt", cuts, 1.0, 1, 0, 0., 800, 25, 0, 0, 1, title_str, "Diboson pt", "Events/bin");
 
   cp4->cd(4);
-  plotvar(anl, "dibos_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, title_str, "Diboson #eta", "Events/bin");
+  plotvar(anl, "dibos_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "Diboson #eta", "Events/bin");
 
   cp4->cd(5);
-  plotvar(anl, "dibos_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, title_str, "Diboson #phi", "Events/bin");
+  plotvar(anl, "dibos_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "Diboson #phi", "Events/bin");
 
   cp4->cd(6);
-  plotvar(anl, "dilep_mt", cuts, 1.0, 1, 0, 0., 1000, 25, 0, 0, title_str, "Dilepton mt", "Events/bin");
+  plotvar(anl, "dilep_mt", cuts, 1.0, 1, 0, 0., 800, 25, 1, 0, 1, title_str, "Dilepton mt", "Events/bin");
 
   cp4->cd(7);
-  plotvar(anl, "dilep_m", cuts, 1.0, 1, 0, 0., 1000, 25, 0, 0, title_str, "Dilepton mass", "Events/bin");
+  plotvar(anl, "dilep_m", cuts, 1.0, 1, 0, 0., 500, 20, 0, 0, 1, title_str, "Dilepton mass", "Events/bin");
 
   cp4->cd(8);
-  plotvar(anl, "dilep_eta", cuts, 1.0, 1, 0, -4., 4., 0.25, 0, 0, title_str, "Dilepton #eta", "Events/bin");
+  plotvar(anl, "dilep_eta", cuts, 1.0, 1, 0, -4., 4., 0.25, 0, 0, 0, title_str, "Dilepton #eta", "Events/bin");
 
   cp4->cd(9);
-  plotvar(anl, "dilep_pt", cuts, 1.0, 1, 0, 0., 1200, 25, 0, 0, title_str, "Dilepton pt", "Events/bin");
+  plotvar(anl, "dilep_pt", cuts, 1.0, 1, 0, 0., 800, 25, 1, 0, 1, title_str, "Dilepton pt", "Events/bin");
   // // Mark commented out
 
 
@@ -2348,29 +2359,31 @@ void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut ba
 //==
     TCanvas* c1= (TCanvas*)gROOT->FindObject("c1"); 
     if(c1) delete c1;
-     c1=new TCanvas("c1", "vbsflow", 1,0,800,600);
+    c1=new TCanvas("c1", "vbsflow", 1,0,800,600);
 //==
 
    // select postscript output type
    // type = 111   portrait  ps
    // type = 112   landscape ps
    // type = 113   eps
-   Int_t type = 112;
+  Int_t type = 112;
 
-    stringstream OutPsFname;
-    OutPsFname << "Cutflow_" << var <<  "_" <<  flowname << ".ps";
-    TPostScript* ps = (TPostScript*)gROOT->FindObject(OutPsFname.str().c_str()); 
-    if(ps) ps->Close();
-    ps = new TPostScript(OutPsFname.str().c_str(),type);
+  //  stringstream OutPsFname;
+  //  OutPsFname << "Cutflow_" << var <<  "_" <<  flowname << ".ps";
+  //  TPostScript* ps = (TPostScript*)gROOT->FindObject(OutPsFname.str().c_str()); 
+  //  if(ps) ps->Close();
+  //  ps = new TPostScript(OutPsFname.str().c_str(),type);
+  stringstream OutPdfFname;
+  
 //==
 //     stringstream CutFlowFname;
 //     CutFlowFname << "Cutflow_" <<  flowName << ".tex";
 //     ofstream cutsflow(CutFlowFname.str().c_str());   
 //==  
-    cout     << "|----------------------------------------------------------------------------------------|"      << endl;
-    cout     << "|-------------|------------|--------------|----------------------|-------------| 95% CL, |"      << endl;
-    cout     << "|    Cut      |   DATA     |  Total_bkg   | Total_sgl (accpt)    | S/sqrt(S+B) | exp(fb) |"      << endl;
-    cout     << "|-------------|------------|--------------|----------------------|-------------|---------|"      << endl;
+    cout     << "|--------------------------------------------------------------------------------------------------------------------|"      << endl;
+    cout     << "|-----------------------|--------------|------------------------|----------------------------|-------------| 95% CL, |"      << endl;
+    cout     << "|         Cut           |    DATA      |       Total_bkg        |      Total_sgl (accpt)     | S/sqrt(S+B) | exp(fb) |"      << endl;
+    cout     << "|-----------------------|--------------|------------------------|----------------------------|-------------|---------|"      << endl;
  
      anl->cuts.Clear();
      anl->cuts  <<
@@ -2381,29 +2394,37 @@ void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut ba
        fatjet_eta <<
        fatjet_tau21 <<
        met_pt <<
-       wv_sr <<
        btag_veto <<
        vbs_jets_mjj <<
        vbs_delta_eta <<
-       vbs_jets_pt 
+       vbs_jets_pt <<
+       wv_sr 
      ;
      CanvasName <<  flowname << " : " << anl->cuts.Cut(0).GetName();
      TCut currentCut;
-     for (Int_t i=0; i<=anl->cuts.GetLast(); ++i){      
-       //
+     for (Int_t i=0; i<=anl->cuts.GetLast(); ++i){
         currentCut=anl->cuts.Cut(i);
         Cuts=Cuts + currentCut;
-       // Draw plot
-	//   ps->NewPage();
         c1->cd();
         CanvasName << " + " << currentCut.GetName();
-	//	SuPageSetup(1,1,10,CanvasName.str().c_str(),"NP",istyle);
 
-        plotvar(anl, var, Cuts, scale, -1, istyle, xmin, xmax, bw, flogy, flogx, hTitle, xTitle, yTitle);
+        plotvar(anl, var, Cuts, scale, -1, istyle, xmin, xmax, bw, flogy, flogx, 1, hTitle, xTitle, yTitle);
         anl->PrintStat(currentCut, debug);
-	c1->Update();
- 
+	      c1->Update();
+        if (i == 0) {
+          OutPdfFname << "docs/cutflows/Cutflow_" << var << "_" << flowname << ".pdf(";
+          c1->Print(OutPdfFname.str().c_str(), "pdf");
+          OutPdfFname.str("");
+        } else if (i == anl->cuts.GetLast()) {
+          OutPdfFname << "docs/cutflows/Cutflow_" << var << "_" << flowname << ".pdf)";
+          c1->Print(OutPdfFname.str().c_str(), "pdf");
+          OutPdfFname.str("");
+        } else {
+          OutPdfFname << "docs/cutflows/Cutflow_" << var << "_" << flowname << ".pdf";
+
+          c1->Print(OutPdfFname.str().c_str(), "pdf");
+          OutPdfFname.str("");
+        }
      }//End cuts loop
-   ps->Close();
   anl->setsvplots(0);
 }

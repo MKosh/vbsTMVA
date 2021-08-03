@@ -134,7 +134,7 @@ Double_t CalcCL95(Double_t ilum, Double_t slum, Double_t eff, Double_t seff, Dou
    }
 //
    TF1 *like = new TF1("Likelihood",Likelihood,0.,xmax,0);
-   cout << "Likelihood function is evaluated over [0," << xmax << "]\n";
+   if (Debug) { cout << "Likelihood function is evaluated over [0," << xmax << "]\n"; }
    //
    //Double_t Norm = like->Integral(0.,xmax,p,epsilon);      // used in ROOT v5.XX
    like->SetParameters(p);
