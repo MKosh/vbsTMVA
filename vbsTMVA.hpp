@@ -59,8 +59,6 @@ TCut cut_TT          ("cut_TT",         "(gid ==  15)");
 //Cuts
 //from MyControlPlots.C
 TCut cleanNAN       ("cleanNAN",        "(mass_lvj_type0_PuppiAK8>0)"); // Use this NAN cut for the old data
-TCut cleanNAN_tau   ("cleanNAN_tau",    "!(TMath::IsNaN(bos_PuppiAK8_tau2tau1))"); // Use this one for the new data
-TCut cleanNAN_qgid  ("cleanNAN_qgid",   "!(TMath::IsNaN(vbf1_AK4_qgid))&&!(TMath::IsNaN(vbf2_AK4_qgid))");
 TCut mVVgt0         ("mVVgt0",          "(mass_lvj_type0_PuppiAK8>0)"); 
 TCut oneLepton      ("oneLepton",       "(lep2_pt<0)"); 
 TCut Lpt1gt50       ("Lpt1gt50",        "(lep1_pt>50)"); 
@@ -75,8 +73,11 @@ TCut goodEl         ("goodEl",          "(l_pt1>50&&(type==1)&&((abs(l_eta1)<2.5
 // Mark cuts --------------------------------------------------------------------------------------------------------------------------------
 // WV Signal Region (a.k.a boosted WV channel)
 // regions, sr: signal region, cr: control region
+TCut cleanNAN_tau       ("cleanNAN_tau",           "!(TMath::IsNaN(bos_PuppiAK8_tau2tau1))"); // Use this one for the new data
+TCut cleanNAN_qgid      ("cleanNAN_qgid",          "!(TMath::IsNaN(vbf1_AK4_qgid))&&!(TMath::IsNaN(vbf2_AK4_qgid))");
+
 TCut category_selection ("category_selection",     "lep2_pt<0 && bos_PuppiAK8_pt>0");// can be different for muon or electron, see eta cut
-//TCut category_selection ("category_selection",  "!isAntiIso && lep2_pt<0 && bos_PuppiAK8_pt>0")
+//TCut category_selection ("category_selection",   "!isAntiIso && lep2_pt<0 && bos_PuppiAK8_pt>0")
 
 TCut lep_pt             ("lep_pt",                 "lep1_pt>25"); // can be different value, debatable // lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
 TCut lep_eta            ("lep_eta",                "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))"); // muon || electron
