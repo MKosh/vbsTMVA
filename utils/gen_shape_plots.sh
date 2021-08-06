@@ -7,7 +7,7 @@
 
 echo "Starting to generate the plots.tex file"
 
-plot_file="docs/plots/plots.tex"
+plot_file="docs/plots/shape_plots.tex"
 
 if [ -f $plot_file ]; then rm -f $plot_file; fi
 touch $plot_file
@@ -41,7 +41,7 @@ for files in plots/*/*.pdf; do
     if [[ ! "${Cuts[@]}" =~ "$cut" ]]; then
         Cuts+=("$cut")
     fi
-    if [[ (! "${Canvases[@]}" =~ "$canvas") && ("$(echo $canvas | grep c)") ]]; then
+    if [[ (! "${Canvases[@]}" =~ "$canvas") && ("$(echo $canvas | grep s)") ]]; then
         Canvases+=("$canvas")
     fi
     if [[ ! "${YearCuts[@]}" =~ "$yearCut" ]]; then
@@ -74,5 +74,5 @@ done
 
 echo "\end{document}" >> $plot_file
     
-echo "Done generating plots.tex file"
+echo "Done generating shape_plots.tex file"
 

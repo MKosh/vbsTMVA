@@ -68,19 +68,30 @@ trainAndPlot: update_$(year)
 	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cut      //cout << "Deleted old hist " <<  newhist->GetName() << endl;
+	@sed -i 's|^.*\(shapePlots(anl, cut, cutName); // XXX\)|//shapePlots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	@root -q tmvaMon.cpp\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\)
 	-@./utils/plot_resort.sh "$(year)"
 	@./utils/gen_plots.sh
 
 plots: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	@sed -i 's|^.*\(shapePlots(anl, cut, cutName); // XXX\)|//shapePlots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	-@./utils/plot_sort.sh "$(year)"
 	@root -q tmvaMon.cpp\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\)
 	-@./utils/plot_resort.sh "$(year)"
 	@./utils/gen_plots.sh
 
+shapePlots: update_$(year)
+	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	@sed -i 's|^.*\(shapePlots(anl, cut, cutName); // XXX\)|shapePlots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	-@./utils/plot_sort.sh "$(year)"
+	@root -q tmvaMon.cpp\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\)
+	-@./utils/plot_resort.sh "$(year)"
+	@./utils/gen_shape_plots.sh
+
 mon: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	@sed -i 's|^.*\(shapePlots(anl, cut, cutName); // XXX\)|//shapePlots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	-@./utils/plot_sort.sh "$(year)"
 	@echo "Don't forget to run the plot_resort.sh script after generating new plots"
 	@root tmvaMon.cpp\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\)
@@ -143,6 +154,10 @@ update_2016:
 	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2016/c2_2016|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2016/c3_2016|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c4_[0-9]\{4\}|plots/2016/c4_2016|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/s1_[0-9]\{4\}|plots/2016/s1_2016|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/s2_[0-9]\{4\}|plots/2016/s2_2016|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/s3_[0-9]\{4\}|plots/2016/s3_2016|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/s4_[0-9]\{4\}|plots/2016/s4_2016|g' tmvaMon.cpp
 	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cpp
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cpp
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cpp
@@ -162,6 +177,10 @@ update_2017:
 	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2017/c2_2017|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2017/c3_2017|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c4_[0-9]\{4\}|plots/2017/c4_2017|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/s1_[0-9]\{4\}|plots/2017/s1_2017|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/s2_[0-9]\{4\}|plots/2017/s2_2017|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/s3_[0-9]\{4\}|plots/2017/s3_2017|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/s4_[0-9]\{4\}|plots/2017/s4_2017|g' tmvaMon.cpp
 	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cpp
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cpp
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cpp
@@ -180,6 +199,10 @@ update_2018:
 	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2018/c2_2018|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2018/c3_2018|g' tmvaMon.cpp
 	@sed -i 's|plots/[0-9]\{4\}/c4_[0-9]\{4\}|plots/2018/c4_2018|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/s1_[0-9]\{4\}|plots/2018/s1_2018|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/s2_[0-9]\{4\}|plots/2018/s2_2018|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/s3_[0-9]\{4\}|plots/2018/s3_2018|g' tmvaMon.cpp
+	@sed -i 's|plots/[0-9]\{4\}/s4_[0-9]\{4\}|plots/2018/s4_2018|g' tmvaMon.cpp
 	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cpp
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cpp
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cpp

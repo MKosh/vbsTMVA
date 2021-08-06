@@ -317,42 +317,44 @@ private:
    Int_t        _fsaveplots;
 
 public:
-   CutList cuts;
-   static const UInt_t  PB2FB = 1000;
-   TmvaAnl(TString  anlname,Float_t lum_fbinv, std::vector<TmvaSample*> vsamples, Float_t& scale_sgl_tmva,Float_t& scale_bkg_tmva);
-   void setDataSample(UInt_t sID){ _data = _vsamples[sID]; }
-   void setSglSample(UInt_t sID){  _sgl = _vsamples[sID]; }
-   void setBkgSample(UInt_t sID){  _bkg = _vsamples[sID]; }
-   void setsvplots(Int_t isvplots){ _fsaveplots = isvplots;}
-   void setLum(Float_t lum) { _lum = lum;}
-   void PrintStat(TCut& cuts,Int_t debug);
-   void setHistStyle(TH1F* hist);
+  CutList cuts;
+  static const UInt_t  PB2FB = 1000;
+  TmvaAnl(TString  anlname,Float_t lum_fbinv, std::vector<TmvaSample*> vsamples, Float_t& scale_sgl_tmva,Float_t& scale_bkg_tmva);
+  void setDataSample(UInt_t sID){ _data = _vsamples[sID]; }
+  void setSglSample(UInt_t sID){  _sgl = _vsamples[sID]; }
+  void setBkgSample(UInt_t sID){  _bkg = _vsamples[sID]; }
+  void setsvplots(Int_t isvplots){ _fsaveplots = isvplots;}
+  void setLum(Float_t lum) { _lum = lum;}
+  void PrintStat(TCut& cuts,Int_t debug);
+  void setHistStyle(TH1F* hist);
 
    //TmvaSample* getDataSample(){return _data;}
 
    //
-   void setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax, Float_t bw,
-		  const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
-   TH1F* makeHist(const char* hname, const char* hvar, Int_t nbins, Float_t hvar_min, Float_t hvar_max);
+  void setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax, Float_t bw,
+	  const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
+  TH1F* makeHist(const char* hname, const char* hvar, Int_t nbins, Float_t hvar_min, Float_t hvar_max);
 
-    Float_t optCutAlg1(const char* optParName,TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf, Float_t dstepw, Int_t npoints);
-    Float_t optCutScan(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf, Float_t dstepw, Int_t npoints);
-   void setSampleHists();
-   void fillSampleHists(const char* var, TCut cut, Float_t scale=1.0);
-   void setTmvaScales(Float_t& scale_sgl_tmva,Float_t& scale_bkg_tmva){
-     _scale_sgl_tmva = scale_sgl_tmva;
-     _scale_bkg_tmva = scale_bkg_tmva;
-   }
-   Int_t ArrangeHtms(Int_t flogy=0);
-   void  StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy=0, Int_t overFlow=0);
-   void  PlotHists(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
-   void  PlotLegend(const char* var);
-   void  PlotSgf(const char* var); 
-   void  sdb(Int_t dbl){ _debug=dbl; };
-   Float_t optParVal(const char* optParName);
-   TmvaSample* getSglSample(){ return _sgl;};
-   TmvaSample* getDataSample(){ return _data;};
+  Float_t optCutAlg1(const char* optParName,TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf, Float_t dstepw, Int_t npoints);
+  Float_t optCutScan(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf, Float_t dstepw, Int_t npoints);
+  void setSampleHists();
+  void fillSampleHists(const char* var, TCut cut, Float_t scale=1.0);
+  void setTmvaScales(Float_t& scale_sgl_tmva,Float_t& scale_bkg_tmva){
+    _scale_sgl_tmva = scale_sgl_tmva;
+    _scale_bkg_tmva = scale_bkg_tmva;
+  }
+  Int_t ArrangeHtms(Int_t flogy=0);
+  void  StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy=0, Int_t overFlow=0);
+  void  PlotHists(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
+  void  PlotLegend(const char* var);
+  void  PlotSgf(const char* var); 
+  void  sdb(Int_t dbl){ _debug=dbl; };
+  Float_t optParVal(const char* optParName);
+  TmvaSample* getSglSample(){ return _sgl;};
+  TmvaSample* getDataSample(){ return _data;};
 
+  void PlotShapes(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
+  void makeShapeComp(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
   //
 };
 //=====================================================================================================
@@ -376,6 +378,10 @@ TmvaAnl::TmvaAnl(TString anlname, Float_t lum_fbinv, std::vector<TmvaSample*> ve
    _sgf3=0;
 }
 //=====================================================================================================
+Int_t plotShapeComp(TmvaAnl* anl, const char* var, TCut cut, Float_t scale=1.0, Int_t debug=0, Int_t istyle=0,
+        Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0, Int_t overFlow=0,
+	      const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
+
 Int_t plotSingleVariable(TmvaAnl* anl, const char* var, TCut cut, const char* cutName, Float_t scale=1.0, Int_t debug=0, Int_t istyle=0,
         Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0, Int_t overFlow=0,
 	      const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
@@ -397,6 +403,8 @@ void  printCutflow( TmvaAnl* anl, const char* var, const char* flowname="", TCut
 	       const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
 
 void cplots(TmvaAnl* anl, TCut cuts, TString CutName);
+
+void shapePlots(TmvaAnl*, TCut cuts, TString CutName);
 
 TCut  splitCuts (const char* strcuts);
 //=====================================================================================================
@@ -429,7 +437,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "" << endl;
 
 //cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
-
+shapePlots(anl, cut, cutName); // XXX
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -626,6 +634,47 @@ TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
   return new TmvaAnl(anlName,lum_fbinv,anl_samples,scale_sgl_tmva,scale_bkg_tmva); 
 }
 //=====================================================================================================
+Int_t plotShapeComp(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t debug, Int_t istyle,
+        Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
+	      const char hTitle[], const char xTitle[], const char yTitle[]) {
+
+  anl->setHframe(var,wtot_2018*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setSampleHists();
+  anl->fillSampleHists(var,cuts,scale);
+
+  Float_t ymin= 0.0;
+  if (flogy) ymin= pow(10,flogy*(-1));
+
+  gStyle->SetOptStat(0);
+  //TCanvas* canvas1 = (TCanvas*)gROOT->FindObject("canvas1");
+  //if (canvas1) { canvas1->Delete(); }
+  //canvas1 = new TCanvas("canvas1","canvas1", 10,10, 800,800);
+  anl->PlotShapes(ymin, flogy, overFlow); 
+  anl->PlotLegend(var);
+
+  if(istyle==1){
+    anl->PlotSgf(var);
+  }else if(istyle>1){ 
+    TH1F* sglscale =  (TH1F*) gROOT->FindObject("sglscale"); 
+    if(sglscale){
+     sglscale->Delete();
+    }
+    sglscale= (TH1F*) anl->getSglSample()->_hf1->Clone();
+    sglscale->SetName("sglscale");
+    sglscale->Scale(istyle);
+    sglscale->Draw("hist same");
+  }
+
+  gPad->SetLogy(flogy);
+  anl->PrintStat(cuts,debug);
+
+  //stringstream outPlotname;
+  //outPlotname << "Plot_" << var << "_" << cutName << ".pdf";
+  //canvas1->SaveAs(outPlotname.str().c_str());
+  return 0;
+}
+
+//=======================================================================================================
 Int_t plotSingleVariable( TmvaAnl* anl, const char* var, TCut cuts, const char* cutName, Float_t scale, Int_t debug, Int_t istyle,
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
@@ -675,7 +724,7 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   anl->fillSampleHists(var,cuts,scale);
 
   Float_t ymin= 0.0;
-  if (flogy) ymin= pow(10,flogy*(-1));
+  if (flogy) ymin= 1; // pow(10,flogy*(-1));
 
   gStyle->SetOptStat(0);  
   anl->PlotHists(ymin, flogy, overFlow); 
@@ -1217,7 +1266,7 @@ Int_t TmvaAnl::ArrangeHtms(Int_t flogy){
 if (flogy == 1) {
   hdata->SetMaximum(npmax*40); // 20 was good, Analysis note uses 40
 } else if (flogy == 0) {
-  hdata->SetMaximum(npmax*3); // MM was 1.2 I changed that, added the flogy argument and the if statement. 1.45 was good, Analysis Note uses 3
+  hdata->SetMaximum(npmax*2); // MM was 1.2 I changed that, added the flogy argument and the if statement. 1.45 was good, Analysis Note uses 3
 }
   return imax;
 }
@@ -1236,18 +1285,26 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
   if (sum_bkg_hists) { sum_bkg_hists->Delete(); }
   sum_bkg_hists = (TH1F*)_hframe->Clone("sum_bkg_hists");
 
+  TH1F* signal_hist = (TH1F*)gROOT->FindObject("signal_hist");
+  if (signal_hist) { signal_hist->Delete(); }
+  signal_hist = (TH1F*)hsgl->Clone("signal_hist");
+
   THStack*  hstack_bkg = (THStack*)gROOT->FindObject(sNameHstack.str().c_str()); 
   if( hstack_bkg){ hstack_bkg->Delete(); }
 
   hstack_bkg = new THStack(sNameHstack.str().c_str(),sNameHstack.str().c_str()); 
   hstack_bkg->SetTitle(hsgl->GetTitle());
-  // hstack_bkg->GetYaxis()->SetTitle( hsgl->GetYaxis()->GetTitle());
+  
+
+  if (flogy) {
+    ymin = 1.;
+  }
 
   hstack_bkg->SetMinimum(ymin);
   hdata->SetMinimum(ymin);
   hsgl->SetMinimum(ymin);
+  signal_hist->SetMinimum(ymin);
 
-  
 
   Float_t ymax = _data->_hf1->GetMaximum();
   if ( imax == 1){
@@ -1291,7 +1348,7 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
     std::vector<double> gridlines = {0.5, 1.0, 1.5};
     ratio_plot->SetGridlines(gridlines);
     
-    ratio_plot->Draw("grid hideup");
+    ratio_plot->Draw("grid"); // took out hideup
     ratio_plot->GetLowYaxis()->SetNdivisions(404);
     
     ratio_plot->SetSeparationMargin(0);
@@ -1360,13 +1417,14 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
     gPad->SetTicks(2,2);
     
     hdata->Draw("E1 a");
-    //data_hist->Draw("P");
-    //data_hist->SetMinimum(ymin);
-    //data_hist->SetMaximum(hdata->GetMaximum());
     hstack_bkg->Draw("A hist same");
     errors_hist->Draw("2 same");
     hdata->Draw("E1 same");  
-    //data_hist->Draw("P same");
+    
+    signal_hist->SetFillStyle(0);
+    signal_hist->SetLineWidth(2);
+    signal_hist->SetLineColor(kRed);
+    signal_hist->Draw("hist same");
 
     gPad->RedrawAxis();
     gPad->SetLogy(flogy);
@@ -1548,7 +1606,67 @@ void TmvaAnl::PlotLegend(const char* var){
   cms_leg2->Draw();
 }
 //=====================================================================================================
+void TmvaAnl::PlotShapes(Float_t ymin, Int_t flogy, Int_t overFlow){
 
+
+  bkg_hists.clear();
+ //Stack backgrounds
+  for(UInt_t ns=3; ns <  _vsamples.size(); ns++){
+    bkg_hists.push_back(_vsamples[ns]->_hf1);
+  }
+  makeShapeComp(ymin, flogy, overFlow);
+  if (_fsaveplots) _nstackplots++;
+
+}
+//=====================================================================================================
+void TmvaAnl::makeShapeComp(Float_t ymin, Int_t flogy=0, Int_t overFlow=0) {
+  // Plot the shape comparison graphs
+  TH1F* hdata = _data->_hf1;
+  TH1F* hbkg  = _bkg->_hf1;
+  TH1F* hsgl  = _sgl->_hf1;
+
+  Float_t norm = 1.;
+  hdata->Scale(norm/hdata->Integral());
+  hsgl->Scale(norm/hsgl->Integral());
+
+  Float_t npmax = hdata->GetMaximum();
+
+  if (flogy) {
+    ymin = 0.1;
+    hdata->SetMaximum(npmax*40);
+  } else {
+    hdata->SetMaximum(npmax*2);
+  }
+
+  hdata->SetLineColor(0);
+  hdata->SetLineWidth(4);
+  hdata->SetFillStyle(0);
+  if (overFlow == 1) {
+    hdata->SetBinContent(hdata->GetNbinsX(), hdata->GetBinContent(hdata->GetNbinsX()) + hdata->GetBinContent(hdata->GetNbinsX()+1) );
+  }
+
+  hsgl->SetLineColor(kRed);
+  hsgl->SetLineWidth(4);
+  hsgl->SetFillStyle(0);
+
+  hdata->Draw("hist");
+
+  for(UInt_t ih=0; ih< bkg_hists.size(); ih++){ 
+    bkg_hists[ih]->Scale(norm/bkg_hists[ih]->Integral());
+    bkg_hists[ih]->SetLineColor(bkg_hists[ih]->GetFillColor());
+    if (overFlow == 1) {
+      bkg_hists[ih]->SetBinContent(bkg_hists[ih]->GetNbinsX(), bkg_hists[ih]->GetBinContent(bkg_hists[ih]->GetNbinsX()) + bkg_hists[ih]->GetBinContent(bkg_hists[ih]->GetNbinsX()+1));
+    }
+    bkg_hists[ih]->SetLineWidth(4);
+    bkg_hists[ih]->SetFillStyle(0);
+    bkg_hists[ih]->Draw("hist same");
+  }
+
+  hsgl->Draw("hist same");
+  gPad->RedrawAxis();
+
+}
+//=====================================================================================================
 void TmvaAnl::PlotSgf(const char* var){
 
    stringstream ssSgf0Text; 
@@ -2133,34 +2251,20 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
 
   cp1->cd(9);
   plotvar(anl, "vbf1_AK4_qgid", cuts, 1.0, 1, 0, 0., 1., 0.025, 0, 0, 0, title_str, "Qgl VBF_{j1}");
-  //---------------	4 body mass	---------------
-  //cp1->cd(8);
-  //plotvar(anl, "mass_lvj_type0_PuppiAK8",    cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
 
-  //cp1->cd(9);
-  //plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
-  //======================================================================================================================================================================
-   outfname << "plots/2018/c1_2018" << "_" << CutName << ".pdf";
-   cp1->SaveAs(outfname.str().c_str());
-   outfname.str("");
-   //outfname << "plots/2018/c1_2018"  << "_" << CutName << ".root";
-   //cp1->SaveAs(outfname.str().c_str()); 
-   //outfname.str("");
+  outfname << "plots/2018/c1_2018" << "_" << CutName << ".pdf";
+  cp1->SaveAs(outfname.str().c_str());
+  outfname.str("");
+  //outfname << "plots/2018/c1_2018"  << "_" << CutName << ".root";
+  //cp1->SaveAs(outfname.str().c_str()); 
+  //outfname.str("");
 
+  TCanvas* cp2 = (TCanvas*)gROOT->FindObject("cp2"); 
+  if(cp2) { cp2->Delete(); }
+  cp2 = new TCanvas("cp2","cp2",10,10,1200,1200);
+  cp2->Divide(3,3);
 
-   //============================
-
-   TCanvas* cp2 = (TCanvas*)gROOT->FindObject("cp2"); 
-   if(cp2) { cp2->Delete(); }
-   cp2 = new TCanvas("cp2","cp2",10,10,1200,1200);
-   cp2->Divide(3,3);
-
-
-  //-------------- 	MET	-------------------
-
-  // cp2->cd(3);
-  // plotvar(anl, "nu_pz_type0",  cuts,  1.0, 1, 0,   -500., 500., 20,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Reconstructed Neutrino p_{Z}", "Events/bin");
-
+  //------------   VBF variables   ----------------
   cp2->cd(1);
   plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 2.4, 8., 0.2, 0, 0, 1, title_str, "#Delta#eta^{vbs}", "Events/bin");
 
@@ -2188,12 +2292,6 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   cp2->cd(9);
   plotvar(anl, "vbf2_AK4_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "VBS #phi_{j2}", "Events/bin");
 
-  //--------------	AK8 Jet		------------
-  //cp2->cd(4);
-  //plotvar(anl, "nGoodPuppiAK8jets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of Good AK8 jets", "Events/bin"); // //
-
-
-
   outfname << "plots/2018/c2_2018" << "_" <<  CutName << ".pdf";
    cp2->SaveAs(outfname.str().c_str());
    outfname.str("");
@@ -2206,6 +2304,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   cp3 = new TCanvas("cp3","cp3",10,10,1200,1200);
   cp3->Divide(3,3);
 
+  //-------------    AK8 Jets    -----------------
   cp3->cd(1);
   plotvar(anl, "MET",  cuts,  1.0, 1, 0,   30., 200., 8., 1, 0, 1,  title_str, "MET (GeV)", "Events/bin");
 
@@ -2233,31 +2332,6 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   cp3->cd(9);
   plotvar(anl, "bos_PuppiAK8_m_sd0_corr", cuts,  1.0, 1, 0,  40., 150, 5,   0, 0, 0,  title_str, "AK8  Mass sd0 corr", "Events/bin");
 
-
-
-  // plotvar(anl, "PuppiAK8_jet_mass",         cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 mass (GeV)",           "Events/bin");
-  // plotvar(anl, "PuppiAK8_jet_mass_pr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 pruned mass (GeV)",    "Events/bin");
-  // plotvar(anl, "PuppiAK8_jet_mass_so_corr", cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 Softdrop mass (GeV)",  "Events/bin");
-  // plotvar(anl, "PuppiAK8_jet_mass_tr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 tr mass (GeV)",        "Events/bin");
-  // plotvar(anl, "PuppiAK8_jet_tau2tau1",     cuts,  1.0, 1, 0,  0., 1., 0.1,          1, 0,  "VBS (WV), 35.9 fb^{-1}",   "AK8 #tau_{2}/#tau_{1}",      "Events/bin");
-  // plotvar(anl, "PuppiAK8jet_qjet",          cuts,  1.0, 1, 0,  0., 3., 0.1,          1, 0,  "VBS (WV), 35.9 fb^{-1}",   "PuppiAK8jet_qjet",      "Events/bin");
-
-  // //	Leptonic & Hadronic W-boson 
-  // plotvar(anl, "v_pt_type0",     cuts,  1.0, 1, 0,  0., 1000., 20,          1, 0,  "VBS (WV), 35.9 fb^{-1}",   "W p_{T} (GeV)",      "Events/bin");
-  // plotvar(anl, "v_mt_type0",     cuts,  1.0, 1, 0,  0., 500.,  20,     1, 0,  "VBS (WV), 35.9 fb^{-1}",   "W Transverse Mass (GeV)",      "Events/bin");
-
-  // //--------------	VBF Jet		------------
-  // plotvar(anl, "njets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of VBF jets", "Events/bin");
-  // plotvar(anl, "nBTagJet_loose",    cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of VBF jets (Loose b-tag)", "Events/bin");
-  // plotvar(anl, "nBTagJet_medium",   cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of VBF jets (Medium b-tag)", "Events/bin");
-  // plotvar(anl, "vbf_maxpt_j1_eta",  cuts,  1.0, 1, 0,  -6,  10, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Leading VBF Jet #eta", "Events/bin");
-  // plotvar(anl, "vbf_maxpt_j2_eta",  cuts,  1.0, 1, 0,  -6,  10, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Sub-Leading VBF Jet #eta", "Events/bin");
-  // plotvar(anl, "vbf_maxpt_j1_pt",   cuts,  1.0, 1, 0,  20,  720, 20,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Leading VBF Jet  p_{T}", "Events/bin");
-  // plotvar(anl, "vbf_maxpt_j2_pt",   cuts,  1.0, 1, 0,  20,  720, 20,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "Sub-Leading VBF Jet p_{T}", "Events/bin");
-  // plotvar(anl, "vbf_maxpt_jj_m",    cuts,  1.0, 1, 0,  200,  4200, 100,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF M_{jj} GeV", "Events/bin");
-  // plotvar(anl, "vbf_maxpt_jj_Deta", cuts,  1.0, 1, 0,  0.0,  20.0, 0.5,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF #Delta #eta", "Events/bin");
-  //
-
   outfname << "plots/2018/c3_2018" << "_" <<  CutName  << ".pdf";
   cp3->SaveAs(outfname.str().c_str());
   outfname.str("");
@@ -2265,7 +2339,6 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   //cp3->SaveAs(outfname.str().c_str()); 
   //outfname.str("");
 
-  // // Mark commented out
   TCanvas* cp4 = (TCanvas*)gROOT->FindObject("cp4"); 
   if(cp4) { cp4->Delete(); }
   cp4 = new TCanvas("cp4","cp4",10,10,1200,1200);
@@ -2297,36 +2370,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
 
   cp4->cd(9);
   plotvar(anl, "dilep_pt", cuts, 1.0, 1, 0, 0., 800, 25, 1, 0, 1, title_str, "Dilepton pt", "Events/bin");
-  // // Mark commented out
 
-
-  // // plotvar(anl, "phi1_type0", OneMuPt50+fatjetLoose+pfMETpuppi50+mjw65to105+MjjVBF300+detajjVBF4,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,  "VBS (WV), 35.9 fb^{-1}", "phi0_type0 #phi", "Events/bin");
-
-   // // plotvar(anl, "phi_type0", OneMuPt50+fatjetLoose+pfMETpuppi50+mjw65to105+MjjVBF300+detajjVBF4,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,  "VBS (WV), 35.9 fb^{-1}", "phi_type0", "Events/bin");
-  // plotvar(anl, "PuppiAK8_jet_mass",         cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 mass (GeV)",           "Events/bin");
-  // plotvar(anl, "PuppiAK8_jet_mass_pr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 pruned mass (GeV)",    "Events/bin");
-  // plotvar(anl, "PuppiAK8_jet_mass_so_corr", cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 Softdrop mass (GeV)",  "Events/bin");
-  // plotvar(anl, "PuppiAK8_jet_mass_tr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 tr mass (GeV)",        "Events/bin");
-  // plotvar(anl, "PuppiAK8_jet_tau2tau1",     cuts,  1.0, 1, 0,  0., 1., 0.1,          1, 0,  "VBS (WV), 35.9 fb^{-1}",   "AK8 #tau_{2}/#tau_{1}",      "Events/bin");
-  // plotvar(anl, "PuppiAK8jet_qjet",          cuts,  1.0, 1, 0,  0., 3., 0.1,          1, 0,  "VBS (WV), 35.9 fb^{-1}",   "PuppiAK8jet_qjet",      "Events/bin");
-
-  // //	Leptonic & Hadronic W-boson 
-  // plotvar(anl, "v_pt_type0",     cuts,  1.0, 1, 0,  0., 1000., 20,          1, 0,  "VBS (WV), 35.9 fb^{-1}",   "W p_{T} (GeV)",      "Events/bin");
-  // plotvar(anl, "v_mt_type0",     cuts,  1.0, 1, 0,  0., 500.,  20,     1, 0,  "VBS (WV), 35.9 fb^{-1}",   "W Transverse Mass (GeV)",      "Events/bin");
-
-  // //--------------	VBF Jet		------------
-  // plotvar(anl, "njets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of VBF jets", "Events/bin");
-  // plotvar(anl, "nBTagJet_loose",    cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of VBF jets (Loose b-tag)", "Events/bin");
-  // plotvar(anl, "nBTagJet_medium",   cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of VBF jets (Medium b-tag)", "Events/bin");
-  // plotvar(anl, "vbf_maxpt_j1_eta",  cuts,  1.0, 1, 0,  -6,  10, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Leading VBF Jet #eta", "Events/bin");
-  // plotvar(anl, "vbf_maxpt_j2_eta",  cuts,  1.0, 1, 0,  -6,  10, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Sub-Leading VBF Jet #eta", "Events/bin");
-  // plotvar(anl, "vbf_maxpt_j1_pt",   cuts,  1.0, 1, 0,  20,  720, 20,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Leading VBF Jet  p_{T}", "Events/bin");
-  // plotvar(anl, "vbf_maxpt_j2_pt",   cuts,  1.0, 1, 0,  20,  720, 20,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "Sub-Leading VBF Jet p_{T}", "Events/bin");
-  // plotvar(anl, "vbf_maxpt_jj_m",    cuts,  1.0, 1, 0,  200,  4200, 100,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF M_{jj} GeV", "Events/bin");
-  // plotvar(anl, "vbf_maxpt_jj_Deta", cuts,  1.0, 1, 0,  0.0,  20.0, 0.5,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF #Delta #eta", "Events/bin");
-  //
-
-  // // M comment
   outfname << "plots/2018/c4_2018" << "_" <<  CutName  << ".pdf";
   cp4->SaveAs(outfname.str().c_str());
   outfname.str("");
@@ -2337,10 +2381,187 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   }
    anl->setsvplots(0);
 }
-//======================================
-// Int_t plotvar( TmvaAnl* anl, TCut cuts ){
 
-// }
+//=================================================================================================
+void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
+//  
+  anl->setsvplots(1);
+  TCanvas* cp1 = (TCanvas*)gROOT->FindObject("cp1"); 
+  if(cp1) { cp1->Delete(); }
+  cp1 = new TCanvas("cp1","cp1",10,10,1200,1200);
+  cp1->Divide(3,3);
+
+  stringstream shapeFname;
+  stringstream var;
+  stringstream plt_title;
+  plt_title << "VBS (WV), " << g_lum << " fb^{-1} (13TeV)";
+  std::string s = plt_title.str();
+  const char* title_str = s.c_str();
+
+  std::cout << "cuts = " << cuts << " Lumi = " << g_lum << std::endl;
+  std::cout << "" << std::endl;
+  //------------   VERTICES  	-------------------
+  cp1->cd(1);
+  plotShapeComp(anl, "nPV", cuts,  1.0, 1, 0,  0, 60, 2,       1, 0, 0, title_str, "Number of primary vertices", "Events/bin");
+
+  cp1->cd(2);
+  plotShapeComp(anl, "bosCent", cuts, 1.0, 1, 0, -4, 4, 0.25, 0, 0, 0, title_str, "Boson Centrality", "Events/bin");
+  //------------    LEPTONS  	-------------------
+  cp1->cd(3);
+  plotShapeComp(anl, "lep1_pt",  cuts,  1.0, 1, 0,   20., 400., 20, 1, 0, 1, title_str, "Lepton_1 p_{T} (GeV)", "Events/bin"); // was 0.,1000., 30 
+
+  cp1->cd(4);
+  plotShapeComp(anl, "lep1_eta", cuts,  1.0, 1, 0,  -2.4, 2.4, 0.16,   0, 0, 0, title_str, "Lepton_1 #eta", "Events/bin");
+
+  cp1->cd(5);
+  plotShapeComp(anl, "lep1_phi", cuts,  1.0, 1, 0,  -3.2, 3.2, 0.2,   0, 0, 0, title_str, "Lepton_1 #phi", "Events/bin");
+
+  //cp1->cd(6);
+  //plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     0, 0,  title_str, "Lepton_1 charge", "Events/bin");
+
+  cp1->cd(6);
+  plotShapeComp(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.4, 0.02, 1, 0, 0, title_str, "Lepton_1 isolation", "Events/bin");
+
+  cp1->cd(7);
+  plotShapeComp(anl, "zeppLep", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, 0, title_str, "zeppLep", "Events/bin");
+
+  cp1->cd(8);
+  plotShapeComp(anl, "zeppHad", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, 0, title_str, "zeppHad", "Events/bin");
+
+  cp1->cd(9);
+  plotShapeComp(anl, "vbf1_AK4_qgid", cuts, 1.0, 1, 0, 0., 1., 0.025, 0, 0, 0, title_str, "Qgl VBF_{j1}");
+
+  shapeFname << "plots/2018/s1_2018" << "_" << CutName << ".pdf";
+  cp1->SaveAs(shapeFname.str().c_str());
+  shapeFname.str("");
+  //shapeFname << "plots/2018/s1_2018"  << "_" << CutName << ".root";
+  //cp1->SaveAs(shapeFname.str().c_str()); 
+  //shapeFname.str("");
+
+  TCanvas* cp2 = (TCanvas*)gROOT->FindObject("cp2"); 
+  if(cp2) { cp2->Delete(); }
+  cp2 = new TCanvas("cp2","cp2",10,10,1200,1200);
+  cp2->Divide(3,3);
+
+  //------------   VBF variables   ----------------
+  cp2->cd(1);
+  plotShapeComp(anl, "vbf_deta", cuts, 1.0, 1, 0, 2.4, 8., 0.2, 0, 0, 1, title_str, "#Delta#eta^{vbs}", "Events/bin");
+
+  cp2->cd(2);
+  plotShapeComp(anl, "vbf_m", cuts, 1.0, 1, 0 , 500., 4000, 150, 1, 0, 1, title_str, "m^{vbs}_{jj} (GeV)", "Events/bin");
+
+  cp2->cd(3);
+  plotShapeComp(anl, "vbf_pt", cuts,  1.0, 1, 0,  0., 2000., 50,   1, 0, 1, title_str, "p_{T}^{vbs} (GeV)", "Events/bin");
+
+  cp2->cd(4);
+  plotShapeComp(anl, "vbf1_AK4_pt", cuts, 1.0, 1, 0, 0., 800., 25, 1, 0, 1, title_str, "VBS p^{T}_{j1} (GeV)", "Events/bin");
+
+  cp2->cd(5);
+  plotShapeComp(anl, "vbf1_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "VBS #eta_{j1}", "Events/bin");
+
+  cp2->cd(6);
+  plotShapeComp(anl, "vbf1_AK4_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "VBS #phi_{j1}", "Events/bin");
+
+  cp2->cd(7);
+  plotShapeComp(anl, "vbf2_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 1, 0, 1, title_str, "VBS p^{T}_{j2} (GeV)", "Events/bin");
+
+  cp2->cd(8);
+  plotShapeComp(anl, "vbf2_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "VBS #eta_{j2}", "Events/bin");
+
+  cp2->cd(9);
+  plotShapeComp(anl, "vbf2_AK4_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "VBS #phi_{j2}", "Events/bin");
+
+  shapeFname << "plots/2018/s2_2018" << "_" <<  CutName << ".pdf";
+   cp2->SaveAs(shapeFname.str().c_str());
+   shapeFname.str("");
+   //shapeFname << "plots/2018/s2_2018"  << "_" << CutName << ".root";
+   //cp2->SaveAs(shapeFname.str().c_str()); 
+   //shapeFname.str("");
+
+  TCanvas* cp3 = (TCanvas*)gROOT->FindObject("cp3"); 
+  if(cp3) { cp3->Delete(); }
+  cp3 = new TCanvas("cp3","cp3",10,10,1200,1200);
+  cp3->Divide(3,3);
+
+  //-------------    AK8 Jets    -----------------
+  cp3->cd(1);
+  plotShapeComp(anl, "MET",  cuts,  1.0, 1, 0,   30., 200., 8., 1, 0, 1,  title_str, "MET (GeV)", "Events/bin");
+
+  cp3->cd(2);
+  plotShapeComp(anl, "MET_phi",  cuts,  1.0, 1, 0, -3.75, 3.75, 0.25, 0, 0, 0,  title_str, "MET #phi", "Events/bin"); //0.125*TMath::Pi()
+
+  cp3->cd(3);
+  plotShapeComp(anl, "bos_j1_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 0, 0, 1, title_str, "V p^{T}_{J1} (GeV)", "Events/bin");
+
+  cp3->cd(4);
+  plotShapeComp(anl, "bos_j1_AK4_eta", cuts, 1.0, 1, 0, -2.5, 2.5, 0.2, 0, 0, 0, title_str, "#V eta_{J1}", "Events/bin");
+
+  cp3->cd(5);
+  plotShapeComp(anl, "bos_PuppiAK8_tau2tau1", cuts, 1.0, 1, 0, 0., 1.0, 0.04, 0, 0, 0, title_str, "AK8 #tau_{21}", "Events/bin");
+
+  cp3->cd(6);
+  plotShapeComp(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   200., 800., 25, 1, 0, 1,  title_str, "AK8 p_{T} (GeV)", "Events/bin");
+
+  cp3->cd(7);
+  plotShapeComp(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -2.5, 2.5, .2,   0, 0, 0,  title_str, "AK8 #eta", "Events/bin");
+
+  cp3->cd(8);
+  plotShapeComp(anl, "bos_PuppiAK8_phi", cuts,  1.0, 1, 0,  -3.2, 3.2, 0.2,   0, 0, 0, title_str, "AK8 #phi", "Events/bin"); // was -3.75, 3.75, 0.25
+
+  cp3->cd(9);
+  plotShapeComp(anl, "bos_PuppiAK8_m_sd0_corr", cuts,  1.0, 1, 0,  40., 150, 5,   0, 0, 0,  title_str, "AK8  Mass sd0 corr", "Events/bin");
+
+  shapeFname << "plots/2018/s3_2018" << "_" <<  CutName  << ".pdf";
+  cp3->SaveAs(shapeFname.str().c_str());
+  shapeFname.str("");
+  //shapeFname << "plots/2018/s3_2018"  << "_" << CutName << ".root";
+  //cp3->SaveAs(shapeFname.str().c_str()); 
+  //shapeFname.str("");
+
+  TCanvas* cp4 = (TCanvas*)gROOT->FindObject("cp4"); 
+  if(cp4) { cp4->Delete(); }
+  cp4 = new TCanvas("cp4","cp4",10,10,1200,1200);
+  cp4->Divide(3,3);
+
+  cp4->cd(1);
+  plotShapeComp(anl, "dibos_m", cuts,  1.0, 1, 0,  0., 1500, 50,   0, 0, 1, title_str, "Diboson Mass", "Events/bin");
+
+  cp4->cd(2);
+  plotShapeComp(anl, "dibos_mt", cuts, 1.0, 1, 0, 0., 2000, 50, 0, 0, 1, title_str, "Diboson mt", "Events/bin");
+
+  cp4->cd(3);
+  plotShapeComp(anl, "dibos_pt", cuts, 1.0, 1, 0, 0., 800, 25, 0, 0, 1, title_str, "Diboson pt", "Events/bin");
+
+  cp4->cd(4);
+  plotShapeComp(anl, "dibos_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "Diboson #eta", "Events/bin");
+
+  cp4->cd(5);
+  plotShapeComp(anl, "dibos_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "Diboson #phi", "Events/bin");
+
+  cp4->cd(6);
+  plotShapeComp(anl, "dilep_mt", cuts, 1.0, 1, 0, 0., 800, 25, 1, 0, 1, title_str, "Dilepton mt", "Events/bin");
+
+  cp4->cd(7);
+  plotShapeComp(anl, "dilep_m", cuts, 1.0, 1, 0, 0., 500, 20, 0, 0, 1, title_str, "Dilepton mass", "Events/bin");
+
+  cp4->cd(8);
+  plotShapeComp(anl, "dilep_eta", cuts, 1.0, 1, 0, -4., 4., 0.25, 0, 0, 0, title_str, "Dilepton #eta", "Events/bin");
+
+  cp4->cd(9);
+  plotShapeComp(anl, "dilep_pt", cuts, 1.0, 1, 0, 0., 800, 25, 1, 0, 1, title_str, "Dilepton pt", "Events/bin");
+
+  shapeFname << "plots/2018/s4_2018" << "_" <<  CutName  << ".pdf";
+  cp4->SaveAs(shapeFname.str().c_str());
+  shapeFname.str("");
+  // shapeFname << "VarPlots_s4"  << "_" << CutName << ".png";
+  // cp4->SaveAs(shapeFname.str().c_str()); 
+  // shapeFname.str("");
+  // // // M comm.
+  anl->setsvplots(0);
+  }
+   
+
+ //===================================================================================================
 TCut splitCuts( const char* strcuts){
   cout << strcuts << endl;
   TCut rootcut = TCut("cut", (TCut) strcuts);
@@ -2354,6 +2575,7 @@ void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut ba
 //printCutflow(anl, "mass_lvj_type0_PuppiAK8", "paperCuts", dummy,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
    TCut Cuts;
    stringstream CanvasName;
+   stringstream hist_title;
 // 
     anl->setsvplots(1);
 //==
@@ -2372,7 +2594,7 @@ void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut ba
   //  OutPsFname << "Cutflow_" << var <<  "_" <<  flowname << ".ps";
   //  TPostScript* ps = (TPostScript*)gROOT->FindObject(OutPsFname.str().c_str()); 
   //  if(ps) ps->Close();
-  //  ps = new TPostScript(OutPsFname.str().c_str(),type);
+  //  ps = new TPostScript(OutPsFname.str().c_str(),type);Cutflow
   stringstream OutPdfFname;
   
 //==
@@ -2409,8 +2631,8 @@ void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut ba
         Cuts=Cuts + currentCut;
         c1->cd();
         CanvasName << " + " << currentCut.GetName();
-
-        plotvar(anl, var, Cuts, scale, -1, istyle, xmin, xmax, bw, flogy, flogx, 1, hTitle, xTitle, yTitle);
+        hist_title << "VBS (WV), " << g_lum << "fb^{-1}, " << currentCut;
+        plotvar(anl, var, Cuts, scale, -1, istyle, xmin, xmax, bw, flogy, flogx, 1, hist_title.str().c_str(), xTitle, yTitle);
         anl->PrintStat(currentCut, debug);
 	      c1->Update();
         if (i == 0) {
@@ -2427,6 +2649,7 @@ void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut ba
           c1->Print(OutPdfFname.str().c_str(), "pdf");
           OutPdfFname.str("");
         }
+        hist_title.str("");
      }//End cuts loop
   anl->setsvplots(0);
 }
