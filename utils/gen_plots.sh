@@ -20,7 +20,7 @@ cat > $plot_file << EOF
 \usepackage{float}
 
 \begin{document}
-    \graphicspath{ {../plots/} }
+    \graphicspath{ {../../plots/} }
     \listoffigures
 EOF
 

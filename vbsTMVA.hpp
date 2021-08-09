@@ -506,7 +506,7 @@ Int_t getVbsReqStat(const char* filelist) {
        TTree* mtree  = (TTree*) gROOT->FindObject("VBS4LeptonsAnalysisReduced");
 	 nInitReqEvt_w+=cutflow_w->GetBinContent(1);
 	 nInitReqEvt  +=cutflow->GetBinContent(1);
-	 getStat(mtree,"f_mass4l",wtot_2018,stats);
+	 getStat(mtree,"f_mass4l",wtot_2016,stats);
          nNtpReqEvt    += stats[0];
 	 nNtpReqEvt_w2 += stats[1]*stats[1];
       }else{
