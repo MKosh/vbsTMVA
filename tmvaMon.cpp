@@ -436,8 +436,8 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "  tmgui()" << endl;
   cout << "" << endl;
 
-//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
-shapePlots(anl, cut, cutName); // XXX
+cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+//shapePlots(anl, cut, cutName); // XXX
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -1280,18 +1280,19 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
 
   stringstream sNameHstack;
   sNameHstack << "hstack_bkg_" << _nstackplots;
+  stringstream sNameHSignal;
+  sNameHSignal << "signal_histogram_" << _nstackplots;
 
   TH1F* sum_bkg_hists = (TH1F*)gROOT->FindObject("sum_bkg_hists");
   if (sum_bkg_hists) { sum_bkg_hists->Delete(); }
   sum_bkg_hists = (TH1F*)_hframe->Clone("sum_bkg_hists");
 
-  TH1F* signal_hist = (TH1F*)gROOT->FindObject("signal_hist");
+  TH1F* signal_hist = (TH1F*)gROOT->FindObject(sNameHSignal.str().c_str());
   if (signal_hist) { signal_hist->Delete(); }
-  signal_hist = (TH1F*)hsgl->Clone("signal_hist");
+  signal_hist = (TH1F*)_hframe->Clone(sNameHSignal.str().c_str());
 
   THStack*  hstack_bkg = (THStack*)gROOT->FindObject(sNameHstack.str().c_str()); 
   if( hstack_bkg){ hstack_bkg->Delete(); }
-
   hstack_bkg = new THStack(sNameHstack.str().c_str(),sNameHstack.str().c_str()); 
   hstack_bkg->SetTitle(hsgl->GetTitle());
   
@@ -1329,6 +1330,8 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
 
   hstack_bkg->Add(hsgl);
   sum_bkg_hists->Add(hsgl);
+
+  signal_hist->Add(hsgl);
 
   bool plot_ratios = true;
 
@@ -1424,6 +1427,9 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
     signal_hist->SetFillStyle(0);
     signal_hist->SetLineWidth(2);
     signal_hist->SetLineColor(kRed);
+    if (!flogy) {
+      signal_hist->Scale(10);
+    } 
     signal_hist->Draw("hist same");
 
     gPad->RedrawAxis();
@@ -1470,13 +1476,20 @@ void TmvaAnl::PlotLegend(const char* var){
   TH1F* hbkg  = _bkg->_hf1;
   TH1F* hsgl  = _sgl->_hf1;
 
+  TH1F* hsgl_clone = (TH1F*)gROOT->FindObject("hsgl_clone");
+  if (hsgl_clone) { hsgl_clone->Delete(); }
+  hsgl_clone = (TH1F*)hsgl->Clone("hsgl_clone");
+  hsgl_clone->SetFillStyle(0);
+  hsgl_clone->SetLineWidth(2);
+  hsgl_clone->SetLineColor(kRed);
+
   stringstream sNameLegend;
   sNameLegend << "Anl_legend_" << _nstackplots;
   TLegend* legend = (TLegend*)gROOT->FindObject(sNameLegend.str().c_str()); 
   if(legend) delete legend;
 
   //legend = new TLegend(.63, .58, .88, .88);
-  legend = new TLegend(.29, .73, .89, .87);
+  legend = new TLegend(.29, .7, .9, .87); // 0.29, 0.73, 0.89, 0.87
 
   legend->SetName(sNameLegend.str().c_str());
   legend->SetFillColor(0);
@@ -1595,6 +1608,13 @@ void TmvaAnl::PlotLegend(const char* var){
     }else{;
     }
    }
+
+  ss.str("");
+  ss.precision(1);
+  ss << setw(4) << "VBS EW (x10)";
+  legend->AddEntry(hsgl_clone, ss.str().c_str(), "f");
+
+  legend->AddEntry((TObject*)0, "", "");
 
   ss.str("");
   ss.precision(1);
