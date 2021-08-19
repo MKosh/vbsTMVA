@@ -220,7 +220,7 @@ private:
   //
   TTree*    _inpTree;          // total good events for scale calculation    
   //Int_t     _ngen;          // total good events for scale calculation
-  Float_t _ngen;    
+  Float_t   _ngen;    
   Int_t     _nevents;       // events in tree
   TString   _reqlist;       // reqlist name
   Float_t   _sweight;       // _xsec/_ngen
@@ -251,13 +251,13 @@ private:
   TString   getSName(){return _sname;  };
   TString   getGName(){return _gname;  };
   TString   getReqList(){return _reqlist;};
-  Float_t     getNgen(){return _ngen;};
+  Float_t   getNgen(){return _ngen;};
   Int_t     getXsec(){return _xsec;};
   Int_t     getGid(){return _gid;};
   Int_t     getSid(){return _sid;};
   Int_t     getScolor(){return _color;};
   Int_t     getLoadFlag(){return _loadFlag; };
-  Float_t     getWeight(){return _sweight; };
+  Float_t   getWeight(){return _sweight; };
   void      setInpTree(TTree* inpTree){
      _inpTree = inpTree;
      if (_inpTree){

@@ -1319,8 +1319,6 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
   }
 
   for(UInt_t ih=0; ih< bkg_hists.size(); ih++){ 
-    //std::string xtemp(bkg_hists[ih]->GetXaxis()->GetTitle());
-    //if ( xtemp.find("pt") != std::string::npos || xtemp.find("pT") != std::string::npos || xtemp.find("p_{T}") != std::string::npos || xtemp.find("p^{T}") != std::string::npos) {
     if (overFlow == 1) {
       bkg_hists[ih]->SetBinContent(bkg_hists[ih]->GetNbinsX(), bkg_hists[ih]->GetBinContent(bkg_hists[ih]->GetNbinsX()) + bkg_hists[ih]->GetBinContent(bkg_hists[ih]->GetNbinsX()+1));
     }
@@ -1336,13 +1334,6 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
   bool plot_ratios = true;
 
   if (plot_ratios) {
-    //TH1F* data_total = (TH1F*)gROOT->FindObject("data_total");
-    //if (data_total) {data_total->Delete(); }
-    //data_total = (TH1F*)hdata->Clone("data_total");
-//
-    //TH1F* bkg_clone = (TH1F*)gROOT->FindObject("bkg_clone");
-    //if (bkg_clone) { bkg_clone->Delete(); }
-    //bkg_clone = (TH1F*)sum_bkg_hists->Clone("bkg_clone");
 
     TRatioPlot* ratio_plot = (TRatioPlot*)gROOT->FindObject("ratio_plot"); // Ratio plot to go under the main plot
     if (ratio_plot) { ratio_plot->Delete(); }
