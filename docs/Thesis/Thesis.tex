@@ -1,0 +1,345 @@
+\documentclass[12pt]{niuthesis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{biblatex}
+\usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{caption}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\addbibresource{refs.bib}
+
+\title{Something about Vector Boson Scattering}
+\author{Mark Mekosh}
+\major{Physics}
+\degree{Thesis}{M.S.}{Master of Science}
+\degreedate{December}{2021}
+\department{Department of Physics}
+\director{Michael Eads}
+
+\tikzfeynmanset{
+  fermion1/.style={
+    /tikz/postaction={
+      /tikz/decoration={
+        markings,
+        mark=at position 0.5 with {
+          \node[
+            transform shape,
+            xshift=-0.5mm,
+            fill,
+            dart tail angle=160,
+            inner sep=1pt,
+            draw=none,
+            dart
+          ] { };
+        },
+      },
+      /tikz/decorate=true,
+    },
+  },
+  fermion2/.style={
+    /tikz/postaction={
+      /tikz/decoration={
+        markings,
+        mark=at position 0.5 with {
+          \arrow{>[length=5pt, width=4pt]};
+        },
+      },
+      /tikz/decorate=true,
+    },
+  },
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{abstract}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end{abstract}
+
+\begin{dedication}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+\end{dedication}
+
+\begin{acknowledgements}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+\end{acknowledgements}
+
+\MakeThesisPrologue
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+    \section{The Standard Model}
+    The study of physics is fundamentally the study of how the universe and everything inside of it works. Naturally then, as physicists, we want to be able to explain everything we study in the most amount of detail we can, and to this end we develop models of the universe with as much explanatory power as possible. One of these such models for describing the fundamental interactions of our universe is named the Standard Model. This model attempts to understand the universe by understanding the interactions between elementary particles that the universe is comprised of. 
+
+    The Standard Model was developed throughout the 1900's by many scientists contributing many different discoveries and theories. In the early part of the century after J. J. Thomson's 1897 discovery of the electron, Rutherford's 1918 discovery of the proton, and Chadwick's 1932 discovery of the neutron, the fundamental building blocks of matter seemed to have all been found \cite{Trefil}. We could explain the universe as being made up of atoms which were made up of the three smallest and most fundamental particles, the proton, neutron, and electron. It wasn't long though, before this simple model of the elementary particles was upended. 
+
+    The 1930's through the 1950's saw a rapid expansion in the number of elementary particles proposed, predicted, and discovered. By 1960 the term ``particle zoo" was used to describe the unwieldy amount of unique and seemingly fundamental particles. Much like Mendeleev organized the known elements into the periodic table, the particle zoo was in need of organization. In 1961 Gell-Mann proposed the Eightfold Way, a way to organize the particles of the zoo based on their properties. In 1964 Gell-Mann and Zwieg independently proposed the Quark Model to explain the substructure of the zoo's inhabitants, and 10 years later in 1974, when the J/$\psi$  particle was discovered, the quark model won out as the best explanation for these particles \cite{Giffiths}.
+
+    In 1968 Glashow, Weinberg, and Salam combined the electromagnetic and weak interactions into a single electroweak theory, and in 1975 Pais and Treiman dubbed the electroweak theory with four quarks the ``standard" model \cite{Pais1}. This model describes three of the four fundamental forces and how they govern the elementary particles that make up all matter. As the model and it's predictions grew so too did the number of particles included in the standard model. 
+
+    At present, the model contains 6 quarks and their anti-quark counterparts, 6 leptons and their antiparticles, as well as 6 bosons\footnote{Presently there is no experimental evidence for a $7^{th}$ boson, the graviton, and it's associated standard model explanation for the $4^{th}$ fundamental force of gravity}. As it currently stand's the Standard Model is our best framework for understanding the fundamental building blocks of our universe and their interactions. 
+
+    %The Standard Model was developed throughout the 1900's by a large collection of scientists. The model was put together to describe the large number of particles (dubbed the particle zoo) that were being discovered throughout that time period. It details all of the known elementary particles that make up our universe, as well as three of the four fundamental forces of nature. There are two main categories of elementary particles. The fermions, which make up all of the matter of the universe, and the bosons which carry the fundamental forces and mediate the interactions between particles.
+
+    %The four fundamental forces in order of highest to lowest relative strength are; the strong force, the electromagnetic force, the weak force, and finally gravity. Everyone is familiar with the force of gravity as it's what keeps us tethered to the surface of the Earth, the planets orbiting the Sun, and the galaxies rotating through the universe. Gravity is generally considered to be too weak to have any major impact on the elementary particle interactions we're interested in. This also means that confirming gravity as a part of the Standard model is currently a nearly impossible task. The purposed boson for gravity, the graviton, is currently still hypothetical. Even still, fitting gravity into the Standard Model is an active area of research outside of the scope of this thesis.
+
+    %The electromagnetic force is also a fairly well understood concept from an every day perspective. Everyone is familiar with accidentally building up too much static electricity, and releasing it in a surprising shock. Electromagnetic theory explains how charged particles behave, and in turn it provides the basis for understanding all electronic technology. These behaviors and interactions of charged particles can neatly be described by the Standard Model's charged fermions and the associated electromagnetic force carrier boson, the photon.
+
+    %The weak force is a little more mysterious, but not totally unfamiliar. It governs the more familiar process of nuclear decay, and is mediated by the W and Z bosons. Unlike gravity and the electromagnetic force, the weak force has a very limited range on the scale of $10^{-16}$ to $10^{-18}$m
+
+    %The aptly named strong force is what hold together the nucleus of atoms. 
+
+    \subsection{Fermions}
+        Fermions
+    \subsection{Bosons}
+    \subsection{Electroweak Interactions}
+    \subsection{Quantum Chromodynamics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Vector Boson Scattering}
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{c c c}
+            \begin{tikzpicture}
+            \begin{feynman}
+            %\draw[help lines] (0,-2) grid (5,2);
+                \vertex (q1i) at (0,2) {\scriptsize{\(q\)}};
+                \vertex (q1m) at (1,2);
+                \vertex (q1f) at (3.5,2.2) {\scriptsize{\(q\)}};
+                \vertex (q2i) at (0,0) {\scriptsize{\(q'\)}};
+                \vertex (q2m) at (1,0);
+                \vertex (q2f) at (3.5,-0.2) {\scriptsize{\(q'\)}};
+                \vertex (coupling) at (1.5,1);
+                \vertex (decay1) at (2.25,1.4);
+                \vertex (decay2) at (2.25,0.6);
+                \vertex (lep1) at (3.5,1.75) {\scriptsize{\(e^{+}\)}};
+                \vertex (lep2) at (3.5,1.25) {\scriptsize{\(\nu_{e}\)}};
+                \vertex (lep3) at (3.5,0.75) {\scriptsize{\(\mu^{+}\)}};
+                \vertex (lep4) at (3.5,0.25) {\scriptsize{\(\nu_{\mu}\)}};
+                \node [label={\scriptsize{\(W^{+}\)}}] (W3) at (1.8,1.);
+                \node [label={\scriptsize{\(W^{+}\)}}] (W4) at (1.8,0.15);
+            
+                \diagram*[large] {
+                    (q1i) -- [fermion1] (q1m) -- [fermion1] (q1f),
+                    (q2i) -- [fermion1] (q2m) -- [fermion1] (q2f),
+                    (q1m) -- [boson, edge label'={\scriptsize{\(W^{+}\)}}] (coupling) -- [boson] (decay1),
+                    (q2m) -- [boson, edge label={\scriptsize{\(W^{+}\)}}] (coupling) -- [boson] (decay2),
+                    (lep1) -- [fermion1] (decay1) -- [fermion1] (lep2),
+                    (lep3) -- [fermion1] (decay2) -- [fermion1] (lep4),
+                };
+            \end{feynman}
+            \end{tikzpicture} & \begin{tikzpicture}
+            \begin{feynman}
+                %\draw[help lines] (0,0) grid (5,3);
+                \vertex (q1i) at (0,2) {\scriptsize{\(q\)}};
+                \vertex (q1m) at (1,2);
+                \vertex (q1f) at (3.5,2.2) {\scriptsize{\(q\)}};
+                \vertex (q2i) at (0,0) {\scriptsize{\(q'\)}};
+                \vertex (q2m) at (1,0);
+                \vertex (q2f) at (3.5,-0.2) {\scriptsize{\(q'\)}};
+                \vertex [dot] (coupling1) at (1.5,1.5);
+                \vertex (coupling2) at (1.5,0.5);
+                \vertex (decay1) at (2.25,1.4);
+                \vertex (decay2) at (2.25,0.6);
+                \vertex (lep1) at (3.5,1.75) {\scriptsize{\(e^{+}\)}};
+                \vertex (lep2) at (3.5,1.25) {\scriptsize{\(\nu_{e}\)}};
+                \vertex (lep3) at (3.5,0.75) {\scriptsize{\(\mu^{+}\)}};
+                \vertex (lep4) at (3.5,0.25) {\scriptsize{\(\nu_{\mu}\)}};
+            
+                \diagram*[large] {
+                    (q1i) -- [fermion1] (q1m) -- [fermion1] (q1f),
+                    (q2i) -- [fermion1] (q2m) -- [fermion1] (q2f),
+                    (q1m) -- [boson, edge label'={\scriptsize{\(W^{+}\)}}] (coupling1) -- [boson, edge label={\scriptsize{\(W^{+}\)}}] (decay1),
+                    (q2m) -- [boson, edge label={\scriptsize{\(W^{+}\)}}] (coupling2) -- [boson, edge label'={\scriptsize{\(W^{+}\)}}] (decay2),
+                    (coupling1) -- [boson, edge label'={\scriptsize{\(Z/\gamma/H\)}}] (coupling2),
+                    (lep1) -- [fermion1] (decay1) -- [fermion1] (lep2),
+                    (lep3) -- [fermion1] (decay2) -- [fermion1] (lep4),
+                };
+            \end{feynman} 
+            \end{tikzpicture} & \begin{tikzpicture}
+            \begin{feynman}
+            %\draw[help lines] (0,-2) grid (5,2);
+                \vertex (q1i) at (0,2) {\scriptsize{\(q\)}};
+                \vertex (q1m) at (1,2);
+                \vertex (q1f) at (3.5,2.2) {\scriptsize{\(q\)}};
+                \vertex (q2i) at (0,0) {\scriptsize{\(q'\)}};
+                \vertex (q2m) at (1,0);
+                \vertex (q2f) at (3.5,-0.2) {\scriptsize{\(q'\)}};
+                \vertex (coupling) at (1.5,1);
+                \vertex (inter) at (2.5,1);
+                \vertex (decay1) at (2.7,1.7);
+                \vertex (decay2) at (2.7,0.3);
+                \vertex (lep1) at (3.65,1.95) {\scriptsize{\(e^{+}\)}};
+                \vertex (lep2) at (3.65,1.2) {\scriptsize{\(\nu_{e}\)}};
+                \vertex (lep3) at (3.65,0.9) {\scriptsize{\(\mu^{+}\)}};
+                \vertex (lep4) at (3.65,0.1) {\scriptsize{\(\nu_{\mu}\)}};
+                \node [label={\tiny{\(W^{+}\)}}] (W3) at (2.9,0.85);
+                \node [label={\tiny{\(W^{+}\)}}] (W4) at (2.9,0.28);
+                \node [label={\tiny{\(Z/\gamma/H\)}}] (boson) at (2.05, 0.85);
+                
+                \diagram*[large] {
+                    (q1i) -- [fermion1] (q1m) -- [fermion1] (q1f),
+                    (q2i) -- [fermion1] (q2m) -- [fermion1] (q2f),
+                    (q1m) -- [boson, edge label'={\scriptsize{\(W^{+}\)}}] (coupling),
+                    (q2m) -- [boson, edge label={\scriptsize{\(W^{+}\)}}] (coupling),
+                    (coupling) -- [boson] (inter),
+                    (inter) -- [boson] (decay1),
+                    (inter) -- [boson] (decay2),
+                    (lep1) -- [fermion1] (decay1) -- [fermion1] (lep2),
+                    (lep3) -- [fermion1] (decay2) -- [fermion1] (lep4),
+                };
+            \end{feynman}
+            \end{tikzpicture} \\
+        \begin{tikzpicture}
+            \begin{feynman}
+            %\draw[help lines] (0,-2) grid (5,2);
+                \vertex (q1i) at (0,2) {\scriptsize{\(q\)}};
+                \vertex (q1m) at (1,2);
+                \vertex (q1f) at (3.5,2.2) {\scriptsize{\(q\)}};
+                \vertex (q2i) at (0,0) {\scriptsize{\(q'\)}};
+                \vertex (q2m) at (1,0);
+                \vertex (q2m2) at (1.5,0);
+                \vertex (q2f) at (3.5,0.5) {\scriptsize{\(q'\)}};
+                \vertex (coupling) at (1.5,1);
+                \vertex (inter) at (2.5,1.4);
+                \vertex (decay) at (2.5,-0.3);
+                \vertex (lep1) at (3.65,1.95) {\scriptsize{\(e^{+}\)}};
+                \vertex (lep2) at (3.65,1.2) {\scriptsize{\(\nu_{e}\)}};
+                \vertex (lep3) at (3.65,0.0) {\scriptsize{\(\mu^{+}\)}};
+                \vertex (lep4) at (3.65,-0.5) {\scriptsize{\(\nu_{\mu}\)}};
+                \node [label={\scriptsize{\(W^{+}\)}}] (W3) at (2.2,0.5);
+                \node [label={\scriptsize{\(W^{+}\)}}] (W4) at (2.2,-0.9);
+                %\node [label={\tiny{\(Z/\gamma/H\)}}] (boson) at (2.05, 0.85);
+
+                \diagram*[large] {
+                    (q1i) -- [fermion1] (q1m) -- [fermion1] (q1f),
+                    (q2i) -- [fermion1] (q2m) -- [fermion1] (q2m2) -- [fermion1] (q2f),
+                    (q1m) -- [boson, edge label'={\scriptsize{\(W^{+}\)}}] (coupling),
+                    (q2m) -- [boson, edge label={\scriptsize{\(W^{+}\)}}] (coupling),
+                    (q2m2) -- [boson] (decay),
+                    (coupling) -- [boson] (inter),
+                    (lep1) -- [fermion1] (inter) -- [fermion1] (lep2),
+                    (lep3) -- [fermion1] (decay) -- [fermion1] (lep4),
+                };
+            \end{feynman}
+        \end{tikzpicture} & \begin{tikzpicture}
+            \begin{feynman}
+            %\draw[help lines] (0,-2) grid (5,2);
+                \vertex (q1i) at (0,2) {\scriptsize{\(q\)}};
+                \vertex (q1m) at (1,2);
+                \vertex (q1f) at (3.5,2.2) {\scriptsize{\(q\)}};
+                \vertex (q2i) at (0,0) {\scriptsize{\(q'\)}};
+                \vertex (q2m) at (1,0);
+                \vertex (q2f) at (3.5,-0.2) {\scriptsize{\(q'\)}};
+                \vertex (coupling) at (1.5,1);
+                \vertex (inter) at (2.5,1);
+                \vertex (decay1) at (2.7,1.7);
+                \vertex (decay2) at (2.7,0.3);
+                \vertex (lep1) at (3.65,1.95) {\scriptsize{\(e^{+}\)}};
+                \vertex (lep2) at (3.65,1.2) {\scriptsize{\(\nu_{e}\)}};
+                \vertex (lep3) at (3.65,0.9) {\scriptsize{\(\mu^{+}\)}};
+                \vertex (lep4) at (3.65,0.1) {\scriptsize{\(\nu_{\mu}\)}};
+                \node [label={\tiny{\(W^{+}\)}}] (W3) at (2.9,0.85);
+                \node [label={\tiny{\(W^{+}\)}}] (W4) at (2.9,0.28);
+                \node [label={\tiny{\(Z/\gamma/H\)}}] (boson) at (2.05, 0.85);
+
+                \diagram*[large] {
+                    (q1i) -- [fermion1] (q1m) -- [fermion1] (q1f),
+                    (q2i) -- [fermion1] (q2m) -- [fermion1] (q2f),
+                    (q1m) -- [boson, edge label'={\scriptsize{\(W^{+}\)}}] (coupling),
+                    (q2m) -- [boson, edge label={\scriptsize{\(W^{+}\)}}] (coupling),
+                    (coupling) -- [boson] (inter),
+                    (inter) -- [boson] (decay1),
+                    (inter) -- [boson] (decay2),
+                    (lep1) -- [fermion1] (decay1) -- [fermion1] (lep2),
+                    (lep3) -- [fermion1] (decay2) -- [fermion1] (lep4),
+                };
+            \end{feynman}
+        \end{tikzpicture} & \begin{tikzpicture}
+            \begin{feynman}
+            %\draw[help lines] (0,-2) grid (5,2);
+                \vertex (q1i) at (0,2) {\scriptsize{\(q\)}};
+                \vertex (q1m) at (1,2);
+                \vertex (q1f) at (3.5,2.2) {\scriptsize{\(q\)}};
+                \vertex (q2i) at (0,0) {\scriptsize{\(q'\)}};
+                \vertex (q2m) at (1,0);
+                \vertex (q2f) at (3.5,-0.2) {\scriptsize{\(q'\)}};
+                \vertex (coupling) at (1.5,1);
+                \vertex (inter) at (2.5,1);
+                \vertex (decay1) at (2.7,1.7);
+                \vertex (decay2) at (2.7,0.3);
+                \vertex (lep1) at (3.65,1.95) {\scriptsize{\(e^{+}\)}};
+                \vertex (lep2) at (3.65,1.2) {\scriptsize{\(\nu_{e}\)}};
+                \vertex (lep3) at (3.65,0.9) {\scriptsize{\(\mu^{+}\)}};
+                \vertex (lep4) at (3.65,0.1) {\scriptsize{\(\nu_{\mu}\)}};
+                \node [label={\tiny{\(W^{+}\)}}] (W3) at (2.9,0.85);
+                \node [label={\tiny{\(W^{+}\)}}] (W4) at (2.9,0.28);
+                \node [label={\tiny{\(Z/\gamma/H\)}}] (boson) at (2.05, 0.85);
+
+                \diagram*[large] {
+                    (q1i) -- [fermion1] (q1m) -- [fermion1] (q1f),
+                    (q2i) -- [fermion1] (q2m) -- [fermion1] (q2f),
+                    (q1m) -- [boson, edge label'={\scriptsize{\(W^{+}\)}}] (coupling),
+                    (q2m) -- [boson, edge label={\scriptsize{\(W^{+}\)}}] (coupling),
+                    (coupling) -- [boson] (inter),
+                    (inter) -- [boson] (decay1),
+                    (inter) -- [boson] (decay2),
+                    (lep1) -- [fermion1] (decay1) -- [fermion1] (lep2),
+                    (lep3) -- [fermion1] (decay2) -- [fermion1] (lep4),
+                };
+            \end{feynman} 
+            \end{tikzpicture} \\
+        \end{tabular}
+        \caption{Caption words}
+        \label{table:my_label}
+    \end{table}
+
+    
+    
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\chapter{The CMS Experiment}
+    \section{The Large Hadron Collider}
+
+    \section{The CMS Detector}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Event Simulation and Reconstruction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Signal and Control Regions}
+
+    \section{Backgrounds}
+        \subsection{Top Background}
+    
+        \subsection{W+jets Background}
+    
+    \section{Signal Discrimination}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Uncertainties}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Results}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Conclusions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibliography
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+    \chapter{Statistical Learning Techniques}
+        \section{BDT}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    \chapter{Additional Plots}
+
+
+\end{document}

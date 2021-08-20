@@ -1,0 +1,125 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{Giffiths}{book}{}
+      \name{author}{1}{}{%
+        {{hash=f155d780982df4094a3495f4b0c58354}{%
+           family={Griffiths},
+           familyi={G\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Weinheim, Germany}%
+      }
+      \list{publisher}{1}{%
+        {Wiley-VCH Verlag GmbH \& Co. KGaA}%
+      }
+      \strng{namehash}{f155d780982df4094a3495f4b0c58354}
+      \strng{fullhash}{f155d780982df4094a3495f4b0c58354}
+      \strng{bibnamehash}{f155d780982df4094a3495f4b0c58354}
+      \strng{authorbibnamehash}{f155d780982df4094a3495f4b0c58354}
+      \strng{authornamehash}{f155d780982df4094a3495f4b0c58354}
+      \strng{authorfullhash}{f155d780982df4094a3495f4b0c58354}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9783527406012}
+      \field{title}{Introduction to Elementary Particles}
+      \field{year}{2010}
+    \endentry
+    \entry{Pais1}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2adb7cb287bad14054a0debb2b15a80d}{%
+           family={Pais},
+           familyi={P\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e3773e8b123a01d4f59e08686fd884fe}{%
+           family={Treiman},
+           familyi={T\bibinitperiod},
+           given={S.\bibnamedelimi B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{a8a326a66fa14ac021358b79c39f44de}
+      \strng{fullhash}{a8a326a66fa14ac021358b79c39f44de}
+      \strng{bibnamehash}{a8a326a66fa14ac021358b79c39f44de}
+      \strng{authorbibnamehash}{a8a326a66fa14ac021358b79c39f44de}
+      \strng{authornamehash}{a8a326a66fa14ac021358b79c39f44de}
+      \strng{authorfullhash}{a8a326a66fa14ac021358b79c39f44de}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{23}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{month}{12}
+      \field{title}{How Many Charm Quantum Numbers are There?}
+      \field{volume}{35}
+      \field{year}{1975}
+      \field{pages}{1556\bibrangedash 1559}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.35.1556
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.35.1556
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.35.1556
+      \endverb
+    \endentry
+    \entry{Trefil}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c400e6b50a8dc21d9f43516915d555a9}{%
+           family={Trefil},
+           familyi={T\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Charles Scriber's Sons}%
+      }
+      \strng{namehash}{c400e6b50a8dc21d9f43516915d555a9}
+      \strng{fullhash}{c400e6b50a8dc21d9f43516915d555a9}
+      \strng{bibnamehash}{c400e6b50a8dc21d9f43516915d555a9}
+      \strng{authorbibnamehash}{c400e6b50a8dc21d9f43516915d555a9}
+      \strng{authornamehash}{c400e6b50a8dc21d9f43516915d555a9}
+      \strng{authorfullhash}{c400e6b50a8dc21d9f43516915d555a9}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0684164841}
+      \field{title}{From Atoms to Quarks}
+      \field{year}{1980}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

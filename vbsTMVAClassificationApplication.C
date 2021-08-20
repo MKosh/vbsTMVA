@@ -383,7 +383,7 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
 //       var2 = userVar1 - userVar2;
 
       // Return the MVA outputs and fill into histograms
-       classID=3;
+      classID=3;
       className= (char*)"data";
 
       if (Use["CutsGA"]) {
@@ -441,9 +441,9 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
                bDNN_CPU->Fill();
       }
       if (Use["BDT"          ]){
-	BDT=reader->EvaluateMVA( "BDT method" );
-        histBdt->Fill( BDT );
-        bBDT->Fill();
+	      BDT=reader->EvaluateMVA( "BDT method" );
+         histBdt->Fill( BDT );
+         bBDT->Fill();
        }
       if (Use["BDTG"         ])   histBdtG   ->Fill( reader->EvaluateMVA( "BDTG method"          ) );
       if (Use["BDTB"         ])   histBdtB   ->Fill( reader->EvaluateMVA( "BDTB method"          ) );

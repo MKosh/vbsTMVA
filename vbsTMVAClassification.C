@@ -217,7 +217,7 @@ if (selector == 0000){
 } else if (selector == 2016){
    //These are for the 2016 ntuples
    dataSamples.push_back( new Sample("data",	 "Data" ,	 1,	 1,	 gid_data, gid_data,	1,	1.0,	0) );
-
+   
    sglSamples.push_back( new Sample("WV_EWK",	 "WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8",	0.02982,	  1, gid_sgl,  100,	910,	200000.0,	0) );
    sglSamples.push_back( new Sample("WV_EWK",	 "WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8",	0.03259,	  1, gid_sgl,  101,	910,	198300.0,	0) );
    sglSamples.push_back( new Sample("WV_EWK",	 "WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8",	0.1,	  1, gid_sgl,  102,	910,	200000.0,	0) );
@@ -396,9 +396,9 @@ for (UInt_t ns=0; ns<sglSamples.size();ns++){
 
      sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
 
-     if( sglSamples[ns]->getInpTree() ){
+      if( sglSamples[ns]->getInpTree() ){
          fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]); 
-    }
+      }
      cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << "signal events " <<   sglSamples[ns]->getNevents() << endl;
    }
 }
@@ -412,12 +412,13 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
 
      bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
 
-     if( bkgSamples[ns]->getInpTree() ){   
+      if( bkgSamples[ns]->getInpTree() ){   
          fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]); 
-    }
+      }
      cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << "background events " <<   bkgSamples[ns]->getNevents() << endl;
    }
 }
+
 
 // //----
 
