@@ -4,7 +4,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{List of Tables}{vi}{chapter*.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Appendices}{vii}{chapter*.5}%
+\contentsline {chapter}{List of Figures}{vii}{chapter*.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List of Appendices}{viii}{chapter*.6}%
 \defcounter {refsection}{0}\relax 
 \noindent Chapter\par 
 \defcounter {refsection}{0}\relax 
@@ -46,5 +48,5 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {8}Conclusions}{10}{chapter.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendices}{12}{chapter*.7}%
+\contentsline {chapter}{Appendices}{12}{chapter*.9}%
 \contentsfinish 

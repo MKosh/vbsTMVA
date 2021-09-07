@@ -51,12 +51,14 @@ classify: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_" << $(cutName) << ".txt"; // AUCoutfile|g' vbsTMVAClassification.C 
 	@root ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 
 trainNoPlot: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_" << $(cutName) << ".txt"; // AUCoutfile|g' vbsTMVAClassification.C
 	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
@@ -65,9 +67,10 @@ trainAndPlot: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_" << $(cutName) << ".txt"; // AUCoutfile|g' vbsTMVAClassification.C
 	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
-	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cut      //cout << "Deleted old hist " <<  newhist->GetName() << endl;
+	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp    
 	@sed -i 's|^.*\(shapePlots(anl, cut, cutName); // XXX\)|//shapePlots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	@root -q tmvaMon.cpp\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\)
 	-@./utils/plot_resort.sh "$(year)"
@@ -241,3 +244,6 @@ update_0000:
 #    newhist = (TH1F*) hframe->Clone(histname); TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));
 #	@pdflatex docs/plots.text >/dev/null
 # 	@sed -i 's|string smpselector = .*\(;\)|string smpselector = "new";|g' tmvaMon.cpp
+
+# Not sure what happened with this line here v it was somehow in the first sed in trainAndPlot
+# //cout << "Deleted old hist " <<  newhist->GetName() << endl;'

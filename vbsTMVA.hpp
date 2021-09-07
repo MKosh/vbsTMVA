@@ -15,6 +15,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <fstream>
 
 #include "TROOT.h"
 #include "TChain.h"

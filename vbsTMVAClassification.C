@@ -217,7 +217,7 @@ if (selector == 0000){
 } else if (selector == 2016){
    //These are for the 2016 ntuples
    dataSamples.push_back( new Sample("data",	 "Data" ,	 1,	 1,	 gid_data, gid_data,	1,	1.0,	0) );
-   
+
    sglSamples.push_back( new Sample("WV_EWK",	 "WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8",	0.02982,	  1, gid_sgl,  100,	910,	200000.0,	0) );
    sglSamples.push_back( new Sample("WV_EWK",	 "WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8",	0.03259,	  1, gid_sgl,  101,	910,	198300.0,	0) );
    sglSamples.push_back( new Sample("WV_EWK",	 "WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8",	0.1,	  1, gid_sgl,  102,	910,	200000.0,	0) );
@@ -272,6 +272,7 @@ if (selector == 0000){
 } else if (selector == 2017) {
    // 2017 ntuples
    dataSamples.push_back( new Sample("data",	 "Data" ,	 1,	 1,	 gid_data, gid_data,	1,	1.0,	0) );
+
    sglSamples.push_back( new Sample("WV_EWK",	 "WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.02982,	  1, gid_sgl,  100,	910,	592774.0,	0) );
    sglSamples.push_back( new Sample("WV_EWK",	 "WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.03259,	  1, gid_sgl,  101,	910,	568778.0,	0) );
    sglSamples.push_back( new Sample("WV_EWK",	 "WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.1,	  1, gid_sgl,  102,	910,	592964.0,	0) );
@@ -281,6 +282,7 @@ if (selector == 0000){
    sglSamples.push_back( new Sample("WV_EWK",	 "WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.08793,	  1, gid_sgl,  106,	910,	592724.0,	0) );
    sglSamples.push_back( new Sample("WV_EWK",	 "WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.1825,	  1, gid_sgl,  107,	910,	1183046.0,	0) );
    sglSamples.push_back( new Sample("WV_EWK",	 "ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.01589,	  1, gid_sgl,  108,	910,	284048.0,	0) );
+
    bkgSamples.push_back( new Sample("Diboson",	  "WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.3488,	  1,  gid_Diboson,  1100,   400,	 1476120.0,	  0) );
    bkgSamples.push_back( new Sample("Diboson",	  "WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.03203,	  1,  gid_Diboson,  1100,   400,	 296398.0,	  0) );
    bkgSamples.push_back( new Sample("Diboson",	  "WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	1.166,	  1,  gid_Diboson,  1100,   400,	 2875730.0,	  0) );
@@ -290,6 +292,7 @@ if (selector == 0000){
    bkgSamples.push_back( new Sample("Diboson",	  "WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.07584,	  1,  gid_Diboson,  1100,   400,	 296730.0,	  0) );
    bkgSamples.push_back( new Sample("Diboson",	  "WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	1.938,	  1,  gid_Diboson,  1100,   400,	 5919374.0,	  0) );
    bkgSamples.push_back( new Sample("Diboson",	  "ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.3449,	  1,  gid_Diboson,  1100,   400,	 149536.0,	  0) );
+
    bkgSamples.push_back( new Sample("top",	  "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8",	365.34,	  1,  gid_top,  1100,   592,	 72526299136.0,	  0) );
    bkgSamples.push_back( new Sample("top",	  "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8",	86.99,	  1,  gid_top,  1100,   592,	 648729856.0,	  0) );
    bkgSamples.push_back( new Sample("top",	  "TTToHadronic_TuneCP5_13TeV-powheg-pythia8",	377.96,	  1,  gid_top,  1100,   592,	 61926825984.0,	  0) );
@@ -299,6 +302,7 @@ if (selector == 0000){
    bkgSamples.push_back( new Sample("top",	  "ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8",	45.7,	  1,  gid_top,  1100,   592,	 1418556928.0,	  0) );
    bkgSamples.push_back( new Sample("top",	  "ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8",	12.04,	  1,  gid_top,  1100,   592,	 279005344.0,	  0) );
    bkgSamples.push_back( new Sample("top",	  "ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8",	12.04,	  1,  gid_top,  1100,   592,	 272081088.0,	  0) );
+
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8",	1292.0,	  1,  gid_Wjets,  1100,   924,	 22201316.0,	  0) );
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8",	1395.0,	  1,  gid_Wjets,  1100,   924,	 35804624.0,	  0) );
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8",	407.9,	  1,  gid_Wjets,  1100,   924,	 21192212.0,	  0) );
@@ -307,6 +311,7 @@ if (selector == 0000){
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8",	5.366,	  1,  gid_Wjets,  1100,   924,	 20272990.0,	  0) );
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8",	1.074,	  1,  gid_Wjets,  1100,   924,	 19991892.0,	  0) );
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8",	0.008001,	  1,  gid_Wjets,  1100,   924,	 20629584.0,	  0) );
+
    bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-70to100_TuneCP5_13TeV-madgraphMLM-pythia8",	167.33,	  1,  gid_Zjets,  1100,   4,	 9333543.0,	  0) );
    bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-100to200_TuneCP5_13TeV-madgraphMLM-pythia8",	161.1,	  1,  gid_Zjets,  1100,   4,	 15124171.0,	  0) );
    bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-200to400_TuneCP5_13TeV-madgraphMLM-pythia8",	48.66,	  1,  gid_Zjets,  1100,   4,	 11896758.0,	  0) );
@@ -318,6 +323,7 @@ if (selector == 0000){
 } else if (selector == 2018) {
    // 2018 ntuples
    dataSamples.push_back( new Sample("data",	 "Data" ,	 1,	 1,	 gid_data, gid_data,	1,	1.0,	0) );
+
    sglSamples.push_back( new Sample("WV_EWK",	 "WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.02982,	  1, gid_sgl,  100,	910,	584787.0,	0) );
    sglSamples.push_back( new Sample("WV_EWK",	 "WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.03259,	  1, gid_sgl,  101,	910,	565831.5,	0) );
    sglSamples.push_back( new Sample("WV_EWK",	 "WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.1,	  1, gid_sgl,  102,	910,	566998.5625,	0) );
@@ -327,6 +333,7 @@ if (selector == 0000){
    sglSamples.push_back( new Sample("WV_EWK",	 "WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.08793,	  1, gid_sgl,  106,	910,	588277.125,	0) );
    sglSamples.push_back( new Sample("WV_EWK",	 "WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.1825,	  1, gid_sgl,  107,	910,	1156414.625,	0) );
    sglSamples.push_back( new Sample("WV_EWK",	 "ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.01589,	  1, gid_sgl,  108,	910,	297179.84375,	0) );
+
    bkgSamples.push_back( new Sample("Diboson",	  "WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.3488,	  1,  gid_Diboson,  1100,   400,	 1479242.875,	  0) );
    bkgSamples.push_back( new Sample("Diboson",	  "WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.03203,	  1,  gid_Diboson,  1100,   400,	 296655.78125,	  0) );
    bkgSamples.push_back( new Sample("Diboson",	  "WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	1.166,	  1,  gid_Diboson,  1100,   400,	 2906207.5,	  0) );
@@ -336,6 +343,7 @@ if (selector == 0000){
    bkgSamples.push_back( new Sample("Diboson",	  "WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.07584,	  1,  gid_Diboson,  1100,   400,	 295939.40625,	  0) );
    bkgSamples.push_back( new Sample("Diboson",	  "WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	1.938,	  1,  gid_Diboson,  1100,   400,	 5706507.5,	  0) );
    bkgSamples.push_back( new Sample("Diboson",	  "ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8",	0.3449,	  1,  gid_Diboson,  1100,   400,	 143152.015625,	  0) );
+
    bkgSamples.push_back( new Sample("top",	  "TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8",	365.34,	  1,  gid_top,  1100,   592,	 90424811520.0,	  0) );
    bkgSamples.push_back( new Sample("top",	  "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8",	86.99,	  1,  gid_top,  1100,   592,	 4635769344.0,	  0) );
    bkgSamples.push_back( new Sample("top",	  "TTToHadronic_TuneCP5_13TeV-powheg-pythia8",	377.96,	  1,  gid_top,  1100,   592,	 102734004224.0,	  0) );
@@ -345,6 +353,7 @@ if (selector == 0000){
    bkgSamples.push_back( new Sample("top",	  "ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8",	45.7,	  1,  gid_top,  1100,   592,	 815051136.0,	  0) );
    bkgSamples.push_back( new Sample("top",	  "ST_tW_DS_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8",	12.04,	  1,  gid_top,  1100,   592,	 170525440.0,	  0) );
    bkgSamples.push_back( new Sample("top",	  "ST_tW_DS_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8",	12.04,	  1,  gid_top,  1100,   592,	 170711072.0,	  0) );
+
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8",	1292.0,	  1,  gid_Wjets,  1100,   924,	 28054964.0,	  0) );
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8",	1395.0,	  1,  gid_Wjets,  1100,   924,	 29385684.0,	  0) );
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8",	407.9,	  1,  gid_Wjets,  1100,   924,	 25415130.0,	  0) );
@@ -353,6 +362,7 @@ if (selector == 0000){
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8",	5.366,	  1,  gid_Wjets,  1100,   924,	 8357922.5,	  0) );
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8",	1.074,	  1,  gid_Wjets,  1100,   924,	 7567070.5,	  0) );
    bkgSamples.push_back( new Sample("Wjets",	  "WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8",	0.008001,	  1,  gid_Wjets,  1100,   924,	 3189396.0,	  0) );
+   
    bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-70to100_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	167.33,	  1,  gid_Zjets,  1100,   4,	 10010341.0,	  0) );
    bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-100to200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	161.1,	  1,  gid_Zjets,  1100,   4,	 11516746.0,	  0) );
    bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-200to400_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	48.66,	  1,  gid_Zjets,  1100,   4,	 10840079.0,	  0) );
@@ -839,6 +849,31 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    // Evaluate and compare performance of all configured MVAs
    cout << "Evaluate All Methods" << endl;
    factory->EvaluateAllMethods();
+
+   ////////////////////////////////////////////////////////////////////////////
+   /// Print out AUC for each method, both to the terminal, and to a file
+   /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
+   /// to catch it and properly rename the ssAUCoutile name
+   stringstream ssAUCoutfile;
+ssAUCoutfile << "ROC/" << std::to_string(selector) << "_" << dummy << ".txt"; // AUCoutfile
+   std::ofstream AUCoutfile;
+   AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
+   std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
+   std::cout << "" << std::endl;
+   std::cout << "--------------------------------------------------" << std::endl;
+   AUCoutfile << "" << std::endl;
+   AUCoutfile << "--------------------------------------------------" << std::endl;
+   for (UInt_t i=0; i<mlist.size(); i++) {
+      std::string regMethod(mlist[i]);
+      std::cout << "AUC for " << regMethod << ": " << factory->GetROCIntegral(dataloader, regMethod) << std::endl;
+      AUCoutfile << "AUC for " << regMethod << ": " << factory->GetROCIntegral(dataloader, regMethod) << std::endl;
+
+   }
+   std::cout << "--------------------------------------------------" << std::endl;
+   std::cout << "" << std::endl;
+   AUCoutfile << "" << std::endl;
+   AUCoutfile << "--------------------------------------------------" << std::endl;
+   AUCoutfile.close();
 
    // --------------------------------------------------------------
    cout << "Clone dataTree" << endl;

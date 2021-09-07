@@ -101,6 +101,47 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Vector Boson Scattering}
 
+
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}
+            \begin{feynman}
+                %\draw[help lines] (0,-3) grid (10,3);
+                \vertex (q1i) at (0,2) {{\(q\)}};
+                \vertex (q1m) at (3, 2);
+                \vertex (q1f) at (8, 2.5) {{\(q\)}};
+                \vertex (q2i) at (0, -1) {\(q'\)};
+                \vertex (q2m) at (3, -1);
+                \vertex (q2f) at (8, -1.5) {\(q'\)};
+                \vertex (coupling) at (5, 0.5);
+                \vertex (decay1) at (6.0, 1.4);
+                \vertex (decay2) at (6.0, -0.4);
+                \vertex (lep1) at (8, 1.9) {\(q/\ell/\nu_{\ell}\)};
+                \vertex (lep2) at (8, 0.9) {\(q/\ell/\nu_{\ell}\)};
+                \vertex (lep3) at (8, 0.1) {\(q/\ell/\nu_{\ell}\)};
+                \vertex (lep4) at (8, -0.9) {\(q/\ell/\nu_{\ell}\)};
+                \node [label=\(V\)] (V1) at (3.7,0.5);
+                \node [label=\(V\)] (V2) at (3.7,-0.5);
+                \node [label=\(V\)] (V3) at (5.3,0.85);
+                \node [label=\(V\)] (V4) at (5.3,-0.85);
+                
+                \diagram*[large] {
+                    (q1i) -- [fermion1] (q1m) -- [fermion1] (q1f),
+                    (q2i) -- [fermion1] (q2m) -- [fermion1] (q2f),
+                    (q1m) -- [boson] (coupling),
+                    (q2m) -- [boson] (coupling),
+                    (coupling) -- [boson] (decay1),
+                    (coupling) -- [boson] (decay2),
+                    (lep1) -- [fermion1] (decay1) -- [fermion1] (lep2),
+                    (lep3) -- [fermion1] (decay2) -- [fermion1] (lep4),
+                };
+            \end{feynman}
+        \end{tikzpicture}
+        \caption[Simple VBS diagram]{A basic quartic gauge coupling VBS process with the vector bosons decaying either hadronically, leptonically, or semi-leptonically}
+            \label{fig:my_label}
+    \end{figure}
+
+
     \begin{table}[h]
         \centering
         \begin{tabular}{c c c}
@@ -228,74 +269,72 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             \end{feynman}
         \end{tikzpicture} & \begin{tikzpicture}
             \begin{feynman}
-            %\draw[help lines] (0,-2) grid (5,2);
-                \vertex (q1i) at (0,2) {\scriptsize{\(q\)}};
-                \vertex (q1m) at (1,2);
-                \vertex (q1f) at (3.5,2.2) {\scriptsize{\(q\)}};
-                \vertex (q2i) at (0,0) {\scriptsize{\(q'\)}};
-                \vertex (q2m) at (1,0);
-                \vertex (q2f) at (3.5,-0.2) {\scriptsize{\(q'\)}};
-                \vertex (coupling) at (1.5,1);
-                \vertex (inter) at (2.5,1);
-                \vertex (decay1) at (2.7,1.7);
-                \vertex (decay2) at (2.7,0.3);
-                \vertex (lep1) at (3.65,1.95) {\scriptsize{\(e^{+}\)}};
-                \vertex (lep2) at (3.65,1.2) {\scriptsize{\(\nu_{e}\)}};
-                \vertex (lep3) at (3.65,0.9) {\scriptsize{\(\mu^{+}\)}};
-                \vertex (lep4) at (3.65,0.1) {\scriptsize{\(\nu_{\mu}\)}};
-                \node [label={\tiny{\(W^{+}\)}}] (W3) at (2.9,0.85);
-                \node [label={\tiny{\(W^{+}\)}}] (W4) at (2.9,0.28);
-                \node [label={\tiny{\(Z/\gamma/H\)}}] (boson) at (2.05, 0.85);
-
-                \diagram*[large] {
-                    (q1i) -- [fermion1] (q1m) -- [fermion1] (q1f),
-                    (q2i) -- [fermion1] (q2m) -- [fermion1] (q2f),
-                    (q1m) -- [boson, edge label'={\scriptsize{\(W^{+}\)}}] (coupling),
-                    (q2m) -- [boson, edge label={\scriptsize{\(W^{+}\)}}] (coupling),
-                    (coupling) -- [boson] (inter),
-                    (inter) -- [boson] (decay1),
-                    (inter) -- [boson] (decay2),
-                    (lep1) -- [fermion1] (decay1) -- [fermion1] (lep2),
-                    (lep3) -- [fermion1] (decay2) -- [fermion1] (lep4),
-                };
-            \end{feynman}
-        \end{tikzpicture} & \begin{tikzpicture}
-            \begin{feynman}
-            %\draw[help lines] (0,-2) grid (5,2);
-                \vertex (q1i) at (0,2) {\scriptsize{\(q\)}};
-                \vertex (q1m) at (1,2);
-                \vertex (q1f) at (3.5,2.2) {\scriptsize{\(q\)}};
-                \vertex (q2i) at (0,0) {\scriptsize{\(q'\)}};
-                \vertex (q2m) at (1,0);
-                \vertex (q2f) at (3.5,-0.2) {\scriptsize{\(q'\)}};
-                \vertex (coupling) at (1.5,1);
-                \vertex (inter) at (2.5,1);
-                \vertex (decay1) at (2.7,1.7);
-                \vertex (decay2) at (2.7,0.3);
-                \vertex (lep1) at (3.65,1.95) {\scriptsize{\(e^{+}\)}};
-                \vertex (lep2) at (3.65,1.2) {\scriptsize{\(\nu_{e}\)}};
-                \vertex (lep3) at (3.65,0.9) {\scriptsize{\(\mu^{+}\)}};
-                \vertex (lep4) at (3.65,0.1) {\scriptsize{\(\nu_{\mu}\)}};
-                \node [label={\tiny{\(W^{+}\)}}] (W3) at (2.9,0.85);
-                \node [label={\tiny{\(W^{+}\)}}] (W4) at (2.9,0.28);
-                \node [label={\tiny{\(Z/\gamma/H\)}}] (boson) at (2.05, 0.85);
-
-                \diagram*[large] {
-                    (q1i) -- [fermion1] (q1m) -- [fermion1] (q1f),
-                    (q2i) -- [fermion1] (q2m) -- [fermion1] (q2f),
-                    (q1m) -- [boson, edge label'={\scriptsize{\(W^{+}\)}}] (coupling),
-                    (q2m) -- [boson, edge label={\scriptsize{\(W^{+}\)}}] (coupling),
-                    (coupling) -- [boson] (inter),
-                    (inter) -- [boson] (decay1),
-                    (inter) -- [boson] (decay2),
-                    (lep1) -- [fermion1] (decay1) -- [fermion1] (lep2),
-                    (lep3) -- [fermion1] (decay2) -- [fermion1] (lep4),
-                };
-            \end{feynman} 
+                %\draw[help lines] (0,-1) grid (4,3);
+                    \vertex (q1i) at (0,2) {\scriptsize{\(q\)}};
+                    \vertex (q1m) at (1,2);
+                    \vertex (q1m2) at (2,2);
+                    \vertex (q1f) at (3.5,1.4) {\scriptsize{\(q\)}};
+                    \vertex (q2i) at (0,0) {\scriptsize{\(q'\)}};
+                    \vertex (q2m) at (1,0);
+                    \vertex (q2m2) at (2,0);
+                    \vertex (q2f) at (3.5, 0.6) {\scriptsize{\(q'\)}};
+                    \vertex (decay1) at (2.6,2.2);
+                    \vertex (decay2) at (2.6,-0.3);
+                    \vertex (lep1) at (3.65, 2.5) {\scriptsize{\(e^{+}\)}};
+                    \vertex (lep2) at (3.65, 1.9) {\scriptsize{\(\nu_{e}\)}};
+                    \vertex (lep3) at (3.65, 0) {\scriptsize{\(\mu^{+}\)}};
+                    \vertex (lep4) at (3.65, -0.6) {\scriptsize{\(\nu_{\mu}\)}};
+                    \node [label={\scriptsize{\(W^{+}\)}}] (W3) at (2.,2.);
+                    \node [label={\scriptsize{\(W^{+}\)}}] (W4) at (2.,-0.8);
+                    \node [label={\scriptsize{\(Z/\gamma\)}}] (boson) at (0.5, 0.5);
+                    
+                    \diagram*[large] {
+                        (q1i) -- [fermion1] (q1m) -- [fermion1] (q1m2) -- [fermion1] (q1f),
+                        (q2i) -- [fermion1] (q2m) -- [fermion1] (q2m2) -- [fermion1] (q2f),
+                        (q1m) -- [boson] (q2m),
+                        (q1m2) -- [boson] (decay1),
+                        (q2m2) -- [boson] (decay2),
+                        (lep1) -- [fermion1] (decay1) -- [fermion1] (lep2),
+                        (lep3) -- [fermion1] (decay2) -- [fermion1] (lep4),
+                    };
+                \end{feynman}
+            \end{tikzpicture} & \begin{tikzpicture}
+                \begin{feynman}
+                %\draw[help lines] (0,-1) grid (4,3);
+                    \vertex (q1i) at (0,1) {\scriptsize{\(q\)}};
+                    \vertex (q1m) at (1,1);
+                    \vertex (q1m2) at (2,1);
+                    \vertex (q1f) at (3.5,0.5) {\scriptsize{\(q\)}};
+                    \vertex (q2i) at (0,0) {\scriptsize{\(q'\)}};
+                    \vertex (q2m) at (1,0);
+                    \vertex (q2f) at (3.5, 0) {\scriptsize{\(q'\)}};
+                    \vertex (decay1) at (2.6,2.2);
+                    \vertex (decay2) at (2.6, 1.3);
+                    \vertex (decay3) at (2.2, 1.7);
+                    \vertex (lep1) at (3.65, 2.5) {\scriptsize{\(e^{+}\)}};
+                    \vertex (lep2) at (3.65, 1.9) {\scriptsize{\(\nu_{e}\)}};
+                    \vertex (lep3) at (3.65, 1.5) {\scriptsize{\(\mu^{+}\)}};
+                    \vertex (lep4) at (3.65, 1) {\scriptsize{\(\nu_{\mu}\)}};
+                    \node [label={\tiny{\(W^{+}\)}}] (W3) at (2.1,1.8);
+                    \node [label={\tiny{\(W^{+}\)}}] (W4) at (2.65, 1.25);
+                    \node [label={\scriptsize{\(Z/\gamma\)}}] (boson) at (0.5, 0.2);
+                    \node [label={\tiny{\(Z/\gamma\)}}] (boson2) at (1.7, 1);
+                    
+                    \diagram*[large] {
+                        (q1i) -- [fermion1] (q1m) -- [fermion1] (q1m2) -- [fermion1] (q1f),
+                        (q2i) -- [fermion1] (q2m) -- [fermion1] (q2f),
+                        (q1m) -- [boson] (q2m),
+                        (q1m2) -- [boson] (decay3),
+                        (decay3) -- [boson] (decay1),
+                        (decay3) -- [boson] (decay2),
+                        (lep1) -- [fermion1] (decay1) -- [fermion1] (lep2),
+                        (lep3) -- [fermion1] (decay2) -- [fermion1] (lep4),
+                    };
+                \end{feynman} 
             \end{tikzpicture} \\
         \end{tabular}
-        \caption{Caption words}
-        \label{table:my_label}
+        \caption[Example VBS processes]{Representative Feynman diagrams for VBS $pp \rightarrow e^{+}\nu_{e}\mu^{+}{\nu}_{\mu}jj$ and $pp \rightarrow e^{+}\nu_{e}\mu^{-}\bar{\nu}_{\mu}jj$ processes.}
+        \label{table:VBS_Examples1}
     \end{table}
 
     

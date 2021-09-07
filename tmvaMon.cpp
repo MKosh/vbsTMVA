@@ -436,7 +436,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "  tmgui()" << endl;
   cout << "" << endl;
 
-cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
 //shapePlots(anl, cut, cutName); // XXX
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
@@ -1030,7 +1030,7 @@ Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* c
      } 
       if (strcmp(optParName,"sgf2") == 0 ){
         bestcut = bestcut_min;
-       bestsgf =  sgf_min;
+        bestsgf =  sgf_min;
      }else{
         bestcut = bestcut_max;
         bestsgf = sgf_max;
