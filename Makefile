@@ -51,14 +51,14 @@ classify: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
-	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_" << $(cutName) << ".txt"; // AUCoutfile|g' vbsTMVAClassification.C 
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C 
 	@root ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 
 trainNoPlot: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
-	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_" << $(cutName) << ".txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
 	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
@@ -67,7 +67,7 @@ trainAndPlot: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
-	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_" << $(cutName) << ".txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
 	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp    
@@ -107,38 +107,55 @@ genPlots:
 # These makefile targets are for when make is run on WSL. They need the special CONDA_ACTIVATE command so root can be used
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
+classify_wsl: update_$(year)
+	-@rm -r skims/vbs_ww
+	@./dsw.sh "$(loc)" "$(year)"
+	@($(CONDA_ACTIVATE) root_env ; ./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)")
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C 
+	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\))
+
 trainNoPlot_wsl: update_$(year)
 	@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
-	@($(CONDA_ACTIVATE) root_env ; ./write_vbsDL.sh "$(loc)" "$(vars)")
-	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(year)\",\"$(methods)\"\))
-	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(year)\",\"$(methods)\"\))
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@($(CONDA_ACTIVATE) root_env ; ./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)")
+	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\))
+	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\))
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 
 trainAndPlot_wsl: update_$(year)
 	@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
-	@($(CONDA_ACTIVATE) root_env ; ./write_vbsDL.sh "$(loc)" "$(vars)")
-	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(year)\",\"$(methods)\"\))
-	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(year)\",\"$(methods)\"\))
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@($(CONDA_ACTIVATE) root_env ; ./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)")
+	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\))
+	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\))
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	-@./utils/plot_sort.sh "$(year)"
-	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
+	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\))
 	-@./utils/plot_resort.sh "$(year)"
 	@./utils/gen_plots.sh
 
 plots_wsl: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	-@./utils/plot_sort.sh "$(year)"
-	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
+	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\))
 	-@./utils/plot_resort.sh "$(year)"
 	@./utils/gen_plots.sh
+
+shapePlots_wsl: update_$(year)
+	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	@sed -i 's|^.*\(shapePlots(anl, cut, cutName); // XXX\)|shapePlots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
+	-@./utils/plot_sort.sh "$(year)"
+	@($(CONDA_ACTIVATE) root_env ; root -q tmvaMon.cpp\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\)
+	-@./utils/plot_resort.sh "$(year)"
+	@./utils/gen_shape_plots.sh
 
 mon_wsl: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	-@./utils/plot_sort.sh "$(year)"
 	@echo "Don't forget to run the plot_resort.sh script after generating new plots"
-	@($(CONDA_ACTIVATE) root_env ; root tmvaMon.cpp\(\"vbs_ww_$(year)\",$(lumi),$(cut),\"$(cutName)\"\))
+	@($(CONDA_ACTIVATE) root_env ; root tmvaMon.cpp\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\))
 
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 # These makefile targets are for when make is run on WSL. They need the special CONDA_ACTIVATE command so root can be used
