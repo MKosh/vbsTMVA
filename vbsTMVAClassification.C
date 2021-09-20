@@ -137,17 +137,12 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 // --------------------------------------------------------------------------------------------------
 
    // Apply additional cuts on the signal and background samples (can be different)
-   // TCut mycuts = ""; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
-   // TCut mycutb = ""; // for example: TCut mycutb = "abs(var1)<0.5";
-   // TCut mORe		("mORe",	    "(type==0||type==1)");
-   // TCut cleanNAN        ("cleanNAN",        "(mass_lvj_type0_PuppiAK8>0)"); 
+   //   TCut mycuts = cleanNAN+more+OneLpt;// 
+   TCut mycuts = cleanNAN_qgid+cleanNAN_tau; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
+   TCut mycutb = mycuts;//
 
-   //   TCut mycuts = cleanNAN+more+OneLpt;// for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
-   TCut mycuts = cleanNAN_qgid+cleanNAN_tau; // dummy; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
-   TCut mycutb = mycuts;// for example: TCut mycutb = "abs(var1)<0.5";
-   //
    VbsReducedEvent vbsEvent;
-//
+
    std::vector<Sample*> bkgSamples;
    std::vector<Sample*> sglSamples;
    std::vector<Sample*> dataSamples;
@@ -372,7 +367,7 @@ if (selector == 0000){
    bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-1200to2500_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	0.1933,	  1,  gid_Zjets,  1100,   4,	 531566.875,	  0) );
    bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-2500toInf_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	0.003468,	  1,  gid_Zjets,  1100,   4,	 415517.0,	  0) );
 } else {
-   cout << "There's an issue with your sample choice. Check -vbsTMVAClassification.C- somewhere around line 150 - 250" << endl;
+   cout << "There's an issue with your sample choice. Check -vbsTMVAClassification.C- somewhere around line 150" << endl;
 }
 
 //----
@@ -380,18 +375,17 @@ if (selector == 0000){
 
 //Data
 for (UInt_t ns=0; ns< dataSamples.size();ns++){
-  cout << dataSamples[ns]->getGName() << "--" << dataSamples[ns]->getSName() << endl;
+   cout << dataSamples[ns]->getGName() << "--" << dataSamples[ns]->getSName() << endl;
 
    if ( dataSamples[ns]->getLoadFlag()){ 
-       cout << "register "  << dataSamples[ns]->getReqList() << " data samples" << endl;
+      cout << "register "  << dataSamples[ns]->getReqList() << " data samples" << endl;
     
-     dataSamples[ns]->setInpTree( chain2tree("Events", dataSamples[ns]->getReqList(), "DataTree", "DataTree" ) );
+      dataSamples[ns]->setInpTree( chain2tree("Events", dataSamples[ns]->getReqList(), "DataTree", "DataTree" ) );
 
-     if( dataSamples[ns]->getInpTree() ){
-    
+      if( dataSamples[ns]->getInpTree() ){
          fillBranch( dataSamples[ns]->getInpTree(), vbsEvent, dataSamples[ns]); 
-    }
-     cout << "TMVAClassification:: Total " << dataSamples[ns]->getSName() << "data events " <<   dataSamples[ns]->getNevents() << endl;
+      }
+      cout << "TMVAClassification:: Total " << dataSamples[ns]->getSName() << "data events " <<   dataSamples[ns]->getNevents() << endl;
    }
 }
 
@@ -399,17 +393,17 @@ for (UInt_t ns=0; ns< dataSamples.size();ns++){
 
 //Signals
 for (UInt_t ns=0; ns<sglSamples.size();ns++){
-  cout << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << endl;
+   cout << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << endl;
 
    if ( sglSamples[ns]->getLoadFlag()){ 
      // cout << "register  "  << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << " signal samples" << endl;
 
-     sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
+      sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
 
       if( sglSamples[ns]->getInpTree() ){
          fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]); 
       }
-     cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << "signal events " <<   sglSamples[ns]->getNevents() << endl;
+      cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << "signal events " <<   sglSamples[ns]->getNevents() << endl;
    }
 }
 
@@ -418,14 +412,14 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
   cout << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << endl;
 
    if ( bkgSamples[ns]->getLoadFlag()){ 
-     //  cout << "register  "  << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << " background  samples" << endl;
+      //  cout << "register  "  << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << " background  samples" << endl;
 
-     bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
+      bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
 
       if( bkgSamples[ns]->getInpTree() ){   
          fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]); 
       }
-     cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << "background events " <<   bkgSamples[ns]->getNevents() << endl;
+      cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << "background events " <<   bkgSamples[ns]->getNevents() << endl;
    }
 }
 
@@ -460,7 +454,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
 
    // You can add an arbitrary number of signal or background trees
    for (UInt_t ns=0; ns<sglSamples.size();ns++){
-     if ( sglSamples[ns]->getInpTree() )  dataloader->AddSignalTree ( sglSamples[ns]->getInpTree(),     signalWeight     );
+      if ( sglSamples[ns]->getInpTree() )  dataloader->AddSignalTree ( sglSamples[ns]->getInpTree(),     signalWeight     );
    }
    // If you wish to modify default settings
    // (please check "src/Config.h" to see all available global options)
@@ -487,7 +481,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    //Add backgrounds to factory
    //
    for (UInt_t ns=0; ns< bkgSamples.size();ns++){
-     if ( bkgSamples[ns]->getInpTree() )  dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), backgroundWeight    );
+      if ( bkgSamples[ns]->getInpTree() )  dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), backgroundWeight    );
    }
    //   
 //    if (n_background_WplusJets && fWjets)     dataloader->AddBackgroundTree( background_WplusJets , backgroundWeight );
