@@ -23,7 +23,6 @@ using namespace TMVA;
 
 void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodList = "" )
 {
-
    //---------------------------------------------------------------
    // This loads the library
    TMVA::Tools::Instance();
@@ -121,35 +120,14 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    }
 
    // --------------------------------------------------------------------------------------------------
-
+   /////////////////////////////////////////////////////////////////////////////
+   ///
    // Create the Reader object
-
    TMVA::Reader *reader = new TMVA::Reader( "!Color:!Silent" );
-   VbsReducedEvent vbsEvent;    
-   //  setVbsReaderVarsAndSpectators(reader,vbsEvent);
+   //
+   VbsReducedEvent vbsEvent;
+   // Set TMVA Reader variables and spectators
     setVbsDLorReaderVarsAndSpectators(0, reader, vbsEvent);
-
-   // Create a set of variables and declare them to the reader
-   // - the variable names MUST corresponds in name and type to those given in the weight file(s) used
-//    Float_t var1, var2;
-//    Float_t var3, var4;
-//    reader->AddVariable( "myvar1 := var1+var2", &var1 );
-//    reader->AddVariable( "myvar2 := var1-var2", &var2 );
-//    reader->AddVariable( "var3",                &var3 );
-//    reader->AddVariable( "var4",                &var4 );
-
-//    // Spectator variables declared in the training have to be added to the reader, too
-//    Float_t spec1,spec2;
-//    reader->AddSpectator( "spec1 := var1*2",   &spec1 );
-//    reader->AddSpectator( "spec2 := var1*3",   &spec2 );
-
-//    Float_t Category_cat1, Category_cat2, Category_cat3;
-//    if (Use["Category"]){
-//       // Add artificial spectators for distinguishing categories
-//       reader->AddSpectator( "Category_cat1 := var3<=0",             &Category_cat1 );
-//       reader->AddSpectator( "Category_cat2 := (var3>0)&&(var4<0)",  &Category_cat2 );
-//       reader->AddSpectator( "Category_cat3 := (var3>0)&&(var4>=0)", &Category_cat3 );
-//    }
 
    // Book the MVA methods
 
