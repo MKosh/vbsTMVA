@@ -13,7 +13,7 @@ cutName ?= "test"
 pltVar ?= "lep1_pt"
 saveFile ?= "$(year)"
 
-init:
+help:
 	@echo ""
 	@echo "-------------------------------------------------------- Makefile Arguments --------------------------------------------------------"
 	@echo ""
@@ -46,6 +46,12 @@ test:
 	@echo "cutName = $(cutName)"
 	@echo "pltVar = $(pltVar)"
 	@echo "saveFile = $(saveFile)"
+
+init:
+	-@rm -r skims/vbs_ww
+	@./dsw.sh "$(loc)" "$(year)"
+	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
+	@echo "Done!"
 
 classify: update_$(year)
 	-@rm -r skims/vbs_ww

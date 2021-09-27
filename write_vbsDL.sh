@@ -96,6 +96,56 @@ cat branches.txt | sed 's/[0-z]*\/O/Bool_t/g' | grep Bool_t >> list_of_branches.
 # Delete the old variable list file
 rm branches.txt
 
+if [ $2 == "Boosted" ]; then
+    # These are the variables for the new ntuples.
+    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep zeppHad nJet30f vbf_m lep1_eta lep1_pt vbf2_AK4_eta dibos_pt dibos_m dilep_eta dilep_m bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m bos_PuppiAK8_pt bosCent vbf1_AK4_qgid"
+    activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta $TMVAVARS"
+    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad nJet30 nJet50"
+    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr"
+    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi"
+    plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt"
+    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
+elif [ $2 == "set2" ]; then
+    TMVAVARS="lep1_eta lep1_pt nJet30f vbf1_AK4_pt vbf2_AK4_pt bos_j1_AK4_pt bos_j2_AK4_pt vbf_m bos_AK4AK4_m vbf_deta vbf_eta bos_AK4AK4_eta zeppHad zeppLep bosCent"
+    activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta $TMVAVARS" # isAntiIso should go here, but it's a bool and AddSpectator expects a Float_t or Int_t
+    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad nJet30 nJet50"
+    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
+    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt"
+    plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt"
+    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
+elif [ $2 == "Resolved" ]; then 
+    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0 vbf1_AK4_axis2 bos_AK4AK4_m bos_AK4AK4_pt bos_AK4AK4_eta bos_AK4AK4_phi"
+    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose LHEWeight lep1_idEffWeight lep1_trigEffWeight bos_AK4AK4_phi bos_AK4AK4_eta $TMVAVARS"
+    plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad"
+    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr"
+    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_AK4AK4_m bos_AK4AK4_phi bos_AK4AK4_pt bos_AK4AK4_eta"
+    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
+elif [ $2 == "set4" ]; then 
+    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0"
+    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
+    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
+    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0"
+    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt"
+    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
+elif [ $2 == "old" ]; then
+    # These are the variables for the old ntuples
+    TMVAVARS=" l_pt1  l_eta1 pfMET_Corr ungroomed_PuppiAK8_jet_pt PuppiAK8_jet_tau2tau1 PuppiAK8_jet_mass_so_corr vbf_maxpt_jj_m vbf_maxpt_j2_eta vbf_maxpt_j1_eta vbf_maxpt_j1_pt  vbf_maxpt_j2_pt mass_lvj_type0_PuppiAK8 BosonCentrality_type0 ZeppenfeldWL_type0 ZeppenfeldWH"
+    activeVARS="gid sid mcWeight run event nTotEvents lumi  L1_Prefweight totalEventWeight type isVBF nBTagJet_loose btag0Wgt genWeight trig_eff_Weight id_eff_Weight pu_Weight l_pt2  ungroomed_PuppiAK8_jet_eta $TMVAVARS"
+    plotVARS="nPV l_pt1 l_eta1 l_iso1 l_phi1 l_e1 l_charge1    pfMET_Corr pfMET_Corr_phi nu_pz_type0   mass_lvj_type0_PuppiAK8 mt_lvj_type0_PuppiAK8  v_pt_type0 v_mt_type0"
+    plotVARS_AK8jet="nGoodPuppiAK8jets ungroomed_PuppiAK8_jet_pt  ungroomed_PuppiAK8_jet_pt ungroomed_PuppiAK8_jet_eta ungroomed_PuppiAK8_jet_phi ungroomed_PuppiAK8_jet_e ungroomed_PuppiAK8_jet_charge PuppiAK8_jet_mass PuppiAK8_jet_mass_pr PuppiAK8_jet_mass_so_corr PuppiAK8_jet_mass_tr PuppiAK8_jet_sj1_pt PuppiAK8_jet_sj1_eta PuppiAK8_jet_sj1_phi PuppiAK8_jet_sj1_m  PuppiAK8_jet_sj1_q PuppiAK8_jet_sj2_pt PuppiAK8_jet_sj2_eta PuppiAK8_jet_sj2_phi PuppiAK8_jet_sj2_m PuppiAK8_jet_sj2_q PuppiAK8jet_qjet PuppiAK8_jet_tau2tau1"
+    plotVARS_VBFJet="njets nBTagJet_loose nBTagJet_medium vbf_maxpt_j1_eta vbf_maxpt_j2_eta vbf_maxpt_j2_pt vbf_maxpt_j1_pt vbf_maxpt_jj_m vbf_maxpt_jj_Deta"
+    plotVARS_Other="deltaR_lPuppiak8jet deltaphi_METPuppiak8jet deltaphi_METvbfJ1 deltaphi_METvbfJ2 deltaphi_METmin deltaphi_VPuppiak8jet PtBalance_type0 BosonCentrality_type0  costheta1_type0 costheta2_type0 costhetastar_type0  phi_type0 phi1_type0  PtBalance_type2 costheta1_type2 costheta2_type2 costhetastar_type2 phi_type2 phi1_type2"
+    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet}  ${plotVARS_Other} | sort | tr -s '\ '  '\n'  | sort | uniq )"
+else
+    echo "Pick from the premade variable lists or make a new list"
+    return 0;
+fi
+# Write SUanlVARS into an array
+vararr=(`echo ${SUanlVARS}`)
 
 # --------------------------------------------------------- Start - Create the vbsReducedTree.hpp file - Start ----------------------------------------------------
 outfile="vbsReducedTree.hpp"
@@ -153,8 +203,10 @@ void arrange_vbsReducedTree(TTree* vbsTree, VbsReducedEvent& vbsEvent){
 EOF
 
 while read line; do
-two=$(echo $line | awk '{print $2}' | sed 's/;//g')
-echo -e "\t vbsTree->SetBranchAddress( \"$two\", \t &vbsEvent.$two);" >> $outfile
+    two=$(echo $line | awk '{print $2}' | sed 's/;//g')
+    if [[ "${vararr[@]}" =~ "$two" ]]; then
+        echo -e "\t vbsTree->SetBranchAddress( \"$two\", \t &vbsEvent.$two);" >> $outfile
+    fi
 done < list_of_branches.txt
 
 cat >> $outfile << EOF
@@ -169,55 +221,6 @@ rm list_of_branches.txt
 # --------------------------------------------------------- End - Create vbsReducedTree.hpp file - End -------------------------------------------------------------
 
 # --------------------------------------------------------- Start - Create vbsDL.hpp file - Start -----------------------------------------------------------------
- 
-if [ $2 == "Boosted" ]; then
-    # These are the variables for the new ntuples.
-    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep zeppHad nJet30f vbf_m lep1_eta lep1_pt vbf2_AK4_eta dibos_pt dibos_m dilep_eta dilep_m bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m bos_PuppiAK8_pt bosCent vbf1_AK4_qgid"
-    activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta $TMVAVARS"
-    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad nJet30 nJet50"
-    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr"
-    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi"
-    plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt"
-    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $2 == "set2" ]; then
-    TMVAVARS="lep1_eta lep1_pt nJet30f vbf1_AK4_pt vbf2_AK4_pt bos_j1_AK4_pt bos_j2_AK4_pt vbf_m bos_AK4AK4_m vbf_deta vbf_eta bos_AK4AK4_eta zeppHad zeppLep bosCent"
-    activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta $TMVAVARS" # isAntiIso should go here, but it's a bool and AddSpectator expects a Float_t or Int_t
-    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad nJet30 nJet50"
-    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
-    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt"
-    plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt"
-    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $2 == "Resolved" ]; then 
-    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0 vbf1_AK4_axis2 bos_AK4AK4_m bos_AK4AK4_pt bos_AK4AK4_eta bos_AK4AK4_phi"
-    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose LHEWeight lep1_idEffWeight lep1_trigEffWeight bos_AK4AK4_phi bos_AK4AK4_eta $TMVAVARS"
-    plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad"
-    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr"
-    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_AK4AK4_m bos_AK4AK4_phi bos_AK4AK4_pt bos_AK4AK4_eta"
-    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $2 == "set4" ]; then 
-    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0"
-    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
-    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
-    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0"
-    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt"
-    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $2 == "old" ]; then
-    # These are the variables for the old ntuples
-    TMVAVARS=" l_pt1  l_eta1 pfMET_Corr ungroomed_PuppiAK8_jet_pt PuppiAK8_jet_tau2tau1 PuppiAK8_jet_mass_so_corr vbf_maxpt_jj_m vbf_maxpt_j2_eta vbf_maxpt_j1_eta vbf_maxpt_j1_pt  vbf_maxpt_j2_pt mass_lvj_type0_PuppiAK8 BosonCentrality_type0 ZeppenfeldWL_type0 ZeppenfeldWH"
-    activeVARS="gid sid mcWeight run event nTotEvents lumi  L1_Prefweight totalEventWeight type isVBF nBTagJet_loose btag0Wgt genWeight trig_eff_Weight id_eff_Weight pu_Weight l_pt2  ungroomed_PuppiAK8_jet_eta $TMVAVARS"
-    plotVARS="nPV l_pt1 l_eta1 l_iso1 l_phi1 l_e1 l_charge1    pfMET_Corr pfMET_Corr_phi nu_pz_type0   mass_lvj_type0_PuppiAK8 mt_lvj_type0_PuppiAK8  v_pt_type0 v_mt_type0"
-    plotVARS_AK8jet="nGoodPuppiAK8jets ungroomed_PuppiAK8_jet_pt  ungroomed_PuppiAK8_jet_pt ungroomed_PuppiAK8_jet_eta ungroomed_PuppiAK8_jet_phi ungroomed_PuppiAK8_jet_e ungroomed_PuppiAK8_jet_charge PuppiAK8_jet_mass PuppiAK8_jet_mass_pr PuppiAK8_jet_mass_so_corr PuppiAK8_jet_mass_tr PuppiAK8_jet_sj1_pt PuppiAK8_jet_sj1_eta PuppiAK8_jet_sj1_phi PuppiAK8_jet_sj1_m  PuppiAK8_jet_sj1_q PuppiAK8_jet_sj2_pt PuppiAK8_jet_sj2_eta PuppiAK8_jet_sj2_phi PuppiAK8_jet_sj2_m PuppiAK8_jet_sj2_q PuppiAK8jet_qjet PuppiAK8_jet_tau2tau1"
-    plotVARS_VBFJet="njets nBTagJet_loose nBTagJet_medium vbf_maxpt_j1_eta vbf_maxpt_j2_eta vbf_maxpt_j2_pt vbf_maxpt_j1_pt vbf_maxpt_jj_m vbf_maxpt_jj_Deta"
-    plotVARS_Other="deltaR_lPuppiak8jet deltaphi_METPuppiak8jet deltaphi_METvbfJ1 deltaphi_METvbfJ2 deltaphi_METmin deltaphi_VPuppiak8jet PtBalance_type0 BosonCentrality_type0  costheta1_type0 costheta2_type0 costhetastar_type0  phi_type0 phi1_type0  PtBalance_type2 costheta1_type2 costheta2_type2 costhetastar_type2 phi_type2 phi1_type2"
-    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet}  ${plotVARS_Other} | sort | tr -s '\ '  '\n'  | sort | uniq )"
-else
-    echo "Pick from the premade variable lists or make a new list"
-    return 0;
-fi
 
 outfile_DL="vbsDL.hpp"
 ActiveBranchesOutfile="vbsActiveBranches.hpp"

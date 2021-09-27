@@ -533,8 +533,8 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    // Write also probability hists
    if (Use["Fisher"]) { if (probHistFi != 0) probHistFi->Write(); if (rarityHistFi != 0) rarityHistFi->Write(); }
 
-    inpDataTree->Print();
-    inpDataTree->Write();
+   //inpDataTree->Print(); /////////
+   inpDataTree->Write();
  
    std::cout << "--- Adding MVA output for data to " << input->GetName() << std::endl;
    input->Close();
