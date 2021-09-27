@@ -25,7 +25,7 @@
 #include "TString.h"
 #include "TObjString.h"
 #include "TSystem.h"
-#
+
 #include "vbsDL.hpp" 
 //
 //
@@ -47,103 +47,107 @@ const Float_t lum_2018 = 59740.0; //pb-1
 #define  gid_Zjets    14
 #define  gid_top      15
 
-TCut cut_sgl         ("cut_sgl",        "classID==0");
-TCut cut_bkg         ("cut_bkg",        "classID==1");
-TCut cut_data        ("cut_data",       "classID==3");
+TCut cut_sgl              ("cut_sgl",                 "classID==0");
+TCut cut_bkg              ("cut_bkg",                 "classID==1");
+TCut cut_data             ("cut_data",                "classID==3");
  
-TCut cut_ewkWV       ("cut_ewkWV",      "(gid ==  11)");
-TCut cut_DiBosons    ("cut_DiBosons",   "(gid ==  12)");
-TCut cut_Wjets       ("cut_Wjets",      "(gid ==  13)");
-TCut cut_Zjets       ("cut_Zjets",      "(gid ==  14)");
-TCut cut_TT          ("cut_TT",         "(gid ==  15)");
+TCut cut_ewkWV            ("cut_ewkWV",               "(gid ==  11)");
+TCut cut_DiBosons         ("cut_DiBosons",            "(gid ==  12)");
+TCut cut_Wjets            ("cut_Wjets",               "(gid ==  13)");
+TCut cut_Zjets            ("cut_Zjets",               "(gid ==  14)");
+TCut cut_TT               ("cut_TT",                  "(gid ==  15)");
 
 //Cuts
 //from MyControlPlots.C
-TCut cleanNAN       ("cleanNAN",        "(mass_lvj_type0_PuppiAK8>0)"); // Use this NAN cut for the old data
-TCut mVVgt0         ("mVVgt0",          "(mass_lvj_type0_PuppiAK8>0)"); 
-TCut oneLepton      ("oneLepton",       "(lep2_pt<0)"); 
-TCut Lpt1gt50       ("Lpt1gt50",        "(lep1_pt>50)"); 
-TCut goodEleta      ("goodEleta",       "(type==1)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)");
-TCut badEleta       ("badEleta",        "(type==1)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)");
-TCut etaMu2p4       ("etaMu2p4",        "((type==0)&&(abs(l_eta1)<2.4))");
-TCut etaEl2p5       ("etaEl2p5",        "((type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))");
-TCut goodLepton     ("goodLepton",       Lpt1gt50+( etaMu2p4|| etaEl2p5) );
-TCut goodMu         ("goodMu",          "(l_pt1>50&&(type==0)&&(abs(l_eta1)<2.4))");
-TCut goodEl         ("goodEl",          "(l_pt1>50&&(type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))");
+TCut cleanNAN             ("cleanNAN",                "(mass_lvj_type0_PuppiAK8>0)"); // Use this NAN cut for the old data
+TCut mVVgt0               ("mVVgt0",                  "(mass_lvj_type0_PuppiAK8>0)"); 
+TCut oneLepton            ("oneLepton",               "(lep2_pt<0)"); 
+TCut Lpt1gt50             ("Lpt1gt50",                "(lep1_pt>50)"); 
+TCut goodEleta            ("goodEleta",               "(type==1)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)");
+TCut badEleta             ("badEleta",                "(type==1)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)");
+TCut etaMu2p4             ("etaMu2p4",                "((type==0)&&(abs(l_eta1)<2.4))");
+TCut etaEl2p5             ("etaEl2p5",                "((type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))");
+TCut goodLepton           ("goodLepton",              Lpt1gt50+( etaMu2p4|| etaEl2p5) );
+TCut goodMu               ("goodMu",                  "(l_pt1>50&&(type==0)&&(abs(l_eta1)<2.4))");
+TCut goodEl               ("goodEl",                  "(l_pt1>50&&(type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))");
 
 // Mark cuts --------------------------------------------------------------------------------------------------------------------------------
 // WV Signal Region (a.k.a boosted WV channel)
 // regions, sr: signal region, cr: control region
-TCut cleanNAN_tau       ("cleanNAN_tau",           "!(TMath::IsNaN(bos_PuppiAK8_tau2tau1))"); // Use this one for the new data
-TCut cleanNAN_qgid      ("cleanNAN_qgid",          "!(TMath::IsNaN(vbf1_AK4_qgid))&&!(TMath::IsNaN(vbf2_AK4_qgid))");
+TCut cleanNAN_tau         ("cleanNAN_tau",            "!(TMath::IsNaN(bos_PuppiAK8_tau2tau1))"); // Use this one for the new data
+TCut cleanNAN_qgid        ("cleanNAN_qgid",           "!(TMath::IsNaN(vbf1_AK4_qgid))&&!(TMath::IsNaN(vbf2_AK4_qgid))");
 
-TCut category_selection ("category_selection",     "lep2_pt<0 && bos_PuppiAK8_pt>0");// can be different for muon or electron, see eta cut
+TCut category_selection   ("category_selection",      "lep2_pt<0 && bos_PuppiAK8_pt>0");// can be different for muon or electron, see eta cut
+TCut wv_boosted           ("wv_boosted",              "lep2_pt<0 && bos_PuppiAK8_pt>0");
+TCut wv_resolved          ("wv_resolved",             "lep2_pt<0 && bos_AK4AK4_pt>0");
+TCut zv_boosted           ("zv_boosted",              "lep2_pt>0 && bos_PuppiAK8_pt>0");
+TCut zv_resolved          ("zv_resolved",             "lep2_pt>0 && bos_AK4AK4_pt>0");
 //TCut category_selection ("category_selection",   "!isAntiIso && lep2_pt<0 && bos_PuppiAK8_pt>0")
 
-TCut lep_pt             ("lep_pt",                 "lep1_pt>25"); // can be different value, debatable // lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
-TCut lep_eta            ("lep_eta",                "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))"); // muon || electron
-TCut lep_ele            ("lep_ele",                "(lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))");
-TCut lep_muon           ("lep_muon",               "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4)");
+TCut lep_pt               ("lep_pt",                 "lep1_pt>25"); // can be different value, debatable // lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
+TCut lep_eta              ("lep_eta",                "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))"); // muon || electron
+TCut lep_ele              ("lep_ele",                "(lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))");
+TCut lep_muon             ("lep_muon",               "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4)");
 
-TCut fatjet_pt          ("fatjet_pt",              "bos_PuppiAK8_pt>200");
-TCut fatjet_eta         ("fatjet_eta",             "TMath::Abs(bos_PuppiAK8_eta)<2.4");
-TCut fatjet_tau21       ("fatjet_tau21",           "TMath::Abs(bos_PuppiAK8_tau2tau1)<0.55"); // can be different// vbs vbf are used interchangeably TCut fatjet_tau21 ("fatjet_tau21",  "bos_PuppiAK8_tau2tau1<0.55");
+TCut fatjet_pt            ("fatjet_pt",              "bos_PuppiAK8_pt>200");
+TCut fatjet_eta           ("fatjet_eta",             "TMath::Abs(bos_PuppiAK8_eta)<2.4");
+TCut fatjet_tau21         ("fatjet_tau21",           "TMath::Abs(bos_PuppiAK8_tau2tau1)<0.55"); // can be different// vbs vbf are used interchangeably TCut fatjet_tau21 ("fatjet_tau21",  "bos_PuppiAK8_tau2tau1<0.55");
 
-TCut vbs_jets_mjj       ("vbs_jets_mjj",           "vbf_m>500");
-TCut vbs_jets_pt        ("vbs_jets_pt",            "vbf1_AK4_pt>50 && vbf2_AK4_pt>50");
-TCut vbs_delta_eta      ("vbs_delta_eta",          "vbf_deta>2.5"); // this is absolute delta eta
+TCut vbs_jets_mjj         ("vbs_jets_mjj",           "vbf_m>500");
+TCut vbs_jets_pt          ("vbs_jets_pt",            "vbf1_AK4_pt>50 && vbf2_AK4_pt>50");
+TCut vbs_delta_eta        ("vbs_delta_eta",          "vbf_deta>2.5"); // this is absolute delta eta
 
-TCut met_pt             ("met_pt",                 "MET>30");
-TCut btag_veto          ("btag_veto",              "nBtag_loose==0");
+TCut met_pt               ("met_pt",                 "MET>30");
+TCut btag_veto           ("btag_veto",              "nBtag_loose==0");
 
 // The unique conditions for each SR/CR
-TCut wv_sr              ("wv_sr",                  "(bos_PuppiAK8_m_sd0_corr>65 && bos_PuppiAK8_m_sd0_corr<105)");
-TCut wv_cr_vjets        ("wv_cr_vjets",            "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150) && nBtag_loose==0");
-TCut wv_cr_top          ("wv_cr_top",              "nBtag_loose>0");
+TCut wv_sr                ("wv_sr",                  "(bos_PuppiAK8_m_sd0_corr>65 && bos_PuppiAK8_m_sd0_corr<105)");
+TCut wv_cr_vjets          ("wv_cr_vjets",            "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150) && nBtag_loose==0");
+TCut wv_cr_top            ("wv_cr_top",              "nBtag_loose>0");
 
 // Extra cuts
-TCut dummy              ("dummy",                  "");
-TCut ZeppWL             ("ZeppWLlt3",              "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
-TCut ZeppWH             ("ZeppWHlt3",              "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
-TCut noData             ("noData",                 "!(gid==3)");
+TCut dummy                ("dummy",                  "");
+TCut ZeppWL               ("ZeppWLlt3",              "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
+TCut ZeppWH               ("ZeppWHlt3",              "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
+TCut noData               ("noData",                 "!(gid==3)");
 
 // Tests for the strange data spike in 2018 for lep1_phi and lep1_eta
-TCut hi_nPV             ("hi_nPV",                 "(nPV>=35)");
-TCut lep_phi_spike      ("lep_phi_spike",          "(lep1_phi<-0.75) && (lep1_phi>-1.75)");
-TCut lep_eta_spike      ("lep_eta_spike",          "(lep1_eta<(-1.75))");
+TCut hi_nPV               ("hi_nPV",                 "(nPV>=35)");
+TCut lep_phi_spike        ("lep_phi_spike",          "(lep1_phi<-0.75) && (lep1_phi>-1.75)");
+TCut lep_eta_spike        ("lep_eta_spike",          "(lep1_eta<(-1.75))");
 
 // Common cuts between the different SR/CR
-TCut common             ("common",                 "(isAntiIso==0) && (bosCent > 0.0)");
-TCut bos_common         ("bos_common",             fatjet_pt+fatjet_eta+fatjet_tau21);
-TCut full_common        ("full_common",            category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
-TCut common_ele         ("common_ele",             category_selection+lep_pt+lep_ele+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
-TCut common_muon         ("common_muon",           category_selection+lep_pt+lep_muon+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
+TCut common               ("common",                 "(isAntiIso==0) && (bosCent > 0.0)");
+TCut bos_common           ("bos_common",             fatjet_pt+fatjet_eta+fatjet_tau21);
+TCut full_common          ("full_common",            category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
+TCut common_ele           ("common_ele",             category_selection+lep_pt+lep_ele+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
+TCut common_muon          ("common_muon",           category_selection+lep_pt+lep_muon+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
 
 // Full set of cuts for each SR/CR selecting either electrons or muons
-TCut full_vjets_cr      ("full_vjets_cr",          full_common+btag_veto+wv_cr_vjets);
-TCut full_top_cr        ("full_top_cr",            full_common+wv_cr_top+wv_sr);
-TCut full_wv_sr         ("full_wv_sr",             full_common+btag_veto+wv_sr);//+noData);
+TCut full_vjets_cr        ("full_vjets_cr",          full_common+btag_veto+wv_cr_vjets);
+TCut full_top_cr          ("full_top_cr",            full_common+wv_cr_top+wv_sr);
+TCut full_wv_sr           ("full_wv_sr",             full_common+btag_veto+wv_sr);//+noData);
 
 // Full SR/CR cuts specifying one type of lepton
-TCut vjets_cr_ele       ("vjets_cr_ele",           common_ele+btag_veto+wv_cr_vjets);
-TCut vjets_cr_muon      ("vjets_cr_muon",          common_muon+btag_veto+wv_cr_vjets);
-TCut top_cr_ele         ("top_cr_ele",             common_ele+wv_cr_top+wv_sr);
-TCut top_cr_muon        ("top_cr_muon",            common_muon+wv_cr_top+wv_sr);
-TCut wv_sr_ele          ("wv_sr_ele",              common_ele+btag_veto+wv_sr);
-TCut wv_sr_muon         ("wv_sr_muon",             common_muon+btag_veto+wv_sr);
+TCut vjets_cr_ele         ("vjets_cr_ele",           common_ele+btag_veto+wv_cr_vjets);
+TCut vjets_cr_muon        ("vjets_cr_muon",          common_muon+btag_veto+wv_cr_vjets);
+TCut top_cr_ele           ("top_cr_ele",             common_ele+wv_cr_top+wv_sr);
+TCut top_cr_muon          ("top_cr_muon",            common_muon+wv_cr_top+wv_sr);
+TCut wv_sr_ele            ("wv_sr_ele",              common_ele+btag_veto+wv_sr);
+TCut wv_sr_muon           ("wv_sr_muon",             common_muon+btag_veto+wv_sr);
 
 
-TCut wtot_2016          ("wtot_2016",              "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
-TCut wtot_2017          ("wtot_2017",              "41530*genWeight*mcWeight*L1PFWeight*puWeight"); // 41530
-TCut wtot_2018          ("wtot_2018",              "59740*genWeight*mcWeight*L1PFWeight*puWeight"); // 59740
-TCut wtotL1             ("wtotL1",                 "L1PFWeight*genWeight*puWeight");
-TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
+TCut wtot_2016            ("wtot_2016",              "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
+TCut wtot_2017            ("wtot_2017",              "41530*genWeight*mcWeight*L1PFWeight*puWeight"); // 41530
+TCut wtot_2018            ("wtot_2018",              "59740*genWeight*mcWeight*L1PFWeight*puWeight"); // 59740
+TCut wtotL1               ("wtotL1",                 "L1PFWeight*genWeight*puWeight");
+TCut allCuts              ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
 
 
 
-TCut leptest_vjets      ("leptest_vjets",          full_vjets_cr+lep_eta_spike+lep_phi_spike);
-TCut leptest_top        ("leptest_top",            full_top_cr+lep_eta_spike+lep_phi_spike);
-TCut leptest_wv         ("leptest_wv",             full_wv_sr+lep_eta_spike+lep_phi_spike);
+TCut leptest_vjets        ("leptest_vjets",          full_vjets_cr+lep_eta_spike+lep_phi_spike);
+TCut leptest_top          ("leptest_top",            full_top_cr+lep_eta_spike+lep_phi_spike);
+TCut leptest_wv           ("leptest_wv",             full_wv_sr+lep_eta_spike+lep_phi_spike);
 // Mark Cuts ---------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -207,7 +211,6 @@ TCut ZeppWHlt3              ("ZeppWHlt3",          "((abs(ZeppenfeldWH)/abs(vbf_
 //TCut cuts0_W                ("cuts0_W",             "(l_pt2<0 && l_pt1>0) && (ungroomed_PuppiAK8_jet_pt>200) && (vbf_maxpt_jj_m>500)" );
 
 class Sample{
-
 private:  
   TString   _sname;
   TString   _gname;
@@ -232,11 +235,11 @@ private:
     _sname=sname;
     _gname=gname;
     if(gid == gid_data ){
-       _reqlist="reqlists/rqs_"+_gname+"--"+_sname+"_data.lst";
+      _reqlist="reqlists/rqs_"+_gname+"--"+_sname+"_data.lst";
     }else if (gid >9) {
-       _reqlist="reqlists/rqs_"+_gname+"--"+_sname+"_bkg.lst";
+      _reqlist="reqlists/rqs_"+_gname+"--"+_sname+"_bkg.lst";
     }else{
-       _reqlist="reqlists/rqs_"+_gname+"--"+_sname+"_sgl.lst";
+      _reqlist="reqlists/rqs_"+_gname+"--"+_sname+"_sgl.lst";
     }
     _loadFlag  = loadFlag;
     _xsec      = xsec;
@@ -262,8 +265,8 @@ private:
   void      setInpTree(TTree* inpTree){
      _inpTree = inpTree;
      if (_inpTree){
-       _nevents = _inpTree->GetEntries();
-       _sweight = _xsec/_ngen;
+      _nevents = _inpTree->GetEntries();
+      _sweight = _xsec/_ngen;
      }
   };
   TTree*    getInpTree(){ return _inpTree; };
@@ -279,8 +282,6 @@ private:
       _ngen << "/" <<
       _sweight << "/" <<
     endl;
-
-
   };
 };
 
@@ -289,19 +290,22 @@ private:
 //rqs_data.txt  rqs_gg2zz_bkg.lst  rqs_qcd_bkg.lst  rqs_signal.lst  rqs_tt_bkg.lst  rqs_wx_bkg.lst  rqs_ZZother_bkg.lst
 //
 typedef struct {
- Float_t pt;           
- Float_t eta;
- Float_t phi;
- Float_t charge;
- Float_t pfx;      
- Float_t sip;        
- Int_t   pdgid;
-}VbsLepton;
+  Float_t pt;           
+  Float_t eta;
+  Float_t phi;
+  Float_t charge;
+  Float_t pfx;      
+  Float_t sip;        
+  Int_t   pdgid;
+} VbsLepton;
 
 
 //Local functions
 //void fillBranch1( TBranch* bGroupID, TBranch* bjet3_highpt_pt,  TBranch* bjet3_highpt_eta, TBranch* bjet3_highpt_phi,   TTree* groupTree, Int_t groupID,  const char* groupName);
+//======================================================================================================================
+//
 void fillBranch(TTree* groupTree,VbsReducedEvent& vbsEvent, Int_t groupID,  const char* groupName);
+
 void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample);
 
 void arrange_vbsReducedTree(TTree* vbsTree, VbsReducedEvent& vbsEvent); //map of  VBS4LeptonsAnalysisReduced branches to the local structure
@@ -309,42 +313,47 @@ void arrange_vbsReducedTree(TTree* vbsTree, VbsReducedEvent& vbsEvent); //map of
 TTree* chain2tree(TString inpChainName="VBS4LeptonsAnalysisReduced",
                   TString reqlist="reqlists/rqs_data.txt", TString combinedTreeName="", TString combinedTreeTitle="");
 
-//
 void setVbsDLorReaderVarsAndSpectators(TMVA::DataLoader* dataloader, TMVA::Reader* datareader, VbsReducedEvent& vbsEvent);
+
 TChain* getChain(TString treeName, TString filelist); //creates chain from list of files
+
 void getStat(TTree* tree, const char* var, TCut& cut, Stat_t stats[4]);  //number of normalized events
+
 void convertTrees(const char* treeName, const char* filelist);
 //void fixVbsTree( TTree* vbsTree, const char* fname);
+
+//======================================================================================================================
 //
-//========================================
 TObjArray* GetListOfBranches(TTree* tree){
   TObjArray* brlist = (TObjArray*) tree->GetListOfBranches()->Clone();
-   brlist->SetOwner(kFALSE);
-   brlist->Sort();
+    brlist->SetOwner(kFALSE);
+    brlist->Sort();
 
-   for( Int_t nb = 0; nb < brlist->GetEntries(); nb++){
-     TBranch* br = (TBranch*)  brlist->At(nb);
+  for( Int_t nb = 0; nb < brlist->GetEntries(); nb++){
+    TBranch* br = (TBranch*)  brlist->At(nb);
 
-     //We assume only one leaf of the same name in a branch; else use 
-     // TObjArray* br_leaves = br->GetListOfLeaves();
-     TLeaf* leaf = br->GetLeaf(br->GetName());
-     //  cout << leaf->GetName() << "/" << leaf->GetTypeName() << endl;
-   }
-   return brlist; 
+    //We assume only one leaf of the same name in a branch; else use 
+    // TObjArray* br_leaves = br->GetListOfLeaves();
+    TLeaf* leaf = br->GetLeaf(br->GetName());
+    //  cout << leaf->GetName() << "/" << leaf->GetTypeName() << endl;
+  }
+    return brlist; 
 }
+
+//======================================================================================================================
 //
-//========================================
 void SelectVbsVars(vector<string>& vbsVars, TObjArray* brlist){
-   string  var_sig = "f_";
-   for(int i = 0; i < brlist->GetEntries(); ++i) {
-     string brname = brlist->At(i)->GetName(); 
-     if( brname.find(var_sig) != std::string::npos ){
-       vbsVars.push_back(brname);
-     }
-   } 
+  string  var_sig = "f_";
+  for(int i = 0; i < brlist->GetEntries(); ++i) {
+    string brname = brlist->At(i)->GetName(); 
+    if( brname.find(var_sig) != std::string::npos ){
+      vbsVars.push_back(brname);
+    }
+  } 
 }
+
+//======================================================================================================================
 //
-//=======================================
 TTree* chain2tree(TString inpChainName, TString reqlist, TString combinedTreeName, TString combinedTreeTitle){
 //accumulates signal samples in a single tree
 // Nevents = 0.942616 +/- 4.62438e-05  ZH_HToZZ
@@ -359,21 +368,21 @@ TTree* chain2tree(TString inpChainName, TString reqlist, TString combinedTreeNam
 //          reqlist      << "/" <<
 //          combinedTreeName      << "/" <<
 //        combinedTreeTitle <<
-//   endl;
- 
+//   endl; 
   TChain* inpChain = getChain(inpChainName, reqlist);
   setChainBranches(inpChain);
   TTree* combinedTree(0);
   if(inpChain->GetEntries()){
-     combinedTree = (TTree*)  inpChain->CloneTree();
+    combinedTree = (TTree*)  inpChain->CloneTree();
     if(*combinedTreeTitle != '\0') combinedTree->SetTitle(combinedTreeTitle);
     if(*combinedTreeName  != '\0') combinedTree->SetName(combinedTreeName);
     delete inpChain;
   }
   cout << "Exit chain2tree " << combinedTree << endl;
-   return combinedTree;
+  return combinedTree;
 }
-//
+
+//======================================================================================================================
 //place holder to use a cut with clone 
 TTree* chain2tree(TString inpChainName,TCut cut, TString reqlist, TString combinedTreeName, TString combinedTreeTitle){
 //
@@ -381,27 +390,28 @@ TTree* chain2tree(TString inpChainName,TCut cut, TString reqlist, TString combin
   setChainBranches(inpChain);
   TTree* combinedTree(0);
   if(inpChain->GetEntries()){
-     combinedTree = (TTree*)  inpChain->CloneTree();
+    combinedTree = (TTree*)  inpChain->CloneTree();
     if(*combinedTreeTitle != '\0') combinedTree->SetTitle(combinedTreeTitle);
     if(*combinedTreeName  != '\0') combinedTree->SetName(combinedTreeName);
     delete inpChain;
   }
   cout << "Exit chain2tree " << combinedTree << endl;
-   return combinedTree;
+  return combinedTree;
 }
-//===========================================================
+
+//======================================================================================================================
+//
 TTree* cutTree(TTree* bigTree,TCut& cut){
- 
   TEventList* elist = (TEventList*)gROOT->FindObject("elist"); 
   if(elist){
     delete elist;
   }
   //
- bigTree->Draw(">>elist",cut);
- elist = (TEventList*) gDirectory->Get("elist");
- bigTree->SetEventList(elist);
+  bigTree->Draw(">>elist",cut);
+  elist = (TEventList*) gDirectory->Get("elist");
+  bigTree->SetEventList(elist);
  //
- TTree* smallTree= bigTree->CopyTree("");
+  TTree* smallTree= bigTree->CopyTree("");
 //  cout << "treeCut:: nevtOrig/nevtCut = " << 
 //           bigTree->GetEntries() << "/" << 
 //           smallTree->GetEntries() << 
@@ -410,67 +420,74 @@ TTree* cutTree(TTree* bigTree,TCut& cut){
 
 //  endl;
 // bigTree->SetEventList(0);
- return smallTree;
+  return smallTree;
 }
-//=======================================
-TTree* getTree(TString treeName, TString fname)
-{
+
+//======================================================================================================================
+//
+TTree* getTree(TString treeName, TString fname) {
 //get TTree treeName from file  fname
-   TDirectory* dir = gDirectory;       // current dir                                                                        
-   TFile* f = gROOT->GetFile(fname);
-   if (!f) f = new TFile(fname);
-   else    f->cd();
-   if (!f) {
-      cout<< "Error:: input file not found: " << fname <<endl;
-      return 0;
-   }
-   TTree* ftree  = (TTree*) gDirectory->Get(treeName);
-   cout<< "Total entries " <<  setw(32)  << fname << " is " << ftree->GetEntries() <<endl;                                       
-   dir->cd();     // back to starting dir                                                                                    
-   return ftree;
+  TDirectory* dir = gDirectory;       // current dir                                                                        
+  TFile* f = gROOT->GetFile(fname);
+  if (!f) f = new TFile(fname);
+  else    f->cd();
+  if (!f) {
+    cout<< "Error:: input file not found: " << fname <<endl;
+    return 0;
+  }
+  TTree* ftree  = (TTree*) gDirectory->Get(treeName);
+  cout<< "Total entries " <<  setw(32)  << fname << " is " << ftree->GetEntries() <<endl;                                       
+  dir->cd();     // back to starting dir                                                                                    
+  return ftree;
 }
-//=======================================
+
+//======================================================================================================================
+//
 void convertTrees(const char* treeName, const char* filelist) {
 //to modify a tree and withe it into a new file  
 //
-   ifstream f(filelist);
-   if (!f.is_open()) {
-      cout<< "convertTrees: File not found: " << filelist <<endl;
-   }else{
-     char fname[255]="0";
-     Int_t len = sizeof(fname);
-     while (f.getline(fname,len)) {
-        if (strlen(fname) == 0 || fname[0] == '#') continue;
-        TTree* current_tree = getTree(treeName,fname);
+  ifstream f(filelist);
+  if (!f.is_open()) {
+    cout<< "convertTrees: File not found: " << filelist <<endl;
+  }else{
+    char fname[255]="0";
+    Int_t len = sizeof(fname);
+    while (f.getline(fname,len)) {
+      if (strlen(fname) == 0 || fname[0] == '#') continue;
+      TTree* current_tree = getTree(treeName,fname);
 	//  fixVbsTree(current_tree,fname);
-        cout<< "File/tree "  <<  fname << "/" <<  treeName << " , total events: " << current_tree->GetEntries() <<endl;                            
-     }
-   }
+      cout<< "File/tree "  <<  fname << "/" <<  treeName << " , total events: " << current_tree->GetEntries() <<endl;                            
+    }
+  }
 }
-//=======================================
+
+//======================================================================================================================
+//
 TChain* getChain(TString treeName, TString filelist) {
 //creates chain for a tree in filelist 
-   TChain* chain = new TChain(treeName);
-   ifstream f(filelist);
-   cout << "Processing filelist " << filelist <<endl;
-   if (!f.is_open()) {
-      cout<< "getChain: File not found: " << filelist <<endl;
-      exit(0);
-   }
-   char fname[255]="0";
-   Int_t len = sizeof(fname);
-   while (f.getline(fname,len)) {
-      if (strlen(fname) == 0 || fname[0] == '#') continue;
+  TChain* chain = new TChain(treeName);
+  ifstream f(filelist);
+  cout << "Processing filelist " << filelist <<endl;
+  if (!f.is_open()) {
+    cout<< "getChain: File not found: " << filelist <<endl;
+    exit(0);
+  }
+  char fname[255]="0";
+  Int_t len = sizeof(fname);
+  while (f.getline(fname,len)) {
+    if (strlen(fname) == 0 || fname[0] == '#') continue;
       Int_t n = chain->Add(fname, -1);  // second parameter to ensure file exists                                             
       if (n == 0) {
-         cout<< "getChain:ERROR:: while processing filelist " << filelist << ". File not found: " << fname <<endl;
-         return 0;
+        cout<< "getChain:ERROR:: while processing filelist " << filelist << ". File not found: " << fname <<endl;
+        return 0;
       }
-   }
-   cout<< "getChain: Tree "  << treeName << " , total events: " << chain->GetEntries() <<endl;                           
-   return chain;
+    }
+  cout<< "getChain: Tree "  << treeName << " , total events: " << chain->GetEntries() <<endl;                           
+  return chain;
 }
-//===============================================================
+
+//======================================================================================================================
+//
 void getStat(TTree* tree, const char* var, TCut& cut, Stat_t stats[4]){
   TH1::StatOverflows(kTRUE);
   //Stat_t stats[4]={0};
@@ -482,64 +499,67 @@ void getStat(TTree* tree, const char* var, TCut& cut, Stat_t stats[4]){
   cout << "Nevents = " << stats[0] << " +/- " <<  stats[1] << endl;
   // 
 }
-//===============================================================
+
+//======================================================================================================================
+//
 Int_t getVbsReqStat(const char* filelist) {
 //creates chain for a tree in filelist 
-   ifstream f(filelist);
-   if (!f.is_open()) {
-     cout<< "getVbsReqStat:Input filelist " << filelist  << " not found: " <<endl;
-      return 0;
-   }
-   char filename[255]="0";
-   Int_t len = sizeof(filename);
-   TFile* inpfile;
-   Stat_t stats[4];
-   Int_t nInitReqEvt= 0;
-   Float_t nInitReqEvt_w = 0.0;
-   Float_t nNtpReqEvt = 0.0;
-   Float_t nNtpReqEvt_w2 = 0.0;
-   while (f.getline(filename,len)) {
-      if (strlen(filename) == 0 || filename[0] == '#') continue;
-       inpfile = TFile::Open(filename);
-      if (inpfile){ 
-       TH1F* cutflow_w = (TH1F*) gROOT->FindObject("nEvent_4l_w");
-       TH1F* cutflow   = (TH1F*) gROOT->FindObject("nEvent_4l");
-       TTree* mtree  = (TTree*) gROOT->FindObject("VBS4LeptonsAnalysisReduced");
-	 nInitReqEvt_w+=cutflow_w->GetBinContent(1);
-	 nInitReqEvt  +=cutflow->GetBinContent(1);
-	 getStat(mtree,"f_mass4l",wtot_2016,stats);
-         nNtpReqEvt    += stats[0];
-	 nNtpReqEvt_w2 += stats[1]*stats[1];
-      }else{
-        cout<< "getVbsReqStat:ERROR:: while processing filelist " << filelist << ". File not found: " << filename <<endl;
-      }
-   }
-   cout<< "getVbsReqStat: reqlist "  <<  filelist << " , nevt_gen/nevt_gen_w: " << nInitReqEvt << "/" << nInitReqEvt_w <<endl;                            
-   cout<< "getVbsReqStat: reqlist "  <<  filelist << " , nevt_ntp = : " <<  nNtpReqEvt << "+-" << sqrt(nNtpReqEvt_w2) <<endl;                            
-   return nInitReqEvt;
+  ifstream f(filelist);
+  if (!f.is_open()) {
+    cout<< "getVbsReqStat:Input filelist " << filelist  << " not found: " <<endl;
+    return 0;
+  }
+  char filename[255]="0";
+  Int_t len = sizeof(filename);
+  TFile* inpfile;
+  Stat_t stats[4];
+  Int_t nInitReqEvt= 0;
+  Float_t nInitReqEvt_w = 0.0;
+  Float_t nNtpReqEvt = 0.0;
+  Float_t nNtpReqEvt_w2 = 0.0;
+  while (f.getline(filename,len)) {
+    if (strlen(filename) == 0 || filename[0] == '#') continue;
+      
+    inpfile = TFile::Open(filename);
+    if (inpfile){ 
+      TH1F* cutflow_w = (TH1F*) gROOT->FindObject("nEvent_4l_w");
+      TH1F* cutflow   = (TH1F*) gROOT->FindObject("nEvent_4l");
+      TTree* mtree  = (TTree*) gROOT->FindObject("VBS4LeptonsAnalysisReduced");
+	    nInitReqEvt_w+=cutflow_w->GetBinContent(1);
+	    nInitReqEvt  +=cutflow->GetBinContent(1);
+	    getStat(mtree,"f_mass4l",wtot_2016,stats);
+      nNtpReqEvt    += stats[0];
+	    nNtpReqEvt_w2 += stats[1]*stats[1];
+    }else{
+      cout<< "getVbsReqStat:ERROR:: while processing filelist " << filelist << ". File not found: " << filename <<endl;
+    }
+  }
+  cout<< "getVbsReqStat: reqlist "  <<  filelist << " , nevt_gen/nevt_gen_w: " << nInitReqEvt << "/" << nInitReqEvt_w <<endl;                            
+  cout<< "getVbsReqStat: reqlist "  <<  filelist << " , nevt_ntp = : " <<  nNtpReqEvt << "+-" << sqrt(nNtpReqEvt_w2) <<endl;                            
+  return nInitReqEvt;
 }
-//================================================  
+
+//======================================================================================================================
+// 
 void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){         
-//
-          addBranches_vbsReducedTree(groupTree,vbsEvent);
-          arrange_vbsReducedTree(groupTree,vbsEvent);
+  addBranches_vbsReducedTree(groupTree,vbsEvent);
+  arrange_vbsReducedTree(groupTree,vbsEvent);
 
-          TBranch* bGroupID  = groupTree->GetBranch( "gid");
-          TBranch* bSampleID = groupTree->GetBranch( "sid");
-          TBranch* bMCweight = groupTree->GetBranch( "mcWeight");
+  TBranch* bGroupID  = groupTree->GetBranch( "gid");
+  TBranch* bSampleID = groupTree->GetBranch( "sid");
+  TBranch* bMCweight = groupTree->GetBranch( "mcWeight");
 
-          vbsEvent.gid = sample->getGid();
-          vbsEvent.sid = sample->getSid();
-          vbsEvent.mcWeight = sample->getWeight();
+  vbsEvent.gid = sample->getGid();
+  vbsEvent.sid = sample->getSid();
+  vbsEvent.mcWeight = sample->getWeight();
 
-cout << "------------------------------ mcWeight/xsec/ngen/Calc = " << vbsEvent.mcWeight << " / " << sample->getXsec() << " / " << sample->getNgen() <<" ---------------------------" << endl;
-//sleep(3);
-          for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
-	      groupTree->GetEntry(ievt);
-              bGroupID->Fill(); 
-              bSampleID->Fill(); 
-              bMCweight->Fill(); 
- 	  }
+  cout << "------------------------------ mcWeight/xsec/ngen/Calc = " << vbsEvent.mcWeight << " / " << sample->getXsec() << " / " << sample->getNgen() <<" ---------------------------" << endl;
+  for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
+	  groupTree->GetEntry(ievt);
+    bGroupID->Fill(); 
+    bSampleID->Fill(); 
+    bMCweight->Fill(); 
+ 	}
 }
 //================================================  
 

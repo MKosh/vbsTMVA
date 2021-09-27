@@ -52,121 +52,122 @@
 #include "./limit_calc/Significance.C"
 
 using namespace std;
+
+//======================================================================================================================
 //
-//=====================================================================================================
 namespace xsect{
-// signal channels cross-sections in pb
+  // signal channels cross-sections in pb
 
-Float_t xCH_WZToLL_M200	 =   0.195011;
-Float_t xCH_WZToLL_M300	 =   0.107954;
-Float_t xCH_WZToLL_M400	 =   0.065514;
-Float_t xCH_WZToLL_M500  =   0.04231;
-Float_t xCH_WZToLL_M600	 =   0.028534;
-Float_t xCH_WZToLL_M700	 =   0.019903;
-Float_t xCH_WZToLL_M800	 =   0.014244;
-Float_t xCH_WZToLL_M900	 =   0.010395;
-Float_t xCH_WZToLL_M1000 =   0.007685;
-Float_t xCH_WZToLL_M1500 =   0.00204;
+  Float_t xCH_WZToLL_M200	 =   0.195011;
+  Float_t xCH_WZToLL_M300	 =   0.107954;
+  Float_t xCH_WZToLL_M400	 =   0.065514;
+  Float_t xCH_WZToLL_M500  =   0.04231;
+  Float_t xCH_WZToLL_M600	 =   0.028534;
+  Float_t xCH_WZToLL_M700	 =   0.019903;
+  Float_t xCH_WZToLL_M800	 =   0.014244;
+  Float_t xCH_WZToLL_M900	 =   0.010395;
+  Float_t xCH_WZToLL_M1000 =   0.007685;
+  Float_t xCH_WZToLL_M1500 =   0.00204;
 
-Float_t xCH_WZToLNu_M200  =  0.652561;
-Float_t xCH_WZToLNu_M300  =  0.361243;
-Float_t xCH_WZToLNu_M400  =  0.219229;
-Float_t xCH_WZToLNu_M500  =  0.141582;
-Float_t xCH_WZToLNu_M600  =  0.095481;
-Float_t xCH_WZToLNu_M700  =  0.0666;
-Float_t xCH_WZToLNu_M800  =  0.047665;
-Float_t xCH_WZToLNu_M900  =  0.034785;
-Float_t xCH_WZToLNu_M1000 =  0.025718;
-Float_t xCH_WZToLNu_M1500 =  0.006825;
-Float_t xCH_WZToLNu_M2000 =  0.002126;
+  Float_t xCH_WZToLNu_M200  =  0.652561;
+  Float_t xCH_WZToLNu_M300  =  0.361243;
+  Float_t xCH_WZToLNu_M400  =  0.219229;
+  Float_t xCH_WZToLNu_M500  =  0.141582;
+  Float_t xCH_WZToLNu_M600  =  0.095481;
+  Float_t xCH_WZToLNu_M700  =  0.0666;
+  Float_t xCH_WZToLNu_M800  =  0.047665;
+  Float_t xCH_WZToLNu_M900  =  0.034785;
+  Float_t xCH_WZToLNu_M1000 =  0.025718;
+  Float_t xCH_WZToLNu_M1500 =  0.006825;
+  Float_t xCH_WZToLNu_M2000 =  0.002126;
 
-Float_t xDCH_WW_M200  =	1.554483;
-Float_t xDCH_WW_M300  =	0.871547;
-Float_t xDCH_WW_M400  =	0.536185;
-Float_t xDCH_WW_M500  =	0.35078;	
-Float_t xDCH_WW_M600  =	0.239827;
-Float_t xDCH_WW_M700  =	0.169306;
-Float_t xDCH_WW_M800  =	0.122536;
-Float_t xDCH_WW_M900  =	0.090467;
-Float_t xDCH_WW_M1000 = 0.067863;
-Float_t xDCH_WW_M1500 =	0.018868;
-Float_t xDCH_WW_M2000 =	0.006135;
+  Float_t xDCH_WW_M200  =	1.554483;
+  Float_t xDCH_WW_M300  =	0.871547;
+  Float_t xDCH_WW_M400  =	0.536185;
+  Float_t xDCH_WW_M500  =	0.35078;	
+  Float_t xDCH_WW_M600  =	0.239827;
+  Float_t xDCH_WW_M700  =	0.169306;
+  Float_t xDCH_WW_M800  =	0.122536;
+  Float_t xDCH_WW_M900  =	0.090467;
+  Float_t xDCH_WW_M1000 = 0.067863;
+  Float_t xDCH_WW_M1500 =	0.018868;
+  Float_t xDCH_WW_M2000 =	0.006135;
 
- //VW_EVK x-sections
-Float_t xWminusTo2JZTo2LJJ_EWK_LO_SM       = 0.02982;
-Float_t xWminusToLNuWminusTo2JJJ_EWK_LO_SM = 0.03259;
-Float_t xWminusToLNuZTo2JJJ_EWK_LO_SM      = 0.1;
-Float_t xWplusTo2JWminusToLNuJJ_EWK_LO_SM  = 0.9107;
-Float_t xWplusTo2JZTo2LJJ_EWK_LO_SM 	   = 0.05401;
-Float_t xWplusToLNuWminusTo2JJJ_EWK_LO_SM  = 0.9114;
-Float_t xWplusToLNuWplusTo2JJJ_EWK_LO_SM   = 0.08793;
-Float_t xWplusToLNuZTo2JJJ_EWK_LO_SM       = 0.1825;
-Float_t xZTo2LZTo2JJJ_EWK_LO_SM 	   = 0.01589;
+   //VW_EVK x-sections
+  Float_t xWminusTo2JZTo2LJJ_EWK_LO_SM       = 0.02982;
+  Float_t xWminusToLNuWminusTo2JJJ_EWK_LO_SM = 0.03259;
+  Float_t xWminusToLNuZTo2JJJ_EWK_LO_SM      = 0.1;
+  Float_t xWplusTo2JWminusToLNuJJ_EWK_LO_SM  = 0.9107;
+  Float_t xWplusTo2JZTo2LJJ_EWK_LO_SM 	   = 0.05401;
+  Float_t xWplusToLNuWminusTo2JJJ_EWK_LO_SM  = 0.9114;
+  Float_t xWplusToLNuWplusTo2JJJ_EWK_LO_SM   = 0.08793;
+  Float_t xWplusToLNuZTo2JJJ_EWK_LO_SM       = 0.1825;
+  Float_t xZTo2LZTo2JJJ_EWK_LO_SM 	   = 0.01589;
 
-  //Float_t  xSignal    =   xCH_WZToLL_M500;
-  //Float_t  xSignal    =   xCH_WZToLL_M500+xCH_WZToLNu_M500+xDCH_WW_M500 ;
-Float_t  xSignal    = xWminusTo2JZTo2LJJ_EWK_LO_SM       + \
-                      xWminusToLNuWminusTo2JJJ_EWK_LO_SM + \
-                      xWminusToLNuZTo2JJJ_EWK_LO_SM      + \
-                      xWplusTo2JWminusToLNuJJ_EWK_LO_SM  + \
-                      xWplusTo2JZTo2LJJ_EWK_LO_SM   + \
-                      xWplusToLNuWminusTo2JJJ_EWK_LO_SM + \
-                      xWplusToLNuWplusTo2JJJ_EWK_LO_SM + \
-                      xWplusToLNuZTo2JJJ_EWK_LO_SM + \
-                      xZTo2LZTo2JJJ_EWK_LO_SM ;
-// 2.32484
+    //Float_t  xSignal    =   xCH_WZToLL_M500;
+    //Float_t  xSignal    =   xCH_WZToLL_M500+xCH_WZToLNu_M500+xDCH_WW_M500 ;
+  Float_t  xSignal    = xWminusTo2JZTo2LJJ_EWK_LO_SM       + \
+                        xWminusToLNuWminusTo2JJJ_EWK_LO_SM + \
+                        xWminusToLNuZTo2JJJ_EWK_LO_SM      + \
+                        xWplusTo2JWminusToLNuJJ_EWK_LO_SM  + \
+                        xWplusTo2JZTo2LJJ_EWK_LO_SM   + \
+                        xWplusToLNuWminusTo2JJJ_EWK_LO_SM + \
+                        xWplusToLNuWplusTo2JJJ_EWK_LO_SM + \
+                        xWplusToLNuZTo2JJJ_EWK_LO_SM + \
+                        xZTo2LZTo2JJJ_EWK_LO_SM ;
+  // 2.32484
 }
 
 Float_t g_lum;
 
+//======================================================================================================================
+//
 class TmvaSample{
+  private:  
+    //Int_t   _sid;
+    TTree*  _testTree;
+    TTree*  _trainTree;
+    Float_t _tmvaScale;
 
-private:  
-  //Int_t   _sid;
-  TTree*  _testTree;
-  TTree*  _trainTree;
-  Float_t _tmvaScale;
-
-  Float_t   _xsec;
-  Float_t   _ngen; // _xsect (fb) * lum (fb-1)  
-  Stat_t  _stats[4];
-  TCut    _samplecut;
- public:
-  Int_t   _sid;
-    //TmvaSample(const char* smplname, TTree* testTree, TTree* trainTree, Int_t sID, TCut samplecut);
+    Float_t   _xsec;
+    Float_t   _ngen; // _xsect (fb) * lum (fb-1)  
+    Stat_t  _stats[4];
+    TCut    _samplecut;
+  public:
+    Int_t   _sid;
+      //TmvaSample(const char* smplname, TTree* testTree, TTree* trainTree, Int_t sID, TCut samplecut);
     TmvaSample(Int_t sid, Int_t scolor, const char* smplname, TCut samplecut,Float_t ngen_normfb, TTree* testTree, TTree* trainTree);
-  TH1F*    _hf1;
-  TH2F*    _hf2;
-  TString  _name;
-  Int_t    _scolor;
+    TH1F*    _hf1;
+    TH2F*    _hf2;
+    TString  _name;
+    Int_t    _scolor;
 
-  Float_t  npass; // npass/ngen ( _xsect (fb) * lum (fb-1) )  
-  Float_t  npass_err;
-  Float_t  accpt;
+    Float_t  npass; // npass/ngen ( _xsect (fb) * lum (fb-1) )  
+    Float_t  npass_err;
+    Float_t  accpt;
 
-  Float_t fillSampleHist(const char* var, TCut cuts, Float_t scale=1.0);
-  //  Float_t calcSgf(const char* sgfName);
-  TCut   getScut(){return _samplecut;}
-  TTree* getTestTree(){ return _testTree;}
-  TTree* getTrainTree(){ return _trainTree;}
+    Float_t fillSampleHist(const char* var, TCut cuts, Float_t scale=1.0);
+    //  Float_t calcSgf(const char* sgfName);
+    TCut   getScut(){return _samplecut;}
+    TTree* getTestTree(){ return _testTree;}
+    TTree* getTrainTree(){ return _trainTree;}
 };
 
-//=====================================================================================================
+//======================================================================================================================
+//
 TmvaSample::TmvaSample(Int_t sid,Int_t scolor, const char* smplname, TCut samplecut,Float_t ngen_normfb, TTree* testTree, TTree* trainTree){
-  //
-    _sid       = sid;
-    _scolor    = scolor;
-    _samplecut = samplecut; 
-    _name      = smplname;
-    _ngen      = ngen_normfb;
-    _testTree  = testTree;
-    _trainTree = trainTree;
-   //
+  _sid       = sid;
+  _scolor    = scolor;
+  _samplecut = samplecut; 
+  _name      = smplname;
+  _ngen      = ngen_normfb;
+  _testTree  = testTree;
+  _trainTree = trainTree;
 }
-//=====================================================================================================
-//=====================================================================================================
-Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
 
+//======================================================================================================================
+//
+Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   if(_sid == 3) {
     _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
   } else {
@@ -188,196 +189,190 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
     scale *= 1.303;
   }
 
-    _hf1->GetStats(_stats);
-    npass    = _stats[0]*(scale);
-    npass_err= scale*TMath::Sqrt(_stats[1]);
-    accpt   = 100.*  npass/_ngen;
-  /*
-    cout << "------------------------------------------------------------" << endl;
-    cout << " scale = " << scale << endl;
-    cout << " npass = stats[0]*scale = " << npass << endl;
-    cout << " ngen = ngen_normfb = " << _ngen << endl;
-    cout << " accpt = 100*npass/ngen = " << accpt << endl;
-    cout << "------------------------------------------------------------" << endl;
-  */
-    // cout << "stats/scale/npass/npass_err/ngen/accpt = " << _stats[0] << " / " << scale << " / " << npass << " / " << npass_err << " / " << _ngen << " / " << accpt << endl;
+  _hf1->GetStats(_stats);
+  npass    = _stats[0]*(scale);
+  npass_err= scale*TMath::Sqrt(_stats[1]);
+  accpt   = 100.*  npass/_ngen;
+  // cout << "stats/scale/npass/npass_err/ngen/accpt = " << _stats[0] << " / " << scale << " / " << npass << " / " << npass_err << " / " << _ngen << " / " << accpt << endl;
 
-    //ROOT V6 does not change statistics when scaling histogramms
-    //(but root 5.34 does)
-    //Thus we first get stats and then scale
-    _hf1->GetStats(_stats);
-    _hf1->Scale(scale);
-    return npass;
+  //ROOT V6 does not change statistics when scaling histogramms
+  //(but root 5.34 does)
+  //Thus we first get stats and then scale
+  _hf1->GetStats(_stats);
+  _hf1->Scale(scale);
+  return npass;
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 class CutList {
-   TObjArray _cuts;
+  TObjArray _cuts;
 public:
-   CutList() {
-      _cuts.SetOwner();
-      _cuts.Clear();
-   }
-  ~CutList() {_cuts.Clear();}
-   void Clear() {_cuts.Clear();}
-   CutList& operator << (const TCut& cut) {
-      TCut* pcut = new TCut(cut);
-      _cuts.Add(pcut);
-      return *this;
-   }
-   Int_t N()         const {return _cuts.GetLast()+1;}
-   Int_t GetLast()   const {return _cuts.GetLast();}
-   TCut operator [] (Int_t n) const {
-      TCut cut;
-      if (n > GetLast()) {
-         cout<< "*** ERROR CutList::operator[]: No. " << n << " out of bound " << GetLast() <<endl;
-         return cut;
-      }
-      cut = *((const TCut*) _cuts.At(n));
-      return cut;
-   }
-   TCut Cut(Int_t n) const {
-      TCut cut;
-      if (n > GetLast()) {
-         cout<< "*** ERROR CutList::Cut: No. " << n << " out of bound " << GetLast() <<endl;
-         return cut;
-      }
-      cut = *((const TCut*) _cuts.At(n));
-      return cut;
-   }
-   TCut SumTo(Int_t n) const {
-      TCut sum;
-      if (n > N()) {
-         cout<< "*** ERROR CutList::SumTo: No. " << n << " exceeds last stored " << GetLast() <<endl;
-         return sum;
-      }
-      for (int i=0; i<=n; ++i) {
-         const TCut* cut = (const TCut*) _cuts.At(i);
-         sum += *cut;
-      }
-      return sum;
-   }
-   TCut All() const {
-      TCut sum;
-      for (int i=0; i<=GetLast(); ++i) {
-         const TCut* cut = (const TCut*) _cuts.At(i);
-         sum += *cut;
-      }
-      return sum;
-   }
-   void PrintLine() const {
-      for (int i=0; i<=GetLast(); ++i) {
-         if (i > 0) cout<< "+";
-         const TCut* cut = (const TCut*) _cuts.At(i);
-         if (strcmp(cut->GetName(), "CUT")) cout<< cut->GetName();
-         else cout<< "\"" << cut->GetTitle() << "\"";
-      }
-      cout<<endl;
-   }
-   void Print() const {
-      for (int i=0; i<_cuts.GetLast()+1; ++i) {
-         const TCut* cut = (const TCut*) _cuts.At(i);
-         cout<< i <<" "<< cut->GetTitle() <<endl;
-      }
-   }
-};
-
-//=====================================================================================================
-
-class TmvaAnl{
-
-private:
-   TString _anl_name;
-   TFile*  _inputSBD;
-    //
-   TmvaSample* _sgl;
-   TmvaSample* _bkg;
-   TmvaSample* _data;
-   vector<TmvaSample*> _vsamples;
-    //
-   Int_t   _debug;
-   Int_t   _istyle;
-   TH1F*   _hframe;
-
-   Float_t _sgf0; // eff*purity
-   Float_t _sgf1; // s/sqrt(s+b)
-   Float_t _sgf2; // 95% CL exp limit, fb
-   Float_t _sgf3; // s/sqrt(b)
-   Int_t   _useGauss; // for TLimit (==1 if _sgl_npass>20)
-
-   map<Float_t,Float_t> _optmap;
-   TGraphErrors*        _optgraph;
- 
-   Float_t _scale_sgl_tmva;
-   Float_t _scale_bkg_tmva;
-    //
-   Float_t _lum;  //lum in fb-1
-
-   vector<TH1F*> bkg_hists;
-   Int_t        _nstackplots;
-   Int_t        _fsaveplots;
-
-public:
-  CutList cuts;
-  static const UInt_t  PB2FB = 1000;
-  TmvaAnl(TString  anlname,Float_t lum_fbinv, std::vector<TmvaSample*> vsamples, Float_t& scale_sgl_tmva,Float_t& scale_bkg_tmva);
-  void setDataSample(UInt_t sID){ _data = _vsamples[sID]; }
-  void setSglSample(UInt_t sID){  _sgl = _vsamples[sID]; }
-  void setBkgSample(UInt_t sID){  _bkg = _vsamples[sID]; }
-  void setsvplots(Int_t isvplots){ _fsaveplots = isvplots;}
-  void setLum(Float_t lum) { _lum = lum;}
-  void PrintStat(TCut& cuts,Int_t debug);
-  void setHistStyle(TH1F* hist);
-
-   //TmvaSample* getDataSample(){return _data;}
-
-   //
-  void setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax, Float_t bw,
-	  const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
-  TH1F* makeHist(const char* hname, const char* hvar, Int_t nbins, Float_t hvar_min, Float_t hvar_max);
-
-  Float_t optCutAlg1(const char* optParName,TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf, Float_t dstepw, Int_t npoints);
-  Float_t optCutScan(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf, Float_t dstepw, Int_t npoints);
-  void setSampleHists();
-  void fillSampleHists(const char* var, TCut cut, Float_t scale=1.0);
-  void setTmvaScales(Float_t& scale_sgl_tmva,Float_t& scale_bkg_tmva){
-    _scale_sgl_tmva = scale_sgl_tmva;
-    _scale_bkg_tmva = scale_bkg_tmva;
+  CutList() {
+    _cuts.SetOwner();
+    _cuts.Clear();
   }
-  Int_t ArrangeHtms(Int_t flogy=0);
-  void  StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy=0, Int_t overFlow=0);
-  void  PlotHists(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
-  void  PlotLegend(const char* var);
-  void  PlotSgf(const char* var); 
-  void  sdb(Int_t dbl){ _debug=dbl; };
-  Float_t optParVal(const char* optParName);
-  TmvaSample* getSglSample(){ return _sgl;};
-  TmvaSample* getDataSample(){ return _data;};
-
-  void PlotShapes(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
-  void makeShapeComp(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
-  //
+  ~CutList() {_cuts.Clear();}
+  void Clear() {_cuts.Clear();}
+  CutList& operator << (const TCut& cut) {
+    TCut* pcut = new TCut(cut);
+    _cuts.Add(pcut);
+    return *this;
+  }
+  Int_t N()         const {return _cuts.GetLast()+1;}
+  Int_t GetLast()   const {return _cuts.GetLast();}
+  TCut operator [] (Int_t n) const {
+    TCut cut;
+    if (n > GetLast()) {
+      cout<< "*** ERROR CutList::operator[]: No. " << n << " out of bound " << GetLast() <<endl;
+      return cut;
+    }
+    cut = *((const TCut*) _cuts.At(n));
+    return cut;
+  }
+  TCut Cut(Int_t n) const {
+    TCut cut;
+    if (n > GetLast()) {
+      cout<< "*** ERROR CutList::Cut: No. " << n << " out of bound " << GetLast() <<endl;
+      return cut;
+    }
+    cut = *((const TCut*) _cuts.At(n));
+    return cut;
+  }
+  TCut SumTo(Int_t n) const {
+    TCut sum;
+    if (n > N()) {
+      cout<< "*** ERROR CutList::SumTo: No. " << n << " exceeds last stored " << GetLast() <<endl;
+      return sum;
+    }
+    for (int i=0; i<=n; ++i) {
+      const TCut* cut = (const TCut*) _cuts.At(i);
+      sum += *cut;
+    }
+    return sum;
+  }
+  TCut All() const {
+    TCut sum;
+    for (int i=0; i<=GetLast(); ++i) {
+      const TCut* cut = (const TCut*) _cuts.At(i);
+      sum += *cut;
+    }
+    return sum;
+  }
+  void PrintLine() const {
+    for (int i=0; i<=GetLast(); ++i) {
+      if (i > 0) cout<< "+";
+      const TCut* cut = (const TCut*) _cuts.At(i);
+      if (strcmp(cut->GetName(), "CUT")) cout<< cut->GetName();
+      else cout<< "\"" << cut->GetTitle() << "\"";
+    }
+    cout<<endl;
+  }
+  void Print() const {
+    for (int i=0; i<_cuts.GetLast()+1; ++i) {
+      const TCut* cut = (const TCut*) _cuts.At(i);
+      cout<< i <<" "<< cut->GetTitle() <<endl;
+    }
+  }
 };
-//=====================================================================================================
+
+//======================================================================================================================
+//
+class TmvaAnl{
+  private:
+    TString _anl_name;
+    TFile*  _inputSBD;
+
+    TmvaSample* _sgl;
+    TmvaSample* _bkg;
+    TmvaSample* _data;
+    vector<TmvaSample*> _vsamples;
+
+    Int_t   _debug;
+    Int_t   _istyle;
+    TH1F*   _hframe;
+
+    Float_t _sgf0; // eff*purity
+    Float_t _sgf1; // s/sqrt(s+b)
+    Float_t _sgf2; // 95% CL exp limit, fb
+    Float_t _sgf3; // s/sqrt(b)
+    Int_t   _useGauss; // for TLimit (==1 if _sgl_npass>20)
+
+    map<Float_t,Float_t> _optmap;
+    TGraphErrors*        _optgraph;
+
+    Float_t _scale_sgl_tmva;
+    Float_t _scale_bkg_tmva;
+    Float_t _lum;  //lum in fb-1
+
+    vector<TH1F*> bkg_hists;
+    Int_t        _nstackplots;
+    Int_t        _fsaveplots;
+
+  public:
+    CutList cuts;
+    static const UInt_t  PB2FB = 1000;
+    TmvaAnl(TString  anlname,Float_t lum_fbinv, std::vector<TmvaSample*> vsamples, Float_t& scale_sgl_tmva,Float_t& scale_bkg_tmva);
+    void setDataSample(UInt_t sID){ _data = _vsamples[sID]; }
+    void setSglSample(UInt_t sID){  _sgl = _vsamples[sID]; }
+    void setBkgSample(UInt_t sID){  _bkg = _vsamples[sID]; }
+    void setsvplots(Int_t isvplots){ _fsaveplots = isvplots;}
+    void setLum(Float_t lum) { _lum = lum;}
+    void PrintStat(TCut& cuts,Int_t debug);
+    void setHistStyle(TH1F* hist);
+
+    //TmvaSample* getDataSample(){return _data;}
+
+    void setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax, Float_t bw,
+  	  const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
+    TH1F* makeHist(const char* hname, const char* hvar, Int_t nbins, Float_t hvar_min, Float_t hvar_max);
+
+    Float_t optCutAlg1(const char* optParName,TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf, Float_t dstepw, Int_t npoints);
+    Float_t optCutScan(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf, Float_t dstepw, Int_t npoints);
+    void setSampleHists();
+    void fillSampleHists(const char* var, TCut cut, Float_t scale=1.0);
+    void setTmvaScales(Float_t& scale_sgl_tmva,Float_t& scale_bkg_tmva){
+      _scale_sgl_tmva = scale_sgl_tmva;
+      _scale_bkg_tmva = scale_bkg_tmva;
+    }
+    Int_t ArrangeHtms(Int_t flogy=0);
+    void  StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy=0, Int_t overFlow=0);
+    void  PlotHists(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
+    void  PlotLegend(const char* var);
+    void  PlotSgf(const char* var); 
+    void  sdb(Int_t dbl){ _debug=dbl; };
+    Float_t optParVal(const char* optParName);
+    TmvaSample* getSglSample(){ return _sgl;};
+    TmvaSample* getDataSample(){ return _data;};
+
+    void PlotShapes(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
+    void makeShapeComp(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
+};
+
+//======================================================================================================================
+//
 TmvaAnl::TmvaAnl(TString anlname, Float_t lum_fbinv, std::vector<TmvaSample*> vec_samples, Float_t& scale_sgl_tmva,Float_t& scale_bkg_tmva){
-   _debug=0;
-   _anl_name = anlname;
-   _vsamples = vec_samples;
-   _lum      = lum_fbinv;  // fb-1
-   //
-   _sgl=vec_samples[0];
-   _bkg=vec_samples[1];
-   _data=vec_samples[2];
-   //
-   _scale_sgl_tmva=scale_sgl_tmva;
-   _scale_bkg_tmva=scale_bkg_tmva;
-   _nstackplots=0;
-   _fsaveplots=0;
-   _sgf0=0;
-   _sgf1=0;
-   _sgf2=0;
-   _sgf3=0;
+  _debug=0;
+  _anl_name = anlname;
+  _vsamples = vec_samples;
+  _lum      = lum_fbinv;  // fb-1
+
+  _sgl=vec_samples[0];
+  _bkg=vec_samples[1];
+  _data=vec_samples[2];
+
+  _scale_sgl_tmva=scale_sgl_tmva;
+  _scale_bkg_tmva=scale_bkg_tmva;
+  _nstackplots=0;
+  _fsaveplots=0;
+  _sgf0=0;
+  _sgf1=0;
+  _sgf2=0;
+  _sgf3=0;
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 Int_t plotShapeComp(TmvaAnl* anl, const char* var, TCut cut, Float_t scale=1.0, Int_t debug=0, Int_t istyle=0,
         Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0, Int_t overFlow=0,
 	      const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
@@ -406,8 +401,12 @@ void cplots(TmvaAnl* anl, TCut cuts, TString CutName);
 
 void shapePlots(TmvaAnl*, TCut cuts, TString CutName);
 
-TCut  splitCuts (const char* strcuts);
-//=====================================================================================================
+TCut  splitCuts(const char* strcuts);
+
+void SetRatioPlotStyle(TRatioPlot* ratio);
+
+//======================================================================================================================
+//
 TmvaAnl* anl;
 stringstream ssifname;
 TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv = 35.867);
@@ -415,10 +414,12 @@ TH1F* cloneHist(TH1F* hframe, const char* histname);
 TH1F* xCloneHist(TH1F* hframe, const char* cloneName, Int_t cloneNum);
 TGraphErrors*  map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& opthist,  Float_t& best_cutval, Float_t& sgf_at_bestcut );
 Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_error, double lumi, double lumi_error,  bool IfGauss,double& cl95res, double&  pfluc );
-//=====================================================================================================
+
+//======================================================================================================================
+//
 void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TString cutName="test"){
   //
-  TH1::StatOverflows(kTRUE);  //To force the underflows and overflows in the getStat() computations
+  TH1::StatOverflows(kTRUE);  // To force the underflows and overflows in the getStat() computations
   TGaxis::SetMaxDigits(3);
   gErrorIgnoreLevel = kWarning; // Ignore "Info in ..." printouts in ROOT session, helpful for making the cutflow tables
   anl = getAnl(anlName,lum_fb);
@@ -442,18 +443,20 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 void  tmvacmp(TmvaAnl* anl, const char* sgf, const char* varset="test"){
   stringstream tmvacut;
   stringstream htitle;
   stringstream ofname; 
   TCanvas*  cmpCanvas = (TCanvas*)gROOT->FindObject("cmpCanvas"); 
   if(cmpCanvas) {cmpCanvas->Delete(); }
-     cmpCanvas = new TCanvas("cmpCanvas","cmpCanvas",10,10,1000,1000);
+  cmpCanvas = new TCanvas("cmpCanvas","cmpCanvas",10,10,1000,1000);
 
   TCanvas*  cmpPad = (TCanvas*)gROOT->FindObject("cmpPad"); 
   if(cmpPad) {cmpPad->Delete(); }
-     cmpPad = new TCanvas("cmpPad","cmpPad",10,10,700,700);
+  cmpPad = new TCanvas("cmpPad","cmpPad",10,10,700,700);
 
   const Int_t ntmva=4;
   const char* TMVAset[ntmva] = { "f_Djet_VAJHU", "BDT","MLPBFGS", "DNN_GPU" };
@@ -475,9 +478,9 @@ void  tmvacmp(TmvaAnl* anl, const char* sgf, const char* varset="test"){
     tmvacut.str("");
     ofname.str("");
     cout << "iset = " << TMVAset[iset] << endl;
-     if ( strcmp(TMVAset[iset],"BDT")  == 0 || strcmp(TMVAset[iset],"Fisher")  == 0 ) {
+    if ( strcmp(TMVAset[iset],"BDT")  == 0 || strcmp(TMVAset[iset],"Fisher")  == 0 ) {
       tmva_min = -1;
-    }else{
+    } else {
       tmva_min =  0;
     }
     cout << "iset/tmva_min  = " << TMVAset[iset] << "/" << tmva_min << endl;
@@ -485,7 +488,7 @@ void  tmvacmp(TmvaAnl* anl, const char* sgf, const char* varset="test"){
     //  opt_cut = anl->optCutScan("sgf0",cleanNAN, TMVAset[iset], tmva_min, tmva_max, 0.1,0.0005, 10); //effxpurity
     opt_cut = anl->optCutScan(sgf,cleanNAN, TMVAset[iset], tmva_min, tmva_max, 0.1,0.0005, 10); //s/sqrt(b)
 
-     cmpCanvas->cd(2*iset+1);
+    cmpCanvas->cd(2*iset+1);
     plotvar(anl, TMVAset[iset], allCuts,  1.00, 0, 0,     tmva_min,   tmva_max, 0.1,  1, 0, 0, 0, "VBS (WV), 35.9 fb^{-1}", TMVAset[iset]);
       cmpPad->cd();
     plotvar(anl, TMVAset[iset], allCuts,  1.00, 0, 0,     tmva_min,   tmva_max, 0.1,  1, 0, 0, 0, "VBS (WV), 35.9 fb^{-1}", TMVAset[iset]);
@@ -520,75 +523,68 @@ void  tmvacmp(TmvaAnl* anl, const char* sgf, const char* varset="test"){
     ofname << "mass_lvj_type0_PuppiAK8_vbsWV_" << TMVAset[iset] << "_" << sgf << "Max_" << varset << ".eps";
     gPad->SaveAs(ofname.str().c_str());
     ofname.str("");
-
-
   }
 
- ofname.str("");
- ofname << "tmvaCMP_" << varset << "_" <<  sgf << ".pdf";
- cmpCanvas->SaveAs(ofname.str().c_str());
- ofname.str("");
- ofname << "tmvaCMP_" << varset <<  "_" << sgf << ".eps";
- cmpCanvas->SaveAs(ofname.str().c_str());
- anl->setsvplots(0);
+  ofname.str("");
+  ofname << "tmvaCMP_" << varset << "_" <<  sgf << ".pdf";
+  cmpCanvas->SaveAs(ofname.str().c_str());
+  ofname.str("");
+  ofname << "tmvaCMP_" << varset <<  "_" << sgf << ".eps";
+  cmpCanvas->SaveAs(ofname.str().c_str());
+  anl->setsvplots(0);
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
-
-   ssifname <<  anlName << "_SBtmva.root";
-   TString inpfileName( ssifname.str().c_str() );  
-   //  
-   TFile* inputSBD  = TFile::Open(inpfileName);
-   int nev_test_data =0;
+  ssifname <<  anlName << "_SBtmva.root";
+  TString inpfileName( ssifname.str().c_str() );  
+  //  
+  TFile* inputSBD  = TFile::Open(inpfileName);
+  int nev_test_data =0;
  
-   TDirectory* anl_dir = (TDirectory*) inputSBD->GetDirectory(anlName);
-   if (anl_dir){
-     anl_dir->cd();
-     cout <<  "Using analysis directory " << anlName << endl;
-   }else{
-     cout <<  "Can not find the analysis directory " <<  anlName << endl;
-     exit(1);
-   }
-  
-   TTree* treeSB        = (TTree*)anl_dir->Get("TestTree");
-   TTree* treeSB_train  = (TTree*)anl_dir->Get("TrainTree");
-   TTree* treeData      = (TTree*)anl_dir->Get("DataTree");
+  TDirectory* anl_dir = (TDirectory*) inputSBD->GetDirectory(anlName);
+  if (anl_dir) {
+    anl_dir->cd();
+    cout <<  "Using analysis directory " << anlName << endl;
+  } else {
+    cout <<  "Can not find the analysis directory " <<  anlName << endl;
+    exit(1);
+  }
 
-   if(treeSB){
-     std::cout << "--- plot_tmv: Using signal&bkg test trees from file: " << inputSBD->GetName() << std::endl;
-   } 
-   if ( ! treeData){
+  TTree* treeSB        = (TTree*)anl_dir->Get("TestTree");
+  TTree* treeSB_train  = (TTree*)anl_dir->Get("TrainTree");
+  TTree* treeData      = (TTree*)anl_dir->Get("DataTree");
+
+  if(treeSB){
+    std::cout << "--- plot_tmv: Using signal&bkg test trees from file: " << inputSBD->GetName() << std::endl;
+  } 
+  if ( ! treeData){
     std::cout <<  "--- plot_tmv: No data were evaluated; using MC only " << std::endl;
-   }
-
-   int nev_test_bkg  =  treeSB->GetEntries("classID==1");
-   int nev_train_bkg =  treeSB_train->GetEntries("classID==1");
-
-   int nev_test_sgl  =  treeSB->GetEntries("classID==0");
-   int nev_train_sgl =  treeSB_train->GetEntries("classID==0");
+  }
+  int nev_test_bkg  =  treeSB->GetEntries("classID==1");
+  int nev_train_bkg =  treeSB_train->GetEntries("classID==1");
+  int nev_test_sgl  =  treeSB->GetEntries("classID==0");
+  int nev_train_sgl =  treeSB_train->GetEntries("classID==0");
 
   if(treeData) nev_test_data  =  treeData->GetEntries();
   //   cout << "Ngen signal :: nsignal = " <<   nsignal << endl;
-   cout << " Entries bkg :: test/train/test+train = " <<  
-       nev_test_bkg <<  "/" <<  
-       nev_train_bkg <<  "/" <<  
-       nev_test_bkg +  nev_train_bkg <<
-   endl;  
+  cout << " Entries bkg :: test/train/test+train = " <<  
+      nev_test_bkg <<  "/" <<  
+      nev_train_bkg <<  "/" <<  
+      nev_test_bkg +  nev_train_bkg <<
+  endl;  
+  cout << " Entries sgl :: test/train/test+train = " <<  
+      nev_test_sgl <<  "/" <<  
+      nev_train_sgl <<  "/" <<  
+      nev_test_sgl +  nev_train_sgl <<
+  endl;
 
+  Float_t scale_bkg_tmva= (nev_test_bkg+0.0)/(nev_train_bkg+nev_test_bkg);
+  Float_t scale_sgl_tmva= (nev_test_sgl+0.0)/(nev_train_sgl+nev_test_sgl);
 
-   cout << " Entries sgl :: test/train/test+train = " <<  
-       nev_test_sgl <<  "/" <<  
-       nev_train_sgl <<  "/" <<  
-       nev_test_sgl +  nev_train_sgl <<
-   endl;
-
-   Float_t scale_bkg_tmva= (nev_test_bkg+0.0)/(nev_train_bkg+nev_test_bkg);
-   Float_t scale_sgl_tmva= (nev_test_sgl+0.0)/(nev_train_sgl+nev_test_sgl);
-
-   cout << " scale_sgl_tmva/scale_bkg_tmva = " <<  scale_sgl_tmva << "/"  << scale_bkg_tmva  << endl;
-   cout << " Entries data  = " <<  nev_test_data << endl;
-
-
+  cout << " scale_sgl_tmva/scale_bkg_tmva = " <<  scale_sgl_tmva << "/"  << scale_bkg_tmva  << endl;
+  cout << " Entries data  = " <<  nev_test_data << endl;
 
   std::vector<TmvaSample*> anl_samples; 
 
@@ -600,9 +596,9 @@ TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
   cout << " 1.0 * lum_fbinv * PB2FB = " << 1.0*lum_fbinv*TmvaAnl::PB2FB << endl;
 
 // TmvaSample::TmvaSample(Int_t sid,Int_t scolor, const char* smplname, TCut samplecut,Float_t ngen_normfb, TTree* testTree, TTree* trainTree)
-   TmvaSample* sgl  = new TmvaSample(1, kRed-6,"sgl", "classID==0", nsignal_norm, treeSB, treeSB_train); // new color = kTeal+5 | old color = kTeal+2
-   TmvaSample* bkg  = new TmvaSample(2, kWhite,  "bkg", "classID==1", 1.0* lum_fbinv * TmvaAnl::PB2FB, treeSB, treeSB_train); 
-   TmvaSample* data = new TmvaSample(3, kBlack,"data","classID==3", 1.0* lum_fbinv * TmvaAnl::PB2FB, treeData, treeData);
+  TmvaSample* sgl  = new TmvaSample(1, kRed-6,"sgl", "classID==0", nsignal_norm, treeSB, treeSB_train); // new color = kTeal+5 | old color = kTeal+2
+  TmvaSample* bkg  = new TmvaSample(2, kWhite,  "bkg", "classID==1", 1.0* lum_fbinv * TmvaAnl::PB2FB, treeSB, treeSB_train); 
+  TmvaSample* data = new TmvaSample(3, kBlack,"data","classID==3", 1.0* lum_fbinv * TmvaAnl::PB2FB, treeData, treeData);
   //
 //   TmvaSample* ewkWV    = new TmvaSample(gid_ewkWV,   910,  "ewkWV",    cut_ewkWV,    1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train);
 //   TmvaSample* Wjets    = new TmvaSample(gid_Wjets,   924,  "Wjets",    cut_Wjets,    1.0* lum_fbinv * TmvaAnl::PB2FB,  treeSB, treeSB_train);
@@ -633,7 +629,9 @@ TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
 
   return new TmvaAnl(anlName,lum_fbinv,anl_samples,scale_sgl_tmva,scale_bkg_tmva); 
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 Int_t plotShapeComp(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t debug, Int_t istyle,
         Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	      const char hTitle[], const char xTitle[], const char yTitle[]) {
@@ -657,7 +655,7 @@ Int_t plotShapeComp(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int
   }else if(istyle>1){ 
     TH1F* sglscale =  (TH1F*) gROOT->FindObject("sglscale"); 
     if(sglscale){
-     sglscale->Delete();
+      sglscale->Delete();
     }
     sglscale= (TH1F*) anl->getSglSample()->_hf1->Clone();
     sglscale->SetName("sglscale");
@@ -674,7 +672,8 @@ Int_t plotShapeComp(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int
   return 0;
 }
 
-//=======================================================================================================
+//======================================================================================================================
+//
 Int_t plotSingleVariable( TmvaAnl* anl, const char* var, TCut cuts, const char* cutName, Float_t scale, Int_t debug, Int_t istyle,
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
@@ -698,9 +697,9 @@ Int_t plotSingleVariable( TmvaAnl* anl, const char* var, TCut cuts, const char* 
   }else if(istyle>1){ 
     TH1F* sglscale =  (TH1F*) gROOT->FindObject("sglscale"); 
     if(sglscale){
-     sglscale->Delete();
+      sglscale->Delete();
     }
-    sglscale= (TH1F*) anl->getSglSample()->_hf1->Clone();
+    sglscale = (TH1F*) anl->getSglSample()->_hf1->Clone();
     sglscale->SetName("sglscale");
     sglscale->Scale(istyle);
     sglscale->Draw("hist same");
@@ -735,7 +734,7 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   }else if(istyle>1){ 
     TH1F* sglscale =  (TH1F*) gROOT->FindObject("sglscale"); 
     if(sglscale){
-     sglscale->Delete();
+      sglscale->Delete();
     }
     sglscale= (TH1F*) anl->getSglSample()->_hf1->Clone();
     sglscale->SetName("sglscale");
@@ -747,8 +746,9 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   anl->PrintStat(cuts,debug);
   return 0;
 }
-//=====================================================================================================
-//=====================================================================================================
+
+//======================================================================================================================
+//
 Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t debug, Int_t istyle,
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
@@ -762,7 +762,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
     plotCanvas = new TCanvas("dualplot","dualplot",10,10,1350,500);
   plotCanvas->Divide(2,1);
 
-     //  Float_t ymin= 0.0;
+  //  Float_t ymin= 0.0;
   Float_t ymin= pow(10,1*(-1));
   if (flogy) ymin= pow(10,flogy*(-1));
 
@@ -777,7 +777,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   }else if(istyle>1){ 
     TH1F* sglscale =  (TH1F*) gROOT->FindObject("sglscale"); 
     if(sglscale){
-     sglscale->Delete();
+      sglscale->Delete();
     }
     sglscale= (TH1F*) anl->getSglSample()->_hf1->Clone();
     sglscale->SetName("sglscale");
@@ -787,7 +787,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 
   plotCanvas->cd(2); 
   // hdata->SetMaximum(npmax*1.2);
-   anl->getDataSample()->_hf1->SetMaximum(anl->getDataSample()->_hf1->GetMaximum()/1.2);
+  anl->getDataSample()->_hf1->SetMaximum(anl->getDataSample()->_hf1->GetMaximum()/1.2);
   anl->PlotHists(ymin, flogy); 
   anl->PlotLegend(var); 
   if(istyle==1){
@@ -795,7 +795,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   }else if(istyle>1){ 
     TH1F* sglscale =  (TH1F*) gROOT->FindObject("sglscale"); 
     if(sglscale){
-     sglscale->Delete();
+      sglscale->Delete();
     }
     sglscale= (TH1F*) anl->getSglSample()->_hf1->Clone();
     sglscale->SetName("sglscale");
@@ -805,7 +805,6 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 
   anl->setsvplots(0);
 
-
   anl->PrintStat(cuts,debug);
 
   stringstream ssoutname; 
@@ -813,83 +812,84 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   plotCanvas->SaveAs(ssoutname.str().c_str());
   return 0;
 }
+
 //===========================================================================================
+//
 void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 
   Float_t sum_bkg = 0;
   Float_t sum_err = 0;
   Float_t tot_err = 0;
 
-    for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
-      sum_bkg += _vsamples[ns]->npass;
-      sum_err += _vsamples[ns]->npass_err*_vsamples[ns]->npass_err;
-    }
-    tot_err = sqrt(sum_err);
+  for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
+    sum_bkg += _vsamples[ns]->npass;
+    sum_err += _vsamples[ns]->npass_err*_vsamples[ns]->npass_err;
+  }
+  tot_err = sqrt(sum_err);
 
-   if (debug>1){ 
+  if (debug>1){ 
 
     cout     << "|--------------------------------------------------------------------------------------------------------------------|"      << endl;
     cout     << "|-----------------------|--------------|------------------------|----------------------------|-------------| 95% CL, |"      << endl;
     cout     << "|         Cut           |    DATA      |       Total_bkg        |      Total_sgl (accpt)     | S/sqrt(S+B) | exp(fb) |"      << endl;
     cout     << "|-----------------------|--------------|------------------------|----------------------------|-------------|---------|"      << endl;
     //
-   }
-   if (debug>0){ 
+  }
+  if (debug>0){ 
     cout     << "|--------------------------------------------------------------------------------------------------------------------|"      << endl;
 
-     cout        <<  "|  "    << setw(20) <<  cuts.GetName(); 
-     printf(" |  %6.0f    |    %3.1f+/-%3.1f      |    %4.2f+/-%4.2f (%5.2f)    |    %4.2f    | %4.2f   |\n",
+    cout        <<  "|  "    << setw(20) <<  cuts.GetName(); 
+    printf(" |  %6.0f    |    %3.1f+/-%3.1f      |    %4.2f+/-%4.2f (%5.2f)    |    %4.2f    | %4.2f   |\n",
 	    _data->npass, sum_bkg , tot_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, _sgf1,  _sgf3);     // _data->npass, _bkg->npass , _bkg->npass_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, _sgf1,  _sgf3); 
     cout     << "|--------------------------------------------------------------------------------------------------------------------|"      << endl;
-   }
-   if (debug>1){ 
-     cout << ".!limit_calc  " << " " <<  _bkg->npass << " " <<_bkg->npass << " " << setprecision(5) << _bkg->npass_err  << " "
+  }
+  if (debug>1){ 
+    cout << ".!limit_calc  " << " " <<  _bkg->npass << " " <<_bkg->npass << " " << setprecision(5) << _bkg->npass_err  << " "
              <<  _sgl->accpt/100  << " " <<  0.15 * _sgl->accpt/100.  << " " << _lum << " " << 0.065*_lum << " " << _useGauss  << endl;
 
-
-       for( UInt_t ns=0; ns < _vsamples.size(); ns++){
-         cout << "TmvaAnl::fillSampleHist :: " << setprecision(5) <<  _vsamples[ns]->_hf1->GetName() <<  " , nevents = " <<  _vsamples[ns]->npass  << "+/-" << _vsamples[ns]->npass_err << endl;
-       }
-
+    for( UInt_t ns=0; ns < _vsamples.size(); ns++){
+      cout << "TmvaAnl::fillSampleHist :: " << setprecision(5) <<  _vsamples[ns]->_hf1->GetName() <<  " , nevents = " <<  _vsamples[ns]->npass  << "+/-" << _vsamples[ns]->npass_err << endl;
+    }
  
-      cout << "eff X purity == sgf0 =  "  <<  _sgf0  << endl <<
-		   "s/sqrt(s+b) ==  sgf1 = " << _sgf1 << endl <<
-                   "s/sqrt(b)   ==  sgf2 = " << _sgf2 << endl << 
-                   "95% CL, fb  ==  sgf3  = "<< _sgf3 << 
-       endl;
-   }
+    cout << "eff X purity == sgf0 =  "  <<  _sgf0  << endl <<
+		 "s/sqrt(s+b) ==  sgf1 = " << _sgf1 << endl <<
+                 "s/sqrt(b)   ==  sgf2 = " << _sgf2 << endl << 
+                 "95% CL, fb  ==  sgf3  = "<< _sgf3 << 
+      endl;
+  }
 }
 
-//====================================================================================================
+//======================================================================================================================
+//
 TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& optmap, Float_t& best_cutval, Float_t& sgf_at_bestcut    ){
 
-   TCanvas* cgraph = (TCanvas*)gROOT->FindObject("cOptGraph"); 
-   if(cgraph) {cgraph->Delete(); }
-     cgraph = new TCanvas("c1","cOptGraph",10,10,700,700);
-   Int_t npoints=  optmap.size();
-   Float_t aclf[npoints];
-   Float_t asgf[npoints];
-   Float_t aclf_err[npoints];
-   Float_t asgf_err[npoints];
+  TCanvas* cgraph = (TCanvas*)gROOT->FindObject("cOptGraph"); 
+  if(cgraph) {cgraph->Delete(); }
+    cgraph = new TCanvas("c1","cOptGraph",10,10,700,700);
+  Int_t npoints=  optmap.size();
+  Float_t aclf[npoints];
+  Float_t asgf[npoints];
+  Float_t aclf_err[npoints];
+  Float_t asgf_err[npoints];
 
-   stringstream ssSgfText; 
-   stringstream ssBestCutText; 
-   ssSgfText.setf(ios::fixed); 
-   ssSgfText.precision(3); 
+  stringstream ssSgfText; 
+  stringstream ssBestCutText; 
+  ssSgfText.setf(ios::fixed); 
+  ssSgfText.precision(3); 
 
-   ssBestCutText.setf(ios::fixed); 
-   ssBestCutText.precision(3); 
+  ssBestCutText.setf(ios::fixed); 
+  ssBestCutText.precision(3); 
  
 
-   stringstream xtitle;
-   stringstream ytitle;
-   stringstream graphtitle;
+  stringstream xtitle;
+  stringstream ytitle;
+  stringstream graphtitle;
 
-   TLatex* SgfText;
-   TLatex* BestCutText ;
+  TLatex* SgfText;
+  TLatex* BestCutText ;
 
-   ytitle << "Optimization criterion";
-   xtitle << "lower cut on " << cutvar;
+  ytitle << "Optimization criterion";
+  xtitle << "lower cut on " << cutvar;
 
 
   if (strcmp(sgfName,"sgf0") == 0 ){
@@ -916,85 +916,83 @@ TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Flo
     ssBestCutText << "Optimal cut = " << setw(6) << best_cutval;
   }
 
-   SgfText     = new TLatex(0.33,.20, ssSgfText.str().c_str());
-   BestCutText = new TLatex(0.33,.15, ssBestCutText.str().c_str());
-   if (strcmp(sgfName,"sgf2") == 0 ){
-     SgfText->SetText(0.33,.80, ssSgfText.str().c_str());
-     BestCutText->SetText(0.33,.75, ssBestCutText.str().c_str());
-   }
+  SgfText     = new TLatex(0.33,.20, ssSgfText.str().c_str());
+  BestCutText = new TLatex(0.33,.15, ssBestCutText.str().c_str());
+  if (strcmp(sgfName,"sgf2") == 0 ){
+    SgfText->SetText(0.33,.80, ssSgfText.str().c_str());
+    BestCutText->SetText(0.33,.75, ssBestCutText.str().c_str());
+  }
 
-    std::map<Float_t, Float_t>::iterator it = optmap.begin();
-    int ip = 0;
+  std::map<Float_t, Float_t>::iterator it = optmap.begin();
+  int ip = 0;
 
-    while(it != optmap.end())
-    {
+  while (it != optmap.end()) {
+    aclf[ip] = it->first;
+    asgf[ip] = it->second;
+    aclf_err[ip] = 0;
+    asgf_err[ip] = 0;
+    //cout << "ip/cutval/sgf = " << ip << "/" << aclf[ip] << "/" << asgf[ip] << endl;
   
-     aclf[ip] = it->first;
-     asgf[ip] = it->second;
-     aclf_err[ip] = 0;
-     asgf_err[ip] = 0;
-     //cout << "ip/cutval/sgf = " << ip << "/" << aclf[ip] << "/" << asgf[ip] << endl;
-  
-      it++;
-      ip++;
-    }  
+    it++;
+    ip++;
+  }  
  
-   stringstream sgfname;
-   sgfname << sgfName;
+  stringstream sgfname;
+  sgfname << sgfName;
  
-   TGraphErrors* sgf;
+  TGraphErrors* sgf;
  
-   sgf = (TGraphErrors* )gROOT->FindObject(sgfname.str().c_str()); 
-     if(sgf){
-      sgf->Delete();
-    }
+  sgf = (TGraphErrors* )gROOT->FindObject(sgfname.str().c_str()); 
+  if(sgf){
+    sgf->Delete();
+  }
 
-   sgf = new TGraphErrors(npoints, aclf, asgf, aclf_err, asgf_err);
-   sgf->SetName(sgfname.str().c_str());
+  sgf = new TGraphErrors(npoints, aclf, asgf, aclf_err, asgf_err);
+  sgf->SetName(sgfname.str().c_str());
 
-   sgf->SetLineWidth(2);
-   sgf->SetMarkerStyle(21);
-   sgf->SetMarkerSize(0.8);
-   sgf->SetTitle("Discriminant cut optimization");
+  sgf->SetLineWidth(2);
+  sgf->SetMarkerStyle(21);
+  sgf->SetMarkerSize(0.8);
+  sgf->SetTitle("Discriminant cut optimization");
 
-   SgfText->SetNDC();
-   SgfText->SetTextSize(0.035);
-   SgfText->SetTextColor(1);
-   SgfText->SetTextFont(22);
-   SgfText->SetTextAlign(22);
+  SgfText->SetNDC();
+  SgfText->SetTextSize(0.035);
+  SgfText->SetTextColor(1);
+  SgfText->SetTextFont(22);
+  SgfText->SetTextAlign(22);
 
-   BestCutText->SetNDC();
-   BestCutText->SetTextSize(0.035);
-   BestCutText->SetTextColor(1);
-   BestCutText->SetTextFont(22);
-   BestCutText->SetTextAlign(22);
-   BestCutText->Draw();
+  BestCutText->SetNDC();
+  BestCutText->SetTextSize(0.035);
+  BestCutText->SetTextColor(1);
+  BestCutText->SetTextFont(22);
+  BestCutText->SetTextAlign(22);
+  BestCutText->Draw();
 
-  
   sgf->GetYaxis()->SetTitle(ytitle.str().c_str());
   sgf->GetXaxis()->SetTitle(xtitle.str().c_str());
-   // sgf->Draw("same p");
-    sgf->Draw();
-   //sgf->Fit("pol2","R","",600.,1700.);
-    SgfText->Draw("same");
-    BestCutText->Draw("same");
+  // sgf->Draw("same p");
+  sgf->Draw();
+  //sgf->Fit("pol2","R","",600.,1700.);
+  SgfText->Draw("same");
+  BestCutText->Draw("same");
   
+  stringstream splname;
+  stringstream plotName;
+  plotName << sgfName << "_after_cut_on_" << cutvar;
 
-   stringstream splname;
-   stringstream plotName;
-   plotName << sgfName << "_after_cut_on_" << cutvar;
-
-   splname << plotName.str().c_str() << ".png";
-   gPad->SaveAs(splname.str().c_str());
-   splname.str("");
-   splname << plotName.str().c_str() << ".pdf";
-   gPad->SaveAs(splname.str().c_str());
-   splname.str("");
-   splname << plotName.str().c_str() << ".eps";
-   gPad->SaveAs(splname.str().c_str());
-   return sgf;
+  splname << plotName.str().c_str() << ".png";
+  gPad->SaveAs(splname.str().c_str());
+  splname.str("");
+  splname << plotName.str().c_str() << ".pdf";
+  gPad->SaveAs(splname.str().c_str());
+  splname.str("");
+  splname << plotName.str().c_str() << ".eps";
+  gPad->SaveAs(splname.str().c_str());
+  return sgf;
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf=0.0005, Float_t dstepw=0.0005, Int_t npoints=20){
   _optmap.clear();
   //Do not save service histograms
@@ -1013,43 +1011,45 @@ Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* c
   Float_t sgf_min = 100000;
 
   while ( stepw > dstepw){
-     nprobe=0;
-     while ( nprobe < npoints ){
-       cutval = cutvar_min+ nprobe*stepw;
-       cutvar_cut.str("");
-       cutvar_cut << "(" << cutvar << " > " <<  cutval  << " ) " ;   
-       setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
-       setSampleHists();
-       fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
-       sgf_curr =  optParVal(optParName);
-       _optmap.insert(std::make_pair(cutval, sgf_curr));
-       if (  sgf_curr > sgf_max ){ sgf_max = sgf_curr; bestcut_max= cutval; }
-       if (  sgf_curr < sgf_min ){ sgf_min = sgf_curr; bestcut_min= cutval; }
-       nprobe++;
-       cout << cutvar << " :: point/step/cutval/significance  = "  << nprobe  << "/" <<  stepw << "/" << cutval << "/" << sgf_curr  << endl;
-     } 
-      if (strcmp(optParName,"sgf2") == 0 ){
-        bestcut = bestcut_min;
-        bestsgf =  sgf_min;
-     }else{
-        bestcut = bestcut_max;
-        bestsgf = sgf_max;
-     }
+    nprobe=0;
+    while ( nprobe < npoints ) {
+      cutval = cutvar_min+ nprobe*stepw;
+      cutvar_cut.str("");
+      cutvar_cut << "(" << cutvar << " > " <<  cutval  << " ) " ;   
+      setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+      setSampleHists();
+      fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
+      sgf_curr =  optParVal(optParName);
+      _optmap.insert(std::make_pair(cutval, sgf_curr));
+      if (  sgf_curr > sgf_max ){ sgf_max = sgf_curr; bestcut_max= cutval; }
+      if (  sgf_curr < sgf_min ){ sgf_min = sgf_curr; bestcut_min= cutval; }
+      nprobe++;
+      cout << cutvar << " :: point/step/cutval/significance  = "  << nprobe  << "/" <<  stepw << "/" << cutval << "/" << sgf_curr  << endl;
+    } 
+    if (strcmp(optParName,"sgf2") == 0 ){
+      bestcut = bestcut_min;
+      bestsgf =  sgf_min;
+    } else {
+      bestcut = bestcut_max;
+      bestsgf = sgf_max;
+    }
 
-     cutvar_min =  bestcut - stepw;
-     cutvar_max =  bestcut + stepw;
-     stepw=0.2*stepw;
-     npoints= (cutvar_max - cutvar_min)/stepw;
+    cutvar_min =  bestcut - stepw;
+    cutvar_max =  bestcut + stepw;
+    stepw=0.2*stepw;
+    npoints= (cutvar_max - cutvar_min)/stepw;
      
   }
   //
-    cout << "bestcut/sgf  = "  << bestcut << "/" <<  bestsgf << endl;
-    _optgraph = map2graph(optParName, cutvar, _optmap, bestcut, bestsgf );
+  cout << "bestcut/sgf  = "  << bestcut << "/" <<  bestsgf << endl;
+  _optgraph = map2graph(optParName, cutvar, _optmap, bestcut, bestsgf );
   //
   setsvplots(1);
   return bestcut;
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf=0.0005, Float_t dstepw=0.0005, Int_t npoints= 100){
   //anl->OptimizeCut(cleanNAN,"BDT",-1, 1, 0.01);  
   //create sign monit  histograms  to hold test vals 
@@ -1071,104 +1071,94 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
   Float_t  sgf_curr_right = optParVal(optParName);
   Float_t  sgf_curr = optParVal(optParName);
   Int_t nprobe = 0;
-   while ( (sgf_diff > dsgf || sgf_diff == 0)  && nprobe < npoints && stepw > dstepw){ 
-  //  while ( (sgf_diff > dsgf || sgf_diff == 0)  && nprobe < npoints){ 
-   
- 
+  while ( (sgf_diff > dsgf || sgf_diff == 0)  && nprobe < npoints && stepw > dstepw) { 
+    //  while ( (sgf_diff > dsgf || sgf_diff == 0)  && nprobe < npoints){ 
+    
     //check left point
-   cutvar_cut.str("");
-   cutvar_cut << "(" << cutvar << " > " <<  cutval_left << " ) " ;   
-   setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
-   setSampleHists();
-   fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
-   sgf_curr_left=  optParVal(optParName);
- 
+    cutvar_cut.str("");
+    cutvar_cut << "(" << cutvar << " > " <<  cutval_left << " ) " ;   
+    setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+    setSampleHists();
+    fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
+    sgf_curr_left=  optParVal(optParName);
+  
     //check right point
-   cutvar_cut.str("");
-   cutvar_cut << "(" << cutvar << " > " <<  cutval_right << " ) " ;   
-   setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
-   setSampleHists();
-   fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
-   sgf_curr_right= optParVal(optParName);
- 
-   if (sgf_curr_right > sgf_curr_left){
-       
+    cutvar_cut.str("");
+    cutvar_cut << "(" << cutvar << " > " <<  cutval_right << " ) " ;   
+    setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+    setSampleHists();
+    fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
+    sgf_curr_right= optParVal(optParName);
+  
+    if (sgf_curr_right > sgf_curr_left){    
       if (strcmp(optParName,"sgf3") == 0 ){
-            sgf_curr = sgf_curr_left; 
-            cutval_left-=stepw; 
-            cutval_right  = cutval_left+stepw; 
-	    cout << "slope to left!" << endl;
-
-      }else{
+        sgf_curr = sgf_curr_left; 
+        cutval_left-=stepw; 
+        cutval_right  = cutval_left+stepw; 
+	      cout << "slope to left!" << endl;
+      } else {
         sgf_curr = sgf_curr_right; 
         cutval_right+=stepw; 
         cutval_left  = cutval_right-stepw; 
       }
 
+    } else if (sgf_curr_right < sgf_curr_left) {
+      if (strcmp(optParName,"sgf3") == 0 ){
+        sgf_curr = sgf_curr_right; 
+        cutval_right+=stepw; 
+        cutval_left  = cutval_right-stepw; 
+	      cout << "slope to right!" << endl;
+      } else {
+        sgf_curr= sgf_curr_left;
+        cutval_left-=stepw;
+        cutval_right=cutval_left+stepw;
+      }
 
-   }else if  (sgf_curr_right < sgf_curr_left){
-  
-     if (strcmp(optParName,"sgf3") == 0 ){
-            sgf_curr = sgf_curr_right; 
-            cutval_right+=stepw; 
-            cutval_left  = cutval_right-stepw; 
-	    cout << "slope to right!" << endl;
-     }else{
-
-      sgf_curr= sgf_curr_left;
-      cutval_left-=stepw;
-      cutval_right=cutval_left+stepw;
-
-
-     }
-
-   }else{
+    } else {
       cutval_right+=stepw; 
       cutval_left-=stepw;
       //  stepw = stepw;
-   }
- 
-    sgf_diff = fabs( optParVal(optParName) - sgf_curr);
- 
-   if ( _debug>1 ){
-      cout << "OptimizeCut:: nprobe/var/cut_left/cut_right/stepw///sgfleft/sgfright/sgf_diff  = " <<  
-               nprobe << "/"  <<  cutvar << "/" <<  cutval_left  << "/" <<  cutval_right  << "/" <<  
-               stepw << "/"  << sgf_curr_left << "/" << sgf_curr_right << "/" << sgf_diff <<
-      endl; 
     }
   
-   if (strcmp(optParName,"sgf3") == 0 ) {
+    sgf_diff = fabs( optParVal(optParName) - sgf_curr);
+  
+    if ( _debug>1 ) {
+      cout << "OptimizeCut:: nprobe/var/cut_left/cut_right/stepw///sgfleft/sgfright/sgf_diff  = " <<  
+                 nprobe << "/"  <<  cutvar << "/" <<  cutval_left  << "/" <<  cutval_right  << "/" <<  
+                 stepw << "/"  << sgf_curr_left << "/" << sgf_curr_right << "/" << sgf_diff <<
+        endl; 
+    }
+
+    if (strcmp(optParName,"sgf3") == 0 ) {
       if ( optParVal(optParName) > sgf_curr ) stepw = 0.5*stepw; 
-   }else{
+    } else {
       if ( optParVal(optParName) < sgf_curr ) stepw = 0.5*stepw;
-   }
-   
-   //   cout << " nprobe/sgf_curr/sgf_diff/cutval_left/cutval_right = " << nprobe << "/" << sgf_curr  << "/" << sgf_diff  << "/" << cutval_left  << "/" << cutval_right << endl;
-      nprobe++;
-      if (strcmp(optParName,"sgf3") == 0 ){
-       if ( sgf_curr_right  <  sgf_curr_left )   cutval = cutval_right ;
-     }else{
-        if ( sgf_curr_right >  sgf_curr_left )   cutval = cutval_right ;
-      }
-      //  _vsgf.push_back( sgf_curr );
-      // _vcutval.push_back( cutval ); 
-      _optmap.insert(std::make_pair(cutval, sgf_curr));
+    }
 
-   }
-   gStyle->SetOptStat(0); 
-   PlotHists(0.0);
-   PlotLegend("njets");
-   PlotSgf("njets");
+    //   cout << " nprobe/sgf_curr/sgf_diff/cutval_left/cutval_right = " << nprobe << "/" << sgf_curr  << "/" << sgf_diff  << "/" << cutval_left  << "/" << cutval_right << endl;
+    nprobe++;
+    if (strcmp(optParName,"sgf3") == 0 ){
+      if ( sgf_curr_right  <  sgf_curr_left )   cutval = cutval_right ;
+    } else {
+      if ( sgf_curr_right >  sgf_curr_left )   cutval = cutval_right ;
+    }
+    //  _vsgf.push_back( sgf_curr );
+    // _vcutval.push_back( cutval ); 
+    _optmap.insert(std::make_pair(cutval, sgf_curr));
+
+  }
+  gStyle->SetOptStat(0); 
+  PlotHists(0.0);
+  PlotLegend("njets");
+  PlotSgf("njets");
   
-  
-   _optgraph = map2graph(optParName,cutvar, _optmap, cutval, sgf_curr);
+  _optgraph = map2graph(optParName,cutvar, _optmap, cutval, sgf_curr);
   return cutval;
-
 }
-//=====================================================================================================
 
+//======================================================================================================================
+//
 Float_t TmvaAnl::optParVal(const char* optParName){
-  
   Float_t result = _sgf0;
   if (strcmp(optParName,"sgf0") ==0 ){
     result = _sgf0;
@@ -1182,26 +1172,25 @@ Float_t TmvaAnl::optParVal(const char* optParName){
   return result;
 }
 
-
-//=====================================================================================================
+//======================================================================================================================
+//
 TH1F* TmvaAnl::makeHist(const char* hname, const char* hvar, Int_t nbins, Float_t hvar_min, Float_t hvar_max){
-  //
   stringstream histname;
   TH1F* hist(0);
   histname << hname << _nstackplots;
   hist = (TH1F*)gROOT->FindObject(histname.str().c_str()); 
   if(hist){
-      hist->Delete();
+    hist->Delete();
   }
   hist =  new TH1F(histname.str().c_str(), hvar, nbins, hvar_min, hvar_max);
   return hist;
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 void TmvaAnl::PlotHists(Float_t ymin, Int_t flogy, Int_t overFlow){
-
-
   bkg_hists.clear();
- //Stack backgrounds
+  //Stack backgrounds
   for(UInt_t ns=3; ns <  _vsamples.size(); ns++){
     bkg_hists.push_back(_vsamples[ns]->_hf1);
   }
@@ -1212,9 +1201,10 @@ void TmvaAnl::PlotHists(Float_t ymin, Int_t flogy, Int_t overFlow){
   if (_fsaveplots) _nstackplots++;
 
 }
-//=====================================================================================================
-Int_t TmvaAnl::ArrangeHtms(Int_t flogy){
 
+//======================================================================================================================
+//
+Int_t TmvaAnl::ArrangeHtms(Int_t flogy){
   //Signal
   TH1F* hdata = _data->_hf1;
   TH1F* hbkg  = _bkg->_hf1;
@@ -1235,7 +1225,6 @@ Int_t TmvaAnl::ArrangeHtms(Int_t flogy){
   hbkg->SetLineWidth(1); // was 2
   hbkg->SetLineStyle(1);
 
-
   //Data
   //hdata->SetFillStyle(1001);
   hdata->SetFillColor(0);
@@ -1246,34 +1235,31 @@ Int_t TmvaAnl::ArrangeHtms(Int_t flogy){
   hdata->SetLineWidth(1); // MM
   hdata->SetLineColor(1);
 
-
   Float_t ymax[3];
   ymax[0]= hdata->GetMaximum();
   ymax[1]= hbkg->GetMaximum();
   ymax[2]= hsgl->GetMaximum();
 
- 
   int imax=0;
   Float_t npmax=0;
   for(int j = 0; j<3; j++){
     if ( ymax[j] > npmax ) { 
-           npmax=ymax[j]; 
-           imax=j;
-      }
+      npmax=ymax[j]; 
+      imax=j;
+    }
   }
-//   cout << "imax/npmax = " << imax << "/" << npmax << endl;
-//   cout << "-------- " << endl;
-if (flogy == 1) {
-  hdata->SetMaximum(npmax*40); // 20 was good, Analysis note uses 40
-} else if (flogy == 0) {
-  hdata->SetMaximum(npmax*2); // MM was 1.2 I changed that, added the flogy argument and the if statement. 1.45 was good, Analysis Note uses 3
-}
+
+  if (flogy == 1) {
+    hdata->SetMaximum(npmax*40); // 20 was good, Analysis note uses 40
+  } else if (flogy == 0) {
+    hdata->SetMaximum(npmax*2); // MM was 1.2 I changed that, added the flogy argument and the if statement. 1.45 was good, Analysis Note uses 3
+  }
   return imax;
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow){
-//
-//
   TH1F* hdata = _data->_hf1;
   TH1F* hbkg  = _bkg->_hf1;
   TH1F* hsgl  = _sgl->_hf1;
@@ -1339,24 +1325,7 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
     if (ratio_plot) { ratio_plot->Delete(); }
     ratio_plot = new TRatioPlot(hdata, sum_bkg_hists);
 
-    std::vector<double> gridlines = {0.5, 1.0, 1.5};
-    ratio_plot->SetGridlines(gridlines);
-    
-    ratio_plot->Draw("grid"); // took out hideup
-    ratio_plot->GetLowYaxis()->SetNdivisions(404);
-    
-    ratio_plot->SetSeparationMargin(0);
-    ratio_plot->GetLowerRefYaxis()->CenterTitle();
-    ratio_plot->GetLowerRefYaxis()->SetTitleFont(42);
-    ratio_plot->GetLowerRefYaxis()->SetTitleSize(0.035);
-    ratio_plot->GetLowerRefYaxis()->SetTitleOffset(1.4);
-    ratio_plot->GetLowerRefYaxis()->SetLabelFont(42);
-    ratio_plot->GetLowerRefYaxis()->SetLabelSize(0.035);
-    ratio_plot->GetLowerRefYaxis()->SetTitle("Data/MC");
-    ratio_plot->GetLowerRefGraph()->SetMarkerStyle(20);
-    ratio_plot->GetLowerRefGraph()->SetMarkerSize(0.5);
-    ratio_plot->GetLowerRefGraph()->SetMinimum(0.1);
-    ratio_plot->GetLowerRefGraph()->SetMaximum(2);
+    SetRatioPlotStyle(ratio_plot);
 
     TGraphAsymmErrors* errors_hist = (TGraphAsymmErrors*)gROOT->FindObject("errors_hist"); // Error bars for the sum of the backgrounds
     if (errors_hist) { errors_hist->Delete(); }
@@ -1376,16 +1345,8 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
     errors_on_ratio->SetMarkerStyle(0);
     errors_on_ratio->SetFillColor(kGray+1);
 
-/*
-    TGraphErrors* data_hist = (TGraphErrors*) gROOT->FindObject("data_hist");
-    if (data_hist) { data_hist->Delete(); }
-    data_hist = new TGraphErrors(hdata);
-    data_hist->SetMinimum(ymin);
-*/
     for (int ibin=1; ibin<=sum_bkg_hists->GetNbinsX(); ibin++) {
       errors_on_ratio->SetPointY(ibin, 1.0);
-//     Float_t err_y = data_hist->GetErrorY(ibin); //
-//      data_hist->SetPointError(ibin, 0.0, err_y); //
       if (errors_hist->GetPointY(ibin) != 0.0) {
         errors_on_ratio->SetPointEYhigh(ibin, errors_hist->GetErrorYhigh(ibin)/errors_hist->GetPointY(ibin));
         errors_on_ratio->SetPointEYlow(ibin, errors_hist->GetErrorYlow(ibin)/errors_hist->GetPointY(ibin));
@@ -1426,7 +1387,6 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
     gPad->RedrawAxis();
     gPad->SetLogy(flogy);
 
-
   } else {
 
     TGraphErrors* errors_hist = (TGraphErrors*)gROOT->FindObject("errors_hist"); // Error bars for the sum of the backgrounds
@@ -1460,7 +1420,9 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
   }
   
 }
-//===========================================================
+
+//======================================================================================================================
+//
 void TmvaAnl::PlotLegend(const char* var){
 
   TH1F* hdata = _data->_hf1;
@@ -1521,84 +1483,79 @@ void TmvaAnl::PlotLegend(const char* var){
   err->SetFillColor(kGray+2);
   err->SetLineColor(1);
 
-    stringstream ss; ss.str("");
-    ss.setf(ios::fixed);                            // set fixed format
-    std::streamsize ss_cout_prec = ss.precision();  // store original precision
+  stringstream ss; ss.str("");
+  ss.setf(ios::fixed);                            // set fixed format
+  std::streamsize ss_cout_prec = ss.precision();  // store original precision
+  ss.str("");
+
+  if (_data->npass) {
+    ss.precision(0);
+    ss <<setw(4)<< "Data" <<" "<< setw(6)<< _data->npass;
+    legend->AddEntry(hdata , ss.str().c_str());
+  }
+  if (_sgl->npass) {
     ss.str("");
+    ss.precision(1);
+    ss <<setw(4)<<  "SM(EW) WV"  <<" " << setw(6) <<_sgl->npass << "(" <<setw(4)  <<setprecision(2)<< _sgl->accpt << ")";
+    legend->AddEntry(hsgl, ss.str().c_str(), "f");
+  }
 
-    if (_data->npass) {
-       ss.precision(0);
-       ss <<setw(4)<< "Data" <<" "<< setw(6)<< _data->npass;
-       legend->AddEntry(hdata , ss.str().c_str());
-    }
-    if (_sgl->npass) {
-       ss.str("");
-       ss.precision(1);
-       ss <<setw(4)<<  "SM(EW) WV"  <<" " << setw(6) <<_sgl->npass << "(" <<setw(4)  <<setprecision(2)<< _sgl->accpt << ")";
-       legend->AddEntry(hsgl, ss.str().c_str(), "f");
-    }
-
-    float_t sum_bkg = 0.0;
-    float_t sum_err = 0.0;
+  float_t sum_bkg = 0.0;
+  float_t sum_err = 0.0;
 
 
-    for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
-      sum_bkg += _vsamples[ns]->npass;
-      sum_err += _vsamples[ns]->npass_err*_vsamples[ns]->npass_err;
-    }
-    float_t tot_err = sqrt(sum_err);
+  for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
+    sum_bkg += _vsamples[ns]->npass;
+    sum_err += _vsamples[ns]->npass_err*_vsamples[ns]->npass_err;
+  }
+  float_t tot_err = sqrt(sum_err);
 
     //std::cout << "======================================================" << std::endl;
     //std::cout << " bkg npass = " << _bkg->npass << " / bkg err = " << _bkg->npass_err << std::endl;
     //std::cout << " Sum bkg = " << sum_bkg << " / tot err = " << tot_err << std::endl;
     //std::cout << "======================================================" << std::endl;
  
-    if ( _bkg->npass) {
-      ss.str("");
-      ss.precision(1);
-	    ss <<setw(4)<< "#Sigma bkg"   <<" " << setw(6) << sum_bkg << " #pm" <<setw(4)<<  tot_err; // setw(6) << _bkg->npass << "#pm" << setw(4) << _bkg->npass_err;
-      legend->AddEntry( hbkg, ss.str().c_str(), "f");
-    }
+  if ( _bkg->npass) {
+    ss.str("");
+    ss.precision(1);
+	  ss <<setw(4)<< "#Sigma bkg"   <<" " << setw(6) << sum_bkg << " #pm" <<setw(4)<<  tot_err; // setw(6) << _bkg->npass << "#pm" << setw(4) << _bkg->npass_err;
+    legend->AddEntry( hbkg, ss.str().c_str(), "f");
+  }
 
   for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
-    if( strcmp(_vsamples[ns]->_name,"ewkWV") ==0 ){
-         ss.str("");
-         ss.precision(1);
-         ss <<setw(4)<<  "SM EW WV"  <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
-         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
-    }else 
-    if( strcmp(_vsamples[ns]->_name,"Wjets") ==0 ){
-         ss.str("");
-         ss.precision(1);
-         ss <<setw(4)<<  "Wjets\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
-         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
-    }else
-    if( strcmp(_vsamples[ns]->_name,"Zjets") ==0 ){
-         ss.str("");
-         ss.precision(1);
-         ss <<setw(4)<<  "Zjets\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
-         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
-    }else
-    if( strcmp(_vsamples[ns]->_name,"DiBosons") ==0 ){
-         ss.str("");
-         ss.precision(1);
-         ss <<setw(4)<<  "DiBosons\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
-         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
-    }else
-    if( strcmp(_vsamples[ns]->_name,"TT") ==0 ){
-         ss.str("");
-         ss.precision(1);
-         ss <<setw(4)<<  "tt\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
-         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
-    }else
-    if( strcmp(_vsamples[ns]->_name,"QCD") ==0 ){
-         ss.str("");
-         ss.precision(1);
-         ss <<setw(4)<<  "QCD\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
-         legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
-    }else{;
+    if ( strcmp(_vsamples[ns]->_name,"ewkWV") ==0 ) {
+      ss.str("");
+      ss.precision(1);
+      ss <<setw(4)<<  "SM EW WV"  <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
+      legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
+    } else if ( strcmp(_vsamples[ns]->_name,"Wjets") ==0 ) {
+      ss.str("");
+      ss.precision(1);
+      ss <<setw(4)<<  "Wjets\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
+      legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
+    } else if ( strcmp(_vsamples[ns]->_name,"Zjets") ==0 ) {
+      ss.str("");
+      ss.precision(1);
+      ss <<setw(4)<<  "Zjets\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
+      legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
+    } else if ( strcmp(_vsamples[ns]->_name,"DiBosons") ==0 ){
+      ss.str("");
+      ss.precision(1);
+      ss <<setw(4)<<  "DiBosons\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
+      legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
+    } else if ( strcmp(_vsamples[ns]->_name,"TT") ==0 ) {
+      ss.str("");
+      ss.precision(1);
+      ss <<setw(4)<<  "tt\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
+      legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
+    } else if ( strcmp(_vsamples[ns]->_name,"QCD") ==0 ) {
+      ss.str("");
+      ss.precision(1);
+      ss <<setw(4)<<  "QCD\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
+      legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
+    } else {;
     }
-   }
+  }
 
   ss.str("");
   ss.precision(1);
@@ -1616,20 +1573,21 @@ void TmvaAnl::PlotLegend(const char* var){
   cms_leg->Draw();
   cms_leg2->Draw();
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 void TmvaAnl::PlotShapes(Float_t ymin, Int_t flogy, Int_t overFlow){
-
-
   bkg_hists.clear();
- //Stack backgrounds
+  //Stack backgrounds
   for(UInt_t ns=3; ns <  _vsamples.size(); ns++){
     bkg_hists.push_back(_vsamples[ns]->_hf1);
   }
   makeShapeComp(ymin, flogy, overFlow);
   if (_fsaveplots) _nstackplots++;
-
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 void TmvaAnl::makeShapeComp(Float_t ymin, Int_t flogy=0, Int_t overFlow=0) {
   // Plot the shape comparison graphs
   TH1F* hdata = _data->_hf1;
@@ -1675,86 +1633,80 @@ void TmvaAnl::makeShapeComp(Float_t ymin, Int_t flogy=0, Int_t overFlow=0) {
 
   hsgl->Draw("hist same");
   gPad->RedrawAxis();
-
-}
-//=====================================================================================================
-void TmvaAnl::PlotSgf(const char* var){
-
-   stringstream ssSgf0Text; 
-   stringstream ssSgf1Text; 
-   stringstream ssSgf2Text; 
-   stringstream ssSgf3Text; 
- 
-
-   ssSgf0Text.setf(ios::fixed); 
-   ssSgf0Text.precision(2); 
-   ssSgf0Text << "eff#times#pi = " << setw(6) << _sgf0;
-
-   ssSgf1Text.setf(ios::fixed); 
-   ssSgf1Text.precision(2); 
-   ssSgf1Text << "S/#sqrt{S+B} = " << setw(6) << _sgf1;
- 
-   ssSgf2Text.setf(ios::fixed); 
-   ssSgf2Text.precision(2); 
-   ssSgf2Text << "95% CL, fb   = " << setw(6) << _sgf2;
-
-   ssSgf3Text.setf(ios::fixed); 
-   ssSgf3Text.precision(2); 
-   ssSgf3Text << "S/#sqrt{B} = "   << setw(6) << _sgf3;
-
-   TLatex* signif0;
-   TLatex* signif1;
-   TLatex* signif2;
-   TLatex* signif3;
-
-   if ( (strcmp(var,"f_dphi") != 0 ) ){
-     signif0 = new TLatex(0.73,.50, ssSgf0Text.str().c_str());
-     signif1 = new TLatex(0.73,.45, ssSgf1Text.str().c_str());
-     signif2 = new TLatex(0.73,.40, ssSgf2Text.str().c_str());
-     signif3 = new TLatex(0.73,.35, ssSgf3Text.str().c_str());
-   }else{
-     signif0 = new TLatex(0.20,.50, ssSgf0Text.str().c_str());
-     signif1 = new TLatex(0.20,.45, ssSgf1Text.str().c_str()); 
-     signif2 = new TLatex(0.20,.40, ssSgf2Text.str().c_str());
-     signif3 = new TLatex(0.20,.35, ssSgf3Text.str().c_str());
-    }
-   signif0->SetNDC();
-   signif0->SetTextSize(0.040);
-   signif0->SetTextColor(1);
-   signif0->SetTextFont(22);
-   signif0->SetTextAlign(22);
-   signif0->Draw();
-
-
-   signif1->SetNDC();
-   signif1->SetTextSize(0.040);
-   signif1->SetTextColor(1);
-   signif1->SetTextFont(22);
-   signif1->SetTextAlign(22);
-   signif1->Draw();
-
-   signif2->SetNDC();
-   signif2->SetTextSize(0.040);
-   signif2->SetTextColor(1);
-   signif2->SetTextFont(22);
-   signif2->SetTextAlign(22);
-   signif2->Draw();
-
-
-   signif3->SetNDC();
-   signif3->SetTextSize(0.040);
-   signif3->SetTextColor(1);
-   signif3->SetTextFont(22);
-   signif3->SetTextAlign(22);
-   signif3->Draw();
-
 }
 
-//=====================================================================================================
-
-void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
+//======================================================================================================================
 //
+void TmvaAnl::PlotSgf(const char* var){
+  stringstream ssSgf0Text; 
+  stringstream ssSgf1Text; 
+  stringstream ssSgf2Text; 
+  stringstream ssSgf3Text; 
+ 
+  ssSgf0Text.setf(ios::fixed); 
+  ssSgf0Text.precision(2); 
+  ssSgf0Text << "eff#times#pi = " << setw(6) << _sgf0;
 
+  ssSgf1Text.setf(ios::fixed); 
+  ssSgf1Text.precision(2); 
+  ssSgf1Text << "S/#sqrt{S+B} = " << setw(6) << _sgf1;
+ 
+  ssSgf2Text.setf(ios::fixed); 
+  ssSgf2Text.precision(2); 
+  ssSgf2Text << "95% CL, fb   = " << setw(6) << _sgf2;
+
+  ssSgf3Text.setf(ios::fixed); 
+  ssSgf3Text.precision(2); 
+  ssSgf3Text << "S/#sqrt{B} = "   << setw(6) << _sgf3;
+
+  TLatex* signif0;
+  TLatex* signif1;
+  TLatex* signif2;
+  TLatex* signif3;
+
+  if ( (strcmp(var,"f_dphi") != 0 ) ) {
+    signif0 = new TLatex(0.73,.50, ssSgf0Text.str().c_str());
+    signif1 = new TLatex(0.73,.45, ssSgf1Text.str().c_str());
+    signif2 = new TLatex(0.73,.40, ssSgf2Text.str().c_str());
+    signif3 = new TLatex(0.73,.35, ssSgf3Text.str().c_str());
+  } else{
+    signif0 = new TLatex(0.20,.50, ssSgf0Text.str().c_str());
+    signif1 = new TLatex(0.20,.45, ssSgf1Text.str().c_str()); 
+    signif2 = new TLatex(0.20,.40, ssSgf2Text.str().c_str());
+    signif3 = new TLatex(0.20,.35, ssSgf3Text.str().c_str());
+  }
+  signif0->SetNDC();
+  signif0->SetTextSize(0.040);
+  signif0->SetTextColor(1);
+  signif0->SetTextFont(22);
+  signif0->SetTextAlign(22);
+  signif0->Draw();
+
+  signif1->SetNDC();
+  signif1->SetTextSize(0.040);
+  signif1->SetTextColor(1);
+  signif1->SetTextFont(22);
+  signif1->SetTextAlign(22);
+  signif1->Draw();
+
+  signif2->SetNDC();
+  signif2->SetTextSize(0.040);
+  signif2->SetTextColor(1);
+  signif2->SetTextFont(22);
+  signif2->SetTextAlign(22);
+  signif2->Draw();
+
+  signif3->SetNDC();
+  signif3->SetTextSize(0.040);
+  signif3->SetTextColor(1);
+  signif3->SetTextFont(22);
+  signif3->SetTextAlign(22);
+  signif3->Draw();
+}
+
+//======================================================================================================================
+//
+void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
     Float_t scale_sgl=scale/_scale_sgl_tmva;
     Float_t scale_bkg=scale/_scale_bkg_tmva; // 2018 W+jets CR scale 0.78418 to whole bkg | 0.7501 ttbar CR scale to whole bkg
     //cout << "Applied to test sample: scale_sgl/scale_bkg = " <<  scale_sgl << "/" << scale_bkg << endl;  
@@ -1767,28 +1719,26 @@ void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
     _sgf2 =0.0;
     _sgf3 =0.0;
     if (_sgl->npass+_bkg->npass){    
-       _sgf1 =  (_sgl->npass)/sqrt(_sgl->npass+_bkg->npass); 
-       _sgf0 =  _sgl->accpt*_sgl->npass/(_sgl->npass+_bkg->npass);   // eff*purity*100
-     }
-     if (_bkg->npass) _sgf3 =  (_sgl->npass)/sqrt(_bkg->npass);
+      _sgf1 =  (_sgl->npass)/sqrt(_sgl->npass+_bkg->npass); 
+      _sgf0 =  _sgl->accpt*_sgl->npass/(_sgl->npass+_bkg->npass);   // eff*purity*100
+    }
+    if (_bkg->npass) _sgf3 =  (_sgl->npass)/sqrt(_bkg->npass);
 
-     _useGauss=0;
-     if ( _sgl->npass > 20 )  _useGauss=1;
-     Double_t cl95res= 0.0;
-     Double_t pfluc= 0.0;
-     if (_bkg->npass) limit_calc( _bkg->npass, _bkg->npass , _bkg->npass_err, _sgl->accpt/100.,  0.15 * _sgl->accpt/100., _lum, 0.065*_lum , _useGauss,  cl95res, pfluc );
-   
-     _sgf2 =cl95res;
-     //  cout << "LIMIT_CALC-RESULTS (expected, fb)/pfluc  " << _sgf2 << " / " << pfluc << endl;
-     if (_debug ) cout << "_sgf0/_sgf1/_sgf2/_sgf3 = "  <<  _sgf0 << "/" << _sgf1 << "/" << _sgf2 << "/" << _sgf3 << endl;
-
-    
+    _useGauss=0;
+    if ( _sgl->npass > 20 )  _useGauss=1;
+    Double_t cl95res= 0.0;
+    Double_t pfluc= 0.0;
+    if (_bkg->npass) limit_calc( _bkg->npass, _bkg->npass , _bkg->npass_err, _sgl->accpt/100.,  0.15 * _sgl->accpt/100., _lum, 0.065*_lum , _useGauss,  cl95res, pfluc );
+    _sgf2 =cl95res;
+    //  cout << "LIMIT_CALC-RESULTS (expected, fb)/pfluc  " << _sgf2 << " / " << pfluc << endl;
+    if (_debug ) cout << "_sgf0/_sgf1/_sgf2/_sgf3 = "  <<  _sgf0 << "/" << _sgf1 << "/" << _sgf2 << "/" << _sgf3 << endl;
     for( UInt_t ns=3; ns <  _vsamples.size(); ns++){
-        _vsamples[ns]->fillSampleHist(var,cuts,scale_bkg);
+      _vsamples[ns]->fillSampleHist(var,cuts,scale_bkg);
     }
  }
-//=====================================================================================================
-//=====================================================================================================
+
+//======================================================================================================================
+//
 void  TmvaAnl::setSampleHists(){
     for( UInt_t ns=0; ns <  _vsamples.size(); ns++){
       _vsamples[ns]->_hf1 = xCloneHist(_hframe,_vsamples[ns]->_name,_nstackplots);
@@ -1797,7 +1747,9 @@ void  TmvaAnl::setSampleHists(){
        setHistStyle(_vsamples[ns]->_hf1);
     }
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 void  TmvaAnl::setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax, Float_t bw,
        const char hTitle[], const char xTitle[], const char yTitle[]){
     //
@@ -1815,7 +1767,7 @@ void  TmvaAnl::setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax,
       _hframe->SetMaximum(1.3 * ymax); // MM - was 1.3 * ymax
       bw=_hframe->GetBinWidth(1);
 
-    }else{
+    } else {
       //Use requested xmin,xmax
       Int_t   nbins=(xmax-xmin)/bw;    
       Float_t xmin_hist=xmin;
@@ -1827,52 +1779,51 @@ void  TmvaAnl::setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax,
     }
 
     stringstream Htitle;
-    if ( strcmp(hTitle,"test") ==0 )  {
-        Htitle    << var << ", " << cuts.GetTitle();  
-    }else{
-         Htitle   << hTitle; 
+    if ( strcmp(hTitle,"test") ==0 ) {
+      Htitle    << var << ", " << cuts.GetTitle();  
+    } else {
+      Htitle   << hTitle; 
     }
-     _hframe->SetTitle(Htitle.str().c_str());
+    _hframe->SetTitle(Htitle.str().c_str());
   
 
     stringstream Xtitle; 
-    if ( strcmp(xTitle,"test") ==0 )  {
-        Xtitle   << var;
-    }else{
-        Xtitle   << xTitle;    
+    if ( strcmp(xTitle,"test") ==0 ) {
+      Xtitle   << var;
+    } else {
+      Xtitle   << xTitle;    
     }   
-     _hframe->GetXaxis()->SetTitle(Xtitle.str().c_str());
+    _hframe->GetXaxis()->SetTitle(Xtitle.str().c_str());
 
     stringstream Ytitle; 
     if ( strcmp(yTitle,"test") == 0 )  {
-        Ytitle   << "evt/" << bw;
+      Ytitle   << "evt/" << bw;
     }else{
-        Ytitle   << yTitle;    
+      Ytitle   << yTitle;    
     }   
-     _hframe->GetYaxis()->SetTitle(Ytitle.str().c_str());
+    _hframe->GetYaxis()->SetTitle(Ytitle.str().c_str());
 
-     //gStyle->SetErrorX(0);
-     gStyle->SetLineScalePS(0.5);
-     gStyle->SetHatchesSpacing(2.5);
-     gStyle->SetHatchesLineWidth(1);
+    //gStyle->SetErrorX(0);
+    gStyle->SetLineScalePS(0.5);
+    gStyle->SetHatchesSpacing(2.5);
+    gStyle->SetHatchesLineWidth(1);
 
     setHistStyle(_hframe);
     //   cout << Htitle.str().c_str()<< "/" << Ytitle.str().c_str() << endl; 
     // return hframe;
-
  }
-//================================================================================
-//================================================================================
-TH1F* xCloneHist(TH1F* hfr, const char* cloneName, Int_t cloneNum ){
 
+//======================================================================================================================
+//
+TH1F* xCloneHist(TH1F* hfr, const char* cloneName, Int_t cloneNum ){
   stringstream scloneName;
   scloneName << cloneName << "_" << cloneNum;
   return cloneHist(hfr,scloneName.str().c_str());
-
 }
-//================================================================================
+
+//======================================================================================================================
+//
 TH1F* cloneHist(TH1F* hframe, const char* histname){
-  //
     TH1F* newhist = (TH1F*)gROOT->FindObject(histname); 
     if(newhist){ newhist->Delete(); }
     newhist = (TH1F*) hframe->Clone(histname); 
@@ -1881,133 +1832,157 @@ TH1F* cloneHist(TH1F* hframe, const char* histname){
     return newhist;
 }
 
-//================================================================================
-void setHistStyle(TH1F* hist){
-    hist->GetXaxis()->SetLabelFont(42);
-    hist->GetXaxis()->SetLabelSize(0.035);
-    hist->GetXaxis()->SetTitleSize(0.035);
-    hist->GetXaxis()->SetTitleFont(42);
-    hist->GetYaxis()->SetLabelFont(42);
-    hist->GetYaxis()->SetLabelSize(0.035);
-    hist->GetYaxis()->SetTitleSize(0.035);
-    hist->GetYaxis()->SetNdivisions(210);
-    hist->GetXaxis()->SetNdivisions(510);
-    hist->GetYaxis()->SetTitleFont(42);
-    hist->GetYaxis()->SetTitleOffset(1.4);
-    hist->GetXaxis()->SetTitleOffset(1.2);
-    hist->SetLineColor(1);
-    hist->SetFillStyle(1001);
-    hist->SetLineWidth(0); // was 2
+//======================================================================================================================
+//
+void SetRatioPlotStyle(TRatioPlot* ratio) {
+  std::vector<double> gridlines = {0.5, 1.0, 1.5};
+  ratio->SetGridlines(gridlines);
+  ratio->Draw("grid"); // took out hideup
+  ratio->GetLowYaxis()->SetNdivisions(404);
+  ratio->SetSeparationMargin(0);
+  ratio->GetLowerRefYaxis()->CenterTitle();
+  ratio->GetLowerRefYaxis()->SetTitleFont(42);
+  ratio->GetLowerRefYaxis()->SetTitleSize(0.035);
+  ratio->GetLowerRefYaxis()->SetTitleOffset(1.4);
+  ratio->GetLowerRefYaxis()->SetLabelFont(42);
+  ratio->GetLowerRefYaxis()->SetLabelSize(0.035);
+  ratio->GetLowerRefYaxis()->SetTitle("Data/MC");
+  ratio->GetLowerRefGraph()->SetMarkerStyle(20);
+  ratio->GetLowerRefGraph()->SetMarkerSize(0.5);
+  ratio->GetLowerRefGraph()->SetMinimum(0.1);
+  ratio->GetLowerRefGraph()->SetMaximum(2);
 }
 
-//================================================================================
-void  TmvaAnl::setHistStyle(TH1F* hist){
-    hist->GetXaxis()->SetLabelFont(42);
-    hist->GetXaxis()->SetLabelSize(0.035);
-    hist->GetXaxis()->SetTitleSize(0.035);
-    hist->GetXaxis()->SetTitleFont(42);
-    hist->GetYaxis()->SetLabelFont(42);
-    hist->GetYaxis()->SetLabelSize(0.035);
-    hist->GetYaxis()->SetTitleSize(0.035);
-    hist->GetYaxis()->SetNdivisions(210);
-    hist->GetXaxis()->SetNdivisions(510);
-    hist->GetYaxis()->SetTitleFont(42);
-    hist->GetYaxis()->SetTitleOffset(1.4);
-    hist->GetXaxis()->SetTitleOffset(1.2);
-    hist->SetLineColor(1);
-    hist->SetFillStyle(1001); // Set the style for each background process
-    hist->SetLineWidth(0); // was 1
+//======================================================================================================================
+//
+void setHistStyle(TH1F* hist){
+  hist->GetXaxis()->SetLabelFont(42);
+  hist->GetXaxis()->SetLabelSize(0.035);
+  hist->GetXaxis()->SetTitleSize(0.035);
+  hist->GetXaxis()->SetTitleFont(42);
+  hist->GetYaxis()->SetLabelFont(42);
+  hist->GetYaxis()->SetLabelSize(0.035);
+  hist->GetYaxis()->SetTitleSize(0.035);
+  hist->GetYaxis()->SetNdivisions(210);
+  hist->GetXaxis()->SetNdivisions(510);
+  hist->GetYaxis()->SetTitleFont(42);
+  hist->GetYaxis()->SetTitleOffset(1.4);
+  hist->GetXaxis()->SetTitleOffset(1.2);
+  hist->SetLineColor(1);
+  hist->SetFillStyle(1001);
+  hist->SetLineWidth(0); // was 2
 }
-//======================================================================
+
+//======================================================================================================================
+//
+void  TmvaAnl::setHistStyle(TH1F* hist){
+  hist->GetXaxis()->SetLabelFont(42);
+  hist->GetXaxis()->SetLabelSize(0.035);
+  hist->GetXaxis()->SetTitleSize(0.035);
+  hist->GetXaxis()->SetTitleFont(42);
+  hist->GetYaxis()->SetLabelFont(42);
+  hist->GetYaxis()->SetLabelSize(0.035);
+  hist->GetYaxis()->SetTitleSize(0.035);
+  hist->GetYaxis()->SetNdivisions(210);
+  hist->GetXaxis()->SetNdivisions(510);
+  hist->GetYaxis()->SetTitleFont(42);
+  hist->GetYaxis()->SetTitleOffset(1.4);
+  hist->GetXaxis()->SetTitleOffset(1.2);
+  hist->SetLineColor(1);
+  hist->SetFillStyle(1001); // Set the style for each background process
+  hist->SetLineWidth(0); // was 1
+}
+
+//======================================================================================================================
+//
 void tmgui(){
     TMVA::TMVAGui( ssifname.str().c_str()  );
 }
-//======================================================================= 
+
+//======================================================================================================================
+//
 void plotdscrs(const char* hname, TCut cuts=""){
   //plotdscrs("c0VBF3jcombo_S25kB35k", cleanNAN)
   anl->setsvplots(1);
- TCanvas* c2 = (TCanvas*)gROOT->FindObject("cDsks"); 
- if(c2) { c2->Delete(); }
- c2 = new TCanvas("c2","cDsks",10,10,1000,1000);
- c2->Divide(2,3);
-stringstream outfname;
-stringstream var;
-//tranverse mass 
+  TCanvas* c2 = (TCanvas*)gROOT->FindObject("cDsks"); 
+  if(c2) { c2->Delete(); }
+  c2 = new TCanvas("c2","cDsks",10,10,1000,1000);
+  c2->Divide(2,3);
+  stringstream outfname;
+  stringstream var;
+  //tranverse mass 
 
- c2->cd(1);
- var<< "f_D_jet"; 
- plotvar(anl,var.str().c_str(), cuts, 1, 0, 0,    0.,3.6, 0.08, 2, 0, 0, "Djet dscr, VBF selections,  35.9 fb^{-1}");
- outfname << var.str().c_str() << "_" << hname << ".pdf";
- gPad->SaveAs(outfname.str().c_str());
- outfname.str("");
- outfname << var.str().c_str() << "_" << hname << ".png";
- gPad->SaveAs(outfname.str().c_str());
- var.str(""); outfname.str("");
-
-
- c2->cd(2);
- var<< "f_Djet_VAJHU"; 
- plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    0., 1.8, 0.04, 2, 0, 0, "MELA dscr, VBF selections,  35.9 fb^{-1}");
- outfname << var.str().c_str() << "_" << hname << ".pdf";
- gPad->SaveAs(outfname.str().c_str());
- outfname.str("");
- outfname << var.str().c_str() << "_" << hname << ".png";
- gPad->SaveAs(outfname.str().c_str());
- var.str(""); outfname.str("");
-
- c2->cd(3);
- var<< "BDT"; 
- plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.5, 1.3, 0.04, 2, 0, 0, "BDT dscr, VBF selections,  35.9 fb^{-1}");
- outfname << var.str().c_str() << "_" << hname << ".pdf";
- gPad->SaveAs(outfname.str().c_str());
- outfname.str("");
- outfname << var.str().c_str() << "_" << hname << ".png";
- gPad->SaveAs(outfname.str().c_str());
- var.str(""); outfname.str("");
-
- c2->cd(4);
- var<< "MLPBFGS"; 
- plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.1, 1.7, 0.04, 2, 0, 0, "MLPBFGS dscr, VBF selections,  35.9 fb^{-1}");
- outfname << var.str().c_str() << "_" << hname << ".pdf";
- gPad->SaveAs(outfname.str().c_str());
- outfname.str("");
- outfname << var.str().c_str() << "_" << hname << ".png";
- gPad->SaveAs(outfname.str().c_str());
- var.str(""); outfname.str("");
-
- c2->cd(5);
- var<< "DNN_GPU"; 
- plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.1, 1.7, 0.04, 2, 0, 0, "DNN dscr, VBF selections,  35.9 fb^{-1}");
- outfname << var.str().c_str() << "_" << hname << ".pdf";
- gPad->SaveAs(outfname.str().c_str());
- outfname.str("");
- outfname << var.str().c_str() << "_" << hname << ".png";
- gPad->SaveAs(outfname.str().c_str());
- var.str(""); outfname.str("");
+  c2->cd(1);
+  var<< "f_D_jet"; 
+  plotvar(anl,var.str().c_str(), cuts, 1, 0, 0,    0.,3.6, 0.08, 2, 0, 0, "Djet dscr, VBF selections,  35.9 fb^{-1}");
+  outfname << var.str().c_str() << "_" << hname << ".pdf";
+  gPad->SaveAs(outfname.str().c_str());
+  outfname.str("");
+  outfname << var.str().c_str() << "_" << hname << ".png";
+  gPad->SaveAs(outfname.str().c_str());
+  var.str(""); outfname.str("");
 
 
+  c2->cd(2);
+  var<< "f_Djet_VAJHU"; 
+  plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    0., 1.8, 0.04, 2, 0, 0, "MELA dscr, VBF selections,  35.9 fb^{-1}");
+  outfname << var.str().c_str() << "_" << hname << ".pdf";
+  gPad->SaveAs(outfname.str().c_str());
+  outfname.str("");
+  outfname << var.str().c_str() << "_" << hname << ".png";
+  gPad->SaveAs(outfname.str().c_str());
+  var.str(""); outfname.str("");
 
- c2->cd(6);
- //cut on the best classifyer (max significance), MELA for combo case
- var<< "PuppiAK8_jet_mass_so_corr"; 
- plotvar(anl,"PuppiAK8_jet_mass_so_corr",cleanNAN+"f_Djet_VAJHU>0.480",1.0,0,1, 110,150,2, 0,0,0, "VBF, f_Djet_VAJHU>0.480, 35.9 fb^{-1}","m_{4l} (GeV)");
- outfname << var.str().c_str() << "_" << hname << "MELAtheBest.png";
-gPad->SaveAs(outfname.str().c_str());
- var.str(""); outfname.str("");
+  c2->cd(3);
+  var<< "BDT"; 
+  plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.5, 1.3, 0.04, 2, 0, 0, "BDT dscr, VBF selections,  35.9 fb^{-1}");
+  outfname << var.str().c_str() << "_" << hname << ".pdf";
+  gPad->SaveAs(outfname.str().c_str());
+  outfname.str("");
+  outfname << var.str().c_str() << "_" << hname << ".png";
+  gPad->SaveAs(outfname.str().c_str());
+  var.str(""); outfname.str("");
 
+  c2->cd(4);
+  var<< "MLPBFGS"; 
+  plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.1, 1.7, 0.04, 2, 0, 0, "MLPBFGS dscr, VBF selections,  35.9 fb^{-1}");
+  outfname << var.str().c_str() << "_" << hname << ".pdf";
+  gPad->SaveAs(outfname.str().c_str());
+  outfname.str("");
+  outfname << var.str().c_str() << "_" << hname << ".png";
+  gPad->SaveAs(outfname.str().c_str());
+  var.str(""); outfname.str("");
 
- outfname.str("");
- outfname << "canvasPlots_" << hname << ".png";
- c2->SaveAs(outfname.str().c_str());
- outfname.str("");
- outfname << "canvasPlots_" << hname << ".pdf";
- c2->SaveAs(outfname.str().c_str());
- anl->setsvplots(0);
+  c2->cd(5);
+  var<< "DNN_GPU"; 
+  plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.1, 1.7, 0.04, 2, 0, 0, "DNN dscr, VBF selections,  35.9 fb^{-1}");
+  outfname << var.str().c_str() << "_" << hname << ".pdf";
+  gPad->SaveAs(outfname.str().c_str());
+  outfname.str("");
+  outfname << var.str().c_str() << "_" << hname << ".png";
+  gPad->SaveAs(outfname.str().c_str());
+  var.str(""); outfname.str("");
+
+  c2->cd(6);
+  //cut on the best classifyer (max significance), MELA for combo case
+  var<< "PuppiAK8_jet_mass_so_corr"; 
+  plotvar(anl,"PuppiAK8_jet_mass_so_corr",cleanNAN+"f_Djet_VAJHU>0.480",1.0,0,1, 110,150,2, 0,0,0, "VBF, f_Djet_VAJHU>0.480, 35.9 fb^{-1}","m_{4l} (GeV)");
+  outfname << var.str().c_str() << "_" << hname << "MELAtheBest.png";
+  gPad->SaveAs(outfname.str().c_str());
+  var.str(""); outfname.str("");
+
+  outfname.str("");
+  outfname << "canvasPlots_" << hname << ".png";
+  c2->SaveAs(outfname.str().c_str());
+  outfname.str("");
+  outfname << "canvasPlots_" << hname << ".pdf";
+  c2->SaveAs(outfname.str().c_str());
+  anl->setsvplots(0);
 }
-//======================================================================= 
-Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_error, double lumi, double lumi_error,  bool IfGauss,double& cl95res, double&  pfluc )
-{
 
+//======================================================================================================================
+//
+Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_error, double lumi, double lumi_error,  bool IfGauss,double& cl95res, double&  pfluc ) {
 //   if( argc != 9 ) {
 //     cout << "Insufficient data on command line" <<endl;
 //     cout << "Use: limit_calc ndata nbkg sbkg acc sacc lumi slumi force_gauss(=0 for web page)"
@@ -2054,10 +2029,11 @@ Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_e
   // and write out the information to be picked up by the HTML writer.
   //  cout << "LIMIT_CALC-RESULTS " << cl95res << "  " << pfluc << "  "  << fname.c_str() << endl;
   
-
   return 0;
 }
-//======================================================================= 
+
+//======================================================================================================================
+// 
 void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
 //  
   anl->setsvplots(1);
@@ -2075,7 +2051,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   // title: VBS (WV), 35.9fb^{-1}
 
   std::string selector = "new";
-  if(selector == "old"){ // These are for the cplots for the OLD ntuples, don't confuse them for the cplot for the new ntuples
+  if(selector == "old") { // These are for the cplots for the OLD ntuples, don't confuse them for the cplot for the new ntuples
     //------------   VERTICES  	-------------------
     cp1->cd(1);
     plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 50, 1,       1, 0, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of primary vertices", "Events/bin");
@@ -2104,7 +2080,8 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
 
     cp1->cd(9);
     plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
-    //======================================================================================================================================================================
+    //======================================================================================================================
+//=================================================================
      outfname << "plots/2016/c1_2016" << "_" << CutName << ".pdf";
      cp1->SaveAs(outfname.str().c_str());
      outfname.str("");
@@ -2162,8 +2139,6 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
      if(cp3) { cp3->Delete(); }
      cp3 = new TCanvas("cp3","cp3",10,10,1000,1000);
      cp3->Divide(3,3);
-
-
 
     // plotvar(anl, "PuppiAK8_jet_mass",         cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 mass (GeV)",           "Events/bin");
     // plotvar(anl, "PuppiAK8_jet_mass_pr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 pruned mass (GeV)",    "Events/bin");
@@ -2393,7 +2368,8 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
    anl->setsvplots(0);
 }
 
-//=================================================================================================
+//======================================================================================================================
+//
 void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
 //  
   anl->setsvplots(1);
@@ -2571,29 +2547,30 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
   anl->setsvplots(0);
   }
    
-
- //===================================================================================================
+//======================================================================================================================
+//
 TCut splitCuts( const char* strcuts){
   cout << strcuts << endl;
   TCut rootcut = TCut("cut", (TCut) strcuts);
   return rootcut;
 }
-//=====================================================================================================
+
+//======================================================================================================================
+//
 void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut basecuts, Float_t scale, Int_t debug, Int_t istyle,
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
-	       const char hTitle[], const char xTitle[], const char yTitle[]){
+	       const char hTitle[], const char xTitle[], const char yTitle[]) {
 //=========================================
 //printCutflow(anl, "mass_lvj_type0_PuppiAK8", "paperCuts", dummy,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
-   TCut Cuts;
-   stringstream CanvasName;
-   stringstream hist_title;
-// 
-    anl->setsvplots(1);
-//==
-    TCanvas* c1= (TCanvas*)gROOT->FindObject("c1"); 
-    if(c1) delete c1;
-    c1=new TCanvas("c1", "vbsflow", 1,0,800,600);
-//==
+  TCut Cuts;
+  stringstream CanvasName;
+  stringstream hist_title;
+
+  anl->setsvplots(1);
+
+  TCanvas* c1= (TCanvas*)gROOT->FindObject("c1"); 
+  if(c1) delete c1;
+  c1=new TCanvas("c1", "vbsflow", 1,0,800,600);
 
    // select postscript output type
    // type = 111   portrait  ps
@@ -2601,66 +2578,55 @@ void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut ba
    // type = 113   eps
   Int_t type = 112;
 
-  //  stringstream OutPsFname;
-  //  OutPsFname << "Cutflow_" << var <<  "_" <<  flowname << ".ps";
-  //  TPostScript* ps = (TPostScript*)gROOT->FindObject(OutPsFname.str().c_str()); 
-  //  if(ps) ps->Close();
-  //  ps = new TPostScript(OutPsFname.str().c_str(),type);Cutflow
   stringstream OutPdfFname;
   
-//==
-//     stringstream CutFlowFname;
-//     CutFlowFname << "Cutflow_" <<  flowName << ".tex";
-//     ofstream cutsflow(CutFlowFname.str().c_str());   
-//==  
-    cout     << "|--------------------------------------------------------------------------------------------------------------------|"      << endl;
-    cout     << "|-----------------------|--------------|------------------------|----------------------------|-------------| 95% CL, |"      << endl;
-    cout     << "|         Cut           |    DATA      |       Total_bkg        |      Total_sgl (accpt)     | S/sqrt(S+B) | exp(fb) |"      << endl;
-    cout     << "|-----------------------|--------------|------------------------|----------------------------|-------------|---------|"      << endl;
+  cout     << "|--------------------------------------------------------------------------------------------------------------------|"      << endl;
+  cout     << "|-----------------------|--------------|------------------------|----------------------------|-------------| 95% CL, |"      << endl;
+  cout     << "|         Cut           |    DATA      |       Total_bkg        |      Total_sgl (accpt)     | S/sqrt(S+B) | exp(fb) |"      << endl;
+  cout     << "|-----------------------|--------------|------------------------|----------------------------|-------------|---------|"      << endl;
  
-     anl->cuts.Clear();
-     anl->cuts  <<
-       category_selection <<
-       lep_pt <<
-       lep_eta <<
-       fatjet_pt <<
-       fatjet_eta <<
-       fatjet_tau21 <<
-       met_pt <<
-       //btag_veto <<         // this has to be commented out when doing top cr
-       vbs_jets_mjj <<
-       vbs_delta_eta <<
-       vbs_jets_pt <<
-       //wv_cr_vjets
-       wv_cr_top <<
-       wv_sr                // needed for both SR and top CR
-     ;
-     CanvasName <<  flowname << " : " << anl->cuts.Cut(0).GetName();
-     TCut currentCut;
-     for (Int_t i=0; i<=anl->cuts.GetLast(); ++i){
-        currentCut=anl->cuts.Cut(i);
-        Cuts=Cuts + currentCut;
-        c1->cd();
-        CanvasName << " + " << currentCut.GetName();
-        hist_title << "VBS (WV), " << g_lum << "fb^{-1}, " << currentCut;
-        plotvar(anl, var, Cuts, scale, -1, istyle, xmin, xmax, bw, flogy, flogx, 1, hist_title.str().c_str(), xTitle, yTitle);
-        anl->PrintStat(currentCut, debug);
-	      c1->Update();
-        if (i == 0) {
-          OutPdfFname << "docs/cutflows/Cutflow_" << var << "_" << flowname << ".pdf(";
-          c1->Print(OutPdfFname.str().c_str(), "pdf");
-          OutPdfFname.str("");
-        } else if (i == anl->cuts.GetLast()) {
-          OutPdfFname << "docs/cutflows/Cutflow_" << var << "_" << flowname << ".pdf)";
-          c1->Print(OutPdfFname.str().c_str(), "pdf");
-          OutPdfFname.str("");
-        } else {
-          OutPdfFname << "docs/cutflows/Cutflow_" << var << "_" << flowname << ".pdf";
-
-          c1->Print(OutPdfFname.str().c_str(), "pdf");
-          OutPdfFname.str("");
-        }
-        hist_title.str("");
-     }//End cuts loop
+  anl->cuts.Clear();
+  anl->cuts  <<
+    category_selection <<
+    lep_pt <<
+    lep_eta <<
+    fatjet_pt <<
+    fatjet_eta <<
+    fatjet_tau21 <<
+    met_pt <<
+    //btag_veto <<         // this has to be commented out when doing top cr
+    vbs_jets_mjj <<
+    vbs_delta_eta <<
+    vbs_jets_pt <<
+    //wv_cr_vjets
+    wv_cr_top <<
+    wv_sr                // needed for both SR and top CR
+  ;
+  CanvasName <<  flowname << " : " << anl->cuts.Cut(0).GetName();
+  TCut currentCut;
+  for (Int_t i=0; i<=anl->cuts.GetLast(); ++i){
+    currentCut=anl->cuts.Cut(i);
+    Cuts=Cuts + currentCut;
+    c1->cd();
+    CanvasName << " + " << currentCut.GetName();
+    hist_title << "VBS (WV), " << g_lum << "fb^{-1}, " << currentCut.GetName();
+    plotvar(anl, var, Cuts, scale, -1, istyle, xmin, xmax, bw, flogy, flogx, 1, hist_title.str().c_str(), xTitle, yTitle);
+    anl->PrintStat(currentCut, debug);
+	  c1->Update();
+    if (i == 0) {
+      OutPdfFname << "docs/cutflows/Cutflow_" << var << "_" << flowname << ".pdf(";
+      c1->Print(OutPdfFname.str().c_str(), "pdf");
+      OutPdfFname.str("");
+    } else if (i == anl->cuts.GetLast()) {
+      OutPdfFname << "docs/cutflows/Cutflow_" << var << "_" << flowname << ".pdf)";
+      c1->Print(OutPdfFname.str().c_str(), "pdf");
+      OutPdfFname.str("");
+    } else {
+      OutPdfFname << "docs/cutflows/Cutflow_" << var << "_" << flowname << ".pdf";
+      c1->Print(OutPdfFname.str().c_str(), "pdf");
+      OutPdfFname.str("");
+    }
+    hist_title.str("");
+  }//End cuts loop
   anl->setsvplots(0);
 }

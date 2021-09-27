@@ -34,23 +34,26 @@ Same as above, plus
 ## Signal
 
 ### Variables for DNN training
-| Variable   | Description              |
-| :---       | :---                     |
-| Lepton $\eta$ | Lepton Pseudorapidity    |
-| Lepton $p_T$  | Lepton transverse momentum |
-| Njets | Number of jets with pt > 30 GeV |
-| ${p_T}^0_{VBS}$ | pT 1st VBS jet |
-| ${p_T}^1_{VBS}$ | pT 2nd VBS jet |
-| ${p_T}_{Vjets}^{0}$ | pT 1st jet from hadronic V or boosted V pT |
-| ${p_T}^0_{VBS}$ | pT 2nd jet from hadronic V |
-| $M^{vbs}_{jj}$ | Invariant mass of the VBS tag jets pair |
-| $M^{V}_{jj}$ | Invariant mass of the had V jets or boosted V mass |
-| $\Delta \eta^{vbs}$ | Pseudorapidity interval between VBS jets |
-| $\Delta \phi^{vbs}$ | Azimuthal distance between VBS jets |
-| $\Delta \eta^{Vjets}$ | Pseudorapidity interval between hadronic V jets |
-| $Z^{lep}$ | Zeppenfeld variable for the lepton |
-| $Z^{vjet}_0$ | Zeppenfeld variable fo rthe boosted V jet |
-| $C_{VW}$ | hadronic V boson centrality |
+| Variable   | Description              |   Category | Tree Name
+| :---       | :---                     | :--- | :---
+| Lepton $\eta$ | Lepton Pseudorapidity    | Both | lep1_eta ?
+| Lepton $p_T$  | Lepton transverse momentum | Both | lep1_pt ?
+| N_{jets} | Number of jets with pt > 30 GeV | Both | nJet30f
+| ${p_T}^0_{VBS}$ | pT 1st VBS jet | Boosted | vbf1_AK4_pt
+| ${p_T}^1_{VBS}$ | pT 2nd VBS jet | Both | vbf2_AK4_pt
+| ${p_T}_{Vjets}^{0}$ | pT 1st jet from hadronic V or boosted V pT | Both | bos_j1_AK4_pt OR bos_PuppiAK8_pt
+| ${p_T}^0_{VBS}$ | pT 2nd jet from hadronic V | Resolved | bos_j2_AK4_pt
+| $M^{vbs}_{jj}$ | Invariant mass of the VBS tag jets pair | Both | vbf_m
+| $M^{V}_{jj}$ | Invariant mass of the had V jets or boosted V mass | Both | bos_AK4AK4_m OR bos_PuppiAK8_m
+| $\Delta \eta^{vbs}$ | Pseudorapidity interval between VBS jets | Both | vbf_deta
+| $\Delta \phi^{vbs}$ | Azimuthal distance between VBS jets | Resolved | vbf_phi
+| $\Delta \eta^{Vjets}$ | Pseudorapidity interval between hadronic V jets | Resolved | bos_AK4AK4_eta
+| $Z^{lep}$ | Zeppenfeld variable for the lepton | Both | zeppLep
+| $Z^{vjet}_0$ | Zeppenfeld variable for the boosted V jet | Boosted | zeppHad
+| $C_{VW}$ | hadronic V boson centrality | Both | bosCent
+| $QGL_{vbs}^{0}$ | Quark Gluon Likelihood (morphed) 1st VBS jet | Both | vbf1_AK4_qgid ? 
+| $QGL_{vbs}^{0}$ | Quark Gluon Likelihood (morphed) 1st had V jet | Resolved |
+| $QGL_{vbs}^{1}$ | Quark Gluon Likelihood (morphed) 2nd had V jets | Resolved |
 
 ## Vars R.S. Plotted
 | R.S. | My Analysis |

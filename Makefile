@@ -33,7 +33,7 @@ init:
 	@echo "If you want to plot a single var at a time 			 |	If you just want to update the pdf with all the plots"
 	@echo "---- singlePlot - year, lumi, cut, cutName, varName		 |	---- genReport -"
 	@echo " 								 |	"
-	@echo "NOTE: Add _wsl to each of these target names if running on WSL" 
+	@echo "NOTE: Add _wsl to each of these target names if running using ROOT in a CONDA environment" 
 	@echo ""
 
 test:
