@@ -84,13 +84,13 @@
 
     // Change the 1 in the loop to ntuples.size() if the ntuples have different sets of branches
     for (int i = 0; i<1; i++) {
-        string infile = location+ntuples[i];
-        TFile *input = new TFile(infile.c_str());
-        TObjArray* brches = Events->GetListOfBranches();
-        for (int iter = 0; iter <brches->GetEntries(); iter++) {
-            ofs << brches->At(iter)->GetTitle() << '\t' << '\t' << brches->At(iter)->GetName() << ";" << std::endl;
-        }
-        input->Close();
+      string infile = location+ntuples[i];
+      TFile *input = new TFile(infile.c_str());
+      TObjArray* brches = Events->GetListOfBranches();
+      for (int iter = 0; iter <brches->GetEntries(); iter++) {
+        ofs << brches->At(iter)->GetTitle() << '\t' << '\t' << brches->At(iter)->GetName() << ";" << std::endl;
+      }
+      input->Close();
     }
     
     ofs.close();

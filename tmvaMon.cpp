@@ -1347,8 +1347,6 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
 
     for (int ibin=1; ibin<=sum_bkg_hists->GetNbinsX(); ibin++) {
       errors_on_ratio->SetPointY(ibin, 1.0);
-//     Float_t err_y = data_hist->GetErrorY(ibin); //
-//      data_hist->SetPointError(ibin, 0.0, err_y); //
       if (errors_hist->GetPointY(ibin) != 0.0) {
         errors_on_ratio->SetPointEYhigh(ibin, errors_hist->GetErrorYhigh(ibin)/errors_hist->GetPointY(ibin));
         errors_on_ratio->SetPointEYlow(ibin, errors_hist->GetErrorYlow(ibin)/errors_hist->GetPointY(ibin));
@@ -1388,7 +1386,6 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
 
     gPad->RedrawAxis();
     gPad->SetLogy(flogy);
-
 
   } else {
 
