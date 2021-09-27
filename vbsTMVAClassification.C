@@ -899,6 +899,7 @@ ssAUCoutfile << "ROC/" << std::to_string(selector) << "_Test.txt"; // AUCoutfile
 
 int main( int argc, char** argv )
 {
+  // ROOT::EnableImplicitMT();
    // Select methods (don't look at this code - not of interest)
    TString methodList;
    TString sname=argv[1]; 

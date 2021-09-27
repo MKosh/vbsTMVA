@@ -53,7 +53,7 @@
 
 using namespace std;
 
-//==================================================================================================
+//======================================================================================================================
 //
 namespace xsect{
   // signal channels cross-sections in pb
@@ -120,6 +120,8 @@ namespace xsect{
 
 Float_t g_lum;
 
+//======================================================================================================================
+//
 class TmvaSample{
   private:  
     //Int_t   _sid;
@@ -151,7 +153,7 @@ class TmvaSample{
     TTree* getTrainTree(){ return _trainTree;}
 };
 
-//==================================================================================================
+//======================================================================================================================
 //
 TmvaSample::TmvaSample(Int_t sid,Int_t scolor, const char* smplname, TCut samplecut,Float_t ngen_normfb, TTree* testTree, TTree* trainTree){
   _sid       = sid;
@@ -163,10 +165,9 @@ TmvaSample::TmvaSample(Int_t sid,Int_t scolor, const char* smplname, TCut sample
   _trainTree = trainTree;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
-
   if(_sid == 3) {
     _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
   } else {
@@ -202,7 +203,7 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   return npass;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 class CutList {
   TObjArray _cuts;
@@ -275,7 +276,7 @@ public:
   }
 };
 
-//==================================================================================================
+//======================================================================================================================
 //
 class TmvaAnl{
   private:
@@ -348,7 +349,7 @@ class TmvaAnl{
     void makeShapeComp(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
 };
 
-//==================================================================================================
+//======================================================================================================================
 //
 TmvaAnl::TmvaAnl(TString anlname, Float_t lum_fbinv, std::vector<TmvaSample*> vec_samples, Float_t& scale_sgl_tmva,Float_t& scale_bkg_tmva){
   _debug=0;
@@ -370,7 +371,7 @@ TmvaAnl::TmvaAnl(TString anlname, Float_t lum_fbinv, std::vector<TmvaSample*> ve
   _sgf3=0;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 Int_t plotShapeComp(TmvaAnl* anl, const char* var, TCut cut, Float_t scale=1.0, Int_t debug=0, Int_t istyle=0,
         Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0, Int_t overFlow=0,
@@ -402,7 +403,9 @@ void shapePlots(TmvaAnl*, TCut cuts, TString CutName);
 
 TCut  splitCuts(const char* strcuts);
 
-//==================================================================================================
+void SetRatioPlotStyle(TRatioPlot* ratio);
+
+//======================================================================================================================
 //
 TmvaAnl* anl;
 stringstream ssifname;
@@ -412,7 +415,7 @@ TH1F* xCloneHist(TH1F* hframe, const char* cloneName, Int_t cloneNum);
 TGraphErrors*  map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& opthist,  Float_t& best_cutval, Float_t& sgf_at_bestcut );
 Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_error, double lumi, double lumi_error,  bool IfGauss,double& cl95res, double&  pfluc );
 
-//==================================================================================================
+//======================================================================================================================
 //
 void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TString cutName="test"){
   //
@@ -441,7 +444,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 void  tmvacmp(TmvaAnl* anl, const char* sgf, const char* varset="test"){
   stringstream tmvacut;
@@ -531,7 +534,7 @@ void  tmvacmp(TmvaAnl* anl, const char* sgf, const char* varset="test"){
   anl->setsvplots(0);
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
   ssifname <<  anlName << "_SBtmva.root";
@@ -627,7 +630,7 @@ TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv){
   return new TmvaAnl(anlName,lum_fbinv,anl_samples,scale_sgl_tmva,scale_bkg_tmva); 
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 Int_t plotShapeComp(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t debug, Int_t istyle,
         Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
@@ -669,7 +672,7 @@ Int_t plotShapeComp(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int
   return 0;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 Int_t plotSingleVariable( TmvaAnl* anl, const char* var, TCut cuts, const char* cutName, Float_t scale, Int_t debug, Int_t istyle,
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
@@ -744,7 +747,7 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   return 0;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t debug, Int_t istyle,
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
@@ -809,7 +812,9 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   plotCanvas->SaveAs(ssoutname.str().c_str());
   return 0;
 }
+
 //===========================================================================================
+//
 void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 
   Float_t sum_bkg = 0;
@@ -854,7 +859,7 @@ void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
   }
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& optmap, Float_t& best_cutval, Float_t& sgf_at_bestcut    ){
 
@@ -986,7 +991,7 @@ TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Flo
   return sgf;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf=0.0005, Float_t dstepw=0.0005, Int_t npoints=20){
   _optmap.clear();
@@ -1043,7 +1048,7 @@ Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* c
   return bestcut;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf=0.0005, Float_t dstepw=0.0005, Int_t npoints= 100){
   //anl->OptimizeCut(cleanNAN,"BDT",-1, 1, 0.01);  
@@ -1151,7 +1156,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
   return cutval;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 Float_t TmvaAnl::optParVal(const char* optParName){
   Float_t result = _sgf0;
@@ -1167,7 +1172,7 @@ Float_t TmvaAnl::optParVal(const char* optParName){
   return result;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 TH1F* TmvaAnl::makeHist(const char* hname, const char* hvar, Int_t nbins, Float_t hvar_min, Float_t hvar_max){
   stringstream histname;
@@ -1181,7 +1186,7 @@ TH1F* TmvaAnl::makeHist(const char* hname, const char* hvar, Int_t nbins, Float_
   return hist;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 void TmvaAnl::PlotHists(Float_t ymin, Int_t flogy, Int_t overFlow){
   bkg_hists.clear();
@@ -1197,7 +1202,7 @@ void TmvaAnl::PlotHists(Float_t ymin, Int_t flogy, Int_t overFlow){
 
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 Int_t TmvaAnl::ArrangeHtms(Int_t flogy){
   //Signal
@@ -1252,10 +1257,9 @@ Int_t TmvaAnl::ArrangeHtms(Int_t flogy){
   return imax;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow){
-//
   TH1F* hdata = _data->_hf1;
   TH1F* hbkg  = _bkg->_hf1;
   TH1F* hsgl  = _sgl->_hf1;
@@ -1321,24 +1325,7 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
     if (ratio_plot) { ratio_plot->Delete(); }
     ratio_plot = new TRatioPlot(hdata, sum_bkg_hists);
 
-    std::vector<double> gridlines = {0.5, 1.0, 1.5};
-    ratio_plot->SetGridlines(gridlines);
-    
-    ratio_plot->Draw("grid"); // took out hideup
-    ratio_plot->GetLowYaxis()->SetNdivisions(404);
-    
-    ratio_plot->SetSeparationMargin(0);
-    ratio_plot->GetLowerRefYaxis()->CenterTitle();
-    ratio_plot->GetLowerRefYaxis()->SetTitleFont(42);
-    ratio_plot->GetLowerRefYaxis()->SetTitleSize(0.035);
-    ratio_plot->GetLowerRefYaxis()->SetTitleOffset(1.4);
-    ratio_plot->GetLowerRefYaxis()->SetLabelFont(42);
-    ratio_plot->GetLowerRefYaxis()->SetLabelSize(0.035);
-    ratio_plot->GetLowerRefYaxis()->SetTitle("Data/MC");
-    ratio_plot->GetLowerRefGraph()->SetMarkerStyle(20);
-    ratio_plot->GetLowerRefGraph()->SetMarkerSize(0.5);
-    ratio_plot->GetLowerRefGraph()->SetMinimum(0.1);
-    ratio_plot->GetLowerRefGraph()->SetMaximum(2);
+    SetRatioPlotStyle(ratio_plot);
 
     TGraphAsymmErrors* errors_hist = (TGraphAsymmErrors*)gROOT->FindObject("errors_hist"); // Error bars for the sum of the backgrounds
     if (errors_hist) { errors_hist->Delete(); }
@@ -1358,12 +1345,6 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
     errors_on_ratio->SetMarkerStyle(0);
     errors_on_ratio->SetFillColor(kGray+1);
 
-/*
-    TGraphErrors* data_hist = (TGraphErrors*) gROOT->FindObject("data_hist");
-    if (data_hist) { data_hist->Delete(); }
-    data_hist = new TGraphErrors(hdata);
-    data_hist->SetMinimum(ymin);
-*/
     for (int ibin=1; ibin<=sum_bkg_hists->GetNbinsX(); ibin++) {
       errors_on_ratio->SetPointY(ibin, 1.0);
 //     Float_t err_y = data_hist->GetErrorY(ibin); //
@@ -1443,7 +1424,7 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
   
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 void TmvaAnl::PlotLegend(const char* var){
 
@@ -1596,7 +1577,7 @@ void TmvaAnl::PlotLegend(const char* var){
   cms_leg2->Draw();
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 void TmvaAnl::PlotShapes(Float_t ymin, Int_t flogy, Int_t overFlow){
   bkg_hists.clear();
@@ -1608,7 +1589,7 @@ void TmvaAnl::PlotShapes(Float_t ymin, Int_t flogy, Int_t overFlow){
   if (_fsaveplots) _nstackplots++;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 void TmvaAnl::makeShapeComp(Float_t ymin, Int_t flogy=0, Int_t overFlow=0) {
   // Plot the shape comparison graphs
@@ -1657,7 +1638,7 @@ void TmvaAnl::makeShapeComp(Float_t ymin, Int_t flogy=0, Int_t overFlow=0) {
   gPad->RedrawAxis();
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 void TmvaAnl::PlotSgf(const char* var){
   stringstream ssSgf0Text; 
@@ -1726,7 +1707,7 @@ void TmvaAnl::PlotSgf(const char* var){
   signif3->Draw();
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
     Float_t scale_sgl=scale/_scale_sgl_tmva;
@@ -1759,7 +1740,7 @@ void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
     }
  }
 
-//==================================================================================================
+//======================================================================================================================
 //
 void  TmvaAnl::setSampleHists(){
     for( UInt_t ns=0; ns <  _vsamples.size(); ns++){
@@ -1770,7 +1751,7 @@ void  TmvaAnl::setSampleHists(){
     }
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 void  TmvaAnl::setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax, Float_t bw,
        const char hTitle[], const char xTitle[], const char yTitle[]){
@@ -1834,14 +1815,17 @@ void  TmvaAnl::setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax,
     //   cout << Htitle.str().c_str()<< "/" << Ytitle.str().c_str() << endl; 
     // return hframe;
  }
-//================================================================================
-//================================================================================
+
+//======================================================================================================================
+//
 TH1F* xCloneHist(TH1F* hfr, const char* cloneName, Int_t cloneNum ){
   stringstream scloneName;
   scloneName << cloneName << "_" << cloneNum;
   return cloneHist(hfr,scloneName.str().c_str());
 }
-//================================================================================
+
+//======================================================================================================================
+//
 TH1F* cloneHist(TH1F* hframe, const char* histname){
     TH1F* newhist = (TH1F*)gROOT->FindObject(histname); 
     if(newhist){ newhist->Delete(); }
@@ -1851,7 +1835,29 @@ TH1F* cloneHist(TH1F* hframe, const char* histname){
     return newhist;
 }
 
-//================================================================================
+//======================================================================================================================
+//
+void SetRatioPlotStyle(TRatioPlot* ratio) {
+  std::vector<double> gridlines = {0.5, 1.0, 1.5};
+  ratio->SetGridlines(gridlines);
+  ratio->Draw("grid"); // took out hideup
+  ratio->GetLowYaxis()->SetNdivisions(404);
+  ratio->SetSeparationMargin(0);
+  ratio->GetLowerRefYaxis()->CenterTitle();
+  ratio->GetLowerRefYaxis()->SetTitleFont(42);
+  ratio->GetLowerRefYaxis()->SetTitleSize(0.035);
+  ratio->GetLowerRefYaxis()->SetTitleOffset(1.4);
+  ratio->GetLowerRefYaxis()->SetLabelFont(42);
+  ratio->GetLowerRefYaxis()->SetLabelSize(0.035);
+  ratio->GetLowerRefYaxis()->SetTitle("Data/MC");
+  ratio->GetLowerRefGraph()->SetMarkerStyle(20);
+  ratio->GetLowerRefGraph()->SetMarkerSize(0.5);
+  ratio->GetLowerRefGraph()->SetMinimum(0.1);
+  ratio->GetLowerRefGraph()->SetMaximum(2);
+}
+
+//======================================================================================================================
+//
 void setHistStyle(TH1F* hist){
   hist->GetXaxis()->SetLabelFont(42);
   hist->GetXaxis()->SetLabelSize(0.035);
@@ -1870,7 +1876,8 @@ void setHistStyle(TH1F* hist){
   hist->SetLineWidth(0); // was 2
 }
 
-//================================================================================
+//======================================================================================================================
+//
 void  TmvaAnl::setHistStyle(TH1F* hist){
   hist->GetXaxis()->SetLabelFont(42);
   hist->GetXaxis()->SetLabelSize(0.035);
@@ -1888,11 +1895,15 @@ void  TmvaAnl::setHistStyle(TH1F* hist){
   hist->SetFillStyle(1001); // Set the style for each background process
   hist->SetLineWidth(0); // was 1
 }
-//======================================================================
+
+//======================================================================================================================
+//
 void tmgui(){
     TMVA::TMVAGui( ssifname.str().c_str()  );
 }
-//======================================================================= 
+
+//======================================================================================================================
+//
 void plotdscrs(const char* hname, TCut cuts=""){
   //plotdscrs("c0VBF3jcombo_S25kB35k", cleanNAN)
   anl->setsvplots(1);
@@ -1971,7 +1982,9 @@ void plotdscrs(const char* hname, TCut cuts=""){
   c2->SaveAs(outfname.str().c_str());
   anl->setsvplots(0);
 }
-//======================================================================= 
+
+//======================================================================================================================
+//
 Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_error, double lumi, double lumi_error,  bool IfGauss,double& cl95res, double&  pfluc ) {
 //   if( argc != 9 ) {
 //     cout << "Insufficient data on command line" <<endl;
@@ -2022,7 +2035,7 @@ Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_e
   return 0;
 }
 
-//==================================================================================================
+//======================================================================================================================
 // 
 void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
 //  
@@ -2070,7 +2083,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
 
     cp1->cd(9);
     plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
-    //==================================================================================================
+    //======================================================================================================================
 //=================================================================
      outfname << "plots/2016/c1_2016" << "_" << CutName << ".pdf";
      cp1->SaveAs(outfname.str().c_str());
@@ -2129,8 +2142,6 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
      if(cp3) { cp3->Delete(); }
      cp3 = new TCanvas("cp3","cp3",10,10,1000,1000);
      cp3->Divide(3,3);
-
-
 
     // plotvar(anl, "PuppiAK8_jet_mass",         cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 mass (GeV)",           "Events/bin");
     // plotvar(anl, "PuppiAK8_jet_mass_pr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 pruned mass (GeV)",    "Events/bin");
@@ -2360,7 +2371,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
    anl->setsvplots(0);
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
 //  
@@ -2539,7 +2550,7 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
   anl->setsvplots(0);
   }
    
-//==================================================================================================
+//======================================================================================================================
 //
 TCut splitCuts( const char* strcuts){
   cout << strcuts << endl;
@@ -2547,7 +2558,7 @@ TCut splitCuts( const char* strcuts){
   return rootcut;
 }
 
-//==================================================================================================
+//======================================================================================================================
 //
 void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut basecuts, Float_t scale, Int_t debug, Int_t istyle,
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
@@ -2570,18 +2581,8 @@ void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut ba
    // type = 113   eps
   Int_t type = 112;
 
-  //  stringstream OutPsFname;
-  //  OutPsFname << "Cutflow_" << var <<  "_" <<  flowname << ".ps";
-  //  TPostScript* ps = (TPostScript*)gROOT->FindObject(OutPsFname.str().c_str()); 
-  //  if(ps) ps->Close();
-  //  ps = new TPostScript(OutPsFname.str().c_str(),type);Cutflow
   stringstream OutPdfFname;
   
-//==
-//     stringstream CutFlowFname;
-//     CutFlowFname << "Cutflow_" <<  flowName << ".tex";
-//     ofstream cutsflow(CutFlowFname.str().c_str());   
-//==  
   cout     << "|--------------------------------------------------------------------------------------------------------------------|"      << endl;
   cout     << "|-----------------------|--------------|------------------------|----------------------------|-------------| 95% CL, |"      << endl;
   cout     << "|         Cut           |    DATA      |       Total_bkg        |      Total_sgl (accpt)     | S/sqrt(S+B) | exp(fb) |"      << endl;
@@ -2611,7 +2612,7 @@ void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut ba
     Cuts=Cuts + currentCut;
     c1->cd();
     CanvasName << " + " << currentCut.GetName();
-    hist_title << "VBS (WV), " << g_lum << "fb^{-1}, " << currentCut;
+    hist_title << "VBS (WV), " << g_lum << "fb^{-1}, " << currentCut.GetName();
     plotvar(anl, var, Cuts, scale, -1, istyle, xmin, xmax, bw, flogy, flogx, 1, hist_title.str().c_str(), xTitle, yTitle);
     anl->PrintStat(currentCut, debug);
 	  c1->Update();
