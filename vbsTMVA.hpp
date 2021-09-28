@@ -141,7 +141,7 @@ TCut wtot_2016            ("wtot_2016",              "35867.06*genWeight*mcWeigh
 TCut wtot_2017            ("wtot_2017",              "41530*genWeight*mcWeight*L1PFWeight*puWeight"); // 41530
 TCut wtot_2018            ("wtot_2018",              "59740*genWeight*mcWeight*L1PFWeight*puWeight"); // 59740
 TCut wtotL1               ("wtotL1",                 "L1PFWeight*genWeight*puWeight");
-TCut allCuts              ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
+TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
 
 
 
