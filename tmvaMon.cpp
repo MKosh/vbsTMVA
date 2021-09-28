@@ -442,7 +442,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "" << endl;
 
 //cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
-//shapePlots(anl, cut, cutName); // XXX
+shapePlots(anl, cut, cutName); // XXX
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -2390,12 +2390,12 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
   // Create the XML parser
   TDOMParser* parser = new TDOMParser();
   parser->SetValidate(false);
-  parser->ParseFile("datasets/plot_attrs.xml");
+  parser->ParseFile("datasets/plotAttrs.xml");
   auto* node = parser->GetXMLDocument()->GetRootNode();
   // Drill down into the actual child nodes that hold the plot attributes
   // Shouldn't need to change unless the structure of the XML file changes
   node = node->GetChildren()->GetNextNode()->GetChildren()->GetNextNode();
-  TList* = attrList = node->GetAttributes();
+  TList* attrList = node->GetAttributes();
 
 
   for (Int_t iter = 0; iter <= 3; iter++) {
@@ -2404,7 +2404,7 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
     cp1 = new TCanvas("cp1","cp1",10,10,1200,1200);
     cp1->Divide(3,3);
 
-    for (Int_t jter = 0; jter <= 9; jter++) {
+    for (Int_t jter = 1; jter <= 9; jter++) {
       cp1->cd(jter);
       plotShapeComp(anl, ((TXMLAttr*)attrList->At(1))->GetValue(), cuts, 
                       (Float_t)stof(((TXMLAttr*)attrList->At(3))->GetValue()), 
@@ -2419,10 +2419,15 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
                       title_str,
                       ((TXMLAttr*)attrList->At(13))->GetValue(),
                       ((TXMLAttr*)attrList->At(14))->GetValue());
-      node = node->GetNextNode()->GetNextNode();
+      if (strcmp(node->GetNodeName(),"end") == 0) {
+        break;
+      } else {
+        node = node->GetNextNode()->GetNextNode();
+        attrList = node->GetAttributes();
+      }
     }
 
-    shapeFname << "plots/2016/s1_2016" << "_" << CutName << ".pdf";
+    shapeFname << "plots/2016/s" << iter << "_2016" << "_" << CutName << ".pdf";
     cp1->SaveAs(shapeFname.str().c_str());
     shapeFname.str("");
     //shapeFname << "plots/2016/s1_2016"  << "_" << CutName << ".root";
