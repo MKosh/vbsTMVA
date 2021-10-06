@@ -47,6 +47,10 @@
 #include "TGraphErrors.h"
 #include "TGaxis.h"
 #include "TPostScript.h"
+#include "TDOMParser.h"
+#include "TXMLNode.h"
+#include "TXMLAttr.h"
+#include "TList.h"
 
 #include "./limit_calc/CL95tmva.C"
 #include "./limit_calc/Significance.C"
@@ -438,7 +442,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "" << endl;
 
 //cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
-//shapePlots(anl, cut, cutName); // XXX
+shapePlots(anl, cut, cutName); // XXX
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -2201,7 +2205,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   } else { 
     
 //Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t debug, Int_t istyle,
-	             //Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
+	             //Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	             //const char hTitle[], const char xTitle[], const char yTitle[])
 
   // ---------------- These are the cplots for the NEW ntuples ----------------------
@@ -2250,7 +2254,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   cp2 = new TCanvas("cp2","cp2",10,10,1200,1200);
   cp2->Divide(3,3);
 
-  //------------   VBF variables   ----------------
+  //------------   VBF variables - Forward tagging jets   ----------------
   cp2->cd(1);
   plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 2.4, 8., 0.2, 0, 0, 1, title_str, "#Delta#eta^{vbs}", "Events/bin");
 
@@ -2290,7 +2294,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   cp3 = new TCanvas("cp3","cp3",10,10,1200,1200);
   cp3->Divide(3,3);
 
-  //-------------    AK8 Jets    -----------------
+  //-------------    AK8 Jets - Hadronically decaying bosons   -----------------
   cp3->cd(1);
   plotvar(anl, "MET",  cuts,  1.0, 1, 0,   30., 200., 8., 1, 0, 1,  title_str, "MET (GeV)", "Events/bin");
 
@@ -2373,11 +2377,6 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
 void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
 //  
   anl->setsvplots(1);
-  TCanvas* cp1 = (TCanvas*)gROOT->FindObject("cp1"); 
-  if(cp1) { cp1->Delete(); }
-  cp1 = new TCanvas("cp1","cp1",10,10,1200,1200);
-  cp1->Divide(3,3);
-
   stringstream shapeFname;
   stringstream var;
   stringstream plt_title;
@@ -2387,6 +2386,55 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
 
   std::cout << "cuts = " << cuts << " Lumi = " << g_lum << std::endl;
   std::cout << "" << std::endl;
+
+  // Create the XML parser
+  TDOMParser* parser = new TDOMParser();
+  parser->SetValidate(false);
+  parser->ParseFile("datasets/plotAttrs.xml");
+  auto* node = parser->GetXMLDocument()->GetRootNode();
+  // Drill down into the actual child nodes that hold the plot attributes
+  // Shouldn't need to change unless the structure of the XML file changes
+  node = node->GetChildren()->GetNextNode()->GetChildren()->GetNextNode();
+  TList* attrList = node->GetAttributes();
+
+
+  for (Int_t iter = 0; iter <= 3; iter++) {
+    TCanvas* cp1 = (TCanvas*)gROOT->FindObject("cp1"); 
+    if(cp1) { cp1->Delete(); }
+    cp1 = new TCanvas("cp1","cp1",10,10,1200,1200);
+    cp1->Divide(3,3);
+
+    for (Int_t jter = 1; jter <= 9; jter++) {
+      cp1->cd(jter);
+      plotShapeComp(anl, ((TXMLAttr*)attrList->At(1))->GetValue(), cuts, 
+                      (Float_t)stof(((TXMLAttr*)attrList->At(3))->GetValue()), 
+                      (Int_t)stoi(((TXMLAttr*)attrList->At(4))->GetValue()),
+                      (Int_t)stoi(((TXMLAttr*)attrList->At(5))->GetValue()),
+                      (Float_t)stof(((TXMLAttr*)attrList->At(6))->GetValue()),
+                      (Float_t)stof(((TXMLAttr*)attrList->At(7))->GetValue()),
+                      (Float_t)stof(((TXMLAttr*)attrList->At(8))->GetValue()),
+                      (Int_t)stoi(((TXMLAttr*)attrList->At(9))->GetValue()),
+                      (Int_t)stoi(((TXMLAttr*)attrList->At(10))->GetValue()),
+                      (Int_t)stoi(((TXMLAttr*)attrList->At(11))->GetValue()),
+                      title_str,
+                      ((TXMLAttr*)attrList->At(13))->GetValue(),
+                      ((TXMLAttr*)attrList->At(14))->GetValue());
+      if (strcmp(node->GetNodeName(),"end") == 0) {
+        break;
+      } else {
+        node = node->GetNextNode()->GetNextNode();
+        attrList = node->GetAttributes();
+      }
+    }
+
+    shapeFname << "plots/2016/s" << iter << "_2016" << "_" << CutName << ".pdf";
+    cp1->SaveAs(shapeFname.str().c_str());
+    shapeFname.str("");
+    //shapeFname << "plots/2016/s1_2016"  << "_" << CutName << ".root";
+    //cp1->SaveAs(shapeFname.str().c_str()); 
+    //shapeFname.str("");
+  }
+  /*
   //------------   VERTICES  	-------------------
   cp1->cd(1);
   plotShapeComp(anl, "nPV", cuts,  1.0, 1, 0,  0, 60, 2,       1, 0, 0, title_str, "Number of primary vertices", "Events/bin");
@@ -2544,6 +2592,7 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
   // cp4->SaveAs(shapeFname.str().c_str()); 
   // shapeFname.str("");
   // // // M comm.
+  */
   anl->setsvplots(0);
   }
    

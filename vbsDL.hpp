@@ -177,6 +177,14 @@ if(dataloader) dataloader->AddVariable("MET_phi", "MET_phi", "", 'F');
 if(datareader) datareader->AddVariable("MET_phi",    &vbsEvent.MET_phi        );
  
 //TMVA spectator 
+if(dataloader) dataloader->AddSpectator("MET",    "MET",   "",      'F');
+if(datareader) datareader->AddSpectator("MET",    &vbsEvent.MET        );
+ 
+//TMVA spectator 
+if(dataloader) dataloader->AddSpectator("MET_phi",    "MET_phi",   "",      'F');
+if(datareader) datareader->AddSpectator("MET_phi",    &vbsEvent.MET_phi        );
+ 
+//TMVA spectator 
 if(dataloader) dataloader->AddSpectator("nBtag_loose",    "nBtag_loose",   "",      'I');
 if(datareader) datareader->AddSpectator("nBtag_loose",    &vbsEvent.nBtag_loose        );
  

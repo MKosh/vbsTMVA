@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<plots>
+  <plotArgs set="new">
+    <nPV anl="anl" variable="nPV" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0" xmax="60" bw="2" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="Number of primary vertices" yTitle="Events/bin"/>
+    <bosCent anl="anl" variable="bosCent" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-4" xmax="4" bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Boson Centrality" yTitle="Events/bin"/>
+    <lep1_pt anl="anl" variable="lep1_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="20." xmax="400." bw="20" flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="Lepton_1 p_{T} (GeV)" yTitle="Events/bin"/>
+    <lep1_eta anl="anl" variable="lep1_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-2.4" xmax="2.4" bw="0.16" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Lepton_1 #eta" yTitle="Events/bin"/>
+    <lep1_phi anl="anl" variable="lep1_phi" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-3.2" xmax="3.2" bw="0.2" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Lepton_1 #phi" yTitle="Events/bin"/>
+    <lep1_iso anl="anl" variable="lep1_iso" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="0.4" bw="0.02" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="Lepton_1 isolation" yTitle="Events/bin"/>
+    <zeppLep anl="anl" variable="zeppLep" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-4." xmax="4." bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Leptonic Zeppenfeld" yTitle="Events/bin"/>
+    <zeppLep anl="anl" variable="zeppHad" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-4." xmax="4." bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Hadronic Zeppenfeld" yTitle="Events/bin"/>
+    <vbf1_AK4_qgid anl="anl" variable="vbf1_AK4_qgid" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="1." bw="0.025" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="QGL VBF_{j1}" yTitle="Events/bin"/>
+    <vbf_deta anl="anl" variable="vbf_deta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="2.4" xmax="8.0" bw="0.2" flogy="0" flogx="0" overFlow="1" hTitle="title_str" xTitle="#Delta#eta^{vbs}" yTitle="Events/bin"/>
+    <vbf_m anl="anl" variable="vbf_m" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="500." xmax="4000." bw="150." flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="m^{vbs}_{jj} (GeV)" yTitle="Events/bin"/>
+    <vbf_pt anl="anl" variable="vbf_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="2000." bw="50" flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="p_{T}^{vbs} (GeV)" yTitle="Events/bin"/>
+    <vbf1_AK4_pt anl="anl" variable="vbf1_AK4_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="800." bw="25" flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="VBS p^{T}_{j1}" yTitle="Events/bin"/>
+    <vbf1_AK4_eta anl="anl" variable="vbf1_AK4_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-5.0" xmax="5.0" bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="VBS #eta_{j1}" yTitle="Events/bin"/>
+    <vbf1_AK4_phi anl="anl" variable="vbf1_AK4_phi" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-3.2" xmax="3.2" bw="0.2" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="VBS #phi_{j1}" yTitle="Events/bin"/>
+    <vbf2_AK4_pt anl="anl" variable="vbf2_AK4_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="500." bw="20." flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="VBS p^{T}_{j2}" yTitle="Events/bin"/>
+    <vbf2_AK4_eta anl="anl" variable="vbf2_AK4_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-5." xmax="5." bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="VBS #eta_{j2}" yTitle="Events/bin"/>
+    <vbf2_AK4_phi anl="anl" variable="vbf2_AK4_phi" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-3.2" xmax="3.2" bw="0.2" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="VBS #phi_{j2}" yTitle="Events/bin"/>
+    <MET anl="anl" variable="MET" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="30." xmax="200." bw="8." flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="MET (GeV)" yTitle="Events/bin"/>
+    <MET_phi anl="anl" variable="MET_phi" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-3.75" xmax="3.75" bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="MET #phi" yTitle="Events/bin"/>
+    <bos_j1_AK4_pt anl="anl" variable="bos_j1_AK4_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="500." bw="20" flogy="0" flogx="0" overFlow="1" hTitle="title_str" xTitle="V p^{T}_{j1} (GeV)" yTitle="Events/bin"/>
+    <bos_j1_AK4_eta anl="anl" variable="bos_j1_AK4_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-2.5" xmax="2.5" bw="0.2" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="#V #eta_{j1}" yTitle="Events/bin"/>
+    <bos_PuppiAK8_tau2tau1 anl="anl" variable="bos_PuppiAK8_tau2tau1" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="1.0" bw="0.04" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="AK8 #tau_{21}" yTitle="Events/bin"/>
+    <bos_PuppiAK8_pt anl="anl" variable="bos_PuppiAK8_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="200." xmax="800." bw="25." flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="AK8 p_{T} (GeV)" yTitle="Events/bin"/>
+    <bos_PuppiAK8_eta anl="anl" variable="bos_PuppiAK8_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-2.5" xmax="2.5" bw="0.2" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="AK8 #eta" yTitle="Events/bin"/>
+    <bos_PuppiAK8_phi anl="anl" variable="bos_PuppiAK8_phi" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-3.2" xmax="3.2" bw="0.2" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="AK8 #phi" yTitle="Events/bin"/>
+    <bos_PuppiAK8_m_sd0_corr anl="anl" variable="bos_PuppiAK8_m_sd0_corr" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="40." xmax="150." bw="5." flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="AK8 Mass sd0 corr" yTitle="Events/bin"/>
+    <dibos_m anl="anl" variable="dibos_m" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="1500." bw="50." flogy="0" flogx="0" overFlow="1" hTitle="title_str" xTitle="Diboson Mass" yTitle="Events/bin"/>
+    <dibos_mt anl="anl" variable="dibos_mt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="2000." bw="50." flogy="0" flogx="0" overFlow="1" hTitle="title_str" xTitle="Diboson mt" yTitle="Events/bin"/>
+    <dibos_pt anl="anl" variable="dibos_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="800." bw="25." flogy="0" flogx="0" overFlow="1" hTitle="title_str" xTitle="Diboson pt" yTitle="Events/bin"/>
+    <dibos_eta anl="anl" variable="dibos_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-5." xmax="5." bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Diboson #eta" yTitle="Events/bin"/>
+    <dibos_phi anl="anl" variable="dibos_phi" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-3.2" xmax="3.2" bw="0.2" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Diboson #phi" yTitle="Events/bin"/>
+    <dilep_mt anl="anl" variable="dilep_mt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="800." bw="25." flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="Dilepton mt" yTitle="Events/bin"/>
+    <dilep_m anl="anl" variable="dilep_m" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="500." bw="20." flogy="0" flogx="0" overFlow="1" hTitle="title_str" xTitle="Dilepton mass" yTitle="Events/bin"/>
+    <dilep_eta anl="anl" variable="dilep_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-4." xmax="4." bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Dilepton #eta" yTitle="Events/bin"/>
+    <dilep_pt anl="anl" variable="dilep_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="800." bw="25." flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="Dilepton pt" yTitle="Events/bin"/>
+    <end/>
+  </plotArgs>
+</plots>
