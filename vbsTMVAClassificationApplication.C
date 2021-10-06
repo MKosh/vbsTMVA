@@ -81,6 +81,8 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    //
    // Boosted Decision Trees
    Use["BDT"]             = 1; // uses Adaptive Boost
+   Use["BDT1"]            = 1;
+   Use["BDT2"]            = 1;
    Use["BDTG"]            = 0; // uses Gradient Boost
    Use["BDTB"]            = 0; // uses Bagging
    Use["BDTD"]            = 0; // decorrelation + Adaptive Boost
@@ -169,6 +171,8 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    TH1F *histNnC(0);
    TH1F *histNnT(0);
    TH1F *histBdt(0);
+   TH1F* histBdt1(0);
+   TH1F* histBdt2(0);
    TH1F *histBdtG(0);
    TH1F *histBdtB(0);
    TH1F *histBdtD(0);
@@ -206,6 +210,8 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    if (Use["DNN_GPU"]) histDnnGpu = new TH1F("MVA_DNN_GPU", "MVA_DNN_GPU", nbin, -0.1, 1.1);
    if (Use["DNN_CPU"]) histDnnCpu = new TH1F("MVA_DNN_CPU", "MVA_DNN_CPU", nbin, -0.1, 1.1);
    if (Use["BDT"])           histBdt     = new TH1F( "MVA_BDT",           "MVA_BDT",           nbin, -0.8, 0.8 );
+   if (Use["BDT1"])           histBdt1     = new TH1F( "MVA_BDT1",           "MVA_BDT1",           nbin, -0.8, 0.8 );
+   if (Use["BDT2"])           histBdt2     = new TH1F( "MVA_BDT2",           "MVA_BDT2",           nbin, -0.8, 0.8 );
    if (Use["BDTG"])          histBdtG    = new TH1F( "MVA_BDTG",          "MVA_BDTG",          nbin, -1.0, 1.0 );
    if (Use["BDTB"])          histBdtB    = new TH1F( "MVA_BDTB",          "MVA_BDTB",          nbin, -1.0, 1.0 );
    if (Use["BDTD"])          histBdtD    = new TH1F( "MVA_BDTD",          "MVA_BDTD",          nbin, -0.8, 0.8 );
@@ -282,6 +288,8 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
 //       Float_t CUTS     = 1.0;
 //       Float_t CUTSD    = 1.0;
       Float_t BDT      = 1.0;
+      Float_t BDT1     = 1.0;
+      Float_t BDT2     = 1.0;
       Float_t DNN_GPU  = 1.0;
       Float_t MLP      = 1.0;
       Float_t MLPBFGS  = 1.0;
@@ -294,7 +302,9 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
        TBranch* bClassID  = inpDataTree->Branch("classID",       &classID,      "classID/I");
        char* className = new char[40];
        TBranch* bClassName = inpDataTree->Branch( "className",(void*)className, "className/C" ); 
-       TBranch* bBDT(0);   
+       TBranch* bBDT(0); 
+       TBranch* bBDT1(0);
+       TBranch* bBDT2(0);  
        TBranch* bDNN_GPU(0);   
        TBranch* bDNN_CPU(0);   
        TBranch* bMLP(0);   
@@ -323,6 +333,12 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
 
       if (Use["BDT"          ]){
         bBDT = inpDataTree->Branch("BDT",           &BDT,          "BDT/F");
+      }
+      if (Use["BDT1"]){
+        bBDT1 = inpDataTree->Branch("BDT1",           &BDT1,          "BDT1/F");
+      }
+      if (Use["BDT2"]){
+        bBDT2 = inpDataTree->Branch("BDT2",           &BDT2,          "BDT2/F");
       }
       if (Use["Fisher"       ]){
         bFisher      =  inpDataTree->Branch("Fisher",       &Fisher,       "Fisher/F");
@@ -419,10 +435,20 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
                bDNN_CPU->Fill();
       }
       if (Use["BDT"          ]){
-	      BDT=reader->EvaluateMVA( "BDT method" );
+         BDT=reader->EvaluateMVA( "BDT method" );
          histBdt->Fill( BDT );
          bBDT->Fill();
-       }
+      }
+      if (Use["BDT1"          ]){
+         BDT=reader->EvaluateMVA( "BDT1 method" );
+         histBdt1->Fill( BDT1 );
+         bBDT1->Fill();
+      }
+      if (Use["BDT2"          ]){
+         BDT=reader->EvaluateMVA( "BDT2 method" );
+         histBdt2->Fill( BDT2 );
+         bBDT2->Fill();
+      }
       if (Use["BDTG"         ])   histBdtG   ->Fill( reader->EvaluateMVA( "BDTG method"          ) );
       if (Use["BDTB"         ])   histBdtB   ->Fill( reader->EvaluateMVA( "BDTB method"          ) );
       if (Use["BDTD"         ])   histBdtD   ->Fill( reader->EvaluateMVA( "BDTD method"          ) );
@@ -514,6 +540,8 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    if (Use["DNN_GPU"]) histDnnGpu->Write();
    if (Use["DNN_CPU"]) histDnnCpu->Write();
    if (Use["BDT"          ])   histBdt    ->Write();
+   if (Use["BDT1"         ])   histBdt1   ->Write();
+   if (Use["BDT2"         ])   histBdt2   ->Write();
    if (Use["BDTG"         ])   histBdtG   ->Write();
    if (Use["BDTB"         ])   histBdtB   ->Write();
    if (Use["BDTD"         ])   histBdtD   ->Write();

@@ -64,7 +64,8 @@ trainNoPlot: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
-	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@sed -i 's|^.*\("; // cut_name - keep this comment\)|  TString cut_name = "$(cutName)"; // cut_name - keep this comment|g' vbsTMVAClassification.C
 	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
