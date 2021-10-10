@@ -807,7 +807,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
 
    if (Use["BDT2"])
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT2",
-                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.6:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=False" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
+                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.6:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
    if (Use["BDT"])
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT",
                            "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
@@ -862,7 +862,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    Float_t adaBoost = 0.6; // 0.5 or 0.6
    Float_t minNodeSize = 1; // 2.5 or 1
    Int_t maxDepth = 4; // 3 or 4
-   std::string randomized = "Not Randomized";
+   std::string randomized = "Randomized";
   TString cut_name = "test"; // cut_name - keep this comment
 
    stringstream ssAUCoutfile;

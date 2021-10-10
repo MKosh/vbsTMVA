@@ -440,12 +440,12 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
          bBDT->Fill();
       }
       if (Use["BDT1"          ]){
-         BDT=reader->EvaluateMVA( "BDT1 method" );
+         BDT1=reader->EvaluateMVA( "BDT1 method" );
          histBdt1->Fill( BDT1 );
          bBDT1->Fill();
       }
       if (Use["BDT2"          ]){
-         BDT=reader->EvaluateMVA( "BDT2 method" );
+         BDT2=reader->EvaluateMVA( "BDT2 method" );
          histBdt2->Fill( BDT2 );
          bBDT2->Fill();
       }

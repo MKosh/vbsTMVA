@@ -97,3 +97,31 @@ AUC for BDT2: 0.763557
 	1000 Not Randomized Trees with max depth 4 and min node size 1'%' and ada boost of 0.6
 
 --------------------------------------------------
+
+--------------------------------------------------
+AUC for BDT1: 0.752516
+	850 Randomized Trees with max depth 3 and min node size 2.5'%' and ada boost of 0.5
+AUC for BDT2: 0.760169
+	1000 Randomized Trees with max depth 4 and min node size 1'%' and ada boost of 0.6
+
+--------------------------------------------------
+
+--------------------------------------------------
+AUC for BDT1: 0.753403
+	850 Randomized Trees with max depth 3 and min node size 2.5'%' and ada boost of 0.5
+AUC for BDT2: 0.760591
+	1000 Randomized Trees with max depth 4 and min node size 1'%' and ada boost of 0.6
+
+--------------------------------------------------
+
+--------------------------------------------------
+AUC for BDT2: 0.761477
+	1000 Randomized Trees with max depth 4 and min node size 1'%' and ada boost of 0.6
+
+--------------------------------------------------
+
+--------------------------------------------------
+AUC for BDT2: 0.760672
+	1000 Randomized Trees with max depth 4 and min node size 1'%' and ada boost of 0.6
+
+--------------------------------------------------

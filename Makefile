@@ -28,7 +28,7 @@ help:
 	@echo "---- trainAndPlot - loc, year, vars, methods, lumi, cut, cutName |	---- trainNoPlot - loc, year, vars, methods, cutName, saveFile"
 	@echo "								 |	"
 	@echo "If you just want to make and save the cplots			 |	If you just want to run the tmvaMon program and make individual plots"
-	@echo "---- plots - year, lumi, cut, cutName				 |	---- mon - year, lumi, cut, cutName"
+	@echo "---- plots - year, lumi, cut, cutName				 |	---- mon - year, lumi, cut, cutName, saveFile"
 	@echo " 								 |"
 	@echo "If you want to plot a single var at a time 			 |	If you just want to update the pdf with all the plots"
 	@echo "---- singlePlot - year, lumi, cut, cutName, varName		 |	---- genReport -"

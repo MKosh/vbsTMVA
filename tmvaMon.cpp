@@ -2395,7 +2395,10 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
   // Drill down into the actual child nodes that hold the plot attributes
   // Shouldn't need to change unless the structure of the XML file changes
   node = node->GetChildren()->GetNextNode()->GetChildren()->GetNextNode();
-  TList* attrList = node->GetAttributes();
+  if (node->GetNodeType() == TXMLNode::kXMLCommentNode) {
+    node = node->GetNextNode()->GetNextNode();
+  }
+  TList* attr_list = node->GetAttributes();
 
 
   for (Int_t iter = 0; iter <= 3; iter++) {
@@ -2406,24 +2409,31 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
 
     for (Int_t jter = 1; jter <= 9; jter++) {
       cp1->cd(jter);
-      plotShapeComp(anl, ((TXMLAttr*)attrList->At(1))->GetValue(), cuts, 
-                      (Float_t)stof(((TXMLAttr*)attrList->At(3))->GetValue()), 
-                      (Int_t)stoi(((TXMLAttr*)attrList->At(4))->GetValue()),
-                      (Int_t)stoi(((TXMLAttr*)attrList->At(5))->GetValue()),
-                      (Float_t)stof(((TXMLAttr*)attrList->At(6))->GetValue()),
-                      (Float_t)stof(((TXMLAttr*)attrList->At(7))->GetValue()),
-                      (Float_t)stof(((TXMLAttr*)attrList->At(8))->GetValue()),
-                      (Int_t)stoi(((TXMLAttr*)attrList->At(9))->GetValue()),
-                      (Int_t)stoi(((TXMLAttr*)attrList->At(10))->GetValue()),
-                      (Int_t)stoi(((TXMLAttr*)attrList->At(11))->GetValue()),
-                      title_str,
-                      ((TXMLAttr*)attrList->At(13))->GetValue(),
-                      ((TXMLAttr*)attrList->At(14))->GetValue());
+      if (node->GetNodeType() == TXMLNode::kXMLElementNode) {
+        plotShapeComp(anl, ((TXMLAttr*)attr_list->At(1))->GetValue(), cuts, 
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(3))->GetValue()), 
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(4))->GetValue()),
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(5))->GetValue()),
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(6))->GetValue()),
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(7))->GetValue()),
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(8))->GetValue()),
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(9))->GetValue()),
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(10))->GetValue()),
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(11))->GetValue()),
+                        title_str,
+                        ((TXMLAttr*)attr_list->At(13))->GetValue(),
+                        ((TXMLAttr*)attr_list->At(14))->GetValue());
+      } else if (node->GetNodeType() == TXMLNode::kXMLCommentNode) {
+        jter--;
+        node = node->GetNextNode()->GetNextNode();
+        attr_list = node->GetAttributes();
+        continue;
+      }
       if (strcmp(node->GetNodeName(),"end") == 0) {
         break;
       } else {
         node = node->GetNextNode()->GetNextNode();
-        attrList = node->GetAttributes();
+        attr_list = node->GetAttributes();
       }
     }
 
