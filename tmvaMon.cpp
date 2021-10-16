@@ -2040,13 +2040,13 @@ Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_e
 // 
 void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
 //  
-  anl->setsvplots(1);
-  TCanvas* cp1 = (TCanvas*)gROOT->FindObject("cp1"); 
-  if(cp1) { cp1->Delete(); }
-  cp1 = new TCanvas("cp1","cp1",10,10,1200,1200);
-  cp1->Divide(3,3);
+  //anl->setsvplots(1);
+  //TCanvas* cp1 = (TCanvas*)gROOT->FindObject("cp1"); 
+  //if(cp1) { cp1->Delete(); }
+  //cp1 = new TCanvas("cp1","cp1",10,10,1200,1200);
+  //cp1->Divide(3,3);
 
-  stringstream outfname;
+  stringstream out_f_name;
   stringstream var;
   stringstream plt_title;
   plt_title << "VBS (WV), " << g_lum << " fb^{-1}";
@@ -2054,321 +2054,378 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   const char* title_str = s.c_str();
   // title: VBS (WV), 35.9fb^{-1}
 
-  std::string selector = "new";
-  if(selector == "old") { // These are for the cplots for the OLD ntuples, don't confuse them for the cplot for the new ntuples
-    //------------   VERTICES  	-------------------
-    cp1->cd(1);
-    plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 50, 1,       1, 0, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of primary vertices", "Events/bin");
-    //------------    LEPTONS  	-------------------
-    cp1->cd(2);
-    plotvar(anl, "l_pt1",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0, 0, "VBS (WV), 35.9 fb^{-1}", "Lepton_1 p_{T} (GeV)", "Events/bin");
-    cp1->cd(3);
-    plotvar(anl, "l_eta1", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 #eta", "Events/bin");
-
-    cp1->cd(4);
-    plotvar(anl, "l_phi1", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 #phi", "Events/bin");
-
-    cp1->cd(5);
-    plotvar(anl, "l_charge1", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 charge", "Events/bin");
-
-    cp1->cd(6);
-    plotvar(anl, "l_e1",    cuts,  1.0, 1, 0,   0., 600., 10,       1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 energy", "Events/bin");
-
-    cp1->cd(7);
-    plotvar(anl, "l_iso1",  cuts,  1.0, 1, 0,   0., 0.5, 0.02,       1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 isolation", "Events/bin");
-    //
-
-    //---------------	4 body mass	---------------
-    cp1->cd(8);
-    plotvar(anl, "mass_lvj_type0_PuppiAK8",    cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
-
-    cp1->cd(9);
-    plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
-    //======================================================================================================================
-//=================================================================
-     outfname << "plots/2016/c1_2016" << "_" << CutName << ".pdf";
-     cp1->SaveAs(outfname.str().c_str());
-     outfname.str("");
-     //outfname << "plots/2016/c1_2016"  << "_" << CutName << ".png";
-     //cp1->SaveAs(outfname.str().c_str()); 
-     //outfname.str("");
-    // OLD - reminder
-
-     //============================
-
-     TCanvas* cp2 = (TCanvas*)gROOT->FindObject("cp2"); 
-     if(cp2) { cp2->Delete(); }
-     cp2 = new TCanvas("cp2","cp2",10,10,1000,1000);
-     cp2->Divide(3,3);
-
-    // OLD - reminder
-    //-------------- 	MET	-------------------
-    cp2->cd(1);
-    plotvar(anl, "pfMET_Corr",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr (GeV)", "Events/bin");
-
-    cp2->cd(2);
-    plotvar(anl, "pfMET_Corr_phi",  cuts,  1.0, 1, 0,   0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),      1, 0, 0, "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr_phi", "Events/bin");
-
-    cp2->cd(3);
-    plotvar(anl, "nu_pz_type0",  cuts,  1.0, 1, 0,   -500., 500., 20,      1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Reconstructed Neutrino p_{Z}", "Events/bin");
-    //
-    //--------------	AK8 Jet		------------
-    cp2->cd(4);
-    plotvar(anl, "nGoodPuppiAK8jets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Number of Good AK8 jets", "Events/bin");
-
-    cp2->cd(5);
-    plotvar(anl, "ungroomed_PuppiAK8_jet_pt",  cuts,  1.0, 1, 0,   0., 1400., 20,      1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8 p_{T} (GeV)", "Events/bin");
-
-    cp2->cd(6);
-    plotvar(anl, "ungroomed_PuppiAK8_jet_eta", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #eta", "Events/bin");
-
-    cp2->cd(7);
-    plotvar(anl, "ungroomed_PuppiAK8_jet_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #phi", "Events/bin");
-
-    cp2->cd(8);
-    plotvar(anl, "ungroomed_PuppiAK8_jet_charge", cuts,  1.0, 1, 0,  -2.5, 5.5, 0.1,     1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8 charge", "Events/bin");
-
-    cp2->cd(9);
-    plotvar(anl, "ungroomed_PuppiAK8_jet_e",    cuts,  1.0, 1, 0,   0., 1400., 20,       1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8  energy", "Events/bin");
-    //
-    outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
-     cp2->SaveAs(outfname.str().c_str());
-     outfname.str("");
-    // outfname << "plots/2016/c2_2016"  << "_" << CutName << ".png";
-    // cp2->SaveAs(outfname.str().c_str()); 
-    // outfname.str("");
-
-    // OLD - reminder
-     TCanvas* cp3 = (TCanvas*)gROOT->FindObject("cp3"); 
-     if(cp3) { cp3->Delete(); }
-     cp3 = new TCanvas("cp3","cp3",10,10,1000,1000);
-     cp3->Divide(3,3);
-
-    // plotvar(anl, "PuppiAK8_jet_mass",         cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 mass (GeV)",           "Events/bin");
-    // plotvar(anl, "PuppiAK8_jet_mass_pr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 pruned mass (GeV)",    "Events/bin");
-    // plotvar(anl, "PuppiAK8_jet_mass_so_corr", cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 Softdrop mass (GeV)",  "Events/bin");
-    // plotvar(anl, "PuppiAK8_jet_mass_tr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 tr mass (GeV)",        "Events/bin");
-    // plotvar(anl, "PuppiAK8_jet_tau2tau1",     cuts,  1.0, 1, 0,  0., 1., 0.1,          1, 0,  "VBS (WV), 35.9 fb^{-1}",   "AK8 #tau_{2}/#tau_{1}",      "Events/bin");
-    // plotvar(anl, "PuppiAK8jet_qjet",          cuts,  1.0, 1, 0,  0., 3., 0.1,          1, 0,  "VBS (WV), 35.9 fb^{-1}",   "PuppiAK8jet_qjet",      "Events/bin");
-
-    // //	Leptonic & Hadronic W-boson 
-    // plotvar(anl, "v_pt_type0",     cuts,  1.0, 1, 0,  0., 1000., 20,          1, 0,  "VBS (WV), 35.9 fb^{-1}",   "W p_{T} (GeV)",      "Events/bin");
-    // plotvar(anl, "v_mt_type0",     cuts,  1.0, 1, 0,  0., 500.,  20,     1, 0,  "VBS (WV), 35.9 fb^{-1}",   "W Transverse Mass (GeV)",      "Events/bin");
-
-    // //--------------	VBF Jet		------------
-    // plotvar(anl, "njets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of VBF jets", "Events/bin");
-    // plotvar(anl, "nBTagJet_loose",    cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of VBF jets (Loose b-tag)", "Events/bin");
-    // plotvar(anl, "nBTagJet_medium",   cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of VBF jets (Medium b-tag)", "Events/bin");
-    // plotvar(anl, "vbf_maxpt_j1_eta",  cuts,  1.0, 1, 0,  -6,  10, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Leading VBF Jet #eta", "Events/bin");
-    // plotvar(anl, "vbf_maxpt_j2_eta",  cuts,  1.0, 1, 0,  -6,  10, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Sub-Leading VBF Jet #eta", "Events/bin");
-    // plotvar(anl, "vbf_maxpt_j1_pt",   cuts,  1.0, 1, 0,  20,  720, 20,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Leading VBF Jet  p_{T}", "Events/bin");
-    // plotvar(anl, "vbf_maxpt_j2_pt",   cuts,  1.0, 1, 0,  20,  720, 20,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "Sub-Leading VBF Jet p_{T}", "Events/bin");
-    // plotvar(anl, "vbf_maxpt_jj_m",    cuts,  1.0, 1, 0,  200,  4200, 100,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF M_{jj} GeV", "Events/bin");
-    // plotvar(anl, "vbf_maxpt_jj_Deta", cuts,  1.0, 1, 0,  0.0,  20.0, 0.5,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF #Delta #eta", "Events/bin");
-    //
-      //------------   VERTICES  	-------------------
-      cp3->cd(1);
-      plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 80, 1,       0, 0,0,  title_str, "Number of primary vertices", "Events/bin");
-      //------------    LEPTONS  	-------------------
-      cp3->cd(2);
-      plotvar(anl, "ZeppenfeldWH",  cuts,  1.0, 1, 0,   0., 1000., 10,      1, 0,0,  title_str, "ZeppenfeldWH (GeV)", "Events/bin");
-      cp3->cd(3);
-      plotvar(anl, "ZeppenfeldWL_2Lep", cuts,  1.0, 1, 0,  -3.,  3., 0.25,   0, 0,0,  title_str, "ZeppenfeldWL_2Lep", "Events/bin");
-
-      cp3->cd(4);
-      plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,0,  title_str, "Lepton_1 #phi", "Events/bin");
-
-      cp3->cd(5);
-      plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     1, 0, 0, title_str, "Lepton_1 charge", "Events/bin");
-
-      cp3->cd(6);
-      plotvar(anl, "lep1_dz",    cuts,  1.0, 1, 0,   0., 600., 10,       1, 0, 0, title_str, "Lepton_1 dz", "Events/bin");
-
-      cp3->cd(7);
-      plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.5, 0.02,       1, 0,0,  title_str, "Lepton_1 isolation", "Events/bin");
-      //
-
-      cp3->cd(8);
-      plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0,0, title_str, "zeppLep", "Events/bin");
-
-      cp3->cd(9);
-      plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0,0, title_str, "zeppHad", "Events/bin");
-      // OLD - reminder
-     outfname << "plots/2016/c3_2016" << "_" <<  CutName  << ".pdf";
-     cp3->SaveAs(outfname.str().c_str());
-     outfname.str("");
-     //outfname << "plots/2016/c3_2016"  << "_" << CutName << ".png";
-     //cp3->SaveAs(outfname.str().c_str()); 
-     //outfname.str("");
-
-
-  } else { 
-    
-//Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t debug, Int_t istyle,
-	             //Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
-	             //const char hTitle[], const char xTitle[], const char yTitle[])
-
-  // ---------------- These are the cplots for the NEW ntuples ----------------------
-  std::cout << "cuts = " << cuts << " Lumi = " << g_lum << std::endl;
-  std::cout << "" << std::endl;
-  //------------   VERTICES  	-------------------
-  cp1->cd(1);
-  plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 60, 2,       1, 0, 0, title_str, "Number of primary vertices", "Events/bin");
-
-  cp1->cd(2);
-  plotvar(anl, "bosCent", cuts, 1.0, 1, 0, -4, 4, 0.25, 0, 0, 0, title_str, "Boson Centrality", "Events/bin");
-  //------------    LEPTONS  	-------------------
-  cp1->cd(3);
-  plotvar(anl, "lep1_pt",  cuts,  1.0, 1, 0,   20., 400., 20, 1, 0, 1, title_str, "Lepton_1 p_{T} (GeV)", "Events/bin"); // was 0.,1000., 30 
-
-  cp1->cd(4);
-  plotvar(anl, "lep1_eta", cuts,  1.0, 1, 0,  -2.4, 2.4, 0.16,   0, 0, 0, title_str, "Lepton_1 #eta", "Events/bin");
-
-  cp1->cd(5);
-  plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  -3.2, 3.2, 0.2,   0, 0, 0, title_str, "Lepton_1 #phi", "Events/bin");
-
-  //cp1->cd(6);
-  //plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     0, 0,  title_str, "Lepton_1 charge", "Events/bin");
-
-  cp1->cd(6);
-  plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.4, 0.02, 1, 0, 0, title_str, "Lepton_1 isolation", "Events/bin");
-
-  cp1->cd(7);
-  plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, 0, title_str, "zeppLep", "Events/bin");
-
-  cp1->cd(8);
-  plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, 0, title_str, "zeppHad", "Events/bin");
-
-  cp1->cd(9);
-  plotvar(anl, "vbf1_AK4_qgid", cuts, 1.0, 1, 0, 0., 1., 0.025, 0, 0, 0, title_str, "Qgl VBF_{j1}");
-
-  outfname << "plots/2016/c1_2016" << "_" << CutName << ".pdf";
-  cp1->SaveAs(outfname.str().c_str());
-  outfname.str("");
-  //outfname << "plots/2016/c1_2016"  << "_" << CutName << ".root";
-  //cp1->SaveAs(outfname.str().c_str()); 
-  //outfname.str("");
-
-  TCanvas* cp2 = (TCanvas*)gROOT->FindObject("cp2"); 
-  if(cp2) { cp2->Delete(); }
-  cp2 = new TCanvas("cp2","cp2",10,10,1200,1200);
-  cp2->Divide(3,3);
-
-  //------------   VBF variables - Forward tagging jets   ----------------
-  cp2->cd(1);
-  plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 2.4, 8., 0.2, 0, 0, 1, title_str, "#Delta#eta^{vbs}", "Events/bin");
-
-  cp2->cd(2);
-  plotvar(anl, "vbf_m", cuts, 1.0, 1, 0 , 500., 4000, 150, 1, 0, 1, title_str, "m^{vbs}_{jj} (GeV)", "Events/bin");
-
-  cp2->cd(3);
-  plotvar(anl, "vbf_pt", cuts,  1.0, 1, 0,  0., 2000., 50,   1, 0, 1, title_str, "p_{T}^{vbs} (GeV)", "Events/bin");
-
-  cp2->cd(4);
-  plotvar(anl, "vbf1_AK4_pt", cuts, 1.0, 1, 0, 0., 800., 25, 1, 0, 1, title_str, "VBS p^{T}_{j1} (GeV)", "Events/bin");
-
-  cp2->cd(5);
-  plotvar(anl, "vbf1_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "VBS #eta_{j1}", "Events/bin");
-
-  cp2->cd(6);
-  plotvar(anl, "vbf1_AK4_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "VBS #phi_{j1}", "Events/bin");
-
-  cp2->cd(7);
-  plotvar(anl, "vbf2_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 1, 0, 1, title_str, "VBS p^{T}_{j2} (GeV)", "Events/bin");
-
-  cp2->cd(8);
-  plotvar(anl, "vbf2_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "VBS #eta_{j2}", "Events/bin");
-
-  cp2->cd(9);
-  plotvar(anl, "vbf2_AK4_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "VBS #phi_{j2}", "Events/bin");
-
-  outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
-   cp2->SaveAs(outfname.str().c_str());
-   outfname.str("");
-   //outfname << "plots/2016/c2_2016"  << "_" << CutName << ".root";
-   //cp2->SaveAs(outfname.str().c_str()); 
-   //outfname.str("");
-
-  TCanvas* cp3 = (TCanvas*)gROOT->FindObject("cp3"); 
-  if(cp3) { cp3->Delete(); }
-  cp3 = new TCanvas("cp3","cp3",10,10,1200,1200);
-  cp3->Divide(3,3);
-
-  //-------------    AK8 Jets - Hadronically decaying bosons   -----------------
-  cp3->cd(1);
-  plotvar(anl, "MET",  cuts,  1.0, 1, 0,   30., 200., 8., 1, 0, 1,  title_str, "MET (GeV)", "Events/bin");
-
-  cp3->cd(2);
-  plotvar(anl, "MET_phi",  cuts,  1.0, 1, 0, -3.75, 3.75, 0.25, 0, 0, 0,  title_str, "MET #phi", "Events/bin"); //0.125*TMath::Pi()
-
-  cp3->cd(3);
-  plotvar(anl, "bos_j1_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 0, 0, 1, title_str, "V p^{T}_{J1} (GeV)", "Events/bin");
-
-  cp3->cd(4);
-  plotvar(anl, "bos_j1_AK4_eta", cuts, 1.0, 1, 0, -2.5, 2.5, 0.2, 0, 0, 0, title_str, "#V eta_{J1}", "Events/bin");
-
-  cp3->cd(5);
-  plotvar(anl, "bos_PuppiAK8_tau2tau1", cuts, 1.0, 1, 0, 0., 1.0, 0.04, 0, 0, 0, title_str, "AK8 #tau_{21}", "Events/bin");
-
-  cp3->cd(6);
-  plotvar(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   200., 800., 25, 1, 0, 1,  title_str, "AK8 p_{T} (GeV)", "Events/bin");
-
-  cp3->cd(7);
-  plotvar(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -2.5, 2.5, .2,   0, 0, 0,  title_str, "AK8 #eta", "Events/bin");
-
-  cp3->cd(8);
-  plotvar(anl, "bos_PuppiAK8_phi", cuts,  1.0, 1, 0,  -3.2, 3.2, 0.2,   0, 0, 0, title_str, "AK8 #phi", "Events/bin"); // was -3.75, 3.75, 0.25
-
-  cp3->cd(9);
-  plotvar(anl, "bos_PuppiAK8_m_sd0_corr", cuts,  1.0, 1, 0,  40., 150, 5,   0, 0, 0,  title_str, "AK8  Mass sd0 corr", "Events/bin");
-
-  outfname << "plots/2016/c3_2016" << "_" <<  CutName  << ".pdf";
-  cp3->SaveAs(outfname.str().c_str());
-  outfname.str("");
-  //outfname << "plots/2016/c3_2016"  << "_" << CutName << ".root";
-  //cp3->SaveAs(outfname.str().c_str()); 
-  //outfname.str("");
-
-  TCanvas* cp4 = (TCanvas*)gROOT->FindObject("cp4"); 
-  if(cp4) { cp4->Delete(); }
-  cp4 = new TCanvas("cp4","cp4",10,10,1200,1200);
-  cp4->Divide(3,3);
-
-  cp4->cd(1);
-  plotvar(anl, "dibos_m", cuts,  1.0, 1, 0,  0., 1500, 50,   0, 0, 1, title_str, "Diboson Mass", "Events/bin");
-
-  cp4->cd(2);
-  plotvar(anl, "dibos_mt", cuts, 1.0, 1, 0, 0., 2000, 50, 0, 0, 1, title_str, "Diboson mt", "Events/bin");
-
-  cp4->cd(3);
-  plotvar(anl, "dibos_pt", cuts, 1.0, 1, 0, 0., 800, 25, 0, 0, 1, title_str, "Diboson pt", "Events/bin");
-
-  cp4->cd(4);
-  plotvar(anl, "dibos_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "Diboson #eta", "Events/bin");
-
-  cp4->cd(5);
-  plotvar(anl, "dibos_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "Diboson #phi", "Events/bin");
-
-  cp4->cd(6);
-  plotvar(anl, "dilep_mt", cuts, 1.0, 1, 0, 0., 800, 25, 1, 0, 1, title_str, "Dilepton mt", "Events/bin");
-
-  cp4->cd(7);
-  plotvar(anl, "dilep_m", cuts, 1.0, 1, 0, 0., 500, 20, 0, 0, 1, title_str, "Dilepton mass", "Events/bin");
-
-  cp4->cd(8);
-  plotvar(anl, "dilep_eta", cuts, 1.0, 1, 0, -4., 4., 0.25, 0, 0, 0, title_str, "Dilepton #eta", "Events/bin");
-
-  cp4->cd(9);
-  plotvar(anl, "dilep_pt", cuts, 1.0, 1, 0, 0., 800, 25, 1, 0, 1, title_str, "Dilepton pt", "Events/bin");
-
-  outfname << "plots/2016/c4_2016" << "_" <<  CutName  << ".pdf";
-  cp4->SaveAs(outfname.str().c_str());
-  outfname.str("");
-  // outfname << "VarPlots_c4"  << "_" << CutName << ".png";
-  // cp4->SaveAs(outfname.str().c_str()); 
-  // outfname.str("");
-  // // // M comm.
+  // Create the XML parser
+  TDOMParser* parser = new TDOMParser();
+  parser->SetValidate(false);
+  parser->ParseFile("datasets/plotAttrs.xml");
+  auto* node = parser->GetXMLDocument()->GetRootNode();
+  // Drill down into the actual child nodes that hold the plot attributes
+  // Shouldn't need to change unless the structure of the XML file changes
+  node = node->GetChildren()->GetNextNode()->GetChildren()->GetNextNode();
+  if (node->GetNodeType() == TXMLNode::kXMLCommentNode) {
+    node = node->GetNextNode()->GetNextNode();
   }
+  TList* attr_list = node->GetAttributes();
+
+  for (Int_t iter = 0; iter <= 3; iter++) {
+    TCanvas* cp1 = (TCanvas*)gROOT->FindObject("cp1"); 
+    if(cp1) { cp1->Delete(); }
+    cp1 = new TCanvas("cp1","cp1",10,10,1200,1200);
+    cp1->Divide(3,3);
+
+    for (Int_t jter = 1; jter <= 9; jter++) {
+      cp1->cd(jter);
+      if (node->GetNodeType() == TXMLNode::kXMLElementNode) {
+        plotShapeComp(anl, ((TXMLAttr*)attr_list->At(1))->GetValue(), cuts, 
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(3))->GetValue()), 
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(4))->GetValue()),
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(5))->GetValue()),
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(6))->GetValue()),
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(7))->GetValue()),
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(8))->GetValue()),
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(9))->GetValue()),
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(10))->GetValue()),
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(11))->GetValue()),
+                        title_str,
+                        ((TXMLAttr*)attr_list->At(13))->GetValue(),
+                        ((TXMLAttr*)attr_list->At(14))->GetValue());
+      } else if (node->GetNodeType() == TXMLNode::kXMLCommentNode) {
+        jter--;
+        node = node->GetNextNode()->GetNextNode();
+        attr_list = node->GetAttributes();
+        continue;
+      }
+      if (strcmp(node->GetNodeName(),"end") == 0) {
+        break;
+      } else {
+        node = node->GetNextNode()->GetNextNode();
+        attr_list = node->GetAttributes();
+      }
+    }
+
+    out_f_name << "plots/2016/s" << iter << "_2016" << "_" << CutName << ".pdf";
+    cp1->SaveAs(out_f_name.str().c_str());
+    out_f_name.str("");
+    //shapeFname << "plots/2016/s1_2016"  << "_" << CutName << ".root";
+    //cp1->SaveAs(shapeFname.str().c_str()); 
+    //shapeFname.str("");
+  }
+
+//  std::string selector = "new";
+//  if(selector == "old") { // These are for the cplots for the OLD ntuples, don't confuse them for the cplot for the new ntuples
+//    //------------   VERTICES  	-------------------
+//    cp1->cd(1);
+//    plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 50, 1,       1, 0, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of primary vertices", "Events/bin");
+//    //------------    LEPTONS  	-------------------
+//    cp1->cd(2);
+//    plotvar(anl, "l_pt1",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0, 0, "VBS (WV), 35.9 fb^{-1}", "Lepton_1 p_{T} (GeV)", "Events/bin");
+//    cp1->cd(3);
+//    plotvar(anl, "l_eta1", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 #eta", "Events/bin");
+//
+//    cp1->cd(4);
+//    plotvar(anl, "l_phi1", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 #phi", "Events/bin");
+//
+//    cp1->cd(5);
+//    plotvar(anl, "l_charge1", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 charge", "Events/bin");
+//
+//    cp1->cd(6);
+//    plotvar(anl, "l_e1",    cuts,  1.0, 1, 0,   0., 600., 10,       1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 energy", "Events/bin");
+//
+//    cp1->cd(7);
+//    plotvar(anl, "l_iso1",  cuts,  1.0, 1, 0,   0., 0.5, 0.02,       1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Lepton_1 isolation", "Events/bin");
+//    //
+//
+//    //---------------	4 body mass	---------------
+//    cp1->cd(8);
+//    plotvar(anl, "mass_lvj_type0_PuppiAK8",    cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
+//
+//    cp1->cd(9);
+//    plotvar(anl, "mt_lvj_type0_PuppiAK8",      cuts,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "mt_lvj_type0_PuppiAK8 ( MT_{WW} )  (GeV)", "Events/bin");
+//    //======================================================================================================================
+////=================================================================
+//     outfname << "plots/2016/c1_2016" << "_" << CutName << ".pdf";
+//     cp1->SaveAs(outfname.str().c_str());
+//     outfname.str("");
+//     //outfname << "plots/2016/c1_2016"  << "_" << CutName << ".png";
+//     //cp1->SaveAs(outfname.str().c_str()); 
+//     //outfname.str("");
+//    // OLD - reminder
+//
+//     //============================
+//
+//     TCanvas* cp2 = (TCanvas*)gROOT->FindObject("cp2"); 
+//     if(cp2) { cp2->Delete(); }
+//     cp2 = new TCanvas("cp2","cp2",10,10,1000,1000);
+//     cp2->Divide(3,3);
+//
+//    // OLD - reminder
+//    //-------------- 	MET	-------------------
+//    cp2->cd(1);
+//    plotvar(anl, "pfMET_Corr",  cuts,  1.0, 1, 0,   0., 600., 10,      1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr (GeV)", "Events/bin");
+//
+//    cp2->cd(2);
+//    plotvar(anl, "pfMET_Corr_phi",  cuts,  1.0, 1, 0,   0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),      1, 0, 0, "VBS (WV), 35.9 fb^{-1}", "pfMET_Corr_phi", "Events/bin");
+//
+//    cp2->cd(3);
+//    plotvar(anl, "nu_pz_type0",  cuts,  1.0, 1, 0,   -500., 500., 20,      1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Reconstructed Neutrino p_{Z}", "Events/bin");
+//    //
+//    //--------------	AK8 Jet		------------
+//    cp2->cd(4);
+//    plotvar(anl, "nGoodPuppiAK8jets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "Number of Good AK8 jets", "Events/bin");
+//
+//    cp2->cd(5);
+//    plotvar(anl, "ungroomed_PuppiAK8_jet_pt",  cuts,  1.0, 1, 0,   0., 1400., 20,      1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8 p_{T} (GeV)", "Events/bin");
+//
+//    cp2->cd(6);
+//    plotvar(anl, "ungroomed_PuppiAK8_jet_eta", cuts,  1.0, 1, 0,  -3.5,  6.5, .5,   1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #eta", "Events/bin");
+//
+//    cp2->cd(7);
+//    plotvar(anl, "ungroomed_PuppiAK8_jet_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8 #phi", "Events/bin");
+//
+//    cp2->cd(8);
+//    plotvar(anl, "ungroomed_PuppiAK8_jet_charge", cuts,  1.0, 1, 0,  -2.5, 5.5, 0.1,     1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8 charge", "Events/bin");
+//
+//    cp2->cd(9);
+//    plotvar(anl, "ungroomed_PuppiAK8_jet_e",    cuts,  1.0, 1, 0,   0., 1400., 20,       1, 0,0,  "VBS (WV), 35.9 fb^{-1}", "AK8  energy", "Events/bin");
+//    //
+//    outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
+//     cp2->SaveAs(outfname.str().c_str());
+//     outfname.str("");
+//    // outfname << "plots/2016/c2_2016"  << "_" << CutName << ".png";
+//    // cp2->SaveAs(outfname.str().c_str()); 
+//    // outfname.str("");
+//
+//    // OLD - reminder
+//     TCanvas* cp3 = (TCanvas*)gROOT->FindObject("cp3"); 
+//     if(cp3) { cp3->Delete(); }
+//     cp3 = new TCanvas("cp3","cp3",10,10,1000,1000);
+//     cp3->Divide(3,3);
+//
+//    // plotvar(anl, "PuppiAK8_jet_mass",         cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 mass (GeV)",           "Events/bin");
+//    // plotvar(anl, "PuppiAK8_jet_mass_pr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 pruned mass (GeV)",    "Events/bin");
+//    // plotvar(anl, "PuppiAK8_jet_mass_so_corr", cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 Softdrop mass (GeV)",  "Events/bin");
+//    // plotvar(anl, "PuppiAK8_jet_mass_tr",      cuts,  1.0, 1, 0,  20., 220., 10,       1, 0,  "VBS (WV), 35.9 fb^{-1}",    "AK8 tr mass (GeV)",        "Events/bin");
+//    // plotvar(anl, "PuppiAK8_jet_tau2tau1",     cuts,  1.0, 1, 0,  0., 1., 0.1,          1, 0,  "VBS (WV), 35.9 fb^{-1}",   "AK8 #tau_{2}/#tau_{1}",      "Events/bin");
+//    // plotvar(anl, "PuppiAK8jet_qjet",          cuts,  1.0, 1, 0,  0., 3., 0.1,          1, 0,  "VBS (WV), 35.9 fb^{-1}",   "PuppiAK8jet_qjet",      "Events/bin");
+//
+//    // //	Leptonic & Hadronic W-boson 
+//    // plotvar(anl, "v_pt_type0",     cuts,  1.0, 1, 0,  0., 1000., 20,          1, 0,  "VBS (WV), 35.9 fb^{-1}",   "W p_{T} (GeV)",      "Events/bin");
+//    // plotvar(anl, "v_mt_type0",     cuts,  1.0, 1, 0,  0., 500.,  20,     1, 0,  "VBS (WV), 35.9 fb^{-1}",   "W Transverse Mass (GeV)",      "Events/bin");
+//
+//    // //--------------	VBF Jet		------------
+//    // plotvar(anl, "njets",  cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of VBF jets", "Events/bin");
+//    // plotvar(anl, "nBTagJet_loose",    cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of VBF jets (Loose b-tag)", "Events/bin");
+//    // plotvar(anl, "nBTagJet_medium",   cuts,  1.0, 1, 0,  0., 10., 1,      1, 0,  "VBS (WV), 35.9 fb^{-1}", "Number of VBF jets (Medium b-tag)", "Events/bin");
+//    // plotvar(anl, "vbf_maxpt_j1_eta",  cuts,  1.0, 1, 0,  -6,  10, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Leading VBF Jet #eta", "Events/bin");
+//    // plotvar(anl, "vbf_maxpt_j2_eta",  cuts,  1.0, 1, 0,  -6,  10, .5,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Sub-Leading VBF Jet #eta", "Events/bin");
+//    // plotvar(anl, "vbf_maxpt_j1_pt",   cuts,  1.0, 1, 0,  20,  720, 20,   1, 0,  "VBS (WV), 35.9 fb^{-1}", "Leading VBF Jet  p_{T}", "Events/bin");
+//    // plotvar(anl, "vbf_maxpt_j2_pt",   cuts,  1.0, 1, 0,  20,  720, 20,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "Sub-Leading VBF Jet p_{T}", "Events/bin");
+//    // plotvar(anl, "vbf_maxpt_jj_m",    cuts,  1.0, 1, 0,  200,  4200, 100,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF M_{jj} GeV", "Events/bin");
+//    // plotvar(anl, "vbf_maxpt_jj_Deta", cuts,  1.0, 1, 0,  0.0,  20.0, 0.5,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "VBF #Delta #eta", "Events/bin");
+//    //
+//      //------------   VERTICES  	-------------------
+//      cp3->cd(1);
+//      plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 80, 1,       0, 0,0,  title_str, "Number of primary vertices", "Events/bin");
+//      //------------    LEPTONS  	-------------------
+//      cp3->cd(2);
+//      plotvar(anl, "ZeppenfeldWH",  cuts,  1.0, 1, 0,   0., 1000., 10,      1, 0,0,  title_str, "ZeppenfeldWH (GeV)", "Events/bin");
+//      cp3->cd(3);
+//      plotvar(anl, "ZeppenfeldWL_2Lep", cuts,  1.0, 1, 0,  -3.,  3., 0.25,   0, 0,0,  title_str, "ZeppenfeldWL_2Lep", "Events/bin");
+//
+//      cp3->cd(4);
+//      plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  0., 1.8*TMath::Pi(), 0.125*TMath::Pi(),   0, 0,0,  title_str, "Lepton_1 #phi", "Events/bin");
+//
+//      cp3->cd(5);
+//      plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     1, 0, 0, title_str, "Lepton_1 charge", "Events/bin");
+//
+//      cp3->cd(6);
+//      plotvar(anl, "lep1_dz",    cuts,  1.0, 1, 0,   0., 600., 10,       1, 0, 0, title_str, "Lepton_1 dz", "Events/bin");
+//
+//      cp3->cd(7);
+//      plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.5, 0.02,       1, 0,0,  title_str, "Lepton_1 isolation", "Events/bin");
+//      //
+//
+//      cp3->cd(8);
+//      plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0,0, title_str, "zeppLep", "Events/bin");
+//
+//      cp3->cd(9);
+//      plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -6., 6., 0.25, 0, 0,0, title_str, "zeppHad", "Events/bin");
+//      // OLD - reminder
+//     outfname << "plots/2016/c3_2016" << "_" <<  CutName  << ".pdf";
+//     cp3->SaveAs(outfname.str().c_str());
+//     outfname.str("");
+//     //outfname << "plots/2016/c3_2016"  << "_" << CutName << ".png";
+//     //cp3->SaveAs(outfname.str().c_str()); 
+//     //outfname.str("");
+//
+//
+//  } else { 
+//    
+////Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t debug, Int_t istyle,
+//	             //Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
+//	             //const char hTitle[], const char xTitle[], const char yTitle[])
+//
+//  // ---------------- These are the cplots for the NEW ntuples ----------------------
+//  std::cout << "cuts = " << cuts << " Lumi = " << g_lum << std::endl;
+//  std::cout << "" << std::endl;
+//  //------------   VERTICES  	-------------------
+//  cp1->cd(1);
+//  plotvar(anl, "nPV", cuts,  1.0, 1, 0,  0, 60, 2,       1, 0, 0, title_str, "Number of primary vertices", "Events/bin");
+//
+//  cp1->cd(2);
+//  plotvar(anl, "bosCent", cuts, 1.0, 1, 0, -4, 4, 0.25, 0, 0, 0, title_str, "Boson Centrality", "Events/bin");
+//  //------------    LEPTONS  	-------------------
+//  cp1->cd(3);
+//  plotvar(anl, "lep1_pt",  cuts,  1.0, 1, 0,   20., 400., 20, 1, 0, 1, title_str, "Lepton_1 p_{T} (GeV)", "Events/bin"); // was 0.,1000., 30 
+//
+//  cp1->cd(4);
+//  plotvar(anl, "lep1_eta", cuts,  1.0, 1, 0,  -2.4, 2.4, 0.16,   0, 0, 0, title_str, "Lepton_1 #eta", "Events/bin");
+//
+//  cp1->cd(5);
+//  plotvar(anl, "lep1_phi", cuts,  1.0, 1, 0,  -3.2, 3.2, 0.2,   0, 0, 0, title_str, "Lepton_1 #phi", "Events/bin");
+//
+//  //cp1->cd(6);
+//  //plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     0, 0,  title_str, "Lepton_1 charge", "Events/bin");
+//
+//  cp1->cd(6);
+//  plotvar(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.4, 0.02, 1, 0, 0, title_str, "Lepton_1 isolation", "Events/bin");
+//
+//  cp1->cd(7);
+//  plotvar(anl, "zeppLep", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, 0, title_str, "zeppLep", "Events/bin");
+//
+//  cp1->cd(8);
+//  plotvar(anl, "zeppHad", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, 0, title_str, "zeppHad", "Events/bin");
+//
+//  cp1->cd(9);
+//  plotvar(anl, "vbf1_AK4_qgid", cuts, 1.0, 1, 0, 0., 1., 0.025, 0, 0, 0, title_str, "Qgl VBF_{j1}");
+//
+//  outfname << "plots/2016/c1_2016" << "_" << CutName << ".pdf";
+//  cp1->SaveAs(outfname.str().c_str());
+//  outfname.str("");
+//  //outfname << "plots/2016/c1_2016"  << "_" << CutName << ".root";
+//  //cp1->SaveAs(outfname.str().c_str()); 
+//  //outfname.str("");
+//
+//  TCanvas* cp2 = (TCanvas*)gROOT->FindObject("cp2"); 
+//  if(cp2) { cp2->Delete(); }
+//  cp2 = new TCanvas("cp2","cp2",10,10,1200,1200);
+//  cp2->Divide(3,3);
+//
+//  //------------   VBF variables - Forward tagging jets   ----------------
+//  cp2->cd(1);
+//  plotvar(anl, "vbf_deta", cuts, 1.0, 1, 0, 2.4, 8., 0.2, 0, 0, 1, title_str, "#Delta#eta^{vbs}", "Events/bin");
+//
+//  cp2->cd(2);
+//  plotvar(anl, "vbf_m", cuts, 1.0, 1, 0 , 500., 4000, 150, 1, 0, 1, title_str, "m^{vbs}_{jj} (GeV)", "Events/bin");
+//
+//  cp2->cd(3);
+//  plotvar(anl, "vbf_pt", cuts,  1.0, 1, 0,  0., 2000., 50,   1, 0, 1, title_str, "p_{T}^{vbs} (GeV)", "Events/bin");
+//
+//  cp2->cd(4);
+//  plotvar(anl, "vbf1_AK4_pt", cuts, 1.0, 1, 0, 0., 800., 25, 1, 0, 1, title_str, "VBS p^{T}_{j1} (GeV)", "Events/bin");
+//
+//  cp2->cd(5);
+//  plotvar(anl, "vbf1_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "VBS #eta_{j1}", "Events/bin");
+//
+//  cp2->cd(6);
+//  plotvar(anl, "vbf1_AK4_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "VBS #phi_{j1}", "Events/bin");
+//
+//  cp2->cd(7);
+//  plotvar(anl, "vbf2_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 1, 0, 1, title_str, "VBS p^{T}_{j2} (GeV)", "Events/bin");
+//
+//  cp2->cd(8);
+//  plotvar(anl, "vbf2_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "VBS #eta_{j2}", "Events/bin");
+//
+//  cp2->cd(9);
+//  plotvar(anl, "vbf2_AK4_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "VBS #phi_{j2}", "Events/bin");
+//
+//  outfname << "plots/2016/c2_2016" << "_" <<  CutName << ".pdf";
+//   cp2->SaveAs(outfname.str().c_str());
+//   outfname.str("");
+//   //outfname << "plots/2016/c2_2016"  << "_" << CutName << ".root";
+//   //cp2->SaveAs(outfname.str().c_str()); 
+//   //outfname.str("");
+//
+//  TCanvas* cp3 = (TCanvas*)gROOT->FindObject("cp3"); 
+//  if(cp3) { cp3->Delete(); }
+//  cp3 = new TCanvas("cp3","cp3",10,10,1200,1200);
+//  cp3->Divide(3,3);
+//
+//  //-------------    AK8 Jets - Hadronically decaying bosons   -----------------
+//  cp3->cd(1);
+//  plotvar(anl, "MET",  cuts,  1.0, 1, 0,   30., 200., 8., 1, 0, 1,  title_str, "MET (GeV)", "Events/bin");
+//
+//  cp3->cd(2);
+//  plotvar(anl, "MET_phi",  cuts,  1.0, 1, 0, -3.75, 3.75, 0.25, 0, 0, 0,  title_str, "MET #phi", "Events/bin"); //0.125*TMath::Pi()
+//
+//  cp3->cd(3);
+//  plotvar(anl, "bos_j1_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 0, 0, 1, title_str, "V p^{T}_{J1} (GeV)", "Events/bin");
+//
+//  cp3->cd(4);
+//  plotvar(anl, "bos_j1_AK4_eta", cuts, 1.0, 1, 0, -2.5, 2.5, 0.2, 0, 0, 0, title_str, "#V eta_{J1}", "Events/bin");
+//
+//  cp3->cd(5);
+//  plotvar(anl, "bos_PuppiAK8_tau2tau1", cuts, 1.0, 1, 0, 0., 1.0, 0.04, 0, 0, 0, title_str, "AK8 #tau_{21}", "Events/bin");
+//
+//  cp3->cd(6);
+//  plotvar(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   200., 800., 25, 1, 0, 1,  title_str, "AK8 p_{T} (GeV)", "Events/bin");
+//
+//  cp3->cd(7);
+//  plotvar(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -2.5, 2.5, .2,   0, 0, 0,  title_str, "AK8 #eta", "Events/bin");
+//
+//  cp3->cd(8);
+//  plotvar(anl, "bos_PuppiAK8_phi", cuts,  1.0, 1, 0,  -3.2, 3.2, 0.2,   0, 0, 0, title_str, "AK8 #phi", "Events/bin"); // was -3.75, 3.75, 0.25
+//
+//  cp3->cd(9);
+//  plotvar(anl, "bos_PuppiAK8_m_sd0_corr", cuts,  1.0, 1, 0,  40., 150, 5,   0, 0, 0,  title_str, "AK8  Mass sd0 corr", "Events/bin");
+//
+//  outfname << "plots/2016/c3_2016" << "_" <<  CutName  << ".pdf";
+//  cp3->SaveAs(outfname.str().c_str());
+//  outfname.str("");
+//  //outfname << "plots/2016/c3_2016"  << "_" << CutName << ".root";
+//  //cp3->SaveAs(outfname.str().c_str()); 
+//  //outfname.str("");
+//
+//  TCanvas* cp4 = (TCanvas*)gROOT->FindObject("cp4"); 
+//  if(cp4) { cp4->Delete(); }
+//  cp4 = new TCanvas("cp4","cp4",10,10,1200,1200);
+//  cp4->Divide(3,3);
+//
+//  cp4->cd(1);
+//  plotvar(anl, "dibos_m", cuts,  1.0, 1, 0,  0., 1500, 50,   0, 0, 1, title_str, "Diboson Mass", "Events/bin");
+//
+//  cp4->cd(2);
+//  plotvar(anl, "dibos_mt", cuts, 1.0, 1, 0, 0., 2000, 50, 0, 0, 1, title_str, "Diboson mt", "Events/bin");
+//
+//  cp4->cd(3);
+//  plotvar(anl, "dibos_pt", cuts, 1.0, 1, 0, 0., 800, 25, 0, 0, 1, title_str, "Diboson pt", "Events/bin");
+//
+//  cp4->cd(4);
+//  plotvar(anl, "dibos_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "Diboson #eta", "Events/bin");
+//
+//  cp4->cd(5);
+//  plotvar(anl, "dibos_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "Diboson #phi", "Events/bin");
+//
+//  cp4->cd(6);
+//  plotvar(anl, "dilep_mt", cuts, 1.0, 1, 0, 0., 800, 25, 1, 0, 1, title_str, "Dilepton mt", "Events/bin");
+//
+//  cp4->cd(7);
+//  plotvar(anl, "dilep_m", cuts, 1.0, 1, 0, 0., 500, 20, 0, 0, 1, title_str, "Dilepton mass", "Events/bin");
+//
+//  cp4->cd(8);
+//  plotvar(anl, "dilep_eta", cuts, 1.0, 1, 0, -4., 4., 0.25, 0, 0, 0, title_str, "Dilepton #eta", "Events/bin");
+//
+//  cp4->cd(9);
+//  plotvar(anl, "dilep_pt", cuts, 1.0, 1, 0, 0., 800, 25, 1, 0, 1, title_str, "Dilepton pt", "Events/bin");
+//
+//  outfname << "plots/2016/c4_2016" << "_" <<  CutName  << ".pdf";
+//  cp4->SaveAs(outfname.str().c_str());
+//  outfname.str("");
+//  // outfname << "VarPlots_c4"  << "_" << CutName << ".png";
+//  // cp4->SaveAs(outfname.str().c_str()); 
+//  // outfname.str("");
+//  // // // M comm.
+//  }
    anl->setsvplots(0);
 }
 
@@ -2444,167 +2501,8 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
     //cp1->SaveAs(shapeFname.str().c_str()); 
     //shapeFname.str("");
   }
-  /*
-  //------------   VERTICES  	-------------------
-  cp1->cd(1);
-  plotShapeComp(anl, "nPV", cuts,  1.0, 1, 0,  0, 60, 2,       1, 0, 0, title_str, "Number of primary vertices", "Events/bin");
-
-  cp1->cd(2);
-  plotShapeComp(anl, "bosCent", cuts, 1.0, 1, 0, -4, 4, 0.25, 0, 0, 0, title_str, "Boson Centrality", "Events/bin");
-  //------------    LEPTONS  	-------------------
-  cp1->cd(3);
-  plotShapeComp(anl, "lep1_pt",  cuts,  1.0, 1, 0,   20., 400., 20, 1, 0, 1, title_str, "Lepton_1 p_{T} (GeV)", "Events/bin"); // was 0.,1000., 30 
-
-  cp1->cd(4);
-  plotShapeComp(anl, "lep1_eta", cuts,  1.0, 1, 0,  -2.4, 2.4, 0.16,   0, 0, 0, title_str, "Lepton_1 #eta", "Events/bin");
-
-  cp1->cd(5);
-  plotShapeComp(anl, "lep1_phi", cuts,  1.0, 1, 0,  -3.2, 3.2, 0.2,   0, 0, 0, title_str, "Lepton_1 #phi", "Events/bin");
-
-  //cp1->cd(6);
-  //plotvar(anl, "lep1_q", cuts,  1.0, 1, 0,  -2.5, 5.5, 1,     0, 0,  title_str, "Lepton_1 charge", "Events/bin");
-
-  cp1->cd(6);
-  plotShapeComp(anl, "lep1_iso",  cuts,  1.0, 1, 0,   0., 0.4, 0.02, 1, 0, 0, title_str, "Lepton_1 isolation", "Events/bin");
-
-  cp1->cd(7);
-  plotShapeComp(anl, "zeppLep", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, 0, title_str, "zeppLep", "Events/bin");
-
-  cp1->cd(8);
-  plotShapeComp(anl, "zeppHad", cuts, 1.0, 1, 0 , -4., 4., 0.25, 0, 0, 0, title_str, "zeppHad", "Events/bin");
-
-  cp1->cd(9);
-  plotShapeComp(anl, "vbf1_AK4_qgid", cuts, 1.0, 1, 0, 0., 1., 0.025, 0, 0, 0, title_str, "Qgl VBF_{j1}");
-
-  shapeFname << "plots/2016/s1_2016" << "_" << CutName << ".pdf";
-  cp1->SaveAs(shapeFname.str().c_str());
-  shapeFname.str("");
-  //shapeFname << "plots/2016/s1_2016"  << "_" << CutName << ".root";
-  //cp1->SaveAs(shapeFname.str().c_str()); 
-  //shapeFname.str("");
-
-  TCanvas* cp2 = (TCanvas*)gROOT->FindObject("cp2"); 
-  if(cp2) { cp2->Delete(); }
-  cp2 = new TCanvas("cp2","cp2",10,10,1200,1200);
-  cp2->Divide(3,3);
-
-  //------------   VBF variables   ----------------
-  cp2->cd(1);
-  plotShapeComp(anl, "vbf_deta", cuts, 1.0, 1, 0, 2.4, 8., 0.2, 0, 0, 1, title_str, "#Delta#eta^{vbs}", "Events/bin");
-
-  cp2->cd(2);
-  plotShapeComp(anl, "vbf_m", cuts, 1.0, 1, 0 , 500., 4000, 150, 1, 0, 1, title_str, "m^{vbs}_{jj} (GeV)", "Events/bin");
-
-  cp2->cd(3);
-  plotShapeComp(anl, "vbf_pt", cuts,  1.0, 1, 0,  0., 2000., 50,   1, 0, 1, title_str, "p_{T}^{vbs} (GeV)", "Events/bin");
-
-  cp2->cd(4);
-  plotShapeComp(anl, "vbf1_AK4_pt", cuts, 1.0, 1, 0, 0., 800., 25, 1, 0, 1, title_str, "VBS p^{T}_{j1} (GeV)", "Events/bin");
-
-  cp2->cd(5);
-  plotShapeComp(anl, "vbf1_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "VBS #eta_{j1}", "Events/bin");
-
-  cp2->cd(6);
-  plotShapeComp(anl, "vbf1_AK4_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "VBS #phi_{j1}", "Events/bin");
-
-  cp2->cd(7);
-  plotShapeComp(anl, "vbf2_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 1, 0, 1, title_str, "VBS p^{T}_{j2} (GeV)", "Events/bin");
-
-  cp2->cd(8);
-  plotShapeComp(anl, "vbf2_AK4_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "VBS #eta_{j2}", "Events/bin");
-
-  cp2->cd(9);
-  plotShapeComp(anl, "vbf2_AK4_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "VBS #phi_{j2}", "Events/bin");
-
-  shapeFname << "plots/2016/s2_2016" << "_" <<  CutName << ".pdf";
-   cp2->SaveAs(shapeFname.str().c_str());
-   shapeFname.str("");
-   //shapeFname << "plots/2016/s2_2016"  << "_" << CutName << ".root";
-   //cp2->SaveAs(shapeFname.str().c_str()); 
-   //shapeFname.str("");
-
-  TCanvas* cp3 = (TCanvas*)gROOT->FindObject("cp3"); 
-  if(cp3) { cp3->Delete(); }
-  cp3 = new TCanvas("cp3","cp3",10,10,1200,1200);
-  cp3->Divide(3,3);
-
-  //-------------    AK8 Jets    -----------------
-  cp3->cd(1);
-  plotShapeComp(anl, "MET",  cuts,  1.0, 1, 0,   30., 200., 8., 1, 0, 1,  title_str, "MET (GeV)", "Events/bin");
-
-  cp3->cd(2);
-  plotShapeComp(anl, "MET_phi",  cuts,  1.0, 1, 0, -3.75, 3.75, 0.25, 0, 0, 0,  title_str, "MET #phi", "Events/bin"); //0.125*TMath::Pi()
-
-  cp3->cd(3);
-  plotShapeComp(anl, "bos_j1_AK4_pt", cuts, 1.0, 1, 0, 0., 500., 20, 0, 0, 1, title_str, "V p^{T}_{J1} (GeV)", "Events/bin");
-
-  cp3->cd(4);
-  plotShapeComp(anl, "bos_j1_AK4_eta", cuts, 1.0, 1, 0, -2.5, 2.5, 0.2, 0, 0, 0, title_str, "#V eta_{J1}", "Events/bin");
-
-  cp3->cd(5);
-  plotShapeComp(anl, "bos_PuppiAK8_tau2tau1", cuts, 1.0, 1, 0, 0., 1.0, 0.04, 0, 0, 0, title_str, "AK8 #tau_{21}", "Events/bin");
-
-  cp3->cd(6);
-  plotShapeComp(anl, "bos_PuppiAK8_pt",  cuts,  1.0, 1, 0,   200., 800., 25, 1, 0, 1,  title_str, "AK8 p_{T} (GeV)", "Events/bin");
-
-  cp3->cd(7);
-  plotShapeComp(anl, "bos_PuppiAK8_eta", cuts,  1.0, 1, 0,  -2.5, 2.5, .2,   0, 0, 0,  title_str, "AK8 #eta", "Events/bin");
-
-  cp3->cd(8);
-  plotShapeComp(anl, "bos_PuppiAK8_phi", cuts,  1.0, 1, 0,  -3.2, 3.2, 0.2,   0, 0, 0, title_str, "AK8 #phi", "Events/bin"); // was -3.75, 3.75, 0.25
-
-  cp3->cd(9);
-  plotShapeComp(anl, "bos_PuppiAK8_m_sd0_corr", cuts,  1.0, 1, 0,  40., 150, 5,   0, 0, 0,  title_str, "AK8  Mass sd0 corr", "Events/bin");
-
-  shapeFname << "plots/2016/s3_2016" << "_" <<  CutName  << ".pdf";
-  cp3->SaveAs(shapeFname.str().c_str());
-  shapeFname.str("");
-  //shapeFname << "plots/2016/s3_2016"  << "_" << CutName << ".root";
-  //cp3->SaveAs(shapeFname.str().c_str()); 
-  //shapeFname.str("");
-
-  TCanvas* cp4 = (TCanvas*)gROOT->FindObject("cp4"); 
-  if(cp4) { cp4->Delete(); }
-  cp4 = new TCanvas("cp4","cp4",10,10,1200,1200);
-  cp4->Divide(3,3);
-
-  cp4->cd(1);
-  plotShapeComp(anl, "dibos_m", cuts,  1.0, 1, 0,  0., 1500, 50,   0, 0, 1, title_str, "Diboson Mass", "Events/bin");
-
-  cp4->cd(2);
-  plotShapeComp(anl, "dibos_mt", cuts, 1.0, 1, 0, 0., 2000, 50, 0, 0, 1, title_str, "Diboson mt", "Events/bin");
-
-  cp4->cd(3);
-  plotShapeComp(anl, "dibos_pt", cuts, 1.0, 1, 0, 0., 800, 25, 0, 0, 1, title_str, "Diboson pt", "Events/bin");
-
-  cp4->cd(4);
-  plotShapeComp(anl, "dibos_eta", cuts, 1.0, 1, 0, -5., 5., 0.25, 0, 0, 0, title_str, "Diboson #eta", "Events/bin");
-
-  cp4->cd(5);
-  plotShapeComp(anl, "dibos_phi", cuts, 1.0, 1, 0, -3.2, 3.2, 0.2, 0, 0, 0, title_str, "Diboson #phi", "Events/bin");
-
-  cp4->cd(6);
-  plotShapeComp(anl, "dilep_mt", cuts, 1.0, 1, 0, 0., 800, 25, 1, 0, 1, title_str, "Dilepton mt", "Events/bin");
-
-  cp4->cd(7);
-  plotShapeComp(anl, "dilep_m", cuts, 1.0, 1, 0, 0., 500, 20, 0, 0, 1, title_str, "Dilepton mass", "Events/bin");
-
-  cp4->cd(8);
-  plotShapeComp(anl, "dilep_eta", cuts, 1.0, 1, 0, -4., 4., 0.25, 0, 0, 0, title_str, "Dilepton #eta", "Events/bin");
-
-  cp4->cd(9);
-  plotShapeComp(anl, "dilep_pt", cuts, 1.0, 1, 0, 0., 800, 25, 1, 0, 1, title_str, "Dilepton pt", "Events/bin");
-
-  shapeFname << "plots/2016/s4_2016" << "_" <<  CutName  << ".pdf";
-  cp4->SaveAs(shapeFname.str().c_str());
-  shapeFname.str("");
-  // shapeFname << "VarPlots_s4"  << "_" << CutName << ".png";
-  // cp4->SaveAs(shapeFname.str().c_str()); 
-  // shapeFname.str("");
-  // // // M comm.
-  */
   anl->setsvplots(0);
-  }
+}
    
 //======================================================================================================================
 //
