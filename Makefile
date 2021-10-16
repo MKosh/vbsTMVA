@@ -177,14 +177,7 @@ update_2016:
 	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.C
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2016|g' vbsTMVAClassification.C
 	@sed -i 's|int year = [0-9]\{4\}|int year = 2016|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2016/c1_2016|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2016/c2_2016|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2016/c3_2016|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/c4_[0-9]\{4\}|plots/2016/c4_2016|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/s1_[0-9]\{4\}|plots/2016/s1_2016|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/s2_[0-9]\{4\}|plots/2016/s2_2016|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/s3_[0-9]\{4\}|plots/2016/s3_2016|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/s4_[0-9]\{4\}|plots/2016/s4_2016|g' tmvaMon.cpp
+	@sed -i 's|std::string year = "[0-9]\{4\}"|std::string year = "2016"|g' tmvaMon.cpp
 	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cpp
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cpp
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cpp
@@ -200,14 +193,7 @@ update_2017:
 	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.C
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2017|g' vbsTMVAClassification.C
 	@sed -i 's|int year = [0-9]\{4\}|int year = 2017|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2017/c1_2017|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2017/c2_2017|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2017/c3_2017|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/c4_[0-9]\{4\}|plots/2017/c4_2017|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/s1_[0-9]\{4\}|plots/2017/s1_2017|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/s2_[0-9]\{4\}|plots/2017/s2_2017|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/s3_[0-9]\{4\}|plots/2017/s3_2017|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/s4_[0-9]\{4\}|plots/2017/s4_2017|g' tmvaMon.cpp
+	@sed -i 's|std::string year = "[0-9]\{4\}"|std::string year = "2017"|g' tmvaMon.cpp
 	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cpp
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cpp
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cpp
@@ -221,15 +207,8 @@ update_2018:
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.C
 	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.C
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2018|g' vbsTMVAClassification.C
-	@sed -i 's|int year = [0-9]\{4\}|int year = 2018|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2018/c1_2018|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2018/c2_2018|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2018/c3_2018|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/c4_[0-9]\{4\}|plots/2018/c4_2018|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/s1_[0-9]\{4\}|plots/2018/s1_2018|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/s2_[0-9]\{4\}|plots/2018/s2_2018|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/s3_[0-9]\{4\}|plots/2018/s3_2018|g' tmvaMon.cpp
-	@sed -i 's|plots/[0-9]\{4\}/s4_[0-9]\{4\}|plots/2018/s4_2018|g' tmvaMon.cpp
+	@sed -i 's|int year = [0-9]\{4\}|int year = "2018"|g' tmvaMon.cpp
+	@sed -i 's|std::string year = "[0-9]\{4\}"|std::string year = 2018|g' tmvaMon.cpp
 	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cpp
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cpp
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cpp
@@ -271,3 +250,11 @@ update_0000:
 
 # Not sure what happened with this line here v it was somehow in the first sed in trainAndPlot
 # //cout << "Deleted old hist " <<  newhist->GetName() << endl;'
+#	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/2016/c1_2016|g' tmvaMon.cpp
+#	@sed -i 's|plots/[0-9]\{4\}/c2_[0-9]\{4\}|plots/2016/c2_2016|g' tmvaMon.cpp
+#	@sed -i 's|plots/[0-9]\{4\}/c3_[0-9]\{4\}|plots/2016/c3_2016|g' tmvaMon.cpp
+#	@sed -i 's|plots/[0-9]\{4\}/c4_[0-9]\{4\}|plots/2016/c4_2016|g' tmvaMon.cpp
+#	@sed -i 's|plots/[0-9]\{4\}/s1_[0-9]\{4\}|plots/2016/s1_2016|g' tmvaMon.cpp
+#	@sed -i 's|plots/[0-9]\{4\}/s2_[0-9]\{4\}|plots/2016/s2_2016|g' tmvaMon.cpp
+#	@sed -i 's|plots/[0-9]\{4\}/s3_[0-9]\{4\}|plots/2016/s3_2016|g' tmvaMon.cpp
+#	@sed -i 's|plots/[0-9]\{4\}/s4_[0-9]\{4\}|plots/2016/s4_2016|g' tmvaMon.cpp
