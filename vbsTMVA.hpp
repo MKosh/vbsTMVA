@@ -342,6 +342,33 @@ TObjArray* GetListOfBranches(TTree* tree){
 
 //======================================================================================================================
 //
+void WriteAUCFile (Int_t n_BDT_trees, Int_t max_depth, Float_t ada_boost, Float_t min_node_size, TString randomized, 
+                    TString myMethodList, TString cut_name, Int_t selector, TMVA::DataLoader* dataloader, TMVA::Factory* factory) {
+  stringstream ss_AUC_out_file;
+  ss_AUC_out_file << "ROC/" << std::to_string(selector) << "_" << cut_name << ".txt"; // AUCoutfile
+  std::ofstream AUC_out_file;
+  AUC_out_file.open(ss_AUC_out_file.str(), std::ios_base::app);
+  std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
+
+  AUC_out_file << "" << std::endl;
+  AUC_out_file << "--------------------------------------------------" << std::endl;
+
+   for (UInt_t i=0; i<mlist.size(); i++) {
+      std::string reg_method(mlist[i]);
+      std::cout << "AUC for " << reg_method << ": " << factory->GetROCIntegral(dataloader, reg_method) << std::endl;
+      AUC_out_file << "AUC for " << reg_method << ": " << factory->GetROCIntegral(dataloader, reg_method) << std::endl;
+      if (reg_method == "BDT") {
+         AUC_out_file << '\t' << n_BDT_trees << " " << randomized << " Trees with max depth " << max_depth << " and min node size " << 
+         min_node_size << "'%' and ada boost of " << ada_boost << std::endl;
+      }
+   }
+   AUC_out_file << "" << std::endl;
+   AUC_out_file << "--------------------------------------------------" << std::endl;
+   AUC_out_file.close();
+}
+
+//======================================================================================================================
+//
 void SelectVbsVars(vector<string>& vbsVars, TObjArray* brlist){
   string  var_sig = "f_";
   for(int i = 0; i < brlist->GetEntries(); ++i) {

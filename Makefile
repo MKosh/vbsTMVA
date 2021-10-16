@@ -28,7 +28,7 @@ help:
 	@echo "---- trainAndPlot - loc, year, vars, methods, lumi, cut, cutName |	---- trainNoPlot - loc, year, vars, methods, cutName, saveFile"
 	@echo "								 |	"
 	@echo "If you just want to make and save the cplots			 |	If you just want to run the tmvaMon program and make individual plots"
-	@echo "---- plots - year, lumi, cut, cutName				 |	---- mon - year, lumi, cut, cutName"
+	@echo "---- plots - year, lumi, cut, cutName				 |	---- mon - year, lumi, cut, cutName, saveFile"
 	@echo " 								 |"
 	@echo "If you want to plot a single var at a time 			 |	If you just want to update the pdf with all the plots"
 	@echo "---- singlePlot - year, lumi, cut, cutName, varName		 |	---- genReport -"
@@ -64,7 +64,8 @@ trainNoPlot: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
-	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@sed -i 's|^.*\("; // cut_name - keep this comment\)|  TString cut_name = "$(cutName)"; // cut_name - keep this comment|g' vbsTMVAClassification.C
 	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp

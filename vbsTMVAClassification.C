@@ -38,6 +38,7 @@ using namespace TMVA;
 
 int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 {
+   ROOT::EnableImplicitMT();
    // The explicit loading of the shared libTMVA is done in TMVAlogon.C, defined in .rootrc
    // if you use your private .rootrc, or run from a different directory, please copy the
    // corresponding lines from .rootrc
@@ -104,6 +105,8 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    //
    // Boosted Decision Trees
    Use["BDT"]             = 1; // uses Adaptive Boost
+   Use["BDT1"]            = 1; // MM added
+   Use["BDT2"]            = 1; // MM added
    Use["BDTG"]            = 0; // uses Gradient Boost
    Use["BDTB"]            = 0; // uses Bagging
    Use["BDTD"]            = 0; // decorrelation + Adaptive Boost
@@ -798,11 +801,16 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDTG",
                            "!H:!V:NTrees=1000:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=0.10:UseBaggedBoost:BaggedSampleFraction=0.5:nCuts=20:MaxDepth=2" );
 
-   if (Use["BDT"])  // Adaptive Boost
-     // factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT",
-      //                     "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
-      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT",
+   if (Use["BDT1"])  // Adaptive Boost
+      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT1",
+                           "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
+
+   if (Use["BDT2"])
+      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT2",
                            "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.6:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
+   if (Use["BDT"])
+      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT",
+                           "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
 
    if (Use["BDTB"]) // Bagging
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDTB",
@@ -849,24 +857,35 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    ////////////////////////////////////////////////////////////////////////////
    /// Print out AUC for each method, both to the terminal, and to a file
    /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
-   /// to catch it and properly rename the ssAUCoutile name
+   /// to catch it and properly rename the ssAUCoutile name.
+   Int_t nBDTtrees = 1000; // 850 or 1000
+   Float_t adaBoost = 0.6; // 0.5 or 0.6
+   Float_t minNodeSize = 1; // 2.5 or 1
+   Int_t maxDepth = 4; // 3 or 4
+   std::string randomized = "Randomized";
+  TString cut_name = "test"; // cut_name - keep this comment
+
    stringstream ssAUCoutfile;
-ssAUCoutfile << "ROC/" << std::to_string(selector) << "_test.txt"; // AUCoutfile
+  ssAUCoutfile << "ROC/" << std::to_string(selector) << "_test.txt"; // AUCoutfile
    std::ofstream AUCoutfile;
    AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
-   std::cout << "" << std::endl;
-   std::cout << "--------------------------------------------------" << std::endl;
+
    AUCoutfile << "" << std::endl;
    AUCoutfile << "--------------------------------------------------" << std::endl;
+
    for (UInt_t i=0; i<mlist.size(); i++) {
       std::string regMethod(mlist[i]);
-      std::cout << "AUC for " << regMethod << ": " << factory->GetROCIntegral(dataloader, regMethod) << std::endl;
+      //std::cout << "AUC for " << regMethod << ": " << factory->GetROCIntegral(dataloader, regMethod) << std::endl;
       AUCoutfile << "AUC for " << regMethod << ": " << factory->GetROCIntegral(dataloader, regMethod) << std::endl;
-
+      if (regMethod == "BDT1") {
+         AUCoutfile << '\t' << 850 << " " << randomized << " Trees with max depth " << 3 << " and min node size " << 
+         2.5 << "'%' and ada boost of " << 0.5 << std::endl;
+      } else if (regMethod == "BDT2") {
+         AUCoutfile << '\t' << 1000 << " " << randomized << " Trees with max depth " << 4 << " and min node size " << 
+         1 << "'%' and ada boost of " << 0.6 << std::endl;
+      }
    }
-   std::cout << "--------------------------------------------------" << std::endl;
-   std::cout << "" << std::endl;
    AUCoutfile << "" << std::endl;
    AUCoutfile << "--------------------------------------------------" << std::endl;
    AUCoutfile.close();
@@ -901,7 +920,7 @@ ssAUCoutfile << "ROC/" << std::to_string(selector) << "_test.txt"; // AUCoutfile
 
 int main( int argc, char** argv )
 {
-  // ROOT::EnableImplicitMT();
+
    // Select methods (don't look at this code - not of interest)
    TString methodList;
    TString sname=argv[1]; 

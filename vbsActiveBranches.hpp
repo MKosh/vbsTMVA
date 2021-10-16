@@ -79,7 +79,6 @@ inpChain->SetBranchStatus("vbf_deta", 1);
 inpChain->SetBranchStatus("vbf_eta", 1);
 inpChain->SetBranchStatus("vbf_m", 1);
 inpChain->SetBranchStatus("vbf_phi", 1);
-inpChain->SetBranchStatus("vbf_pt", 1);
 inpChain->SetBranchStatus("zeppHad", 1);
 inpChain->SetBranchStatus("zeppLep", 1);
 }
