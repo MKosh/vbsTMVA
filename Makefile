@@ -28,10 +28,10 @@ help:
 	@echo "---- trainAndPlot - loc, year, vars, methods, lumi, cut, cutName |	---- trainNoPlot - loc, year, vars, methods, cutName, saveFile"
 	@echo "								 |	"
 	@echo "If you just want to make and save the cplots			 |	If you just want to run the tmvaMon program and make individual plots"
-	@echo "---- plots - year, lumi, cut, cutName				 |	---- mon - year, lumi, cut, cutName, saveFile"
+	@echo "---- plots - year, lumi, cut, cutName, saveFile		 	 |	---- mon - year, lumi, cut, cutName, saveFile"
 	@echo " 								 |"
-	@echo "If you want to plot a single var at a time 			 |	If you just want to update the pdf with all the plots"
-	@echo "---- singlePlot - year, lumi, cut, cutName, varName		 |	---- genReport -"
+	@echo "If you want to plot a single var at a time 			 |	If you just want to train without applying"
+	@echo "---- singlePlot - year, lumi, cut, cutName, varName		 |	---- classify - loc, year, vars, methods, cutName, saveFile"
 	@echo " 								 |	"
 	@echo "NOTE: Add _wsl to each of these target names if running using ROOT in a CONDA environment" 
 	@echo ""
@@ -57,14 +57,15 @@ classify: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
-	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C 
+#	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.C
 	@root ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 
 trainNoPlot: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
-	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.C
 	@sed -i 's|^.*\("; // cut_name - keep this comment\)|  TString cut_name = "$(cutName)"; // cut_name - keep this comment|g' vbsTMVAClassification.C
 	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
@@ -74,7 +75,7 @@ trainAndPlot: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
-	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.C
 	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp    
@@ -118,13 +119,13 @@ classify_wsl: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@($(CONDA_ACTIVATE) root_env ; ./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)")
-	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C 
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.C
 	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\))
 
 trainNoPlot_wsl: update_$(year)
 	@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
-	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.C
 	@($(CONDA_ACTIVATE) root_env ; ./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)")
 	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\))
 	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\))
@@ -133,7 +134,7 @@ trainNoPlot_wsl: update_$(year)
 trainAndPlot_wsl: update_$(year)
 	@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
-	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|ssAUCoutfile << "ROC/" << std::to_string(selector) << "_$(cutName).txt"; // AUCoutfile|g' vbsTMVAClassification.C
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.C
 	@($(CONDA_ACTIVATE) root_env ; ./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)")
 	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\))
 	@($(CONDA_ACTIVATE) root_env ; root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\))
