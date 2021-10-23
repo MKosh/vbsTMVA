@@ -141,7 +141,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    // Apply additional cuts on the signal and background samples (can be different)
    //   TCut mycuts = cleanNAN+more+OneLpt;// 
-   TCut mycuts = cleanNAN_qgid+cleanNAN_tau; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
+   TCut mycuts = cleanNAN_qgid+cleanNAN_tau+wv_boosted+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+fatjet_eta+fatjet_pt+fatjet_tau21+wv_sr; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
    TCut mycutb = mycuts;//
 
    VbsReducedEvent vbsEvent;

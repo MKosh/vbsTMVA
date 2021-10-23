@@ -98,7 +98,7 @@ TCut vbs_jets_pt          ("vbs_jets_pt",            "vbf1_AK4_pt>50 && vbf2_AK4
 TCut vbs_delta_eta        ("vbs_delta_eta",          "vbf_deta>2.5"); // this is absolute delta eta
 
 TCut met_pt               ("met_pt",                 "MET>30");
-TCut btag_veto           ("btag_veto",              "nBtag_loose==0");
+TCut btag_veto            ("btag_veto",              "nBtag_loose==0");
 
 // The unique conditions for each SR/CR
 TCut wv_sr                ("wv_sr",                  "(bos_PuppiAK8_m_sd0_corr>65 && bos_PuppiAK8_m_sd0_corr<105)");
@@ -121,7 +121,7 @@ TCut common               ("common",                 "(isAntiIso==0) && (bosCent
 TCut bos_common           ("bos_common",             fatjet_pt+fatjet_eta+fatjet_tau21);
 TCut full_common          ("full_common",            category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
 TCut common_ele           ("common_ele",             category_selection+lep_pt+lep_ele+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
-TCut common_muon          ("common_muon",           category_selection+lep_pt+lep_muon+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
+TCut common_muon          ("common_muon",            category_selection+lep_pt+lep_muon+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
 
 // Full set of cuts for each SR/CR selecting either electrons or muons
 TCut full_vjets_cr        ("full_vjets_cr",          full_common+btag_veto+wv_cr_vjets);
