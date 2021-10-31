@@ -1,12 +1,12 @@
 #define tmvaMon_cxx
 //=======================================================================
-// $Id: tmvaMon.cpp
+// $Id: tmvaMon.cc
 // 
-// File:    tmvaMon.cpp
+// File:    tmvaMon.cc
 // Purpose: tmva event processor 
 // Created: Dec 2017, Sergey Uzunyan (serguei@nicadd.niu.edu)
 // Updated: 2021, Mark M. 
-// root -l tmvaMon.cpp\(\"vbs_ww\"\)
+// root -l tmvaMon.cc\(\"vbs_ww\"\)
 // root[1]  plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN,  1.00, 0, 0,     0., 400., 5.);
 // root[2]  plotvar(anl,"BDT"    ,  tmvasel,  1.0,  0, 0,     -1.0, 1.0, 0.05);
 // root[5]  plotvar(anl,"DNN_GPU",  tmvasel,  1.0 , 0, 0,        0., 1.,  0.025,  1, 0);

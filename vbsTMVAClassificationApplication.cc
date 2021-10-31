@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////
-// $Id: vbsTMVAClassification.C
-/// \author Andreas Hoecker (TMVAClassification.C) ROOT v6.10.08
+// $Id: vbsTMVAClassification.cc
+/// \author Andreas Hoecker (TMVAClassification.cc) ROOT v6.10.08
 // 
-// File:    vbsTMVAClassificationApplication.C
+// File:    vbsTMVAClassificationApplication.cc
 // Purpose: applies H->ZZ->4l TMVA classification to data 
 // (works with VBS4LeptonsAnalysisReduced trees)   
 // Created: Nov 2017, Sergey Uzunyan (serguei@nicadd.niu.edu)
@@ -11,9 +11,9 @@
  * Project   : TMVA - a Root-integrated toolkit for multivariate data analysis    *
  * Package   : TMVA                                                               *
  * Exectuable: TMVAClassificationApplication                                      *
- * root -b -q ./vbsTMVAClassification.C\(\"vbs_ww\",\"BDT\"\)                    *
- * root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww\",\"BDT\"\)
- * root -l tmvaMon.cpp\(\"vbs_ww\"\)                                                                         *
+ * root -b -q ./vbsTMVAClassification.cc\(\"vbs_ww\",\"BDT\"\)                    *
+ * root -b -q ./vbsTMVAClassificationApplication.cc\(\"vbs_ww\",\"BDT\"\)
+ * root -l tmvaMon.cc\(\"vbs_ww\"\)                                                                         *
  * This macro provides a simple example on how to use the trained classifiers     *
  * within an analysis module                                                      *
  **********************************************************************************/
@@ -570,7 +570,7 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    delete reader;
 
    std::cout << "==> TMVAClassificationApplication is done!" << endl << std::endl;
-   std::cout << "==> Use root -l tmvaMon.cpp\\(\\\"" << sname << "\\\",lumi,cut,\\\"cutName\\\"\\)  to analyse..." << std::endl;
+   std::cout << "==> Use root -l tmvaMon.cc\\(\\\"" << sname << "\\\",lumi,cut,\\\"cutName\\\"\\)  to analyse..." << std::endl;
    std::cout << "==> Use one of the following as a second argument for the luminosity" << std::endl;
    std::cout << "Lumies:" << std::endl;
    std::cout << "  ==> 2016 Samples -> " << lum_2016/1000 << std::endl;

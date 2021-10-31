@@ -2,7 +2,7 @@
 
 # Runs second after dsw.sh.
 #   Purpose:
-#       - Creates a ROOT macro "write_list.C" to read in one of the .root data files
+#       - Creates a ROOT macro "write_list.cc" to read in one of the .root data files
 #       - Creates a list of variables (branches) from that .root file
 #       - The writes vbsReducedTree.hpp with all of those variable names
 #       - Takes a list of variables (from the list generated) to use as discriminating variables
@@ -29,7 +29,7 @@ fi
 
 now=$(date)
 
-macroFile="write_list.C"
+macroFile="write_list.cc"
 if [ -f $macroFile ]; then rm -f $macroFile; fi
 touch $macroFile
 
@@ -82,7 +82,7 @@ EOF
 # --------------------------------------------------------- End - Create the write_list C++ macro - End -------------------------------------------------------------------
 
 # Run the macro that was just generated
-root -q .x write_list.C
+root -q .x write_list.cc
 # sort the branches and remove any duplicates then store the result in a new file
 sort -u var_list.txt > branches.txt
 # Delete the old varible list file
@@ -377,7 +377,7 @@ EOF
 
 echo "Done!"
 echo ""
-echo "Next run root -b -q ./vbsTMVAClassification.C\(\\\"vbs_ww\\\",\\\"BDT\\\"\)"
+echo "Next run root -b -q ./vbsTMVAClassification.cc\(\\\"vbs_ww\\\",\\\"BDT\\\"\)"
 echo "Don't forget to change the selector variable to switch what samples are being used"
 
 # ----------------------------------------------------- Start - Material from old write_vbsDL.sh - Start ------------------------------------------------------------

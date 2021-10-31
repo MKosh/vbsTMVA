@@ -5,7 +5,7 @@
 #       - Does a system check to see if your running the code on the Fermilab LPC, the NIU NICADD cluster, or on a personal machine
 #       - Sets up ROOT and CUDA if you're on a cluster (doesn't if you're on a personal machine)
 #       - Creates links to the data files
-#       - Writes vbsSamples.cpp
+#       - Writes vbsSamples.cc
 #   Usage:
 #       ./dsw.sh "location/of/data" "year"
 
@@ -115,7 +115,7 @@ for skim in $SKIMS; do
 
 # This file is where the information like xsec (cross section) and nMCgen come from 
     #SamplesInpFile="./macros/cplots/DibosonBoostedElMuSamples13TeV_2019_03_23_03h56.txt"
-    SamplesOutfile="vbsSamples.cpp"
+    SamplesOutfile="vbsSamples.cc"
     echo "Creating $SamplesOutfile"
     if [ -f $SamplesOutfile ]; then /bin/rm -f $SamplesOutfile; fi;
     cat >>  $SamplesOutfile <<EOF

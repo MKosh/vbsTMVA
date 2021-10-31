@@ -16,19 +16,19 @@
  * The methods to be used can be switched on and off by means of booleans, or     *
  * via the prompt command, for example:                                           *
  * Batch production                                                               *
- *    root -b -q ./vbsTMVAClassification.C\(\"vbs_ww\",\"BDT\"\)                 *
+ *    root -b -q ./vbsTMVAClassification.cc\(\"vbs_ww\",\"BDT\"\)                 *
  * This will call TVA gui after training                                          *
- *    root -l ./vbsTMVAClassification.C\(\"vbs_ww\",\"BDT\"\)                    *
+ *    root -l ./vbsTMVAClassification.cc\(\"vbs_ww\",\"BDT\"\)                    *
  *                                                                                *
  * (note that the backslashes are mandatory)                                      *
  * If no method given, a default set of classifiers is used.                      *
  *                                                                                *
  * The output file "TMVA.root" can be analysed with the use of dedicated          *
- * macros (simply say: root -l <macro.C>), which can be conveniently              *
+ * macros (simply say: root -l <macro.cc>), which can be conveniently              *
  * invoked through a GUI that will appear at the end of the run of this macro.    *
  * Launch the GUI via the command:                                                *
  *                                                                                *
- *    root -l ./TMVAGui.C                                                         *
+ *    root -l ./TMVAGui.cc                                                         *
  *                                                                                *
  **********************************************************************************/
 #include "vector"
@@ -39,13 +39,13 @@ using namespace TMVA;
 int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 {
    ROOT::EnableImplicitMT();
-   // The explicit loading of the shared libTMVA is done in TMVAlogon.C, defined in .rootrc
+   // The explicit loading of the shared libTMVA is done in TMVAlogon.cc, defined in .rootrc
    // if you use your private .rootrc, or run from a different directory, please copy the
    // corresponding lines from .rootrc
 
    // Methods to be processed can be given as an argument; use format:
    //
-   //     mylinux~> root -l TMVAClassification.C\(\"myMethod1,myMethod2,myMethod3\"\)
+   //     mylinux~> root -l TMVAClassification.cc\(\"myMethod1,myMethod2,myMethod3\"\)
 
    //---------------------------------------------------------------
    // This loads the library
@@ -151,7 +151,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    std::vector<Sample*> dataSamples;
 
 
-// Selector - Surprise, surprise it selects things. Look at the vbsSamples.cpp after you run the dsw script and copy the samples to the appropriate spot
+// Selector - Surprise, surprise it selects things. Look at the vbsSamples.cc after you run the dsw script and copy the samples to the appropriate spot
 // This is just for ease of use when running the classification over different datasets
 int selector = 2016; // 0000 = old, 2016, 2017, 2018
 
@@ -370,7 +370,7 @@ if (selector == 0000){
    bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-1200to2500_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	0.1933,	  1,  gid_Zjets,  1100,   4,	 531566.875,	  0) );
    bkgSamples.push_back( new Sample("Zjets",	  "DYJetsToLL_M-50_HT-2500toInf_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8",	0.003468,	  1,  gid_Zjets,  1100,   4,	 415517.0,	  0) );
 } else {
-   cout << "There's an issue with your sample choice. Check -vbsTMVAClassification.C- somewhere around line 150" << endl;
+   cout << "There's an issue with your sample choice. Check -vbsTMVAClassification.cc- somewhere around line 150" << endl;
 }
 
 //----
@@ -906,10 +906,10 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    std::cout << "==> Wrote root file: " << outputFile->GetName() << std::endl;
    std::cout << "==> TMVAClassification is done!" << std::endl;
    std::cout << "==> To apply results to data:: " << std::endl;
-   std::cout << "==> root  -b -q  ./vbsTMVAClassificationApplication.C\\(\\\"" << sname << "\\\",\\\"" << myMethodList << "\\\"\\)" << std::endl;
-   //   std::cout << "==> Use plot_tmva.C\\(\\\"" << sname << "\\\"\\) to analyse..." << std::endl;
+   std::cout << "==> root  -b -q  ./vbsTMVAClassificationApplication.cc\\(\\\"" << sname << "\\\",\\\"" << myMethodList << "\\\"\\)" << std::endl;
+   //   std::cout << "==> Use plot_tmva.cc\\(\\\"" << sname << "\\\"\\) to analyse..." << std::endl;
    //   std::cout << "==> To analyze output:: " << std::endl;
-   //    std::cout << "==> root -l tmvaMon.cpp\\(\\\"" << sname << "\\\"\\)" << std::endl;
+   //    std::cout << "==> root -l tmvaMon.cc\\(\\\"" << sname << "\\\"\\)" << std::endl;
    //
    delete factory;
    delete dataloader;
