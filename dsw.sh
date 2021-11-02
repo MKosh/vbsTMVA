@@ -212,11 +212,14 @@ List=$(cat $DatasetInpFile | grep sample | sed 's|"||g' | awk '{print $3"--"$7"-
         yr="$(echo $req | sed 's|--| |g' | awk '{print $1}')"
         grp="$(echo $req | sed 's|--| |g' | awk '{print $2}')"  # Save the list of groups as grp
         smpl="$(echo $req | sed 's|--| |g' | awk '{print $3}')" # Save the list of samples as smpl
-        xsec="$(cat $DatasetInpFile | grep $smpl | grep $yr | sed 's|_noDup||g' | awk '{print $11}' | sed 's|"||g')"
-        
+        xsec="$(cat $DatasetInpFile | grep $smpl | grep $yr | awk '{print $11}' | sed 's|"||g')"
+        nMC="$(cat $DatasetInpFile | grep $smpl | grep $yr | awk '{print $13}' | sed 's|"||g')"
+        nMCneg="$(cat $DatasetInpFile | grep $smpl | grep $yr | awk '{print $15}' | sed 's|"||g')"
+        color="$(cat $DatasetInpFile | grep $smpl | grep $yr | awk '{print $17}' | sed 's|"||g')"
 
         if  [ "$grp" == "data" ];     then
-            cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "dataSamples.push_back( new Sample(\"'${grp}'\",\t "$2" ,\t 1,\t 1,\t gid_data, gid_data,\t" $14 ",\t" $8 ",\t" $11") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
+            cat $DatasetInpFile | grep $smpl | grep $yr | awk '{print "dataSamples.push_back( new Sample(\"'${grp}'\", \"'${smpl}'\", 1, 1, gid_data, gid_data, "'${color}'", "'${nMC}'", "'${nMCneg}'") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
+            #cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "dataSamples.push_back( new Sample(\"'${grp}'\",\t "$2" ,\t 1,\t 1,\t gid_data, gid_data,\t" $14 ",\t" $8 ",\t" $11") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
             ls -l skims/$skim/${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim/rqs_${req}_data.lst
         else
             if  [ "$grp" == "WV_EWK" ]; then # WV_EWK
