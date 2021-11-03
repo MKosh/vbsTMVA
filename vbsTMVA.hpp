@@ -75,7 +75,7 @@ TCut goodEl               ("goodEl",                  "(l_pt1>50&&(type==1)&&((a
 // WV Signal Region (a.k.a boosted WV channel)
 // regions, sr: signal region, cr: control region
 TCut cleanNAN_tau         ("cleanNAN_tau",            "!(TMath::IsNaN(bos_PuppiAK8_tau2tau1))"); // Use this one for the new data
-TCut cleanNAN_qgid        ("cleanNAN_qgid",           "!(TMath::IsNaN(vbf1_AK4_qgid))&&!(TMath::IsNaN(vbf2_AK4_qgid))");
+TCut cleanNAN_qgid        ("cleanNAN_qgid",           "!(TMath::IsNaN(vbf1_AK4_qgid))&&!(TMath::IsNaN(vbf2_AK4_qgid))&&(vbf1_AK4_qgid>0)&&(vbf2_AK4_qgid>0)");
 
 TCut category_selection   ("category_selection",      "lep2_pt<0 && bos_PuppiAK8_pt>0");// can be different for muon or electron, see eta cut
 TCut wv_boosted           ("wv_boosted",              "lep2_pt<0 && bos_PuppiAK8_pt>0");

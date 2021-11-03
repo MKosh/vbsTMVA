@@ -25,7 +25,7 @@ help:
 	@echo "--------------------------------------------------------- Makefile targets ---------------------------------------------------------"
 	@echo ""
 	@echo "If you want to train and output plots:				 |	If you want to train but not create plots:"
-	@echo "---- trainAndPlot - loc, year, vars, methods, lumi, cut, cutName |	---- trainNoPlot - loc, year, vars, methods, cutName, saveFile"
+	@echo "---- trainAndPlot - loc, year, vars, methods, lumi, cut, cutName |	---- train - loc, year, vars, methods, saveFile"
 	@echo "								 |	"
 	@echo "If you just want to make and save the cplots			 |	If you just want to run the tmvaMon program and make individual plots"
 	@echo "---- plots - year, lumi, cut, cutName, saveFile		 	 |	---- mon - year, lumi, cut, cutName, saveFile"
@@ -61,12 +61,12 @@ classify: update_$(year)
 	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.C
 	@root ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 
-trainNoPlot: update_$(year)
+train: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
 	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.C
-	@sed -i 's|^.*\("; // cut_name - keep this comment\)|  TString cut_name = "$(cutName)"; // cut_name - keep this comment|g' vbsTMVAClassification.C
+#	@sed -i 's|^.*\("; // cut_name - keep this comment\)|  TString cut_name = "$(cutName)"; // cut_name - keep this comment|g' vbsTMVAClassification.C
 	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
@@ -75,11 +75,11 @@ trainAndPlot: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
+	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp    
+	@sed -i 's|^.*\(shapePlots(anl, cut, cutName); // XXX\)|//shapePlots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|  ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.C
 	@root -b -q ./vbsTMVAClassification.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@root -b -q ./vbsTMVAClassificationApplication.C\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
-	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cpp    
-	@sed -i 's|^.*\(shapePlots(anl, cut, cutName); // XXX\)|//shapePlots(anl, cut, cutName); // XXX|g' tmvaMon.cpp
 	@root -q tmvaMon.cpp\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\)
 	-@./utils/plot_resort.sh "$(year)"
 	@./utils/gen_plots.sh
@@ -111,9 +111,9 @@ mon: update_$(year)
 genPlots:
 	@./utils/gen_plots.sh
 
-# ----------------------------------------------------------------------------------------------------------------------------
-# These makefile targets are for when make is run on WSL. They need the special CONDA_ACTIVATE command so root can be used
-# vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+# ----------------------------------------------------------------------------------------------------------------------------------------
+# These makefile targets are for when make is run in a conda environment. They need the special CONDA_ACTIVATE command so root can be used
+# vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
 classify_wsl: update_$(year)
 	-@rm -r skims/vbs_ww
@@ -165,9 +165,9 @@ mon_wsl: update_$(year)
 	@echo "Don't forget to run the plot_resort.sh script after generating new plots"
 	@($(CONDA_ACTIVATE) root_env ; root tmvaMon.cpp\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\))
 
-# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-# These makefile targets are for when make is run on WSL. They need the special CONDA_ACTIVATE command so root can be used
-# --------------------------------------------------------------------------------------------------------------------------
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# These makefile targets are for when make is run in a conda environment. They need the special CONDA_ACTIVATE command so root can be used
+# ----------------------------------------------------------------------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------------------------------------------------------
 #                 These makefile targets update the different files for whichever year specified

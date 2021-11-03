@@ -1,0 +1,35 @@
+
+--------------------------------------------------
+AUC for BDT1: 0.816145
+	850 Randomized Trees with max depth 3 and min node size 2.5'%' and ada boost of 0.5
+AUC for DNN_GPU: 0.807633
+
+--------------------------------------------------
+
+--------------------------------------------------
+AUC for BDT1: 0.816145
+	850 Randomized Trees with max depth 3 and min node size 2.5'%' and ada boost of 0.5
+AUC for DNN_GPU: 0.826213
+
+--------------------------------------------------
+
+--------------------------------------------------
+AUC for BDT1: 0.816145
+	850 Randomized Trees with max depth 3 and min node size 2.5'%' and ada boost of 0.5
+AUC for DNN_GPU: 0.814359
+
+--------------------------------------------------
+
+--------------------------------------------------
+AUC for BDT1: 0.816145
+	850 Randomized Trees with max depth 3 and min node size 2.5'%' and ada boost of 0.5
+AUC for DNN_GPU: 0.817537
+
+--------------------------------------------------
+
+--------------------------------------------------
+AUC for BDT1: 0.812388
+	850 Randomized Trees with max depth 3 and min node size 2.5'%' and ada boost of 0.5
+AUC for DNN_GPU: 0.822074
+
+--------------------------------------------------

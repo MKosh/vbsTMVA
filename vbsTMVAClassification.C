@@ -141,7 +141,8 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    // Apply additional cuts on the signal and background samples (can be different)
    //   TCut mycuts = cleanNAN+more+OneLpt;// 
-   TCut mycuts = cleanNAN_qgid+cleanNAN_tau+wv_boosted+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+fatjet_eta+fatjet_pt+fatjet_tau21+wv_sr; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
+   //TCut mycuts = cleanNAN_qgid+cleanNAN_tau+wv_boosted+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+fatjet_eta+fatjet_pt+fatjet_tau21+wv_sr; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
+   TCut mycuts = cleanNAN_qgid+cleanNAN_tau+full_wv_sr;
    TCut mycutb = mycuts;//
 
    VbsReducedEvent vbsEvent;
@@ -750,9 +751,9 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
 //       TString trainingStrategyString ("TrainingStrategy=");
 //       trainingStrategyString += training0 + "|" + training1 + "|" + training2;
 
-    TString layoutString ("Layout=TANH|100,TANH|50,TANH|10,LINEAR");
+   //TString layoutString ("Layout=TANH|100,TANH|50,TANH|10,LINEAR");
 //    TString layoutString ("Layout=TANH|(N+30)*2,TANH|(N+30),TANH|10,LINEAR");
-//  TString layoutString ("Layout=RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR");
+   TString layoutString ("Layout=RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR");
 
     TString training0 ("LearningRate=1e-1,Momentum=0.0,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=15,WeightDecay=0.001,Regularization=NONE,DropConfig=0.0+0.5+0.5+0.5,DropRepetitions=1,Multithreading=True");
     TString training1 ("LearningRate=1e-2,Momentum=0.5,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.001,Regularization=L2,Multithreading=True,DropConfig=0.0+0.1+0.1+0.1,DropRepetitions=1");
@@ -760,17 +761,15 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
     TString training3 ("LearningRate=1e-2,Momentum=0.1,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.0001,Regularization=NONE,Multithreading=True");
 
 
-
-
     TString trainingStrategyString ("TrainingStrategy=");
     trainingStrategyString += training0 + "|" + training1 + "|" + training2 + "|" + training3;
-
+ 
 
       // General Options.
       TString dnnOptions ("!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=N:"
                           "WeightInitialization=XAVIERUNIFORM");
       dnnOptions.Append (":"); dnnOptions.Append (layoutString);
-      dnnOptions.Append (":"); dnnOptions.Append (trainingStrategyString);
+      //dnnOptions.Append (":"); dnnOptions.Append (trainingStrategyString);
 
       // Cuda implementation.
       if (Use["DNN_GPU"]) {
@@ -863,11 +862,12 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    Float_t minNodeSize = 1; // 2.5 or 1
    Int_t maxDepth = 4; // 3 or 4
    std::string randomized = "Randomized";
+   // I can probably get rid of the next line (even though it says keep)
   TString cut_name = "test"; // cut_name - keep this comment
 
    stringstream ssAUCoutfile;
   //ssAUCoutfile << "ROC/" << std::to_string(selector) << "_test.txt"; // xAUCoutfilex
-  ssAUCoutfile << "ROC/" << "2016_test.txt"; // AUCoutfile
+  ssAUCoutfile << "ROC/" << "2016_DNN_test.txt"; // AUCoutfile
    std::ofstream AUCoutfile;
    AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
