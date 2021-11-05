@@ -154,7 +154,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
 // Selector - Surprise, surprise it selects things. Look at the vbsSamples.cpp after you run the dsw script and copy the samples to the appropriate spot
 // This is just for ease of use when running the classification over different datasets
-int selector = 2016; // 0000 = old, 2016, 2017, 2018
+int selector = 2017; // 0000 = old, 2016, 2017, 2018
 
 if (selector == 0000){
    dataSamples.push_back( new Sample("data",	  "Data",	    1,	  1,  gid_data,  gid_data,   1,  1,  0) );
@@ -867,7 +867,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
 
    stringstream ssAUCoutfile;
   //ssAUCoutfile << "ROC/" << std::to_string(selector) << "_test.txt"; // xAUCoutfilex
-  ssAUCoutfile << "ROC/" << "2016_DNN_test.txt"; // AUCoutfile
+  ssAUCoutfile << "ROC/" << "2017_DNN_test.txt"; // AUCoutfile
    std::ofstream AUCoutfile;
    AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
