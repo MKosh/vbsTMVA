@@ -141,7 +141,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    // Apply additional cuts on the signal and background samples (can be different)
    //   TCut mycuts = cleanNAN+more+OneLpt;// 
-   TCut mycuts = cleanNAN_qgid+cleanNAN_tau; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
+   TCut mycuts = cleanNAN_qgid+cleanNAN_tau+full_wv_sr; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
    TCut mycutb = mycuts;//
 
    VbsReducedEvent vbsEvent;
@@ -858,16 +858,8 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    /// Print out AUC for each method, both to the terminal, and to a file
    /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
    /// to catch it and properly rename the ssAUCoutile name.
-   Int_t nBDTtrees = 1000; // 850 or 1000
-   Float_t adaBoost = 0.6; // 0.5 or 0.6
-   Float_t minNodeSize = 1; // 2.5 or 1
-   Int_t maxDepth = 4; // 3 or 4
-   std::string randomized = "Randomized";
-  TString cut_name = "test"; // cut_name - keep this comment
-
    stringstream ssAUCoutfile;
-  //ssAUCoutfile << "ROC/" << std::to_string(selector) << "_test.txt"; // xAUCoutfilex
-  ssAUCoutfile << "ROC/" << "2016_test.txt"; // AUCoutfile
+    ssAUCoutfile << "ROC/" << "2016_DNN_test.txt"; // AUCoutfile
    std::ofstream AUCoutfile;
    AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
@@ -877,15 +869,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
 
    for (UInt_t i=0; i<mlist.size(); i++) {
       std::string regMethod(mlist[i]);
-      //std::cout << "AUC for " << regMethod << ": " << factory->GetROCIntegral(dataloader, regMethod) << std::endl;
       AUCoutfile << "AUC for " << regMethod << ": " << factory->GetROCIntegral(dataloader, regMethod) << std::endl;
-      if (regMethod == "BDT1") {
-         AUCoutfile << '\t' << 850 << " " << randomized << " Trees with max depth " << 3 << " and min node size " << 
-         2.5 << "'%' and ada boost of " << 0.5 << std::endl;
-      } else if (regMethod == "BDT2") {
-         AUCoutfile << '\t' << 1000 << " " << randomized << " Trees with max depth " << 4 << " and min node size " << 
-         1 << "'%' and ada boost of " << 0.6 << std::endl;
-      }
    }
    AUCoutfile << "" << std::endl;
    AUCoutfile << "--------------------------------------------------" << std::endl;

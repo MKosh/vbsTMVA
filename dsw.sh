@@ -200,7 +200,8 @@ EOF
     #fi
 #
 
-LIST=$(cat $DatasetInpFile | grep name | sed 's/"//g' | awk '{print $17"--"$2}' | sed 's/_noDup//g')
+#LIST=$(cat $DatasetInpFile | grep name | sed 's/"//g' | awk '{print $17"--"$2}' | sed 's/_noDup//g')
+List=$(cat $DatasetInpFile | grep sample | sed 's|"||g' | awk '{print $3"--"$7"--"$9}' | sed 's/_noDup//g')
 
 # ---------------------------------------------------------------- End - Temporary work around zone - End ---------------------------------------------------------------------------------
     sid_sgl="100"
@@ -208,8 +209,11 @@ LIST=$(cat $DatasetInpFile | grep name | sed 's/"//g' | awk '{print $17"--"$2}' 
     signal="ewk";
 
     for req in $LIST; do
-        grp="$(echo $req | sed 's/--/ /g'| awk '{print $1}')"  # Save the list of groups as grp
-        smpl="$(echo $req | sed 's/'${grp}'--//g')" # Save the list of samples as smpl
+        yr="$(echo $req | sed 's|--| |g' | awk '{print $1}')"
+        grp="$(echo $req | sed 's|--| |g' | awk '{print $2}')"  # Save the list of groups as grp
+        smpl="$(echo $req | sed 's|--| |g' | awk '{print $3}')" # Save the list of samples as smpl
+        xsec="$(cat $DatasetInpFile | grep $smpl | grep $yr | sed 's|_noDup||g' | awk '{print $11}' | sed 's|"||g')"
+        
 
         if  [ "$grp" == "data" ];     then
             cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "dataSamples.push_back( new Sample(\"'${grp}'\",\t "$2" ,\t 1,\t 1,\t gid_data, gid_data,\t" $14 ",\t" $8 ",\t" $11") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
