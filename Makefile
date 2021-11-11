@@ -12,6 +12,7 @@ cut ?= "dummy"
 cutName ?= "test"
 pltVar ?= "lep1_pt"
 saveFile ?= "$(year)"
+dataset ?= "dataset.xml"
 
 help:
 	@echo ""
@@ -21,11 +22,12 @@ help:
 	@echo "vars ---- variable set (set1, etc., old)			 |	lumi ---- (2016 -> 35.867) | (2017 -> 41.53) | (2018 -> 59.74)"
 	@echo "year ---- (2016, 2017, 2018)					 |	varName - The name of the variable to be plotted"
 	@echo "cut ----- the cut you want to apply for the plots		 |	cutName - Used for labeling the plots in the saved PDF"
+	@echo "dataset - Data selection file"
 	@echo ""
 	@echo "--------------------------------------------------------- Makefile targets ---------------------------------------------------------"
 	@echo ""
 	@echo "If you want to train and output plots:				 |	If you want to train but not create plots:"
-	@echo "---- trainAndPlot - loc, year, vars, methods, lumi, cut, cutName |	---- train - loc, year, vars, methods, cutName, saveFile"
+	@echo "---- trainAndPlot - loc, year, vars, methods, lumi, cut, cutName |	---- train - loc, year, vars, methods, cutName, saveFile, dataset"
 	@echo "								 |	"
 	@echo "If you just want to make and save the cplots			 |	If you just want to run the tmvaMon program and make individual plots"
 	@echo "---- plots - year, lumi, cut, cutName, saveFile		 	 |	---- mon - year, lumi, cut, cutName, saveFile"
@@ -46,23 +48,23 @@ test:
 	@echo "cutName = $(cutName)"
 	@echo "pltVar = $(pltVar)"
 	@echo "saveFile = $(saveFile)"
-
+	@echo "dataset = $(dataset)"
 init:
 	-@rm -r skims/vbs_ww
-	@./dsw.sh "$(loc)" "$(year)"
+	@./dsw.sh "$(loc)" "$(dataset)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
 	@echo "Done!"
 
 classify: update_$(year)
 	-@rm -r skims/vbs_ww
-	@./dsw.sh "$(loc)" "$(year)"
+	@./dsw.sh "$(loc)" "$(dataset)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
 	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|    ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.cc
 	@root ./vbsTMVAClassification.cc\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 
 train: update_$(year)
 	-@rm -r skims/vbs_ww
-	@./dsw.sh "$(loc)" "$(year)"
+	@./dsw.sh "$(loc)" "$(dataset)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
 	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|    ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.cc
 	@root -b -q ./vbsTMVAClassification.cc\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
@@ -71,7 +73,7 @@ train: update_$(year)
 
 trainAndPlot: update_$(year)
 	-@rm -r skims/vbs_ww
-	@./dsw.sh "$(loc)" "$(year)"
+	@./dsw.sh "$(loc)" "$(dataset)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
 	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|    ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.cc
 	@root -b -q ./vbsTMVAClassification.cc\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
