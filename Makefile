@@ -173,13 +173,27 @@ mon_wsl: update_$(year)
 #                 These makefile targets update the different files for whichever year specified
 #                 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
+update_1111: 
+	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.cc
+#	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.cc
+#	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2016|g' vbsTMVAClassification.cc
+	@sed -i 's|int year = [0-9]\{4\}|int year = 1111|g' tmvaMon.cc
+	@sed -i 's|std::string year = "[0-9]\{4\}"|std::string year = "1111"|g' tmvaMon.cc
+#	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cc
+	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cc
+	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cc
+	@sed -i 's|^.*\(vbs_jets_pt));\)|TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' vbsTMVA.hpp
+	@sed -i 's|^.*\(ZeppWHlt3));\)|//TCut allCuts                ("allCuts",             (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' vbsTMVA.hpp
+	@sed -i 's|wtot.*\(\*\)|wtot_run2*|g' tmvaMon.cc
+	@sed -i 's|wtot.*\(,stats\)|wtot_run2,stats|g' vbsTMVA.hpp
+
 update_2016: 
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.cc
-	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.cc
+#	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.cc
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2016|g' vbsTMVAClassification.cc
 	@sed -i 's|int year = [0-9]\{4\}|int year = 2016|g' tmvaMon.cc
 	@sed -i 's|std::string year = "[0-9]\{4\}"|std::string year = "2016"|g' tmvaMon.cc
-	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cc
+#	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cc
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cc
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cc
 	@sed -i 's|^.*\(vbs_jets_pt));\)|TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' vbsTMVA.hpp
@@ -191,11 +205,11 @@ update_2016:
 
 update_2017:
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.cc
-	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.cc
+#	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.cc
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2017|g' vbsTMVAClassification.cc
 	@sed -i 's|int year = [0-9]\{4\}|int year = 2017|g' tmvaMon.cc
 	@sed -i 's|std::string year = "[0-9]\{4\}"|std::string year = "2017"|g' tmvaMon.cc
-	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cc
+#	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cc
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cc
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cc
 	@sed -i 's|^.*\(vbs_jets_pt));\)|TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' vbsTMVA.hpp
@@ -206,11 +220,11 @@ update_2017:
 
 update_2018:
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.cc
-	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.cc
+#	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.cc
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2018|g' vbsTMVAClassification.cc
 	@sed -i 's|int year = [0-9]\{4\}|int year = "2018"|g' tmvaMon.cc
 	@sed -i 's|std::string year = "[0-9]\{4\}"|std::string year = 2018|g' tmvaMon.cc
-	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cc
+#	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cc
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cc
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cc
 	@sed -i 's|^.*\(vbs_jets_pt));\)|TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' vbsTMVA.hpp
@@ -221,7 +235,7 @@ update_2018:
 
 update_0000:
 	@sed -i 's|chain2tree("Events",|chain2tree("otree",|g' vbsTMVAClassification.cc
-	@sed -i 's|TCut mycuts = [A-z]\+;|TCut mycuts = cleanNAN+cleanNAN_phi;|g' vbsTMVAClassification.cc
+#	@sed -i 's|TCut mycuts = [A-z]\+;|TCut mycuts = cleanNAN+cleanNAN_phi;|g' vbsTMVAClassification.cc
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 0000|g' vbsTMVAClassification.cc
 	@sed -i 's|int year = [0-9]\{4\}|int year = 0000|g' tmvaMon.cc
 	@sed -i 's|plots/[0-9]\{4\}/c1_[0-9]\{4\}|plots/0000/c1_0000|g' tmvaMon.cc

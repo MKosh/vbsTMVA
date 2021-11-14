@@ -35,6 +35,7 @@ const Float_t lum = 35867.06;
 const Float_t lum_2016 = 35867.06; //pb-1
 const Float_t lum_2017 = 41530.0; //pb-1
 const Float_t lum_2018 = 59740.0; //pb-1
+const Float_t lum_run2 = 13710.0; //pb^-1
 //
 //Background groups
 #define  gid_sgl      1
@@ -84,63 +85,64 @@ TCut zv_boosted           ("zv_boosted",              "lep2_pt>0 && bos_PuppiAK8
 TCut zv_resolved          ("zv_resolved",             "lep2_pt>0 && bos_AK4AK4_pt>0");
 //TCut category_selection ("category_selection",   "!isAntiIso && lep2_pt<0 && bos_PuppiAK8_pt>0")
 
-TCut lep_pt               ("lep_pt",                 "lep1_pt>25"); // can be different value, debatable // lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
-TCut lep_eta              ("lep_eta",                "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))"); // muon || electron
-TCut lep_ele              ("lep_ele",                "(lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))");
-TCut lep_muon             ("lep_muon",               "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4)");
+TCut lep_pt               ("lep_pt",                  "lep1_pt>25"); // can be different value, debatable // lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
+TCut lep_eta              ("lep_eta",                 "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))"); // muon || electron
+TCut lep_ele              ("lep_ele",                 "(lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))");
+TCut lep_muon             ("lep_muon",                "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4)");
 
-TCut fatjet_pt            ("fatjet_pt",              "bos_PuppiAK8_pt>200");
-TCut fatjet_eta           ("fatjet_eta",             "TMath::Abs(bos_PuppiAK8_eta)<2.4");
-TCut fatjet_tau21         ("fatjet_tau21",           "TMath::Abs(bos_PuppiAK8_tau2tau1)<0.55"); // can be different// vbs vbf are used interchangeably TCut fatjet_tau21 ("fatjet_tau21",  "bos_PuppiAK8_tau2tau1<0.55");
+TCut fatjet_pt            ("fatjet_pt",               "bos_PuppiAK8_pt>200");
+TCut fatjet_eta           ("fatjet_eta",              "TMath::Abs(bos_PuppiAK8_eta)<2.4");
+TCut fatjet_tau21         ("fatjet_tau21",            "TMath::Abs(bos_PuppiAK8_tau2tau1)<0.55"); // can be different// vbs vbf are used interchangeably TCut fatjet_tau21 ("fatjet_tau21",  "bos_PuppiAK8_tau2tau1<0.55");
 
-TCut vbs_jets_mjj         ("vbs_jets_mjj",           "vbf_m>500");
-TCut vbs_jets_pt          ("vbs_jets_pt",            "vbf1_AK4_pt>50 && vbf2_AK4_pt>50");
-TCut vbs_delta_eta        ("vbs_delta_eta",          "vbf_deta>2.5"); // this is absolute delta eta
+TCut vbs_jets_mjj         ("vbs_jets_mjj",            "vbf_m>500");
+TCut vbs_jets_pt          ("vbs_jets_pt",             "vbf1_AK4_pt>50 && vbf2_AK4_pt>50");
+TCut vbs_delta_eta        ("vbs_delta_eta",           "vbf_deta>2.5"); // this is absolute delta eta
 
-TCut met_pt               ("met_pt",                 "MET>30");
-TCut btag_veto           ("btag_veto",              "nBtag_loose==0");
+TCut met_pt               ("met_pt",                  "MET>30");
+TCut btag_veto           ("btag_veto",                "nBtag_loose==0");
 
 // The unique conditions for each SR/CR
-TCut wv_sr                ("wv_sr",                  "(bos_PuppiAK8_m_sd0_corr>65 && bos_PuppiAK8_m_sd0_corr<105)");
-TCut wv_cr_vjets          ("wv_cr_vjets",            "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150) && nBtag_loose==0");
-TCut wv_cr_top            ("wv_cr_top",              "nBtag_loose>0");
+TCut wv_sr                ("wv_sr",                   "(bos_PuppiAK8_m_sd0_corr>65 && bos_PuppiAK8_m_sd0_corr<105)");
+TCut wv_cr_vjets          ("wv_cr_vjets",             "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150) && nBtag_loose==0");
+TCut wv_cr_top            ("wv_cr_top",               "nBtag_loose>0");
 
 // Extra cuts
-TCut dummy                ("dummy",                  "");
-TCut ZeppWL               ("ZeppWLlt3",              "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
-TCut ZeppWH               ("ZeppWHlt3",              "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
-TCut noData               ("noData",                 "!(gid==3)");
+TCut dummy                ("dummy",                   "");
+TCut ZeppWL               ("ZeppWLlt3",               "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
+TCut ZeppWH               ("ZeppWHlt3",               "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
+TCut noData               ("noData",                  "!(gid==3)");
 
 // Tests for the strange data spike in 2018 for lep1_phi and lep1_eta
-TCut hi_nPV               ("hi_nPV",                 "(nPV>=35)");
-TCut lep_phi_spike        ("lep_phi_spike",          "(lep1_phi<-0.75) && (lep1_phi>-1.75)");
-TCut lep_eta_spike        ("lep_eta_spike",          "(lep1_eta<(-1.75))");
+TCut hi_nPV               ("hi_nPV",                  "(nPV>=35)");
+TCut lep_phi_spike        ("lep_phi_spike",           "(lep1_phi<-0.75) && (lep1_phi>-1.75)");
+TCut lep_eta_spike        ("lep_eta_spike",           "(lep1_eta<(-1.75))");
 
 // Common cuts between the different SR/CR
-TCut common               ("common",                 "(isAntiIso==0) && (bosCent > 0.0)");
-TCut bos_common           ("bos_common",             fatjet_pt+fatjet_eta+fatjet_tau21);
-TCut full_common          ("full_common",            category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
-TCut common_ele           ("common_ele",             category_selection+lep_pt+lep_ele+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
-TCut common_muon          ("common_muon",           category_selection+lep_pt+lep_muon+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
+TCut common               ("common",                  "(isAntiIso==0) && (bosCent > 0.0)");
+TCut bos_common           ("bos_common",              fatjet_pt+fatjet_eta+fatjet_tau21);
+TCut full_common          ("full_common",             category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
+TCut common_ele           ("common_ele",              category_selection+lep_pt+lep_ele+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
+TCut common_muon          ("common_muon",             category_selection+lep_pt+lep_muon+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
 
 // Full set of cuts for each SR/CR selecting either electrons or muons
-TCut full_vjets_cr        ("full_vjets_cr",          full_common+btag_veto+wv_cr_vjets);
-TCut full_top_cr          ("full_top_cr",            full_common+wv_cr_top+wv_sr);
-TCut full_wv_sr           ("full_wv_sr",             full_common+btag_veto+wv_sr);//+noData);
+TCut full_vjets_cr        ("full_vjets_cr",           full_common+btag_veto+wv_cr_vjets);
+TCut full_top_cr          ("full_top_cr",             full_common+wv_cr_top+wv_sr);
+TCut full_wv_sr           ("full_wv_sr",              full_common+btag_veto+wv_sr);//+noData);
 
 // Full SR/CR cuts specifying one type of lepton
-TCut vjets_cr_ele         ("vjets_cr_ele",           common_ele+btag_veto+wv_cr_vjets);
-TCut vjets_cr_muon        ("vjets_cr_muon",          common_muon+btag_veto+wv_cr_vjets);
-TCut top_cr_ele           ("top_cr_ele",             common_ele+wv_cr_top+wv_sr);
-TCut top_cr_muon          ("top_cr_muon",            common_muon+wv_cr_top+wv_sr);
-TCut wv_sr_ele            ("wv_sr_ele",              common_ele+btag_veto+wv_sr);
-TCut wv_sr_muon           ("wv_sr_muon",             common_muon+btag_veto+wv_sr);
+TCut vjets_cr_ele         ("vjets_cr_ele",            common_ele+btag_veto+wv_cr_vjets);
+TCut vjets_cr_muon        ("vjets_cr_muon",           common_muon+btag_veto+wv_cr_vjets);
+TCut top_cr_ele           ("top_cr_ele",              common_ele+wv_cr_top+wv_sr);
+TCut top_cr_muon          ("top_cr_muon",             common_muon+wv_cr_top+wv_sr);
+TCut wv_sr_ele            ("wv_sr_ele",               common_ele+btag_veto+wv_sr);
+TCut wv_sr_muon           ("wv_sr_muon",              common_muon+btag_veto+wv_sr);
 
 
-TCut wtot_2016            ("wtot_2016",              "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
-TCut wtot_2017            ("wtot_2017",              "41530*genWeight*mcWeight*L1PFWeight*puWeight"); // 41530
-TCut wtot_2018            ("wtot_2018",              "59740*genWeight*mcWeight*L1PFWeight*puWeight"); // 59740
-TCut wtotL1               ("wtotL1",                 "L1PFWeight*genWeight*puWeight");
+TCut wtot_2016            ("wtot_2016",               "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
+TCut wtot_2017            ("wtot_2017",               "41530*genWeight*mcWeight*L1PFWeight*puWeight"); // 41530
+TCut wtot_2018            ("wtot_2018",               "59740*genWeight*mcWeight*L1PFWeight*puWeight"); // 59740
+TCut wtot_run2            ("wtot_run2",               "137100.0*genWeight*mcWeight*L1PFWeight*puWeight")
+TCut wtotL1               ("wtotL1",                  "L1PFWeight*genWeight*puWeight");
 TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
 
 
@@ -211,7 +213,8 @@ TCut ZeppWHlt3              ("ZeppWHlt3",          "((abs(ZeppenfeldWH)/abs(vbf_
 //TCut cuts0_W                ("cuts0_W",             "(l_pt2<0 && l_pt1>0) && (ungroomed_PuppiAK8_jet_pt>200) && (vbf_maxpt_jj_m>500)" );
 
 class Sample{
-private:  
+private:
+  Int_t     _year;  
   TString   _sname;
   TString   _gname;
   Float_t   _xsec;
@@ -231,15 +234,16 @@ private:
 
  public:
 
-  Sample(const char* gname, const char* sname, Float_t xsec, Int_t loadFlag, Int_t gid, Int_t sid, Int_t color, Float_t  nMCgen,  Float_t nMCgenNeg ){
+  Sample(Int_t year, const char* gname, const char* sname, Float_t xsec, Int_t loadFlag, Int_t gid, Int_t sid, Int_t color, Float_t  nMCgen,  Float_t nMCgenNeg ){
+    _year=year;
     _sname=sname;
     _gname=gname;
     if(gid == gid_data ){
-      _reqlist="reqlists/rqs_"+_gname+"--"+_sname+"_data.lst";
+      _reqlist="reqlists/rqs_"+_year+"--"+_gname+"--"+_sname+"_data.lst";
     }else if (gid >9) {
-      _reqlist="reqlists/rqs_"+_gname+"--"+_sname+"_bkg.lst";
+      _reqlist="reqlists/rqs_"+_year+"--"+_gname+"--"+_sname+"_bkg.lst";
     }else{
-      _reqlist="reqlists/rqs_"+_gname+"--"+_sname+"_sgl.lst";
+      _reqlist="reqlists/rqs_"+_year+"--"+_gname+"--"+_sname+"_sgl.lst";
     }
     _loadFlag  = loadFlag;
     _xsec      = xsec;

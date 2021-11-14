@@ -22,7 +22,11 @@ else
 fi
 
 if [[ "0$1" == "0" ]]; then
-    rootFiles="/mnt/Storage/Research/ntuples/NEW/$3/haddedFiles/"
+    if [[ "$3" == "2016" || "$3" == "2017" || "$3" == "2018" ]]; then
+        rootFiles="/mnt/Storage/Research/ntuples/NEW/$3/haddedFiles/"
+    else
+        rootFiles="/mnt/Storage/Research/ntuples/NEW/2017/haddedFiles/"
+    fi
 else
     rootFiles="/mnt/$1/" # $1 = g/2016/haddedFiles on my flashdrive, or on my desktop e/Research/ntuples/NEW/2016/haddedFiles
 fi
@@ -154,7 +158,7 @@ else
     return 0;
 fi
 # Write SUanlVARS into an array
-vararr=(`echo ${SUanlVARS}`)
+var_arr=(`echo ${SUanlVARS}`)
 
 # --------------------------------------------------------- Start - Create the vbsReducedTree.hpp file - Start ----------------------------------------------------
 outfile="vbsReducedTree.hpp"
@@ -213,7 +217,7 @@ EOF
 
 while read line; do
     two=$(echo $line | awk '{print $2}' | sed 's/;//g')
-    if [[ "${vararr[@]}" =~ "$two" ]]; then
+    if [[ "${var_arr[@]}" =~ "$two" ]]; then
         echo -e "\t vbsTree->SetBranchAddress( \"$two\", \t &vbsEvent.$two);" >> $outfile
     fi
 done < list_of_branches.txt
@@ -263,7 +267,7 @@ allVARS="$(cat vbsReducedTree.hpp | grep SetBranchAddress | awk '{print $2}' | s
 
 # Loop over all variables in SUanlVARS
 for var in $SUanlVARS; do
-    isVarArray="$(cat vbsReducedTree.hpp | grep $var | grep '\['])"
+    is_var_array="$(cat vbsReducedTree.hpp | grep $var | grep '\['])"
 
     # Save the type of the variable (Int_t, Float_t, Bool_t)
     typevar="$(cat vbsReducedTree.hpp | grep -v SetBranchAddress | grep -v Branch | grep -v typedef | grep $var | awk '{print $1}' | sort | uniq | awk '{print $1}')"
@@ -293,7 +297,7 @@ for var in $SUanlVARS; do
         isVariable="0";
         echo "//TMVA variable" >> $outfile_DL
         echo "if(dataloader) dataloader->AddVariable(\"$var\", \"$var\", \"\", '$typevar');" >> $outfile_DL 
-        if [ "0$isVarArray" == "0" ]; then
+        if [ "0$is_var_array" == "0" ]; then
             echo "if(datareader) datareader->AddVariable(\"$var\",    &vbsEvent.$var        );" >> $outfile_DL
         else
             echo "//if(datareader) datareader->AddVariable(\"$var\",    &vbsEvent.${var}[0]     );" >> $outfile_DL
@@ -306,7 +310,7 @@ for var in $SUanlVARS; do
     else
         echo "//TMVA spectator " >> $outfile_DL
         echo "if(dataloader) dataloader->AddSpectator(\"$var\",    \"$var\",   \"\",      '$typevar');" >> $outfile_DL
-        if [ "0$isVarArray" == "0" ]; then
+        if [ "0$is_var_array" == "0" ]; then
             echo "if(datareader) datareader->AddSpectator(\"$var\",    &vbsEvent.$var        );" >> $outfile_DL
         else
             echo "//if(datareader) datareader->AddSpectator(\"$var\",    &vbsEvent.${var}[0]   );" >> $outfile_DL
@@ -365,7 +369,7 @@ void setChainBranches (TChain* inpChain){
 EOF
 
 for var in $SUanlVARS; do
-echo "inpChain->SetBranchStatus(\"$var\", 1);" >>  $ActiveBranchesOutfile
+    echo "inpChain->SetBranchStatus(\"$var\", 1);" >>  $ActiveBranchesOutfile
 done
 cat >> $ActiveBranchesOutfile <<EOF
 }

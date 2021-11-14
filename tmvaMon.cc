@@ -2048,6 +2048,9 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   std::string s = plt_title.str();
   const char* title_str = s.c_str();
   std::string year = "2016";
+  if (year == "1111") {
+    year == "Run2";
+  }
   // title: VBS (WV), 35.9fb^{-1}
 
   // Create the XML parser
@@ -2122,7 +2125,9 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
   std::string s = plt_title.str();
   const char* title_str = s.c_str();
   std::string year = "2016";
-
+  if (year == "1111") {
+    year = "Run2";
+  }
   std::cout << "cuts = " << cuts << " Lumi = " << g_lum << std::endl;
   std::cout << "" << std::endl;
 
