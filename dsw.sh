@@ -39,13 +39,13 @@ fi
 # If running on my personal machine - First condition is windows, second is, well... Manjaro Linux
 if [ "0$(echo $SNAME | grep MM)" != "0" ] || [ "0$(echo $SNAME | grep Mark)" != "0" ]; then 
     Ntuple_loc="/mnt/$1"
-    DatasetInpFile="./datasets/$2"
+    DatasetInpFile="./datasets/$3"
     #DD_VBS_REDUCED="/mnt/$1" # d/2016/haddedFiles (g if on my desktop) - If using the data stored on a flash drive, don't forget to mount it (_ = some letter) use:~$ mkdir /mnt/_ ~$ sudo mount -t drvfs _: /mnt/_
     #DatasetInpFile="./datasets/datasets_$2.json"
 elif [ "0$(echo $SNAME | grep Manjaro)" != "0" ]; then
     Ntuple_loc="/mnt/Storage/Research/ntuples/NEW"
     #DD_VBS_REDUCED="/mnt/Storage/Research/ntuples/NEW/$2/haddedFiles"
-    DatasetInpFile="./datasets/$2"
+    DatasetInpFile="./datasets/$3"
     #DatasetInpFile="./datasets/datasets_$2.json"
 fi
 
@@ -111,8 +111,9 @@ for skim in $SKIMS; do
 
     if [ ! -d skimrqs/$skim_folder ]; then /bin/mkdir -p skimrqs/$skim_folder; fi; # -p option creates the parent directories as needed
     echo "skim = $skim"
-    if [ ! -L skims/$skim ]; then
+    if [ ! -d skims/$skim ]; then
         rm skims/$skim
+        mkdir skims/$skim
         echo "Working Directory:"  
         echo "  skims/$skim -> $Ntuple_loc"
         for yr in $years; do
@@ -125,12 +126,12 @@ for skim in $SKIMS; do
     # Create reqlists 
     
 
-    /bin/rm  skimrqs/$skim/*.lst > /dev/null 2>&1 # remove skimrqs/vbs_ww/something.lst (/dev/null 2>&1 forces no output. 2>&1 forces any possible error message (2) into the stdout stream (1))
-    /bin/rm  skimrqs/$COMBINED_SKIM/$yr/*.lst > /dev/null 2>&1 # both had /bin/rm -rf skimrqs...
+    /bin/rm -rf skimrqs/$skim/*/*.lst > /dev/null 2>&1 # remove skimrqs/vbs_ww/something.lst (/dev/null 2>&1 forces no output. 2>&1 forces any possible error message (2) into the stdout stream (1))
+    /bin/rm -rf skimrqs/$COMBINED_SKIM/*.lst > /dev/null 2>&1 # both had /bin/rm -rf skimrqs...
 
     # This file is where the information like xsec (cross section) and nMCgen come from 
     #SamplesInpFile="./macros/cplots/DibosonBoostedElMuSamples13TeV_2019_03_23_03h56.txt"
-    SamplesOutfile="vbsSamples.h"
+    SamplesOutfile="vbsSamples.hpp"
     echo "Creating $SamplesOutfile"
     if [ -f $SamplesOutfile ]; then /bin/rm -f $SamplesOutfile; fi;
     cat >>  $SamplesOutfile <<EOF
@@ -150,7 +151,7 @@ EOF
     sid_color="910"
     signal="ewk";
 
-    for req in $LIST; do
+    for req in $List; do
         yr="$(echo $req | sed 's|--| |g' | awk '{print $1}')"
         grp="$(echo $req | sed 's|--| |g' | awk '{print $2}')"  # Save the list of groups as grp
         smpl="$(echo $req | sed 's|--| |g' | awk '{print $3}')" # Save the list of samples as smpl
@@ -158,25 +159,25 @@ EOF
         nMC="$(cat $DatasetInpFile | grep $smpl | grep $yr | awk '{print $13}' | sed 's|"||g')"
         nMCneg="$(cat $DatasetInpFile | grep $smpl | grep $yr | awk '{print $15}' | sed 's|"||g')"
         color="$(cat $DatasetInpFile | grep $smpl | grep $yr | awk '{print $17}' | sed 's|"||g')"
-
+    #echo $grp
         if  [ "$grp" == "data" ];     then
-            cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "dataSamples.push_back( new Sample('${yr}', \"'${grp}'\", \"'${smpl}'\", 1, 1, gid_data, gid_data, "'${color}'", "'${nMC}'", "'${nMCneg}'") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
+            cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "dataSamples.push_back( new Sample(\"'${yr}'\", \"'${grp}'\", \"'${smpl}'\", 1, 1, gid_data, gid_data, '${color}', "'${nMC}'", "'${nMCneg}'") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
             #cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "dataSamples.push_back( new Sample(\"'${grp}'\",\t "$2" ,\t 1,\t 1,\t gid_data, gid_data,\t" $14 ",\t" $8 ",\t" $11") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
             ls -l skims/$skim/${yr}/${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim_folder/rqs_${req}_data.lst
         else
-            if  [[ "$grp" == "WV_EWK" || "$grp" == "VBS_EWK" ]]; then # WV_EWK
+            if  [[ "$grp" == "VBS_EWK" ]]; then # WV_EWK
                 if  [ "$signal" != "ewk" ]; then 
-                    cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "bkgSamples.push_back( new Sample('${yr}', \"'${grp}'\", \"'${smpl}'\", '${xsec}', 1, gid_'${grp}', 1100, '${color}','${nMC}', '${nMCneg}') );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
+                    cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "bkgSamples.push_back( new Sample(\"'${yr}'\", \"'${grp}'\", \"'${smpl}'\", '${xsec}', 1, gid_'${grp}', 1100, '${color}','${nMC}', '${nMCneg}') );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
                 else
                     ls -l skims/$skim/$yr/${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim_folder/rqs_${req}_sgl.lst
-                    cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "sglSamples.push_back( new Sample('${yr}', \"'${grp}'\", \"'${smpl}'\", '${xsec}', 1, gid_sgl, '${sid_sgl}', '${sgl_color}','${nMC}', '${nMCneg}') );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
+                    cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "sglSamples.push_back( new Sample(\"'${yr}'\", \"'${grp}'\", \"'${smpl}'\", '${xsec}', 1, gid_sgl, '${sid_sgl}', '${sid_color}','${nMC}', '${nMCneg}') );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
                     let sid_sgl=${sid_sgl}+1;
                 fi
 
             else
                 #all samples with *ext*
                 #ls -l skims/$skim/WWTree*${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim/rqs_${req}_bkg.lst
-                cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "bkgSamples.push_back( new Sample('${yr}', \"'${grp}'\", \"'${smpl}'\", '${xsec}', 1, gid_'${grp}', 1100, '${color}','${nMC}', '${nMCneg}') );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
+                cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "bkgSamples.push_back( new Sample(\"'${yr}'\", \"'${grp}'\", \"'${smpl}'\", '${xsec}', 1, gid_'${grp}', 1100, '${color}','${nMC}', '${nMCneg}') );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
                 #echo ls -l skims/$skim/${smpl}*root | grep -v "_ext" | awk '{print $NF}' >>  skimrqs/$skim/rqs_${req}_bkg.lst
                 ls -l skims/$skim/${yr}/${smpl}*root | grep -v "_ext" | awk '{print $NF}' >>  skimrqs/$skim_folder/rqs_${req}_bkg.lst
 

@@ -175,10 +175,10 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   if(_sid == 3) {
     _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
   } else {
-    _testTree->Project(_hf1->GetName(), var, wtot_2016*(cuts+_samplecut), "goff");
+    _testTree->Project(_hf1->GetName(), var, wtot_run2*(cuts+_samplecut), "goff");
   }
 
-  int year = 2016;
+  int year = 1111;
   if (_sid == 15 && year == 2018) {
     scale *= 0.6875; // 2018 Scale ttbar 
   } else if (_sid == 13 && year == 2018) {
@@ -191,6 +191,10 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
 
   } else if (_sid == 13 && year == 2017) {
     scale *= 1.303;
+  } else if (_sid == 15 && year == 1111) {
+    scale *= 1.0;
+  } else if (_sid == 13 && year == 1111) {
+    scale *= 1.0;
   }
 
   _hf1->GetStats(_stats);
@@ -441,8 +445,8 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "  tmgui()" << endl;
   cout << "" << endl;
 
-//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
-shapePlots(anl, cut, cutName); // XXX
+cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+//shapePlots(anl, cut, cutName); // XXX
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -640,7 +644,7 @@ Int_t plotShapeComp(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int
         Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	      const char hTitle[], const char xTitle[], const char yTitle[]) {
 
-  anl->setHframe(var,wtot_2016*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,wtot_run2*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
 
@@ -682,7 +686,7 @@ Int_t plotSingleVariable( TmvaAnl* anl, const char* var, TCut cuts, const char* 
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
   
-  anl->setHframe(var,wtot_2016*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,wtot_run2*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
 
@@ -722,7 +726,7 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
-  anl->setHframe(var,wtot_2016*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,wtot_run2*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
 
@@ -757,7 +761,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
-  anl->setHframe(var,wtot_2016*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,wtot_run2*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
   anl->setsvplots(1);
@@ -1020,7 +1024,7 @@ Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* c
       cutval = cutvar_min+ nprobe*stepw;
       cutvar_cut.str("");
       cutvar_cut << "(" << cutvar << " > " <<  cutval  << " ) " ;   
-      setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+      setHframe("njets",wtot_run2*(basecuts+cut_bkg),0.0,10.0, 1.0);
       setSampleHists();
       fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
       sgf_curr =  optParVal(optParName);
@@ -1081,7 +1085,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
     //check left point
     cutvar_cut.str("");
     cutvar_cut << "(" << cutvar << " > " <<  cutval_left << " ) " ;   
-    setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+    setHframe("njets",wtot_run2*(basecuts+cut_bkg),0.0,10.0, 1.0);
     setSampleHists();
     fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
     sgf_curr_left=  optParVal(optParName);
@@ -1089,7 +1093,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
     //check right point
     cutvar_cut.str("");
     cutvar_cut << "(" << cutvar << " > " <<  cutval_right << " ) " ;   
-    setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+    setHframe("njets",wtot_run2*(basecuts+cut_bkg),0.0,10.0, 1.0);
     setSampleHists();
     fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
     sgf_curr_right= optParVal(optParName);
@@ -2047,9 +2051,11 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   plt_title << "VBS (WV), " << g_lum << " fb^{-1}";
   std::string s = plt_title.str();
   const char* title_str = s.c_str();
-  std::string year = "2016";
+  std::string year = "1111";
+  std::cout << "year = " << year << std::endl;
   if (year == "1111") {
-    year == "Run2";
+    year = "Run2";
+    std::cout << "inside if, year == " << year << std::endl;
   }
   // title: VBS (WV), 35.9fb^{-1}
 
@@ -2124,7 +2130,7 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
   plt_title << "VBS (WV), " << g_lum << " fb^{-1} (13TeV)";
   std::string s = plt_title.str();
   const char* title_str = s.c_str();
-  std::string year = "2016";
+  std::string year = "1111";
   if (year == "1111") {
     year = "Run2";
   }

@@ -33,7 +33,7 @@
  **********************************************************************************/
 #include "vector"
 #include "vbsTMVA.hpp"
-#include "vbsSamples.h"
+#include "vbsSamples.hpp"
 using namespace TMVA;
 //
 
@@ -861,7 +861,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
    /// to catch it and properly rename the ssAUCoutile name.
    stringstream ssAUCoutfile;
-    ssAUCoutfile << "ROC/" << "2016_DNN_test.txt"; // AUCoutfile
+    ssAUCoutfile << "ROC/" << "Run2_test.txt"; // AUCoutfile
    std::ofstream AUCoutfile;
    AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');

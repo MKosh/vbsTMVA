@@ -141,7 +141,7 @@ TCut wv_sr_muon           ("wv_sr_muon",              common_muon+btag_veto+wv_s
 TCut wtot_2016            ("wtot_2016",               "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
 TCut wtot_2017            ("wtot_2017",               "41530*genWeight*mcWeight*L1PFWeight*puWeight"); // 41530
 TCut wtot_2018            ("wtot_2018",               "59740*genWeight*mcWeight*L1PFWeight*puWeight"); // 59740
-TCut wtot_run2            ("wtot_run2",               "137100.0*genWeight*mcWeight*L1PFWeight*puWeight")
+TCut wtot_run2            ("wtot_run2",               "137100.0*genWeight*mcWeight*L1PFWeight*puWeight");
 TCut wtotL1               ("wtotL1",                  "L1PFWeight*genWeight*puWeight");
 TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
 
@@ -214,7 +214,7 @@ TCut ZeppWHlt3              ("ZeppWHlt3",          "((abs(ZeppenfeldWH)/abs(vbf_
 
 class Sample{
 private:
-  Int_t     _year;  
+  TString   _year;  
   TString   _sname;
   TString   _gname;
   Float_t   _xsec;
@@ -234,7 +234,7 @@ private:
 
  public:
 
-  Sample(Int_t year, const char* gname, const char* sname, Float_t xsec, Int_t loadFlag, Int_t gid, Int_t sid, Int_t color, Float_t  nMCgen,  Float_t nMCgenNeg ){
+  Sample(const char* year, const char* gname, const char* sname, Float_t xsec, Int_t loadFlag, Int_t gid, Int_t sid, Int_t color, Float_t  nMCgen,  Float_t nMCgenNeg ){
     _year=year;
     _sname=sname;
     _gname=gname;
@@ -558,7 +558,7 @@ Int_t getVbsReqStat(const char* filelist) {
       TTree* mtree  = (TTree*) gROOT->FindObject("VBS4LeptonsAnalysisReduced");
 	    nInitReqEvt_w+=cutflow_w->GetBinContent(1);
 	    nInitReqEvt  +=cutflow->GetBinContent(1);
-	    getStat(mtree,"f_mass4l",wtot_2016,stats);
+	    getStat(mtree,"f_mass4l",wtot_run2,stats);
       nNtpReqEvt    += stats[0];
 	    nNtpReqEvt_w2 += stats[1]*stats[1];
     }else{
@@ -584,7 +584,8 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
   vbsEvent.sid = sample->getSid();
   vbsEvent.mcWeight = sample->getWeight();
 
-  cout << "------------------------------ mcWeight/xsec/ngen/Calc = " << vbsEvent.mcWeight << " / " << sample->getXsec() << " / " << sample->getNgen() <<" ---------------------------" << endl;
+  //std::cout << "------------------------------ mcWeight/xsec/ngen/Calc = " << vbsEvent.mcWeight << " / " << sample->getXsec() << " / " << sample->getNgen() <<" ---------------------------" << endl;
+  std::cout << "------------------------------------------------------ gid / sid = " << sample->getGid() << " / " << sample->getGid() << "-----------------------------------------------------------------------------" << std::endl;
   for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
 	  groupTree->GetEntry(ievt);
     bGroupID->Fill(); 

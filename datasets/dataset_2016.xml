@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Samples>
     <2016> 
-        <data       year= "2016" lumi= "1.0"        group= "Data"       sample= "Data_noDup"                                                                            xsection= "1.0"         nMC= "1.0"              nMCneg= "0" colorcode= "1"   />
+        <data       year= "2016" lumi= "1.0"        group= "data"       sample= "Data_noDup"                                                                            xsection= "1.0"         nMC= "1.0"              nMCneg= "0" colorcode= "1"   />
         <signal     year= "2016" lumi= "35867.06"   group= "VBS_EWK"    sample= "WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8"           xsection= "0.02982"     nMC= "200000.0"         nMCneg= "0" colorcode= "840" />
         <signal     year= "2016" lumi= "35867.06"   group= "VBS_EWK"    sample= "WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8"     xsection= "0.03259"     nMC= "198300.0"         nMCneg= "0" colorcode= "840" />
         <signal     year= "2016" lumi= "35867.06"   group= "VBS_EWK"    sample= "WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8"          xsection= "0.1"         nMC= "200000.0"         nMCneg= "0" colorcode= "840" />

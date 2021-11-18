@@ -51,20 +51,23 @@ test:
 	@echo "dataset = $(dataset)"
 init:
 	-@rm -r skims/vbs_ww
-	@./dsw.sh "$(loc)" "$(dataset)"
+	@./dsw.sh "$(loc)" "$(year)" "$(dataset)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
 	@echo "Done!"
 
 classify: update_$(year)
 	-@rm -r skims/vbs_ww
-	@./dsw.sh "$(loc)" "$(dataset)"
+	@./dsw.sh "$(loc)" "$(year)" "$(dataset)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
 	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|    ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.cc
 	@root ./vbsTMVAClassification.cc\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 
+apply:
+	root -b -q ./vbsTMVAClassificationApplication.cc\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
+
 train: update_$(year)
 	-@rm -r skims/vbs_ww
-	@./dsw.sh "$(loc)" "$(dataset)"
+	@./dsw.sh "$(loc)" "$(year)" "$(dataset)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
 	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|    ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.cc
 	@root -b -q ./vbsTMVAClassification.cc\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
@@ -73,7 +76,7 @@ train: update_$(year)
 
 trainAndPlot: update_$(year)
 	-@rm -r skims/vbs_ww
-	@./dsw.sh "$(loc)" "$(dataset)"
+	@./dsw.sh "$(loc)" "$(year)" "$(dataset)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
 	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|    ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.cc
 	@root -b -q ./vbsTMVAClassification.cc\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
