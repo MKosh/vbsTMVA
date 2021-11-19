@@ -151,7 +151,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    std::vector<Sample*> sglSamples;
    std::vector<Sample*> dataSamples;
 
-   getSamples(bkgSamples, sglSamples, dataSamples);
+   getSamples(dataSamples, sglSamples, bkgSamples);
 
 // Selector - Surprise, surprise it selects things. Look at the vbsSamples.cc after you run the dsw script and copy the samples to the appropriate spot
 // This is just for ease of use when running the classification over different datasets
@@ -390,7 +390,7 @@ for (UInt_t ns=0; ns< dataSamples.size();ns++){
       if( dataSamples[ns]->getInpTree() ){
          fillBranch( dataSamples[ns]->getInpTree(), vbsEvent, dataSamples[ns]); 
       }
-      cout << "TMVAClassification:: Total " << dataSamples[ns]->getSName() << "data events " <<   dataSamples[ns]->getNevents() << endl;
+      cout << "TMVAClassification:: Total " << dataSamples[ns]->getSName() << " data events " <<   dataSamples[ns]->getNevents() << endl;
    }
 }
 
@@ -408,7 +408,7 @@ for (UInt_t ns=0; ns<sglSamples.size();ns++){
       if( sglSamples[ns]->getInpTree() ){
          fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]); 
       }
-      cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << "signal events " <<   sglSamples[ns]->getNevents() << endl;
+      cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << " signal events " <<   sglSamples[ns]->getNevents() << endl;
    }
 }
 
@@ -424,7 +424,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
       if( bkgSamples[ns]->getInpTree() ){   
          fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]); 
       }
-      cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << "background events " <<   bkgSamples[ns]->getNevents() << endl;
+      cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << " background events " <<   bkgSamples[ns]->getNevents() << endl;
    }
 }
 

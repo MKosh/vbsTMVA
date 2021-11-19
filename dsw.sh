@@ -126,7 +126,7 @@ for skim in $SKIMS; do
     # Create reqlists 
     
 
-    /bin/rm -rf skimrqs/$skim/*/*.lst > /dev/null 2>&1 # remove skimrqs/vbs_ww/something.lst (/dev/null 2>&1 forces no output. 2>&1 forces any possible error message (2) into the stdout stream (1))
+    /bin/rm -rf skimrqs/$skim/*.lst > /dev/null 2>&1 # remove skimrqs/vbs_ww/something.lst (/dev/null 2>&1 forces no output. 2>&1 forces any possible error message (2) into the stdout stream (1))
     /bin/rm -rf skimrqs/$COMBINED_SKIM/*.lst > /dev/null 2>&1 # both had /bin/rm -rf skimrqs...
 
     # This file is where the information like xsec (cross section) and nMCgen come from 
@@ -165,19 +165,19 @@ EOF
             #cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "dataSamples.push_back( new Sample(\"'${grp}'\",\t "$2" ,\t 1,\t 1,\t gid_data, gid_data,\t" $14 ",\t" $8 ",\t" $11") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
             ls -l skims/$skim/${yr}/${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim_folder/rqs_${req}_data.lst
         else
-            if  [[ "$grp" == "VBS_EWK" ]]; then # WV_EWK
+            if  [[ "$grp" == "VBS_EWK" || "$grp" == "WV_EWK" ]]; then # WV_EWK
                 if  [ "$signal" != "ewk" ]; then 
-                    cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "bkgSamples.push_back( new Sample(\"'${yr}'\", \"'${grp}'\", \"'${smpl}'\", '${xsec}', 1, gid_'${grp}', 1100, '${color}','${nMC}', '${nMCneg}') );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
+                    cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "bkgSamples.push_back( new Sample(\"'${yr}'\", \"'${grp}'\", \"'${smpl}'\", '${xsec}', 1, gid_'${grp}', 1100, '${color}', '${nMC}', '${nMCneg}') );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
                 else
                     ls -l skims/$skim/$yr/${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim_folder/rqs_${req}_sgl.lst
-                    cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "sglSamples.push_back( new Sample(\"'${yr}'\", \"'${grp}'\", \"'${smpl}'\", '${xsec}', 1, gid_sgl, '${sid_sgl}', '${sid_color}','${nMC}', '${nMCneg}') );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
+                    cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "sglSamples.push_back( new Sample(\"'${yr}'\", \"'${grp}'\", \"'${smpl}'\", '${xsec}', 1, gid_sgl, '${sid_sgl}', '${sid_color}', '${nMC}', '${nMCneg}') );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
                     let sid_sgl=${sid_sgl}+1;
                 fi
 
             else
                 #all samples with *ext*
                 #ls -l skims/$skim/WWTree*${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim/rqs_${req}_bkg.lst
-                cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "bkgSamples.push_back( new Sample(\"'${yr}'\", \"'${grp}'\", \"'${smpl}'\", '${xsec}', 1, gid_'${grp}', 1100, '${color}','${nMC}', '${nMCneg}') );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
+                cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "bkgSamples.push_back( new Sample(\"'${yr}'\", \"'${grp}'\", \"'${smpl}'\", '${xsec}', 1, gid_'${grp}', 1100, '${color}', '${nMC}', '${nMCneg}') );"  }'   | sed 's/\.\/data\///g' | sed 's/\.root//g'  | sed 's/W+/W/g'  | sed 's/Z+/Z/g'  >> $SamplesOutfile
                 #echo ls -l skims/$skim/${smpl}*root | grep -v "_ext" | awk '{print $NF}' >>  skimrqs/$skim/rqs_${req}_bkg.lst
                 ls -l skims/$skim/${yr}/${smpl}*root | grep -v "_ext" | awk '{print $NF}' >>  skimrqs/$skim_folder/rqs_${req}_bkg.lst
 
