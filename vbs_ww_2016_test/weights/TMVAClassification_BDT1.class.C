@@ -10,7 +10,7 @@ Method         : BDT::BDT1
 TMVA Release   : 4.2.1         [262657]
 ROOT Release   : 6.24/02       [399362]
 Creator        : markm
-Date           : Wed Nov 24 21:03:40 2021
+Date           : Thu Nov 25 13:45:10 2021
 Host           : Linux Manjaro-Desktop 5.10.52-1-MANJARO #1 SMP PREEMPT Tue Jul 20 20:32:02 UTC 2021 x86_64 GNU/Linux
 Dir            : /home/markm/Documents/research/vbsTMVA
 Training events: 27488

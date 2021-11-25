@@ -10,7 +10,7 @@ Method         : DL::DNN_GPU
 TMVA Release   : 4.2.1         [262657]
 ROOT Release   : 6.24/02       [399362]
 Creator        : markm
-Date           : Wed Nov 24 21:03:31 2021
+Date           : Thu Nov 25 13:45:00 2021
 Host           : Linux Manjaro-Desktop 5.10.52-1-MANJARO #1 SMP PREEMPT Tue Jul 20 20:32:02 UTC 2021 x86_64 GNU/Linux
 Dir            : /home/markm/Documents/research/vbsTMVA
 Training events: 27488
@@ -23,11 +23,10 @@ Analysis type  : [Classification]
 V: "True" [Verbose output (short form of "VerbosityLevel" below - overrides the latter one)]
 VarTransform: "N" [List of variable transformations performed before training, e.g., "D_Background,P_Signal,G,N_AllClasses" for: "Decorrelation, PCA-transformation, Gaussianisation, Normalisation, each for the given class of events ('AllClasses' denotes all events of all classes, if no class indication is given, 'All' is assumed)"]
 H: "False" [Print method-specific help message]
-Layout: "TANH|100,TANH|50,TANH|10,LINEAR" [Layout of the network.]
+Layout: "RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR" [Layout of the network.]
 ErrorStrategy: "CROSSENTROPY" [Loss function: Mean squared error (regression) or cross entropy (binary classification).]
 WeightInitialization: "XAVIERUNIFORM" [Weight initialization strategy]
 Architecture: "GPU" [Which architecture to perform the training on.]
-TrainingStrategy: "LearningRate=1e-1,Momentum=0.0,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=15,WeightDecay=0.001,Regularization=NONE,DropConfig=0.0+0.5+0.5+0.5,DropRepetitions=1,Multithreading=True|LearningRate=1e-2,Momentum=0.5,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.001,Regularization=L2,Multithreading=True,DropConfig=0.0+0.1+0.1+0.1,DropRepetitions=1|LearningRate=1e-2,Momentum=0.3,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.0001,Regularization=L2,Multithreading=True|LearningRate=1e-2,Momentum=0.1,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.0001,Regularization=NONE,Multithreading=True" [Defines the training strategies.]
 # Default:
 VerbosityLevel: "Verbose" [Verbosity level]
 CreateMVAPdfs: "False" [Create PDFs for classifier outputs (signal and background)]
@@ -36,6 +35,7 @@ InputLayout: "0|0|0" [The Layout of the input]
 BatchLayout: "0|0|0" [The Layout of the batch]
 RandomSeed: "0" [Random seed used for weight initialization and batch shuffling]
 ValidationSize: "20%" [Part of the training data to use for validation. Specify as 0.2 or 20% to use a fifth of the data set as validation set. Specify as 100 to use exactly 100 events. (Default: 20%)]
+TrainingStrategy: "LearningRate=1e-3,Momentum=0.0,ConvergenceSteps=100,MaxEpochs=2000,Optimizer=ADAM,BatchSize=30,TestRepetitions=1,WeightDecay=0.0,Regularization=None,DropConfig=0.0" [Defines the training strategies.]
 ##
 
 

@@ -268,6 +268,7 @@ private:
   Int_t     getScolor(){return _color;};
   Int_t     getLoadFlag(){return _loadFlag; };
   Float_t   getWeight(){return _sweight; };
+  TString   getYear(){return _year;}; 
   void      setInpTree(TTree* inpTree){
      _inpTree = inpTree;
      if (_inpTree){
@@ -361,14 +362,8 @@ void WriteAUCFile (Int_t n_BDT_trees, Int_t max_depth, Float_t ada_boost, Float_
 
    for (UInt_t i=0; i<mlist.size(); i++) {
       std::string reg_method(mlist[i]);
-      std::cout << "AUC for " << reg_method << ": " << factory->GetROCIntegral(dataloader, reg_method) << std::endl;
       AUC_out_file << "AUC for " << reg_method << ": " << factory->GetROCIntegral(dataloader, reg_method) << std::endl;
-      if (reg_method == "BDT") {
-         AUC_out_file << '\t' << n_BDT_trees << " " << randomized << " Trees with max depth " << max_depth << " and min node size " << 
-         min_node_size << "'%' and ada boost of " << ada_boost << std::endl;
-      }
    }
-   AUC_out_file << "" << std::endl;
    AUC_out_file << "--------------------------------------------------" << std::endl;
    AUC_out_file.close();
 }

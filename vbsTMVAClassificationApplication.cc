@@ -269,19 +269,6 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
 
   // Event loop
 
-   // Prepare the event tree
-   // - Here the variable names have to corresponds to your tree
-   // - You can use the same variables as above which is slightly faster,
-   //   but of course you can use different ones and copy the values inside the event loop
-   //
-//    std::cout << "--- Select signal sample" << std::endl;
-//    TTree* theTree = (TTree*)input->Get("TreeS");
-//    Float_t userVar1, userVar2;
-//    theTree->SetBranchAddress( "var1", &userVar1 );
-//    theTree->SetBranchAddress( "var2", &userVar2 );
-//    theTree->SetBranchAddress( "var3", &var3 );
-//    theTree->SetBranchAddress( "var4", &var4 );
-
    //==Vbs specific
       TTree* inpDataTree = (TTree*)anl_dir->Get("DataTree");
       Int_t   classID = 3;
@@ -299,19 +286,19 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
       Float_t prob_Fisher = 1.0;
       arrange_vbsReducedTree(inpDataTree,vbsEvent);
 
-       TBranch* bClassID  = inpDataTree->Branch("classID",       &classID,      "classID/I");
-       char* className = new char[40];
-       TBranch* bClassName = inpDataTree->Branch( "className",(void*)className, "className/C" ); 
-       TBranch* bBDT(0); 
-       TBranch* bBDT1(0);
-       TBranch* bBDT2(0);  
-       TBranch* bDNN_GPU(0);   
-       TBranch* bDNN_CPU(0);   
-       TBranch* bMLP(0);   
-       TBranch* bMLPBFGS(0);   
-       TBranch* bMLPBNN(0);   
-       TBranch* bFisher(0);  
-       TBranch* bprob_Fisher(0);
+      TBranch* bClassID  = inpDataTree->Branch("classID",       &classID,      "classID/I");
+      char* className = new char[40];
+      TBranch* bClassName = inpDataTree->Branch( "className",(void*)className, "className/C" ); 
+      TBranch* bBDT(0); 
+      TBranch* bBDT1(0);
+      TBranch* bBDT2(0);  
+      TBranch* bDNN_GPU(0);   
+      TBranch* bDNN_CPU(0);   
+      TBranch* bMLP(0);   
+      TBranch* bMLPBFGS(0);   
+      TBranch* bMLPBNN(0);   
+      TBranch* bFisher(0);  
+      TBranch* bprob_Fisher(0);
 //        TBranch* bCuts(0);
 //        TBranch* bCutsD(0);
 
@@ -368,118 +355,117 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    TStopwatch sw;
    sw.Start();
    for (Long64_t ievt=0; ievt< inpDataTree->GetEntries();ievt++) {
-
-      if (ievt%100000 == 0) std::cout << "--- ... Processing event: " << ievt << std::endl;
-
       inpDataTree->GetEntry(ievt);
 
-//       var1 = userVar1 + userVar2;
-//       var2 = userVar1 - userVar2;
+      if (ievt%100000 == 0) std::cout << "--- ... Processing event: " << ievt << std::endl;
+      if (!(TMath::IsNaN(vbsEvent.vbf1_AK4_qgid))&&!(TMath::IsNaN(vbsEvent.vbf2_AK4_qgid))) {
+//          var1 = userVar1 + userVar2;
+//          var2 = userVar1 - userVar2;
 
-      // Return the MVA outputs and fill into histograms
-      classID=3;
-      className= (char*)"data";
+         // Return the MVA outputs and fill into histograms
+         classID=3;
+         className= (char*)"data";
 
-      if (Use["CutsGA"]) {
-         // Cuts is a special case: give the desired signal efficienciy
-         Bool_t passed = reader->EvaluateMVA( "CutsGA method", effS );
-         if (passed) nSelCutsGA++;
-      }
+         if (Use["CutsGA"]) {
+            // Cuts is a special case: give the desired signal efficienciy
+            Bool_t passed = reader->EvaluateMVA( "CutsGA method", effS );
+            if (passed) nSelCutsGA++;
+         }
 
-      if (Use["Likelihood"   ])   histLk     ->Fill( reader->EvaluateMVA( "Likelihood method"    ) );
-      if (Use["LikelihoodD"  ])   histLkD    ->Fill( reader->EvaluateMVA( "LikelihoodD method"   ) );
-      if (Use["LikelihoodPCA"])   histLkPCA  ->Fill( reader->EvaluateMVA( "LikelihoodPCA method" ) );
-      if (Use["LikelihoodKDE"])   histLkKDE  ->Fill( reader->EvaluateMVA( "LikelihoodKDE method" ) );
-      if (Use["LikelihoodMIX"])   histLkMIX  ->Fill( reader->EvaluateMVA( "LikelihoodMIX method" ) );
-      if (Use["PDERS"        ])   histPD     ->Fill( reader->EvaluateMVA( "PDERS method"         ) );
-      if (Use["PDERSD"       ])   histPDD    ->Fill( reader->EvaluateMVA( "PDERSD method"        ) );
-      if (Use["PDERSPCA"     ])   histPDPCA  ->Fill( reader->EvaluateMVA( "PDERSPCA method"      ) );
-      if (Use["KNN"          ])   histKNN    ->Fill( reader->EvaluateMVA( "KNN method"           ) );
-      if (Use["HMatrix"      ])   histHm     ->Fill( reader->EvaluateMVA( "HMatrix method"       ) );
-      if (Use["Fisher"       ]){
-	  Fisher = reader->EvaluateMVA( "Fisher method"        );
-          histFi->Fill( Fisher );
-          bFisher->Fill();
-      }
+         if (Use["Likelihood"   ])   histLk     ->Fill( reader->EvaluateMVA( "Likelihood method"    ) );
+         if (Use["LikelihoodD"  ])   histLkD    ->Fill( reader->EvaluateMVA( "LikelihoodD method"   ) );
+         if (Use["LikelihoodPCA"])   histLkPCA  ->Fill( reader->EvaluateMVA( "LikelihoodPCA method" ) );
+         if (Use["LikelihoodKDE"])   histLkKDE  ->Fill( reader->EvaluateMVA( "LikelihoodKDE method" ) );
+         if (Use["LikelihoodMIX"])   histLkMIX  ->Fill( reader->EvaluateMVA( "LikelihoodMIX method" ) );
+         if (Use["PDERS"        ])   histPD     ->Fill( reader->EvaluateMVA( "PDERS method"         ) );
+         if (Use["PDERSD"       ])   histPDD    ->Fill( reader->EvaluateMVA( "PDERSD method"        ) );
+         if (Use["PDERSPCA"     ])   histPDPCA  ->Fill( reader->EvaluateMVA( "PDERSPCA method"      ) );
+         if (Use["KNN"          ])   histKNN    ->Fill( reader->EvaluateMVA( "KNN method"           ) );
+         if (Use["HMatrix"      ])   histHm     ->Fill( reader->EvaluateMVA( "HMatrix method"       ) );
+         if (Use["Fisher"       ]){
+	         Fisher = reader->EvaluateMVA( "Fisher method" );
+            histFi->Fill( Fisher );
+            bFisher->Fill();
+         }
 
-      if (Use["FisherG"      ])   histFiG    ->Fill( reader->EvaluateMVA( "FisherG method"       ) );
-      if (Use["BoostedFisher"])   histFiB    ->Fill( reader->EvaluateMVA( "BoostedFisher method" ) );
-      if (Use["LD"           ])   histLD     ->Fill( reader->EvaluateMVA( "LD method"            ) );
-      //
-      if (Use["MLP"          ]){
-               MLP = reader->EvaluateMVA("MLP method");
-               histNn ->Fill(MLP);
-               bMLP->Fill();
-      }
-      if (Use["MLPBFGS"      ]){
-               MLPBFGS = reader->EvaluateMVA("MLPBFGS method");
-               histNnbfgs->Fill(MLPBFGS);
-               bMLPBFGS->Fill();
-      }
-      if (Use["MLPBNN"       ]){
-               MLPBNN = reader->EvaluateMVA("MLPBNN method");
-               histNnbnn->Fill(MLPBNN);
-               bMLPBNN->Fill();
-      }
-      if (Use["CFMlpANN"     ])   histNnC    ->Fill( reader->EvaluateMVA( "CFMlpANN method"      ) );
-      if (Use["TMlpANN"      ])   histNnT    ->Fill( reader->EvaluateMVA( "TMlpANN method"       ) );
-      if (Use["DNN_GPU"]){
-      	       DNN_GPU = reader->EvaluateMVA("DNN_GPU method");
-	       //    cout << " events/DNN_GPU (data) = " <<  ievt << "/" <<   DNN_GPU << endl;
-               histDnnGpu->Fill( DNN_GPU );
-               bDNN_GPU->Fill();
-      }
-      if (Use["DNN_CPU"]){
-               DNN_CPU = reader->EvaluateMVA("DNN_CPU method");
-               histDnnCpu->Fill(DNN_CPU);
-               bDNN_CPU->Fill();
-      }
-      if (Use["BDT"          ]){
-         BDT=reader->EvaluateMVA( "BDT method" );
-         histBdt->Fill( BDT );
-         bBDT->Fill();
-      }
-      if (Use["BDT1"          ]){
-         BDT1=reader->EvaluateMVA( "BDT1 method" );
-         histBdt1->Fill( BDT1 );
-         bBDT1->Fill();
-      }
-      if (Use["BDT2"          ]){
-         BDT2=reader->EvaluateMVA( "BDT2 method" );
-         histBdt2->Fill( BDT2 );
-         bBDT2->Fill();
-      }
-      if (Use["BDTG"         ])   histBdtG   ->Fill( reader->EvaluateMVA( "BDTG method"          ) );
-      if (Use["BDTB"         ])   histBdtB   ->Fill( reader->EvaluateMVA( "BDTB method"          ) );
-      if (Use["BDTD"         ])   histBdtD   ->Fill( reader->EvaluateMVA( "BDTD method"          ) );
-      if (Use["BDTF"         ])   histBdtF   ->Fill( reader->EvaluateMVA( "BDTF method"          ) );
-      if (Use["RuleFit"      ])   histRf     ->Fill( reader->EvaluateMVA( "RuleFit method"       ) );
-      if (Use["SVM_Gauss"    ])   histSVMG   ->Fill( reader->EvaluateMVA( "SVM_Gauss method"     ) );
-      if (Use["SVM_Poly"     ])   histSVMP   ->Fill( reader->EvaluateMVA( "SVM_Poly method"      ) );
-      if (Use["SVM_Lin"      ])   histSVML   ->Fill( reader->EvaluateMVA( "SVM_Lin method"       ) );
-      if (Use["FDA_MT"       ])   histFDAMT  ->Fill( reader->EvaluateMVA( "FDA_MT method"        ) );
-      if (Use["FDA_GA"       ])   histFDAGA  ->Fill( reader->EvaluateMVA( "FDA_GA method"        ) );
-      if (Use["Category"     ])   histCat    ->Fill( reader->EvaluateMVA( "Category method"      ) );
-      if (Use["Plugin"       ])   histPBdt   ->Fill( reader->EvaluateMVA( "P_BDT method"         ) );
+         if (Use["FisherG"      ])   histFiG    ->Fill( reader->EvaluateMVA( "FisherG method"       ) );
+         if (Use["BoostedFisher"])   histFiB    ->Fill( reader->EvaluateMVA( "BoostedFisher method" ) );
+         if (Use["LD"           ])   histLD     ->Fill( reader->EvaluateMVA( "LD method"            ) );
+         //
+         if (Use["MLP"          ]){
+                  MLP = reader->EvaluateMVA("MLP method");
+                  histNn ->Fill(MLP);
+                  bMLP->Fill();
+         }
+         if (Use["MLPBFGS"      ]){
+                  MLPBFGS = reader->EvaluateMVA("MLPBFGS method");
+                  histNnbfgs->Fill(MLPBFGS);
+                  bMLPBFGS->Fill();
+         }
+         if (Use["MLPBNN"       ]){
+                  MLPBNN = reader->EvaluateMVA("MLPBNN method");
+                  histNnbnn->Fill(MLPBNN);
+                  bMLPBNN->Fill();
+         }
+         if (Use["CFMlpANN"     ])   histNnC    ->Fill( reader->EvaluateMVA( "CFMlpANN method"      ) );
+         if (Use["TMlpANN"      ])   histNnT    ->Fill( reader->EvaluateMVA( "TMlpANN method"       ) );
+         if (Use["DNN_GPU"]){
+         	       DNN_GPU = reader->EvaluateMVA("DNN_GPU method");
+	          //    cout << " events/DNN_GPU (data) = " <<  ievt << "/" <<   DNN_GPU << endl;
+                  histDnnGpu->Fill( DNN_GPU );
+                  bDNN_GPU->Fill();
+         }
+         if (Use["DNN_CPU"]){
+                  DNN_CPU = reader->EvaluateMVA("DNN_CPU method");
+                  histDnnCpu->Fill(DNN_CPU);
+                  bDNN_CPU->Fill();
+         }
+         if (Use["BDT"          ]){
+            BDT=reader->EvaluateMVA( "BDT method" );
+            histBdt->Fill( BDT );
+            bBDT->Fill();
+         }
+         if (Use["BDT1"          ]){
+            BDT1=reader->EvaluateMVA( "BDT1 method" );
+            histBdt1->Fill( BDT1 );
+            bBDT1->Fill();
+         }
+         if (Use["BDT2"          ]){
+            BDT2=reader->EvaluateMVA( "BDT2 method" );
+            histBdt2->Fill( BDT2 );
+            bBDT2->Fill();
+         }
+         if (Use["BDTG"         ])   histBdtG   ->Fill( reader->EvaluateMVA( "BDTG method"          ) );
+         if (Use["BDTB"         ])   histBdtB   ->Fill( reader->EvaluateMVA( "BDTB method"          ) );
+         if (Use["BDTD"         ])   histBdtD   ->Fill( reader->EvaluateMVA( "BDTD method"          ) );
+         if (Use["BDTF"         ])   histBdtF   ->Fill( reader->EvaluateMVA( "BDTF method"          ) );
+         if (Use["RuleFit"      ])   histRf     ->Fill( reader->EvaluateMVA( "RuleFit method"       ) );
+         if (Use["SVM_Gauss"    ])   histSVMG   ->Fill( reader->EvaluateMVA( "SVM_Gauss method"     ) );
+         if (Use["SVM_Poly"     ])   histSVMP   ->Fill( reader->EvaluateMVA( "SVM_Poly method"      ) );
+         if (Use["SVM_Lin"      ])   histSVML   ->Fill( reader->EvaluateMVA( "SVM_Lin method"       ) );
+         if (Use["FDA_MT"       ])   histFDAMT  ->Fill( reader->EvaluateMVA( "FDA_MT method"        ) );
+         if (Use["FDA_GA"       ])   histFDAGA  ->Fill( reader->EvaluateMVA( "FDA_GA method"        ) );
+         if (Use["Category"     ])   histCat    ->Fill( reader->EvaluateMVA( "Category method"      ) );
+         if (Use["Plugin"       ])   histPBdt   ->Fill( reader->EvaluateMVA( "P_BDT method"         ) );
 
-      // Retrieve also per-event error
-      if (Use["PDEFoam"]) {
-         Double_t val = reader->EvaluateMVA( "PDEFoam method" );
-         Double_t err = reader->GetMVAError();
-         histPDEFoam   ->Fill( val );
-         histPDEFoamErr->Fill( err );
-         if (err>1.e-50) histPDEFoamSig->Fill( val/err );
-      }
+         // Retrieve also per-event error
+         if (Use["PDEFoam"]) {
+            Double_t val = reader->EvaluateMVA( "PDEFoam method" );
+            Double_t err = reader->GetMVAError();
+            histPDEFoam   ->Fill( val );
+            histPDEFoamErr->Fill( err );
+            if (err>1.e-50) histPDEFoamSig->Fill( val/err );
+         }
 
-      // Retrieve probability instead of MVA output
-      if (Use["Fisher"])   {
-         probHistFi  ->Fill( reader->GetProba ( "Fisher method" ) );
-         rarityHistFi->Fill( reader->GetRarity( "Fisher method" ) );
-         bprob_Fisher->Fill();
+         // Retrieve probability instead of MVA output
+         if (Use["Fisher"])   {
+            probHistFi  ->Fill( reader->GetProba ( "Fisher method" ) );
+            rarityHistFi->Fill( reader->GetRarity( "Fisher method" ) );
+            bprob_Fisher->Fill();
+         }
+         bClassID->Fill();
+         bClassName->Fill();
       }
-      bClassID->Fill();
-      bClassName->Fill();
-
 
    }
 
