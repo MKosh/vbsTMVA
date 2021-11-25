@@ -97,9 +97,11 @@ echo "System check done!"
 SKIMS="vbs_ww"
 COMBINED_SKIM="cmbvbs_vv"
 skim_folder=$SKIMS
+data_foler=""
 
 if [[ "$2" == "1111" ]]; then
     skim_folder=$COMBINED_SKIM
+    data_folder="$Ntuple_loc/Run2"
 fi
 
 echo "Creating link to data files as "
@@ -119,6 +121,7 @@ for skim in $SKIMS; do
         for yr in $years; do
             if [ "$skim" = "vbs_ww" ] ; then ln -s $Ntuple_loc/$yr/haddedFiles skims/$skim/$yr; fi;
         done
+        if [[ "$data_folder" != "" ]]; then ln -s $data_folder skims/$skim/Run_2; fi;
     else 
         ls -l skims/$skim
     fi;
@@ -159,11 +162,16 @@ EOF
         nMC="$(cat $DatasetInpFile | grep $smpl | grep $yr | awk '{print $13}' | sed 's|"||g')"
         nMCneg="$(cat $DatasetInpFile | grep $smpl | grep $yr | awk '{print $15}' | sed 's|"||g')"
         color="$(cat $DatasetInpFile | grep $smpl | grep $yr | awk '{print $17}' | sed 's|"||g')"
-    #echo $grp
-        if  [ "$grp" == "data" ];     then
-            cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "dataSamples.push_back( new Sample(\"'${yr}'\", \"'${grp}'\", \"'${smpl}'\", 1, 1, gid_data, gid_data, '${color}', "'${nMC}'", "'${nMCneg}'") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
-            #cat $DatasetInpFile | grep $smpl | grep -v "#" | awk '{print "dataSamples.push_back( new Sample(\"'${grp}'\",\t "$2" ,\t 1,\t 1,\t gid_data, gid_data,\t" $14 ",\t" $8 ",\t" $11") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
-            ls -l skims/$skim/${yr}/${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim_folder/rqs_${req}_data.lst
+
+        if  [ "$grp" == "data" ]; then
+            #if [[ "$2" == "1111" ]]; then
+            #    rm skimrqs/$skim_folder/rqs_data--Data_data.lst > /dev/null 2>&1
+            #    ls -l skims/$skim/Run_2/Data*root | awk '{print $NF}' >> skimrqs/$skim_folder/rqs_data--Data_data.lst
+            #    cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "dataSamples.push_back( new Sample(\"1111\", \"'${grp}'\", \"Data\", 1, 1, gid_data, gid_data, '${color}', "'${nMC}'", "'${nMCneg}'") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
+            #else
+                ls -l skims/$skim/${yr}/${smpl}*root  | awk '{print $NF}' >>  skimrqs/$skim_folder/rqs_data--Data_data.lst
+                cat $DatasetInpFile | grep $smpl | grep $yr | grep -v \!-- | awk '{print "dataSamples.push_back( new Sample(\"'${yr}'\", \"'${grp}'\", \"'${smpl}'\", 1, 1, gid_data, gid_data, '${color}', "'${nMC}'", "'${nMCneg}'") );" }' | sed 's/_noDup//g' >> $SamplesOutfile
+            #fi
         else
             if  [[ "$grp" == "VBS_EWK" || "$grp" == "WV_EWK" ]]; then # WV_EWK
                 if  [ "$signal" != "ewk" ]; then 

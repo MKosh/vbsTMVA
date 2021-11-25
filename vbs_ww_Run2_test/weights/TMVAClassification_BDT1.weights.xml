@@ -4,11 +4,11 @@
     <Info name="TMVA Release" value="4.2.1 [262657]"/>
     <Info name="ROOT Release" value="6.24/02 [399362]"/>
     <Info name="Creator" value="markm"/>
-    <Info name="Date" value="Thu Nov 18 22:28:15 2021"/>
+    <Info name="Date" value="Tue Nov 23 20:12:18 2021"/>
     <Info name="Host" value="Linux Manjaro-Desktop 5.10.52-1-MANJARO #1 SMP PREEMPT Tue Jul 20 20:32:02 UTC 2021 x86_64 GNU/Linux"/>
     <Info name="Dir" value="/home/markm/Documents/research/vbsTMVA"/>
     <Info name="Training events" value="131960"/>
-    <Info name="TrainingTime" value="2.96578691e+01"/>
+    <Info name="TrainingTime" value="2.98655939e+01"/>
     <Info name="AnalysisType" value="Classification"/>
   </GeneralInfo>
   <Options>

@@ -238,8 +238,10 @@ private:
     _year=year;
     _sname=sname;
     _gname=gname;
-    if(gid == gid_data ){
-      _reqlist="reqlists/rqs_"+_year+"--"+_gname+"--"+_sname+"_data.lst";
+    if(gid == gid_data){
+      _reqlist="reqlists/rqs_data--Data_data.lst";
+ //   }else if (gid == gid_data && std::string(year) != "1111"){
+ //     _reqlist="reqlists/rqs_"+_year+"--"+_gname+"--"+_sname+"_data.lst";
     }else if (gid >9) {
       _reqlist="reqlists/rqs_"+_year+"--"+_gname+"--"+_sname+"_bkg.lst";
     }else{
@@ -387,19 +389,6 @@ void SelectVbsVars(vector<string>& vbsVars, TObjArray* brlist){
 //
 TTree* chain2tree(TString inpChainName, TString reqlist, TString combinedTreeName, TString combinedTreeTitle){
 //accumulates signal samples in a single tree
-// Nevents = 0.942616 +/- 4.62438e-05  ZH_HToZZ
-// Nevents = 20.17 +/- 0.00997012      glgl_HToZZ
-// Nevents = 0.359368 +/- 1.06845e-05  ttH_HToZZ
-// Nevents = 1.92646 +/- 0.000168216   VBF_HToZZTo4L
-// Nevents = 0.217594 +/- 6.66961e-06  WminusH_HToZZTo4L
-// Nevents = 0.343426 +/- 1.09348e-05  WplusH_HToZZ
-
-//   cout << "chain2tree:: inpChainName/reqlist/combinedTreeName/combinedTreeTitle = " <<
-//          inpChainName << "/" <<
-//          reqlist      << "/" <<
-//          combinedTreeName      << "/" <<
-//        combinedTreeTitle <<
-//   endl; 
   TChain* inpChain = getChain(inpChainName, reqlist);
   setChainBranches(inpChain);
   TTree* combinedTree(0);
@@ -494,6 +483,32 @@ void convertTrees(const char* treeName, const char* filelist) {
 
 //======================================================================================================================
 //
+TChain* getChain2(TString treeName, TString filelist, TString combinedTreeName, TString combinedTreeTitle) {
+//creates chain for a tree in filelist 
+  TChain* chain = new TChain(treeName);
+  ifstream f(filelist);
+  cout << "Processing filelist " << filelist <<endl;
+  if (!f.is_open()) {
+    cout<< "getChain: File not found: " << filelist <<endl;
+    exit(0);
+  }
+  char fname[255]="0";
+  Int_t len = sizeof(fname);
+  while (f.getline(fname,len)) {
+    if (strlen(fname) == 0 || fname[0] == '#') continue;
+      std::cout << "fname = " << fname << std::endl;
+      Int_t n = chain->Add(fname, -1);  // second parameter to ensure file exists                                             
+      if (n == 0) {
+        cout<< "getChain:ERROR:: while processing filelist " << filelist << ". File not found: " << fname <<endl;
+        return 0;
+      }
+    }
+  cout<< "getChain: Tree "  << treeName << " , total events: " << chain->GetEntries() <<endl;                           
+  return chain;
+}
+
+//======================================================================================================================
+//
 TChain* getChain(TString treeName, TString filelist) {
 //creates chain for a tree in filelist 
   TChain* chain = new TChain(treeName);
@@ -507,6 +522,7 @@ TChain* getChain(TString treeName, TString filelist) {
   Int_t len = sizeof(fname);
   while (f.getline(fname,len)) {
     if (strlen(fname) == 0 || fname[0] == '#') continue;
+      std::cout << "fname = " << fname << std::endl;
       Int_t n = chain->Add(fname, -1);  // second parameter to ensure file exists                                             
       if (n == 0) {
         cout<< "getChain:ERROR:: while processing filelist " << filelist << ". File not found: " << fname <<endl;
@@ -558,7 +574,7 @@ Int_t getVbsReqStat(const char* filelist) {
       TTree* mtree  = (TTree*) gROOT->FindObject("VBS4LeptonsAnalysisReduced");
 	    nInitReqEvt_w+=cutflow_w->GetBinContent(1);
 	    nInitReqEvt  +=cutflow->GetBinContent(1);
-	    getStat(mtree,"f_mass4l",wtot_run2,stats);
+	    getStat(mtree,"f_mass4l",wtot_2016,stats);
       nNtpReqEvt    += stats[0];
 	    nNtpReqEvt_w2 += stats[1]*stats[1];
     }else{
@@ -584,14 +600,22 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
   vbsEvent.sid = sample->getSid();
   vbsEvent.mcWeight = sample->getWeight();
 
-  //std::cout << "------------------------------ mcWeight/xsec/ngen/Calc = " << vbsEvent.mcWeight << " / " << sample->getXsec() << " / " << sample->getNgen() <<" ---------------------------" << endl;
-  std::cout << "------------------------------------------------------ gid / sid = " << sample->getGid() << " / " << sample->getGid() << "-----------------------------------------------------------------------------" << std::endl;
-  for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
-	  groupTree->GetEntry(ievt);
-    bGroupID->Fill(); 
-    bSampleID->Fill(); 
-    bMCweight->Fill(); 
- 	}
+  if (vbsEvent.gid == 3) {
+    for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
+	    groupTree->GetEntry(ievt);
+      bGroupID->Fill(); 
+      bSampleID->Fill(); 
+      bMCweight->Fill();
+      //if (ievt%1000 == 0) groupTree->AutoSave();
+ 	  }
+  } else {
+    for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
+	    groupTree->GetEntry(ievt);
+      bGroupID->Fill(); 
+      bSampleID->Fill(); 
+      bMCweight->Fill(); 
+ 	  }
+  }
 }
 //================================================  
 

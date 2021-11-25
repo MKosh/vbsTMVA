@@ -376,69 +376,75 @@ int selector = 2016; // 0000 = old, 2016, 2017, 2018
 //}
 
 //----
-// Events old name was otree
 
-//Data
-for (UInt_t ns=0; ns< dataSamples.size();ns++){
-   cout << dataSamples[ns]->getGName() << "--" << dataSamples[ns]->getSName() << endl;
+   // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
+   stringstream ssofname;
+   //TString folder_name = ssofname.str();
+   ssofname << sname << "_SBtmva.root";
 
-   if ( dataSamples[ns]->getLoadFlag()){ 
-      cout << "register "  << dataSamples[ns]->getReqList() << " data samples" << endl;
-    
-      dataSamples[ns]->setInpTree( chain2tree("Events", dataSamples[ns]->getReqList(), "DataTree", "DataTree" ) );
+   TString outfileName( ssofname.str().c_str() );
+   TFile* outputFile = TFile::Open( outfileName, "RECREATE" );
+   //outputFile->mkdir(folder_name);
 
-      if( dataSamples[ns]->getInpTree() ){
-         fillBranch( dataSamples[ns]->getInpTree(), vbsEvent, dataSamples[ns]); 
+   //TFile* temp_file = TFile::Open("Tempfile.root", "RECREATE");
+   // Events old name was otree
+
+   //Data
+   for (UInt_t ns=0; ns < 1; ns++){ // was ns < dataSamples.size();
+      cout << dataSamples[ns]->getGName() << "--" << dataSamples[ns]->getSName() << endl;
+
+      if ( dataSamples[ns]->getLoadFlag()){ 
+         cout << "register "  << dataSamples[ns]->getReqList() << " data samples" << endl;
+
+         dataSamples[ns]->setInpTree( chain2tree("Events", dataSamples[ns]->getReqList(), "DataTree", "DataTree") );
+
+         if( dataSamples[ns]->getInpTree() ){
+            fillBranch( dataSamples[ns]->getInpTree(), vbsEvent, dataSamples[ns]); 
+         }
+         cout << "TMVAClassification:: Total " << dataSamples[ns]->getSName() << " data events " <<   dataSamples[ns]->getNevents() << endl;
+         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
       }
-      cout << "TMVAClassification:: Total " << dataSamples[ns]->getSName() << " data events " <<   dataSamples[ns]->getNevents() << endl;
    }
-}
 
+   //outputFile->cd();
+   
+   //Signals
+   for (UInt_t ns=0; ns<sglSamples.size();ns++){
+      cout << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << endl;
 
+      if ( sglSamples[ns]->getLoadFlag()){ 
+        // cout << "register  "  << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << " signal samples" << endl;
 
-//Signals
-for (UInt_t ns=0; ns<sglSamples.size();ns++){
-   cout << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << endl;
+         sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
 
-   if ( sglSamples[ns]->getLoadFlag()){ 
-     // cout << "register  "  << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << " signal samples" << endl;
-
-      sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
-
-      if( sglSamples[ns]->getInpTree() ){
-         fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]); 
+         if( sglSamples[ns]->getInpTree() ){
+            fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]); 
+         }
+         cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << " signal events " <<   sglSamples[ns]->getNevents() << endl;
+         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
       }
-      cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << " signal events " <<   sglSamples[ns]->getNevents() << endl;
    }
-}
 
-//Backgrounds
-for (UInt_t ns=0; ns<bkgSamples.size();ns++){
-  cout << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << endl;
+   //Backgrounds
+   for (UInt_t ns=0; ns<bkgSamples.size();ns++){
+     cout << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << endl;
 
-   if ( bkgSamples[ns]->getLoadFlag()){ 
-      //  cout << "register  "  << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << " background  samples" << endl;
+      if ( bkgSamples[ns]->getLoadFlag()){ 
+         //  cout << "register  "  << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << " background  samples" << endl;
 
-      bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
+         bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
 
-      if( bkgSamples[ns]->getInpTree() ){   
-         fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]); 
+         if( bkgSamples[ns]->getInpTree() ){   
+            fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]); 
+         }
+         cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << " background events " <<   bkgSamples[ns]->getNevents() << endl;
+         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
       }
-      cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << " background events " <<   bkgSamples[ns]->getNevents() << endl;
    }
-}
 
 
 // //----
 
-  // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-   stringstream ssofname;
-   ssofname << sname << "_SBtmva.root";
-   //ssofname << "vbs4l_SBtmva.root";
-
-
-   TString outfileName( ssofname.str().c_str() );
-   TFile* outputFile = TFile::Open( outfileName, "RECREATE" );
 
    //
    TMVA::Factory* factory = new TMVA::Factory( "TMVAClassification", outputFile,
@@ -461,27 +467,6 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    for (UInt_t ns=0; ns<sglSamples.size();ns++){
       if ( sglSamples[ns]->getInpTree() )  dataloader->AddSignalTree ( sglSamples[ns]->getInpTree(),     signalWeight     );
    }
-   // If you wish to modify default settings
-   // (please check "src/Config.h" to see all available global options)
-   //
-   //    (TMVA::gConfig().GetVariablePlotting()).fTimesRMS = 8.0;
-   //    (TMVA::gConfig().GetIONames()).fWeightFileDir = "myWeightDirectory";
-
-   // Define the input variables that shall be used for the MVA training
-   // note that you may also use variable expressions, such as: "3*var1/var2*abs(var3)"
-   // [all types of expressions that can also be parsed by TTree::Draw( "expression" )]
-//    dataloader->AddVariable( "myvar1 := var1+var2", 'F' );
-//    dataloader->AddVariable( "myvar2 := var1-var2", "Expression 2", "", 'F' );
-//    dataloader->AddVariable( "var3",                "Variable 3", "units", 'F' );
-//    dataloader->AddVariable( "var4",                "Variable 4", "units", 'F' );
-
-//    // You can add so-called "Spectator variables", which are not used in the MVA training,
-//    // but will appear in the final "TestTree" produced by TMVA. This TestTree will contain the
-//    // input variables, the response values of all trained MVAs, and the spectator variables
-
-//    dataloader->AddSpectator( "spec1 := var1*2",  "Spectator 1", "units", 'F' );
-//    dataloader->AddSpectator( "spec2 := var1*3",  "Spectator 2", "units", 'F' );
-
 
    //Add backgrounds to factory
    //
@@ -489,58 +474,6 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
       if ( bkgSamples[ns]->getInpTree() )  dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), backgroundWeight    );
    }
    //   
-//    if (n_background_WplusJets && fWjets)     dataloader->AddBackgroundTree( background_WplusJets , backgroundWeight );
-//    if (n_background_ZplusJets && fZjets)     dataloader->AddBackgroundTree( background_ZplusJets , backgroundWeight );
-//    if (n_background_DiBosons  && fDiBosons)  dataloader->AddBackgroundTree( background_DiBosons ,  backgroundWeight );
-//    if (n_background_top       && ftop     )  dataloader->AddBackgroundTree( background_top,        backgroundWeight );
-   //   
-
-
-   // To give different trees for training and testing, do as follows:
-   //
-   //     dataloader->AddSignalTree( signalTrainingTree, signalTrainWeight, "Training" );
-   //     dataloader->AddSignalTree( signalTestTree,     signalTestWeight,  "Test" );
-
-   // Use the following code instead of the above two or four lines to add signal and background
-   // training and test events "by hand"
-   // NOTE that in this case one should not give expressions (such as "var1+var2") in the input
-   //      variable definition, but simply compute the expression before adding the event
-   // ```cpp
-   // // --- begin ----------------------------------------------------------
-   // std::vector<Double_t> vars( 4 ); // vector has size of number of input variables
-   // Float_t  treevars[4], weight;
-   //
-   // // Signal
-   // for (UInt_t ivar=0; ivar<4; ivar++) signalTree->SetBranchAddress( Form( "var%i", ivar+1 ), &(treevars[ivar]) );
-   // for (UInt_t i=0; i<signalTree->GetEntries(); i++) {
-   //    signalTree->GetEntry(i);
-   //    for (UInt_t ivar=0; ivar<4; ivar++) vars[ivar] = treevars[ivar];
-   //    // add training and test events; here: first half is training, second is testing
-   //    // note that the weight can also be event-wise
-   //    if (i < signalTree->GetEntries()/2.0) dataloader->AddSignalTrainingEvent( vars, signalWeight );
-   //    else                              dataloader->AddSignalTestEvent    ( vars, signalWeight );
-   // }
-   //
-   // // Background (has event weights)
-   // background->SetBranchAddress( "weight", &weight );
-   // for (UInt_t ivar=0; ivar<4; ivar++) background->SetBranchAddress( Form( "var%i", ivar+1 ), &(treevars[ivar]) );
-   // for (UInt_t i=0; i<background->GetEntries(); i++) {
-   //    background->GetEntry(i);
-   //    for (UInt_t ivar=0; ivar<4; ivar++) vars[ivar] = treevars[ivar];
-   //    // add training and test events; here: first half is training, second is testing
-   //    // note that the weight can also be event-wise
-   //    if (i < background->GetEntries()/2) dataloader->AddBackgroundTrainingEvent( vars, backgroundWeight*weight );
-   //    else                                dataloader->AddBackgroundTestEvent    ( vars, backgroundWeight*weight );
-   // }
-   // // --- end ------------------------------------------------------------
-   // ```
-   // End of tree registration
-
-   // Set individual event weights (the variables must exist in the original TTree)
-   // -  for signal    : `dataloader->SetSignalWeightExpression    ("weight1*weight2");`
-   // -  for background: `dataloader->SetBackgroundWeightExpression("weight1*weight2");`
-
-
 
    // Tell the dataloader how to use the training and testing events
    //
@@ -861,7 +794,7 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
    /// to catch it and properly rename the ssAUCoutile name.
    stringstream ssAUCoutfile;
-    ssAUCoutfile << "ROC/" << "Run2_test.txt"; // AUCoutfile
+    ssAUCoutfile << "ROC/" << "2016_test.txt"; // AUCoutfile
    std::ofstream AUCoutfile;
    AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
@@ -878,12 +811,10 @@ for (UInt_t ns=0; ns<bkgSamples.size();ns++){
    AUCoutfile.close();
 
    // --------------------------------------------------------------
+
    cout << "Clone dataTree" << endl;
-   // dataTree->CloneTree()->Write();
-   dataSamples[0]->getInpTree()->CloneTree()->Write();
-   //  dataTree->Write();
-
-
+   //dataSamples[0]->getInpTree()->CloneTree->Write();
+   dataSamples[0]->getInpTree()->Write();
 
  
    // Save the output

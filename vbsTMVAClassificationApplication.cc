@@ -369,7 +369,7 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    sw.Start();
    for (Long64_t ievt=0; ievt< inpDataTree->GetEntries();ievt++) {
 
-      if (ievt%10000 == 0) std::cout << "--- ... Processing event: " << ievt << std::endl;
+      if (ievt%100000 == 0) std::cout << "--- ... Processing event: " << ievt << std::endl;
 
       inpDataTree->GetEntry(ievt);
 
