@@ -175,26 +175,26 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   if(_sid == 3) {
     _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
   } else {
-    _testTree->Project(_hf1->GetName(), var, wtot_2016*(cuts+_samplecut), "goff");
+    _testTree->Project(_hf1->GetName(), var, wtot_run2*(cuts+_samplecut), "goff");
   }
 
-  int year = "2018";
+  int year = 1111;
   if (_sid == 15 && year == 2018) {
-    scale *= 0.6875; // 2018 Scale ttbar 
+    //scale *= 0.6875; // 2018 Scale ttbar 
   } else if (_sid == 13 && year == 2018) {
-    scale *= 0.802; // 2018 Scale Wjets
+   // scale *= 0.802; // 2018 Scale Wjets
   } else if (_sid == 15 && year == 2016) {
 
   } else if (_sid == 13 && year == 2016) {
-    scale *= 1.794;
+   // scale *= 1.794;
   } else if (_sid == 15 && year == 2017) {
 
   } else if (_sid == 13 && year == 2017) {
-    scale *= 1.303;
+   // scale *= 1.303;
   } else if (_sid == 15 && year == 1111) {
-    scale *= 1.0;
+   // scale *= 0.133;
   } else if (_sid == 13 && year == 1111) {
-    scale *= 1.0;
+   //  scale *= 1.0;
   }
 
   _hf1->GetStats(_stats);
@@ -445,7 +445,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "  tmgui()" << endl;
   cout << "" << endl;
 
-//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
 //shapePlots(anl, cut, cutName); // XXX
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
@@ -644,7 +644,7 @@ Int_t plotShapeComp(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int
         Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	      const char hTitle[], const char xTitle[], const char yTitle[]) {
 
-  anl->setHframe(var,wtot_2016*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,wtot_run2*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
 
@@ -686,7 +686,7 @@ Int_t plotSingleVariable( TmvaAnl* anl, const char* var, TCut cuts, const char* 
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
   
-  anl->setHframe(var,wtot_2016*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,wtot_run2*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
 
@@ -726,7 +726,7 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
-  anl->setHframe(var,wtot_2016*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,wtot_run2*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
 
@@ -761,7 +761,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
-  anl->setHframe(var,wtot_2016*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,wtot_run2*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
   anl->setsvplots(1);
@@ -1024,7 +1024,7 @@ Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* c
       cutval = cutvar_min+ nprobe*stepw;
       cutvar_cut.str("");
       cutvar_cut << "(" << cutvar << " > " <<  cutval  << " ) " ;   
-      setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+      setHframe("njets",wtot_run2*(basecuts+cut_bkg),0.0,10.0, 1.0);
       setSampleHists();
       fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
       sgf_curr =  optParVal(optParName);
@@ -1085,7 +1085,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
     //check left point
     cutvar_cut.str("");
     cutvar_cut << "(" << cutvar << " > " <<  cutval_left << " ) " ;   
-    setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+    setHframe("njets",wtot_run2*(basecuts+cut_bkg),0.0,10.0, 1.0);
     setSampleHists();
     fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
     sgf_curr_left=  optParVal(optParName);
@@ -1093,7 +1093,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
     //check right point
     cutvar_cut.str("");
     cutvar_cut << "(" << cutvar << " > " <<  cutval_right << " ) " ;   
-    setHframe("njets",wtot_2016*(basecuts+cut_bkg),0.0,10.0, 1.0);
+    setHframe("njets",wtot_run2*(basecuts+cut_bkg),0.0,10.0, 1.0);
     setSampleHists();
     fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
     sgf_curr_right= optParVal(optParName);
@@ -2051,11 +2051,11 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   plt_title << "VBS (WV), " << g_lum << " fb^{-1}";
   std::string s = plt_title.str();
   const char* title_str = s.c_str();
-  std::string year = 2018;
-  std::cout << "year = " << year << std::endl;
-  if (year == "1111") {
-    year = "Run2";
-    std::cout << "inside if, year == " << year << std::endl;
+  std::string year2 = "1111";
+  std::cout << "year = " << year2 << std::endl;
+  if (year2 == "1111") {
+    year2 = "Run2";
+    std::cout << "inside if, year == " << year2 << std::endl;
   }
   // title: VBS (WV), 35.9fb^{-1}
 
@@ -2108,7 +2108,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
       }
     }
 
-    out_f_name << "plots/" << year << "/c" << iter << "_" << year << "_" << CutName << ".pdf";
+    out_f_name << "plots/" << year2 << "/c" << iter << "_" << year2 << "_" << CutName << ".pdf";
     cp1->SaveAs(out_f_name.str().c_str());
     out_f_name.str("");
     //shapeFname << "plots/2017/s1_2017"  << "_" << CutName << ".root";
@@ -2130,9 +2130,9 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
   plt_title << "VBS (WV), " << g_lum << " fb^{-1} (13TeV)";
   std::string s = plt_title.str();
   const char* title_str = s.c_str();
-  std::string year = 2018;
-  if (year == "1111") {
-    year = "Run2";
+  std::string year2 = "1111";
+  if (year2 == "1111") {
+    year2 = "Run2";
   }
   std::cout << "cuts = " << cuts << " Lumi = " << g_lum << std::endl;
   std::cout << "" << std::endl;
@@ -2186,7 +2186,7 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
       }
     }
 
-    shapeFname << "plots/" << year << "/s" << iter << "_" << year << "_" << CutName << ".pdf";
+    shapeFname << "plots/" << year2 << "/s" << iter << "_" << year2 << "_" << CutName << ".pdf";
     cp1->SaveAs(shapeFname.str().c_str());
     shapeFname.str("");
     //shapeFname << "plots/2017/s1_2017"  << "_" << CutName << ".root";

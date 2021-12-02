@@ -93,7 +93,7 @@ plots: update_$(year)
 	-@./utils/plot_sort.sh "$(year)"
 	@root -q tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\)
 	-@./utils/plot_resort.sh "$(year)"
-	@./utils/gen_plots.sh
+# @./utils/gen_plots.sh
 
 shapePlots: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cc
@@ -181,7 +181,7 @@ update_1111:
 #	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.cc
 #	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2016|g' vbsTMVAClassification.cc
 	@sed -i 's|int year = [0-9]\{4\}|int year = 1111|g' tmvaMon.cc
-	@sed -i 's|std::string year = "[0-9]\{4\}"|std::string year = "1111"|g' tmvaMon.cc
+	@sed -i 's|std::string year2 = "[0-9]\{4\}"|std::string year2 = "1111"|g' tmvaMon.cc
 #	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cc
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cc
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cc
@@ -195,7 +195,7 @@ update_2016:
 #	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.cc
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2016|g' vbsTMVAClassification.cc
 	@sed -i 's|int year = [0-9]\{4\}|int year = 2016|g' tmvaMon.cc
-	@sed -i 's|std::string year = "[0-9]\{4\}"|std::string year = "2016"|g' tmvaMon.cc
+	@sed -i 's|std::string year2 = "[0-9]\{4\}"|std::string year2 = "2016"|g' tmvaMon.cc
 #	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cc
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cc
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cc
@@ -211,7 +211,7 @@ update_2017:
 #	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.cc
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2017|g' vbsTMVAClassification.cc
 	@sed -i 's|int year = [0-9]\{4\}|int year = 2017|g' tmvaMon.cc
-	@sed -i 's|std::string year = "[0-9]\{4\}"|std::string year = "2017"|g' tmvaMon.cc
+	@sed -i 's|std::string year2 = "[0-9]\{4\}"|std::string year2 = "2017"|g' tmvaMon.cc
 #	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cc
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cc
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cc
@@ -225,8 +225,8 @@ update_2018:
 	@sed -i 's|chain2tree("otree",|chain2tree("Events",|g' vbsTMVAClassification.cc
 #	@sed -i 's|TCut mycuts = [A-z]\++[A-z]\+;|TCut mycuts = cleanNAN_qgid+cleanNAN_tau;|g' vbsTMVAClassification.cc
 	@sed -i 's|int selector = [0-9]\{4\}|int selector = 2018|g' vbsTMVAClassification.cc
-	@sed -i 's|int year = [0-9]\{4\}|int year = "2018"|g' tmvaMon.cc
-	@sed -i 's|std::string year = "[0-9]\{4\}"|std::string year = 2018|g' tmvaMon.cc
+	@sed -i 's|int year = [0-9]\{4\}|int year = 2018|g' tmvaMon.cc
+	@sed -i 's|std::string year2 = "[0-9]\{4\}"|std::string year2 = "2018"|g' tmvaMon.cc
 #	@sed -i 's|string selector = .*\(;\)|string selector = "new";|g' tmvaMon.cc
 	@sed -i 's|^.*\(vbs_jets_pt));\)|    TCut allCuts         ("allCuts",     (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));|g' tmvaMon.cc
 	@sed -i 's|^.*\(ZeppWHlt3));\)|//    TCut allCuts        ("allCuts",    (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));|g' tmvaMon.cc

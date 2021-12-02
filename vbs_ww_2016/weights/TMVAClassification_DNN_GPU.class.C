@@ -10,10 +10,10 @@ Method         : DL::DNN_GPU
 TMVA Release   : 4.2.1         [262657]
 ROOT Release   : 6.24/02       [399362]
 Creator        : markm
-Date           : Tue Jul 27 14:23:19 2021
+Date           : Sun Nov 28 13:33:59 2021
 Host           : Linux Manjaro-Desktop 5.10.52-1-MANJARO #1 SMP PREEMPT Tue Jul 20 20:32:02 UTC 2021 x86_64 GNU/Linux
 Dir            : /home/markm/Documents/research/vbsTMVA
-Training events: 8181033
+Training events: 27488
 Analysis type  : [Classification]
 
 
@@ -23,11 +23,10 @@ Analysis type  : [Classification]
 V: "True" [Verbose output (short form of "VerbosityLevel" below - overrides the latter one)]
 VarTransform: "N" [List of variable transformations performed before training, e.g., "D_Background,P_Signal,G,N_AllClasses" for: "Decorrelation, PCA-transformation, Gaussianisation, Normalisation, each for the given class of events ('AllClasses' denotes all events of all classes, if no class indication is given, 'All' is assumed)"]
 H: "False" [Print method-specific help message]
-Layout: "TANH|100,TANH|50,TANH|10,LINEAR" [Layout of the network.]
+Layout: "RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR" [Layout of the network.]
 ErrorStrategy: "CROSSENTROPY" [Loss function: Mean squared error (regression) or cross entropy (binary classification).]
 WeightInitialization: "XAVIERUNIFORM" [Weight initialization strategy]
 Architecture: "GPU" [Which architecture to perform the training on.]
-TrainingStrategy: "LearningRate=1e-1,Momentum=0.0,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=15,WeightDecay=0.001,Regularization=NONE,DropConfig=0.0+0.5+0.5+0.5,DropRepetitions=1,Multithreading=True|LearningRate=1e-2,Momentum=0.5,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.001,Regularization=L2,Multithreading=True,DropConfig=0.0+0.1+0.1+0.1,DropRepetitions=1|LearningRate=1e-2,Momentum=0.3,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.0001,Regularization=L2,Multithreading=True|LearningRate=1e-2,Momentum=0.1,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.0001,Regularization=NONE,Multithreading=True" [Defines the training strategies.]
 # Default:
 VerbosityLevel: "Verbose" [Verbosity level]
 CreateMVAPdfs: "False" [Create PDFs for classifier outputs (signal and background)]
@@ -36,77 +35,79 @@ InputLayout: "0|0|0" [The Layout of the input]
 BatchLayout: "0|0|0" [The Layout of the batch]
 RandomSeed: "0" [Random seed used for weight initialization and batch shuffling]
 ValidationSize: "20%" [Part of the training data to use for validation. Specify as 0.2 or 20% to use a fifth of the data set as validation set. Specify as 100 to use exactly 100 events. (Default: 20%)]
+TrainingStrategy: "LearningRate=1e-3,Momentum=0.0,ConvergenceSteps=100,MaxEpochs=2000,Optimizer=ADAM,BatchSize=30,TestRepetitions=1,WeightDecay=0.0,Regularization=None,DropConfig=0.0" [Defines the training strategies.]
 ##
 
 
 #VAR -*-*-*-*-*-*-*-*-*-*-*-* variables *-*-*-*-*-*-*-*-*-*-*-*-
 
 NVar 15
-bos_AK4AK4_eta                bos_AK4AK4_eta                bos_AK4AK4_eta                bos_AK4AK4_eta                                                  'F'    [-999,8.53575325012]
-bos_AK4AK4_m                  bos_AK4AK4_m                  bos_AK4AK4_m                  bos_AK4AK4_m                                                    'F'    [-999,149.999954224]
-bosCent                       bosCent                       bosCent                       bosCent                                                         'F'    [-999,4.9907951355]
-bos_j1_AK4_pt                 bos_j1_AK4_pt                 bos_j1_AK4_pt                 bos_j1_AK4_pt                                                   'F'    [-999,1874.40161133]
-bos_j2_AK4_pt                 bos_j2_AK4_pt                 bos_j2_AK4_pt                 bos_j2_AK4_pt                                                   'F'    [-999,333.18157959]
-lep1_eta                      lep1_eta                      lep1_eta                      lep1_eta                                                        'F'    [-2.5,2.5]
-lep1_pt                       lep1_pt                       lep1_pt                       lep1_pt                                                         'F'    [19.4175376892,2898.93847656]
-nJet30f                       nJet30f                       nJet30f                       nJet30f                                                         'F'    [0,18]
-vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                                                     'F'    [28.2939491272,3001.70092773]
-vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                                                     'F'    [18.265625,2466.53149414]
-vbf_deta                      vbf_deta                      vbf_deta                      vbf_deta                                                        'F'    [0.0011616833508,11.8237304688]
-vbf_eta                       vbf_eta                       vbf_eta                       vbf_eta                                                         'F'    [-10.714176178,10.131029129]
-vbf_m                         vbf_m                         vbf_m                         vbf_m                                                           'F'    [500.000091553,14693.4345703]
-zeppHad                       zeppHad                       zeppHad                       zeppHad                                                         'F'    [-9.3388299942,9.18382453918]
-zeppLep                       zeppLep                       zeppLep                       zeppLep                                                         'F'    [-9.711561203,9.07499504089]
-NSpec 49
-bos_AK4AK4_pt                 bos_AK4AK4_pt                 bos_AK4AK4_pt                 bos_AK4AK4_pt                                                   'F'    [-999,1903.09631348]
-bos_j1_AK4_eta                bos_j1_AK4_eta                bos_j1_AK4_eta                bos_j1_AK4_eta                                                  'F'    [-999,2.39990234375]
-bos_j2_AK4_eta                bos_j2_AK4_eta                bos_j2_AK4_eta                bos_j2_AK4_eta                                                  'F'    [-999,2.39990234375]
-bos_PuppiAK8_eta              bos_PuppiAK8_eta              bos_PuppiAK8_eta              bos_PuppiAK8_eta                                                'F'    [-999,2.39990234375]
-bos_PuppiAK8_m_sd0            bos_PuppiAK8_m_sd0            bos_PuppiAK8_m_sd0            bos_PuppiAK8_m_sd0                                              'F'    [-999,150]
-bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr                                         'F'    [-999,150]
-bos_PuppiAK8_phi              bos_PuppiAK8_phi              bos_PuppiAK8_phi              bos_PuppiAK8_phi                                                'F'    [-999,3.1416015625]
-bos_PuppiAK8_pt               bos_PuppiAK8_pt               bos_PuppiAK8_pt               bos_PuppiAK8_pt                                                 'F'    [-999,3536]
-bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1                                           'F'    [-999,0.962686538696]
-btagWeight_loose              btagWeight_loose              btagWeight_loose              btagWeight_loose                                                'F'    [0.620618402958,2.06655502319]
-dibos_eta                     dibos_eta                     dibos_eta                     dibos_eta                                                       'F'    [-8.52828121185,9.63391304016]
-dibos_m                       dibos_m                       dibos_m                       dibos_m                                                         'F'    [58.2915344238,6769.03027344]
-dibos_mt                      dibos_mt                      dibos_mt                      dibos_mt                                                        'F'    [97.4506149292,6801.25732422]
-dibos_phi                     dibos_phi                     dibos_phi                     dibos_phi                                                       'F'    [-3.14159250259,3.14159226418]
-dibos_pt                      dibos_pt                      dibos_pt                      dibos_pt                                                        'F'    [0.03117711097,3281.44775391]
-dilep_eta                     dilep_eta                     dilep_eta                     dilep_eta                                                       'F'    [-10.1982555389,8.68241691589]
-dilep_m                       dilep_m                       dilep_m                       dilep_m                                                         'F'    [0.0830905809999,2815.7487793]
-dilep_mt                      dilep_mt                      dilep_mt                      dilep_mt                                                        'F'    [21.0491065979,3632.53369141]
-dilep_phi                     dilep_phi                     dilep_phi                     dilep_phi                                                       'F'    [-3.14159107208,3.14159226418]
-dilep_pt                      dilep_pt                      dilep_pt                      dilep_pt                                                        'F'    [0.0138914436102,3615.9387207]
-evt                           evt                           evt                           evt                                                             'F'    [4,388342784]
-genWeight                     genWeight                     genWeight                     genWeight                                                       'F'    [-316.46875,598.34375]
+bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr       bos_PuppiAK8_m_sd0_corr                                         'F'    [65.0625,104.9375]
+bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1         bos_PuppiAK8_tau2tau1                                           'F'    [0.0682255253196,0.549910068512]
+lep1_eta                      lep1_eta                      lep1_eta                      lep1_eta                                                        'F'    [-2.498046875,2.49951171875]
+nJet30f                       nJet30f                       nJet30f                       nJet30f                                                         'F'    [2,11]
+vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                                                    'F'    [-4.66796875,5.01953125]
+vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                   vbf1_AK4_pt                                                     'F'    [50.0678367615,1970.49926758]
+vbf1_AK4_qgid                 vbf1_AK4_qgid                 vbf1_AK4_qgid                 vbf1_AK4_qgid                                                   'F'    [-1,1]
+vbf2_AK4_eta                  vbf2_AK4_eta                  vbf2_AK4_eta                  vbf2_AK4_eta                                                    'F'    [-5.0771484375,5.0888671875]
+vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                   vbf2_AK4_pt                                                     'F'    [50.0047340393,1175.74890137]
+vbf2_AK4_qgid                 vbf2_AK4_qgid                 vbf2_AK4_qgid                 vbf2_AK4_qgid                                                   'F'    [-1,1]
+vbf_deta                      vbf_deta                      vbf_deta                      vbf_deta                                                        'F'    [2.50006103516,9.2822265625]
+vbf_eta                       vbf_eta                       vbf_eta                       vbf_eta                                                         'F'    [-7.53327178955,7.36832284927]
+vbf_m                         vbf_m                         vbf_m                         vbf_m                                                           'F'    [500.026428223,7649.34521484]
+zeppHad                       zeppHad                       zeppHad                       zeppHad                                                         'F'    [-4.53909301758,4.37330627441]
+zeppLep                       zeppLep                       zeppLep                       zeppLep                                                         'F'    [-6.87152099609,6.03112888336]
+NSpec 50
+bos_AK4AK4_eta                bos_AK4AK4_eta                bos_AK4AK4_eta                bos_AK4AK4_eta                                                  'F'    [-999,-999]
+bos_AK4AK4_m                  bos_AK4AK4_m                  bos_AK4AK4_m                  bos_AK4AK4_m                                                    'F'    [-999,-999]
+bos_AK4AK4_pt                 bos_AK4AK4_pt                 bos_AK4AK4_pt                 bos_AK4AK4_pt                                                   'F'    [-999,-999]
+bosCent                       bosCent                       bosCent                       bosCent                                                         'F'    [-4.82135009766,3.74968290329]
+bos_j1_AK4_eta                bos_j1_AK4_eta                bos_j1_AK4_eta                bos_j1_AK4_eta                                                  'F'    [-999,-999]
+bos_j1_AK4_pt                 bos_j1_AK4_pt                 bos_j1_AK4_pt                 bos_j1_AK4_pt                                                   'F'    [-999,-999]
+bos_j2_AK4_eta                bos_j2_AK4_eta                bos_j2_AK4_eta                bos_j2_AK4_eta                                                  'F'    [-999,-999]
+bos_j2_AK4_pt                 bos_j2_AK4_pt                 bos_j2_AK4_pt                 bos_j2_AK4_pt                                                   'F'    [-999,-999]
+bos_PuppiAK8_eta              bos_PuppiAK8_eta              bos_PuppiAK8_eta              bos_PuppiAK8_eta                                                'F'    [-2.3994140625,2.39892578125]
+bos_PuppiAK8_m_sd0            bos_PuppiAK8_m_sd0            bos_PuppiAK8_m_sd0            bos_PuppiAK8_m_sd0                                              'F'    [65.0625,104.9375]
+bos_PuppiAK8_phi              bos_PuppiAK8_phi              bos_PuppiAK8_phi              bos_PuppiAK8_phi                                                'F'    [-3.1416015625,3.1416015625]
+bos_PuppiAK8_pt               bos_PuppiAK8_pt               bos_PuppiAK8_pt               bos_PuppiAK8_pt                                                 'F'    [200.125,2586]
+btagWeight_loose              btagWeight_loose              btagWeight_loose              btagWeight_loose                                                'F'    [0.707488656044,1.77973711491]
+dibos_eta                     dibos_eta                     dibos_eta                     dibos_eta                                                       'F'    [-5.70251989365,5.60779333115]
+dibos_m                       dibos_m                       dibos_m                       dibos_m                                                         'F'    [142.427078247,4868.22753906]
+dibos_mt                      dibos_mt                      dibos_mt                      dibos_mt                                                        'F'    [293.477203369,4877.96289062]
+dibos_phi                     dibos_phi                     dibos_phi                     dibos_phi                                                       'F'    [-3.14108610153,3.14141798019]
+dibos_pt                      dibos_pt                      dibos_pt                      dibos_pt                                                        'F'    [3.8788087368,2055.06591797]
+dilep_eta                     dilep_eta                     dilep_eta                     dilep_eta                                                       'F'    [-5.64239501953,5.94346761703]
+dilep_m                       dilep_m                       dilep_m                       dilep_m                                                         'F'    [2.12073945999,982.819946289]
+dilep_mt                      dilep_mt                      dilep_mt                      dilep_mt                                                        'F'    [55.7104530334,2287.56933594]
+dilep_phi                     dilep_phi                     dilep_phi                     dilep_phi                                                       'F'    [-3.14107394218,3.14104056358]
+dilep_pt                      dilep_pt                      dilep_pt                      dilep_pt                                                        'F'    [0.475926727057,2284.8972168]
+evt                           evt                           evt                           evt                                                             'F'    [417,233661504]
+genWeight                     genWeight                     genWeight                     genWeight                                                       'F'    [-303.359375,316.46875]
 gid                           gid                           gid                           gid                                                             'F'    [1,15]
-L1PFWeight                    L1PFWeight                    L1PFWeight                    L1PFWeight                                                      'F'    [0.0752711370587,1]
-lep1_iso                      lep1_iso                      lep1_iso                      lep1_iso                                                        'F'    [0,0.249999418855]
-lep1_m                        lep1_m                        lep1_m                        lep1_m                                                          'F'    [0.000510999991093,0.105658374727]
-lep1_phi                      lep1_phi                      lep1_phi                      lep1_phi                                                        'F'    [-3.1416015625,3.1416015625]
+L1PFWeight                    L1PFWeight                    L1PFWeight                    L1PFWeight                                                      'F'    [0.183705121279,1]
+lep1_iso                      lep1_iso                      lep1_iso                      lep1_iso                                                        'F'    [0,0.136843934655]
+lep1_m                        lep1_m                        lep1_m                        lep1_m                                                          'F'    [0.000510999991093,0.000510999991093]
+lep1_phi                      lep1_phi                      lep1_phi                      lep1_phi                                                        'F'    [-3.14111328125,3.1416015625]
+lep1_pt                       lep1_pt                       lep1_pt                       lep1_pt                                                         'F'    [25.0132808685,1195.63085938]
 lep1_q                        lep1_q                        lep1_q                        lep1_q                                                          'F'    [-1,1]
-lep2_eta                      lep2_eta                      lep2_eta                      lep2_eta                                                        'F'    [-999,2.5]
-lep2_pt                       lep2_pt                       lep2_pt                       lep2_pt                                                         'F'    [-999,1122.67321777]
-mcWeight                      mcWeight                      mcWeight                      mcWeight                                                        'F'    [9.15913211941e-09,0.000135022753966]
-MET                           MET                           MET                           MET                                                             'F'    [0.0120055703446,3413.15649414]
-MET_phi                       MET_phi                       MET_phi                       MET_phi                                                         'F'    [-3.14159178734,3.14159250259]
-nBtag_loose                   nBtag_loose                   nBtag_loose                   nBtag_loose                                                     'F'    [0,9]
-nBtag_medium                  nBtag_medium                  nBtag_medium                  nBtag_medium                                                    'F'    [0,8]
+lep2_eta                      lep2_eta                      lep2_eta                      lep2_eta                                                        'F'    [-999,-999]
+lep2_pt                       lep2_pt                       lep2_pt                       lep2_pt                                                         'F'    [-999,-999]
+mcWeight                      mcWeight                      mcWeight                      mcWeight                                                        'F'    [9.15913211941e-09,1.40398815347e-05]
+MET                           MET                           MET                           MET                                                             'F'    [30.0022945404,1751.86328125]
+MET_phi                       MET_phi                       MET_phi                       MET_phi                                                         'F'    [-3.14136505127,3.14145612717]
+nBtag_loose                   nBtag_loose                   nBtag_loose                   nBtag_loose                                                     'F'    [0,0]
+nBtag_medium                  nBtag_medium                  nBtag_medium                  nBtag_medium                                                    'F'    [0,0]
 neu_pz_type0                  neu_pz_type0                  neu_pz_type0                  neu_pz_type0                                                    'F'    [-999,-999]
-nJet30                        nJet30                        nJet30                        nJet30                                                          'F'    [0,18]
-nJet50                        nJet50                        nJet50                        nJet50                                                          'F'    [0,13]
-nPV                           nPV                           nPV                           nPV                                                             'F'    [1,142]
+nJet30                        nJet30                        nJet30                        nJet30                                                          'F'    [2,11]
+nJet50                        nJet50                        nJet50                        nJet50                                                          'F'    [2,10]
+nPV                           nPV                           nPV                           nPV                                                             'F'    [1,57]
 puWeight                      puWeight                      puWeight                      puWeight                                                        'F'    [0,1.20750808716]
 run                           run                           run                           run                                                             'F'    [1,1]
 sid                           sid                           sid                           sid                                                             'F'    [100,1100]
-vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                  vbf1_AK4_eta                                                    'F'    [-6.2314453125,8.09375]
 vbf1_AK4_phi                  vbf1_AK4_phi                  vbf1_AK4_phi                  vbf1_AK4_phi                                                    'F'    [-3.1416015625,3.1416015625]
-vbf1_AK4_qgid                 vbf1_AK4_qgid                 vbf1_AK4_qgid                 vbf1_AK4_qgid                                                   'F'    [-1,1]
-vbf2_AK4_eta                  vbf2_AK4_eta                  vbf2_AK4_eta                  vbf2_AK4_eta                                                    'F'    [-7.2998046875,7.3974609375]
-vbf2_AK4_phi                  vbf2_AK4_phi                  vbf2_AK4_phi                  vbf2_AK4_phi                                                    'F'    [-3.1416015625,3.1416015625]
-vbf2_AK4_qgid                 vbf2_AK4_qgid                 vbf2_AK4_qgid                 vbf2_AK4_qgid                                                   'F'    [-1,1]
-vbf_phi                       vbf_phi                       vbf_phi                       vbf_phi                                                         'F'    [-3.14159250259,3.14159154892]
+vbf2_AK4_phi                  vbf2_AK4_phi                  vbf2_AK4_phi                  vbf2_AK4_phi                                                    'F'    [-3.1416015625,3.14111328125]
+vbf_phi                       vbf_phi                       vbf_phi                       vbf_phi                                                         'F'    [-3.14150476456,3.14155673981]
+vbf_pt                        vbf_pt                        vbf_pt                        vbf_pt                                                          'F'    [2.19970178604,2025.51708984]
 
 
 ============================================================================ */
@@ -152,7 +153,7 @@ class ReadDNN_GPU : public IClassifierReader {
         fNvars( 15 )
    {
       // the training input variables
-      const char* inputVars[] = { "bos_AK4AK4_eta", "bos_AK4AK4_m", "bosCent", "bos_j1_AK4_pt", "bos_j2_AK4_pt", "lep1_eta", "lep1_pt", "nJet30f", "vbf1_AK4_pt", "vbf2_AK4_pt", "vbf_deta", "vbf_eta", "vbf_m", "zeppHad", "zeppLep" };
+      const char* inputVars[] = { "bos_PuppiAK8_m_sd0_corr", "bos_PuppiAK8_tau2tau1", "lep1_eta", "nJet30f", "vbf1_AK4_eta", "vbf1_AK4_pt", "vbf1_AK4_qgid", "vbf2_AK4_eta", "vbf2_AK4_pt", "vbf2_AK4_qgid", "vbf_deta", "vbf_eta", "vbf_m", "zeppHad", "zeppLep" };
 
       // sanity checks
       if (theInputVars.size() <= 0) {
@@ -181,9 +182,9 @@ class ReadDNN_GPU : public IClassifierReader {
       fVmin[1] = -1;
       fVmax[1] = 1;
       fVmin[2] = -1;
-      fVmax[2] = 0.99999988079071;
+      fVmax[2] = 1;
       fVmin[3] = -1;
-      fVmax[3] = 0.99999988079071;
+      fVmax[3] = 1;
       fVmin[4] = -1;
       fVmax[4] = 1;
       fVmin[5] = -1;
@@ -197,15 +198,15 @@ class ReadDNN_GPU : public IClassifierReader {
       fVmin[9] = -1;
       fVmax[9] = 1;
       fVmin[10] = -1;
-      fVmax[10] = 0.99999988079071;
+      fVmax[10] = 1;
       fVmin[11] = -1;
       fVmax[11] = 1;
       fVmin[12] = -1;
-      fVmax[12] = 1;
+      fVmax[12] = 0.99999988079071;
       fVmin[13] = -1;
       fVmax[13] = 1;
       fVmin[14] = -1;
-      fVmax[14] = 0.99999988079071;
+      fVmax[14] = 1;
 
       // initialize input variable types
       fType[0] = 'F';
@@ -303,184 +304,184 @@ inline void ReadDNN_GPU::InitTransform_1()
    double fMin_1[3][15];
    double fMax_1[3][15];
    // Normalization transformation, initialisation
-   fMin_1[0][0] = -999;
-   fMax_1[0][0] = 6.73963737488;
+   fMin_1[0][0] = 65.125;
+   fMax_1[0][0] = 104.9375;
    fScal_1[0][0] = 2.0/(fMax_1[0][0]-fMin_1[0][0]);
    fOff_1[0][0] = fMin_1[0][0]*fScal_1[0][0]+1.;
-   fMin_1[1][0] = -999;
-   fMax_1[1][0] = 8.53575325012;
+   fMin_1[1][0] = 65.0625;
+   fMax_1[1][0] = 104.9375;
    fScal_1[1][0] = 2.0/(fMax_1[1][0]-fMin_1[1][0]);
    fOff_1[1][0] = fMin_1[1][0]*fScal_1[1][0]+1.;
-   fMin_1[2][0] = -999;
-   fMax_1[2][0] = 8.53575325012;
+   fMin_1[2][0] = 65.0625;
+   fMax_1[2][0] = 104.9375;
    fScal_1[2][0] = 2.0/(fMax_1[2][0]-fMin_1[2][0]);
    fOff_1[2][0] = fMin_1[2][0]*fScal_1[2][0]+1.;
-   fMin_1[0][1] = -999;
-   fMax_1[0][1] = 149.993942261;
+   fMin_1[0][1] = 0.0703273266554;
+   fMax_1[0][1] = 0.548578202724;
    fScal_1[0][1] = 2.0/(fMax_1[0][1]-fMin_1[0][1]);
    fOff_1[0][1] = fMin_1[0][1]*fScal_1[0][1]+1.;
-   fMin_1[1][1] = -999;
-   fMax_1[1][1] = 149.999954224;
+   fMin_1[1][1] = 0.0682255253196;
+   fMax_1[1][1] = 0.549910068512;
    fScal_1[1][1] = 2.0/(fMax_1[1][1]-fMin_1[1][1]);
    fOff_1[1][1] = fMin_1[1][1]*fScal_1[1][1]+1.;
-   fMin_1[2][1] = -999;
-   fMax_1[2][1] = 149.999954224;
+   fMin_1[2][1] = 0.0682255253196;
+   fMax_1[2][1] = 0.549910068512;
    fScal_1[2][1] = 2.0/(fMax_1[2][1]-fMin_1[2][1]);
    fOff_1[2][1] = fMin_1[2][1]*fScal_1[2][1]+1.;
-   fMin_1[0][2] = -999;
-   fMax_1[0][2] = 4.8065237999;
+   fMin_1[0][2] = -2.494140625;
+   fMax_1[0][2] = 2.470703125;
    fScal_1[0][2] = 2.0/(fMax_1[0][2]-fMin_1[0][2]);
    fOff_1[0][2] = fMin_1[0][2]*fScal_1[0][2]+1.;
-   fMin_1[1][2] = -999;
-   fMax_1[1][2] = 4.9907951355;
+   fMin_1[1][2] = -2.498046875;
+   fMax_1[1][2] = 2.49951171875;
    fScal_1[1][2] = 2.0/(fMax_1[1][2]-fMin_1[1][2]);
    fOff_1[1][2] = fMin_1[1][2]*fScal_1[1][2]+1.;
-   fMin_1[2][2] = -999;
-   fMax_1[2][2] = 4.9907951355;
+   fMin_1[2][2] = -2.498046875;
+   fMax_1[2][2] = 2.49951171875;
    fScal_1[2][2] = 2.0/(fMax_1[2][2]-fMin_1[2][2]);
    fOff_1[2][2] = fMin_1[2][2]*fScal_1[2][2]+1.;
-   fMin_1[0][3] = -999;
-   fMax_1[0][3] = 1099.53955078;
+   fMin_1[0][3] = 2;
+   fMax_1[0][3] = 8;
    fScal_1[0][3] = 2.0/(fMax_1[0][3]-fMin_1[0][3]);
    fOff_1[0][3] = fMin_1[0][3]*fScal_1[0][3]+1.;
-   fMin_1[1][3] = -999;
-   fMax_1[1][3] = 1874.40161133;
+   fMin_1[1][3] = 2;
+   fMax_1[1][3] = 11;
    fScal_1[1][3] = 2.0/(fMax_1[1][3]-fMin_1[1][3]);
    fOff_1[1][3] = fMin_1[1][3]*fScal_1[1][3]+1.;
-   fMin_1[2][3] = -999;
-   fMax_1[2][3] = 1874.40161133;
+   fMin_1[2][3] = 2;
+   fMax_1[2][3] = 11;
    fScal_1[2][3] = 2.0/(fMax_1[2][3]-fMin_1[2][3]);
    fOff_1[2][3] = fMin_1[2][3]*fScal_1[2][3]+1.;
-   fMin_1[0][4] = -999;
-   fMax_1[0][4] = 295.427856445;
+   fMin_1[0][4] = -4.2705078125;
+   fMax_1[0][4] = 4.6123046875;
    fScal_1[0][4] = 2.0/(fMax_1[0][4]-fMin_1[0][4]);
    fOff_1[0][4] = fMin_1[0][4]*fScal_1[0][4]+1.;
-   fMin_1[1][4] = -999;
-   fMax_1[1][4] = 333.18157959;
+   fMin_1[1][4] = -4.66796875;
+   fMax_1[1][4] = 5.01953125;
    fScal_1[1][4] = 2.0/(fMax_1[1][4]-fMin_1[1][4]);
    fOff_1[1][4] = fMin_1[1][4]*fScal_1[1][4]+1.;
-   fMin_1[2][4] = -999;
-   fMax_1[2][4] = 333.18157959;
+   fMin_1[2][4] = -4.66796875;
+   fMax_1[2][4] = 5.01953125;
    fScal_1[2][4] = 2.0/(fMax_1[2][4]-fMin_1[2][4]);
    fOff_1[2][4] = fMin_1[2][4]*fScal_1[2][4]+1.;
-   fMin_1[0][5] = -2.5;
-   fMax_1[0][5] = 2.5;
+   fMin_1[0][5] = 50.2703475952;
+   fMax_1[0][5] = 1335.79541016;
    fScal_1[0][5] = 2.0/(fMax_1[0][5]-fMin_1[0][5]);
    fOff_1[0][5] = fMin_1[0][5]*fScal_1[0][5]+1.;
-   fMin_1[1][5] = -2.5;
-   fMax_1[1][5] = 2.5;
+   fMin_1[1][5] = 50.0678367615;
+   fMax_1[1][5] = 1970.49926758;
    fScal_1[1][5] = 2.0/(fMax_1[1][5]-fMin_1[1][5]);
    fOff_1[1][5] = fMin_1[1][5]*fScal_1[1][5]+1.;
-   fMin_1[2][5] = -2.5;
-   fMax_1[2][5] = 2.5;
+   fMin_1[2][5] = 50.0678367615;
+   fMax_1[2][5] = 1970.49926758;
    fScal_1[2][5] = 2.0/(fMax_1[2][5]-fMin_1[2][5]);
    fOff_1[2][5] = fMin_1[2][5]*fScal_1[2][5]+1.;
-   fMin_1[0][6] = 19.4196376801;
-   fMax_1[0][6] = 1421.20336914;
+   fMin_1[0][6] = -1;
+   fMax_1[0][6] = 0.99951171875;
    fScal_1[0][6] = 2.0/(fMax_1[0][6]-fMin_1[0][6]);
    fOff_1[0][6] = fMin_1[0][6]*fScal_1[0][6]+1.;
-   fMin_1[1][6] = 19.4175376892;
-   fMax_1[1][6] = 2898.93847656;
+   fMin_1[1][6] = -1;
+   fMax_1[1][6] = 1;
    fScal_1[1][6] = 2.0/(fMax_1[1][6]-fMin_1[1][6]);
    fOff_1[1][6] = fMin_1[1][6]*fScal_1[1][6]+1.;
-   fMin_1[2][6] = 19.4175376892;
-   fMax_1[2][6] = 2898.93847656;
+   fMin_1[2][6] = -1;
+   fMax_1[2][6] = 1;
    fScal_1[2][6] = 2.0/(fMax_1[2][6]-fMin_1[2][6]);
    fOff_1[2][6] = fMin_1[2][6]*fScal_1[2][6]+1.;
-   fMin_1[0][7] = 0;
-   fMax_1[0][7] = 13;
+   fMin_1[0][7] = -4.830078125;
+   fMax_1[0][7] = 4.822265625;
    fScal_1[0][7] = 2.0/(fMax_1[0][7]-fMin_1[0][7]);
    fOff_1[0][7] = fMin_1[0][7]*fScal_1[0][7]+1.;
-   fMin_1[1][7] = 0;
-   fMax_1[1][7] = 18;
+   fMin_1[1][7] = -5.0771484375;
+   fMax_1[1][7] = 5.0888671875;
    fScal_1[1][7] = 2.0/(fMax_1[1][7]-fMin_1[1][7]);
    fOff_1[1][7] = fMin_1[1][7]*fScal_1[1][7]+1.;
-   fMin_1[2][7] = 0;
-   fMax_1[2][7] = 18;
+   fMin_1[2][7] = -5.0771484375;
+   fMax_1[2][7] = 5.0888671875;
    fScal_1[2][7] = 2.0/(fMax_1[2][7]-fMin_1[2][7]);
    fOff_1[2][7] = fMin_1[2][7]*fScal_1[2][7]+1.;
-   fMin_1[0][8] = 28.3287525177;
-   fMax_1[0][8] = 1906.36462402;
+   fMin_1[0][8] = 50.0087356567;
+   fMax_1[0][8] = 656.952087402;
    fScal_1[0][8] = 2.0/(fMax_1[0][8]-fMin_1[0][8]);
    fOff_1[0][8] = fMin_1[0][8]*fScal_1[0][8]+1.;
-   fMin_1[1][8] = 28.2939491272;
-   fMax_1[1][8] = 3001.70092773;
+   fMin_1[1][8] = 50.0047340393;
+   fMax_1[1][8] = 1175.74890137;
    fScal_1[1][8] = 2.0/(fMax_1[1][8]-fMin_1[1][8]);
    fOff_1[1][8] = fMin_1[1][8]*fScal_1[1][8]+1.;
-   fMin_1[2][8] = 28.2939491272;
-   fMax_1[2][8] = 3001.70092773;
+   fMin_1[2][8] = 50.0047340393;
+   fMax_1[2][8] = 1175.74890137;
    fScal_1[2][8] = 2.0/(fMax_1[2][8]-fMin_1[2][8]);
    fOff_1[2][8] = fMin_1[2][8]*fScal_1[2][8]+1.;
-   fMin_1[0][9] = 28.2947998047;
-   fMax_1[0][9] = 1657.06628418;
+   fMin_1[0][9] = -1;
+   fMax_1[0][9] = 0.99951171875;
    fScal_1[0][9] = 2.0/(fMax_1[0][9]-fMin_1[0][9]);
    fOff_1[0][9] = fMin_1[0][9]*fScal_1[0][9]+1.;
-   fMin_1[1][9] = 18.265625;
-   fMax_1[1][9] = 2466.53149414;
+   fMin_1[1][9] = -1;
+   fMax_1[1][9] = 1;
    fScal_1[1][9] = 2.0/(fMax_1[1][9]-fMin_1[1][9]);
    fOff_1[1][9] = fMin_1[1][9]*fScal_1[1][9]+1.;
-   fMin_1[2][9] = 18.265625;
-   fMax_1[2][9] = 2466.53149414;
+   fMin_1[2][9] = -1;
+   fMax_1[2][9] = 1;
    fScal_1[2][9] = 2.0/(fMax_1[2][9]-fMin_1[2][9]);
    fOff_1[2][9] = fMin_1[2][9]*fScal_1[2][9]+1.;
-   fMin_1[0][10] = 0.0416259765625;
-   fMax_1[0][10] = 10.0869140625;
+   fMin_1[0][10] = 2.50122070312;
+   fMax_1[0][10] = 8.2470703125;
    fScal_1[0][10] = 2.0/(fMax_1[0][10]-fMin_1[0][10]);
    fOff_1[0][10] = fMin_1[0][10]*fScal_1[0][10]+1.;
-   fMin_1[1][10] = 0.0011616833508;
-   fMax_1[1][10] = 11.8237304688;
+   fMin_1[1][10] = 2.50006103516;
+   fMax_1[1][10] = 9.2822265625;
    fScal_1[1][10] = 2.0/(fMax_1[1][10]-fMin_1[1][10]);
    fOff_1[1][10] = fMin_1[1][10]*fScal_1[1][10]+1.;
-   fMin_1[2][10] = 0.0011616833508;
-   fMax_1[2][10] = 11.8237304688;
+   fMin_1[2][10] = 2.50006103516;
+   fMax_1[2][10] = 9.2822265625;
    fScal_1[2][10] = 2.0/(fMax_1[2][10]-fMin_1[2][10]);
    fOff_1[2][10] = fMin_1[2][10]*fScal_1[2][10]+1.;
-   fMin_1[0][11] = -9.34646129608;
-   fMax_1[0][11] = 8.51383209229;
+   fMin_1[0][11] = -5.84900569916;
+   fMax_1[0][11] = 6.13960266113;
    fScal_1[0][11] = 2.0/(fMax_1[0][11]-fMin_1[0][11]);
    fOff_1[0][11] = fMin_1[0][11]*fScal_1[0][11]+1.;
-   fMin_1[1][11] = -10.714176178;
-   fMax_1[1][11] = 10.131029129;
+   fMin_1[1][11] = -7.53327178955;
+   fMax_1[1][11] = 7.36832284927;
    fScal_1[1][11] = 2.0/(fMax_1[1][11]-fMin_1[1][11]);
    fOff_1[1][11] = fMin_1[1][11]*fScal_1[1][11]+1.;
-   fMin_1[2][11] = -10.714176178;
-   fMax_1[2][11] = 10.131029129;
+   fMin_1[2][11] = -7.53327178955;
+   fMax_1[2][11] = 7.36832284927;
    fScal_1[2][11] = 2.0/(fMax_1[2][11]-fMin_1[2][11]);
    fOff_1[2][11] = fMin_1[2][11]*fScal_1[2][11]+1.;
-   fMin_1[0][12] = 500.005340576;
-   fMax_1[0][12] = 9651.17480469;
+   fMin_1[0][12] = 500.611633301;
+   fMax_1[0][12] = 7465.87548828;
    fScal_1[0][12] = 2.0/(fMax_1[0][12]-fMin_1[0][12]);
    fOff_1[0][12] = fMin_1[0][12]*fScal_1[0][12]+1.;
-   fMin_1[1][12] = 500.000091553;
-   fMax_1[1][12] = 14693.4345703;
+   fMin_1[1][12] = 500.026428223;
+   fMax_1[1][12] = 7649.34521484;
    fScal_1[1][12] = 2.0/(fMax_1[1][12]-fMin_1[1][12]);
    fOff_1[1][12] = fMin_1[1][12]*fScal_1[1][12]+1.;
-   fMin_1[2][12] = 500.000091553;
-   fMax_1[2][12] = 14693.4345703;
+   fMin_1[2][12] = 500.026428223;
+   fMax_1[2][12] = 7649.34521484;
    fScal_1[2][12] = 2.0/(fMax_1[2][12]-fMin_1[2][12]);
    fOff_1[2][12] = fMin_1[2][12]*fScal_1[2][12]+1.;
-   fMin_1[0][13] = -8.41670894623;
-   fMax_1[0][13] = 7.48051309586;
+   fMin_1[0][13] = -3.64942932129;
+   fMax_1[0][13] = 4.19094085693;
    fScal_1[0][13] = 2.0/(fMax_1[0][13]-fMin_1[0][13]);
    fOff_1[0][13] = fMin_1[0][13]*fScal_1[0][13]+1.;
-   fMin_1[1][13] = -9.3388299942;
-   fMax_1[1][13] = 9.18382453918;
+   fMin_1[1][13] = -4.53909301758;
+   fMax_1[1][13] = 4.37330627441;
    fScal_1[1][13] = 2.0/(fMax_1[1][13]-fMin_1[1][13]);
    fOff_1[1][13] = fMin_1[1][13]*fScal_1[1][13]+1.;
-   fMin_1[2][13] = -9.3388299942;
-   fMax_1[2][13] = 9.18382453918;
+   fMin_1[2][13] = -4.53909301758;
+   fMax_1[2][13] = 4.37330627441;
    fScal_1[2][13] = 2.0/(fMax_1[2][13]-fMin_1[2][13]);
    fOff_1[2][13] = fMin_1[2][13]*fScal_1[2][13]+1.;
-   fMin_1[0][14] = -6.53151035309;
-   fMax_1[0][14] = 7.02339982986;
+   fMin_1[0][14] = -4.21001291275;
+   fMax_1[0][14] = 4.69680309296;
    fScal_1[0][14] = 2.0/(fMax_1[0][14]-fMin_1[0][14]);
    fOff_1[0][14] = fMin_1[0][14]*fScal_1[0][14]+1.;
-   fMin_1[1][14] = -9.711561203;
-   fMax_1[1][14] = 9.07499504089;
+   fMin_1[1][14] = -6.87152099609;
+   fMax_1[1][14] = 6.03112888336;
    fScal_1[1][14] = 2.0/(fMax_1[1][14]-fMin_1[1][14]);
    fOff_1[1][14] = fMin_1[1][14]*fScal_1[1][14]+1.;
-   fMin_1[2][14] = -9.711561203;
-   fMax_1[2][14] = 9.07499504089;
+   fMin_1[2][14] = -6.87152099609;
+   fMax_1[2][14] = 6.03112888336;
    fScal_1[2][14] = 2.0/(fMax_1[2][14]-fMin_1[2][14]);
    fOff_1[2][14] = fMin_1[2][14]*fScal_1[2][14]+1.;
 }

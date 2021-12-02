@@ -142,7 +142,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    // Apply additional cuts on the signal and background samples (can be different)
    //   TCut mycuts = cleanNAN+more+OneLpt;// 
-   TCut mycuts = cleanNAN_qgid+cleanNAN_tau+full_wv_sr; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
+   TCut mycuts = cleanNAN_qgid+cleanNAN_tau+full_top_cr; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
    TCut mycutb = mycuts;//
 
    VbsReducedEvent vbsEvent;
@@ -155,7 +155,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
 // Selector - Surprise, surprise it selects things. Look at the vbsSamples.cc after you run the dsw script and copy the samples to the appropriate spot
 // This is just for ease of use when running the classification over different datasets
-int selector = 2016; // 0000 = old, 2016, 2017, 2018
+int selector = 2018; // 0000 = old, 2016, 2017, 2018
 
 //----
 
@@ -567,7 +567,7 @@ int selector = 2016; // 0000 = old, 2016, 2017, 2018
    /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
    /// to catch it and properly rename the ssAUCoutile name.
    stringstream ssAUCoutfile;
-    ssAUCoutfile << "ROC/" << "2016_test.txt"; // AUCoutfile
+    ssAUCoutfile << "ROC/" << "2018_top.txt"; // AUCoutfile
    std::ofstream AUCoutfile;
    AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
