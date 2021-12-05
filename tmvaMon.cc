@@ -2039,7 +2039,25 @@ Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_e
   
   return 0;
 }
+//======================================================================================================================
+// 
+void genPlots(TmvaAnl* anl, TCut cuts="", TString name="test"){
+  anl->setsvplots(1);
 
+  stringstream plot_name;
+  stringstream plot_title;
+  plot_title << g_lum << " fb^{-1} (13 TeV)";
+  std::string year2 = "1111";
+  if (year2 == "1111") {
+    year2 = "Run2";
+  } 
+
+  TDOMParser* parser = new TDOMParser();
+  parser->SetValidate(false);
+  parser->ParseFile("datasets/training_methods.xml");
+  auto* node = parser->GetXMLDocument()->GetRootNode();
+  
+}
 //======================================================================================================================
 // 
 void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
@@ -2055,7 +2073,6 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   std::cout << "year = " << year2 << std::endl;
   if (year2 == "1111") {
     year2 = "Run2";
-    std::cout << "inside if, year == " << year2 << std::endl;
   }
   // title: VBS (WV), 35.9fb^{-1}
 

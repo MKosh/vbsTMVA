@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<plots>
+    <BDT1 anl="anl" variable="BDT1" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.05" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="BDT" yTitle="Events/bin"/>
+    <Fisher anl="anl" variable="Fisher" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.05" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="Fisher" yTitle="Events/bin"/>
+    <DNN_GPU anl="anl" variable="DNN_GPU" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.05" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="DNN_GPU" yTitle="Events/bin"/>
+    <Likelihood anl="anl" variable="Likelihood" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.05" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="Likelihood" yTitle="Events/bin"/>
+    <MLPBFGS anl="anl" variable="MLPBFGS" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.05" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="MLPBFGS" yTitle="Events/bin"/>
+</plots>

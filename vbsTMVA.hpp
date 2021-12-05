@@ -2,10 +2,10 @@
 #define vbsTMVA_hpp
 ////////////////////////////////////////////////////////////////////////
 // $Id: vbsTMVA.hpp
-// 
+//
 // File:    vbsTMVA.hpp
-// Purpose: H->ZZ->4l analysis interface to TMVA 
-// (works with VBS4LeptonsAnalysisReduced trees)   
+// Purpose: H->ZZ->4l analysis interface to TMVA
+// (works with VBS4LeptonsAnalysisReduced trees)
 // Created: Nov 2017, Sergey Uzunyan (serguei@nicadd.niu.edu)
 ////////////////////////////////////////////////////////////////////////
 #include <unistd.h> //
@@ -16,9 +16,11 @@
 #include <sstream>
 #include <vector>
 #include <fstream>
+#include <iomanip>
 
-#include "TROOT.h"
+#include "RtypesCore.h"
 #include "TChain.h"
+#include "TROOT.h"
 #include "TEventList.h"
 #include "TFile.h"
 #include "TTree.h"
@@ -26,7 +28,7 @@
 #include "TObjString.h"
 #include "TSystem.h"
 
-#include "vbsDL.hpp" 
+#include "vbsDL.hpp"
 //
 //
 using namespace std;
@@ -51,7 +53,7 @@ const Float_t lum_run2 = 13710.0; //pb^-1
 TCut cut_sgl              ("cut_sgl",                 "classID==0");
 TCut cut_bkg              ("cut_bkg",                 "classID==1");
 TCut cut_data             ("cut_data",                "classID==3");
- 
+
 TCut cut_ewkWV            ("cut_ewkWV",               "(gid ==  11)");
 TCut cut_DiBosons         ("cut_DiBosons",            "(gid ==  12)");
 TCut cut_Wjets            ("cut_Wjets",               "(gid ==  13)");
@@ -61,9 +63,9 @@ TCut cut_TT               ("cut_TT",                  "(gid ==  15)");
 //Cuts
 //from MyControlPlots.C
 TCut cleanNAN             ("cleanNAN",                "(mass_lvj_type0_PuppiAK8>0)"); // Use this NAN cut for the old data
-TCut mVVgt0               ("mVVgt0",                  "(mass_lvj_type0_PuppiAK8>0)"); 
-TCut oneLepton            ("oneLepton",               "(lep2_pt<0)"); 
-TCut Lpt1gt50             ("Lpt1gt50",                "(lep1_pt>50)"); 
+TCut mVVgt0               ("mVVgt0",                  "(mass_lvj_type0_PuppiAK8>0)");
+TCut oneLepton            ("oneLepton",               "(lep2_pt<0)");
+TCut Lpt1gt50             ("Lpt1gt50",                "(lep1_pt>50)");
 TCut goodEleta            ("goodEleta",               "(type==1)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)");
 TCut badEleta             ("badEleta",                "(type==1)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)");
 TCut etaMu2p4             ("etaMu2p4",                "((type==0)&&(abs(l_eta1)<2.4))");
@@ -153,7 +155,7 @@ TCut leptest_wv           ("leptest_wv",             full_wv_sr+lep_eta_spike+le
 // Mark Cuts ---------------------------------------------------------------------------------------------------------------------------------
 
 
-//TCut cleanNAN_phi           ("cleanNAN_phi",     "(phi_type0>0&&phi_type2>0&&phi_type0<3.14&&phi_type2<3.14)"  ); 
+//TCut cleanNAN_phi           ("cleanNAN_phi",     "(phi_type0>0&&phi_type2>0&&phi_type0<3.14&&phi_type2<3.14)"  );
 TCut cleanNAN_phi           ("cleanNAN_phi",       "(!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))"  ); // was (!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))
 TCut wtot_old               ("wtot_old",           "35867.06*mcWeight*L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
 TCut wtotL1_old             ("wtotL1_old",         "L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
@@ -171,7 +173,7 @@ TCut OneLpt                 ("OneLpt",             "(l_pt2<0 && l_pt1>50 && (((t
 //TCut detajjVBF2             ("detajjVBF4",          "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>2.0)");
 
 //paper selections
-//TCut tmvasel                ("tmvasel",             cleanNAN+more+OneLpt  ); 
+//TCut tmvasel                ("tmvasel",             cleanNAN+more+OneLpt  );
 //TCut pfMETpuppi_m30e80      ("pfMETpuppi_m30e80",   "(((type==0)&&(pfMET_Corr>30)) || ((type==1)&&(pfMET_Corr>80)))");
 TCut pfMETpuppi_m50e80      ("pfMETpuppi_m50e80",  "(((type==0)&&(pfMET_Corr>50)) || ((type==1)&&(pfMET_Corr>80)))");
 
@@ -214,7 +216,7 @@ TCut ZeppWHlt3              ("ZeppWHlt3",          "((abs(ZeppenfeldWH)/abs(vbf_
 
 class Sample{
 private:
-  TString   _year;  
+  TString   _year;
   TString   _sname;
   TString   _gname;
   Float_t   _xsec;
@@ -225,9 +227,9 @@ private:
   Int_t     _nMCgen;        // total generated events
   Int_t     _nMCgenNeg;     // negative generated events (strange VBS anl thing)
   //
-  TTree*    _inpTree;          // total good events for scale calculation    
+  TTree*    _inpTree;          // total good events for scale calculation
   //Int_t     _ngen;          // total good events for scale calculation
-  Float_t   _ngen;    
+  Float_t   _ngen;
   Int_t     _nevents;       // events in tree
   TString   _reqlist;       // reqlist name
   Float_t   _sweight;       // _xsec/_ngen
@@ -268,7 +270,7 @@ private:
   Int_t     getScolor(){return _color;};
   Int_t     getLoadFlag(){return _loadFlag; };
   Float_t   getWeight(){return _sweight; };
-  TString   getYear(){return _year;}; 
+  TString   getYear(){return _year;};
   void      setInpTree(TTree* inpTree){
      _inpTree = inpTree;
      if (_inpTree){
@@ -278,9 +280,9 @@ private:
   };
   TTree*    getInpTree(){ return _inpTree; };
   Int_t     getNevents(){ return _nevents; };
-  void      Print(){ 
-    cout << "Sample:: Group/Name/LoadFlag/gid/sid/color/xsec/ngen/sweight = " << 
-      _gname << "/" << _sname  << "/" << 
+  void      Print(){
+    cout << "Sample:: Group/Name/LoadFlag/gid/sid/color/xsec/ngen/sweight = " <<
+      _gname << "/" << _sname  << "/" <<
       _loadFlag << "/" <<
       _gid  << "/" <<
       _sid  << "/" <<
@@ -297,12 +299,12 @@ private:
 //rqs_data.txt  rqs_gg2zz_bkg.lst  rqs_qcd_bkg.lst  rqs_signal.lst  rqs_tt_bkg.lst  rqs_wx_bkg.lst  rqs_ZZother_bkg.lst
 //
 typedef struct {
-  Float_t pt;           
+  Float_t pt;
   Float_t eta;
   Float_t phi;
   Float_t charge;
-  Float_t pfx;      
-  Float_t sip;        
+  Float_t pfx;
+  Float_t sip;
   Int_t   pdgid;
 } VbsLepton;
 
@@ -339,17 +341,17 @@ TObjArray* GetListOfBranches(TTree* tree){
   for( Int_t nb = 0; nb < brlist->GetEntries(); nb++){
     TBranch* br = (TBranch*)  brlist->At(nb);
 
-    //We assume only one leaf of the same name in a branch; else use 
+    //We assume only one leaf of the same name in a branch; else use
     // TObjArray* br_leaves = br->GetListOfLeaves();
     TLeaf* leaf = br->GetLeaf(br->GetName());
     //  cout << leaf->GetName() << "/" << leaf->GetTypeName() << endl;
   }
-    return brlist; 
+    return brlist;
 }
 
 //======================================================================================================================
 //
-void WriteAUCFile (Int_t n_BDT_trees, Int_t max_depth, Float_t ada_boost, Float_t min_node_size, TString randomized, 
+void WriteAUCFile (Int_t n_BDT_trees, Int_t max_depth, Float_t ada_boost, Float_t min_node_size, TString randomized,
                     TString myMethodList, TString cut_name, Int_t selector, TMVA::DataLoader* dataloader, TMVA::Factory* factory) {
   stringstream ss_AUC_out_file;
   ss_AUC_out_file << "ROC/" << std::to_string(selector) << "_" << cut_name << ".txt"; // AUCoutfile
@@ -373,11 +375,11 @@ void WriteAUCFile (Int_t n_BDT_trees, Int_t max_depth, Float_t ada_boost, Float_
 void SelectVbsVars(vector<string>& vbsVars, TObjArray* brlist){
   string  var_sig = "f_";
   for(int i = 0; i < brlist->GetEntries(); ++i) {
-    string brname = brlist->At(i)->GetName(); 
+    string brname = brlist->At(i)->GetName();
     if( brname.find(var_sig) != std::string::npos ){
       vbsVars.push_back(brname);
     }
-  } 
+  }
 }
 
 //======================================================================================================================
@@ -398,7 +400,7 @@ TTree* chain2tree(TString inpChainName, TString reqlist, TString combinedTreeNam
 }
 
 //======================================================================================================================
-//place holder to use a cut with clone 
+//place holder to use a cut with clone
 TTree* chain2tree(TString inpChainName,TCut cut, TString reqlist, TString combinedTreeName, TString combinedTreeTitle){
 //
   TChain* inpChain = getChain(inpChainName, reqlist);
@@ -417,7 +419,7 @@ TTree* chain2tree(TString inpChainName,TCut cut, TString reqlist, TString combin
 //======================================================================================================================
 //
 TTree* cutTree(TTree* bigTree,TCut& cut){
-  TEventList* elist = (TEventList*)gROOT->FindObject("elist"); 
+  TEventList* elist = (TEventList*)gROOT->FindObject("elist");
   if(elist){
     delete elist;
   }
@@ -427,10 +429,10 @@ TTree* cutTree(TTree* bigTree,TCut& cut){
   bigTree->SetEventList(elist);
  //
   TTree* smallTree= bigTree->CopyTree("");
-//  cout << "treeCut:: nevtOrig/nevtCut = " << 
-//           bigTree->GetEntries() << "/" << 
-//           smallTree->GetEntries() << 
-//           " , TCut = " <<  
+//  cout << "treeCut:: nevtOrig/nevtCut = " <<
+//           bigTree->GetEntries() << "/" <<
+//           smallTree->GetEntries() <<
+//           " , TCut = " <<
 //           cut <<
 
 //  endl;
@@ -442,7 +444,7 @@ TTree* cutTree(TTree* bigTree,TCut& cut){
 //
 TTree* getTree(TString treeName, TString fname) {
 //get TTree treeName from file  fname
-  TDirectory* dir = gDirectory;       // current dir                                                                        
+  TDirectory* dir = gDirectory;       // current dir
   TFile* f = gROOT->GetFile(fname);
   if (!f) f = new TFile(fname);
   else    f->cd();
@@ -451,15 +453,15 @@ TTree* getTree(TString treeName, TString fname) {
     return 0;
   }
   TTree* ftree  = (TTree*) gDirectory->Get(treeName);
-  cout<< "Total entries " <<  setw(32)  << fname << " is " << ftree->GetEntries() <<endl;                                       
-  dir->cd();     // back to starting dir                                                                                    
+  cout<< "Total entries " <<  std::setw(32)  << fname << " is " << ftree->GetEntries() <<endl;
+  dir->cd();     // back to starting dir
   return ftree;
 }
 
 //======================================================================================================================
 //
 void convertTrees(const char* treeName, const char* filelist) {
-//to modify a tree and withe it into a new file  
+//to modify a tree and withe it into a new file
 //
   ifstream f(filelist);
   if (!f.is_open()) {
@@ -471,7 +473,7 @@ void convertTrees(const char* treeName, const char* filelist) {
       if (strlen(fname) == 0 || fname[0] == '#') continue;
       TTree* current_tree = getTree(treeName,fname);
 	//  fixVbsTree(current_tree,fname);
-      cout<< "File/tree "  <<  fname << "/" <<  treeName << " , total events: " << current_tree->GetEntries() <<endl;                            
+      cout<< "File/tree "  <<  fname << "/" <<  treeName << " , total events: " << current_tree->GetEntries() <<endl;
     }
   }
 }
@@ -479,7 +481,7 @@ void convertTrees(const char* treeName, const char* filelist) {
 //======================================================================================================================
 //
 TChain* getChain2(TString treeName, TString filelist, TString combinedTreeName, TString combinedTreeTitle) {
-//creates chain for a tree in filelist 
+//creates chain for a tree in filelist
   TChain* chain = new TChain(treeName);
   ifstream f(filelist);
   cout << "Processing filelist " << filelist <<endl;
@@ -492,20 +494,20 @@ TChain* getChain2(TString treeName, TString filelist, TString combinedTreeName, 
   while (f.getline(fname,len)) {
     if (strlen(fname) == 0 || fname[0] == '#') continue;
       std::cout << "fname = " << fname << std::endl;
-      Int_t n = chain->Add(fname, -1);  // second parameter to ensure file exists                                             
+      Int_t n = chain->Add(fname, -1);  // second parameter to ensure file exists
       if (n == 0) {
         cout<< "getChain:ERROR:: while processing filelist " << filelist << ". File not found: " << fname <<endl;
         return 0;
       }
     }
-  cout<< "getChain: Tree "  << treeName << " , total events: " << chain->GetEntries() <<endl;                           
+  cout<< "getChain: Tree "  << treeName << " , total events: " << chain->GetEntries() <<endl;
   return chain;
 }
 
 //======================================================================================================================
 //
 TChain* getChain(TString treeName, TString filelist) {
-//creates chain for a tree in filelist 
+//creates chain for a tree in filelist
   TChain* chain = new TChain(treeName);
   ifstream f(filelist);
   cout << "Processing filelist " << filelist <<endl;
@@ -518,13 +520,13 @@ TChain* getChain(TString treeName, TString filelist) {
   while (f.getline(fname,len)) {
     if (strlen(fname) == 0 || fname[0] == '#') continue;
       std::cout << "fname = " << fname << std::endl;
-      Int_t n = chain->Add(fname, -1);  // second parameter to ensure file exists                                             
+      Int_t n = chain->Add(fname, -1);  // second parameter to ensure file exists
       if (n == 0) {
         cout<< "getChain:ERROR:: while processing filelist " << filelist << ". File not found: " << fname <<endl;
         return 0;
       }
     }
-  cout<< "getChain: Tree "  << treeName << " , total events: " << chain->GetEntries() <<endl;                           
+  cout<< "getChain: Tree "  << treeName << " , total events: " << chain->GetEntries() <<endl;
   return chain;
 }
 
@@ -534,18 +536,18 @@ void getStat(TTree* tree, const char* var, TCut& cut, Stat_t stats[4]){
   TH1::StatOverflows(kTRUE);
   //Stat_t stats[4]={0};
   tree->Draw(var,cut);
-  TH1F* hstat = (TH1F*)gROOT->FindObject("hstat"); 
+  TH1F* hstat = (TH1F*)gROOT->FindObject("hstat");
   if(hstat) hstat->Delete();
   hstat= (TH1F*)tree->GetHistogram()->Clone("hstat");
   hstat->GetStats(stats);
   cout << "Nevents = " << stats[0] << " +/- " <<  stats[1] << endl;
-  // 
+  //
 }
 
 //======================================================================================================================
 //
 Int_t getVbsReqStat(const char* filelist) {
-//creates chain for a tree in filelist 
+//creates chain for a tree in filelist
   ifstream f(filelist);
   if (!f.is_open()) {
     cout<< "getVbsReqStat:Input filelist " << filelist  << " not found: " <<endl;
@@ -561,9 +563,9 @@ Int_t getVbsReqStat(const char* filelist) {
   Float_t nNtpReqEvt_w2 = 0.0;
   while (f.getline(filename,len)) {
     if (strlen(filename) == 0 || filename[0] == '#') continue;
-      
+
     inpfile = TFile::Open(filename);
-    if (inpfile){ 
+    if (inpfile){
       TH1F* cutflow_w = (TH1F*) gROOT->FindObject("nEvent_4l_w");
       TH1F* cutflow   = (TH1F*) gROOT->FindObject("nEvent_4l");
       TTree* mtree  = (TTree*) gROOT->FindObject("VBS4LeptonsAnalysisReduced");
@@ -576,14 +578,14 @@ Int_t getVbsReqStat(const char* filelist) {
       cout<< "getVbsReqStat:ERROR:: while processing filelist " << filelist << ". File not found: " << filename <<endl;
     }
   }
-  cout<< "getVbsReqStat: reqlist "  <<  filelist << " , nevt_gen/nevt_gen_w: " << nInitReqEvt << "/" << nInitReqEvt_w <<endl;                            
-  cout<< "getVbsReqStat: reqlist "  <<  filelist << " , nevt_ntp = : " <<  nNtpReqEvt << "+-" << sqrt(nNtpReqEvt_w2) <<endl;                            
+  cout<< "getVbsReqStat: reqlist "  <<  filelist << " , nevt_gen/nevt_gen_w: " << nInitReqEvt << "/" << nInitReqEvt_w <<endl;
+  cout<< "getVbsReqStat: reqlist "  <<  filelist << " , nevt_ntp = : " <<  nNtpReqEvt << "+-" << sqrt(nNtpReqEvt_w2) <<endl;
   return nInitReqEvt;
 }
 
 //======================================================================================================================
-// 
-void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){         
+//
+void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
   addBranches_vbsReducedTree(groupTree,vbsEvent);
   arrange_vbsReducedTree(groupTree,vbsEvent);
 
@@ -598,20 +600,20 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
   if (vbsEvent.gid == 3) {
     for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
 	    groupTree->GetEntry(ievt);
-      bGroupID->Fill(); 
-      bSampleID->Fill(); 
+      bGroupID->Fill();
+      bSampleID->Fill();
       bMCweight->Fill();
       //if (ievt%1000 == 0) groupTree->AutoSave();
  	  }
   } else {
     for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
 	    groupTree->GetEntry(ievt);
-      bGroupID->Fill(); 
-      bSampleID->Fill(); 
-      bMCweight->Fill(); 
+      bGroupID->Fill();
+      bSampleID->Fill();
+      bMCweight->Fill();
  	  }
   }
 }
-//================================================  
+//================================================
 
 #endif

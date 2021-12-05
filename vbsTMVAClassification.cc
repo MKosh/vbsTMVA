@@ -142,7 +142,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    // Apply additional cuts on the signal and background samples (can be different)
    //   TCut mycuts = cleanNAN+more+OneLpt;// 
-   TCut mycuts = cleanNAN_qgid+cleanNAN_tau+full_top_cr; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
+   TCut mycuts = cleanNAN_qgid+cleanNAN_tau;//+full_top_cr; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
    TCut mycutb = mycuts;//
 
    VbsReducedEvent vbsEvent;
@@ -158,43 +158,6 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 int selector = 2018; // 0000 = old, 2016, 2017, 2018
 
 //----
-
-
-
-   
-   //Signals
-   for (UInt_t ns=0; ns<sglSamples.size();ns++){
-      cout << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << endl;
-
-      if ( sglSamples[ns]->getLoadFlag()){ 
-        // cout << "register  "  << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << " signal samples" << endl;
-
-         sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
-
-         if( sglSamples[ns]->getInpTree() ){
-            fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]); 
-         }
-         cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << " signal events " <<   sglSamples[ns]->getNevents() << endl;
-         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
-      }
-   }
-
-   //Backgrounds
-   for (UInt_t ns=0; ns<bkgSamples.size();ns++){
-     cout << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << endl;
-
-      if ( bkgSamples[ns]->getLoadFlag()){ 
-         //  cout << "register  "  << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << " background  samples" << endl;
-
-         bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
-
-         if( bkgSamples[ns]->getInpTree() ){   
-            fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]); 
-         }
-         cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << " background events " <<   bkgSamples[ns]->getNevents() << endl;
-         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
-      }
-   }
 
    /* Two options
    *  Put everything up until the comment below that says "Here" above the signal and background loops
@@ -233,13 +196,50 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
    }
    // Here
 
+   
+   //Signals
+   for (UInt_t ns=0; ns<sglSamples.size();ns++){
+      cout << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << endl;
+
+      if ( sglSamples[ns]->getLoadFlag()){ 
+        // cout << "register  "  << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << " signal samples" << endl;
+
+         sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
+
+         if( sglSamples[ns]->getInpTree() ){
+            fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]); 
+         }
+         cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << " signal events " <<   sglSamples[ns]->getNevents() << endl;
+         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
+      }
+   }
+
+   //Backgrounds
+   for (UInt_t ns=0; ns<bkgSamples.size();ns++){
+     cout << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << endl;
+
+      if ( bkgSamples[ns]->getLoadFlag()){ 
+         //  cout << "register  "  << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << " background  samples" << endl;
+
+         bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
+
+         if( bkgSamples[ns]->getInpTree() ){   
+            fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]); 
+         }
+         cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << " background events " <<   bkgSamples[ns]->getNevents() << endl;
+         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
+      }
+   }
+
+
+
    gDirectory->Delete("Events;*");
 // //----
 
 
    //
    TMVA::Factory* factory = new TMVA::Factory( "TMVAClassification", outputFile,
-                                               "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification" ); //I;D;P;G,D
+                                               "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P:AnalysisType=Classification" ); //I;D;P;G,D
 
    TMVA::DataLoader* dataloader=new TMVA::DataLoader(sname);
 
@@ -567,7 +567,7 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
    /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
    /// to catch it and properly rename the ssAUCoutile name.
    stringstream ssAUCoutfile;
-    ssAUCoutfile << "ROC/" << "2018_top.txt"; // AUCoutfile
+    ssAUCoutfile << "ROC/" << "Run2_Full.txt"; // AUCoutfile
    std::ofstream AUCoutfile;
    AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
