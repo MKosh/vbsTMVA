@@ -45,6 +45,8 @@
 #include "TCut.h"
 #include "TMath.h"
 #include "TGraphErrors.h"
+#include "TGraphAsymmErrors.h"
+#include "TRatioPlot.h"
 #include "TGaxis.h"
 #include "TPostScript.h"
 #include "TDOMParser.h"
