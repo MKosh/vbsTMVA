@@ -31,6 +31,8 @@
  *    root -l ./TMVAGui.cc                                                         *
  *                                                                                *
  **********************************************************************************/
+#include <memory>
+
 #include "vector"
 #include "vbsTMVA.hpp"
 #include "vbsSamples.hpp"
@@ -142,7 +144,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    // Apply additional cuts on the signal and background samples (can be different)
    //   TCut mycuts = cleanNAN+more+OneLpt;// 
-   TCut mycuts = cleanNAN_qgid+cleanNAN_tau;//+full_top_cr; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
+   TCut mycuts = cleanNAN_qgid+cleanNAN_tau+full_wv_sr; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
    TCut mycutb = mycuts;//
 
    VbsReducedEvent vbsEvent;
@@ -159,44 +161,6 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
 
 //----
 
-   /* Two options
-   *  Put everything up until the comment below that says "Here" above the signal and background loops
-   *  That uses less RAM, but makes the final output file sizes larger
-   *  Conversely, if the file declaration and the Data loop are below the other loops then 
-   *  the final files will be smaller, but more RAM will be used during the training, potentially
-   *  too much and crashes could occur.
-   */
-   // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-   stringstream ssofname;
-   //TString folder_name = ssofname.str();
-   ssofname << sname << "_SBtmva.root";
-
-   TString outfileName( ssofname.str().c_str() );
-   TFile* outputFile = TFile::Open( outfileName, "RECREATE" );
-   //outputFile->mkdir(folder_name);
-
-   //TFile* temp_file = TFile::Open("Tempfile.root", "RECREATE");
-   // Events old name was otree
-
-   //Data
-   for (UInt_t ns=0; ns < 1; ns++){ // was ns < dataSamples.size();
-      cout << dataSamples[ns]->getGName() << "--" << dataSamples[ns]->getSName() << endl;
-
-      if ( dataSamples[ns]->getLoadFlag()){ 
-         cout << "register "  << dataSamples[ns]->getReqList() << " data samples" << endl;
-
-         dataSamples[ns]->setInpTree( chain2tree("Events", dataSamples[ns]->getReqList(), "DataTree", "DataTree") );
-
-         if( dataSamples[ns]->getInpTree() ){
-            fillBranch( dataSamples[ns]->getInpTree(), vbsEvent, dataSamples[ns]); 
-         }
-         cout << "TMVAClassification:: Total " << dataSamples[ns]->getSName() << " data events " <<   dataSamples[ns]->getNevents() << endl;
-         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
-      }
-   }
-   // Here
-
-   
    //Signals
    for (UInt_t ns=0; ns<sglSamples.size();ns++){
       cout << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << endl;
@@ -231,8 +195,61 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
       }
    }
 
+   /* Two options
+   *  Put everything up until the comment below that says "Here" above the signal and background loops
+   *  That uses less RAM, but makes the final output file sizes larger
+   *  Conversely, if the file declaration and the Data loop are below the other loops then 
+   *  the final files will be smaller, but more RAM will be used during the training, potentially
+   *  too much and crashes could occur.
+   */
+   // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
+   stringstream ssofname;
+   ssofname << sname << "_SBtmva.root";
 
+   TString outfileName( ssofname.str().c_str() );
+   TFile* outputFile = TFile::Open( outfileName, "RECREATE" );
 
+   //Data
+   TChain* data_chain = new TChain("Events");
+   std::vector<TString> files;
+   for (UInt_t ns=0; ns < dataSamples.size(); ns++){ // was ns < dataSamples.size();
+      cout << dataSamples[ns]->getGName() << "--" << dataSamples[ns]->getSName() << endl;
+
+      if ( dataSamples[ns]->getLoadFlag()){ 
+         cout << "register "  << dataSamples[ns]->getReqList() << " data samples" << endl;
+         files.push_back(getFileNames(dataSamples[ns]));
+      }
+   }
+
+   for (UInt_t ns=0; ns < dataSamples.size(); ns++){ 
+      std::unique_ptr<TFile> temp_file(TFile::Open(files[ns]));
+      auto tree = temp_file->Get<TTree>("Events");
+      dataSamples[ns]->setInpTree(tree);  
+      fillBranch( dataSamples[ns]->getInpTree(), vbsEvent, dataSamples[ns]);
+      std::cout << "TMVAClassification:: Total " << dataSamples[ns]->getSName() << " data events " << dataSamples[ns]->getNevents() << std::endl;
+      std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
+   }
+
+   for (UInt_t nf=0; nf<files.size(); ++nf){
+      std::cout << "Adding file " << files[nf] << " to data chain" << std::endl;
+      Int_t n = data_chain->Add(files[nf], -1);  // second parameter to ensure file exists
+      if (n == 0) {
+         cout<< "getChain:ERROR:: while processing filelist. " << files[nf] << " : file not found" <<endl;
+         return 0;
+      }
+   }
+
+   setChainBranches(data_chain);
+   TTree* combinedTree(0);
+   if(data_chain->GetEntries()){
+     combinedTree = (TTree*)  data_chain->CloneTree();
+     combinedTree->SetTitle("DataTree");
+     combinedTree->SetName("DataTree");
+     delete data_chain;
+   }
+
+   // Here
+   //outputFile->cd();
    gDirectory->Delete("Events;*");
 // //----
 
@@ -567,7 +584,7 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
    /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
    /// to catch it and properly rename the ssAUCoutile name.
    stringstream ssAUCoutfile;
-    ssAUCoutfile << "ROC/" << "Run2_Full.txt"; // AUCoutfile
+    ssAUCoutfile << "ROC/" << "Run2_test.txt"; // AUCoutfile
    std::ofstream AUCoutfile;
    AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
@@ -586,8 +603,8 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
 
    cout << "Clone dataTree" << endl;
    //dataSamples[0]->getInpTree()->CloneTree->Write();
-   dataSamples[0]->getInpTree()->Write();
-
+   //dataSamples[0]->getInpTree()->Write();
+   combinedTree->Write();
  
    // Save the output
    outputFile->Close();

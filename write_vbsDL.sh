@@ -39,6 +39,7 @@ touch $macroFile
 
 echo "Creating $macroFile"
 cat >> $macroFile << EOF
+{
     #include <fstream>
     #include <vector>
     #include <string>
@@ -80,6 +81,7 @@ cat >> $macroFile << EOF
     }
     
     ofs.close();
+}
 EOF
 
 # --------------------------------------------------------- End - Create the write_list C++ macro - End -------------------------------------------------------------------
@@ -107,7 +109,7 @@ if [ $2 == "Boosted" ]; then
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi"
     plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "Boosted2" ]; then
     TMVAVARS="bos_PuppiAK8_tau2tau1 vbf_m lep1_eta nJet30f vbf_deta vbf1_AK4_pt zeppLep vbf2_AK4_qgid vbf1_AK4_qgid vbf2_AK4_eta vbf1_AK4_eta vbf2_AK4_pt zeppHad vbf_eta bos_PuppiAK8_m_sd0_corr"
@@ -116,7 +118,7 @@ elif [ $2 == "Boosted2" ]; then
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt vbf_eta"
     plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "set2" ]; then
     TMVAVARS="lep1_eta lep1_pt nJet30f vbf1_AK4_pt vbf2_AK4_pt bos_j1_AK4_pt bos_j2_AK4_pt vbf_m bos_AK4AK4_m vbf_deta vbf_eta bos_AK4AK4_eta zeppHad zeppLep bosCent"
@@ -125,7 +127,7 @@ elif [ $2 == "set2" ]; then
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt"
     plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "Resolved" ]; then 
     TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0 vbf1_AK4_axis2 bos_AK4AK4_m bos_AK4AK4_pt bos_AK4AK4_eta bos_AK4AK4_phi"
@@ -133,7 +135,7 @@ elif [ $2 == "Resolved" ]; then
     plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_AK4AK4_m bos_AK4AK4_phi bos_AK4AK4_pt bos_AK4AK4_eta"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_AK4AK4_m bos_AK4AK4_phi bos_AK4AK4_pt bos_AK4AK4_eta year lumin"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "set4" ]; then 
     TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0"
@@ -141,7 +143,7 @@ elif [ $2 == "set4" ]; then
     plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt year lumin"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "old" ]; then
     # These are the variables for the old ntuples
@@ -181,6 +183,8 @@ typedef struct {
    Int_t           gid;                  // - group  ID
    Int_t           sid;                  // - sample ID
    Float_t         mcWeight;             //== xsect/ngen 
+   Float_t         lumin;
+   Int_t           year;
 //
    // Declaration of leaf types
 
@@ -199,6 +203,8 @@ void addBranches_vbsReducedTree(TTree* vbsTree, VbsReducedEvent& vbsEvent){
    vbsTree->Branch( "gid",                &vbsEvent.gid,              "gid/I");
    vbsTree->Branch( "sid",                &vbsEvent.sid,              "sid/I");
    vbsTree->Branch( "mcWeight",           &vbsEvent.mcWeight,         "mcWeight/F");
+   vbsTree->Branch( "lumin",              &vbsEvent.lumin,            "lumin/F");
+   vbsTree->Branch( "year",               &vbsEvent.year,             "year/I");
   //}
 }
 //=================================================================================== 
@@ -211,6 +217,8 @@ void arrange_vbsReducedTree(TTree* vbsTree, VbsReducedEvent& vbsEvent){
     vbsTree->SetBranchAddress( "gid",                                      &vbsEvent.gid    );
     vbsTree->SetBranchAddress( "sid",                                      &vbsEvent.sid    );
     vbsTree->SetBranchAddress( "mcWeight",                                 &vbsEvent.mcWeight );
+    vbsTree->SetBranchAddress( "lumin",                                    &vbsEvent.lumin);
+    vbsTree->SetBranchAddress( "year",                                     &vbsEvent.year);
     cout << " Done Set extra branches" << endl;
 EOF
 

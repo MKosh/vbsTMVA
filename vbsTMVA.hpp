@@ -27,8 +27,10 @@
 #include "TString.h"
 #include "TObjString.h"
 #include "TSystem.h"
+#include "TTree.h"
 
 #include "vbsDL.hpp"
+
 //
 //
 using namespace std;
@@ -146,7 +148,7 @@ TCut wtot_2018            ("wtot_2018",               "59740*genWeight*mcWeight*
 TCut wtot_run2            ("wtot_run2",               "137100.0*genWeight*mcWeight*L1PFWeight*puWeight");
 TCut wtotL1               ("wtotL1",                  "L1PFWeight*genWeight*puWeight");
 TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
-
+TCut norm 	              ("norm",                    "(year==2016)*(lumin*genWeight*mcWeight*L1PFWeight*puWeight)+(year==2017)*(lumin*genWeight*mcWeight*L1PFWeight*puWeight)+(year==2018)*(lumin*genWeight*mcWeight*L1PFWeight*puWeight)");
 
 
 TCut leptest_vjets        ("leptest_vjets",          full_vjets_cr+lep_eta_spike+lep_phi_spike);
@@ -160,7 +162,7 @@ TCut cleanNAN_phi           ("cleanNAN_phi",       "(!TMath::IsNaN(phi_type0) &&
 TCut wtot_old               ("wtot_old",           "35867.06*mcWeight*L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
 TCut wtotL1_old             ("wtotL1_old",         "L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
 
-TCut more	                ("more",	            "(type==0||type==1)");
+TCut more	                  ("more",	            "(type==0||type==1)");
 TCut OneLpt                 ("OneLpt",             "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) || ((type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))))" );
 
 //ramanpreet
@@ -216,10 +218,12 @@ TCut ZeppWHlt3              ("ZeppWHlt3",          "((abs(ZeppenfeldWH)/abs(vbf_
 
 class Sample{
 private:
-  TString   _year;
+  Int_t   _year;
   TString   _sname;
   TString   _gname;
+  TString   _year_str;
   Float_t   _xsec;
+  Float_t   _lumin;
   Int_t     _loadFlag;
   Int_t     _gid;
   Int_t     _sid;
@@ -236,18 +240,23 @@ private:
 
  public:
 
-  Sample(const char* year, const char* gname, const char* sname, Float_t xsec, Int_t loadFlag, Int_t gid, Int_t sid, Int_t color, Float_t  nMCgen,  Float_t nMCgenNeg ){
+  Sample(Int_t year, Float_t lumin, const char* gname, const char* sname, Float_t xsec, Int_t loadFlag, Int_t gid, Int_t sid, Int_t color, Float_t  nMCgen,  Float_t nMCgenNeg ){
+    _lumin = lumin;
     _year=year;
+    TString year_str = std::to_string(_year);
+    _year_str = year_str;
+    //auto year_char = year_str.c_str();
     _sname=sname;
     _gname=gname;
     if(gid == gid_data){
-      _reqlist="reqlists/rqs_data--Data_data.lst";
+      _reqlist="reqlists/rqs_"+year_str+"--"+_gname+"--"+_sname+"_data.lst";
+ //     _reqlist="reqlists/rqs_data--Data_data.lst";
  //   }else if (gid == gid_data && std::string(year) != "1111"){
  //     _reqlist="reqlists/rqs_"+_year+"--"+_gname+"--"+_sname+"_data.lst";
     }else if (gid >9) {
-      _reqlist="reqlists/rqs_"+_year+"--"+_gname+"--"+_sname+"_bkg.lst";
+      _reqlist="reqlists/rqs_"+year_str+"--"+_gname+"--"+_sname+"_bkg.lst";
     }else{
-      _reqlist="reqlists/rqs_"+_year+"--"+_gname+"--"+_sname+"_sgl.lst";
+      _reqlist="reqlists/rqs_"+year_str+"--"+_gname+"--"+_sname+"_sgl.lst";
     }
     _loadFlag  = loadFlag;
     _xsec      = xsec;
@@ -260,6 +269,7 @@ private:
     _nevents   = 0;
     _inpTree   = NULL;
   };
+  Float_t   getLumin(){return _lumin; };
   TString   getSName(){return _sname;  };
   TString   getGName(){return _gname;  };
   TString   getReqList(){return _reqlist;};
@@ -270,7 +280,8 @@ private:
   Int_t     getScolor(){return _color;};
   Int_t     getLoadFlag(){return _loadFlag; };
   Float_t   getWeight(){return _sweight; };
-  TString   getYear(){return _year;};
+  Int_t   getYear(){return _year; };
+  TString getYearString(){return _year_str; };
   void      setInpTree(TTree* inpTree){
      _inpTree = inpTree;
      if (_inpTree){
@@ -281,7 +292,7 @@ private:
   TTree*    getInpTree(){ return _inpTree; };
   Int_t     getNevents(){ return _nevents; };
   void      Print(){
-    cout << "Sample:: Group/Name/LoadFlag/gid/sid/color/xsec/ngen/sweight = " <<
+    std::cout << "Sample:: Group/Name/LoadFlag/gid/sid/color/xsec/ngen/sweight = " <<
       _gname << "/" << _sname  << "/" <<
       _loadFlag << "/" <<
       _gid  << "/" <<
@@ -310,7 +321,7 @@ typedef struct {
 
 
 //Local functions
-//void fillBranch1( TBranch* bGroupID, TBranch* bjet3_highpt_pt,  TBranch* bjet3_highpt_eta, TBranch* bjet3_highpt_phi,   TTree* groupTree, Int_t groupID,  const char* groupName);
+
 //======================================================================================================================
 //
 void fillBranch(TTree* groupTree,VbsReducedEvent& vbsEvent, Int_t groupID,  const char* groupName);
@@ -418,6 +429,29 @@ TTree* chain2tree(TString inpChainName,TCut cut, TString reqlist, TString combin
 
 //======================================================================================================================
 //
+TString getFileNames(Sample* data_sample) {
+  TString reqlist = data_sample->getReqList();
+  ifstream f(reqlist);
+  std::vector<TString> file_names;
+  std::cout << "Processing filelist " << reqlist << std::endl;
+
+  if (!f.is_open()) {
+    std::cout << "getFileName: File not found: " << reqlist << std::endl;
+    exit(0);
+  }
+
+  char fname[255] = "0";
+  Int_t len = sizeof(fname);
+  while (f.getline(fname,len)) {
+    if (strlen(fname) == 0) continue;
+    std::cout << "fname = " << fname << std::endl;
+    //file_names.push_back(fname);
+  }
+  return fname;
+}
+
+//======================================================================================================================
+//
 TTree* cutTree(TTree* bigTree,TCut& cut){
   TEventList* elist = (TEventList*)gROOT->FindObject("elist");
   if(elist){
@@ -476,32 +510,6 @@ void convertTrees(const char* treeName, const char* filelist) {
       cout<< "File/tree "  <<  fname << "/" <<  treeName << " , total events: " << current_tree->GetEntries() <<endl;
     }
   }
-}
-
-//======================================================================================================================
-//
-TChain* getChain2(TString treeName, TString filelist, TString combinedTreeName, TString combinedTreeTitle) {
-//creates chain for a tree in filelist
-  TChain* chain = new TChain(treeName);
-  ifstream f(filelist);
-  cout << "Processing filelist " << filelist <<endl;
-  if (!f.is_open()) {
-    cout<< "getChain: File not found: " << filelist <<endl;
-    exit(0);
-  }
-  char fname[255]="0";
-  Int_t len = sizeof(fname);
-  while (f.getline(fname,len)) {
-    if (strlen(fname) == 0 || fname[0] == '#') continue;
-      std::cout << "fname = " << fname << std::endl;
-      Int_t n = chain->Add(fname, -1);  // second parameter to ensure file exists
-      if (n == 0) {
-        cout<< "getChain:ERROR:: while processing filelist " << filelist << ". File not found: " << fname <<endl;
-        return 0;
-      }
-    }
-  cout<< "getChain: Tree "  << treeName << " , total events: " << chain->GetEntries() <<endl;
-  return chain;
 }
 
 //======================================================================================================================
@@ -589,13 +597,17 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
   addBranches_vbsReducedTree(groupTree,vbsEvent);
   arrange_vbsReducedTree(groupTree,vbsEvent);
 
-  TBranch* bGroupID  = groupTree->GetBranch( "gid");
-  TBranch* bSampleID = groupTree->GetBranch( "sid");
-  TBranch* bMCweight = groupTree->GetBranch( "mcWeight");
+  TBranch* bGroupID  = groupTree->GetBranch("gid");
+  TBranch* bSampleID = groupTree->GetBranch("sid");
+  TBranch* bMCweight = groupTree->GetBranch("mcWeight");
+  TBranch* bYear     = groupTree->GetBranch("year");
+  TBranch* bLumin    = groupTree->GetBranch("lumin");
 
   vbsEvent.gid = sample->getGid();
   vbsEvent.sid = sample->getSid();
   vbsEvent.mcWeight = sample->getWeight();
+  vbsEvent.year = sample->getYear();
+  vbsEvent.lumin = sample->getLumin();
 
   if (vbsEvent.gid == 3) {
     for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
@@ -603,6 +615,8 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
       bGroupID->Fill();
       bSampleID->Fill();
       bMCweight->Fill();
+      bYear->Fill();
+      bLumin->Fill();
       //if (ievt%1000 == 0) groupTree->AutoSave();
  	  }
   } else {
@@ -611,6 +625,8 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
       bGroupID->Fill();
       bSampleID->Fill();
       bMCweight->Fill();
+      bYear->Fill();
+      bLumin->Fill();
  	  }
   }
 }
