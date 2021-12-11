@@ -442,12 +442,14 @@ TString getFileNames(Sample* data_sample) {
 
   char fname[255] = "0";
   Int_t len = sizeof(fname);
+  TString temp;
   while (f.getline(fname,len)) {
     if (strlen(fname) == 0) continue;
     std::cout << "fname = " << fname << std::endl;
     //file_names.push_back(fname);
+    temp = fname;
   }
-  return fname;
+  return temp;
 }
 
 //======================================================================================================================
@@ -602,13 +604,13 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
   TBranch* bMCweight = groupTree->GetBranch("mcWeight");
   TBranch* bYear     = groupTree->GetBranch("year");
   TBranch* bLumin    = groupTree->GetBranch("lumin");
-
+  std::cout << "got branches" << std::endl;
   vbsEvent.gid = sample->getGid();
   vbsEvent.sid = sample->getSid();
   vbsEvent.mcWeight = sample->getWeight();
   vbsEvent.year = sample->getYear();
   vbsEvent.lumin = sample->getLumin();
-
+  std::cout << "got sample numbers" << std::endl;
   if (vbsEvent.gid == 3) {
     for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
 	    groupTree->GetEntry(ievt);
@@ -617,7 +619,7 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
       bMCweight->Fill();
       bYear->Fill();
       bLumin->Fill();
-      //if (ievt%1000 == 0) groupTree->AutoSave();
+      if (ievt%1000 == 0) std::cout << "processing event: " << ievt << std::endl;
  	  }
   } else {
     for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {

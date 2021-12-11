@@ -161,6 +161,63 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
 
 //----
 
+   /* Two options
+   *  Put everything up until the comment below that says "Here" above the signal and background loops
+   *  That uses less RAM, but makes the final output file sizes larger
+   *  Conversely, if the file declaration and the Data loop are below the other loops then 
+   *  the final files will be smaller, but more RAM will be used during the training, potentially
+   *  too much and crashes could occur.
+   */
+   // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
+   stringstream ssofname;
+   ssofname << sname << "_SBtmva.root";
+
+   TString outfileName( ssofname.str().c_str() );
+   TFile* outputFile = TFile::Open( outfileName, "RECREATE" );
+
+   //Data
+   TChain* data_chain = new TChain("Events");
+   std::vector<TString> files;
+   for (UInt_t ns=0; ns < dataSamples.size(); ns++){ // was ns < dataSamples.size();
+      cout << dataSamples[ns]->getGName() << "--" << dataSamples[ns]->getSName() << endl;
+
+      if ( dataSamples[ns]->getLoadFlag()){ 
+         cout << "register "  << dataSamples[ns]->getReqList() << " data samples" << endl;
+         files.push_back(getFileNames(dataSamples[ns]));
+      }
+   }
+
+   for (UInt_t ns=0; ns < dataSamples.size(); ns++){ 
+      std::cout << " Opening file: " << files[ns] << std::endl;
+      TFile* temp_file = TFile::Open(files[ns]);
+      TTree* tree = temp_file->Get<TTree>("Events");
+      dataSamples[ns]->setInpTree(tree);
+      outputFile->cd();
+      fillBranch( dataSamples[ns]->getInpTree(), vbsEvent, dataSamples[ns]);
+      std::cout << "TMVAClassification:: Total " << dataSamples[ns]->getSName() << " data events " << dataSamples[ns]->getNevents() << std::endl;
+      std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
+   }
+
+   for (UInt_t nf=0; nf<files.size(); ++nf){
+      std::cout << "Adding file " << files[nf] << " to data chain" << std::endl;
+      Int_t n = data_chain->Add(files[nf], -1);  // second parameter to ensure file exists
+      if (n == 0) {
+         cout<< "getChain:ERROR:: while processing filelist. " << files[nf] << " : file not found" <<endl;
+         return 0;
+      }
+   }
+
+   setChainBranches(data_chain);
+   TTree* combinedTree(0);
+   if(data_chain->GetEntries()){
+     combinedTree = (TTree*)  data_chain->CloneTree();
+     combinedTree->SetTitle("DataTree");
+     combinedTree->SetName("DataTree");
+     delete data_chain;
+   }
+
+   // Here
+
    //Signals
    for (UInt_t ns=0; ns<sglSamples.size();ns++){
       cout << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << endl;
@@ -195,60 +252,8 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
       }
    }
 
-   /* Two options
-   *  Put everything up until the comment below that says "Here" above the signal and background loops
-   *  That uses less RAM, but makes the final output file sizes larger
-   *  Conversely, if the file declaration and the Data loop are below the other loops then 
-   *  the final files will be smaller, but more RAM will be used during the training, potentially
-   *  too much and crashes could occur.
-   */
-   // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-   stringstream ssofname;
-   ssofname << sname << "_SBtmva.root";
 
-   TString outfileName( ssofname.str().c_str() );
-   TFile* outputFile = TFile::Open( outfileName, "RECREATE" );
 
-   //Data
-   TChain* data_chain = new TChain("Events");
-   std::vector<TString> files;
-   for (UInt_t ns=0; ns < dataSamples.size(); ns++){ // was ns < dataSamples.size();
-      cout << dataSamples[ns]->getGName() << "--" << dataSamples[ns]->getSName() << endl;
-
-      if ( dataSamples[ns]->getLoadFlag()){ 
-         cout << "register "  << dataSamples[ns]->getReqList() << " data samples" << endl;
-         files.push_back(getFileNames(dataSamples[ns]));
-      }
-   }
-
-   for (UInt_t ns=0; ns < dataSamples.size(); ns++){ 
-      std::unique_ptr<TFile> temp_file(TFile::Open(files[ns]));
-      auto tree = temp_file->Get<TTree>("Events");
-      dataSamples[ns]->setInpTree(tree);  
-      fillBranch( dataSamples[ns]->getInpTree(), vbsEvent, dataSamples[ns]);
-      std::cout << "TMVAClassification:: Total " << dataSamples[ns]->getSName() << " data events " << dataSamples[ns]->getNevents() << std::endl;
-      std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
-   }
-
-   for (UInt_t nf=0; nf<files.size(); ++nf){
-      std::cout << "Adding file " << files[nf] << " to data chain" << std::endl;
-      Int_t n = data_chain->Add(files[nf], -1);  // second parameter to ensure file exists
-      if (n == 0) {
-         cout<< "getChain:ERROR:: while processing filelist. " << files[nf] << " : file not found" <<endl;
-         return 0;
-      }
-   }
-
-   setChainBranches(data_chain);
-   TTree* combinedTree(0);
-   if(data_chain->GetEntries()){
-     combinedTree = (TTree*)  data_chain->CloneTree();
-     combinedTree->SetTitle("DataTree");
-     combinedTree->SetName("DataTree");
-     delete data_chain;
-   }
-
-   // Here
    //outputFile->cd();
    gDirectory->Delete("Events;*");
 // //----
