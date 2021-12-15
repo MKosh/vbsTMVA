@@ -148,8 +148,8 @@ TCut wtot_2018            ("wtot_2018",               "59740*genWeight*mcWeight*
 TCut wtot_run2            ("wtot_run2",               "137100.0*genWeight*mcWeight*L1PFWeight*puWeight");
 TCut wtotL1               ("wtotL1",                  "L1PFWeight*genWeight*puWeight");
 TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
-TCut norm 	              ("norm",                    "(year==2016)*(lumin*genWeight*mcWeight*L1PFWeight*puWeight)+(year==2017)*(lumin*genWeight*mcWeight*L1PFWeight*puWeight)+(year==2018)*(lumin*genWeight*mcWeight*L1PFWeight*puWeight)");
-
+TCut norm_hist 	          ("norm_hist",                    "((year==2016)*(lumin*genWeight*mcWeight*L1PFWeight*puWeight))+((year==2017)*(lumin*genWeight*mcWeight*L1PFWeight*puWeight))+((year==2018)*(lumin*genWeight*mcWeight*L1PFWeight*puWeight))");
+TCut dummy_cut      ("dummy_cut",     "");
 
 TCut leptest_vjets        ("leptest_vjets",          full_vjets_cr+lep_eta_spike+lep_phi_spike);
 TCut leptest_top          ("leptest_top",            full_top_cr+lep_eta_spike+lep_phi_spike);
@@ -245,14 +245,12 @@ private:
     _year=year;
     TString year_str = std::to_string(_year);
     _year_str = year_str;
-    //auto year_char = year_str.c_str();
+
     _sname=sname;
     _gname=gname;
+
     if(gid == gid_data){
       _reqlist="reqlists/rqs_"+year_str+"--"+_gname+"--"+_sname+"_data.lst";
- //     _reqlist="reqlists/rqs_data--Data_data.lst";
- //   }else if (gid == gid_data && std::string(year) != "1111"){
- //     _reqlist="reqlists/rqs_"+_year+"--"+_gname+"--"+_sname+"_data.lst";
     }else if (gid >9) {
       _reqlist="reqlists/rqs_"+year_str+"--"+_gname+"--"+_sname+"_bkg.lst";
     }else{
@@ -269,6 +267,7 @@ private:
     _nevents   = 0;
     _inpTree   = NULL;
   };
+
   Float_t   getLumin(){return _lumin; };
   TString   getSName(){return _sname;  };
   TString   getGName(){return _gname;  };
@@ -282,6 +281,7 @@ private:
   Float_t   getWeight(){return _sweight; };
   Int_t   getYear(){return _year; };
   TString getYearString(){return _year_str; };
+
   void      setInpTree(TTree* inpTree){
      _inpTree = inpTree;
      if (_inpTree){
@@ -289,8 +289,10 @@ private:
       _sweight = _xsec/_ngen;
      }
   };
+
   TTree*    getInpTree(){ return _inpTree; };
   Int_t     getNevents(){ return _nevents; };
+  
   void      Print(){
     std::cout << "Sample:: Group/Name/LoadFlag/gid/sid/color/xsec/ngen/sweight = " <<
       _gname << "/" << _sname  << "/" <<
@@ -604,33 +606,24 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
   TBranch* bMCweight = groupTree->GetBranch("mcWeight");
   TBranch* bYear     = groupTree->GetBranch("year");
   TBranch* bLumin    = groupTree->GetBranch("lumin");
-  std::cout << "got branches" << std::endl;
+
   vbsEvent.gid = sample->getGid();
   vbsEvent.sid = sample->getSid();
   vbsEvent.mcWeight = sample->getWeight();
   vbsEvent.year = sample->getYear();
   vbsEvent.lumin = sample->getLumin();
-  std::cout << "got sample numbers" << std::endl;
-  if (vbsEvent.gid == 3) {
-    for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
-	    groupTree->GetEntry(ievt);
-      bGroupID->Fill();
-      bSampleID->Fill();
-      bMCweight->Fill();
-      bYear->Fill();
-      bLumin->Fill();
-      if (ievt%1000 == 0) std::cout << "processing event: " << ievt << std::endl;
- 	  }
-  } else {
-    for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
-	    groupTree->GetEntry(ievt);
-      bGroupID->Fill();
-      bSampleID->Fill();
-      bMCweight->Fill();
-      bYear->Fill();
-      bLumin->Fill();
- 	  }
-  }
+  
+  std::cout << "Event year : " << vbsEvent.year << std::endl;
+
+  for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
+	  groupTree->GetEntry(ievt);
+    bGroupID->Fill();
+    bSampleID->Fill();
+    bMCweight->Fill();
+    bYear->Fill();
+    bLumin->Fill();
+ 	}
+
 }
 //================================================
 

@@ -180,12 +180,12 @@ cat >> $outfile << EOF
 //VbsReducedEvent structure (keeps variables of the VbsAnalysisReduced ntuple)
 typedef struct {
 //Additional branches - to be added
-   Int_t           gid;                  // - group  ID
-   Int_t           sid;                  // - sample ID
-   Float_t         mcWeight;             //== xsect/ngen 
-   Float_t         lumin;
-   Int_t           year;
-//
+  Int_t           gid;                  // - group  ID
+  Int_t           sid;                  // - sample ID
+  Float_t         mcWeight;             //== xsect/ngen 
+  Float_t         lumin;
+  Int_t           year;
+
    // Declaration of leaf types
 
 EOF
@@ -195,37 +195,35 @@ cat list_of_branches.txt >> $outfile
 
 cat >> $outfile << EOF
 } VbsReducedEvent;
-//
+
 //===================================================================================
+//
 void addBranches_vbsReducedTree(TTree* vbsTree, VbsReducedEvent& vbsEvent){
-  // if(vbsTree->GetBranch( "gid")){
-   cout << "Adding branches" << endl;
-   vbsTree->Branch( "gid",                &vbsEvent.gid,              "gid/I");
-   vbsTree->Branch( "sid",                &vbsEvent.sid,              "sid/I");
-   vbsTree->Branch( "mcWeight",           &vbsEvent.mcWeight,         "mcWeight/F");
-   vbsTree->Branch( "lumin",              &vbsEvent.lumin,            "lumin/F");
-   vbsTree->Branch( "year",               &vbsEvent.year,             "year/I");
-  //}
+  cout << "Adding branches" << endl;
+  vbsTree->Branch( "gid",                &vbsEvent.gid,              "gid/I");
+  vbsTree->Branch( "sid",                &vbsEvent.sid,              "sid/I");
+  vbsTree->Branch( "mcWeight",           &vbsEvent.mcWeight,         "mcWeight/F");
+  vbsTree->Branch( "lumin",              &vbsEvent.lumin,            "lumin/F");
+  vbsTree->Branch( "year",               &vbsEvent.year,             "year/I");
 }
-//=================================================================================== 
+
+//===================================================================================
+// 
 void arrange_vbsReducedTree(TTree* vbsTree, VbsReducedEvent& vbsEvent){
 //Maps the vbsTree branches to members of local  vbsEvent structure
-//Extra Branhes
-//if(vbsTree->GetBranch( "gid") ) {
-   cout << " Set extra branches" << endl;
-      
-    vbsTree->SetBranchAddress( "gid",                                      &vbsEvent.gid    );
-    vbsTree->SetBranchAddress( "sid",                                      &vbsEvent.sid    );
-    vbsTree->SetBranchAddress( "mcWeight",                                 &vbsEvent.mcWeight );
-    vbsTree->SetBranchAddress( "lumin",                                    &vbsEvent.lumin);
-    vbsTree->SetBranchAddress( "year",                                     &vbsEvent.year);
-    cout << " Done Set extra branches" << endl;
+  cout << " Setting extra branches" << endl;
+  vbsTree->SetBranchAddress( "gid",                                      &vbsEvent.gid    );
+  vbsTree->SetBranchAddress( "sid",                                      &vbsEvent.sid    );
+  vbsTree->SetBranchAddress( "mcWeight",                                 &vbsEvent.mcWeight );
+  vbsTree->SetBranchAddress( "lumin",                                    &vbsEvent.lumin);
+  vbsTree->SetBranchAddress( "year",                                     &vbsEvent.year);
+  cout << " Done setting extra branches. Setting the rest." << endl;
 EOF
 
 while read line; do
     two=$(echo $line | awk '{print $2}' | sed 's/;//g')
     if [[ "${var_arr[@]}" =~ "$two" ]]; then
-        echo -e "\t vbsTree->SetBranchAddress( \"$two\", \t &vbsEvent.$two);" >> $outfile
+        echo -e "\t vbsTree->SetBranchAddress( \"$two\", \t\t\t &vbsEvent.$two);" >> $outfile
     fi
 done < list_of_branches.txt
 

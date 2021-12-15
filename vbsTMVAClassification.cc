@@ -1,5 +1,5 @@
 // Purpose: VBS TMVA classifier
-// (works with HZZ4LeptonsAnalysisReduced trees)   
+// (works with HZZ4LeptonsAnalysisReduced trees)
 // Created: Nov 2017, Sergey Uzunyan (serguei@nicadd.niu.edu)
 ////////////////////////////////////////////////////////////////////////
 /**********************************************************************************
@@ -143,7 +143,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 // --------------------------------------------------------------------------------------------------
 
    // Apply additional cuts on the signal and background samples (can be different)
-   //   TCut mycuts = cleanNAN+more+OneLpt;// 
+   //   TCut mycuts = cleanNAN+more+OneLpt;//
    TCut mycuts = cleanNAN_qgid+cleanNAN_tau+full_wv_sr; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
    TCut mycutb = mycuts;//
 
@@ -157,14 +157,51 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
 // Selector - Surprise, surprise it selects things. Look at the vbsSamples.cc after you run the dsw script and copy the samples to the appropriate spot
 // This is just for ease of use when running the classification over different datasets
-int selector = 2018; // 0000 = old, 2016, 2017, 2018
+int selector = 2016; // 0000 = old, 2016, 2017, 2018
 
 //----
+
+
+
+
+   //Signals
+   for (UInt_t ns=0; ns<sglSamples.size();ns++){
+      cout << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << endl;
+
+      if ( sglSamples[ns]->getLoadFlag()){
+        // cout << "register  "  << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << " signal samples" << endl;
+
+         sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
+
+         if( sglSamples[ns]->getInpTree() ){
+            fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]);
+         }
+         cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << " signal events " <<   sglSamples[ns]->getNevents() << endl;
+         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
+      }
+   }
+
+   //Backgrounds
+   for (UInt_t ns=0; ns<bkgSamples.size();ns++){
+     cout << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << endl;
+
+      if ( bkgSamples[ns]->getLoadFlag()){
+         //  cout << "register  "  << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << " background  samples" << endl;
+
+         bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
+
+         if( bkgSamples[ns]->getInpTree() ){
+            fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]);
+         }
+         cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << " background events " <<   bkgSamples[ns]->getNevents() << endl;
+         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
+      }
+   }
 
    /* Two options
    *  Put everything up until the comment below that says "Here" above the signal and background loops
    *  That uses less RAM, but makes the final output file sizes larger
-   *  Conversely, if the file declaration and the Data loop are below the other loops then 
+   *  Conversely, if the file declaration and the Data loop are below the other loops then
    *  the final files will be smaller, but more RAM will be used during the training, potentially
    *  too much and crashes could occur.
    */
@@ -176,86 +213,35 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
    TFile* outputFile = TFile::Open( outfileName, "RECREATE" );
 
    //Data
-   TChain* data_chain = new TChain("Events");
-   std::vector<TString> files;
-   for (UInt_t ns=0; ns < dataSamples.size(); ns++){ // was ns < dataSamples.size();
+	TList* tree_list = new TList();
+
+	  for (UInt_t ns=0; ns < dataSamples.size(); ns++){
       cout << dataSamples[ns]->getGName() << "--" << dataSamples[ns]->getSName() << endl;
 
-      if ( dataSamples[ns]->getLoadFlag()){ 
-         cout << "register "  << dataSamples[ns]->getReqList() << " data samples" << endl;
-         files.push_back(getFileNames(dataSamples[ns]));
-      }
-   }
+      if ( dataSamples[ns]->getLoadFlag()){
+        std::cout << "register "  << dataSamples[ns]->getReqList() << " data samples" << std::endl;
+				dataSamples[ns]->setInpTree(chain2tree("Events", dataSamples[ns]->getReqList(), dataSamples[ns]->getSName(), dataSamples[ns]->getSName() ));
 
-   for (UInt_t ns=0; ns < dataSamples.size(); ns++){ 
-      std::cout << " Opening file: " << files[ns] << std::endl;
-      TFile* temp_file = TFile::Open(files[ns]);
-      TTree* tree = temp_file->Get<TTree>("Events");
-      dataSamples[ns]->setInpTree(tree);
-      outputFile->cd();
-      fillBranch( dataSamples[ns]->getInpTree(), vbsEvent, dataSamples[ns]);
-      std::cout << "TMVAClassification:: Total " << dataSamples[ns]->getSName() << " data events " << dataSamples[ns]->getNevents() << std::endl;
-      std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
-   }
+				 if (dataSamples[ns]->getInpTree()) {
+					fillBranch(dataSamples[ns]->getInpTree(), vbsEvent, dataSamples[ns]);
+               dataSamples[ns]->getInpTree()->SetName("DataTree");
+               dataSamples[ns]->getInpTree()->SetTitle("DataTree");
+               dataSamples[ns]->getInpTree()->Write();
+               tree_list->Add(dataSamples[ns]->getInpTree());
+				 }
+				 std::cout << "TMVAClassification:: Total " << dataSamples[ns]->getSName() << " data events " << dataSamples[ns]->getNevents() << std::endl;
+			}
+      std::cout << "---------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	  }
 
-   for (UInt_t nf=0; nf<files.size(); ++nf){
-      std::cout << "Adding file " << files[nf] << " to data chain" << std::endl;
-      Int_t n = data_chain->Add(files[nf], -1);  // second parameter to ensure file exists
-      if (n == 0) {
-         cout<< "getChain:ERROR:: while processing filelist. " << files[nf] << " : file not found" <<endl;
-         return 0;
-      }
-   }
-
-   setChainBranches(data_chain);
-   TTree* combinedTree(0);
-   if(data_chain->GetEntries()){
-     combinedTree = (TTree*)  data_chain->CloneTree();
-     combinedTree->SetTitle("DataTree");
-     combinedTree->SetName("DataTree");
-     delete data_chain;
-   }
-
+   TTree* output_tree = TTree::MergeTrees(tree_list);
+   //output_tree->SetTitle("DataTree");
+   //output_tree->SetName("DataTree");
    // Here
-
-   //Signals
-   for (UInt_t ns=0; ns<sglSamples.size();ns++){
-      cout << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << endl;
-
-      if ( sglSamples[ns]->getLoadFlag()){ 
-        // cout << "register  "  << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << " signal samples" << endl;
-
-         sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
-
-         if( sglSamples[ns]->getInpTree() ){
-            fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]); 
-         }
-         cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << " signal events " <<   sglSamples[ns]->getNevents() << endl;
-         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
-      }
-   }
-
-   //Backgrounds
-   for (UInt_t ns=0; ns<bkgSamples.size();ns++){
-     cout << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << endl;
-
-      if ( bkgSamples[ns]->getLoadFlag()){ 
-         //  cout << "register  "  << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << " background  samples" << endl;
-
-         bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
-
-         if( bkgSamples[ns]->getInpTree() ){   
-            fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]); 
-         }
-         cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << " background events " <<   bkgSamples[ns]->getNevents() << endl;
-         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
-      }
-   }
-
-
 
    //outputFile->cd();
    gDirectory->Delete("Events;*");
+   gDirectory->Delete("Data201*;*");
 // //----
 
 
@@ -265,13 +251,13 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
 
    TMVA::DataLoader* dataloader=new TMVA::DataLoader(sname);
 
-   //Defined in vbsDL.hpp 
+   //Defined in vbsDL.hpp
    //setVbsFactoryVarsAndSpectators(dataloader);
    setVbsDLorReaderVarsAndSpectators(dataloader,0,vbsEvent);
    // global event weights per tree (see below for setting event-wise weights)
    Double_t signalWeight     = 1.0;
    Double_t backgroundWeight = 1.0;
-   
+
 
    dataloader->SetSignalWeightExpression    ("mcWeight");
    dataloader->SetBackgroundWeightExpression("mcWeight" );
@@ -286,11 +272,11 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
    for (UInt_t ns=0; ns< bkgSamples.size();ns++){
       if ( bkgSamples[ns]->getInpTree() )  dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), backgroundWeight    );
    }
-   //   
+   //
 
 
 // There are 3 choices for this option None, NumEvents, EqualNumEvents with the last being the default.
-// NumEvents ensures that the average weight for each class, independently, is 1. 
+// NumEvents ensures that the average weight for each class, independently, is 1.
 // EqualNumEvents ensures that, for all classes taken together is 1.
 
    //For NormMode=NumEvents got verry strange num of events  in test tree
@@ -301,7 +287,7 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
 // ---    DNN_GPU:  (     1000,     1000)       0.4051       29.867  942.9458  53.81086   0.9429  0.05381
 // ---        BDT:  (     1000,     1000)       0.0082      30.1025  938.3947  33.37822   0.9384  0.03338
 // Still want go with this
-// I do assume significance calculations for training is wrong but it's ok if 
+// I do assume significance calculations for training is wrong but it's ok if
 // we will do max(s/sqrt(s+b) ) optimization after cuts on discriminats
    dataloader->PrepareTrainingAndTestTree( mycuts, mycutb,
                                         "nTrain_Signal=0:nTrain_Background=0:SplitMode=Random:NormMode=NumEvents:!V" );
@@ -589,7 +575,7 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
    /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
    /// to catch it and properly rename the ssAUCoutile name.
    stringstream ssAUCoutfile;
-    ssAUCoutfile << "ROC/" << "Run2_test.txt"; // AUCoutfile
+    ssAUCoutfile << "ROC/" << "Run2.txt"; // AUCoutfile
    std::ofstream AUCoutfile;
    AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
@@ -609,8 +595,8 @@ int selector = 2018; // 0000 = old, 2016, 2017, 2018
    cout << "Clone dataTree" << endl;
    //dataSamples[0]->getInpTree()->CloneTree->Write();
    //dataSamples[0]->getInpTree()->Write();
-   combinedTree->Write();
- 
+   output_tree->Write();
+
    // Save the output
    outputFile->Close();
 
@@ -635,7 +621,7 @@ int main( int argc, char** argv )
 
    // Select methods (don't look at this code - not of interest)
    TString methodList;
-   TString sname=argv[1]; 
+   TString sname=argv[1];
    for (int i=2; i<argc; i++) {
       TString regMethod(argv[i]);
       if(regMethod=="-b" || regMethod=="--batch") continue;

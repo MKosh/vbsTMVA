@@ -10,7 +10,7 @@ Method         : BDT::BDT1
 TMVA Release   : 4.2.1         [262657]
 ROOT Release   : 6.24/02       [399362]
 Creator        : markm
-Date           : Tue Nov 23 20:12:18 2021
+Date           : Sun Dec 12 17:57:39 2021
 Host           : Linux Manjaro-Desktop 5.10.52-1-MANJARO #1 SMP PREEMPT Tue Jul 20 20:32:02 UTC 2021 x86_64 GNU/Linux
 Dir            : /home/markm/Documents/research/vbsTMVA
 Training events: 131960
@@ -86,7 +86,7 @@ vbf_eta                       vbf_eta                       vbf_eta             
 vbf_m                         vbf_m                         vbf_m                         vbf_m                                                           'F'    [500.007293701,9013.9140625]
 zeppHad                       zeppHad                       zeppHad                       zeppHad                                                         'F'    [-4.72506713867,4.60204315186]
 zeppLep                       zeppLep                       zeppLep                       zeppLep                                                         'F'    [-8.71028614044,7.58529758453]
-NSpec 50
+NSpec 52
 bos_AK4AK4_eta                bos_AK4AK4_eta                bos_AK4AK4_eta                bos_AK4AK4_eta                                                  'F'    [-999,-999]
 bos_AK4AK4_m                  bos_AK4AK4_m                  bos_AK4AK4_m                  bos_AK4AK4_m                                                    'F'    [-999,-999]
 bos_AK4AK4_pt                 bos_AK4AK4_pt                 bos_AK4AK4_pt                 bos_AK4AK4_pt                                                   'F'    [-999,-999]
@@ -121,6 +121,7 @@ lep1_pt                       lep1_pt                       lep1_pt             
 lep1_q                        lep1_q                        lep1_q                        lep1_q                                                          'F'    [-1,1]
 lep2_eta                      lep2_eta                      lep2_eta                      lep2_eta                                                        'F'    [-999,-999]
 lep2_pt                       lep2_pt                       lep2_pt                       lep2_pt                                                         'F'    [-999,-999]
+lumin                         lumin                         lumin                         lumin                                                           'F'    [35867.0585938,59740]
 mcWeight                      mcWeight                      mcWeight                      mcWeight                                                        'F'    [3.87841064819e-10,3.89614469896e-05]
 MET                           MET                           MET                           MET                                                             'F'    [30.0006599426,2713.93383789]
 MET_phi                       MET_phi                       MET_phi                       MET_phi                                                         'F'    [-3.14140868187,3.14156794548]
@@ -137,6 +138,7 @@ vbf1_AK4_phi                  vbf1_AK4_phi                  vbf1_AK4_phi        
 vbf2_AK4_phi                  vbf2_AK4_phi                  vbf2_AK4_phi                  vbf2_AK4_phi                                                    'F'    [-3.1416015625,3.14111328125]
 vbf_phi                       vbf_phi                       vbf_phi                       vbf_phi                                                         'F'    [-3.14157366753,3.14155673981]
 vbf_pt                        vbf_pt                        vbf_pt                        vbf_pt                                                          'F'    [1.33611595631,2280.70239258]
+year                          year                          year                          year                                                            'F'    [2016,2018]
 
 
 ============================================================================ */

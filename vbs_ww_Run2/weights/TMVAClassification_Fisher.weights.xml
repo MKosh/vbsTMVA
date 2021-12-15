@@ -4,11 +4,11 @@
     <Info name="TMVA Release" value="4.2.1 [262657]"/>
     <Info name="ROOT Release" value="6.24/02 [399362]"/>
     <Info name="Creator" value="markm"/>
-    <Info name="Date" value="Sun Nov 28 18:49:22 2021"/>
+    <Info name="Date" value="Sun Dec 12 20:52:25 2021"/>
     <Info name="Host" value="Linux Manjaro-Desktop 5.10.52-1-MANJARO #1 SMP PREEMPT Tue Jul 20 20:32:02 UTC 2021 x86_64 GNU/Linux"/>
     <Info name="Dir" value="/home/markm/Documents/research/vbsTMVA"/>
     <Info name="Training events" value="131960"/>
-    <Info name="TrainingTime" value="1.96368933e-01"/>
+    <Info name="TrainingTime" value="1.90397978e-01"/>
     <Info name="AnalysisType" value="Classification"/>
   </GeneralInfo>
   <Options>
@@ -37,7 +37,7 @@
     <Variable VarIndex="13" Expression="zeppHad" Label="zeppHad" Title="zeppHad" Unit="" Internal="zeppHad" Type="F" Min="-4.72506714e+00" Max="4.60204315e+00"/>
     <Variable VarIndex="14" Expression="zeppLep" Label="zeppLep" Title="zeppLep" Unit="" Internal="zeppLep" Type="F" Min="-8.71028614e+00" Max="7.58529758e+00"/>
   </Variables>
-  <Spectators NSpec="50">
+  <Spectators NSpec="52">
     <Spectator SpecIndex="0" Expression="bos_AK4AK4_eta" Label="bos_AK4AK4_eta" Title="bos_AK4AK4_eta" Unit="" Internal="bos_AK4AK4_eta" Type="F" Min="-9.99000000e+02" Max="-9.99000000e+02"/>
     <Spectator SpecIndex="1" Expression="bos_AK4AK4_m" Label="bos_AK4AK4_m" Title="bos_AK4AK4_m" Unit="" Internal="bos_AK4AK4_m" Type="F" Min="-9.99000000e+02" Max="-9.99000000e+02"/>
     <Spectator SpecIndex="2" Expression="bos_AK4AK4_pt" Label="bos_AK4AK4_pt" Title="bos_AK4AK4_pt" Unit="" Internal="bos_AK4AK4_pt" Type="F" Min="-9.99000000e+02" Max="-9.99000000e+02"/>
@@ -72,22 +72,24 @@
     <Spectator SpecIndex="31" Expression="lep1_q" Label="lep1_q" Title="lep1_q" Unit="" Internal="lep1_q" Type="F" Min="-1.00000000e+00" Max="1.00000000e+00"/>
     <Spectator SpecIndex="32" Expression="lep2_eta" Label="lep2_eta" Title="lep2_eta" Unit="" Internal="lep2_eta" Type="F" Min="-9.99000000e+02" Max="-9.99000000e+02"/>
     <Spectator SpecIndex="33" Expression="lep2_pt" Label="lep2_pt" Title="lep2_pt" Unit="" Internal="lep2_pt" Type="F" Min="-9.99000000e+02" Max="-9.99000000e+02"/>
-    <Spectator SpecIndex="34" Expression="mcWeight" Label="mcWeight" Title="mcWeight" Unit="" Internal="mcWeight" Type="F" Min="3.87841065e-10" Max="3.89614470e-05"/>
-    <Spectator SpecIndex="35" Expression="MET" Label="MET" Title="MET" Unit="" Internal="MET" Type="F" Min="3.00006599e+01" Max="2.71393384e+03"/>
-    <Spectator SpecIndex="36" Expression="MET_phi" Label="MET_phi" Title="MET_phi" Unit="" Internal="MET_phi" Type="F" Min="-3.14140868e+00" Max="3.14156795e+00"/>
-    <Spectator SpecIndex="37" Expression="nBtag_loose" Label="nBtag_loose" Title="nBtag_loose" Unit="" Internal="nBtag_loose" Type="F" Min="0.00000000e+00" Max="0.00000000e+00"/>
-    <Spectator SpecIndex="38" Expression="nBtag_medium" Label="nBtag_medium" Title="nBtag_medium" Unit="" Internal="nBtag_medium" Type="F" Min="0.00000000e+00" Max="0.00000000e+00"/>
-    <Spectator SpecIndex="39" Expression="neu_pz_type0" Label="neu_pz_type0" Title="neu_pz_type0" Unit="" Internal="neu_pz_type0" Type="F" Min="-9.99000000e+02" Max="-9.99000000e+02"/>
-    <Spectator SpecIndex="40" Expression="nJet30" Label="nJet30" Title="nJet30" Unit="" Internal="nJet30" Type="F" Min="2.00000000e+00" Max="1.30000000e+01"/>
-    <Spectator SpecIndex="41" Expression="nJet50" Label="nJet50" Title="nJet50" Unit="" Internal="nJet50" Type="F" Min="2.00000000e+00" Max="1.00000000e+01"/>
-    <Spectator SpecIndex="42" Expression="nPV" Label="nPV" Title="nPV" Unit="" Internal="nPV" Type="F" Min="1.00000000e+00" Max="9.20000000e+01"/>
-    <Spectator SpecIndex="43" Expression="puWeight" Label="puWeight" Title="puWeight" Unit="" Internal="puWeight" Type="F" Min="0.00000000e+00" Max="4.69509277e+01"/>
-    <Spectator SpecIndex="44" Expression="run" Label="run" Title="run" Unit="" Internal="run" Type="F" Min="1.00000000e+00" Max="1.00000000e+00"/>
-    <Spectator SpecIndex="45" Expression="sid" Label="sid" Title="sid" Unit="" Internal="sid" Type="F" Min="1.00000000e+02" Max="1.10000000e+03"/>
-    <Spectator SpecIndex="46" Expression="vbf1_AK4_phi" Label="vbf1_AK4_phi" Title="vbf1_AK4_phi" Unit="" Internal="vbf1_AK4_phi" Type="F" Min="-3.14160156e+00" Max="3.14160156e+00"/>
-    <Spectator SpecIndex="47" Expression="vbf2_AK4_phi" Label="vbf2_AK4_phi" Title="vbf2_AK4_phi" Unit="" Internal="vbf2_AK4_phi" Type="F" Min="-3.14160156e+00" Max="3.14111328e+00"/>
-    <Spectator SpecIndex="48" Expression="vbf_phi" Label="vbf_phi" Title="vbf_phi" Unit="" Internal="vbf_phi" Type="F" Min="-3.14157367e+00" Max="3.14155674e+00"/>
-    <Spectator SpecIndex="49" Expression="vbf_pt" Label="vbf_pt" Title="vbf_pt" Unit="" Internal="vbf_pt" Type="F" Min="1.33611596e+00" Max="2.28070239e+03"/>
+    <Spectator SpecIndex="34" Expression="lumin" Label="lumin" Title="lumin" Unit="" Internal="lumin" Type="F" Min="3.58670586e+04" Max="5.97400000e+04"/>
+    <Spectator SpecIndex="35" Expression="mcWeight" Label="mcWeight" Title="mcWeight" Unit="" Internal="mcWeight" Type="F" Min="3.87841065e-10" Max="3.89614470e-05"/>
+    <Spectator SpecIndex="36" Expression="MET" Label="MET" Title="MET" Unit="" Internal="MET" Type="F" Min="3.00006599e+01" Max="2.71393384e+03"/>
+    <Spectator SpecIndex="37" Expression="MET_phi" Label="MET_phi" Title="MET_phi" Unit="" Internal="MET_phi" Type="F" Min="-3.14140868e+00" Max="3.14156795e+00"/>
+    <Spectator SpecIndex="38" Expression="nBtag_loose" Label="nBtag_loose" Title="nBtag_loose" Unit="" Internal="nBtag_loose" Type="F" Min="0.00000000e+00" Max="0.00000000e+00"/>
+    <Spectator SpecIndex="39" Expression="nBtag_medium" Label="nBtag_medium" Title="nBtag_medium" Unit="" Internal="nBtag_medium" Type="F" Min="0.00000000e+00" Max="0.00000000e+00"/>
+    <Spectator SpecIndex="40" Expression="neu_pz_type0" Label="neu_pz_type0" Title="neu_pz_type0" Unit="" Internal="neu_pz_type0" Type="F" Min="-9.99000000e+02" Max="-9.99000000e+02"/>
+    <Spectator SpecIndex="41" Expression="nJet30" Label="nJet30" Title="nJet30" Unit="" Internal="nJet30" Type="F" Min="2.00000000e+00" Max="1.30000000e+01"/>
+    <Spectator SpecIndex="42" Expression="nJet50" Label="nJet50" Title="nJet50" Unit="" Internal="nJet50" Type="F" Min="2.00000000e+00" Max="1.00000000e+01"/>
+    <Spectator SpecIndex="43" Expression="nPV" Label="nPV" Title="nPV" Unit="" Internal="nPV" Type="F" Min="1.00000000e+00" Max="9.20000000e+01"/>
+    <Spectator SpecIndex="44" Expression="puWeight" Label="puWeight" Title="puWeight" Unit="" Internal="puWeight" Type="F" Min="0.00000000e+00" Max="4.69509277e+01"/>
+    <Spectator SpecIndex="45" Expression="run" Label="run" Title="run" Unit="" Internal="run" Type="F" Min="1.00000000e+00" Max="1.00000000e+00"/>
+    <Spectator SpecIndex="46" Expression="sid" Label="sid" Title="sid" Unit="" Internal="sid" Type="F" Min="1.00000000e+02" Max="1.10000000e+03"/>
+    <Spectator SpecIndex="47" Expression="vbf1_AK4_phi" Label="vbf1_AK4_phi" Title="vbf1_AK4_phi" Unit="" Internal="vbf1_AK4_phi" Type="F" Min="-3.14160156e+00" Max="3.14160156e+00"/>
+    <Spectator SpecIndex="48" Expression="vbf2_AK4_phi" Label="vbf2_AK4_phi" Title="vbf2_AK4_phi" Unit="" Internal="vbf2_AK4_phi" Type="F" Min="-3.14160156e+00" Max="3.14111328e+00"/>
+    <Spectator SpecIndex="49" Expression="vbf_phi" Label="vbf_phi" Title="vbf_phi" Unit="" Internal="vbf_phi" Type="F" Min="-3.14157367e+00" Max="3.14155674e+00"/>
+    <Spectator SpecIndex="50" Expression="vbf_pt" Label="vbf_pt" Title="vbf_pt" Unit="" Internal="vbf_pt" Type="F" Min="1.33611596e+00" Max="2.28070239e+03"/>
+    <Spectator SpecIndex="51" Expression="year" Label="year" Title="year" Unit="" Internal="year" Type="F" Min="2.01600000e+03" Max="2.01800000e+03"/>
   </Spectators>
   <Classes NClass="2">
     <Class Name="Signal" Index="0"/>

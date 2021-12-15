@@ -177,7 +177,7 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   if(_sid == 3) {
     _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
   } else {
-    _testTree->Project(_hf1->GetName(), var, norm*(cuts+_samplecut), "goff");
+    _testTree->Project(_hf1->GetName(), var, norm_hist*(cuts+_samplecut), "goff");
   }
 
   int year = 1111;
@@ -447,8 +447,8 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "  tmgui()" << endl;
   cout << "" << endl;
 
-cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
-//shapePlots(anl, cut, cutName); // XXX
+//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+shapePlots(anl, cut, cutName); // XXX
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -646,7 +646,7 @@ Int_t plotShapeComp(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int
         Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	      const char hTitle[], const char xTitle[], const char yTitle[]) {
 
-  anl->setHframe(var,norm*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,norm_hist*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
 
@@ -688,7 +688,7 @@ Int_t plotSingleVariable( TmvaAnl* anl, const char* var, TCut cuts, const char* 
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
   
-  anl->setHframe(var,norm*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,norm_hist*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
 
@@ -728,7 +728,7 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx, Int_t overFlow,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
-  anl->setHframe(var,norm*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,norm_hist*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
 
@@ -763,7 +763,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 	       Float_t xmin, Float_t xmax, Float_t bw,Int_t flogy, Int_t flogx,
 	       const char hTitle[], const char xTitle[], const char yTitle[]){
 
-  anl->setHframe(var,norm*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
+  anl->setHframe(var,norm_hist*(cuts+cut_bkg),xmin,xmax,bw,hTitle,xTitle,yTitle); //need init hf1 for each sample
   anl->setSampleHists();
   anl->fillSampleHists(var,cuts,scale);
   anl->setsvplots(1);
@@ -1026,7 +1026,7 @@ Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* c
       cutval = cutvar_min+ nprobe*stepw;
       cutvar_cut.str("");
       cutvar_cut << "(" << cutvar << " > " <<  cutval  << " ) " ;   
-      setHframe("njets",norm*(basecuts+cut_bkg),0.0,10.0, 1.0);
+      setHframe("njets",norm_hist*(basecuts+cut_bkg),0.0,10.0, 1.0);
       setSampleHists();
       fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
       sgf_curr =  optParVal(optParName);
@@ -1087,7 +1087,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
     //check left point
     cutvar_cut.str("");
     cutvar_cut << "(" << cutvar << " > " <<  cutval_left << " ) " ;   
-    setHframe("njets",norm*(basecuts+cut_bkg),0.0,10.0, 1.0);
+    setHframe("njets",norm_hist*(basecuts+cut_bkg),0.0,10.0, 1.0);
     setSampleHists();
     fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
     sgf_curr_left=  optParVal(optParName);
@@ -1095,7 +1095,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
     //check right point
     cutvar_cut.str("");
     cutvar_cut << "(" << cutvar << " > " <<  cutval_right << " ) " ;   
-    setHframe("njets",norm*(basecuts+cut_bkg),0.0,10.0, 1.0);
+    setHframe("njets",norm_hist*(basecuts+cut_bkg),0.0,10.0, 1.0);
     setSampleHists();
     fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
     sgf_curr_right= optParVal(optParName);
@@ -2043,21 +2043,47 @@ Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_e
 }
 //======================================================================================================================
 // 
-void genPlots(TmvaAnl* anl, TCut cuts="", TString name="test"){
+void genPlots(TmvaAnl* anl, TCut cuts="", TString name="test", TString folder = "datasets", TString file_name = "training_methods"){
   anl->setsvplots(1);
 
+  TString file = folder+"/"+file_name+".xml";
   stringstream plot_name;
   stringstream plot_title;
   plot_title << g_lum << " fb^{-1} (13 TeV)";
   std::string year2 = "1111";
   if (year2 == "1111") {
     year2 = "Run2";
-  } 
+  }
+
+
 
   TDOMParser* parser = new TDOMParser();
   parser->SetValidate(false);
-  parser->ParseFile("datasets/training_methods.xml");
+  parser->ParseFile(file);
   auto* node = parser->GetXMLDocument()->GetRootNode();
+  node = node->GetChildren()->GetNextNode();
+  TList* attr_list;
+
+  for ( ; node; node = node->GetNextNode()){
+    if (node->GetNodeType() == TXMLNode::kXMLElementNode) {
+      if (node->HasAttributes()) {
+        attr_list = node->GetAttributes();
+        plotvar(anl, ((TXMLAttr*)attr_list->At(1))->GetValue(), cuts, 
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(3))->GetValue()), 
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(4))->GetValue()),
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(5))->GetValue()),
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(6))->GetValue()),
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(7))->GetValue()),
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(8))->GetValue()),
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(9))->GetValue()),
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(10))->GetValue()),
+                        (Int_t)stoi(((TXMLAttr*)attr_list->At(11))->GetValue()),
+                        title_str,
+                        ((TXMLAttr*)attr_list->At(13))->GetValue(),
+                        ((TXMLAttr*)attr_list->At(14))->GetValue());
+      }
+    }
+  }
   
 }
 //======================================================================================================================
