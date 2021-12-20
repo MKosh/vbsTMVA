@@ -25,6 +25,7 @@
 
 //#include "tmvaMon.hpp"
 #include <unistd.h>
+#include <ctime>
 #include "vbsTMVA.hpp"
 #include "TPad.h"
 #include "TCanvas.h"
@@ -411,9 +412,14 @@ void cplots(TmvaAnl* anl, TCut cuts, TString CutName);
 
 void shapePlots(TmvaAnl*, TCut cuts, TString CutName);
 
+void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folder = "datasets", 
+    TString file_name = "training_methods", const char plot_style = 'r');
+
 TCut  splitCuts(const char* strcuts);
 
 void SetRatioPlotStyle(TRatioPlot* ratio);
+
+std::string getDateString();
 
 //======================================================================================================================
 //
@@ -449,6 +455,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
 
 //cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
 shapePlots(anl, cut, cutName); // XXX
+genPlots(anl, cut, cutName, "datasets", "training_methods", 'r'); // XXX genPlots
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -1909,86 +1916,6 @@ void tmgui(){
     TMVA::TMVAGui( ssifname.str().c_str()  );
 }
 
-//======================================================================================================================
-//
-void plotdscrs(const char* hname, TCut cuts=""){
-  //plotdscrs("c0VBF3jcombo_S25kB35k", cleanNAN)
-  anl->setsvplots(1);
-  TCanvas* c2 = (TCanvas*)gROOT->FindObject("cDsks"); 
-  if(c2) { c2->Delete(); }
-  c2 = new TCanvas("c2","cDsks",10,10,1000,1000);
-  c2->Divide(2,3);
-  stringstream outfname;
-  stringstream var;
-  //tranverse mass 
-
-  c2->cd(1);
-  var<< "f_D_jet"; 
-  plotvar(anl,var.str().c_str(), cuts, 1, 0, 0,    0.,3.6, 0.08, 2, 0, 0, "Djet dscr, VBF selections,  35.9 fb^{-1}");
-  outfname << var.str().c_str() << "_" << hname << ".pdf";
-  gPad->SaveAs(outfname.str().c_str());
-  outfname.str("");
-  outfname << var.str().c_str() << "_" << hname << ".png";
-  gPad->SaveAs(outfname.str().c_str());
-  var.str(""); outfname.str("");
-
-
-  c2->cd(2);
-  var<< "f_Djet_VAJHU"; 
-  plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    0., 1.8, 0.04, 2, 0, 0, "MELA dscr, VBF selections,  35.9 fb^{-1}");
-  outfname << var.str().c_str() << "_" << hname << ".pdf";
-  gPad->SaveAs(outfname.str().c_str());
-  outfname.str("");
-  outfname << var.str().c_str() << "_" << hname << ".png";
-  gPad->SaveAs(outfname.str().c_str());
-  var.str(""); outfname.str("");
-
-  c2->cd(3);
-  var<< "BDT"; 
-  plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.5, 1.3, 0.04, 2, 0, 0, "BDT dscr, VBF selections,  35.9 fb^{-1}");
-  outfname << var.str().c_str() << "_" << hname << ".pdf";
-  gPad->SaveAs(outfname.str().c_str());
-  outfname.str("");
-  outfname << var.str().c_str() << "_" << hname << ".png";
-  gPad->SaveAs(outfname.str().c_str());
-  var.str(""); outfname.str("");
-
-  c2->cd(4);
-  var<< "MLPBFGS"; 
-  plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.1, 1.7, 0.04, 2, 0, 0, "MLPBFGS dscr, VBF selections,  35.9 fb^{-1}");
-  outfname << var.str().c_str() << "_" << hname << ".pdf";
-  gPad->SaveAs(outfname.str().c_str());
-  outfname.str("");
-  outfname << var.str().c_str() << "_" << hname << ".png";
-  gPad->SaveAs(outfname.str().c_str());
-  var.str(""); outfname.str("");
-
-  c2->cd(5);
-  var<< "DNN_GPU"; 
-  plotvar(anl, var.str().c_str(),cuts, 1, 0, 0,    -0.1, 1.7, 0.04, 2, 0, 0, "DNN dscr, VBF selections,  35.9 fb^{-1}");
-  outfname << var.str().c_str() << "_" << hname << ".pdf";
-  gPad->SaveAs(outfname.str().c_str());
-  outfname.str("");
-  outfname << var.str().c_str() << "_" << hname << ".png";
-  gPad->SaveAs(outfname.str().c_str());
-  var.str(""); outfname.str("");
-
-  c2->cd(6);
-  //cut on the best classifyer (max significance), MELA for combo case
-  var<< "PuppiAK8_jet_mass_so_corr"; 
-  plotvar(anl,"PuppiAK8_jet_mass_so_corr",cleanNAN+"f_Djet_VAJHU>0.480",1.0,0,1, 110,150,2, 0,0,0, "VBF, f_Djet_VAJHU>0.480, 35.9 fb^{-1}","m_{4l} (GeV)");
-  outfname << var.str().c_str() << "_" << hname << "MELAtheBest.png";
-  gPad->SaveAs(outfname.str().c_str());
-  var.str(""); outfname.str("");
-
-  outfname.str("");
-  outfname << "canvasPlots_" << hname << ".png";
-  c2->SaveAs(outfname.str().c_str());
-  outfname.str("");
-  outfname << "canvasPlots_" << hname << ".pdf";
-  c2->SaveAs(outfname.str().c_str());
-  anl->setsvplots(0);
-}
 
 //======================================================================================================================
 //
@@ -2041,21 +1968,39 @@ Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_e
   
   return 0;
 }
+
 //======================================================================================================================
-// 
-void genPlots(TmvaAnl* anl, TCut cuts="", TString name="test", TString folder = "datasets", TString file_name = "training_methods"){
+//
+std::string getDateString() {
+  time_t now = time(0);
+  struct tm* timeStruct = localtime(&now);
+  std::stringstream date;
+  date << std::to_string(timeStruct->tm_mon+1) << "-" << std::to_string(timeStruct->tm_mday) 
+      << "-" << std::to_string(timeStruct->tm_year+1900);
+
+  return date.str();
+}
+
+//======================================================================================================================
+//
+void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folder = "datasets", 
+    TString file_name = "training_methods", const char plot_style = 'r') {
   anl->setsvplots(1);
 
-  TString file = folder+"/"+file_name+".xml";
-  stringstream plot_name;
+  TString file = folder + "/" + file_name + ".xml";
+  TString date = getDateString();
+
   stringstream plot_title;
+  stringstream saved_plot_name;
+
   plot_title << g_lum << " fb^{-1} (13 TeV)";
   std::string year2 = "1111";
   if (year2 == "1111") {
     year2 = "Run2";
   }
 
-
+  TString title_str = plot_title.str().c_str();
+  TCanvas* cp1 = new TCanvas("cp1","cp1",10,10,900,900);
 
   TDOMParser* parser = new TDOMParser();
   parser->SetValidate(false);
@@ -2064,33 +2009,73 @@ void genPlots(TmvaAnl* anl, TCut cuts="", TString name="test", TString folder = 
   node = node->GetChildren()->GetNextNode();
   TList* attr_list;
 
-  for ( ; node; node = node->GetNextNode()){
-    if (node->GetNodeType() == TXMLNode::kXMLElementNode) {
-      if (node->HasAttributes()) {
-        attr_list = node->GetAttributes();
-        plotvar(anl, ((TXMLAttr*)attr_list->At(1))->GetValue(), cuts, 
-                        (Float_t)stof(((TXMLAttr*)attr_list->At(3))->GetValue()), 
-                        (Int_t)stoi(((TXMLAttr*)attr_list->At(4))->GetValue()),
-                        (Int_t)stoi(((TXMLAttr*)attr_list->At(5))->GetValue()),
-                        (Float_t)stof(((TXMLAttr*)attr_list->At(6))->GetValue()),
-                        (Float_t)stof(((TXMLAttr*)attr_list->At(7))->GetValue()),
-                        (Float_t)stof(((TXMLAttr*)attr_list->At(8))->GetValue()),
-                        (Int_t)stoi(((TXMLAttr*)attr_list->At(9))->GetValue()),
-                        (Int_t)stoi(((TXMLAttr*)attr_list->At(10))->GetValue()),
-                        (Int_t)stoi(((TXMLAttr*)attr_list->At(11))->GetValue()),
-                        title_str,
-                        ((TXMLAttr*)attr_list->At(13))->GetValue(),
-                        ((TXMLAttr*)attr_list->At(14))->GetValue());
+  switch (plot_style) {
+    case 'r': { // normal ratio plots
+      for (; node; node = node->GetNextNode()) {
+        if (node->GetNodeType() == TXMLNode::kXMLElementNode) {
+          if (node->HasAttributes()) {
+            attr_list = node->GetAttributes();
+            plotvar(anl, ((TXMLAttr*)attr_list->At(1))->GetValue(), cuts,
+                    (Float_t)stof(((TXMLAttr*)attr_list->At(3))->GetValue()),
+                    (Int_t)stoi(((TXMLAttr*)attr_list->At(4))->GetValue()),
+                    (Int_t)stoi(((TXMLAttr*)attr_list->At(5))->GetValue()),
+                    (Float_t)stof(((TXMLAttr*)attr_list->At(6))->GetValue()),
+                    (Float_t)stof(((TXMLAttr*)attr_list->At(7))->GetValue()),
+                    (Float_t)stof(((TXMLAttr*)attr_list->At(8))->GetValue()),
+                    (Int_t)stoi(((TXMLAttr*)attr_list->At(9))->GetValue()),
+                    (Int_t)stoi(((TXMLAttr*)attr_list->At(10))->GetValue()),
+                    (Int_t)stoi(((TXMLAttr*)attr_list->At(11))->GetValue()),
+                    title_str,
+                    ((TXMLAttr*)attr_list->At(13))->GetValue(),
+                    ((TXMLAttr*)attr_list->At(14))->GetValue());
+          }
+        }
+        // plots/Run2/12-17-2021/lep1_pt_Full_SR.pdf
+        saved_plot_name << "plots/" << year2 << "/" << date << "/" << ((TXMLAttr*)attr_list->At(1))->GetValue() << "_" << name << ".pdf";
+        cp1->SaveAs(saved_plot_name.str().c_str());
+        saved_plot_name.str("");
       }
+      break;
     }
+    case 's': { // shape comparisons
+      for (; node; node = node->GetNextNode()) {
+        if (node->GetNodeType() == TXMLNode::kXMLElementNode) {
+          if (node->HasAttributes()) {
+            attr_list = node->GetAttributes();
+            plotShapeComp(anl, ((TXMLAttr*)attr_list->At(1))->GetValue(), cuts,
+                    (Float_t)stof(((TXMLAttr*)attr_list->At(3))->GetValue()),
+                    (Int_t)stoi(((TXMLAttr*)attr_list->At(4))->GetValue()),
+                    (Int_t)stoi(((TXMLAttr*)attr_list->At(5))->GetValue()),
+                    (Float_t)stof(((TXMLAttr*)attr_list->At(6))->GetValue()),
+                    (Float_t)stof(((TXMLAttr*)attr_list->At(7))->GetValue()),
+                    (Float_t)stof(((TXMLAttr*)attr_list->At(8))->GetValue()),
+                    (Int_t)stoi(((TXMLAttr*)attr_list->At(9))->GetValue()),
+                    (Int_t)stoi(((TXMLAttr*)attr_list->At(10))->GetValue()),
+                    (Int_t)stoi(((TXMLAttr*)attr_list->At(11))->GetValue()),
+                    title_str,
+                    ((TXMLAttr*)attr_list->At(13))->GetValue(),
+                    ((TXMLAttr*)attr_list->At(14))->GetValue());
+          }
+        }
+        saved_plot_name << "plots/" << year2 << "/" << date << "/" << ((TXMLAttr*)attr_list->At(1))->GetValue() << "_" << name << ".pdf";
+        cp1->SaveAs(saved_plot_name.str().c_str());
+        saved_plot_name.str("");
+      }
+      break;
+    }
+    default:
+      std::cout << "\nERROR: Error in -> Function -> genPlot: Issue with plot_style selection. Please use a valid option" << std::endl;
+      std::cout << "  Valid options include: \'r\' : for standard ratio plots - \'s\' : for shape comparison plots" << std::endl;
+      break;
   }
-  
 }
+
 //======================================================================================================================
 // 
 void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   anl->setsvplots(1);
 
+  TString date = getDateString();
   stringstream out_f_name;
   stringstream var;
   stringstream plt_title;
@@ -2153,7 +2138,7 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
       }
     }
 
-    out_f_name << "plots/" << year2 << "/c" << iter << "_" << year2 << "_" << CutName << ".pdf";
+    out_f_name << "plots/" << year2 << "/" << date << "/c" << iter << "_" << year2 << "_" << CutName << ".pdf";
     cp1->SaveAs(out_f_name.str().c_str());
     out_f_name.str("");
     //shapeFname << "plots/2017/s1_2017"  << "_" << CutName << ".root";
@@ -2167,8 +2152,9 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
 //======================================================================================================================
 //
 void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
-//  
   anl->setsvplots(1);
+
+  TString date = getDateString();
   stringstream shapeFname;
   stringstream var;
   stringstream plt_title;
@@ -2231,7 +2217,7 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
       }
     }
 
-    shapeFname << "plots/" << year2 << "/s" << iter << "_" << year2 << "_" << CutName << ".pdf";
+    shapeFname << "plots/" << year2 << "/" << date << "/s" << iter << "_" << year2 << "_" << CutName << ".pdf";
     cp1->SaveAs(shapeFname.str().c_str());
     shapeFname.str("");
     //shapeFname << "plots/2017/s1_2017"  << "_" << CutName << ".root";

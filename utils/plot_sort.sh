@@ -9,10 +9,15 @@
 #	Usage:
 #		./plot_sort.sh "year"
 
-if [[ $1 == 2016 || $1 == 2017 || $1 == 2018 || $1 == 0000 ]]; then
-
+if [[ $1 == 2016 || $1 == 2017 || $1 == 2018 || $1 == 1111 ]]; then
+	if [[ $1 == 1111 ]]; then
+		parent="Run2"
+	else
+		parent=$1
+	fi
+	today=$(date +%m-%d-%y)
 	echo "Starting plot sort"
-	for file in plots/$1/*.pdf; do
+	for file in plots/parent/today/*.pdf; do
 		cut=$(echo $file | sed 's|^.*\([0-9]\{4\}_\)||g' | sed 's|.pdf||g') # 'cut' pulls out the end of the file name which corresponds to the cutName used
 		canvas=$(echo $file | sed 's|_\([0-9]\{4\}\).*$||g' | sed 's|^.*\([0-9]\{4\}/\)||g') # canvas c1, c2, c3, or c4
 		current=$(find plots/$1/archive/*$cut*.pdf | grep $canvas | sed "s|^.*\($cut\)||g" | sed 's|.pdf||g' | sort -rn | head -n 1) # Current highest number for the plots using the same cut

@@ -155,14 +155,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    getSamples(dataSamples, sglSamples, bkgSamples);
 
-// Selector - Surprise, surprise it selects things. Look at the vbsSamples.cc after you run the dsw script and copy the samples to the appropriate spot
-// This is just for ease of use when running the classification over different datasets
-int selector = 2016; // 0000 = old, 2016, 2017, 2018
-
 //----
-
-
-
 
    //Signals
    for (UInt_t ns=0; ns<sglSamples.size();ns++){
