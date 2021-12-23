@@ -13,7 +13,7 @@ cutName ?= "test"
 pltVar ?= "lep1_pt"
 saveFile ?= "$(year)"
 dataset ?= "dataset.xml"
-dataset_dir ?= "datasets"
+dataset_dir ?= "datasets/plot_args"
 plot_type ?= "r"
 
 help:
@@ -42,7 +42,7 @@ help:
 	@echo "	Arguments - year, lumi, cut, cutName, saveFile"
 	@echo ""
 	@echo "genPlots: If you want to plot a single var at a time from a file"
-	@echo "	Arguments - year, lumi, cut, cutName, dataset_dir, dataset, plot_type"
+	@echo "	Arguments - year, lumi, cut, cutName, dataset_dir, dataset, plot_type, saveFile"
 	@echo ""
 	@echo "classify: Run the classification algorithms without applying them to the data trees"
 	@echo "	Arguments - loc, year, vars, methods, cutName, saveFile"
@@ -140,7 +140,7 @@ shapePlots: update_$(year)
 genPlots: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|  //cplots(anl, cut, cutName); // XXX|g' tmvaMon.cc
 	@sed -i 's|^.*\(shapePlots(anl, cut, cutName); // XXX\)|  //shapePlots(anl, cut, cutName); // XXX|g' tmvaMon.cc
-	@sed -i 's|^.*\(; // genPlots\)|  genPlots(anl, cut, cutName, \"$(dataset_dir)\", \"$(dataset)\", \'r\'); // genPlots|g' tmvaMon.cc
+	@sed -i 's|^.*\(; // XXX genPlots\)|  genPlots(anl, cut, cutName, \"$(dataset_dir)\", \"$(dataset)\", '\''$(plot_type)'\''); // XXX genPlots|g' tmvaMon.cc
 #	-@./utils/plot_sort.sh "$(year)"
 	@root -q tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\)
 #	-@./utils/plot_resort.sh "$(year)"

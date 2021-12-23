@@ -419,7 +419,9 @@ TCut  splitCuts(const char* strcuts);
 
 void SetRatioPlotStyle(TRatioPlot* ratio);
 
-std::string getDateString();
+TString getDateString();
+
+Int_t makeNewDirectory(TString path);
 
 //======================================================================================================================
 //
@@ -453,9 +455,9 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "  tmgui()" << endl;
   cout << "" << endl;
 
-//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
-shapePlots(anl, cut, cutName); // XXX
-genPlots(anl, cut, cutName, "datasets", "training_methods", 'r'); // XXX genPlots
+  //cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+  //shapePlots(anl, cut, cutName); // XXX
+  genPlots(anl, cut, cutName, "datasets", "training_methods", 's'); // XXX genPlots
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -1971,22 +1973,27 @@ Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_e
 
 //======================================================================================================================
 //
-std::string getDateString() {
+TString getDateString() {
   time_t now = time(0);
   struct tm* timeStruct = localtime(&now);
   std::stringstream date;
   date << std::to_string(timeStruct->tm_mon+1) << "-" << std::to_string(timeStruct->tm_mday) 
       << "-" << std::to_string(timeStruct->tm_year+1900);
 
-  return date.str();
+  return date.str().c_str();
+}
+
+Int_t makeNewDirectory(TString path) {
+  return gSystem->Exec("mkdir "+path);
 }
 
 //======================================================================================================================
 //
-void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folder = "datasets", 
+void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folder = "datasets/plot_args", 
     TString file_name = "training_methods", const char plot_style = 'r') {
   anl->setsvplots(1);
 
+  std::cout << "\nPlot style: " << plot_style << std::endl;
   TString file = folder + "/" + file_name + ".xml";
   TString date = getDateString();
 
@@ -1998,6 +2005,12 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
   if (year2 == "1111") {
     year2 = "Run2";
   }
+
+  TString plt = "plots/";
+  TString path = plt+year2.c_str()+"/"+date;
+  Int_t dir = makeNewDirectory(path);
+  (dir == 0) ? std::cout << "New folder created to store plots: plots/" << year2 << "/" << date << std::endl :
+          std::cout << "\nERROR: Error in -> Function -> genPlots: Plot folder can't be created" << std::endl;
 
   TString title_str = plot_title.str().c_str();
   TCanvas* cp1 = new TCanvas("cp1","cp1",10,10,900,900);
@@ -2028,12 +2041,12 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
                     title_str,
                     ((TXMLAttr*)attr_list->At(13))->GetValue(),
                     ((TXMLAttr*)attr_list->At(14))->GetValue());
+            saved_plot_name << "plots/" << year2 << "/" << date << "/" << ((TXMLAttr*)attr_list->At(1))->GetValue() << "_" << name << "_plot.pdf";
+            cp1->SaveAs(saved_plot_name.str().c_str());
+            saved_plot_name.str("");
+            cp1->Clear();
           }
         }
-        // plots/Run2/12-17-2021/lep1_pt_Full_SR.pdf
-        saved_plot_name << "plots/" << year2 << "/" << date << "/" << ((TXMLAttr*)attr_list->At(1))->GetValue() << "_" << name << ".pdf";
-        cp1->SaveAs(saved_plot_name.str().c_str());
-        saved_plot_name.str("");
       }
       break;
     }
@@ -2055,19 +2068,21 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
                     title_str,
                     ((TXMLAttr*)attr_list->At(13))->GetValue(),
                     ((TXMLAttr*)attr_list->At(14))->GetValue());
+            saved_plot_name << "plots/" << year2 << "/" << date << "/" << ((TXMLAttr*)attr_list->At(1))->GetValue() << "_" << name << "_shape.pdf";
+            cp1->SaveAs(saved_plot_name.str().c_str());
+            saved_plot_name.str("");
+            cp1->Clear();
           }
         }
-        saved_plot_name << "plots/" << year2 << "/" << date << "/" << ((TXMLAttr*)attr_list->At(1))->GetValue() << "_" << name << ".pdf";
-        cp1->SaveAs(saved_plot_name.str().c_str());
-        saved_plot_name.str("");
       }
       break;
     }
     default:
-      std::cout << "\nERROR: Error in -> Function -> genPlot: Issue with plot_style selection. Please use a valid option" << std::endl;
+      std::cout << "\nERROR: Error in -> Function -> genPlots: Issue with plot_style selection. Please use a valid option" << std::endl;
       std::cout << "  Valid options include: \'r\' : for standard ratio plots - \'s\' : for shape comparison plots" << std::endl;
       break;
   }
+  anl->setsvplots(0);
 }
 
 //======================================================================================================================

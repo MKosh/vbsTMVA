@@ -16,3 +16,5 @@ vbs_ww_2016test/*
 *_top/*
 *_wjets/*
 *_test/*
+vbs_ww_*/weights/*
+vbs_ww_*/
