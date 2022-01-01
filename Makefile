@@ -150,9 +150,9 @@ genPlots: update_$(year)
 mon: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cc
 	@sed -i 's|^.*\(shapePlots(anl, cut, cutName); // XXX\)|//shapePlots(anl, cut, cutName); // XXX|g' tmvaMon.cc
-	@sed -i 's|^.*\(genPlots(anl, cut, cutName\)'|  //genPlots(anl, cut, cutName)|g' tmvaMon.cc
-	-@./utils/plot_sort.sh "$(year)"
-	@echo "Don't forget to run the plot_resort.sh script after generating new plots"
+	@sed -i 's|^.*\(genPlots(anl, \)|  //genPlots(anl, |g' tmvaMon.cc
+#-@./utils/plot_sort.sh "$(year)"
+#@echo "Don't forget to run the plot_resort.sh script after generating new plots"
 	@root tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\)
 	
 

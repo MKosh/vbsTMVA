@@ -457,7 +457,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
 
   //cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
   //shapePlots(anl, cut, cutName); // XXX
-  genPlots(anl, cut, cutName, "datasets", "training_methods", 's'); // XXX genPlots
+  genPlots(anl, cut, cutName, "datasets/plot_args", "training_methods", 's'); // XXX genPlots
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -882,6 +882,12 @@ void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 //
 TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& optmap, Float_t& best_cutval, Float_t& sgf_at_bestcut    ){
 
+  std::string year2 = "1111";
+  if (year2 == "1111") {
+    year2 = "Run2";
+  }
+  TString date = getDateString();
+
   TCanvas* cgraph = (TCanvas*)gROOT->FindObject("cOptGraph"); 
   if(cgraph) {cgraph->Delete(); }
     cgraph = new TCanvas("c1","cOptGraph",10,10,700,700);
@@ -899,7 +905,6 @@ TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Flo
   ssBestCutText.setf(ios::fixed); 
   ssBestCutText.precision(3); 
  
-
   stringstream xtitle;
   stringstream ytitle;
   stringstream graphtitle;
@@ -997,22 +1002,22 @@ TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Flo
   
   stringstream splname;
   stringstream plotName;
-  plotName << sgfName << "_after_cut_on_" << cutvar;
+  plotName << "plots/" << year2 << "/" << date << "/" << sgfName << "_" << cutvar;
 
-  splname << plotName.str().c_str() << ".png";
-  gPad->SaveAs(splname.str().c_str());
-  splname.str("");
   splname << plotName.str().c_str() << ".pdf";
   gPad->SaveAs(splname.str().c_str());
   splname.str("");
-  splname << plotName.str().c_str() << ".eps";
-  gPad->SaveAs(splname.str().c_str());
+
   return sgf;
 }
 
 //======================================================================================================================
 //
 Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf=0.0005, Float_t dstepw=0.0005, Int_t npoints=20){
+  // sgf0 - eff*purity
+  // sgf1 - s/sqrt(s+b)
+  // sgf2 - 95% CL exp limit, fb
+  // sgf3 - s/sqrt(b)
   _optmap.clear();
   //Do not save service histograms
   setsvplots(0);
@@ -1035,10 +1040,10 @@ Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* c
       cutval = cutvar_min+ nprobe*stepw;
       cutvar_cut.str("");
       cutvar_cut << "(" << cutvar << " > " <<  cutval  << " ) " ;   
-      setHframe("njets",norm_hist*(basecuts+cut_bkg),0.0,10.0, 1.0);
+      setHframe("nPV",norm_hist*(basecuts+cut_bkg),0.0,10.0, 1.0);
       setSampleHists();
-      fillSampleHists("njets",basecuts+cutvar_cut.str().c_str(),1.0);
-      sgf_curr =  optParVal(optParName);
+      fillSampleHists("nPV",basecuts+cutvar_cut.str().c_str(),1.0);
+      sgf_curr = optParVal(optParName);
       _optmap.insert(std::make_pair(cutval, sgf_curr));
       if (  sgf_curr > sgf_max ){ sgf_max = sgf_curr; bestcut_max= cutval; }
       if (  sgf_curr < sgf_min ){ sgf_min = sgf_curr; bestcut_min= cutval; }
@@ -1178,6 +1183,10 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
 //======================================================================================================================
 //
 Float_t TmvaAnl::optParVal(const char* optParName){
+  // sgf0 - eff*purity
+  // sgf1 - s/sqrt(s+b)
+  // sgf2 - 95% CL exp limit, fb
+  // sgf3 - s/sqrt(b)
   Float_t result = _sgf0;
   if (strcmp(optParName,"sgf0") ==0 ){
     result = _sgf0;
@@ -1777,13 +1786,12 @@ void  TmvaAnl::setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax,
     if(bw == -1.){
       _hframe=0;       
       //Set range of the hframe template based on the background histogram
-      //
+      
       (_bkg->getTestTree())->Draw(var, cuts, "goff");
       _hframe= (TH1F*) (_bkg->getTestTree())->GetHistogram()->Clone("hframe");
       Float_t ymax= _hframe->GetMaximum()/_scale_bkg_tmva;
-      //  cout << "xxxxx ymax = " <<   ymax << endl;
       _hframe->Reset();
-      _hframe->SetMaximum(1.3 * ymax); // MM - was 1.3 * ymax
+      _hframe->SetMaximum(1.3 * ymax);
       bw=_hframe->GetBinWidth(1);
 
     } else {
