@@ -458,9 +458,9 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "  tmgui()" << endl;
   cout << "" << endl;
 
-  //cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
-  //shapePlots(anl, cut, cutName); // XXX
-  genPlots(anl, cut, cutName, "datasets/plot_args", "training_methods", 's'); // XXX genPlots
+//cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+//shapePlots(anl, cut, cutName); // XXX
+  //genPlots(anl, cut, cutName))))))))), "datasets/plot_args", "training_methods", 's'); // XXX genPlots
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -2140,11 +2140,12 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   TString path = plt+year2.c_str()+"/"+date;
   Int_t dir = makeNewDirectory(path);
   (dir == 0) ? std::cout << "New folder created to store plots: plots/" << year2 << "/" << date << std::endl :
+
           std::cout << "\nERROR: Error in -> Function -> cPlots: Plot folder can't be created" << std::endl;
 
   TDOMParser* parser = new TDOMParser();
   parser->SetValidate(false);
-  parser->ParseFile("datasets/c_s_plot_attrs.xml");
+  parser->ParseFile("datasets/plot_args/c_s_plot_attrs.xml");
   auto* node = parser->GetXMLDocument()->GetRootNode();
   node = node->GetChildren()->GetNextNode();
 
@@ -2251,10 +2252,16 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
   std::cout << "cuts = " << cuts << " Lumi = " << g_lum << std::endl;
   std::cout << "" << std::endl;
 
+  TString plt = "plots/";
+  TString path = plt+year2.c_str()+"/"+date;
+  Int_t dir = makeNewDirectory(path);
+  (dir == 0) ? std::cout << "New folder created to store plots: plots/" << year2 << "/" << date << std::endl :
+          std::cout << "\nERROR: Error in -> Function -> shapePlots: Plot folder can't be created" << std::endl;
+
   // Create the XML parser
   TDOMParser* parser = new TDOMParser();
   parser->SetValidate(false);
-  parser->ParseFile("datasets/c_s_plot_attrs.xml");
+  parser->ParseFile("datasets/plot_args/c_s_plot_attrs.xml");
   auto* node = parser->GetXMLDocument()->GetRootNode();
   // Drill down into the actual child nodes that hold the plot attributes
   // Shouldn't need to change unless the structure of the XML file changes

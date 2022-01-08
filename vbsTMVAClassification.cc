@@ -512,14 +512,14 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    if (Use["BDT1"])  // Adaptive Boost
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT1",
-                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.6:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=False:UseNvars=2" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
+                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.6:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=False:UseNvars=2:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
 
    if (Use["BDT2"])
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT2",
-                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.6:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=False:UseNvars=4" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
+                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.2:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=False:UseNvars=2:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
    if (Use["BDT"])
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT",
-                           "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
+                           "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
 
    if (Use["BDTB"]) // Bagging
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDTB",
@@ -568,7 +568,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
    /// to catch it and properly rename the ssAUCoutile name.
    stringstream ssAUCoutfile;
-    ssAUCoutfile << "ROC/" << "Run2.txt"; // AUCoutfile
+    ssAUCoutfile << "ROC/" << "Run2_All_Methods.txt"; // AUCoutfile
    std::ofstream AUCoutfile;
    AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
@@ -586,8 +586,6 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    // --------------------------------------------------------------
 
    cout << "Clone dataTree" << endl;
-   //dataSamples[0]->getInpTree()->CloneTree->Write();
-   //dataSamples[0]->getInpTree()->Write();
    output_tree->Write();
 
    // Save the output
