@@ -26,6 +26,9 @@
 //#include "tmvaMon.hpp"
 #include <unistd.h>
 #include <ctime>
+#include <vector>
+#include <iostream>
+
 #include "vbsTMVA.hpp"
 #include "TPad.h"
 #include "TCanvas.h"
@@ -1991,6 +1994,15 @@ TString getDateString() {
   return date.str().c_str();
 }
 
+TString getTimeString() {
+  time_t now = time(0);
+  struct tm* timeStruct = localtime(&now);
+  std::stringstream time_str;
+  time_str << std::to_string(timeStruct->tm_hour) << "-" << std::to_string(timeStruct->tm_min); 
+
+  return time_str.str().c_str();
+}
+
 Int_t makeNewDirectory(TString path) {
   return gSystem->Exec("mkdir "+path);
 }
@@ -2004,6 +2016,7 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
   std::cout << "\nPlot style: " << plot_style << std::endl;
   TString file = folder + "/" + file_name + ".xml";
   TString date = getDateString();
+  TString time_str = getTimeString();
 
   stringstream plot_title;
   stringstream saved_plot_name;
@@ -2022,6 +2035,11 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
 
   TString title_str = plot_title.str().c_str();
   TCanvas* cp1 = new TCanvas("cp1","cp1",10,10,900,900);
+  cp1->Clear();
+  saved_plot_name << "plots/" << year2 << "/" << date << "/" << year2 << "_plot_set_" << time_str << ".pdf[";
+  cp1->Print(saved_plot_name.str().c_str());
+  saved_plot_name.str("");
+  saved_plot_name << "plots/" << year2 << "/" << date << "/" << year2 << "_plot_set_" << time_str << ".pdf";
 
   TDOMParser* parser = new TDOMParser();
   parser->SetValidate(false);
@@ -2049,9 +2067,9 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
                     title_str,
                     ((TXMLAttr*)attr_list->At(13))->GetValue(),
                     ((TXMLAttr*)attr_list->At(14))->GetValue());
-            saved_plot_name << "plots/" << year2 << "/" << date << "/" << ((TXMLAttr*)attr_list->At(1))->GetValue() << "_" << name << "_plot.pdf";
-            cp1->SaveAs(saved_plot_name.str().c_str());
-            saved_plot_name.str("");
+            //saved_plot_name << "plots/" << year2 << "/" << date << "/" << ((TXMLAttr*)attr_list->At(1))->GetValue() << "_" << name << "_plot.pdf";
+            cp1->Print(saved_plot_name.str().c_str());
+            //saved_plot_name.str("");
             cp1->Clear();
           }
         }
@@ -2076,9 +2094,9 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
                     title_str,
                     ((TXMLAttr*)attr_list->At(13))->GetValue(),
                     ((TXMLAttr*)attr_list->At(14))->GetValue());
-            saved_plot_name << "plots/" << year2 << "/" << date << "/" << ((TXMLAttr*)attr_list->At(1))->GetValue() << "_" << name << "_shape.pdf";
+            //saved_plot_name << "plots/" << year2 << "/" << date << "/" << ((TXMLAttr*)attr_list->At(1))->GetValue() << "_" << name << "_shape.pdf";
             cp1->SaveAs(saved_plot_name.str().c_str());
-            saved_plot_name.str("");
+            //saved_plot_name.str("");
             cp1->Clear();
           }
         }
@@ -2090,6 +2108,11 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
       std::cout << "  Valid options include: \'r\' : for standard ratio plots - \'s\' : for shape comparison plots" << std::endl;
       break;
   }
+
+  saved_plot_name.str("");
+  saved_plot_name << "plots/" << year2 << "/" << date << "/" << year2 << "_plot_set_" << time_str << ".pdf]";
+  cp1->Print(saved_plot_name.str().c_str());
+
   anl->setsvplots(0);
 }
 
@@ -2099,10 +2122,11 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   anl->setsvplots(1);
 
   TString date = getDateString();
+  TString time_str = getTimeString();
   stringstream out_f_name;
-  stringstream var;
+
   stringstream plt_title;
-  plt_title << "VBS (WV), " << g_lum << " fb^{-1}";
+  plt_title << "VBS, " << g_lum << " fb^{-1}";
   std::string s = plt_title.str();
   const char* title_str = s.c_str();
   std::string year2 = "1111";
@@ -2116,32 +2140,66 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
   TString path = plt+year2.c_str()+"/"+date;
   Int_t dir = makeNewDirectory(path);
   (dir == 0) ? std::cout << "New folder created to store plots: plots/" << year2 << "/" << date << std::endl :
-          std::cout << "\nERROR: Error in -> Function -> cplots: Plot folder can't be created" << std::endl;
 
-  // Create the XML parser
+          std::cout << "\nERROR: Error in -> Function -> cPlots: Plot folder can't be created" << std::endl;
+
   TDOMParser* parser = new TDOMParser();
   parser->SetValidate(false);
   parser->ParseFile("datasets/plot_args/c_s_plot_attrs.xml");
   auto* node = parser->GetXMLDocument()->GetRootNode();
-  // Drill down into the actual child nodes that hold the plot attributes
-  // Shouldn't need to change unless the structure of the XML file changes
-  node = node->GetChildren()->GetNextNode()->GetChildren()->GetNextNode();
-  if (node->GetNodeType() == TXMLNode::kXMLCommentNode) {
-    node = node->GetNextNode()->GetNextNode();
-  }
+  node = node->GetChildren()->GetNextNode();
+
   TList* attr_list = node->GetAttributes();
 
-  for (Int_t iter = 1; iter <= 4; iter++) {
-    TCanvas* cp1 = (TCanvas*)gROOT->FindObject("cp1"); 
-    if(cp1) { cp1->Delete(); }
-    cp1 = new TCanvas("cp1","cp1",10,10,1200,1200);
-    cp1->Divide(3,3);
+  TCanvas* cp1 = new TCanvas("cp1", "cp1", 10,10,1200,1200);
+  cp1->Divide(3,3);
 
-    for (Int_t jter = 1; jter <= 9; jter++) {
-      cp1->cd(jter);
-      if (node->GetNodeType() == TXMLNode::kXMLElementNode) {
-        plotvar(anl, ((TXMLAttr*)attr_list->At(1))->GetValue(), cuts, 
-                        (Float_t)stof(((TXMLAttr*)attr_list->At(3))->GetValue()), 
+  out_f_name << "plots/" << year2 << "/" << date << "/" << year2 << "_multiplot_set_" << time_str << ".pdf[";
+  cp1->Print(out_f_name.str().c_str());
+  cp1->Clear();
+  out_f_name.str("");
+  out_f_name << "plots/" << year2 << "/" << date << "/" << year2 << "_multiplot_set_" << time_str << ".pdf";
+
+  Int_t iter = 1;
+  char plot_style = 'r';
+
+  switch (plot_style) {
+    case 'r': {
+      for (; node; node->GetNextNode()) {
+        if (node->GetNodeType() == TXMLNode::kXMLElementNode && node->HasAttributes()) {
+          cp1->cd(iter);
+          attr_list = node->GetAttributes();
+          plotvar(anl, ((TXMLAttr*)attr_list->At(1))->GetValue(), cuts,
+                  (Float_t)stof(((TXMLAttr*)attr_list->At(3))->GetValue()),
+                  (Int_t)stoi(((TXMLAttr*)attr_list->At(4))->GetValue()),
+                  (Int_t)stoi(((TXMLAttr*)attr_list->At(5))->GetValue()),
+                  (Float_t)stof(((TXMLAttr*)attr_list->At(6))->GetValue()),
+                  (Float_t)stof(((TXMLAttr*)attr_list->At(7))->GetValue()),
+                  (Float_t)stof(((TXMLAttr*)attr_list->At(8))->GetValue()),
+                  (Int_t)stoi(((TXMLAttr*)attr_list->At(9))->GetValue()),
+                  (Int_t)stoi(((TXMLAttr*)attr_list->At(10))->GetValue()),
+                  (Int_t)stoi(((TXMLAttr*)attr_list->At(11))->GetValue()),
+                  title_str,
+                  ((TXMLAttr*)attr_list->At(13))->GetValue(),
+                  ((TXMLAttr*)attr_list->At(14))->GetValue());
+          if (iter == 9) {
+            cp1->Print(out_f_name.str().c_str());
+            cp1->Clear();
+            iter = 1;
+          } else {
+            ++iter;
+          }
+        }
+      }
+      break;
+    }
+    case 's': {
+      for (; node; node->GetNextNode()) {
+        if (node->GetNodeType() == TXMLNode::kXMLElementNode && node->HasAttributes()) {
+          cp1->cd(iter);
+          attr_list = node->GetAttributes();
+          plotShapeComp(anl, ((TXMLAttr*)attr_list->At(1))->GetValue(), cuts,
+                        (Float_t)stof(((TXMLAttr*)attr_list->At(3))->GetValue()),
                         (Int_t)stoi(((TXMLAttr*)attr_list->At(4))->GetValue()),
                         (Int_t)stoi(((TXMLAttr*)attr_list->At(5))->GetValue()),
                         (Float_t)stof(((TXMLAttr*)attr_list->At(6))->GetValue()),
@@ -2153,27 +2211,24 @@ void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
                         title_str,
                         ((TXMLAttr*)attr_list->At(13))->GetValue(),
                         ((TXMLAttr*)attr_list->At(14))->GetValue());
-      } else if (node->GetNodeType() == TXMLNode::kXMLCommentNode) {
-        jter--;
-        node = node->GetNextNode()->GetNextNode();
-        attr_list = node->GetAttributes();
-        continue;
+          if (iter == 9) {
+            cp1->Print(out_f_name.str().c_str());
+            cp1->Clear();
+            iter = 1;
+          } else {
+            ++iter;
+          }
+        }
       }
-      if (strcmp(node->GetNodeName(),"end") == 0) {
-        break;
-      } else {
-        node = node->GetNextNode()->GetNextNode();
-        attr_list = node->GetAttributes();
-      }
+      break;
     }
-
-    out_f_name << "plots/" << year2 << "/" << date << "/c" << iter << "_" << year2 << "_" << CutName << ".pdf";
-    cp1->SaveAs(out_f_name.str().c_str());
-    out_f_name.str("");
-    //shapeFname << "plots/2017/s1_2017"  << "_" << CutName << ".root";
-    //cp1->SaveAs(shapeFname.str().c_str()); 
-    //shapeFname.str("");
+    default: 
+      std::cout << "Error in genMultiPlot (cplots) switch" << std::endl; 
+      break;
   }
+  out_f_name.str("");
+  out_f_name << "plots/" << year2 << "/" << date << "/" << year2 << "_multiplot_set_" << time_str << ".pdf]";
+  cp1->Print(out_f_name.str().c_str());
 
   anl->setsvplots(0);
 }

@@ -156,7 +156,12 @@ TCut leptest_vjets        ("leptest_vjets",          full_vjets_cr+lep_eta_spike
 TCut leptest_top          ("leptest_top",            full_top_cr+lep_eta_spike+lep_phi_spike);
 TCut leptest_wv           ("leptest_wv",             full_wv_sr+lep_eta_spike+lep_phi_spike);
 // Mark Cuts ---------------------------------------------------------------------------------------------------------------------------------
+// Cut map
+//std::map<std::string,TCut> cut_map;
+//cut_map["dummy"] = dummy;
+//cut_map["full_wv_sr"] = full_wv_sr;
 
+// Cut map
 
 //TCut cleanNAN_phi           ("cleanNAN_phi",     "(phi_type0>0&&phi_type2>0&&phi_type0<3.14&&phi_type2<3.14)"  );
 TCut cleanNAN_phi           ("cleanNAN_phi",       "(!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))"  ); // was (!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))
