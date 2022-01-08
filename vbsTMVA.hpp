@@ -132,6 +132,7 @@ TCut common_muon          ("common_muon",             category_selection+lep_pt+
 TCut full_vjets_cr        ("full_vjets_cr",           full_common+btag_veto+wv_cr_vjets);
 TCut full_top_cr          ("full_top_cr",             full_common+wv_cr_top+wv_sr);
 TCut full_wv_sr           ("full_wv_sr",              full_common+btag_veto+wv_sr);//+noData);
+TCut BDT_cut              ("BDT_cut",                 "BDT1>0.028");
 
 // Full SR/CR cuts specifying one type of lepton
 TCut vjets_cr_ele         ("vjets_cr_ele",            common_ele+btag_veto+wv_cr_vjets);

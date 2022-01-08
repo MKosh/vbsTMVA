@@ -118,7 +118,7 @@ trainAndPlot: update_$(year)
 controlPlots: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|cplots(anl, cut, cutName); // XXX|g' tmvaMon.cc
 	@sed -i 's|^.*\(shapePlots(anl, cut, cutName); // XXX\)|//shapePlots(anl, cut, cutName); // XXX|g' tmvaMon.cc
-	@sed -i 's|^.*\(genPlots(anl, cut, cutName\)'|  //genPlots(anl, cut, cutName)|g' tmvaMon.cc
+	@sed -i 's|^.*\(genPlots(anl, cut, cutName\)|  //genPlots(anl, cut, cutName)|g' tmvaMon.cc
 #	-@./utils/plot_sort.sh "$(year)"
 	@root -q tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\)
 #	-@./utils/plot_resort.sh "$(year)"
@@ -129,7 +129,7 @@ controlPlots: update_$(year)
 shapePlots: update_$(year)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cc
 	@sed -i 's|^.*\(shapePlots(anl, cut, cutName); // XXX\)|shapePlots(anl, cut, cutName); // XXX|g' tmvaMon.cc
-	@sed -i 's|^.*\(genPlots(anl, cut, cutName\)'|  //genPlots(anl, cut, cutName)|g' tmvaMon.cc
+	@sed -i 's|^.*\(genPlots(anl, cut, cutName\)|  //genPlots(anl, cut, cutName)|g' tmvaMon.cc
 #-@./utils/plot_sort.sh "$(year)"
 	@root -q tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(cutName)\"\)
 #	-@./utils/plot_resort.sh "$(year)"
