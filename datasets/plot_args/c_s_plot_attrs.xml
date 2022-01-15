@@ -24,7 +24,7 @@
   <MET anl="anl" variable="MET" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="30." xmax="200." bw="8." flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="MET (GeV)" yTitle="Events/bin"/>
   <MET_phi anl="anl" variable="MET_phi" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-3.75" xmax="3.75" bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="MET #phi" yTitle="Events/bin"/>
   <bos_j1_AK4_pt anl="anl" variable="bos_j1_AK4_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="500." bw="20" flogy="0" flogx="0" overFlow="1" hTitle="title_str" xTitle="V p^{T}_{j1} (GeV)" yTitle="Events/bin"/>
-  <bos_j1_AK4_eta anl="anl" variable="bos_j1_AK4_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-2.5" xmax="2.5" bw="0.2" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="#V #eta_{j1}" yTitle="Events/bin"/>
+  <bos_j1_AK4_eta anl="anl" variable="bos_j1_AK4_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-2.5" xmax="2.5" bw="0.2" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="V #eta_{j1}" yTitle="Events/bin"/>
   <bos_PuppiAK8_tau2tau1 anl="anl" variable="bos_PuppiAK8_tau2tau1" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="1.0" bw="0.04" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="AK8 #tau_{21}" yTitle="Events/bin"/>
   <bos_PuppiAK8_pt anl="anl" variable="bos_PuppiAK8_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="200." xmax="800." bw="25." flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="AK8 p_{T} (GeV)" yTitle="Events/bin"/>
   <bos_PuppiAK8_eta anl="anl" variable="bos_PuppiAK8_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-2.5" xmax="2.5" bw="0.2" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="AK8 #eta" yTitle="Events/bin"/>
@@ -41,10 +41,10 @@
   <dilep_eta anl="anl" variable="dilep_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-4." xmax="4." bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Dilepton #eta" yTitle="Events/bin"/>
   <dilep_pt anl="anl" variable="dilep_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="800." bw="25." flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="Dilepton pt" yTitle="Events/bin"/>
   <!-- Canvas 5 -->
-  <BDT1 anl="anl" variable="BDT1" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.02" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="BDT" yTitle="Events/bin"/>
-  <BDT2 anl="anl" variable="BDT2" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.05" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="BDT" yTitle="Events/bin"/>
-  <BDTG anl="anl" variable="BDTG" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.05" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="BDT" yTitle="Events/bin"/>
+  <BDT1 anl="anl" variable="BDT1" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.02" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="BDT1" yTitle="Events/bin"/>
+  <BDT2 anl="anl" variable="BDT2" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.05" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="BDT2" yTitle="Events/bin"/>
+  <BDTG anl="anl" variable="BDTG" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-1.0" xmax="1.0" bw="0.05" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="BDTG" yTitle="Events/bin"/>
   <Fisher anl="anl" variable="Fisher" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.7" xmax="0.7" bw="0.02" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Fisher" yTitle="Events/bin"/>
-  <DNN_GPU anl="anl" variable="DNN_GPU" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0.0" xmax="1.0" bw="0.02" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="DNN_GPU" yTitle="Events/bin"/>
-  <MLPBFGS anl="anl" variable="MLPBFGS" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0.0" xmax="1.0" bw="0.02" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="MLPBFGS" yTitle="Events/bin"/>
+  <DNN_GPU anl="anl" variable="DNN_GPU" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0.0" xmax="1.0" bw="0.02" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="DNN_GPU" yTitle="Events/bin"/>
+  <MLPBFGS anl="anl" variable="MLPBFGS" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0.0" xmax="1.0" bw="0.02" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="MLPBFGS" yTitle="Events/bin"/>
 </plots>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<plots>
+  <bos_PuppiAK8_m_sd0_corr anl="anl" variable="bos_PuppiAK8_m_sd0_corr" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="40." xmax="150." bw="5." flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="AK8 Mass sd0 corr" yTitle="Events/bin"/>
+  <bos_PuppiAK8_tau2tau1 anl="anl" variable="bos_PuppiAK8_tau2tau1" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="1.0" bw="0.04" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="AK8 #tau_{21}" yTitle="Events/bin"/>
+  <lep1_eta anl="anl" variable="lep1_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-2.4" xmax="2.4" bw="0.16" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="lep_{1} #eta" yTitle="Events/bin"/>
+  <vbf1_AK4_pt anl="anl" variable="vbf1_AK4_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="800." bw="25" flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="VBS p^{T}_{j1}" yTitle="Events/bin"/>
+  <vbf1_AK4_eta anl="anl" variable="vbf1_AK4_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-5.0" xmax="5.0" bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="VBS #eta_{j1}" yTitle="Events/bin"/>
+  <vbf2_AK4_pt anl="anl" variable="vbf2_AK4_pt" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="500." bw="20." flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="VBS p^{T}_{j2}" yTitle="Events/bin"/>
+  <vbf2_AK4_eta anl="anl" variable="vbf2_AK4_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-5." xmax="5." bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="VBS #eta_{j2}" yTitle="Events/bin"/>
+  <vbf1_AK4_qgid anl="anl" variable="vbf1_AK4_qgid" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="1." bw="0.025" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="QGL VBF_{j1}" yTitle="Events/bin"/>
+  <vbf2_AK4_qgid anl="anl" variable="vbf2_AK4_qgid" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0." xmax="1." bw="0.025" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="QGL VBF_{j2}" yTitle="Events/bin"/>
+  <vbf_deta anl="anl" variable="vbf_deta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="2.4" xmax="8.0" bw="0.2" flogy="0" flogx="0" overFlow="1" hTitle="title_str" xTitle="#Delta#eta^{vbs}" yTitle="Events/bin"/>
+  <vbf_m anl="anl" variable="vbf_m" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="500." xmax="4000." bw="150." flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="m^{vbs}_{jj} (GeV)" yTitle="Events/bin"/>
+  <vbf_eta anl="anl" variable="vbf_eta" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="2.4" xmax="8.0" bw="0.2" flogy="0" flogx="0" overFlow="1" hTitle="title_str" xTitle="#eta^{vbs}" yTitle="Events/bin"/>
+  <zeppLep anl="anl" variable="zeppLep" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-4." xmax="4." bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Leptonic Zeppenfeld" yTitle="Events/bin"/>
+  <zeppHad anl="anl" variable="zeppHad" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-4." xmax="4." bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Hadronic Zeppenfeld" yTitle="Events/bin"/>
+  <nJet30f anl="anl" variable="nJet30f" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0.0" xmax="10" bw="1.0" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Num Jets p_t > 30 GeV" yTitle="Events/bin"/>
+  <BDT2 anl="anl" variable="BDT2" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.05" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="BDT2" yTitle="Events/bin"/>
+  <BDTG anl="anl" variable="BDTG" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-1.0" xmax="1.0" bw="0.05" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="BDTG" yTitle="Events/bin"/>
+  <DNN_GPU anl="anl" variable="DNN_GPU" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0.0" xmax="1.0" bw="0.02" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="DNN_GPU" yTitle="Events/bin"/>
+</plots>
