@@ -14,18 +14,24 @@
 
 # --------------------------------------------------------- Start - Create the write_list C++ macro - Start -------------------------------------------------------------------
 
-
+SNAME="$(uname -a | awk '{print $2}')"
 if [ $2 == "old" ]; then
     Trees="otree"
 else
     Trees="Events"
 fi
 
-if [[ "0$1" == "0" ]]; then
+if [[ "0$1" == "0" && "0$(echo $SNAME | grep Manjaro)" != "0" ]]; then
     if [[ "$3" == "2016" || "$3" == "2017" || "$3" == "2018" ]]; then
         rootFiles="/mnt/Storage/Research/ntuples/NEW/$3/haddedFiles/"
     else
-        rootFiles="/mnt/Storage/Research/ntuples/NEW/2017/haddedFiles/"
+        echo "Error setting file - check write_vbsDL"
+    fi
+elif [[ "0$1" == "0" && "0$(echo $SNAME | grep oplp)" != "0" ]]; then
+    if [[ "$3" == "2016" || "$3" == "2017" || "$3" == "2018" ]]; then
+        rootFiles="/mnt/Volume/ntuples/$3/haddedFiles/"
+    else
+        echo "Error setting file - check write_vbsDL"
     fi
 else
     rootFiles="/mnt/$1/" # $1 = g/2016/haddedFiles on my flashdrive, or on my desktop e/Research/ntuples/NEW/2016/haddedFiles

@@ -47,6 +47,9 @@ elif [ "0$(echo $SNAME | grep Manjaro)" != "0" ]; then
     #DD_VBS_REDUCED="/mnt/Storage/Research/ntuples/NEW/$2/haddedFiles"
     DatasetInpFile="./datasets/$3"
     #DatasetInpFile="./datasets/datasets_$2.json"
+elif [ "0$(echo $SNAME | grep oplp)" != "0" ]; then
+    Ntuple_loc="/mnt/Volume/ntuples"
+    DatasetInpFile="./datasets/$3"
 fi
 
 if [ ! -d $Ntuple_loc ]; then

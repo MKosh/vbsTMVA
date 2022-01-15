@@ -568,7 +568,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
    /// to catch it and properly rename the ssAUCoutile name.
    stringstream ssAUCoutfile;
-    ssAUCoutfile << "ROC/" << "Run2_All_Methods.txt"; // AUCoutfile
+    ssAUCoutfile << "ROC/" << "2016.txt"; // AUCoutfile
    std::ofstream AUCoutfile;
    AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
    std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
