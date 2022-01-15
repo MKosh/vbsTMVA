@@ -235,6 +235,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    //outputFile->cd();
    gDirectory->Delete("Events;*");
    gDirectory->Delete("Data201*;*");
+   gDirectory->Delete("DataTree;65");
 // //----
 
 
@@ -252,18 +253,27 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    Double_t backgroundWeight = 1.0;
 
 
-   dataloader->SetSignalWeightExpression    ("mcWeight");
-   dataloader->SetBackgroundWeightExpression("mcWeight" );
+   dataloader->SetSignalWeightExpression    ("mcWeight*genWeight*L1PFWeight*puWeight");
+   dataloader->SetBackgroundWeightExpression("mcWeight*genWeight*L1PFWeight*puWeight" );
 
    // You can add an arbitrary number of signal or background trees
    for (UInt_t ns=0; ns<sglSamples.size();ns++){
-      if ( sglSamples[ns]->getInpTree() )  dataloader->AddSignalTree ( sglSamples[ns]->getInpTree(),     signalWeight     );
+      if ( sglSamples[ns]->getInpTree() ) dataloader->AddSignalTree ( sglSamples[ns]->getInpTree(),     signalWeight     );
    }
 
    //Add backgrounds to factory
    //
    for (UInt_t ns=0; ns< bkgSamples.size();ns++){
-      if ( bkgSamples[ns]->getInpTree() )  dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), backgroundWeight    );
+      if ( bkgSamples[ns]->getInpTree() ) {
+         if ( bkgSamples[ns]->getGName() == "Wjets" ) {
+            std::cout << "Weight factor = " << backgroundWeight << std::endl;
+            dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), 1.303*backgroundWeight    );
+         }
+         else {
+            std::cout << "Weight factor = " << backgroundWeight << std::endl;
+            dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), backgroundWeight    );
+         }
+      }
    }
    //
 
@@ -282,9 +292,11 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 // Still want go with this
 // I do assume significance calculations for training is wrong but it's ok if
 // we will do max(s/sqrt(s+b) ) optimization after cuts on discriminats
-   dataloader->PrepareTrainingAndTestTree( mycuts, mycutb,
-                                        "nTrain_Signal=0:nTrain_Background=0:SplitMode=Random:NormMode=NumEvents:!V" );
 
+//   dataloader->PrepareTrainingAndTestTree( mycuts, mycutb,
+//                                        "nTrain_Signal=0:nTrain_Background=0:SplitMode=Random:NormMode=NumEvents:!V" );
+   dataloader->PrepareTrainingAndTestTree( mycuts, mycutb,
+                                        "nTrain_Signal=0:nTrain_Background=0:SplitMode=Random:NormMode=None:!V" );
 
 //    dataloader->PrepareTrainingAndTestTree( mycuts, mycutb,
 //                                         "nTrain_Signal=0:nTrain_Background=0:SplitMode=Random:NormMode=None:!V" );
@@ -567,22 +579,23 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    /// Print out AUC for each method, both to the terminal, and to a file
    /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
    /// to catch it and properly rename the ssAUCoutile name.
-   stringstream ssAUCoutfile;
-    ssAUCoutfile << "ROC/" << "2016.txt"; // AUCoutfile
-   std::ofstream AUCoutfile;
-   AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
-   std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
-
-   AUCoutfile << "" << std::endl;
-   AUCoutfile << "--------------------------------------------------" << std::endl;
-
-   for (UInt_t i=0; i<mlist.size(); i++) {
-      std::string regMethod(mlist[i]);
-      AUCoutfile << "AUC for " << regMethod << ": " << factory->GetROCIntegral(dataloader, regMethod) << std::endl;
-   }
-   AUCoutfile << "--------------------------------------------------" << std::endl;
-   AUCoutfile.close();
-
+//   stringstream ssAUCoutfile;
+//    ssAUCoutfile << "ROC/" << "Run2_All_Methods.txt"; // AUCoutfile
+//   std::ofstream AUCoutfile;
+//   AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
+//   std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
+//   TString time_and_date = getTimeAndDateString();
+//
+//   AUCoutfile << "" << std::endl;
+//   AUCoutfile << "--------------------------------------------------" << std::endl;
+//   AUCoutfile << time_and_date << std::endl;
+//   for (UInt_t i=0; i<mlist.size(); i++) {
+//      std::string regMethod(mlist[i]);
+//      AUCoutfile << "AUC for " << regMethod << ":\t\t" << factory->GetROCIntegral(dataloader, regMethod) << std::endl;
+//   }
+//   AUCoutfile << "--------------------------------------------------" << std::endl;
+//   AUCoutfile.close();
+   writeAUCFile(myMethodList, dataloader, factory);
    // --------------------------------------------------------------
 
    cout << "Clone dataTree" << endl;

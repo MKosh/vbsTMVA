@@ -277,6 +277,7 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
       Float_t BDT      = 1.0;
       Float_t BDT1     = 1.0;
       Float_t BDT2     = 1.0;
+      Float_t BDTG     = 1.0;
       Float_t DNN_GPU  = 1.0;
       Float_t MLP      = 1.0;
       Float_t MLPBFGS  = 1.0;
@@ -291,7 +292,8 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
       TBranch* bClassName = inpDataTree->Branch( "className",(void*)className, "className/C" ); 
       TBranch* bBDT(0); 
       TBranch* bBDT1(0);
-      TBranch* bBDT2(0);  
+      TBranch* bBDT2(0);
+      TBranch* bBDTG(0); 
       TBranch* bDNN_GPU(0);   
       TBranch* bDNN_CPU(0);   
       TBranch* bMLP(0);   
@@ -326,6 +328,9 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
       }
       if (Use["BDT2"]){
         bBDT2 = inpDataTree->Branch("BDT2",           &BDT2,          "BDT2/F");
+      }
+      if (Use["BDTG"]){
+         bBDTG = inpDataTree->Branch("BDTG", &BDTG, "BDTG/F");
       }
       if (Use["Fisher"       ]){
         bFisher      =  inpDataTree->Branch("Fisher",       &Fisher,       "Fisher/F");
@@ -393,32 +398,31 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
          if (Use["LD"           ])   histLD     ->Fill( reader->EvaluateMVA( "LD method"            ) );
          //
          if (Use["MLP"          ]){
-                  MLP = reader->EvaluateMVA("MLP method");
-                  histNn ->Fill(MLP);
-                  bMLP->Fill();
+            MLP = reader->EvaluateMVA("MLP method");
+            histNn ->Fill(MLP);
+            bMLP->Fill();
          }
          if (Use["MLPBFGS"      ]){
-                  MLPBFGS = reader->EvaluateMVA("MLPBFGS method");
-                  histNnbfgs->Fill(MLPBFGS);
-                  bMLPBFGS->Fill();
+            MLPBFGS = reader->EvaluateMVA("MLPBFGS method");
+            histNnbfgs->Fill(MLPBFGS);
+            bMLPBFGS->Fill();
          }
          if (Use["MLPBNN"       ]){
-                  MLPBNN = reader->EvaluateMVA("MLPBNN method");
-                  histNnbnn->Fill(MLPBNN);
-                  bMLPBNN->Fill();
+            MLPBNN = reader->EvaluateMVA("MLPBNN method");
+            histNnbnn->Fill(MLPBNN);
+            bMLPBNN->Fill();
          }
          if (Use["CFMlpANN"     ])   histNnC    ->Fill( reader->EvaluateMVA( "CFMlpANN method"      ) );
          if (Use["TMlpANN"      ])   histNnT    ->Fill( reader->EvaluateMVA( "TMlpANN method"       ) );
          if (Use["DNN_GPU"]){
-         	       DNN_GPU = reader->EvaluateMVA("DNN_GPU method");
-	          //    cout << " events/DNN_GPU (data) = " <<  ievt << "/" <<   DNN_GPU << endl;
-                  histDnnGpu->Fill( DNN_GPU );
-                  bDNN_GPU->Fill();
+         	DNN_GPU = reader->EvaluateMVA("DNN_GPU method");
+            histDnnGpu->Fill( DNN_GPU );
+            bDNN_GPU->Fill();
          }
          if (Use["DNN_CPU"]){
-                  DNN_CPU = reader->EvaluateMVA("DNN_CPU method");
-                  histDnnCpu->Fill(DNN_CPU);
-                  bDNN_CPU->Fill();
+            DNN_CPU = reader->EvaluateMVA("DNN_CPU method");
+            histDnnCpu->Fill(DNN_CPU);
+            bDNN_CPU->Fill();
          }
          if (Use["BDT"          ]){
             BDT=reader->EvaluateMVA( "BDT method" );
@@ -435,7 +439,12 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
             histBdt2->Fill( BDT2 );
             bBDT2->Fill();
          }
-         if (Use["BDTG"         ])   histBdtG   ->Fill( reader->EvaluateMVA( "BDTG method"          ) );
+         if (Use["BDTG"         ]) {
+            BDTG=reader->EvaluateMVA("BDTG method");
+            histBdtG->Fill(BDTG);
+            bBDTG->Fill();
+         }
+
          if (Use["BDTB"         ])   histBdtB   ->Fill( reader->EvaluateMVA( "BDTB method"          ) );
          if (Use["BDTD"         ])   histBdtD   ->Fill( reader->EvaluateMVA( "BDTD method"          ) );
          if (Use["BDTF"         ])   histBdtF   ->Fill( reader->EvaluateMVA( "BDTF method"          ) );

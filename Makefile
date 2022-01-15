@@ -93,7 +93,7 @@ train: update_$(year)
 	-@rm -r skims/vbs_ww
 	@./dsw.sh "$(loc)" "$(year)" "$(dataset)"
 	@./write_vbsDL.sh "$(loc)" "$(vars)" "$(year)"
-	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|    ssAUCoutfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVAClassification.cc
+	@sed -i 's|^.*\(.txt"; // AUCoutfile\)|    ss_AUC_outfile << "ROC/" << "$(saveFile).txt"; // AUCoutfile|g' vbsTMVA.hpp
 	@root -b -q ./vbsTMVAClassification.cc\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@root -b -q ./vbsTMVAClassificationApplication.cc\(\"vbs_ww_$(saveFile)\",\"$(methods)\"\)
 	@sed -i 's|^.*\(cplots(anl, cut, cutName); // XXX\)|//cplots(anl, cut, cutName); // XXX|g' tmvaMon.cc

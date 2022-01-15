@@ -77,6 +77,9 @@ TCut goodMu               ("goodMu",                  "(l_pt1>50&&(type==0)&&(ab
 TCut goodEl               ("goodEl",                  "(l_pt1>50&&(type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))");
 
 // Mark cuts --------------------------------------------------------------------------------------------------------------------------------
+TCut year_2016            ("year_2016",               "(year==2016)");
+TCut year_2017            ("year_2017",               "(year==2017)");
+TCut year_2018            ("year_2018",               "(year==2018)");
 // WV Signal Region (a.k.a boosted WV channel)
 // regions, sr: signal region, cr: control region
 TCut cleanNAN_tau         ("cleanNAN_tau",            "!(TMath::IsNaN(bos_PuppiAK8_tau2tau1))"); // Use this one for the new data
@@ -348,6 +351,10 @@ TChain* getChain(TString treeName, TString filelist); //creates chain from list 
 void getStat(TTree* tree, const char* var, TCut& cut, Stat_t stats[4]);  //number of normalized events
 
 void convertTrees(const char* treeName, const char* filelist);
+
+TString getDateString();
+
+TString getTimeString();
 //void fixVbsTree( TTree* vbsTree, const char* fname);
 
 //======================================================================================================================
@@ -370,23 +377,59 @@ TObjArray* GetListOfBranches(TTree* tree){
 
 //======================================================================================================================
 //
-void WriteAUCFile (Int_t n_BDT_trees, Int_t max_depth, Float_t ada_boost, Float_t min_node_size, TString randomized,
-                    TString myMethodList, TString cut_name, Int_t selector, TMVA::DataLoader* dataloader, TMVA::Factory* factory) {
-  stringstream ss_AUC_out_file;
-  ss_AUC_out_file << "ROC/" << std::to_string(selector) << "_" << cut_name << ".txt"; // AUCoutfile
-  std::ofstream AUC_out_file;
-  AUC_out_file.open(ss_AUC_out_file.str(), std::ios_base::app);
+TString getDateString() {
+  time_t now = time(0);
+  struct tm* timeStruct = localtime(&now);
+  std::stringstream date;
+  date << std::to_string(timeStruct->tm_mon+1) << "-" << std::to_string(timeStruct->tm_mday) 
+      << "-" << std::to_string(timeStruct->tm_year+1900);
+
+  return date.str().c_str();
+}
+
+//======================================================================================================================
+//
+TString getTimeString() {
+  time_t now = time(0);
+  struct tm* timeStruct = localtime(&now);
+  std::stringstream time_str;
+  time_str << std::to_string(timeStruct->tm_hour) << "-" << std::to_string(timeStruct->tm_min); 
+
+  return time_str.str().c_str();
+}
+
+//======================================================================================================================
+//
+TString getTimeAndDateString() {
+  time_t now = time(0);
+  struct tm* timeStruct = localtime(&now);
+  std::stringstream time_and_date;
+  time_and_date << std::to_string(timeStruct->tm_mon+1) << "-" << std::to_string(timeStruct->tm_mday) 
+      << "-" << std::to_string(timeStruct->tm_year+1900) << " " << std::to_string(timeStruct->tm_hour) << ":" << std::to_string(timeStruct->tm_min);
+
+  return time_and_date.str().c_str();
+}
+
+//======================================================================================================================
+//
+void writeAUCFile (TString myMethodList, TMVA::DataLoader* dataloader, TMVA::Factory* factory) {
+  stringstream ss_AUC_outfile;
+    ss_AUC_outfile << "ROC/" << "2017.txt"; // AUCoutfile
+  std::ofstream AUC_outfile;
+  AUC_outfile.open(ss_AUC_outfile.str(), std::ios_base::app);
   std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
+  TString time_and_date = getTimeAndDateString();
 
-  AUC_out_file << "" << std::endl;
-  AUC_out_file << "--------------------------------------------------" << std::endl;
-
+  AUC_outfile << "" << std::endl;
+  AUC_outfile << "--------------------------------------------------" << std::endl;
+  AUC_outfile << time_and_date << std::endl;
    for (UInt_t i=0; i<mlist.size(); i++) {
       std::string reg_method(mlist[i]);
-      AUC_out_file << "AUC for " << reg_method << ": " << factory->GetROCIntegral(dataloader, reg_method) << std::endl;
+      AUC_outfile << "AUC for " << reg_method << ":\t" << factory->GetROCIntegral(dataloader, reg_method) << std::endl;
    }
-   AUC_out_file << "--------------------------------------------------" << std::endl;
-   AUC_out_file.close();
+   AUC_outfile << "--------------------------------------------------" << std::endl;
+   AUC_outfile.close();
+   std::cout << "ROC file written" << std::endl;
 }
 
 //======================================================================================================================
