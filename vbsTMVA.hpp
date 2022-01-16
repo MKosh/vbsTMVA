@@ -126,8 +126,9 @@ TCut lep_eta_spike        ("lep_eta_spike",           "(lep1_eta<(-1.75))");
 
 // Common cuts between the different SR/CR
 TCut common               ("common",                  "(isAntiIso==0) && (bosCent > 0.0)");
+TCut bos_cent             ("bos_cent",                "bosCent > 0.0");
 TCut bos_common           ("bos_common",              fatjet_pt+fatjet_eta+fatjet_tau21);
-TCut full_common          ("full_common",             category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
+TCut full_common          ("full_common",             bos_cent+category_selection+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
 TCut common_ele           ("common_ele",              category_selection+lep_pt+lep_ele+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
 TCut common_muon          ("common_muon",             category_selection+lep_pt+lep_muon+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
 
@@ -414,7 +415,7 @@ TString getTimeAndDateString() {
 //
 void writeAUCFile (TString myMethodList, TMVA::DataLoader* dataloader, TMVA::Factory* factory) {
   stringstream ss_AUC_outfile;
-    ss_AUC_outfile << "ROC/" << "2017.txt"; // AUCoutfile
+    ss_AUC_outfile << "ROC/" << "2016.txt"; // AUCoutfile
   std::ofstream AUC_outfile;
   AUC_outfile.open(ss_AUC_outfile.str(), std::ios_base::app);
   std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
@@ -655,6 +656,7 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
   TBranch* bMCweight = groupTree->GetBranch("mcWeight");
   TBranch* bYear     = groupTree->GetBranch("year");
   TBranch* bLumin    = groupTree->GetBranch("lumin");
+  TBranch* bAntiIso      = groupTree->GetBranch("AntiIsoInt");
 
   vbsEvent.gid = sample->getGid();
   vbsEvent.sid = sample->getSid();
@@ -666,6 +668,8 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
 
   for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
 	  groupTree->GetEntry(ievt);
+    vbsEvent.AntiIsoInt = (Int_t)vbsEvent.isAntiIso;
+    bAntiIso->Fill();
     bGroupID->Fill();
     bSampleID->Fill();
     bMCweight->Fill();

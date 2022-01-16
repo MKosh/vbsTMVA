@@ -253,8 +253,8 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    Double_t backgroundWeight = 1.0;
 
 
-   dataloader->SetSignalWeightExpression    ("mcWeight*genWeight*L1PFWeight*puWeight");
-   dataloader->SetBackgroundWeightExpression("mcWeight*genWeight*L1PFWeight*puWeight" );
+   dataloader->SetSignalWeightExpression    ("mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose");
+   dataloader->SetBackgroundWeightExpression("mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose" );
 
    // You can add an arbitrary number of signal or background trees
    for (UInt_t ns=0; ns<sglSamples.size();ns++){
@@ -267,7 +267,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
       if ( bkgSamples[ns]->getInpTree() ) {
          if ( bkgSamples[ns]->getGName() == "Wjets" ) {
             std::cout << "Weight factor = " << backgroundWeight << std::endl;
-            dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), 1.303*backgroundWeight    );
+            dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), backgroundWeight    );
          }
          else {
             std::cout << "Weight factor = " << backgroundWeight << std::endl;

@@ -103,9 +103,10 @@ rm var_list.txt
 cat branches.txt | sed 's/[0-z]*\/I/Int_t/g' | sed 's/[0-z]*\/F/Float_t/g' | sed 's/[0-z]*\/O/Bool_t/g' | grep -v Float_t | grep -v Int_t | grep -v Bool_t | awk '{$1="Float_t"} {print}' > list_of_branches.txt
 cat branches.txt | sed 's/[0-z]*\/I/Int_t/g' | grep Int_t  >> list_of_branches.txt
 cat branches.txt | sed 's/[0-z]*\/F/Float_t/g' | grep Float_t >> list_of_branches.txt
+#cat branches.txt | sed 's/[0-z]*\/O/Int_t/g' | grep Int_t >> list_of_branches.txt
 cat branches.txt | sed 's/[0-z]*\/O/Bool_t/g' | grep Bool_t >> list_of_branches.txt
 # Delete the old variable list file
-rm branches.txt
+#rm branches.txt
 
 if [ $2 == "Boosted" ]; then
     # These are the variables for the new ntuples.
@@ -119,7 +120,7 @@ if [ $2 == "Boosted" ]; then
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "Boosted2" ]; then
     TMVAVARS="bos_PuppiAK8_tau2tau1 vbf_m lep1_eta nJet30f vbf_deta vbf1_AK4_pt zeppLep vbf2_AK4_qgid vbf1_AK4_qgid vbf2_AK4_eta vbf1_AK4_eta vbf2_AK4_pt zeppHad vbf_eta bos_PuppiAK8_m_sd0_corr"
-    activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta $TMVAVARS" # isAntiIso should go here, but it's a bool and AddSpectator expects a Float_t or Int_t
+    activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta AntiIsoInt $TMVAVARS" # isAntiIso should go here, but it's a bool and AddSpectator expects a Float_t or Int_t AntiIsoInt
     plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad zeppLep nJet30 nJet50 nJet30f"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt vbf_eta"
@@ -191,6 +192,7 @@ typedef struct {
   Float_t         mcWeight;             //== xsect/ngen 
   Float_t         lumin;
   Int_t           year;
+  Int_t           AntiIsoInt;
 
    // Declaration of leaf types
 
@@ -211,6 +213,7 @@ void addBranches_vbsReducedTree(TTree* vbsTree, VbsReducedEvent& vbsEvent){
   vbsTree->Branch( "mcWeight",           &vbsEvent.mcWeight,         "mcWeight/F");
   vbsTree->Branch( "lumin",              &vbsEvent.lumin,            "lumin/F");
   vbsTree->Branch( "year",               &vbsEvent.year,             "year/I");
+  vbsTree->Branch( "AntiIsoInt",        &vbsEvent.AntiIsoInt,      "AntiIsoInt/I");
 }
 
 //===================================================================================
@@ -223,7 +226,9 @@ void arrange_vbsReducedTree(TTree* vbsTree, VbsReducedEvent& vbsEvent){
   vbsTree->SetBranchAddress( "mcWeight",                                 &vbsEvent.mcWeight );
   vbsTree->SetBranchAddress( "lumin",                                    &vbsEvent.lumin);
   vbsTree->SetBranchAddress( "year",                                     &vbsEvent.year);
+  vbsTree->SetBranchAddress( "AntiIsoInt",                              &vbsEvent.AntiIsoInt); 
   cout << " Done setting extra branches. Setting the rest." << endl;
+  vbsTree->SetBranchAddress( "isAntiIso",                                &vbsEvent.isAntiIso);
 EOF
 
 while read line; do
@@ -240,7 +245,7 @@ cat >> $outfile << EOF
 #endif
 EOF
 
-rm list_of_branches.txt
+#rm list_of_branches.txt
 
 # --------------------------------------------------------- End - Create vbsReducedTree.hpp file - End -------------------------------------------------------------
 

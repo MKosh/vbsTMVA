@@ -17,6 +17,7 @@ void setChainBranches (TChain* inpChain){
 //
    inpChain->SetBranchStatus("", kFALSE);   // disable all branches
 // switch on required  branches
+inpChain->SetBranchStatus("AntiIsoInt", 1);
 inpChain->SetBranchStatus("bos_AK4AK4_eta", 1);
 inpChain->SetBranchStatus("bos_AK4AK4_m", 1);
 inpChain->SetBranchStatus("bos_AK4AK4_pt", 1);
