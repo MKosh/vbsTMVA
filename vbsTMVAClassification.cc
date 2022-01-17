@@ -253,8 +253,8 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    Double_t backgroundWeight = 1.0;
 
 
-   dataloader->SetSignalWeightExpression    ("mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose");
-   dataloader->SetBackgroundWeightExpression("mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose" );
+   dataloader->SetSignalWeightExpression    ("mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep2_idEffWeight");
+   dataloader->SetBackgroundWeightExpression("mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep2_idEffWeight" );
 
    // You can add an arbitrary number of signal or background trees
    for (UInt_t ns=0; ns<sglSamples.size();ns++){

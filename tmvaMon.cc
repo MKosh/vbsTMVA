@@ -184,7 +184,7 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
     _testTree->Project(_hf1->GetName(), var, norm_hist*(cuts+_samplecut), "goff");
   }
 
-  int year = 2016;
+  int year = 2017;
   if (_sid == 15 && year == 2018) {
     //scale *= 0.6875; // 2018 Scale ttbar 
   } else if (_sid == 13 && year == 2018) {
@@ -460,7 +460,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
 
 cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
 //shapePlots(anl, cut, cutName); // XXX
-  //genPlots(anl, cut, cutName))))))))))))))), "datasets/plot_args", "training_methods", 's'); // XXX genPlots
+  //genPlots(anl, cut, cutName))))))))))))))))))), "datasets/plot_args", "training_methods", 's'); // XXX genPlots
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -885,7 +885,7 @@ void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 //
 TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& optmap, Float_t& best_cutval, Float_t& sgf_at_bestcut    ){
 
-  std::string year2 = "2016";
+  std::string year2 = "2017";
   if (year2 == "1111") {
     year2 = "Run2";
   }
@@ -2026,7 +2026,7 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
   stringstream saved_plot_name;
 
   plot_title << g_lum << " fb^{-1} (13 TeV)";
-  std::string year2 = "2016";
+  std::string year2 = "2017";
   if (year2 == "1111") {
     year2 = "Run2";
   }
@@ -2129,7 +2129,7 @@ gStyle->SetLineScalePS(0.5);
   TString time_str = getTimeString();
   stringstream out_f_name;
 
-  std::string year2 = "2016";
+  std::string year2 = "2017";
   std::cout << "year = " << year2 << std::endl;
   if (year2 == "1111") {
     year2 = "Run2";
@@ -2257,7 +2257,7 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
   plt_title << "VBS (WV), " << g_lum << " fb^{-1} (13TeV)";
   std::string s = plt_title.str();
   const char* title_str = s.c_str();
-  std::string year2 = "2016";
+  std::string year2 = "2017";
   if (year2 == "1111") {
     year2 = "Run2";
   }

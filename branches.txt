@@ -1,3 +1,4 @@
+AntiIsoInt/I		AntiIsoInt;
 aqgcWeight[1000]/F		aqgcWeight;
 bos_AK4AK4_eta/F		bos_AK4AK4_eta;
 bos_AK4AK4_m/F		bos_AK4AK4_m;

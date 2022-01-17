@@ -125,7 +125,7 @@ elif [ $2 == "Boosted2" ]; then
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt vbf_eta"
     plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin lep1_idEffWeight lep2_idEffWeight"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "set2" ]; then
     TMVAVARS="lep1_eta lep1_pt nJet30f vbf1_AK4_pt vbf2_AK4_pt bos_j1_AK4_pt bos_j2_AK4_pt vbf_m bos_AK4AK4_m vbf_deta vbf_eta bos_AK4AK4_eta zeppHad zeppLep bosCent"
@@ -192,7 +192,7 @@ typedef struct {
   Float_t         mcWeight;             //== xsect/ngen 
   Float_t         lumin;
   Int_t           year;
-  Int_t           AntiIsoInt;
+//  Int_t           AntiIsoInt;
 
    // Declaration of leaf types
 
@@ -213,7 +213,7 @@ void addBranches_vbsReducedTree(TTree* vbsTree, VbsReducedEvent& vbsEvent){
   vbsTree->Branch( "mcWeight",           &vbsEvent.mcWeight,         "mcWeight/F");
   vbsTree->Branch( "lumin",              &vbsEvent.lumin,            "lumin/F");
   vbsTree->Branch( "year",               &vbsEvent.year,             "year/I");
-  vbsTree->Branch( "AntiIsoInt",        &vbsEvent.AntiIsoInt,      "AntiIsoInt/I");
+//  vbsTree->Branch( "AntiIsoInt",        &vbsEvent.AntiIsoInt,      "AntiIsoInt/I");
 }
 
 //===================================================================================
@@ -226,9 +226,9 @@ void arrange_vbsReducedTree(TTree* vbsTree, VbsReducedEvent& vbsEvent){
   vbsTree->SetBranchAddress( "mcWeight",                                 &vbsEvent.mcWeight );
   vbsTree->SetBranchAddress( "lumin",                                    &vbsEvent.lumin);
   vbsTree->SetBranchAddress( "year",                                     &vbsEvent.year);
-  vbsTree->SetBranchAddress( "AntiIsoInt",                              &vbsEvent.AntiIsoInt); 
+//  vbsTree->SetBranchAddress( "AntiIsoInt",                              &vbsEvent.AntiIsoInt); 
   cout << " Done setting extra branches. Setting the rest." << endl;
-  vbsTree->SetBranchAddress( "isAntiIso",                                &vbsEvent.isAntiIso);
+//  vbsTree->SetBranchAddress( "isAntiIso",                                &vbsEvent.isAntiIso);
 EOF
 
 while read line; do
