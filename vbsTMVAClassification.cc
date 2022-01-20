@@ -41,7 +41,7 @@ using namespace TMVA;
 
 int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 {
-   ROOT::EnableImplicitMT();
+   //ROOT::EnableImplicitMT();
    // The explicit loading of the shared libTMVA is done in TMVAlogon.cc, defined in .rootrc
    // if you use your private .rootrc, or run from a different directory, please copy the
    // corresponding lines from .rootrc
@@ -253,8 +253,8 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    Double_t backgroundWeight = 1.0;
 
 
-   dataloader->SetSignalWeightExpression    ("mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep2_idEffWeight");
-   dataloader->SetBackgroundWeightExpression("mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep2_idEffWeight" );
+   dataloader->SetSignalWeightExpression    ("mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep2_idEffWeight*lep1_trigEffWeight*lep2_trigEffWeight");//*pdfWeight*scaleWeight");
+   dataloader->SetBackgroundWeightExpression("mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep2_idEffWeight*lep1_trigEffWeight*lep2_trigEffWeight");//*pdfWeight*scaleWeight");
 
    // You can add an arbitrary number of signal or background trees
    for (UInt_t ns=0; ns<sglSamples.size();ns++){
@@ -520,7 +520,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    // Boosted Decision Trees
    if (Use["BDTG"]) // Gradient Boost
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDTG",
-                           "!H:!V:NTrees=1000:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=0.10:UseBaggedBoost:BaggedSampleFraction=0.5:nCuts=20:MaxDepth=2" );
+                           "!H:!V:NTrees=1000:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=0.10:UseBaggedBoost:BaggedSampleFraction=0.5:nCuts=20:MaxDepth=2:NegWeightTreatment=IgnoreNegWeightsInTraining");
 
    if (Use["BDT1"])  // Adaptive Boost
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT1",

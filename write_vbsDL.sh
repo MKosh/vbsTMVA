@@ -125,8 +125,9 @@ elif [ $2 == "Boosted2" ]; then
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt vbf_eta"
     plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin lep1_idEffWeight lep2_idEffWeight"
-    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin lep1_idEffWeight lep2_idEffWeight lep1_trigEffWeight lep2_trigEffWeight"
+    #weightVARS=""#mcWeight genWeight L1PFWeight puWeight btagWeight_loose lep1_idEffWeight lep2_idEffWeight lep1_trigEffWeight lep2_trigEffWeight pdfWeight scaleWeight"
+    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plotVARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "set2" ]; then
     TMVAVARS="lep1_eta lep1_pt nJet30f vbf1_AK4_pt vbf2_AK4_pt bos_j1_AK4_pt bos_j2_AK4_pt vbf_m bos_AK4AK4_m vbf_deta vbf_eta bos_AK4AK4_eta zeppHad zeppLep bosCent"
     activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta $TMVAVARS" # isAntiIso should go here, but it's a bool and AddSpectator expects a Float_t or Int_t
