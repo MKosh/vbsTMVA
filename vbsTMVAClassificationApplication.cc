@@ -363,7 +363,7 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
       inpDataTree->GetEntry(ievt);
 
       if (ievt%100000 == 0) std::cout << "--- ... Processing event: " << ievt << std::endl;
-      if (!(TMath::IsNaN(vbsEvent.vbf1_AK4_qgid))&&!(TMath::IsNaN(vbsEvent.vbf2_AK4_qgid))) {
+      //if (!(TMath::IsNaN(vbsEvent.vbf1_AK4_qgid))&&!(TMath::IsNaN(vbsEvent.vbf2_AK4_qgid))) {
 //          var1 = userVar1 + userVar2;
 //          var2 = userVar1 - userVar2;
 
@@ -474,7 +474,7 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
          }
          bClassID->Fill();
          bClassName->Fill();
-      }
+      //}
 
    }
 

@@ -25,6 +25,7 @@ if [[ "0$1" == "0" && "0$(echo $SNAME | grep Manjaro)" != "0" ]]; then
     if [[ "$3" == "2016" || "$3" == "2017" || "$3" == "2018" ]]; then
         rootFiles="/mnt/Storage/Research/ntuples/NEW/$3/haddedFiles/"
     else
+        rootFiles="/mnt/Storage/Research/ntuples/NEW/2017/haddedFiles/"
         echo "Error setting file - check write_vbsDL"
     fi
 elif [[ "0$1" == "0" && "0$(echo $SNAME | grep oplp)" != "0" ]]; then
@@ -106,21 +107,11 @@ cat branches.txt | sed 's/[0-z]*\/F/Float_t/g' | grep Float_t >> list_of_branche
 #cat branches.txt | sed 's/[0-z]*\/O/Int_t/g' | grep Int_t >> list_of_branches.txt
 cat branches.txt | sed 's/[0-z]*\/O/Bool_t/g' | grep Bool_t >> list_of_branches.txt
 # Delete the old variable list file
-#rm branches.txt
+rm branches.txt
 
 if [ $2 == "Boosted" ]; then
-    # These are the variables for the new ntuples.
-    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep zeppHad nJet30f vbf_m lep1_eta lep1_pt vbf1_AK4_eta vbf2_AK4_eta dibos_pt dibos_m dibos_eta dilep_pt dilep_eta dilep_m bos_PuppiAK8_tau2tau1 vbf_deta vbf_eta bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_pt bosCent vbf1_AK4_qgid vbf2_AK4_qgid MET MET_phi"
-    activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta $TMVAVARS"
-    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad nJet30 nJet50"
-    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr"
-    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi"
-    plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin"
-    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $2 == "Boosted2" ]; then
-    TMVAVARS="bos_PuppiAK8_tau2tau1 vbf_m lep1_eta nJet30f vbf_deta vbf1_AK4_pt zeppLep vbf2_AK4_qgid vbf1_AK4_qgid vbf2_AK4_eta vbf1_AK4_eta vbf2_AK4_pt zeppHad vbf_eta bos_PuppiAK8_m_sd0_corr"
-    activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta AntiIsoInt $TMVAVARS" # isAntiIso should go here, but it's a bool and AddSpectator expects a Float_t or Int_t AntiIsoInt
+    TMVAVARS="lep1_pt bos_PuppiAK8_pt bos_PuppiAK8_phi bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 vbf_m lep1_eta nJet30f vbf_deta vbf1_AK4_pt zeppLep vbf2_AK4_qgid vbf1_AK4_qgid vbf2_AK4_eta vbf1_AK4_eta vbf2_AK4_pt zeppHad vbf_eta bos_PuppiAK8_m_sd0_corr"
+    activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta AntiIsoInt $TMVAVARS"
     plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad zeppLep nJet30 nJet50 nJet30f"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt vbf_eta"
@@ -128,15 +119,16 @@ elif [ $2 == "Boosted2" ]; then
     plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin lep1_idEffWeight lep2_idEffWeight lep1_trigEffWeight lep2_trigEffWeight"
     #weightVARS=""#mcWeight genWeight L1PFWeight puWeight btagWeight_loose lep1_idEffWeight lep2_idEffWeight lep1_trigEffWeight lep2_trigEffWeight pdfWeight scaleWeight"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plotVARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $2 == "set2" ]; then
-    TMVAVARS="lep1_eta lep1_pt nJet30f vbf1_AK4_pt vbf2_AK4_pt bos_j1_AK4_pt bos_j2_AK4_pt vbf_m bos_AK4AK4_m vbf_deta vbf_eta bos_AK4AK4_eta zeppHad zeppLep bosCent"
-    activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta $TMVAVARS" # isAntiIso should go here, but it's a bool and AddSpectator expects a Float_t or Int_t
-    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad nJet30 nJet50"
+elif [ $2 == "Boosted2" ]; then
+    TMVAVARS="bos_PuppiAK8_tau2tau1 vbf_m lep1_eta nJet30f vbf_deta vbf1_AK4_pt zeppLep vbf2_AK4_qgid vbf1_AK4_qgid vbf2_AK4_eta vbf1_AK4_eta vbf2_AK4_pt zeppHad vbf_eta bos_PuppiAK8_m_sd0_corr"
+    activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta AntiIsoInt $TMVAVARS"
+    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad zeppLep nJet30 nJet50 nJet30f"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
-    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt"
+    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt vbf_eta"
     plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin"
-    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plot_VARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin lep1_idEffWeight lep2_idEffWeight lep1_trigEffWeight lep2_trigEffWeight"
+    #weightVARS=""#mcWeight genWeight L1PFWeight puWeight btagWeight_loose lep1_idEffWeight lep2_idEffWeight lep1_trigEffWeight lep2_trigEffWeight pdfWeight scaleWeight"
+    SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plotVARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "Resolved" ]; then 
     TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0 vbf1_AK4_axis2 bos_AK4AK4_m bos_AK4AK4_pt bos_AK4AK4_eta bos_AK4AK4_phi"
     activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose LHEWeight lep1_idEffWeight lep1_trigEffWeight bos_AK4AK4_phi bos_AK4AK4_eta $TMVAVARS"
@@ -145,13 +137,13 @@ elif [ $2 == "Resolved" ]; then
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
     plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_AK4AK4_m bos_AK4AK4_phi bos_AK4AK4_pt bos_AK4AK4_eta year lumin"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $2 == "set4" ]; then 
-    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0"
-    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose $TMVAVARS"
-    plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt"
-    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0"
+elif [ $2 == "Resolved2" ]; then 
+    TMVAVARS="vbf2_AK4_pt vbf1_AK4_pt zeppLep vbf_m lep1_eta lep1_pt vbf_pt vbf2_AK4_eta dibos_pt bos_PuppiAK8_tau2tau1 vbf_deta bos_PuppiAK8_m_sd0 vbf1_AK4_axis2 bos_AK4AK4_m bos_AK4AK4_pt bos_AK4AK4_eta bos_AK4AK4_phi"
+    activeVARS="gid sid run evt L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose LHEWeight lep1_idEffWeight lep1_trigEffWeight bos_AK4AK4_phi bos_AK4AK4_eta $TMVAVARS"
+    plotVARS="nPV lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad"
+    plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr"
     plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf2_AK4_eta vbf2_AK4_pt vbf1_AK4_pt vbf_m vbf_deta"
-    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt year lumin"
+    plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_AK4AK4_m bos_AK4AK4_phi bos_AK4AK4_pt bos_AK4AK4_eta year lumin"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "old" ]; then
     # These are the variables for the old ntuples
@@ -246,7 +238,7 @@ cat >> $outfile << EOF
 #endif
 EOF
 
-#rm list_of_branches.txt
+rm list_of_branches.txt
 
 # --------------------------------------------------------- End - Create vbsReducedTree.hpp file - End -------------------------------------------------------------
 

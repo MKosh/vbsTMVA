@@ -104,7 +104,7 @@ data_foler=""
 
 if [[ "$2" == "1111" ]]; then
     skim_folder=$COMBINED_SKIM
-    data_folder="$Ntuple_loc/Run2"
+    #data_folder="$Ntuple_loc/Run2"
 fi
 
 echo "Creating link to data files as "

@@ -83,19 +83,35 @@ TCut year_2018            ("year_2018",               "(year==2018)");
 // WV Signal Region (a.k.a boosted WV channel)
 // regions, sr: signal region, cr: control region
 TCut cleanNAN_tau         ("cleanNAN_tau",            "!(TMath::IsNaN(bos_PuppiAK8_tau2tau1))"); // Use this one for the new data
+TCut tau21_cut            ("tau21_cut",               "(bos_PuppiAK8_tau2tau1 >= 0.0 && bos_PuppiAK8_tau2tau1 <= 1.0)");
 TCut cleanNAN_qgid        ("cleanNAN_qgid",           "!(TMath::IsNaN(vbf1_AK4_qgid))&&!(TMath::IsNaN(vbf2_AK4_qgid))");
+TCut qgid_cut             ("qgid_cut",                "(vbf1_AK4_qgid >= 0.0 && vbf1_AK4_qgid <= 1.0)&&(vbf2_AK4_qgid >= 0.0 && vbf2_AK4_qgid <= 1.0)");
 
-TCut category_selection   ("category_selection",      "lep2_pt<0 && bos_PuppiAK8_pt>0");// can be different for muon or electron, see eta cut
+
 TCut wv_boosted           ("wv_boosted",              "lep2_pt<0 && bos_PuppiAK8_pt>0");
 TCut wv_resolved          ("wv_resolved",             "lep2_pt<0 && bos_AK4AK4_pt>0");
 TCut zv_boosted           ("zv_boosted",              "lep2_pt>0 && bos_PuppiAK8_pt>0");
 TCut zv_resolved          ("zv_resolved",             "lep2_pt>0 && bos_AK4AK4_pt>0");
-//TCut category_selection ("category_selection",   "!isAntiIso && lep2_pt<0 && bos_PuppiAK8_pt>0")
+TCut region               ("region",                  wv_boosted);
 
 TCut lep_pt               ("lep_pt",                  "lep1_pt>25"); // can be different value, debatable // lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
-TCut lep_eta              ("lep_eta",                 "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))"); // muon || electron
+TCut lep_eta              ("lep_eta",                 "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 ) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))"); // && fabs(lep2_eta) < 2.4
 TCut lep_ele              ("lep_ele",                 "(lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))");
-TCut lep_muon             ("lep_muon",                "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 && fabs(lep2_eta) < 2.4)");
+TCut lep_muon             ("lep_muon",                "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4)"); // && fabs(lep2_eta) < 2.4
+
+TCut wv_boosted_lep       ("wv_boosted_lep",          wv_boosted+lep_eta);
+TCut wv_boosted_ele       ("wv_boosted_ele",          wv_boosted+lep_ele);
+TCut wv_boosted_muon      ("wv_boosted_muon",         wv_boosted+lep_muon);
+TCut wv_resolved_lep      ("wv_resolved_lep",         wv_resolved+lep_eta);
+TCut wv_resolved_ele      ("wv_resolved_ele",         wv_resolved+lep_ele);
+TCut wv_resolved_muon     ("wv_resolved_muon",        wv_resolved+lep_muon);
+TCut zv_boosted_lep       ("zv_boosted_lep",          zv_boosted+lep_eta);
+TCut zv_boosted_ele       ("zv_boosted_ele",          zv_boosted+lep_ele);
+TCut zv_boosted_muon      ("zv_boosted_muon",         zv_boosted+lep_muon);
+TCut zv_resolved_lep      ("zv_resolved_lep",         zv_resolved+lep_eta);
+TCut zv_resolved_ele      ("zv_resolved_ele",         zv_resolved+lep_ele);
+TCut zv_resolved_muon     ("zv_resolved_muon",        zv_resolved+lep_muon);
+TCut category_selection   ("category_selection",      wv_boosted_lep);
 
 TCut fatjet_pt            ("fatjet_pt",               "bos_PuppiAK8_pt>200");
 TCut fatjet_eta           ("fatjet_eta",              "TMath::Abs(bos_PuppiAK8_eta)<2.4");
@@ -106,126 +122,68 @@ TCut vbs_jets_pt          ("vbs_jets_pt",             "vbf1_AK4_pt>50 && vbf2_AK
 TCut vbs_delta_eta        ("vbs_delta_eta",           "vbf_deta>2.5"); // this is absolute delta eta
 
 TCut met_pt               ("met_pt",                  "MET>30");
-TCut btag_veto           ("btag_veto",                "nBtag_loose==0");
+TCut btag_veto            ("btag_veto",               "nBtag_loose==0");
 
 // The unique conditions for each SR/CR
 TCut wv_sr                ("wv_sr",                   "(bos_PuppiAK8_m_sd0_corr>65 && bos_PuppiAK8_m_sd0_corr<105)");
-TCut wv_cr_vjets          ("wv_cr_vjets",             "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150) && nBtag_loose==0");
+TCut wv_cr_wjets          ("wv_cr_wjets",             "(bos_PuppiAK8_m_sd0_corr>50 && bos_PuppiAK8_m_sd0_corr<65) || (bos_PuppiAK8_m_sd0_corr>105 && bos_PuppiAK8_m_sd0_corr<150) && nBtag_loose==0");
 TCut wv_cr_top            ("wv_cr_top",               "nBtag_loose>0");
+TCut btag_weight          ("btag_weight",             "btagWeight_loose");
 
 // Extra cuts
 TCut dummy                ("dummy",                   "");
-TCut ZeppWL               ("ZeppWLlt3",               "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
-TCut ZeppWH               ("ZeppWHlt3",               "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
+TCut ZeppWLlt3            ("ZeppWLlt3",               "(TMath::Abs(zeppLep)/vbf_deta)<0.3");
+TCut ZeppWHLlt3           ("ZeppWHlt3",               "(TMath::Abs(zeppHad)/vbf_deta)<0.3");
+TCut ZeppWLlt1            ("ZeppWLlt1",               "(TMath::Abs(zeppLep)/vbf_deta)<1.0");
+TCut ZeppWHLlt1           ("ZeppWHlt1",               "(TMath::Abs(zeppHad)/vbf_deta)<1.0");
 TCut noData               ("noData",                  "!(gid==3)");
 
-// Tests for the strange data spike in 2018 for lep1_phi and lep1_eta
-TCut hi_nPV               ("hi_nPV",                  "(nPV>=35)");
-TCut lep_phi_spike        ("lep_phi_spike",           "(lep1_phi<-0.75) && (lep1_phi>-1.75)");
-TCut lep_eta_spike        ("lep_eta_spike",           "(lep1_eta<(-1.75))");
-
 // Common cuts between the different SR/CR
-//TCut common               ("common",                  "(isAntiIso==0) && (bosCent > 0.0)");
-TCut common               ("common",                  "(AntiIsoInt==0)&&(bosCent>0.0)");
-TCut bos_cent             ("bos_cent",                "bosCent > 0.0");
+TCut iso_cut              ("iso_cut",                 "(AntiIsoInt==0)&&(bosCent>0.0)");
+TCut vbs_jets             ("vbs_jets",                vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta);
 TCut bos_common           ("bos_common",              fatjet_pt+fatjet_eta+fatjet_tau21);
-TCut full_common          ("full_common",             common+wv_boosted+lep_pt+lep_eta+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
-TCut common_ele           ("common_ele",              category_selection+lep_pt+lep_ele+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
-TCut common_muon          ("common_muon",             category_selection+lep_pt+lep_muon+fatjet_pt+fatjet_eta+fatjet_tau21+vbs_jets_mjj+vbs_jets_pt+vbs_delta_eta+met_pt);
+TCut zepp_cut             ("zepp_cut",                ZeppWLlt1+ZeppWHLlt1);
+TCut common               ("common",                  iso_cut+zepp_cut+lep_pt+bos_common+vbs_jets+met_pt);
+TCut full_common          ("full_common",             common+lep_eta+region);
+TCut common_ele           ("common_ele",              common+lep_ele+region);
+TCut common_muon          ("common_muon",             common+lep_muon+region);
+TCut training_cut         ("training_cut",            common+category_selection);
 
-// Full set of cuts for each SR/CR selecting either electrons or muons
-TCut full_vjets_cr        ("full_vjets_cr",           full_common+btag_veto+wv_cr_vjets);
+// Full set of cuts for each SR/CR selecting both electrons and muons
+TCut full_wjets_cr        ("full_wjets_cr",           full_common+btag_veto+wv_cr_wjets);
 TCut full_top_cr          ("full_top_cr",             full_common+wv_cr_top+wv_sr);
 TCut full_wv_sr           ("full_wv_sr",              full_common+btag_veto+wv_sr);//+noData);
-TCut BDT_cut              ("BDT_cut",                 "BDT1>0.028");
+TCut BDT_cut_2016         ("BDT_cut_2016",            "BDT>-0.1265"); // optCutScan: 0.146, TMVA: -0.1265
+TCut BDTG_cut_2016        ("BDTG_cut_2016",           "BDTG>0.660"); // optCutScan: 0.660 TMVA: -0.3941
+TCut MLPBFGS_cut_2016     ("MLPBFGS_cut_2016",        "MLPBFGS>0.026"); // optCutScan: 0.026 TMVA: 0.0042
+TCut BDT_cut_2017         ("BDT_cut_2017",            "BDT>0.213");
+TCut BDTG_cut_2017        ("BDTG_cut_2017",           "BDTG>0.699");
+TCut MLPBFGS_cut_2017     ("MLPBFGS_cut_2017",        "MLPBFGS>0.0"); // Error
+TCut BDT_cut_2018         ("BDT_cut_2018",            "BDT>0.198");
+TCut BDTG_cut_2018        ("BDTG_cut_2018",           "BDTG>0.643");
+TCut MLPBFGS_cut_2018     ("MLPBFGS_cut_2018",        "MLPBFGS>0.026");
+TCut BDT_cut_Run2         ("BDT_cut_Run2",            "BDT>0.146");
+TCut BDTG_cut_Run2        ("BDTG_cut_Run2",           "BDTG>0.660");
+TCut MLPBFGS_cut_Run2     ("MLPBFGS_cut_Run2",        "MLPBFGS>0.026");
 
 // Full SR/CR cuts specifying one type of lepton
-TCut vjets_cr_ele         ("vjets_cr_ele",            common_ele+btag_veto+wv_cr_vjets);
-TCut vjets_cr_muon        ("vjets_cr_muon",           common_muon+btag_veto+wv_cr_vjets);
+TCut wjets_cr_ele         ("wjets_cr_ele",            common_ele+btag_veto+wv_cr_wjets);
+TCut wjets_cr_muon        ("wjets_cr_muon",           common_muon+btag_veto+wv_cr_wjets);
 TCut top_cr_ele           ("top_cr_ele",              common_ele+wv_cr_top+wv_sr);
 TCut top_cr_muon          ("top_cr_muon",             common_muon+wv_cr_top+wv_sr);
 TCut wv_sr_ele            ("wv_sr_ele",               common_ele+btag_veto+wv_sr);
 TCut wv_sr_muon           ("wv_sr_muon",              common_muon+btag_veto+wv_sr);
 
-
 TCut wtot_2016            ("wtot_2016",               "35867.06*genWeight*mcWeight*L1PFWeight*puWeight"); //"35867.06*genWeight*mcWeight*L1PFWeight*puWeight"
 TCut wtot_2017            ("wtot_2017",               "41530*genWeight*mcWeight*L1PFWeight*puWeight"); // 41530
 TCut wtot_2018            ("wtot_2018",               "59740*genWeight*mcWeight*L1PFWeight*puWeight"); // 59740
-TCut wtot_run2            ("wtot_run2",               "137100.0*genWeight*mcWeight*L1PFWeight*puWeight");
-TCut wtotL1               ("wtotL1",                  "L1PFWeight*genWeight*puWeight");
-TCut allCuts            ("allCuts",                (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
-TCut norm_hist 	          ("norm_hist",                    "((year==2016)*(lumin*genWeight*mcWeight*L1PFWeight*puWeight))+((year==2017)*(lumin*genWeight*mcWeight*L1PFWeight*puWeight))+((year==2018)*(lumin*genWeight*mcWeight*L1PFWeight*puWeight))");
-TCut dummy_cut      ("dummy_cut",     "");
+TCut allCuts              ("allCuts",                 (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
+TCut norm_btag            ("norm_btag",               "((year==2016)*(lumin*mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep1_trigEffWeight))+((year==2017)*(lumin*mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep1_trigEffWeight))+((year==2018)*(lumin*mcWeight*genWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep1_trigEffWeight))");
+TCut norm_hist 	          ("norm_hist",               "((year==2016)*(lumin*mcWeight*genWeight*L1PFWeight*puWeight*lep1_idEffWeight*lep1_trigEffWeight))+((year==2017)*(lumin*mcWeight*genWeight*L1PFWeight*puWeight*lep1_idEffWeight*lep1_trigEffWeight))+((year==2018)*(lumin*mcWeight*genWeight*puWeight*L1PFWeight*lep1_idEffWeight*lep1_trigEffWeight))");
+TCut test_cut1            ("test_cut1",               "((year==2016)*(lumin*mcWeight*genWeight*L1PFWeight*puWeight*lep1_idEffWeight*lep1_trigEffWeight))+((year==2017)*(lumin*mcWeight*genWeight*L1PFWeight*puWeight*lep1_idEffWeight*lep1_trigEffWeight))+((year==2018)*(lumin*mcWeight*genWeight*puWeight*lep1_idEffWeight*lep1_trigEffWeight))");
+TCut test_cut2 	          ("test_cut2",               "((year==2016)*(lumin*mcWeight*genWeight))+((year==2017)*(lumin*mcWeight*genWeight))+((year==2018)*(lumin*mcWeight*genWeight))");
+//Cuts ---------------------------------------------------------------------------------------------------------------------------------
 
-TCut leptest_vjets        ("leptest_vjets",          full_vjets_cr+lep_eta_spike+lep_phi_spike);
-TCut leptest_top          ("leptest_top",            full_top_cr+lep_eta_spike+lep_phi_spike);
-TCut leptest_wv           ("leptest_wv",             full_wv_sr+lep_eta_spike+lep_phi_spike);
-// Mark Cuts ---------------------------------------------------------------------------------------------------------------------------------
-// Cut map
-//std::map<std::string,TCut> cut_map;
-//cut_map["dummy"] = dummy;
-//cut_map["full_wv_sr"] = full_wv_sr;
-
-// Cut map
-
-//TCut cleanNAN_phi           ("cleanNAN_phi",     "(phi_type0>0&&phi_type2>0&&phi_type0<3.14&&phi_type2<3.14)"  );
-TCut cleanNAN_phi           ("cleanNAN_phi",       "(!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))"  ); // was (!TMath::IsNaN(phi_type0) && !TMath::IsNaN(phi_type2))
-TCut wtot_old               ("wtot_old",           "35867.06*mcWeight*L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
-TCut wtotL1_old             ("wtotL1_old",         "L1_Prefweight*btag0Wgt*genWeight*trig_eff_Weight*id_eff_Weight*pu_Weight");
-
-TCut more	                  ("more",	            "(type==0||type==1)");
-TCut OneLpt                 ("OneLpt",             "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) || ((type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))))" );
-
-//ramanpreet
-//TCut OneMuPt50              ("OneMuPt50",           "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) ) )");
-//TCut fatjetLoose            ("fatjetLoose",         "((ungroomed_PuppiAK8_jet_pt>200)&&(abs(ungroomed_PuppiAK8_jet_eta)<2.4))");
-//TCut antitagVBF             ("antitagVBF",          "(nBTagJet_loose==0)");
-//TCut pfMETpuppi50           ("pfMETpuppi50",        "((type==0)&&(pfMET_Corr>50))");
-//TCut mjw65to105             ("mjw65to105",          "((PuppiAK8_jet_mass_so_corr>65) && (PuppiAK8_jet_mass_so_corr<105))");
-//TCut MjjVBF300              ("MjjVBF300",           "(vbf_maxpt_jj_m>300)");
-//TCut detajjVBF2             ("detajjVBF4",          "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>2.0)");
-
-//paper selections
-//TCut tmvasel                ("tmvasel",             cleanNAN+more+OneLpt  );
-//TCut pfMETpuppi_m30e80      ("pfMETpuppi_m30e80",   "(((type==0)&&(pfMET_Corr>30)) || ((type==1)&&(pfMET_Corr>80)))");
-TCut pfMETpuppi_m50e80      ("pfMETpuppi_m50e80",  "(((type==0)&&(pfMET_Corr>50)) || ((type==1)&&(pfMET_Corr>80)))");
-
-TCut fatjet                 ("fatjet",             "((ungroomed_PuppiAK8_jet_pt>200)&&(abs(ungroomed_PuppiAK8_jet_eta)<2.4)&&(PuppiAK8_jet_tau2tau1<0.55))");
-//TCut mjw40to125             ("mjw40to125",          "((PuppiAK8_jet_mass_so_corr>40) && (PuppiAK8_jet_mass_so_corr<125))");
-TCut mjw65to105             ("mjw65to105",         "((PuppiAK8_jet_mass_so_corr>65) && (PuppiAK8_jet_mass_so_corr<105))");
-
-TCut antitagVBF             ("antitagVBF",         "(nBTagJet_loose==0)");
-TCut MjjVBF800              ("MjjVBF800",          "(vbf_maxpt_jj_m>800)");
-TCut detajjVBF4	          ("detajjVBF4",         "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>4.0)");
-//TCut detajjVBF3p5           ("detajjVBF3p5",        "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>3.5)");
-TCut ptjjVBF30              ("ptjjVBF30",          "(vbf_maxpt_j1_pt>30) && (vbf_maxpt_j2_pt>30)");
-TCut mlvj600                ("mlvj600",            "(mass_lvj_type0_PuppiAK8>600)");
-TCut BCtype0gt1             ("BCtype0gt1",         "(BosonCentrality_type0>1.0)");
-TCut ZeppWLlt3              ("ZeppWLlt3",          "((abs(ZeppenfeldWL_type0)/abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta))<0.3)");
-TCut ZeppWHlt3              ("ZeppWHlt3",          "((abs(ZeppenfeldWH)/abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta))<0.3)" );
-//TCut allCuts                ("allCuts",             (more+OneLpt+pfMETpuppi_m50e80+fatjet+mjw65to105+antitagVBF+MjjVBF800+detajjVBF4+ptjjVBF30+mlvj600+BCtype0gt1+ZeppWLlt3+ZeppWHlt3));
-
-//TCut wtot                  ("wtot",                "f_weight");
-// TCut treff                 ("treff",               "f_eff_weight");
-
-// TCut mqvbf                 ("mqvbf",               "");
-
-//RamansSelections
-//TCut rOneLpt                ("rOneLpt",             "(l_pt2<0 && l_pt1>50 && (((type==0)&&(abs(l_eta1)<2.4)) || ((type==1)&&((abs(l_eta1)<2.5)&&!(abs(l_eta1)>1.4442 && abs(l_eta1)<1.566)))))" );
-//TCut rpfMETpuppi_m50e80     ("rpfMETpuppi_m50e80",  "(((type==0)&&(pfMET_Corr>50)) || ((type==1)&&(pfMET_Corr>80)))");
-//TCut rptjjVBF30             ("rptjjVBF30",          "(vbf_maxpt_j1_pt>30) && (vbf_maxpt_j2_pt>30)");
-//TCut rantitagVBF            ("rantitagVBF",         "(nBTagJet_loose==0)");
-//TCut rfatjetPt200           ("rfatjetPt200 ",       "(ungroomed_PuppiAK8_jet_pt>200)");
-//TCut rfatjetEta2p4          ("rfatjetEta2p4",       "(abs(ungroomed_PuppiAK8_jet_eta)<2.4)");
-//TCut rmjw65to105            ("rmjw65to105",         "((PuppiAK8_jet_mass_so_corr>65) && (PuppiAK8_jet_mass_so_corr<105))");
-//TCut rMjjVBF800             ("rMjjVBF800",          "(vbf_maxpt_jj_m>800)");
-//TCut rMjjVBF300             ("rMjjVBF300",          "(vbf_maxpt_jj_m>300)");
-//TCut rMjjVBF500             ("rMjjVBF500",          "(vbf_maxpt_jj_m>500)");
-//TCut rdetajjVBF4            ("rdetajjVBF4",         "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>4.0)");
-//TCut rdetajjVBF2            ("rdetajjVBF2",         "(abs(vbf_maxpt_j2_eta-vbf_maxpt_j1_eta)>2.0)");
-//TCut rallCuts               ("rallCuts",            (rOneLpt+ rpfMETpuppi_m50e80+rptjjVBF30+rantitagVBF+rfatjetPt200+rfatjetEta2p4+rmjw65to105+rMjjVBF800+rdetajjVBF4+mlvj600));
-//TCut rallCutsr2             ("rallCuts",            (rOneLpt+ rpfMETpuppi_m50e80+rptjjVBF30+rantitagVBF+rfatjetPt200+rfatjetEta2p4+rMjjVBF300+rdetajjVBF2+mlvj600));
-//TCut cuts0_W                ("cuts0_W",             "(l_pt2<0 && l_pt1>0) && (ungroomed_PuppiAK8_jet_pt>200) && (vbf_maxpt_jj_m>500)" );
 
 class Sample{
 private:
@@ -249,7 +207,7 @@ private:
   TString   _reqlist;       // reqlist name
   Float_t   _sweight;       // _xsec/_ngen
 
- public:
+public:
 
   Sample(Int_t year, Float_t lumin, const char* gname, const char* sname, Float_t xsec, Int_t loadFlag, Int_t gid, Int_t sid, Int_t color, Float_t  nMCgen,  Float_t nMCgenNeg ){
     _lumin = lumin;
@@ -416,7 +374,7 @@ TString getTimeAndDateString() {
 //
 void writeAUCFile (TString myMethodList, TMVA::DataLoader* dataloader, TMVA::Factory* factory) {
   stringstream ss_AUC_outfile;
-    ss_AUC_outfile << "ROC/" << "2018_test.txt"; // AUCoutfile
+    ss_AUC_outfile << "ROC/" << "Run2.txt"; // AUCoutfile
   std::ofstream AUC_outfile;
   AUC_outfile.open(ss_AUC_outfile.str(), std::ios_base::app);
   std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
@@ -498,8 +456,6 @@ TString getFileNames(Sample* data_sample) {
   TString temp;
   while (f.getline(fname,len)) {
     if (strlen(fname) == 0) continue;
-    std::cout << "fname = " << fname << std::endl;
-    //file_names.push_back(fname);
     temp = fname;
   }
   return temp;
@@ -634,7 +590,7 @@ Int_t getVbsReqStat(const char* filelist) {
       TTree* mtree  = (TTree*) gROOT->FindObject("VBS4LeptonsAnalysisReduced");
 	    nInitReqEvt_w+=cutflow_w->GetBinContent(1);
 	    nInitReqEvt  +=cutflow->GetBinContent(1);
-	    getStat(mtree,"f_mass4l",wtot_run2,stats);
+	    getStat(mtree,"f_mass4l",norm_hist,stats);
       nNtpReqEvt    += stats[0];
 	    nNtpReqEvt_w2 += stats[1]*stats[1];
     }else{
@@ -657,20 +613,15 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
   TBranch* bMCweight = groupTree->GetBranch("mcWeight");
   TBranch* bYear     = groupTree->GetBranch("year");
   TBranch* bLumin    = groupTree->GetBranch("lumin");
-//  TBranch* bAntiIso      = groupTree->GetBranch("AntiIsoInt");
 
   vbsEvent.gid = sample->getGid();
   vbsEvent.sid = sample->getSid();
   vbsEvent.mcWeight = sample->getWeight();
   vbsEvent.year = sample->getYear();
   vbsEvent.lumin = sample->getLumin();
-  
-  std::cout << "Event year : " << vbsEvent.year << std::endl;
 
   for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
 	  groupTree->GetEntry(ievt);
-//    vbsEvent.AntiIsoInt = (Int_t)vbsEvent.isAntiIso;
-//    bAntiIso->Fill();
     bGroupID->Fill();
     bSampleID->Fill();
     bMCweight->Fill();

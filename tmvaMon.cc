@@ -184,25 +184,25 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
     _testTree->Project(_hf1->GetName(), var, norm_hist*(cuts+_samplecut), "goff");
   }
 
-  int year = 2018;
+  int year = 2016;
   if (_sid == 15 && year == 2018) {
-    //scale *= 0.6875; // 2018 Scale ttbar 
+    scale *= 0.72; // Old scale factors //scale *= 0.6875; // 2018 Scale ttbar 
   } else if (_sid == 13 && year == 2018) {
-   // scale *= 0.802; // 2018 Scale Wjets
+    scale *= 0.669; // scale *= 0.802; // 2018 Scale Wjets
   } else if (_sid == 15 && year == 2016) {
-
+    scale *= 0.907;
   } else if (_sid == 13 && year == 2016) {
-   // scale *= 1.794;
+    scale *= 1.466; // scale *= 1.794;
   } else if (_sid == 15 && year == 2017) {
-
+    scale *= 1.250;
   } else if (_sid == 13 && year == 2017) {
-    //scale *= 1.303;
+    scale *= 1.255; //scale *= 1.303;
   } else if (_sid == 15 && year == 1111) {
    // scale *= 0.133;
   } else if (_sid == 13 && year == 1111) {
    //  scale *= 1.0;
   }
-
+//std::cout << "sid = " << _sid << ", scale = " << scale << std::endl;
   _hf1->GetStats(_stats);
   npass    = _stats[0]*(scale);
   npass_err= scale*TMath::Sqrt(_stats[1]);
@@ -325,6 +325,8 @@ class TmvaAnl{
 
   public:
     CutList cuts;
+    TFile* getROOTFile() { return _inputSBD; }
+    TString getAnlName() { return _anl_name; }
     static const UInt_t  PB2FB = 1000;
     TmvaAnl(TString  anlname,Float_t lum_fbinv, std::vector<TmvaSample*> vsamples, Float_t& scale_sgl_tmva,Float_t& scale_bkg_tmva);
     void setDataSample(UInt_t sID){ _data = _vsamples[sID]; }
@@ -411,7 +413,7 @@ void  printCutflow( TmvaAnl* anl, const char* var, const char* flowname="", TCut
 	       Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, Int_t flogx=0,
 	       const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
 
-void cplots(TmvaAnl* anl, TCut cuts, TString CutName);
+void cplots(TmvaAnl* anl, TCut cuts, TString plotName);
 
 void shapePlots(TmvaAnl*, TCut cuts, TString CutName);
 
@@ -438,7 +440,7 @@ Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_e
 
 //======================================================================================================================
 //
-void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TString cutName="test"){
+void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TString plot_name="test"){
   //
   TH1::StatOverflows(kTRUE);  // To force the underflows and overflows in the getStat() computations
   TGaxis::SetMaxDigits(3);
@@ -458,9 +460,9 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.867, TCut cut="", TStri
   cout << "  tmgui()" << endl;
   cout << "" << endl;
 
-cplots(anl, cut, cutName); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
+cplots(anl, cut, plot_name); // XXX This comment is just for the makefile to see and sed to change whether this line actually runs
 //shapePlots(anl, cut, cutName); // XXX
-  //genPlots(anl, cut, cutName))))))))))))))))))))))))))))), "datasets/plot_args", "training_methods", 's'); // XXX genPlots
+  //genPlots(anl, cut, plot_name)))))), "datasets/plot_args", "MVA_variables", 'r'); // XXX genPlots
 
   //plotvar(anl,"PuppiAK8_jet_mass_so_corr", cleanNAN, 1.00, 0, 0,     0., 400., 5.);
   //plotvar(sgl,"PuppiAK8_jet_mass_so_corr", z1m40, 1.00, 0, 0,     0., 400., 5.);
@@ -885,11 +887,12 @@ void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 //
 TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& optmap, Float_t& best_cutval, Float_t& sgf_at_bestcut    ){
 
-  std::string year2 = "2018";
+  std::string year2 = "2016";
   if (year2 == "1111") {
     year2 = "Run2";
   }
   TString date = getDateString();
+  TString time = getTimeString();
 
   TCanvas* cgraph = (TCanvas*)gROOT->FindObject("cOptGraph"); 
   if(cgraph) {cgraph->Delete(); }
@@ -1005,7 +1008,7 @@ TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Flo
   
   stringstream splname;
   stringstream plotName;
-  plotName << "plots/" << year2 << "/" << date << "/" << sgfName << "_" << cutvar;
+  plotName << "plots/" << year2 << "/" << date << "/" << sgfName << "_" << cutvar << "_" << time;
 
   splname << plotName.str().c_str() << ".pdf";
   gPad->SaveAs(splname.str().c_str());
@@ -1408,7 +1411,7 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
     hdata->Draw("E1 same");  
     
     signal_hist->SetFillStyle(0);
-    signal_hist->SetLineWidth(2);
+    signal_hist->SetLineWidth(0); // Signal overlay hist
     signal_hist->SetLineColor(kRed);
     if (!flogy) {
       signal_hist->Scale(10);
@@ -2026,7 +2029,7 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
   stringstream saved_plot_name;
 
   plot_title << g_lum << " fb^{-1} (13 TeV)";
-  std::string year2 = "2018";
+  std::string year2 = "2016";
   if (year2 == "1111") {
     year2 = "Run2";
   }
@@ -2044,6 +2047,8 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
   cp1->Print(saved_plot_name.str().c_str());
   saved_plot_name.str("");
   saved_plot_name << "plots/" << year2 << "/" << date << "/" << year2 << "_plot_set_" << time_str << ".pdf";
+  std::stringstream root_file;
+  root_file << "plots/" << year2 << "/" << date << "/" << year2 << "_plot_set_" << time_str << ".root";
 
   TDOMParser* parser = new TDOMParser();
   parser->SetValidate(false);
@@ -2051,7 +2056,22 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
   auto* node = parser->GetXMLDocument()->GetRootNode();
   node = node->GetChildren()->GetNextNode();
   TList* attr_list;
-
+  TFile* anl_file = gFile->GetFile();
+  TString anlName = TString(anl->getAnlName());
+  TDirectory* anl_dir = (TDirectory*) anl_file->GetDirectory(anlName);
+  /*if (anl_dir) {
+    anl_dir->cd();
+    cout <<  "Using analysis directory " << anlName << endl;
+  } else {
+    cout <<  "Can not find the analysis directory " <<  anlName << endl;
+    exit(1);
+  }
+  */
+  Int_t iter = 1;
+  TString c = "Canvas";
+  std::stringstream canvas_name;
+  TFile* f = new TFile(root_file.str().c_str(), "RECREATE");
+  
   switch (plot_style) {
     case 'r': { // normal ratio plots
       for (; node; node = node->GetNextNode()) {
@@ -2072,6 +2092,14 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
                     ((TXMLAttr*)attr_list->At(13))->GetValue(),
                     ((TXMLAttr*)attr_list->At(14))->GetValue());
             //saved_plot_name << "plots/" << year2 << "/" << date << "/" << ((TXMLAttr*)attr_list->At(1))->GetValue() << "_" << name << "_plot.pdf";
+            //canvas_name << "plots/" << year2 << "/" << date << "/" << 
+            canvas_name << "Canvas" << iter;
+            f->cd();
+            cp1->Write(canvas_name.str().c_str());
+            ++iter;
+            canvas_name.str("");
+            anl_file->cd();
+            anl_dir->cd();
             cp1->Print(saved_plot_name.str().c_str());
             //saved_plot_name.str("");
             cp1->Clear();
@@ -2098,9 +2126,7 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
                     title_str,
                     ((TXMLAttr*)attr_list->At(13))->GetValue(),
                     ((TXMLAttr*)attr_list->At(14))->GetValue());
-            //saved_plot_name << "plots/" << year2 << "/" << date << "/" << ((TXMLAttr*)attr_list->At(1))->GetValue() << "_" << name << "_shape.pdf";
             cp1->SaveAs(saved_plot_name.str().c_str());
-            //saved_plot_name.str("");
             cp1->Clear();
           }
         }
@@ -2122,21 +2148,21 @@ void genPlots(TmvaAnl *anl, TCut cuts = "", TString name = "test", TString folde
 
 //======================================================================================================================
 // 
-void cplots(TmvaAnl* anl, TCut cuts="", TString CutName="test"){
+void cplots(TmvaAnl* anl, TCut cuts="", TString plotName="mutliplot_set"){
   anl->setsvplots(1);
-gStyle->SetLineScalePS(0.5);
+  gStyle->SetLineScalePS(0.5);
   TString date = getDateString();
   TString time_str = getTimeString();
   stringstream out_f_name;
 
-  std::string year2 = "2018";
+  std::string year2 = "2016";
   std::cout << "year = " << year2 << std::endl;
   if (year2 == "1111") {
     year2 = "Run2";
   }
 
   stringstream plt_title;
-  plt_title << year2 <<" VBS, " << g_lum << " fb^{-1}";
+  plt_title << year2 <<" VBS (WV), " << g_lum << " fb^{-1}";
   std::string s = plt_title.str();
   const char* title_str = s.c_str();
   // title: VBS (WV), 35.9fb^{-1}
@@ -2158,13 +2184,13 @@ parser->ParseFile("datasets/plot_args/MVA_variables.xml");
 
   TCanvas* cp1 = new TCanvas("cp1", "cp1", 10,10,1200,1200);
   
-  out_f_name << "plots/" << year2 << "/" << date << "/" << year2 << "_multiplot_set_" << time_str << ".pdf[";
+  out_f_name << "plots/" << year2 << "/" << date << "/" << year2 << "_" << plotName << "_" << time_str << ".pdf[";
   cp1->SaveAs(out_f_name.str().c_str());
   cp1->Clear();
   cp1->Divide(3,3);
 
   out_f_name.str("");
-  out_f_name << "plots/" << year2 << "/" << date << "/" << year2 << "_multiplot_set_" << time_str << ".pdf";
+  out_f_name << "plots/" << year2 << "/" << date << "/" << year2 << "_" << plotName << "_" << time_str << ".pdf";
 
   Int_t iter = 1;
   char plot_style = 'r';
@@ -2239,7 +2265,7 @@ parser->ParseFile("datasets/plot_args/MVA_variables.xml");
       break;
   }
   out_f_name.str("");
-  out_f_name << "plots/" << year2 << "/" << date << "/" << year2 << "_multiplot_set_" << time_str << ".pdf]";
+  out_f_name << "plots/" << year2 << "/" << date << "/" << year2 << "_" << plotName << "_" << time_str << ".pdf]";
   cp1->SaveAs(out_f_name.str().c_str());
 
   anl->setsvplots(0);
@@ -2257,7 +2283,7 @@ void shapePlots(TmvaAnl* anl, TCut cuts="", TString CutName="test") {
   plt_title << "VBS (WV), " << g_lum << " fb^{-1} (13TeV)";
   std::string s = plt_title.str();
   const char* title_str = s.c_str();
-  std::string year2 = "2018";
+  std::string year2 = "2016";
   if (year2 == "1111") {
     year2 = "Run2";
   }
@@ -2380,7 +2406,7 @@ void  printCutflow(TmvaAnl* anl, const char* var, const char*  flowname, TCut ba
     vbs_jets_mjj <<
     vbs_delta_eta <<
     vbs_jets_pt <<
-    //wv_cr_vjets
+    //wv_cr_wjets
     wv_cr_top <<
     wv_sr                // needed for both SR and top CR
   ;

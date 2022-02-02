@@ -1,0 +1,1943 @@
+System check done!
+Creating link to data files as 
+skim = vbs_ww
+Working Directory:
+  skims/vbs_ww -> /mnt/Storage/Research/ntuples/NEW
+Creating vbsSamples.hpp
+Done writing vbsSamples.hpp
+Done!
+
+Next run ./write_vbsDL.sh with the appropriate arguments
+Creating write_list.cc
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Jul 24 2021, 10:36:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing write_list.cc...
+Creating vbsReducedTree.hpp
+Creating vbsDL.hpp
+// Int_t AntiIsoInt
+Spectator:: AntiIsoInt
+Spectator:: bos_AK4AK4_eta
+Spectator:: bos_AK4AK4_m
+Spectator:: bos_AK4AK4_pt
+Spectator:: bosCent
+Spectator:: bos_j1_AK4_eta
+Spectator:: bos_j1_AK4_pt
+Spectator:: bos_j2_AK4_eta
+Spectator:: bos_j2_AK4_pt
+Variable:: bos_PuppiAK8_eta
+Spectator:: bos_PuppiAK8_m_sd0
+Variable:: bos_PuppiAK8_m_sd0_corr
+Variable:: bos_PuppiAK8_phi
+Variable:: bos_PuppiAK8_pt
+Variable:: bos_PuppiAK8_tau2tau1
+Spectator:: btagWeight_loose
+Spectator:: dibos_eta
+Spectator:: dibos_m
+Spectator:: dibos_mt
+Spectator:: dibos_phi
+Spectator:: dibos_pt
+Spectator:: dilep_eta
+Spectator:: dilep_m
+Spectator:: dilep_mt
+Spectator:: dilep_phi
+Spectator:: dilep_pt
+Spectator:: evt
+Spectator:: genWeight
+Float_t Int_t gid
+Spectator:: gid
+Spectator:: L1PFWeight
+Variable:: lep1_eta
+Spectator:: lep1_idEffWeight
+Spectator:: lep1_iso
+Spectator:: lep1_m
+Spectator:: lep1_phi
+Variable:: lep1_pt
+Spectator:: lep1_q
+Spectator:: lep1_trigEffWeight
+Spectator:: lep2_eta
+Spectator:: lep2_idEffWeight
+Spectator:: lep2_phi
+Spectator:: lep2_pt
+Spectator:: lep2_trigEffWeight
+Spectator:: lumin
+Spectator:: mcWeight
+Spectator:: MET
+Spectator:: MET_phi
+Spectator:: nBtag_loose
+Spectator:: nBtag_medium
+Spectator:: neu_pz_type0
+Float_t Int_t nJet30
+Spectator:: nJet30
+Variable:: nJet30f
+Spectator:: nJet50
+Spectator:: nPV
+Spectator:: puWeight
+Spectator:: run
+Spectator:: sid
+Variable:: vbf1_AK4_eta
+Spectator:: vbf1_AK4_phi
+Variable:: vbf1_AK4_pt
+Variable:: vbf1_AK4_qgid
+Variable:: vbf2_AK4_eta
+Spectator:: vbf2_AK4_phi
+Variable:: vbf2_AK4_pt
+Variable:: vbf2_AK4_qgid
+Variable:: vbf_deta
+Variable:: vbf_eta
+Variable:: vbf_m
+Spectator:: vbf_phi
+Spectator:: vbf_pt
+Spectator:: year
+Variable:: zeppHad
+Variable:: zeppLep
+Creating vbsActiveBranches.hpp
+Done!
+
+Next run root -b -q ./vbsTMVAClassification.cc\(\"vbs_ww\",\"BDT\"\)
+Don't forget to change the selector variable to switch what samples are being used
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Jul 24 2021, 10:36:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing ./vbsTMVAClassification.cc("vbs_ww_2017","BDT,BDTG,MLPBFGS")...
+
+==> Start TMVAClassification
+VBS_EWK--WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--VBS_EWK--WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2017/WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 98394
+Exit chain2tree 0x561b07598150
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 signal events 98394
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--VBS_EWK--WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2017/WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 90028
+Exit chain2tree 0x561b07eec170
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 signal events 90028
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--VBS_EWK--WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2017/WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 66562
+Exit chain2tree 0x561b083d5bc0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 signal events 66562
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--VBS_EWK--WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2017/WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 423838
+Exit chain2tree 0x561b07e60400
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 signal events 423838
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--VBS_EWK--WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2017/WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 101591
+Exit chain2tree 0x561b0cb11320
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 signal events 101591
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--VBS_EWK--WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2017/WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 437963
+Exit chain2tree 0x561b07c76d40
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 signal events 437963
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--VBS_EWK--WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2017/WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 101311
+Exit chain2tree 0x561b1eb56e80
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 signal events 101311
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--VBS_EWK--WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2017/WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 127136
+Exit chain2tree 0x561b1e9fdb40
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 signal events 127136
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--VBS_EWK--ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2017/ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 65944
+Exit chain2tree 0x561b1eb55010
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 signal events 65944
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--Diboson--WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 153072
+Exit chain2tree 0x561b077a8a20
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 background events 153072
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--Diboson--WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 20240
+Exit chain2tree 0x561b0774a1b0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 background events 20240
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--Diboson--WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 215102
+Exit chain2tree 0x561b2ec10df0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 background events 215102
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV
+Processing filelist reqlists/rqs_2017--Diboson--WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV_bkg.lst
+fname = skims/vbs_ww/2017/WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV.root
+getChain: Tree Events , total events: 698901
+Exit chain2tree 0x561b1f042260
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV background events 698901
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--Diboson--WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 155693
+Exit chain2tree 0x561b0cbe0800
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 background events 155693
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV
+Processing filelist reqlists/rqs_2017--Diboson--WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV_bkg.lst
+fname = skims/vbs_ww/2017/WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV.root
+getChain: Tree Events , total events: 635457
+Exit chain2tree 0x561b0cbe0260
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV background events 635457
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--Diboson--WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 21996
+Exit chain2tree 0x561b0cbe0530
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 background events 21996
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--Diboson--WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 392645
+Exit chain2tree 0x561b0cbdf910
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 background events 392645
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2017--Diboson--ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8_01.root
+getChain: Tree Events , total events: 13678
+Exit chain2tree 0x561b1f0425c0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 background events 13678
+---------------------------------------------------------------------------------------------------------------------------------
+top--TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2017--top--TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 15182887
+Exit chain2tree 0x561b0cbdf640
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8 background events 15182887
+---------------------------------------------------------------------------------------------------------------------------------
+top--TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2017--top--TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8_01.root
+getChain: Tree Events , total events: 432135
+Exit chain2tree 0x561bb11a7f30
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8 background events 432135
+---------------------------------------------------------------------------------------------------------------------------------
+top--TTToHadronic_TuneCP5_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2017--top--TTToHadronic_TuneCP5_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/TTToHadronic_TuneCP5_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 126077
+Exit chain2tree 0x561c70be9270
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total TTToHadronic_TuneCP5_13TeV-powheg-pythia8 background events 126077
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia
+Processing filelist reqlists/rqs_2017--top--ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia_bkg.lst
+fname = skims/vbs_ww/2017/ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia_01.root
+getChain: Tree Events , total events: 34029
+Exit chain2tree 0x561c7bd0bd10
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia background events 34029
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_s-channel_top_leptonDecays_13TeV-PSweights_powheg-pythia
+Processing filelist reqlists/rqs_2017--top--ST_s-channel_top_leptonDecays_13TeV-PSweights_powheg-pythia_bkg.lst
+fname = skims/vbs_ww/2017/ST_s-channel_top_leptonDecays_13TeV-PSweights_powheg-pythia_01.root
+getChain: Tree Events , total events: 79292
+Exit chain2tree 0x561c6fe1a010
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_s-channel_top_leptonDecays_13TeV-PSweights_powheg-pythia background events 79292
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_t-channel_antitop_5f_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2017--top--ST_t-channel_antitop_5f_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/ST_t-channel_antitop_5f_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 40827
+Exit chain2tree 0x561c6fe26e50
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_t-channel_antitop_5f_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 40827
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2017--top--ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8_01.root
+getChain: Tree Events , total events: 64075
+Exit chain2tree 0x561b1b5944e0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8 background events 64075
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2017--top--ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8_01.root
+getChain: Tree Events , total events: 162346
+Exit chain2tree 0x561c70f36bb0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8 background events 162346
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2017--top--ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8_01.root
+getChain: Tree Events , total events: 158706
+Exit chain2tree 0x561b5037d840
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8 background events 158706
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Wjets--WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8_01.root
+getChain: Tree Events , total events: 57160
+Exit chain2tree 0x561c812f1d20
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8 background events 57160
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Wjets--WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 243665
+Exit chain2tree 0x561c8e313e70
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8 background events 243665
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Wjets--WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8_01.root
+getChain: Tree Events , total events: 477139
+Exit chain2tree 0x561c6f44cef0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8 background events 477139
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-400To600_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Wjets--WJetsToLNu_HT-400To600_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WJetsToLNu_HT-400To600_TuneCP5_13TeV-madgraphMLM-pythia8_01.root
+getChain: Tree Events , total events: 776216
+Exit chain2tree 0x561c965cd290
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-400To600_TuneCP5_13TeV-madgraphMLM-pythia8 background events 776216
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Wjets--WJetsToLNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WJetsToLNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 1784107
+Exit chain2tree 0x561c9643f9a0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8 background events 1784107
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Wjets--WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 2252828
+Exit chain2tree 0x561cce72b9d0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8 background events 2252828
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Wjets--WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 2844398
+Exit chain2tree 0x561cf7d4f870
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8 background events 2844398
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Wjets--WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 3652541
+Exit chain2tree 0x561d2b9d3880
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8 background events 3652541
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-70to100_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Zjets--DYJetsToLL_M-50_HT-70to100_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/DYJetsToLL_M-50_HT-70to100_TuneCP5_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 56909
+Exit chain2tree 0x561c898b55e0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-70to100_TuneCP5_13TeV-madgraphMLM-pythia8 background events 56909
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-100to200_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Zjets--DYJetsToLL_M-50_HT-100to200_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/DYJetsToLL_M-50_HT-100to200_TuneCP5_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 215429
+Exit chain2tree 0x561cf918c510
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-100to200_TuneCP5_13TeV-madgraphMLM-pythia8 background events 215429
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-200to400_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Zjets--DYJetsToLL_M-50_HT-200to400_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/DYJetsToLL_M-50_HT-200to400_TuneCP5_13TeV-madgraphMLM-pythia8_01.root
+getChain: Tree Events , total events: 494064
+Exit chain2tree 0x561b3ef5e120
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-200to400_TuneCP5_13TeV-madgraphMLM-pythia8 background events 494064
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-400to600_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Zjets--DYJetsToLL_M-50_HT-400to600_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/DYJetsToLL_M-50_HT-400to600_TuneCP5_13TeV-madgraphMLM-pythia8_01.root
+getChain: Tree Events , total events: 1031405
+Exit chain2tree 0x561d2b9c6280
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-400to600_TuneCP5_13TeV-madgraphMLM-pythia8 background events 1031405
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-600to800_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Zjets--DYJetsToLL_M-50_HT-600to800_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/DYJetsToLL_M-50_HT-600to800_TuneCP5_13TeV-madgraphMLM-pythia8_01.root
+getChain: Tree Events , total events: 1163089
+Exit chain2tree 0x561d6f756220
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-600to800_TuneCP5_13TeV-madgraphMLM-pythia8 background events 1163089
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-800to1200_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Zjets--DYJetsToLL_M-50_HT-800to1200_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/DYJetsToLL_M-50_HT-800to1200_TuneCP5_13TeV-madgraphMLM-pythia8_01.root
+getChain: Tree Events , total events: 536726
+Exit chain2tree 0x561d6e7f10f0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-800to1200_TuneCP5_13TeV-madgraphMLM-pythia8 background events 536726
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-1200to2500_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Zjets--DYJetsToLL_M-50_HT-1200to2500_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/DYJetsToLL_M-50_HT-1200to2500_TuneCP5_13TeV-madgraphMLM-pythia8_01.root
+getChain: Tree Events , total events: 133931
+Exit chain2tree 0x561c70d48a10
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-1200to2500_TuneCP5_13TeV-madgraphMLM-pythia8 background events 133931
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-2500toInf_TuneCP5_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2017--Zjets--DYJetsToLL_M-50_HT-2500toInf_TuneCP5_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2017/DYJetsToLL_M-50_HT-2500toInf_TuneCP5_13TeV-madgraphMLM-pythia8_01.root
+getChain: Tree Events , total events: 100728
+Exit chain2tree 0x561c70dbdca0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-2500toInf_TuneCP5_13TeV-madgraphMLM-pythia8 background events 100728
+---------------------------------------------------------------------------------------------------------------------------------
+data--Data
+register reqlists/rqs_2017--data--Data_data.lst data samples
+Processing filelist reqlists/rqs_2017--data--Data_data.lst
+fname = skims/vbs_ww/2017/Data_noDup_.root
+getChain: Tree Events , total events: 3618723
+Exit chain2tree 0x561db54d0460
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total Data data events 3618723
+---------------------------------------------------------------------------------------------------------------------------------
+DataSetInfo              : [vbs_ww_2017] : Added class "Signal"
+DataSetInfo              : [vbs_ww_2017] : Added class "Background"
+                         : Add Tree WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Signal with 98394 events
+                         : Add Tree WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Signal with 90028 events
+                         : Add Tree WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Signal with 66562 events
+                         : Add Tree WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Signal with 423838 events
+                         : Add Tree WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Signal with 101591 events
+                         : Add Tree WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Signal with 437963 events
+                         : Add Tree WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Signal with 101311 events
+                         : Add Tree WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Signal with 127136 events
+                         : Add Tree ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Signal with 65944 events
+                         : Add Tree WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Background with 153072 events
+                         : Add Tree WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Background with 20240 events
+                         : Add Tree WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Background with 215102 events
+                         : Add Tree WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV of type Background with 698901 events
+                         : Add Tree WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Background with 155693 events
+                         : Add Tree WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV of type Background with 635457 events
+                         : Add Tree WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Background with 21996 events
+                         : Add Tree WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Background with 392645 events
+                         : Add Tree ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8 of type Background with 13678 events
+                         : Add Tree TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8 of type Background with 15182887 events
+                         : Add Tree TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8 of type Background with 432135 events
+                         : Add Tree TTToHadronic_TuneCP5_13TeV-powheg-pythia8 of type Background with 126077 events
+                         : Add Tree ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia of type Background with 34029 events
+                         : Add Tree ST_s-channel_top_leptonDecays_13TeV-PSweights_powheg-pythia of type Background with 79292 events
+                         : Add Tree ST_t-channel_antitop_5f_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 40827 events
+                         : Add Tree ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8 of type Background with 64075 events
+                         : Add Tree ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8 of type Background with 162346 events
+                         : Add Tree ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8 of type Background with 158706 events
+                         : Add Tree WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 57160 events
+                         : Add Tree WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 243665 events
+                         : Add Tree WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 477139 events
+                         : Add Tree WJetsToLNu_HT-400To600_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 776216 events
+                         : Add Tree WJetsToLNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 1784107 events
+                         : Add Tree WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 2252828 events
+                         : Add Tree WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 2844398 events
+                         : Add Tree WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 3652541 events
+                         : Add Tree DYJetsToLL_M-50_HT-70to100_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 56909 events
+                         : Add Tree DYJetsToLL_M-50_HT-100to200_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 215429 events
+                         : Add Tree DYJetsToLL_M-50_HT-200to400_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 494064 events
+                         : Add Tree DYJetsToLL_M-50_HT-400to600_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 1031405 events
+                         : Add Tree DYJetsToLL_M-50_HT-600to800_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 1163089 events
+                         : Add Tree DYJetsToLL_M-50_HT-800to1200_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 536726 events
+                         : Add Tree DYJetsToLL_M-50_HT-1200to2500_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 133931 events
+                         : Add Tree DYJetsToLL_M-50_HT-2500toInf_TuneCP5_13TeV-madgraphMLM-pythia8 of type Background with 100728 events
+Factory                  : Booking method: [1mMLPBFGS[0m
+                         : 
+MLPBFGS                  : [vbs_ww_2017] : Create Transformation "N" with events from all classes.
+                         : 
+                         : Transformation, Variable selection : 
+                         : Input : variable 'bos_PuppiAK8_eta' <---> Output : variable 'bos_PuppiAK8_eta'
+                         : Input : variable 'bos_PuppiAK8_m_sd0_corr' <---> Output : variable 'bos_PuppiAK8_m_sd0_corr'
+                         : Input : variable 'bos_PuppiAK8_phi' <---> Output : variable 'bos_PuppiAK8_phi'
+                         : Input : variable 'bos_PuppiAK8_pt' <---> Output : variable 'bos_PuppiAK8_pt'
+                         : Input : variable 'bos_PuppiAK8_tau2tau1' <---> Output : variable 'bos_PuppiAK8_tau2tau1'
+                         : Input : variable 'lep1_eta' <---> Output : variable 'lep1_eta'
+                         : Input : variable 'lep1_pt' <---> Output : variable 'lep1_pt'
+                         : Input : variable 'nJet30f' <---> Output : variable 'nJet30f'
+                         : Input : variable 'vbf1_AK4_eta' <---> Output : variable 'vbf1_AK4_eta'
+                         : Input : variable 'vbf1_AK4_pt' <---> Output : variable 'vbf1_AK4_pt'
+                         : Input : variable 'vbf1_AK4_qgid' <---> Output : variable 'vbf1_AK4_qgid'
+                         : Input : variable 'vbf2_AK4_eta' <---> Output : variable 'vbf2_AK4_eta'
+                         : Input : variable 'vbf2_AK4_pt' <---> Output : variable 'vbf2_AK4_pt'
+                         : Input : variable 'vbf2_AK4_qgid' <---> Output : variable 'vbf2_AK4_qgid'
+                         : Input : variable 'vbf_deta' <---> Output : variable 'vbf_deta'
+                         : Input : variable 'vbf_eta' <---> Output : variable 'vbf_eta'
+                         : Input : variable 'vbf_m' <---> Output : variable 'vbf_m'
+                         : Input : variable 'zeppHad' <---> Output : variable 'zeppHad'
+                         : Input : variable 'zeppLep' <---> Output : variable 'zeppLep'
+MLPBFGS                  : Building Network. 
+                         : Initializing weights
+Factory                  : Booking method: [1mBDTG[0m
+                         : 
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree TTToHadronic_TuneCP5_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree ST_s-channel_top_leptonDecays_13TeV-PSweights_powheg-pythia
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree ST_t-channel_antitop_5f_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree ST_t-channel_top_5f_TuneCP5_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WJetsToLNu_HT-400To600_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WJetsToLNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree DYJetsToLL_M-50_HT-70to100_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree DYJetsToLL_M-50_HT-100to200_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree DYJetsToLL_M-50_HT-200to400_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree DYJetsToLL_M-50_HT-400to600_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree DYJetsToLL_M-50_HT-600to800_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree DYJetsToLL_M-50_HT-800to1200_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree DYJetsToLL_M-50_HT-1200to2500_TuneCP5_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2017] :  create input formulas for tree DYJetsToLL_M-50_HT-2500toInf_TuneCP5_13TeV-madgraphMLM-pythia8
+<WARNING>                : Found events with NaN and/or +-inf values
+<WARNING>                : Dataset[vbs_ww_2017] : Input expression resolves to indeterminate value (NaN): vbf1_AK4_qgid (130939 times)
+<WARNING>                : Dataset[vbs_ww_2017] : Input expression resolves to indeterminate value (NaN): vbf2_AK4_qgid (18617 times)
+<WARNING>                : These NaN and/or +-infs were all removed by the specified cut, continuing.
+                         : 
+DataSetFactory           : [vbs_ww_2017] : Number of events in input trees
+                         : Dataset[vbs_ww_2017] :     Signal     requirement: "(((vbf1_AK4_qgid >= 0.0 && vbf1_AK4_qgid <= 1.0)&&(vbf2_AK4_qgid >= 0.0 && vbf2_AK4_qgid <= 1.0))&&((bos_PuppiAK8_tau2tau1 >= 0.0 && bos_PuppiAK8_tau2tau1 <= 1.0)))&&((((((((AntiIsoInt==0)&&(bosCent>0.0))&&(((TMath::Abs(zeppLep)/vbf_deta)<1.0)&&((TMath::Abs(zeppHad)/vbf_deta)<1.0)))&&(lep1_pt>25))&&(((bos_PuppiAK8_pt>200)&&(TMath::Abs(bos_PuppiAK8_eta)<2.4))&&(TMath::Abs(bos_PuppiAK8_tau2tau1)<0.55)))&&(((vbf_m>500)&&(vbf1_AK4_pt>50 && vbf2_AK4_pt>50))&&(vbf_deta>2.5)))&&(MET>30))&&((lep2_pt<0 && bos_PuppiAK8_pt>0)&&((lep1_m > 0.105 && fabs(lep1_eta) < 2.4 ) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566)))))"
+                         : Dataset[vbs_ww_2017] :     Signal          -- number of events passed: 70158  / sum of weights: 0.00960441
+                         : Dataset[vbs_ww_2017] :     Signal          -- efficiency             : 0.0474672
+                         : Dataset[vbs_ww_2017] :     Background requirement: "(((vbf1_AK4_qgid >= 0.0 && vbf1_AK4_qgid <= 1.0)&&(vbf2_AK4_qgid >= 0.0 && vbf2_AK4_qgid <= 1.0))&&((bos_PuppiAK8_tau2tau1 >= 0.0 && bos_PuppiAK8_tau2tau1 <= 1.0)))&&((((((((AntiIsoInt==0)&&(bosCent>0.0))&&(((TMath::Abs(zeppLep)/vbf_deta)<1.0)&&((TMath::Abs(zeppHad)/vbf_deta)<1.0)))&&(lep1_pt>25))&&(((bos_PuppiAK8_pt>200)&&(TMath::Abs(bos_PuppiAK8_eta)<2.4))&&(TMath::Abs(bos_PuppiAK8_tau2tau1)<0.55)))&&(((vbf_m>500)&&(vbf1_AK4_pt>50 && vbf2_AK4_pt>50))&&(vbf_deta>2.5)))&&(MET>30))&&((lep2_pt<0 && bos_PuppiAK8_pt>0)&&((lep1_m > 0.105 && fabs(lep1_eta) < 2.4 ) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566)))))"
+                         : Dataset[vbs_ww_2017] :     Background      -- number of events passed: 1082052  / sum of weights: 0.93803
+                         : Dataset[vbs_ww_2017] :     Background      -- efficiency             : 0.0150836
+                         : Dataset[vbs_ww_2017] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[vbs_ww_2017] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[vbs_ww_2017] : No weight renormalisation applied: use original global and event weights
+DataSetInfo              : Correlation matrix (Signal):
+                         : ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                          bos_PuppiAK8_eta bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_phi bos_PuppiAK8_pt bos_PuppiAK8_tau2tau1 lep1_eta lep1_pt nJet30f vbf1_AK4_eta vbf1_AK4_pt vbf1_AK4_qgid vbf2_AK4_eta vbf2_AK4_pt vbf2_AK4_qgid vbf_deta vbf_eta   vbf_m zeppHad zeppLep
+                         :        bos_PuppiAK8_eta:           +1.000                  -0.001           -0.007          -0.001                +0.001   +0.048  -0.002  +0.002       -0.036      +0.002        -0.003       +0.223      +0.003        -0.002   -0.004  +0.208  -0.003  +0.755  -0.217
+                         : bos_PuppiAK8_m_sd0_corr:           -0.001                  +1.000           -0.003          +0.186                -0.243   -0.019  +0.017  -0.038       +0.001      +0.023        +0.001       -0.002      -0.001        -0.005   -0.010  -0.000  +0.002  -0.000  -0.014
+                         :        bos_PuppiAK8_phi:           -0.007                  -0.003           +1.000          -0.005                +0.001   -0.001  -0.001  -0.002       -0.005      -0.007        +0.004       +0.001      -0.006        -0.003   +0.004  -0.008  -0.002  -0.003  +0.002
+                         :         bos_PuppiAK8_pt:           -0.001                  +0.186           -0.005          +1.000                +0.036   -0.010  +0.227  +0.006       +0.001      +0.367        +0.014       +0.001      +0.123        -0.002   -0.096  +0.008  +0.110  -0.002  -0.010
+                         :   bos_PuppiAK8_tau2tau1:           +0.001                  -0.243           +0.001          +0.036                +1.000   +0.006  +0.025  +0.085       -0.000      +0.011        -0.014       +0.002      -0.020        -0.011   -0.023  +0.003  -0.033  -0.002  +0.002
+                         :                lep1_eta:           +0.048                  -0.019           -0.001          -0.010                +0.006   +1.000  -0.003  -0.002       +0.078      +0.004        -0.002       +0.065      -0.002        +0.001   +0.005  +0.196  +0.005  -0.115  +0.620
+                         :                 lep1_pt:           -0.002                  +0.017           -0.001          +0.227                +0.025   -0.003  +1.000  -0.024       -0.003      +0.055        -0.007       +0.000      +0.024        +0.003   +0.022  -0.003  +0.036  +0.001  -0.000
+                         :                 nJet30f:           +0.002                  -0.038           -0.002          +0.006                +0.085   -0.002  -0.024  +1.000       -0.008      -0.023        -0.051       +0.008      -0.040        -0.073   +0.080  -0.003  +0.016  -0.000  -0.005
+                         :            vbf1_AK4_eta:           -0.036                  +0.001           -0.005          +0.001                -0.000   +0.078  -0.003  -0.008       +1.000      -0.002        +0.006       -0.830      +0.000        -0.007   +0.004  +0.421  -0.000  -0.041  +0.059
+                         :             vbf1_AK4_pt:           +0.002                  +0.023           -0.007          +0.367                +0.011   +0.004  +0.055  -0.023       -0.002      +1.000        +0.114       +0.002      +0.467        +0.033   -0.355  +0.002  +0.337  +0.001  +0.000
+                         :           vbf1_AK4_qgid:           -0.003                  +0.001           +0.004          +0.014                -0.014   -0.002  -0.007  -0.051       +0.006      +0.114        +1.000       -0.005      +0.051        +0.004   -0.058  +0.004  +0.032  -0.003  -0.002
+                         :            vbf2_AK4_eta:           +0.223                  -0.002           +0.001          +0.001                +0.002   +0.065  +0.000  +0.008       -0.830      +0.002        -0.005       +1.000      +0.001        +0.009   -0.000  +0.067  +0.004  -0.162  -0.350
+                         :             vbf2_AK4_pt:           +0.003                  -0.001           -0.006          +0.123                -0.020   -0.002  +0.024  -0.040       +0.000      +0.467        +0.051       +0.001      +1.000        +0.092   -0.323  +0.006  +0.370  +0.001  -0.003
+                         :           vbf2_AK4_qgid:           -0.002                  -0.005           -0.003          -0.002                -0.011   +0.001  +0.003  -0.073       -0.007      +0.033        +0.004       +0.009      +0.092        +1.000   -0.046  -0.005  +0.018  -0.007  -0.003
+                         :                vbf_deta:           -0.004                  -0.010           +0.004          -0.096                -0.023   +0.005  +0.022  +0.080       +0.004      -0.355        -0.058       -0.000      -0.323        -0.046   +1.000  -0.002  +0.598  -0.008  -0.000
+                         :                 vbf_eta:           +0.208                  -0.000           -0.008          +0.008                +0.003   +0.196  -0.003  -0.003       +0.421      +0.002        +0.004       +0.067      +0.006        -0.005   -0.002  +1.000  -0.003  -0.317  -0.388
+                         :                   vbf_m:           -0.003                  +0.002           -0.002          +0.110                -0.033   +0.005  +0.036  +0.016       -0.000      +0.337        +0.032       +0.004      +0.370        +0.018   +0.598  -0.003  +1.000  -0.007  -0.003
+                         :                 zeppHad:           +0.755                  -0.000           -0.003          -0.002                -0.002   -0.115  +0.001  -0.000       -0.041      +0.001        -0.003       -0.162      +0.001        -0.007   -0.008  -0.317  -0.007  +1.000  +0.162
+                         :                 zeppLep:           -0.217                  -0.014           +0.002          -0.010                +0.002   +0.620  -0.000  -0.005       +0.059      +0.000        -0.002       -0.350      -0.003        -0.003   -0.000  -0.388  -0.003  +0.162  +1.000
+                         : ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DataSetInfo              : Correlation matrix (Background):
+                         : ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                          bos_PuppiAK8_eta bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_phi bos_PuppiAK8_pt bos_PuppiAK8_tau2tau1 lep1_eta lep1_pt nJet30f vbf1_AK4_eta vbf1_AK4_pt vbf1_AK4_qgid vbf2_AK4_eta vbf2_AK4_pt vbf2_AK4_qgid vbf_deta vbf_eta   vbf_m zeppHad zeppLep
+                         :        bos_PuppiAK8_eta:           +1.000                  +0.005           -0.009          +0.001                +0.001   +0.194  -0.003  -0.001       +0.041      +0.004        -0.001       +0.149      +0.004        -0.001   -0.003  +0.214  +0.001  +0.709  -0.068
+                         : bos_PuppiAK8_m_sd0_corr:           +0.005                  +1.000           -0.003          +0.332                -0.254   +0.001  +0.043  +0.006       -0.002      +0.079        -0.000       +0.002      +0.031        -0.010   -0.027  -0.001  +0.029  +0.004  -0.000
+                         :        bos_PuppiAK8_phi:           -0.009                  -0.003           +1.000          +0.001                +0.000   -0.001  +0.003  -0.002       -0.000      +0.005        -0.003       -0.001      +0.001        -0.004   -0.001  -0.003  +0.001  -0.006  +0.002
+                         :         bos_PuppiAK8_pt:           +0.001                  +0.332           +0.001          +1.000                +0.016   +0.001  +0.178  +0.016       -0.002      +0.295        +0.010       +0.000      +0.103        -0.017   -0.097  -0.003  +0.076  +0.003  +0.003
+                         :   bos_PuppiAK8_tau2tau1:           +0.001                  -0.254           +0.000          +0.016                +1.000   +0.001  +0.025  -0.002       +0.002      +0.038        +0.013       -0.001      +0.018        +0.005   -0.017  +0.003  +0.007  +0.000  -0.000
+                         :                lep1_eta:           +0.194                  +0.001           -0.001          +0.001                +0.001   +1.000  -0.002  +0.000       +0.097      +0.004        +0.004       -0.020      +0.001        -0.004   -0.005  +0.086  -0.003  +0.108  +0.650
+                         :                 lep1_pt:           -0.003                  +0.043           +0.003          +0.178                +0.025   -0.002  +1.000  -0.017       -0.001      +0.008        -0.003       +0.002      +0.008        -0.006   +0.019  +0.001  +0.006  -0.003  -0.004
+                         :                 nJet30f:           -0.001                  +0.006           -0.002          +0.016                -0.002   +0.000  -0.017  +1.000       -0.001      +0.003        -0.049       -0.001      +0.036        -0.015   +0.146  -0.005  +0.158  +0.002  +0.004
+                         :            vbf1_AK4_eta:           +0.041                  -0.002           -0.000          -0.002                +0.002   +0.097  -0.001  -0.001       +1.000      +0.002        +0.004       -0.798      +0.002        -0.005   -0.003  +0.375  +0.001  +0.006  +0.042
+                         :             vbf1_AK4_pt:           +0.004                  +0.079           +0.005          +0.295                +0.038   +0.004  +0.008  +0.003       +0.002      +1.000        +0.076       -0.002      +0.377        +0.002   -0.404  -0.000  +0.268  +0.005  +0.005
+                         :           vbf1_AK4_qgid:           -0.001                  -0.000           -0.003          +0.010                +0.013   +0.004  -0.003  -0.049       +0.004      +0.076        +1.000       -0.003      +0.021        +0.003   +0.005  +0.002  +0.060  -0.001  +0.003
+                         :            vbf2_AK4_eta:           +0.149                  +0.002           -0.001          +0.000                -0.001   -0.020  +0.002  -0.001       -0.798      -0.002        -0.003       +1.000      -0.001        +0.003   +0.000  +0.172  -0.002  -0.281  -0.412
+                         :             vbf2_AK4_pt:           +0.004                  +0.031           +0.001          +0.103                +0.018   +0.001  +0.008  +0.036       +0.002      +0.377        +0.021       -0.001      +1.000        +0.033   -0.342  +0.002  +0.272  +0.002  +0.000
+                         :           vbf2_AK4_qgid:           -0.001                  -0.010           -0.004          -0.017                +0.005   -0.004  -0.006  -0.015       -0.005      +0.002        +0.003       +0.003      +0.033        +1.000   +0.038  -0.004  +0.053  +0.001  +0.000
+                         :                vbf_deta:           -0.003                  -0.027           -0.001          -0.097                -0.017   -0.005  +0.019  +0.146       -0.003      -0.404        +0.005       +0.000      -0.342        +0.038   +1.000  -0.005  +0.625  +0.000  -0.001
+                         :                 vbf_eta:           +0.214                  -0.001           -0.003          -0.003                +0.003   +0.086  +0.001  -0.005       +0.375      -0.000        +0.002       +0.172      +0.002        -0.004   -0.005  +1.000  -0.004  -0.391  -0.495
+                         :                   vbf_m:           +0.001                  +0.029           +0.001          +0.076                +0.007   -0.003  +0.006  +0.158       +0.001      +0.268        +0.060       -0.002      +0.272        +0.053   +0.625  -0.004  +1.000  +0.004  +0.001
+                         :                 zeppHad:           +0.709                  +0.004           -0.006          +0.003                +0.000   +0.108  -0.003  +0.002       +0.006      +0.005        -0.001       -0.281      +0.002        +0.001   +0.000  -0.391  +0.004  +1.000  +0.401
+                         :                 zeppLep:           -0.068                  -0.000           +0.002          +0.003                -0.000   +0.650  -0.004  +0.004       +0.042      +0.005        +0.003       -0.412      +0.000        +0.000   -0.001  -0.495  +0.001  +0.401  +1.000
+                         : ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DataSetFactory           : [vbs_ww_2017] :  
+                         : 
+Factory                  : Booking method: [1mBDT[0m
+                         : 
+Train All Methods
+Factory                  : [1mTrain all methods[0m
+Factory                  : [vbs_ww_2017] : Create Transformation "I" with events from all classes.
+                         : 
+                         : Transformation, Variable selection : 
+                         : Input : variable 'bos_PuppiAK8_eta' <---> Output : variable 'bos_PuppiAK8_eta'
+                         : Input : variable 'bos_PuppiAK8_m_sd0_corr' <---> Output : variable 'bos_PuppiAK8_m_sd0_corr'
+                         : Input : variable 'bos_PuppiAK8_phi' <---> Output : variable 'bos_PuppiAK8_phi'
+                         : Input : variable 'bos_PuppiAK8_pt' <---> Output : variable 'bos_PuppiAK8_pt'
+                         : Input : variable 'bos_PuppiAK8_tau2tau1' <---> Output : variable 'bos_PuppiAK8_tau2tau1'
+                         : Input : variable 'lep1_eta' <---> Output : variable 'lep1_eta'
+                         : Input : variable 'lep1_pt' <---> Output : variable 'lep1_pt'
+                         : Input : variable 'nJet30f' <---> Output : variable 'nJet30f'
+                         : Input : variable 'vbf1_AK4_eta' <---> Output : variable 'vbf1_AK4_eta'
+                         : Input : variable 'vbf1_AK4_pt' <---> Output : variable 'vbf1_AK4_pt'
+                         : Input : variable 'vbf1_AK4_qgid' <---> Output : variable 'vbf1_AK4_qgid'
+                         : Input : variable 'vbf2_AK4_eta' <---> Output : variable 'vbf2_AK4_eta'
+                         : Input : variable 'vbf2_AK4_pt' <---> Output : variable 'vbf2_AK4_pt'
+                         : Input : variable 'vbf2_AK4_qgid' <---> Output : variable 'vbf2_AK4_qgid'
+                         : Input : variable 'vbf_deta' <---> Output : variable 'vbf_deta'
+                         : Input : variable 'vbf_eta' <---> Output : variable 'vbf_eta'
+                         : Input : variable 'vbf_m' <---> Output : variable 'vbf_m'
+                         : Input : variable 'zeppHad' <---> Output : variable 'zeppHad'
+                         : Input : variable 'zeppLep' <---> Output : variable 'zeppLep'
+Factory                  : [vbs_ww_2017] : Create Transformation "D" with events from all classes.
+                         : 
+                         : Transformation, Variable selection : 
+                         : Input : variable 'bos_PuppiAK8_eta' <---> Output : variable 'bos_PuppiAK8_eta'
+                         : Input : variable 'bos_PuppiAK8_m_sd0_corr' <---> Output : variable 'bos_PuppiAK8_m_sd0_corr'
+                         : Input : variable 'bos_PuppiAK8_phi' <---> Output : variable 'bos_PuppiAK8_phi'
+                         : Input : variable 'bos_PuppiAK8_pt' <---> Output : variable 'bos_PuppiAK8_pt'
+                         : Input : variable 'bos_PuppiAK8_tau2tau1' <---> Output : variable 'bos_PuppiAK8_tau2tau1'
+                         : Input : variable 'lep1_eta' <---> Output : variable 'lep1_eta'
+                         : Input : variable 'lep1_pt' <---> Output : variable 'lep1_pt'
+                         : Input : variable 'nJet30f' <---> Output : variable 'nJet30f'
+                         : Input : variable 'vbf1_AK4_eta' <---> Output : variable 'vbf1_AK4_eta'
+                         : Input : variable 'vbf1_AK4_pt' <---> Output : variable 'vbf1_AK4_pt'
+                         : Input : variable 'vbf1_AK4_qgid' <---> Output : variable 'vbf1_AK4_qgid'
+                         : Input : variable 'vbf2_AK4_eta' <---> Output : variable 'vbf2_AK4_eta'
+                         : Input : variable 'vbf2_AK4_pt' <---> Output : variable 'vbf2_AK4_pt'
+                         : Input : variable 'vbf2_AK4_qgid' <---> Output : variable 'vbf2_AK4_qgid'
+                         : Input : variable 'vbf_deta' <---> Output : variable 'vbf_deta'
+                         : Input : variable 'vbf_eta' <---> Output : variable 'vbf_eta'
+                         : Input : variable 'vbf_m' <---> Output : variable 'vbf_m'
+                         : Input : variable 'zeppHad' <---> Output : variable 'zeppHad'
+                         : Input : variable 'zeppLep' <---> Output : variable 'zeppLep'
+Factory                  : [vbs_ww_2017] : Create Transformation "P" with events from all classes.
+                         : 
+                         : Transformation, Variable selection : 
+                         : Input : variable 'bos_PuppiAK8_eta' <---> Output : variable 'bos_PuppiAK8_eta'
+                         : Input : variable 'bos_PuppiAK8_m_sd0_corr' <---> Output : variable 'bos_PuppiAK8_m_sd0_corr'
+                         : Input : variable 'bos_PuppiAK8_phi' <---> Output : variable 'bos_PuppiAK8_phi'
+                         : Input : variable 'bos_PuppiAK8_pt' <---> Output : variable 'bos_PuppiAK8_pt'
+                         : Input : variable 'bos_PuppiAK8_tau2tau1' <---> Output : variable 'bos_PuppiAK8_tau2tau1'
+                         : Input : variable 'lep1_eta' <---> Output : variable 'lep1_eta'
+                         : Input : variable 'lep1_pt' <---> Output : variable 'lep1_pt'
+                         : Input : variable 'nJet30f' <---> Output : variable 'nJet30f'
+                         : Input : variable 'vbf1_AK4_eta' <---> Output : variable 'vbf1_AK4_eta'
+                         : Input : variable 'vbf1_AK4_pt' <---> Output : variable 'vbf1_AK4_pt'
+                         : Input : variable 'vbf1_AK4_qgid' <---> Output : variable 'vbf1_AK4_qgid'
+                         : Input : variable 'vbf2_AK4_eta' <---> Output : variable 'vbf2_AK4_eta'
+                         : Input : variable 'vbf2_AK4_pt' <---> Output : variable 'vbf2_AK4_pt'
+                         : Input : variable 'vbf2_AK4_qgid' <---> Output : variable 'vbf2_AK4_qgid'
+                         : Input : variable 'vbf_deta' <---> Output : variable 'vbf_deta'
+                         : Input : variable 'vbf_eta' <---> Output : variable 'vbf_eta'
+                         : Input : variable 'vbf_m' <---> Output : variable 'vbf_m'
+                         : Input : variable 'zeppHad' <---> Output : variable 'zeppHad'
+                         : Input : variable 'zeppLep' <---> Output : variable 'zeppLep'
+TFHandler_Factory        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:               -0.0051981                  0.95331   [                  -2.3999                   2.3999 ]
+                         : bos_PuppiAK8_m_sd0_corr:                   84.598                   23.393   [                   40.000                   150.00 ]
+                         :        bos_PuppiAK8_phi:                -0.011044                   1.8108   [                  -3.1416                   3.1416 ]
+                         :         bos_PuppiAK8_pt:                   298.31                   96.261   [                   200.12                   3596.0 ]
+                         :   bos_PuppiAK8_tau2tau1:                  0.35984                  0.11127   [                 0.026073                  0.54998 ]
+                         :                lep1_eta:               -0.0061959                   1.1436   [                  -2.4995                   2.4995 ]
+                         :                 lep1_pt:                   87.153                   65.467   [                   25.000                   2718.9 ]
+                         :                 nJet30f:                   4.1068                   1.5176   [                   2.0000                   15.000 ]
+                         :            vbf1_AK4_eta:               -0.0026134                   2.0649   [                  -4.6895                   4.6904 ]
+                         :             vbf1_AK4_pt:                   196.45                   122.35   [                   50.001                   2942.1 ]
+                         :           vbf1_AK4_qgid:                  0.52377                  0.37451   [               8.0967e-08                   1.0000 ]
+                         :            vbf2_AK4_eta:                0.0054622                   2.5047   [                  -4.6963                   4.6973 ]
+                         :             vbf2_AK4_pt:                   89.740                   45.662   [                   50.000                   1587.8 ]
+                         :           vbf2_AK4_qgid:                  0.49207                  0.33566   [               2.2654e-07                   1.0000 ]
+                         :                vbf_deta:                   4.2167                   1.0068   [                   2.5001                   9.1182 ]
+                         :                 vbf_eta:                0.0017035                   2.0918   [                  -8.4590                   8.9526 ]
+                         :                   vbf_m:                   1082.3                   582.71   [                   500.00                   9540.7 ]
+                         :                 zeppHad:               -0.0066225                   1.0211   [                  -3.3313                   3.3301 ]
+                         :                 zeppLep:               -0.0063192                   1.0293   [                  -3.5159                   3.9617 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : Preparing the Decorrelation transformation...
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+<WARNING>                : <GetSQRootMatrix> error in matrix diagonalization; printed S and B
+TFHandler_Factory        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                -0.017502                  0.77460   [                  -2.6115                   3.0974 ]
+                         : bos_PuppiAK8_m_sd0_corr:                   2.9516                   1.0000   [                  -8.7501                   6.0176 ]
+                         :        bos_PuppiAK8_phi:               -0.0042350                   1.0000   [                  -1.8267                   1.7547 ]
+                         :         bos_PuppiAK8_pt:                   2.6291                   1.0000   [                  -2.5854                   39.403 ]
+                         :   bos_PuppiAK8_tau2tau1:                   4.0600                   1.0000   [                  -1.1411                   6.6911 ]
+                         :                lep1_eta:                0.0027225                   1.0000   [                  -3.7619                   3.8480 ]
+                         :                 lep1_pt:                   1.0257                   1.0000   [                  -3.1490                   39.089 ]
+                         :                 nJet30f:                   2.3462                   1.0000   [                 -0.89007                   9.6096 ]
+                         :            vbf1_AK4_eta:                 0.012667                  0.94869   [                  -4.5629                   4.8411 ]
+                         :             vbf1_AK4_pt:                  0.81164                   1.0000   [                  -5.0250                   21.735 ]
+                         :           vbf1_AK4_qgid:                   1.3813                   1.0000   [                  -1.3443                   3.1107 ]
+                         :            vbf2_AK4_eta:               -0.0025854                  0.94869   [                  -4.4249                   4.2203 ]
+                         :             vbf2_AK4_pt:                   1.4196                   1.0000   [                  -5.3040                   32.041 ]
+                         :           vbf2_AK4_qgid:                   1.3355                   1.0000   [                  -1.6235                   3.3347 ]
+                         :                vbf_deta:                   11.222                   1.0000   [                  -8.1040                   37.555 ]
+                         :                 vbf_eta:                 0.012274                   1.0000   [                  -6.0943                   5.9235 ]
+                         :                   vbf_m:                   1.7503                   1.0000   [                  0.64156                   16.311 ]
+                         :                 zeppHad:                -0.022543                  0.77459   [                  -2.7773                   2.8945 ]
+                         :                 zeppLep:                -0.013085                   1.0000   [                  -8.7412                   7.1937 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : Preparing the Principle Component (PCA) transformation...
+TFHandler_Factory        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                  -231.21                   573.48   [                  -838.68                   8035.5 ]
+                         : bos_PuppiAK8_m_sd0_corr:                  -116.37                   160.06   [                  -1894.2                   3659.4 ]
+                         :        bos_PuppiAK8_phi:                   4.6117                   97.094   [                  -1298.7                   2347.0 ]
+                         :         bos_PuppiAK8_pt:                  -6.6959                   64.206   [                  -284.96                   2418.4 ]
+                         :   bos_PuppiAK8_tau2tau1:                  -6.0355                   46.292   [                  -486.51                   1005.7 ]
+                         :                lep1_eta:                 -0.38901                   22.830   [                  -113.21                   72.816 ]
+                         :                 lep1_pt:               -0.0081505                   3.1035   [                  -6.5932                   6.2681 ]
+                         :                 nJet30f:               0.00038274                   2.3975   [                  -9.6376                   8.7240 ]
+                         :            vbf1_AK4_eta:               -0.0033302                   1.8109   [                  -3.1906                   3.1973 ]
+                         :             vbf1_AK4_pt:                 0.054400                   1.5016   [                  -4.4033                   10.938 ]
+                         :           vbf1_AK4_qgid:                0.0030116                   1.4086   [                  -4.7862                   4.7185 ]
+                         :            vbf2_AK4_eta:              -0.00082283                   1.2129   [                  -4.4794                   4.4723 ]
+                         :             vbf2_AK4_pt:               0.00025035                  0.58487   [                  -3.9797                   3.6821 ]
+                         :           vbf2_AK4_qgid:                -0.071022                  0.44557   [                  -4.3356                   6.5352 ]
+                         :                vbf_deta:               -0.0042419                  0.37254   [                  -1.1371                  0.80197 ]
+                         :                 vbf_eta:               -0.0039794                  0.33488   [                 -0.95986                  0.68565 ]
+                         :                   vbf_m:               0.00011778                  0.23345   [                  -1.9185                   2.2043 ]
+                         :                 zeppHad:               -0.0071701                  0.10732   [                 -0.42226                  0.27012 ]
+                         :                 zeppLep:               1.7735e-13               3.2970e-10   [              -3.7743e-08               3.7774e-08 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : Ranking input variables (method unspecific)...
+IdTransformation         : Ranking result (top variable is best ranked)
+                         : ------------------------------------------------
+                         : Rank : Variable                : Separation
+                         : ------------------------------------------------
+                         :    1 : nJet30f                 : 9.125e-02
+                         :    2 : vbf_m                   : 8.452e-02
+                         :    3 : bos_PuppiAK8_m_sd0_corr : 4.791e-02
+                         :    4 : vbf1_AK4_pt             : 4.591e-02
+                         :    5 : vbf2_AK4_pt             : 4.485e-02
+                         :    6 : bos_PuppiAK8_tau2tau1   : 2.990e-02
+                         :    7 : vbf1_AK4_qgid           : 2.565e-02
+                         :    8 : bos_PuppiAK8_pt         : 2.023e-02
+                         :    9 : lep1_pt                 : 1.757e-02
+                         :   10 : vbf2_AK4_qgid           : 1.504e-02
+                         :   11 : zeppLep                 : 8.334e-03
+                         :   12 : vbf_deta                : 5.513e-03
+                         :   13 : vbf1_AK4_eta            : 4.107e-03
+                         :   14 : vbf2_AK4_eta            : 3.730e-03
+                         :   15 : bos_PuppiAK8_eta        : 3.199e-03
+                         :   16 : lep1_eta                : 2.641e-03
+                         :   17 : vbf_eta                 : 1.127e-03
+                         :   18 : zeppHad                 : 4.013e-04
+                         :   19 : bos_PuppiAK8_phi        : 3.482e-04
+                         : ------------------------------------------------
+Factory                  : Train method: MLPBFGS for Classification
+                         : 
+                         : 
+                         : [1m================================================================[0m
+                         : [1mH e l p   f o r   M V A   m e t h o d   [ MLPBFGS ] :[0m
+                         : 
+                         : [1m--- Short description:[0m
+                         : 
+                         : The MLP artificial neural network (ANN) is a traditional feed-
+                         : forward multilayer perceptron implementation. The MLP has a user-
+                         : defined hidden layer architecture, while the number of input (output)
+                         : nodes is determined by the input variables (output classes, i.e., 
+                         : signal and one background). 
+                         : 
+                         : [1m--- Performance optimisation:[0m
+                         : 
+                         : Neural networks are stable and performing for a large variety of 
+                         : linear and non-linear classification problems. However, in contrast
+                         : to (e.g.) boosted decision trees, the user is advised to reduce the 
+                         : number of input variables that have only little discrimination power. 
+                         : 
+                         : In the tests we have carried out so far, the MLP and ROOT networks
+                         : (TMlpANN, interfaced via TMVA) performed equally well, with however
+                         : a clear speed advantage for the MLP. The Clermont-Ferrand neural 
+                         : net (CFMlpANN) exhibited worse classification performance in these
+                         : tests, which is partly due to the slow convergence of its training
+                         : (at least 10k training cycles are required to achieve approximately
+                         : competitive results).
+                         : 
+                         : [1mOvertraining: [0monly the TMlpANN performs an explicit separation of the
+                         : full training sample into independent training and validation samples.
+                         : We have found that in most high-energy physics applications the 
+                         : available degrees of freedom (training events) are sufficient to 
+                         : constrain the weights of the relatively simple architectures required
+                         : to achieve good performance. Hence no overtraining should occur, and 
+                         : the use of validation samples would only reduce the available training
+                         : information. However, if the performance on the training sample is 
+                         : found to be significantly better than the one found with the inde-
+                         : pendent test sample, caution is needed. The results for these samples 
+                         : are printed to standard output at the end of each training job.
+                         : 
+                         : [1m--- Performance tuning via configuration options:[0m
+                         : 
+                         : The hidden layer architecture for all ANNs is defined by the option
+                         : "HiddenLayers=N+1,N,...", where here the first hidden layer has N+1
+                         : neurons and the second N neurons (and so on), and where N is the number  
+                         : of input variables. Excessive numbers of hidden layers should be avoided,
+                         : in favour of more neurons in the first hidden layer.
+                         : 
+                         : The number of cycles should be above 500. As said, if the number of
+                         : adjustable weights is small compared to the training sample size,
+                         : using a large number of training samples should not lead to overtraining.
+                         : 
+                         : <Suppress this message by specifying "!H" in the booking option>
+                         : [1m================================================================[0m
+                         : 
+TFHandler_MLPBFGS        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:               -0.0021660                  0.39723   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.18912                  0.42532   [                  -1.0000                   1.0000 ]
+                         :        bos_PuppiAK8_phi:               -0.0035156                  0.57640   [                  -1.0000                   1.0000 ]
+                         :         bos_PuppiAK8_pt:                 -0.94217                 0.056693   [                  -1.0000                   1.0000 ]
+                         :   bos_PuppiAK8_tau2tau1:                  0.27415                  0.42476   [                  -1.0000                   1.0000 ]
+                         :                lep1_eta:               -0.0024788                  0.45754   [                  -1.0000                   1.0000 ]
+                         :                 lep1_pt:                 -0.95386                 0.048604   [                  -1.0000                   1.0000 ]
+                         :                 nJet30f:                 -0.67587                  0.23347   [                  -1.0000                   1.0000 ]
+                         :            vbf1_AK4_eta:              -0.00066135                  0.44028   [                  -1.0000                   1.0000 ]
+                         :             vbf1_AK4_pt:                 -0.89872                 0.084610   [                  -1.0000                   1.0000 ]
+                         :           vbf1_AK4_qgid:                 0.047548                  0.74902   [                  -1.0000                   1.0000 ]
+                         :            vbf2_AK4_eta:                0.0010590                  0.53329   [                  -1.0000                   1.0000 ]
+                         :             vbf2_AK4_pt:                 -0.94832                 0.059386   [                  -1.0000                   1.0000 ]
+                         :           vbf2_AK4_qgid:                -0.015860                  0.67132   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                 -0.48123                  0.30425   [                  -1.0000                   1.0000 ]
+                         :                 vbf_eta:                -0.028151                  0.24028   [                  -1.0000                   1.0000 ]
+                         :                   vbf_m:                 -0.87118                  0.12891   [                  -1.0000                   1.0000 ]
+                         :                 zeppHad:               -0.0018051                  0.30656   [                  -1.0000                   1.0000 ]
+                         :                 zeppLep:                -0.061314                  0.27529   [                  -1.0000                   1.0000 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : Training Network
+                         : 
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=430467 1.2914e+06 3.8742e+06 err1=0.102044 errfinal=0.326001
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=2.67402e+06 8.02207e+06 2.40662e+07 err1=0.0426398 errfinal=0.0438642
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=3.18865e+06 9.56594e+06 2.86978e+07 err1=0.0362735 errfinal=0.0374388
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=2.86978e+07 8.60934e+07 2.5828e+08 err1=0.0278904 errfinal=0.0286532
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=2.76184e+06 8.28553e+06 2.48566e+07 err1=0.0272696 errfinal=0.0273612
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=118098 354294 1.06288e+06 err1=0.0267524 errfinal=0.0271732
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=118098 354294 1.06288e+06 err1=0.0262387 errfinal=0.0263582
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=13122 39366 118098 err1=0.0258406 errfinal=0.0258406
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=2.86978e+07 8.60934e+07 2.5828e+08 err1=0.0258117 errfinal=0.0258388
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=2.64995e+06 7.94985e+06 2.38496e+07 err1=0.0257523 errfinal=0.0257883
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=2.11796e+07 6.35387e+07 1.90616e+08 err1=0.0256842 errfinal=0.0257074
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=39366 118098 354294 err1=0.0252572 errfinal=0.0253337
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=6.39183e+06 1.91755e+07 5.75265e+07 err1=0.0250212 errfinal=0.0250294
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=3.18865e+06 9.56594e+06 2.86978e+07 err1=0.0246853 errfinal=0.0247172
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=9.15361e+06 2.74608e+07 8.23825e+07 err1=0.0246159 errfinal=0.0246684
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=990456 2.97137e+06 8.91411e+06 err1=0.0245651 errfinal=0.0245666
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=726941 2.18082e+06 6.54247e+06 err1=0.0244557 errfinal=0.0244561
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=2.86978e+07 8.60934e+07 2.5828e+08 err1=0.0243587 errfinal=0.0243789
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=306996 920988 2.76296e+06 err1=0.0243249 errfinal=0.0243251
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=2.61642e+06 7.84926e+06 2.35478e+07 err1=0.0243004 errfinal=0.0243142
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=271335 814005 2.44201e+06 err1=0.0242497 errfinal=0.0242499
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=117075 351226 1.05368e+06 err1=0.0241939 errfinal=0.0241941
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=2.86978e+07 8.60934e+07 2.5828e+08 err1=0.0240894 errfinal=0.0240977
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=2.48627e+06 7.45881e+06 2.23764e+07 err1=0.0240759 errfinal=0.0240855
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=3.15289e+06 9.45868e+06 2.8376e+07 err1=0.0240674 errfinal=0.0240687
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=2.97701e+06 8.93103e+06 2.67931e+07 err1=0.0240547 errfinal=0.0240553
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=352788 1.05836e+06 3.17509e+06 err1=0.0240428 errfinal=0.0240428
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=8.03648e+06 2.41094e+07 7.23283e+07 err1=0.0240186 errfinal=0.024023
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=2.15304e+07 6.45912e+07 1.93774e+08 err1=0.0239659 errfinal=0.0239742
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=36054.6 108164 324492 err1=0.0239178 errfinal=0.0239179
+<WARNING>                : Line search increased error! Something is wrong.fLastAlpha=10000al123=84096.7 252290 756870 err1=0.0234849 errfinal=0.0234849
+                         : Elapsed time for training with 576105 events: [1;31m1.68e+04 sec[0m         
+MLPBFGS                  : [vbs_ww_2017] : Evaluation of MLPBFGS on training sample (576105 events)
+                         : Elapsed time for evaluation of 576105 events: [1;31m1.96 sec[0m       
+                         : Creating xml weight file: [0;36mvbs_ww_2017/weights/TMVAClassification_MLPBFGS.weights.xml[0m
+                         : Creating standalone class: [0;36mvbs_ww_2017/weights/TMVAClassification_MLPBFGS.class.C[0m
+                         : Write special histos to file: vbs_ww_2017_SBtmva.root:/vbs_ww_2017/Method_MLP/MLPBFGS
+Factory                  : Training finished
+                         : 
+Factory                  : Train method: BDTG for Classification
+                         : 
+<WARNING>                :  Note, you have events with negative event weight in the sample, but you've chosen to ignore them
+BDTG                     : #events: (reweighted) sig: 285891 bkg: 285891
+                         : #events: (unweighted) sig: 34894 bkg: 536888
+                         : Training 1000 Decision Trees ... patience please
+                         : Elapsed time for training with 576105 events: [1;31m264 sec[0m         
+BDTG                     : [vbs_ww_2017] : Evaluation of BDTG on training sample (576105 events)
+                         : Elapsed time for evaluation of 576105 events: [1;31m19.2 sec[0m       
+                         : Creating xml weight file: [0;36mvbs_ww_2017/weights/TMVAClassification_BDTG.weights.xml[0m
+                         : Creating standalone class: [0;36mvbs_ww_2017/weights/TMVAClassification_BDTG.class.C[0m
+                         : vbs_ww_2017_SBtmva.root:/vbs_ww_2017/Method_BDT/BDTG
+Factory                  : Training finished
+                         : 
+Factory                  : Train method: BDT for Classification
+                         : 
+<WARNING>                :  Note, you have events with negative event weight in the sample, but you've chosen to ignore them
+BDT                      : #events: (reweighted) sig: 285891 bkg: 285891
+                         : #events: (unweighted) sig: 34894 bkg: 536888
+                         : Training 1000 Decision Trees ... patience please
+                         : Elapsed time for training with 576105 events: [1;31m282 sec[0m         
+BDT                      : [vbs_ww_2017] : Evaluation of BDT on training sample (576105 events)
+                         : Elapsed time for evaluation of 576105 events: [1;31m45.7 sec[0m       
+                         : Creating xml weight file: [0;36mvbs_ww_2017/weights/TMVAClassification_BDT.weights.xml[0m
+                         : Creating standalone class: [0;36mvbs_ww_2017/weights/TMVAClassification_BDT.class.C[0m
+                         : vbs_ww_2017_SBtmva.root:/vbs_ww_2017/Method_BDT/BDT
+Factory                  : Training finished
+                         : 
+                         : Ranking input variables (method specific)...
+MLPBFGS                  : Ranking result (top variable is best ranked)
+                         : ------------------------------------------------
+                         : Rank : Variable                : Importance
+                         : ------------------------------------------------
+                         :    1 : bos_PuppiAK8_pt         : 3.885e+01
+                         :    2 : vbf1_AK4_pt             : 3.515e+01
+                         :    3 : vbf2_AK4_pt             : 3.418e+01
+                         :    4 : vbf_m                   : 2.862e+01
+                         :    5 : lep1_pt                 : 2.796e+01
+                         :    6 : nJet30f                 : 1.934e+01
+                         :    7 : vbf1_AK4_qgid           : 1.338e+01
+                         :    8 : vbf2_AK4_qgid           : 1.140e+01
+                         :    9 : vbf2_AK4_eta            : 6.990e+00
+                         :   10 : lep1_eta                : 6.381e+00
+                         :   11 : vbf_deta                : 6.374e+00
+                         :   12 : bos_PuppiAK8_phi        : 6.204e+00
+                         :   13 : vbf1_AK4_eta            : 6.174e+00
+                         :   14 : bos_PuppiAK8_m_sd0_corr : 6.136e+00
+                         :   15 : bos_PuppiAK8_eta        : 5.573e+00
+                         :   16 : bos_PuppiAK8_tau2tau1   : 3.939e+00
+                         :   17 : zeppHad                 : 3.030e+00
+                         :   18 : zeppLep                 : 2.344e+00
+                         :   19 : vbf_eta                 : 1.902e+00
+                         : ------------------------------------------------
+BDTG                     : Ranking result (top variable is best ranked)
+                         : ---------------------------------------------------------
+                         : Rank : Variable                : Variable Importance
+                         : ---------------------------------------------------------
+                         :    1 : bos_PuppiAK8_m_sd0_corr : 7.500e-02
+                         :    2 : nJet30f                 : 6.590e-02
+                         :    3 : bos_PuppiAK8_tau2tau1   : 6.323e-02
+                         :    4 : lep1_eta                : 6.276e-02
+                         :    5 : zeppLep                 : 6.193e-02
+                         :    6 : zeppHad                 : 6.044e-02
+                         :    7 : vbf2_AK4_qgid           : 5.566e-02
+                         :    8 : bos_PuppiAK8_phi        : 5.505e-02
+                         :    9 : bos_PuppiAK8_eta        : 5.364e-02
+                         :   10 : vbf1_AK4_qgid           : 5.338e-02
+                         :   11 : vbf_deta                : 5.234e-02
+                         :   12 : vbf1_AK4_eta            : 4.885e-02
+                         :   13 : vbf2_AK4_eta            : 4.873e-02
+                         :   14 : vbf_m                   : 4.709e-02
+                         :   15 : vbf_eta                 : 4.435e-02
+                         :   16 : bos_PuppiAK8_pt         : 4.262e-02
+                         :   17 : vbf1_AK4_pt             : 4.148e-02
+                         :   18 : lep1_pt                 : 3.504e-02
+                         :   19 : vbf2_AK4_pt             : 3.252e-02
+                         : ---------------------------------------------------------
+BDT                      : Ranking result (top variable is best ranked)
+                         : ---------------------------------------------------------
+                         : Rank : Variable                : Variable Importance
+                         : ---------------------------------------------------------
+                         :    1 : nJet30f                 : 9.341e-02
+                         :    2 : vbf_m                   : 8.607e-02
+                         :    3 : bos_PuppiAK8_m_sd0_corr : 7.052e-02
+                         :    4 : bos_PuppiAK8_tau2tau1   : 6.215e-02
+                         :    5 : lep1_eta                : 5.802e-02
+                         :    6 : zeppLep                 : 5.664e-02
+                         :    7 : zeppHad                 : 5.634e-02
+                         :    8 : vbf1_AK4_qgid           : 5.350e-02
+                         :    9 : vbf2_AK4_qgid           : 4.927e-02
+                         :   10 : bos_PuppiAK8_eta        : 4.778e-02
+                         :   11 : vbf2_AK4_eta            : 4.516e-02
+                         :   12 : vbf_deta                : 4.353e-02
+                         :   13 : vbf_eta                 : 4.290e-02
+                         :   14 : bos_PuppiAK8_phi        : 4.206e-02
+                         :   15 : lep1_pt                 : 4.124e-02
+                         :   16 : vbf1_AK4_eta            : 4.028e-02
+                         :   17 : bos_PuppiAK8_pt         : 4.025e-02
+                         :   18 : vbf1_AK4_pt             : 3.806e-02
+                         :   19 : vbf2_AK4_pt             : 3.281e-02
+                         : ---------------------------------------------------------
+Factory                  : === Destroy and recreate all methods via weight files for testing ===
+                         : 
+                         : Reading weight file: [0;36mvbs_ww_2017/weights/TMVAClassification_MLPBFGS.weights.xml[0m
+MLPBFGS                  : Building Network. 
+                         : Initializing weights
+                         : Reading weight file: [0;36mvbs_ww_2017/weights/TMVAClassification_BDTG.weights.xml[0m
+                         : Reading weight file: [0;36mvbs_ww_2017/weights/TMVAClassification_BDT.weights.xml[0m
+Test All Methods
+Factory                  : [1mTest all methods[0m
+Factory                  : Test method: MLPBFGS for Classification performance
+                         : 
+MLPBFGS                  : [vbs_ww_2017] : Evaluation of MLPBFGS on testing sample (576105 events)
+                         : Elapsed time for evaluation of 576105 events: [1;31m2.13 sec[0m       
+Factory                  : Test method: BDTG for Classification performance
+                         : 
+BDTG                     : [vbs_ww_2017] : Evaluation of BDTG on testing sample (576105 events)
+                         : Elapsed time for evaluation of 576105 events: [1;31m15.1 sec[0m       
+Factory                  : Test method: BDT for Classification performance
+                         : 
+BDT                      : [vbs_ww_2017] : Evaluation of BDT on testing sample (576105 events)
+                         : Elapsed time for evaluation of 576105 events: [1;31m32.6 sec[0m       
+Evaluate All Methods
+Factory                  : [1mEvaluate all methods[0m
+Factory                  : Evaluate classifier: MLPBFGS
+                         : 
+TFHandler_MLPBFGS        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:              -0.00051936                  0.39813   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.18913                  0.42407   [                  -1.0000                   1.0000 ]
+                         :        bos_PuppiAK8_phi:               -0.0050244                  0.57411   [                  -1.0000                   1.0000 ]
+                         :         bos_PuppiAK8_pt:                 -0.94205                 0.056586   [                  -1.0000                  0.89281 ]
+                         :   bos_PuppiAK8_tau2tau1:                  0.27503                  0.42482   [                  -1.0308                   1.0000 ]
+                         :                lep1_eta:               -0.0013803                  0.45669   [                  -1.0000                   1.0000 ]
+                         :                 lep1_pt:                 -0.95369                 0.048723   [                  -1.0000                  0.89692 ]
+                         :                 nJet30f:                 -0.67434                  0.23308   [                  -1.0000                   1.0000 ]
+                         :            vbf1_AK4_eta:               -0.0014628                  0.44027   [                  -1.0019                  0.99917 ]
+                         :             vbf1_AK4_pt:                 -0.89892                 0.084565   [                  -1.0000                  0.86956 ]
+                         :           vbf1_AK4_qgid:                 0.047518                  0.74947   [                  -1.0000                   1.0000 ]
+                         :            vbf2_AK4_eta:               0.00051032                  0.53261   [                  -1.0000                  0.99896 ]
+                         :             vbf2_AK4_pt:                 -0.94826                 0.059146   [                  -1.0000                   1.1413 ]
+                         :           vbf2_AK4_qgid:                -0.016498                  0.67172   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                 -0.48250                  0.30347   [                  -1.0000                  0.97344 ]
+                         :                 vbf_eta:                -0.029259                  0.24065   [                 -0.94401                  0.89844 ]
+                         :                   vbf_m:                 -0.87189                  0.12855   [                  -1.0000                   1.0827 ]
+                         :                 zeppHad:               0.00033252                  0.30639   [                  -1.0040                   1.0103 ]
+                         :                 zeppLep:                -0.059566                  0.27553   [                  -1.0225                  0.95157 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+MLPBFGS                  : [vbs_ww_2017] : Loop over test events and fill histograms with classifier response...
+                         : 
+TFHandler_MLPBFGS        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:              -0.00051936                  0.39813   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.18913                  0.42407   [                  -1.0000                   1.0000 ]
+                         :        bos_PuppiAK8_phi:               -0.0050244                  0.57411   [                  -1.0000                   1.0000 ]
+                         :         bos_PuppiAK8_pt:                 -0.94205                 0.056586   [                  -1.0000                  0.89281 ]
+                         :   bos_PuppiAK8_tau2tau1:                  0.27503                  0.42482   [                  -1.0308                   1.0000 ]
+                         :                lep1_eta:               -0.0013803                  0.45669   [                  -1.0000                   1.0000 ]
+                         :                 lep1_pt:                 -0.95369                 0.048723   [                  -1.0000                  0.89692 ]
+                         :                 nJet30f:                 -0.67434                  0.23308   [                  -1.0000                   1.0000 ]
+                         :            vbf1_AK4_eta:               -0.0014628                  0.44027   [                  -1.0019                  0.99917 ]
+                         :             vbf1_AK4_pt:                 -0.89892                 0.084565   [                  -1.0000                  0.86956 ]
+                         :           vbf1_AK4_qgid:                 0.047518                  0.74947   [                  -1.0000                   1.0000 ]
+                         :            vbf2_AK4_eta:               0.00051032                  0.53261   [                  -1.0000                  0.99896 ]
+                         :             vbf2_AK4_pt:                 -0.94826                 0.059146   [                  -1.0000                   1.1413 ]
+                         :           vbf2_AK4_qgid:                -0.016498                  0.67172   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                 -0.48250                  0.30347   [                  -1.0000                  0.97344 ]
+                         :                 vbf_eta:                -0.029259                  0.24065   [                 -0.94401                  0.89844 ]
+                         :                   vbf_m:                 -0.87189                  0.12855   [                  -1.0000                   1.0827 ]
+                         :                 zeppHad:               0.00033252                  0.30639   [                  -1.0040                   1.0103 ]
+                         :                 zeppLep:                -0.059566                  0.27553   [                  -1.0225                  0.95157 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+Factory                  : Evaluate classifier: BDTG
+                         : 
+BDTG                     : [vbs_ww_2017] : Loop over test events and fill histograms with classifier response...
+                         : 
+TFHandler_BDTG           :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:               -0.0012464                  0.95546   [                  -2.3999                   2.3999 ]
+                         : bos_PuppiAK8_m_sd0_corr:                   84.598                   23.324   [                   40.000                   150.00 ]
+                         :        bos_PuppiAK8_phi:                -0.015785                   1.8036   [                  -3.1416                   3.1416 ]
+                         :         bos_PuppiAK8_pt:                   298.52                   96.079   [                   200.12                   3414.0 ]
+                         :   bos_PuppiAK8_tau2tau1:                  0.36007                  0.11128   [                 0.018015                  0.54998 ]
+                         :                lep1_eta:               -0.0034500                   1.1415   [                  -2.4995                   2.4995 ]
+                         :                 lep1_pt:                   87.378                   65.628   [                   25.000                   2580.1 ]
+                         :                 nJet30f:                   4.1168                   1.5151   [                   2.0000                   15.000 ]
+                         :            vbf1_AK4_eta:               -0.0063723                   2.0648   [                  -4.6982                   4.6865 ]
+                         :             vbf1_AK4_pt:                   196.16                   122.28   [                   50.000                   2753.4 ]
+                         :           vbf1_AK4_qgid:                  0.52376                  0.37474   [               1.3632e-07                   1.0000 ]
+                         :            vbf2_AK4_eta:                0.0028851                   2.5016   [                  -4.6963                   4.6924 ]
+                         :             vbf2_AK4_pt:                   89.786                   45.477   [                   50.000                   1696.4 ]
+                         :           vbf2_AK4_qgid:                  0.49175                  0.33586   [               3.1386e-07                   1.0000 ]
+                         :                vbf_deta:                   4.2125                   1.0042   [                   2.5001                   9.0303 ]
+                         :                 vbf_eta:               -0.0079430                   2.0950   [                  -7.9716                   8.0684 ]
+                         :                   vbf_m:                   1079.1                   581.10   [                   500.00                   9914.7 ]
+                         :                 zeppHad:               0.00049723                   1.0205   [                  -3.3445                   3.3645 ]
+                         :                 zeppLep:               0.00021559                   1.0302   [                  -3.6002                   3.7807 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+Factory                  : Evaluate classifier: BDT
+                         : 
+BDT                      : [vbs_ww_2017] : Loop over test events and fill histograms with classifier response...
+                         : 
+TFHandler_BDT            :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:               -0.0012464                  0.95546   [                  -2.3999                   2.3999 ]
+                         : bos_PuppiAK8_m_sd0_corr:                   84.598                   23.324   [                   40.000                   150.00 ]
+                         :        bos_PuppiAK8_phi:                -0.015785                   1.8036   [                  -3.1416                   3.1416 ]
+                         :         bos_PuppiAK8_pt:                   298.52                   96.079   [                   200.12                   3414.0 ]
+                         :   bos_PuppiAK8_tau2tau1:                  0.36007                  0.11128   [                 0.018015                  0.54998 ]
+                         :                lep1_eta:               -0.0034500                   1.1415   [                  -2.4995                   2.4995 ]
+                         :                 lep1_pt:                   87.378                   65.628   [                   25.000                   2580.1 ]
+                         :                 nJet30f:                   4.1168                   1.5151   [                   2.0000                   15.000 ]
+                         :            vbf1_AK4_eta:               -0.0063723                   2.0648   [                  -4.6982                   4.6865 ]
+                         :             vbf1_AK4_pt:                   196.16                   122.28   [                   50.000                   2753.4 ]
+                         :           vbf1_AK4_qgid:                  0.52376                  0.37474   [               1.3632e-07                   1.0000 ]
+                         :            vbf2_AK4_eta:                0.0028851                   2.5016   [                  -4.6963                   4.6924 ]
+                         :             vbf2_AK4_pt:                   89.786                   45.477   [                   50.000                   1696.4 ]
+                         :           vbf2_AK4_qgid:                  0.49175                  0.33586   [               3.1386e-07                   1.0000 ]
+                         :                vbf_deta:                   4.2125                   1.0042   [                   2.5001                   9.0303 ]
+                         :                 vbf_eta:               -0.0079430                   2.0950   [                  -7.9716                   8.0684 ]
+                         :                   vbf_m:                   1079.1                   581.10   [                   500.00                   9914.7 ]
+                         :                 zeppHad:               0.00049723                   1.0205   [                  -3.3445                   3.3645 ]
+                         :                 zeppLep:               0.00021559                   1.0302   [                  -3.6002                   3.7807 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Evaluation results ranked by best signal efficiency and purity (area)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet       MVA                       
+                         : Name:         Method:          ROC-integ
+                         : vbs_ww_2017   BDT            : 0.812
+                         : vbs_ww_2017   BDTG           : 0.810
+                         : vbs_ww_2017   MLPBFGS        : 0.797
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Testing efficiency compared to training efficiency (overtraining check)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet              MVA              Signal efficiency: from test sample (from training sample) 
+                         : Name:                Method:          @B=0.01             @B=0.10            @B=0.30   
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : vbs_ww_2017          BDT            : 0.206 (0.209)       0.535 (0.535)      0.763 (0.764)
+                         : vbs_ww_2017          BDTG           : 0.202 (0.201)       0.531 (0.529)      0.761 (0.761)
+                         : vbs_ww_2017          MLPBFGS        : 0.180 (0.179)       0.514 (0.514)      0.741 (0.740)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+Dataset:vbs_ww_2017      : Created tree 'TestTree' with 576105 events
+                         : 
+Dataset:vbs_ww_2017      : Created tree 'TrainTree' with 576105 events
+                         : 
+Factory                  : [1mThank you for using TMVA![0m
+                         : [1mFor citation information, please visit: http://tmva.sf.net/citeTMVA.html[0m
+ROC file written
+Clone dataTree
+==> Wrote root file: vbs_ww_2017_SBtmva.root
+==> TMVAClassification is done!
+==> To apply results to data:: 
+==> root  -b -q  ./vbsTMVAClassificationApplication.cc\(\"vbs_ww_2017\",\"BDT,BDTG,MLPBFGS\"\)
+(int) 0
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Jul 24 2021, 10:36:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing ./vbsTMVAClassificationApplication.cc("vbs_ww_2017","BDT,BDTG,MLPBFGS")...
+
+==> Start TMVAClassificationApplication
+                         : Booking "BDT method" of type "BDT" from vbs_ww_2017/weights/TMVAClassification_BDT.weights.xml.
+                         : Reading weight file: vbs_ww_2017/weights/TMVAClassification_BDT.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+                         : Booked classifier "BDT" of type: "BDT"
+                         : Booking "BDTG method" of type "BDT" from vbs_ww_2017/weights/TMVAClassification_BDTG.weights.xml.
+                         : Reading weight file: vbs_ww_2017/weights/TMVAClassification_BDTG.weights.xml
+                         : Booked classifier "BDTG" of type: "BDT"
+                         : Booking "MLPBFGS method" of type "MLP" from vbs_ww_2017/weights/TMVAClassification_MLPBFGS.weights.xml.
+                         : Reading weight file: vbs_ww_2017/weights/TMVAClassification_MLPBFGS.weights.xml
+<HEADER> MLPBFGS                  : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLPBFGS" of type: "MLP"
+--- TMVAClassificationApp    : Using input file: vbs_ww_2017_SBtmva.root
+Using analysis directory vbs_ww_2017
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+--- Processing: 3618723 events
+--- ... Processing event: 0
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 100000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 200000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 13-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 13-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 13-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 300000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 400000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 500000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 600000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 700000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 800000
+--- ... Processing event: 900000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 1000000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 1100000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 1200000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 1300000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 1400000
+--- ... Processing event: 1500000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 1600000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 1700000
+--- ... Processing event: 1800000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 1900000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 2000000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 2100000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 2200000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 2300000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 2400000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 2500000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 2600000
+--- ... Processing event: 2700000
+--- ... Processing event: 2800000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 2900000
+--- ... Processing event: 3000000
+--- ... Processing event: 3100000
+--- ... Processing event: 3200000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 3300000
+--- ... Processing event: 3400000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 3500000
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 10-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 3600000
+--- End of event loop: Real time 0:06:04, CP time 364.370
+--- Adding MVA output for data to vbs_ww_2017_SBtmva.root
+==> TMVAClassificationApplication is done!
+
+==> Use root -l tmvaMon.cc\(\"vbs_ww_2017\",lumi,cut,\"cutName\"\)  to analyse...
+==> Use one of the following as a second argument for the luminosity
+Lumies:
+  ==> 2016 Samples -> 35.8671
+  ==> 2017 Samples -> 41.53
+  ==> 2018 Samples -> 59.74

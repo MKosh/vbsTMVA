@@ -144,7 +144,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    // Apply additional cuts on the signal and background samples (can be different)
    //   TCut mycuts = cleanNAN+more+OneLpt;//
-   TCut mycuts = cleanNAN_qgid+cleanNAN_tau+full_wv_sr; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
+   TCut mycuts = qgid_cut+tau21_cut+training_cut; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
    TCut mycutb = mycuts;//
 
    VbsReducedEvent vbsEvent;
@@ -234,14 +234,13 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    //outputFile->cd();
    gDirectory->Delete("Events;*");
-   gDirectory->Delete("Data201*;*");
-   gDirectory->Delete("DataTree;65");
+
 // //----
 
 
    //
    TMVA::Factory* factory = new TMVA::Factory( "TMVAClassification", outputFile,
-                                               "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P:AnalysisType=Classification" ); //I;D;P;G,D
+                                               "!V:!Silent:Color:DrawProgressBar=False:Transformations=I;D;P:AnalysisType=Classification" ); //I;D;P;G,D
 
    TMVA::DataLoader* dataloader=new TMVA::DataLoader(sname);
 
@@ -253,8 +252,8 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    Double_t backgroundWeight = 1.0;
 
 
-   dataloader->SetSignalWeightExpression    ("mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep2_idEffWeight*lep1_trigEffWeight*lep2_trigEffWeight");//*pdfWeight*scaleWeight");
-   dataloader->SetBackgroundWeightExpression("mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep2_idEffWeight*lep1_trigEffWeight*lep2_trigEffWeight");//*pdfWeight*scaleWeight");
+   dataloader->SetSignalWeightExpression    ("mcWeight*genWeight");//*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep1_trigEffWeight");//*lep2_idEffWeight*lep2_trigEffWeight*pdfWeight*scaleWeight");
+   dataloader->SetBackgroundWeightExpression("mcWeight*genWeight");//*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep1_trigEffWeight");
 
    // You can add an arbitrary number of signal or background trees
    for (UInt_t ns=0; ns<sglSamples.size();ns++){
@@ -266,11 +265,11 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    for (UInt_t ns=0; ns< bkgSamples.size();ns++){
       if ( bkgSamples[ns]->getInpTree() ) {
          if ( bkgSamples[ns]->getGName() == "Wjets" ) {
-            std::cout << "Weight factor = " << backgroundWeight << std::endl;
+           // std::cout << "Weight factor = " << backgroundWeight << std::endl;
             dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), backgroundWeight    );
          }
          else {
-            std::cout << "Weight factor = " << backgroundWeight << std::endl;
+           // std::cout << "Weight factor = " << backgroundWeight << std::endl;
             dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), backgroundWeight    );
          }
       }
@@ -528,10 +527,11 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    if (Use["BDT2"])
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT2",
-                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.2:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=False:UseNvars=2:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
+                           "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
+
    if (Use["BDT"])
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT",
-                           "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
+                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.2:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=False:UseNvars=2:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
 
    if (Use["BDTB"]) // Bagging
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDTB",

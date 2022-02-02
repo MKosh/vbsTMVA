@@ -1,3 +1,0 @@
-clang++
-%h %hpp %cpp %cc %C -std=c++17
--I/home/markm/packages/root/root-6.24.02/include
