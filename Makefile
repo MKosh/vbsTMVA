@@ -14,9 +14,11 @@ region ?= wv_boosted
 plot_name ?= "test"
 pltVar ?= "lep1_pt"
 saveFile ?= "$(year)"
-dataset ?= "dataset.xml"
-dataset_dir ?= "datasets/plot_args"
-plot_type ?= "r"
+dataset ?= "datasets/dataset.xml"
+plot_args ?= "datasets/plot_args/"
+plot_type ?= r
+mon_function ?= cplots
+var_to_plot ?= "lep1_pt"
 
 help:
 	@echo ""
@@ -66,7 +68,7 @@ test:
 	@echo "pltVar = $(pltVar)"
 	@echo "saveFile = $(saveFile)"
 	@echo "dataset = $(dataset)"
-	@echo "dataset_dir = $(dataset_dir)"
+	@echo "plot_args = $(plot_args)"
 	@echo "plot_type = $(plot_type)" 
 
 #///////////////////////////////////////////////////////////////////////////////
@@ -110,13 +112,7 @@ trainAndPlot: train
 #///////////////////////////////////////////////////////////////////////////////
 #
 controlPlots: update_$(year)
-	@sed -i 's|^.*\(cplots(anl, cut, plot_name); // XXX\)|cplots(anl, cut, plot_name); // XXX|g' tmvaMon.cc
-	@sed -i 's|^.*\(shapePlots(anl, cut, plot_name); // XXX\)|//shapePlots(anl, cut, plot_name); // XXX|g' tmvaMon.cc
-	@sed -i 's|^.*\(genPlots(anl, cut, plot_name\)|  //genPlots(anl, cut, plot_name)|g' tmvaMon.cc
-#	-@./utils/plot_sort.sh "$(year)"
-	@root -q tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(plot_name)\"\)
-#	-@./utils/plot_resort.sh "$(year)"
-# @./utils/gen_plots.sh
+	@root -q tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(plot_name)\",\"$(plot_args)\",\"$(mon_function)\",\'$(plot_type)\',\"$(var_to_plot)\"\)
 
 #///////////////////////////////////////////////////////////////////////////////
 #
@@ -142,13 +138,12 @@ genPlots: update_$(year)
 #///////////////////////////////////////////////////////////////////////////////
 #
 mon: update_$(year)
-	@sed -i 's|^.*\(cplots(anl, cut, plot_name); // XXX\)|//cplots(anl, cut, plot_name); // XXX|g' tmvaMon.cc
-	@sed -i 's|^.*\(shapePlots(anl, cut, plot_name); // XXX\)|//shapePlots(anl, cut, plot_name); // XXX|g' tmvaMon.cc
-	@sed -i 's|^.*\(genPlots(anl, \)|  //genPlots(anl, |g' tmvaMon.cc
-#-@./utils/plot_sort.sh "$(year)"
-#@echo "Don't forget to run the plot_resort.sh script after generating new plots"
-	@root tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(plot_name)\"\)
-	
+	@root -q tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(plot_name)\",\"$(plot_args)\",\"\",\'$(plot_type)\',\"$(var_to_plot)\"\)
+
+#///////////////////////////////////////////////////////////////////////////////
+#
+cutFlow: update_$(year)
+	@root -q tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(plot_name)\",\"$(plot_args)\",\"printCutflow\",\'$(plot_type)\',\"$(var_to_plot)\"\)
 #///////////////////////////////////////////////////////////////////////////////
 #
 test2: 
