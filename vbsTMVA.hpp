@@ -147,7 +147,7 @@ TCut common               ("common",                  iso_cut+zepp_cut+lep_pt+bo
 TCut full_common          ("full_common",             common+lep_eta+region);
 TCut common_ele           ("common_ele",              common+lep_ele+region);
 TCut common_muon          ("common_muon",             common+lep_muon+region);
-TCut training_cut         ("training_cut",            common+category_selection);
+TCut training_cut         ("training_cut",            region); //common+category_selection
 
 // Full set of cuts for each SR/CR selecting both electrons and muons
 TCut full_wjets_cr        ("full_wjets_cr",           full_common+btag_veto+wv_cr_wjets);
@@ -374,7 +374,7 @@ TString getTimeAndDateString() {
 //
 void writeAUCFile (TString myMethodList, TMVA::DataLoader* dataloader, TMVA::Factory* factory) {
   stringstream ss_AUC_outfile;
-    ss_AUC_outfile << "ROC/" << "Run2.txt"; // AUCoutfile
+    ss_AUC_outfile << "ROC/" << "2017_region.txt"; // AUCoutfile
   std::ofstream AUC_outfile;
   AUC_outfile.open(ss_AUC_outfile.str(), std::ios_base::app);
   std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');

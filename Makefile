@@ -138,7 +138,7 @@ genPlots: update_$(year)
 #///////////////////////////////////////////////////////////////////////////////
 #
 mon: update_$(year)
-	@root -q tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(plot_name)\",\"$(plot_args)\",\"\",\'$(plot_type)\',\"$(var_to_plot)\"\)
+	@root -q tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(plot_name)\",\"$(plot_args)\",\"$(mon_function)\",\'$(plot_type)\',\"$(var_to_plot)\"\)
 
 #///////////////////////////////////////////////////////////////////////////////
 #

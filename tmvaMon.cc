@@ -156,6 +156,10 @@ class TmvaSample{
     Float_t  npass_err;
     Float_t  accpt;
 
+    Float_t _sum_bkg;
+    Float_t _sum_err;
+    Float_t _tot_err;
+
     Float_t fillSampleHist(const char* var, TCut cuts, Float_t scale=1.0);
     //  Float_t calcSgf(const char* sgfName);
     TCut   getScut(){return _samplecut;}
@@ -334,6 +338,7 @@ class TmvaAnl{
     void setBkgSample(UInt_t sID){  _bkg = _vsamples[sID]; }
     void setsvplots(Int_t isvplots){ _fsaveplots = isvplots;}
     void setLum(Float_t lum) { _lum = lum;}
+    Float_t getLum() { return _lum; }
     void PrintStat(TCut& cuts,Int_t debug);
     void setHistStyle(TH1F* hist);
 
@@ -363,6 +368,8 @@ class TmvaAnl{
 
     void PlotShapes(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
     void makeShapeComp(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
+
+    void setSigfValues();
 };
 
 //======================================================================================================================
@@ -456,11 +463,13 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.87, TCut cut="", TStrin
   gErrorIgnoreLevel = kWarning; // Ignore "Info in ..." printouts in ROOT session, helpful for making the cutflow tables
   anl = getAnl(anlName,lum_fb);
   g_lum = lum_fb;
+  std::cout << "\nanl Lum = " << anl->getLum() << std::endl;
   //printHelpMessage();
 
   if (function == "cplots") cplots(anl, cut, plot_name, plot_args_file, plot_style);
   else if (function == "genPlots") genPlots(anl, cut, plot_name, plot_args_file, plot_style);
   else if (function == "printCutflow") printCutflow(anl, var_to_plot, plot_args_file, plot_name, tau21_cut+qgid_cut+training_cut, plot_style);
+  else if (function == "optCutScan") anl->optCutScan(var_to_plot, cut, "BDT", -1, 1, 0.1, 0.0005, 20);
 
 }
 
@@ -479,6 +488,25 @@ void printHelpMessage() {
   cout << "To examine TMVA plots:" << endl;
   cout << "  tmgui()" << endl;
   cout << "" << endl;
+}
+
+//======================================================================================================================
+//
+void TmvaAnl::setSigfValues() {
+  float_t sum_bkg = 0.0;
+  float_t sum_err = 0.0;
+
+  for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
+    sum_bkg += _vsamples[ns]->npass;
+    sum_err += _vsamples[ns]->npass_err*_vsamples[ns]->npass_err;
+  }
+  float_t tot_err = sqrt(sum_err);
+
+  if (_sgl->npass+_bkg->npass){
+    _sgf1 =  (_sgl->npass)/sqrt(_sgl->npass+sum_bkg); 
+    _sgf0 =  _sgl->accpt*_sgl->npass/(_sgl->npass+sum_bkg);   // eff*purity*100
+  }
+  if (_bkg->npass) _sgf3 =  (_sgl->npass)/sqrt(sum_bkg);
 }
 
 //======================================================================================================================
@@ -849,10 +877,9 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 //
 void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 
-  Float_t sum_bkg = 0;
-  Float_t sum_err = 0;
-  Float_t tot_err = 0;
-
+  float_t sum_bkg = 0.0;
+  float_t sum_err = 0.0;
+  float_t tot_err = 0.0;
   for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
     sum_bkg += _vsamples[ns]->npass;
     sum_err += _vsamples[ns]->npass_err*_vsamples[ns]->npass_err;
@@ -872,7 +899,7 @@ void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 
     cout        <<  "|  "    << setw(20) <<  cuts.GetName(); 
     printf(" |  %6.0f    |    %3.1f+/-%3.1f      |    %4.2f+/-%4.2f (%5.2f)    |    %4.2f    | %4.2f   |\n",
-	    _data->npass, sum_bkg , tot_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, _sgf1,  _sgf3);     // _data->npass, _bkg->npass , _bkg->npass_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, _sgf1,  _sgf3); 
+	    _data->npass, sum_bkg, tot_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, (_sgl->npass)/sqrt(_sgl->npass+sum_bkg), _sgf2);     // _data->npass, _bkg->npass , _bkg->npass_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, _sgf1,  _sgf3); 
     cout     << "|--------------------------------------------------------------------------------------------------------------------|"      << endl;
   }
   if (debug>1){ 
@@ -1027,7 +1054,8 @@ TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Flo
 
 //======================================================================================================================
 //
-Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf=0.0005, Float_t dstepw=0.0005, Int_t npoints=20){
+Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, 
+                            Float_t cutvar_max, Float_t dsgf=0.0005, Float_t dstepw=0.0005, Int_t npoints=20){
   // sgf0 - eff*purity
   // sgf1 - s/sqrt(s+b)
   // sgf2 - 95% CL exp limit, fb
@@ -1035,13 +1063,13 @@ Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* c
   _optmap.clear();
   //Do not save service histograms
   setsvplots(0);
-  Float_t stepw   = (cutvar_max - cutvar_min)/npoints;
+  Float_t stepw = (cutvar_max - cutvar_min)/npoints;
   Float_t sgf_curr = optParVal(optParName);
   Int_t nprobe = 0;
   stringstream cutvar_cut;
   Float_t cutval = cutvar_min;
   
-  Float_t bestcut=cutvar_min ;
+  Float_t bestcut = cutvar_min ;
   Float_t bestcut_min = cutvar_min ;
   Float_t bestcut_max = cutvar_min ;
   Float_t bestsgf = 0;
@@ -1051,7 +1079,7 @@ Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* c
   while ( stepw > dstepw){
     nprobe=0;
     while ( nprobe < npoints ) {
-      cutval = cutvar_min+ nprobe*stepw;
+      cutval = cutvar_min + nprobe*stepw;
       cutvar_cut.str("");
       cutvar_cut << "(" << cutvar << " > " <<  cutval  << " ) " ;   
       setHframe("nPV",norm_hist*(basecuts+cut_bkg),0.0,10.0, 1.0);
@@ -1562,7 +1590,6 @@ void TmvaAnl::PlotLegend(const char* var){
   float_t sum_bkg = 0.0;
   float_t sum_err = 0.0;
 
-
   for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
     sum_bkg += _vsamples[ns]->npass;
     sum_err += _vsamples[ns]->npass_err*_vsamples[ns]->npass_err;
@@ -1777,24 +1804,39 @@ void TmvaAnl::fillSampleHists(const char* var, TCut cuts, Float_t scale){
     _sgf1 =0.0;
     _sgf2 =0.0;
     _sgf3 =0.0;
-    if (_sgl->npass+_bkg->npass){    
-      _sgf1 =  (_sgl->npass)/sqrt(_sgl->npass+_bkg->npass); 
-      _sgf0 =  _sgl->accpt*_sgl->npass/(_sgl->npass+_bkg->npass);   // eff*purity*100
-    }
-    if (_bkg->npass) _sgf3 =  (_sgl->npass)/sqrt(_bkg->npass);
 
+    for( UInt_t ns=3; ns <  _vsamples.size(); ns++){
+      _vsamples[ns]->fillSampleHist(var,cuts,scale_bkg);
+    }
+
+    Float_t sum_bkg = 0;
+    Float_t sum_err = 0;
+    Float_t tot_err = 0;
+
+    for(UInt_t ns=_vsamples.size()-1; ns>2; ns--){
+      //std::cout << "sample = " << _vsamples[ns]->_name << ", npass = " << _vsamples[ns]->npass << std::endl;
+      sum_bkg += _vsamples[ns]->npass;
+      sum_err += _vsamples[ns]->npass_err*_vsamples[ns]->npass_err;
+    }
+    tot_err = sqrt(sum_err);
+
+    if (_sgl->npass+_bkg->npass){
+      _sgf1 =  (_sgl->npass)/sqrt(_sgl->npass+sum_bkg); 
+      _sgf0 =  _sgl->accpt*_sgl->npass/(_sgl->npass+sum_bkg);   // eff*purity*100
+    }
+    if (_bkg->npass) _sgf3 =  (_sgl->npass)/sqrt(sum_bkg);
+    //setSigfValues();
+    //std::cout << "sum_bkg = " << sum_bkg << " / sgl->npass = " << _sgl->npass << std::endl;
     _useGauss=0;
     if ( _sgl->npass > 20 )  _useGauss=1;
     Double_t cl95res= 0.0;
     Double_t pfluc= 0.0;
     if (_bkg->npass) limit_calc( _bkg->npass, _bkg->npass , _bkg->npass_err, _sgl->accpt/100.,  0.15 * _sgl->accpt/100., _lum, 0.065*_lum , _useGauss,  cl95res, pfluc );
-    _sgf2 =cl95res;
+    _sgf2 = cl95res;
     //  cout << "LIMIT_CALC-RESULTS (expected, fb)/pfluc  " << _sgf2 << " / " << pfluc << endl;
-    if (_debug ) cout << "_sgf0/_sgf1/_sgf2/_sgf3 = "  <<  _sgf0 << "/" << _sgf1 << "/" << _sgf2 << "/" << _sgf3 << endl;
-    for( UInt_t ns=3; ns <  _vsamples.size(); ns++){
-      _vsamples[ns]->fillSampleHist(var,cuts,scale_bkg);
-    }
- }
+    if (_debug) cout << "_sgf0/_sgf1/_sgf2/_sgf3 = "  <<  _sgf0 << "/" << _sgf1 << "/" << _sgf2 << "/" << _sgf3 << endl;
+
+}
 
 //======================================================================================================================
 //
@@ -1960,7 +2002,8 @@ void tmgui(){
 
 //======================================================================================================================
 //
-Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_error, double lumi, double lumi_error,  bool IfGauss,double& cl95res, double&  pfluc ) {
+Int_t limit_calc( int ndata, double nbkg, double sbkg,  double acc,  double acc_error, double lumi, double lumi_error, 
+                  bool IfGauss,double& cl95res, double&  pfluc) {
 //   if( argc != 9 ) {
 //     cout << "Insufficient data on command line" <<endl;
 //     cout << "Use: limit_calc ndata nbkg sbkg acc sacc lumi slumi force_gauss(=0 for web page)"
@@ -2301,7 +2344,7 @@ void printCutflow(TmvaAnl* anl, const char* var, TString plot_args_file, const c
     Cuts=Cuts + currentCut;
     c1->cd();
     CanvasName << " + " << currentCut.GetName();
-    hist_title << year2 << " VBS (WV), " << g_lum << "fb^{-1}, " << currentCut.GetName();
+    hist_title << year2 << " VBS (WV), " << anl->getLum() << "fb^{-1}, " << currentCut.GetName();
     plotFunction(anl, ((TXMLAttr*)attr_list->At(1))->GetValue(), Cuts,
                 (Float_t)stof(((TXMLAttr*)attr_list->At(3))->GetValue()),
                 (Int_t)stoi(((TXMLAttr*)attr_list->At(4))->GetValue()),
@@ -2315,7 +2358,7 @@ void printCutflow(TmvaAnl* anl, const char* var, TString plot_args_file, const c
                 hist_title.str().c_str(),
                 ((TXMLAttr*)attr_list->At(13))->GetValue(),
                 ((TXMLAttr*)attr_list->At(14))->GetValue());
-    anl->PrintStat(currentCut, (Int_t)stoi(((TXMLAttr*)attr_list->At(5))->GetValue()));
+    //anl->PrintStat(currentCut, (Int_t)stoi(((TXMLAttr*)attr_list->At(5))->GetValue()));
 	  c1->Print(pdf_save_name.str().c_str());
     c1->Clear();
     hist_title.str("");

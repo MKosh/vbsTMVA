@@ -41,7 +41,7 @@ using namespace TMVA;
 
 int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 {
-   //ROOT::EnableImplicitMT();
+   ROOT::EnableImplicitMT();
    // The explicit loading of the shared libTMVA is done in TMVAlogon.cc, defined in .rootrc
    // if you use your private .rootrc, or run from a different directory, please copy the
    // corresponding lines from .rootrc
@@ -143,9 +143,8 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 // --------------------------------------------------------------------------------------------------
 
    // Apply additional cuts on the signal and background samples (can be different)
-   //   TCut mycuts = cleanNAN+more+OneLpt;//
-   TCut mycuts = qgid_cut+tau21_cut+training_cut; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1"; wv_sr
-   TCut mycutb = mycuts;//
+   TCut mycuts = qgid_cut+tau21_cut+training_cut;
+   TCut mycutb = mycuts;
 
    VbsReducedEvent vbsEvent;
 
@@ -235,47 +234,26 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    //outputFile->cd();
    gDirectory->Delete("Events;*");
 
-// //----
-
-
-   //
    TMVA::Factory* factory = new TMVA::Factory( "TMVAClassification", outputFile,
-                                               "!V:!Silent:Color:DrawProgressBar=False:Transformations=I;D;P:AnalysisType=Classification" ); //I;D;P;G,D
+                                               "!V:!Silent:Color:DrawProgressBar=False:Transformations=I;P:AnalysisType=Classification" ); //I;D;P;G,D
 
    TMVA::DataLoader* dataloader=new TMVA::DataLoader(sname);
 
-   //Defined in vbsDL.hpp
-   //setVbsFactoryVarsAndSpectators(dataloader);
    setVbsDLorReaderVarsAndSpectators(dataloader,0,vbsEvent);
    // global event weights per tree (see below for setting event-wise weights)
    Double_t signalWeight     = 1.0;
    Double_t backgroundWeight = 1.0;
 
+   dataloader->SetSignalWeightExpression    ("mcWeight*genWeight"); // Set Global weights
+   dataloader->SetBackgroundWeightExpression("mcWeight*genWeight");
 
-   dataloader->SetSignalWeightExpression    ("mcWeight*genWeight");//*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep1_trigEffWeight");//*lep2_idEffWeight*lep2_trigEffWeight*pdfWeight*scaleWeight");
-   dataloader->SetBackgroundWeightExpression("mcWeight*genWeight");//*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep1_trigEffWeight");
-
-   // You can add an arbitrary number of signal or background trees
    for (UInt_t ns=0; ns<sglSamples.size();ns++){
       if ( sglSamples[ns]->getInpTree() ) dataloader->AddSignalTree ( sglSamples[ns]->getInpTree(),     signalWeight     );
    }
 
-   //Add backgrounds to factory
-   //
    for (UInt_t ns=0; ns< bkgSamples.size();ns++){
-      if ( bkgSamples[ns]->getInpTree() ) {
-         if ( bkgSamples[ns]->getGName() == "Wjets" ) {
-           // std::cout << "Weight factor = " << backgroundWeight << std::endl;
-            dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), backgroundWeight    );
-         }
-         else {
-           // std::cout << "Weight factor = " << backgroundWeight << std::endl;
-            dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), backgroundWeight    );
-         }
-      }
+      if ( bkgSamples[ns]->getInpTree() ) dataloader->AddBackgroundTree( bkgSamples[ns]->getInpTree(), backgroundWeight    );
    }
-   //
-
 
 // There are 3 choices for this option None, NumEvents, EqualNumEvents with the last being the default.
 // NumEvents ensures that the average weight for each class, independently, is 1.
@@ -575,28 +553,8 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    cout << "Evaluate All Methods" << endl;
    factory->EvaluateAllMethods();
 
-   ////////////////////////////////////////////////////////////////////////////
-   /// Print out AUC for each method, both to the terminal, and to a file
-   /// The // AUCoutfile comment needs to stay exactly how it is for the makefile
-   /// to catch it and properly rename the ssAUCoutile name.
-//   stringstream ssAUCoutfile;
-//    ssAUCoutfile << "ROC/" << "Run2_All_Methods.txt"; // AUCoutfile
-//   std::ofstream AUCoutfile;
-//   AUCoutfile.open(ssAUCoutfile.str(), std::ios_base::app);
-//   std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
-//   TString time_and_date = getTimeAndDateString();
-//
-//   AUCoutfile << "" << std::endl;
-//   AUCoutfile << "--------------------------------------------------" << std::endl;
-//   AUCoutfile << time_and_date << std::endl;
-//   for (UInt_t i=0; i<mlist.size(); i++) {
-//      std::string regMethod(mlist[i]);
-//      AUCoutfile << "AUC for " << regMethod << ":\t\t" << factory->GetROCIntegral(dataloader, regMethod) << std::endl;
-//   }
-//   AUCoutfile << "--------------------------------------------------" << std::endl;
-//   AUCoutfile.close();
    writeAUCFile(myMethodList, dataloader, factory);
-   // --------------------------------------------------------------
+
 
    cout << "Clone dataTree" << endl;
    output_tree->Write();
