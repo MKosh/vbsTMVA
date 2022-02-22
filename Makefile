@@ -5,7 +5,7 @@
 
 loc ?= "g/Research/ntuples/NEW/2016/haddedFiles"
 year ?= "2016"
-vars ?= "set1"
+vars ?= "Boosted1"
 methods ?= "BDT"
 lumi ?= 35.867
 cut ?= "dummy"
@@ -144,11 +144,9 @@ mon: update_$(year)
 #
 cutFlow: update_$(year)
 	@root -q tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(plot_name)\",\"$(plot_args)\",\"printCutflow\",\'$(plot_type)\',\"$(var_to_plot)\"\)
+
 #///////////////////////////////////////////////////////////////////////////////
 #
-test2: 
-	@sed -i 's|^TCut category_selection.*|TCut category_selection   ("category_selection",      $(training_cut));|g' vbsTMVA.hpp
-
 update_cuts:
 	@sed -i 's|^TCut category_selection.*|TCut category_selection   ("category_selection",      $(training_cut));|g' vbsTMVA.hpp
 	@sed -i 's|^TCut region.*|TCut region               ("region",                  $(region));|g' vbsTMVA.hpp

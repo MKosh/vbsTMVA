@@ -166,7 +166,7 @@ class TmvaSample{
     TTree* getTestTree(){ return _testTree;}
     TTree* getTrainTree(){ return _trainTree;}
 };
-
+ 
 //======================================================================================================================
 //
 TmvaSample::TmvaSample(Int_t sid,Int_t scolor, const char* smplname, TCut samplecut,Float_t ngen_normfb, TTree* testTree, TTree* trainTree){
@@ -349,7 +349,7 @@ class TmvaAnl{
     TH1F* makeHist(const char* hname, const char* hvar, Int_t nbins, Float_t hvar_min, Float_t hvar_max);
 
     Float_t optCutAlg1(const char* optParName,TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf, Float_t dstepw, Int_t npoints);
-    Float_t optCutScan(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf, Float_t dstepw, Int_t npoints);
+    Float_t optCutScan(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, Float_t cutvar_max, Float_t dsgf, Float_t dstepw, Int_t npoints, TString plot_name);
     void setSampleHists();
     void fillSampleHists(const char* var, TCut cut, Float_t scale=1.0);
     void setTmvaScales(Float_t& scale_sgl_tmva,Float_t& scale_bkg_tmva){
@@ -449,7 +449,7 @@ stringstream ssifname;
 TmvaAnl* getAnl(TString& anlName, Float_t lum_fbinv = 35.867);
 TH1F* cloneHist(TH1F* hframe, const char* histname);
 TH1F* xCloneHist(TH1F* hframe, const char* cloneName, Int_t cloneNum);
-TGraphErrors*  map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& opthist,  Float_t& best_cutval, Float_t& sgf_at_bestcut );
+TGraphErrors*  map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& opthist,  Float_t& best_cutval, Float_t& sgf_at_bestcut, TString plot_name );
 Int_t limit_calc(int ndata, double nbkg, double sbkg,  double acc,  double acc_error, double lumi, double lumi_error,  bool IfGauss,double& cl95res, double&  pfluc );
 
 //======================================================================================================================
@@ -469,7 +469,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.87, TCut cut="", TStrin
   if (function == "cplots") cplots(anl, cut, plot_name, plot_args_file, plot_style);
   else if (function == "genPlots") genPlots(anl, cut, plot_name, plot_args_file, plot_style);
   else if (function == "printCutflow") printCutflow(anl, var_to_plot, plot_args_file, plot_name, tau21_cut+qgid_cut+training_cut, plot_style);
-  else if (function == "optCutScan") anl->optCutScan(var_to_plot, cut, "BDT", -1, 1, 0.1, 0.0005, 20);
+  else if (function == "optCutScan") anl->optCutScan(var_to_plot, cut, "BDT", -1, 1, 0.1, 0.0005, 20, plot_name);
 
 }
 
@@ -551,7 +551,7 @@ void  tmvacmp(TmvaAnl* anl, const char* sgf, const char* varset="test"){
     cout << "iset/tmva_min  = " << TMVAset[iset] << "/" << tmva_min << endl;
 
     //  opt_cut = anl->optCutScan("sgf0",cleanNAN, TMVAset[iset], tmva_min, tmva_max, 0.1,0.0005, 10); //effxpurity
-    opt_cut = anl->optCutScan(sgf,cleanNAN, TMVAset[iset], tmva_min, tmva_max, 0.1,0.0005, 10); //s/sqrt(b)
+    opt_cut = anl->optCutScan(sgf,cleanNAN, TMVAset[iset], tmva_min, tmva_max, 0.1,0.0005, 10, "test"); //s/sqrt(b)
 
     cmpCanvas->cd(2*iset+1);
     plotvar(anl, TMVAset[iset], allCuts,  1.00, 0, 0,     tmva_min,   tmva_max, 0.1,  1, 0, 0, 0, "VBS (WV), 35.9 fb^{-1}", TMVAset[iset]);
@@ -899,7 +899,7 @@ void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 
     cout        <<  "|  "    << setw(20) <<  cuts.GetName(); 
     printf(" |  %6.0f    |    %3.1f+/-%3.1f      |    %4.2f+/-%4.2f (%5.2f)    |    %4.2f    | %4.2f   |\n",
-	    _data->npass, sum_bkg, tot_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, (_sgl->npass)/sqrt(_sgl->npass+sum_bkg), _sgf2);     // _data->npass, _bkg->npass , _bkg->npass_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, _sgf1,  _sgf3); 
+	    _data->npass, sum_bkg, tot_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, _sgf1, _sgf2);     // _data->npass, _bkg->npass , _bkg->npass_err, _sgl->npass, _sgl->npass_err, _sgl->accpt, _sgf1,  _sgf3); (_sgl->npass)/sqrt(_sgl->npass+sum_bkg)
     cout     << "|--------------------------------------------------------------------------------------------------------------------|"      << endl;
   }
   if (debug>1){ 
@@ -920,7 +920,7 @@ void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 
 //======================================================================================================================
 //
-TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& optmap, Float_t& best_cutval, Float_t& sgf_at_bestcut    ){
+TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& optmap, Float_t& best_cutval, Float_t& sgf_at_bestcut, TString plot_name){
 
   std::string year2 = "2016";
   if (year2 == "1111") {
@@ -928,6 +928,9 @@ TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Flo
   }
   TString date = getDateString();
   TString time = getTimeString();
+  
+  TString path = static_cast<TString>("plots/")+year2.c_str()+"/"+date;
+  Int_t dir = makeNewDirectory(path);
 
   TCanvas* cgraph = (TCanvas*)gROOT->FindObject("cOptGraph"); 
   if(cgraph) {cgraph->Delete(); }
@@ -1043,7 +1046,7 @@ TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Flo
   
   stringstream splname;
   stringstream plotName;
-  plotName << "plots/" << year2 << "/" << date << "/" << sgfName << "_" << cutvar << "_" << time;
+  plotName << "plots/" << year2 << "/" << date << "/" << sgfName << "_" << plot_name << "_" << time;
 
   splname << plotName.str().c_str() << ".pdf";
   gPad->SaveAs(splname.str().c_str());
@@ -1055,7 +1058,7 @@ TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Flo
 //======================================================================================================================
 //
 Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* cutvar, Float_t cutvar_min, 
-                            Float_t cutvar_max, Float_t dsgf=0.0005, Float_t dstepw=0.0005, Int_t npoints=20){
+                            Float_t cutvar_max, Float_t dsgf=0.0005, Float_t dstepw=0.0005, Int_t npoints=20, TString plot_name="BDT"){
   // sgf0 - eff*purity
   // sgf1 - s/sqrt(s+b)
   // sgf2 - 95% CL exp limit, fb
@@ -1108,7 +1111,7 @@ Float_t TmvaAnl::optCutScan(const char* optParName, TCut basecuts, const char* c
   }
   //
   cout << "bestcut/sgf  = "  << bestcut << "/" <<  bestsgf << endl;
-  _optgraph = map2graph(optParName, cutvar, _optmap, bestcut, bestsgf );
+  _optgraph = map2graph(optParName, cutvar, _optmap, bestcut, bestsgf, plot_name);
   //
   setsvplots(1);
   return bestcut;
@@ -1218,7 +1221,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
   PlotLegend("njets");
   PlotSgf("njets");
   
-  _optgraph = map2graph(optParName,cutvar, _optmap, cutval, sgf_curr);
+  _optgraph = map2graph(optParName,cutvar, _optmap, cutval, sgf_curr, "test");
   return cutval;
 }
 
@@ -2031,10 +2034,10 @@ Int_t limit_calc( int ndata, double nbkg, double sbkg,  double acc,  double acc_
   // product of acceptance*lumi, and bkg, the absolute uncertainty on the
   // background.  We assume uncorrelated uncertainties.
   
-  cl95res = CalcCL95(lumi, lumi_error, 
-			    acc, acc_error, 
-			    nbkg, sbkg, 
-			    ndata, IfGauss);
+  cl95res = CalcCL95( lumi, lumi_error, 
+			                acc, acc_error, 
+			                nbkg, sbkg, 
+			                ndata, IfGauss);
 
   // and compute the probability that background flucuates to at least
   // the observed data.

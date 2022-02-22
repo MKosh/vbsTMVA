@@ -235,7 +235,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    gDirectory->Delete("Events;*");
 
    TMVA::Factory* factory = new TMVA::Factory( "TMVAClassification", outputFile,
-                                               "!V:!Silent:Color:DrawProgressBar=False:Transformations=I;P:AnalysisType=Classification" ); //I;D;P;G,D
+                                               "!V:!Silent:Color:DrawProgressBar=False:Transformations=I;G:AnalysisType=Classification" ); //I;D;P;G,D
 
    TMVA::DataLoader* dataloader=new TMVA::DataLoader(sname);
 
@@ -450,25 +450,32 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
 //    TString layoutString ("Layout=TANH|100,TANH|50,TANH|10,LINEAR");
 //    TString layoutString ("Layout=TANH|(N+30)*2,TANH|(N+30),TANH|10,LINEAR");
-  TString layoutString ("Layout=RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR");
+      
+   TString layoutString ("Layout=RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR");
+     //TString training0 ("LearningRate=1e-1,Momentum=0.0,Repetitions=1,ConvergenceSteps=300,BatchSize=10,TestRepetitions=15,WeightDecay=0.001,Regularization=NONE,DropConfig=0.0+0.5+0.5+0.5,DropRepetitions=1,Multithreading=True");
+     //TString training1 ("LearningRate=1e-2,Momentum=0.5,Repetitions=1,ConvergenceSteps=300,BatchSize=10,TestRepetitions=7,WeightDecay=0.001,Regularization=L2,Multithreading=True,DropConfig=0.0+0.1+0.1+0.1,DropRepetitions=1");
+     //TString training2 ("LearningRate=1e-2,Momentum=0.3,Repetitions=1,ConvergenceSteps=300,BatchSize=10,TestRepetitions=7,WeightDecay=0.0001,Regularization=L2,Multithreading=True");
+     //TString training3 ("LearningRate=1e-2,Momentum=0.1,Repetitions=1,ConvergenceSteps=300,BatchSize=10,TestRepetitions=7,WeightDecay=0.0001,Regularization=NONE,Multithreading=True");
+   
+   //TString layoutString("Layout=RELU|128,RELU|64,RELU|32,SIGMOID|16,LINEAR");
+   //TString layoutString ("Layout=TANH|128,TANH|128,TANH|128,LINEAR");
+      //TString training0 ("LearningRate=1e-1,Momentum=0.0,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=15,WeightDecay=0.001,Regularization=NONE,DropConfig=0.0+0.5+0.5+0.5,DropRepetitions=1,Multithreading=True");
+      //TString training1 ("LearningRate=1e-2,Momentum=0.5,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.001,Regularization=L2,Multithreading=True,DropConfig=0.0+0.1+0.1+0.1,DropRepetitions=1");
+      //TString training2 ("LearningRate=1e-2,Momentum=0.3,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.0001,Regularization=L2,Multithreading=True");
+      //TString training3 ("LearningRate=1e-2,Momentum=0.1,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.0001,Regularization=NONE,Multithreading=True");
 
-    TString training0 ("LearningRate=1e-1,Momentum=0.0,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=15,WeightDecay=0.001,Regularization=NONE,DropConfig=0.0+0.5+0.5+0.5,DropRepetitions=1,Multithreading=True");
-    TString training1 ("LearningRate=1e-2,Momentum=0.5,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.001,Regularization=L2,Multithreading=True,DropConfig=0.0+0.1+0.1+0.1,DropRepetitions=1");
-    TString training2 ("LearningRate=1e-2,Momentum=0.3,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.0001,Regularization=L2,Multithreading=True");
-    TString training3 ("LearningRate=1e-2,Momentum=0.1,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.0001,Regularization=NONE,Multithreading=True");
 
 
 
-
-    TString trainingStrategyString ("TrainingStrategy=");
-    trainingStrategyString += training0 + "|" + training1 + "|" + training2 + "|" + training3;
+    //TString trainingStrategyString ("TrainingStrategy=");
+    //trainingStrategyString += training0 + "|" + training1 + "|" + training2 + "|" + training3;
 
 
       // General Options.
       TString dnnOptions ("!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=N:"
                           "WeightInitialization=XAVIERUNIFORM");
       dnnOptions.Append (":"); dnnOptions.Append (layoutString);
-   //   dnnOptions.Append (":"); dnnOptions.Append (trainingStrategyString);
+      //dnnOptions.Append (":"); dnnOptions.Append (trainingStrategyString);
 
       // Cuda implementation.
       if (Use["DNN_GPU"]) {
@@ -501,8 +508,8 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    if (Use["BDT1"])  // Adaptive Boost
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT1",
-                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.6:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=False:UseNvars=2:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
-
+                           //"!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.6:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=False:UseNvars=2:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
+                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.2:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True:UseNvars=2:NegWeightTreatment=IgnoreNegWeightsInTraining" );
    if (Use["BDT2"])
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT2",
                            "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );

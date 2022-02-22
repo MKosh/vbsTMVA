@@ -109,8 +109,8 @@ cat branches.txt | sed 's/[0-z]*\/O/Bool_t/g' | grep Bool_t >> list_of_branches.
 # Delete the old variable list file
 rm branches.txt
 
-if [ $2 == "Boosted" ]; then
-    TMVAVARS="lep1_pt bos_PuppiAK8_pt bos_PuppiAK8_phi bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 vbf_m lep1_eta nJet30f vbf_deta vbf1_AK4_pt zeppLep vbf2_AK4_qgid vbf1_AK4_qgid vbf2_AK4_eta vbf1_AK4_eta vbf2_AK4_pt zeppHad vbf_eta bos_PuppiAK8_m_sd0_corr"
+if [ $2 == "boosted1" ]; then
+    TMVAVARS="lep1_pt bos_PuppiAK8_pt bos_PuppiAK8_phi bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 vbf_m lep1_eta nJet30f vbf_deta vbf1_AK4_pt zeppLep vbf2_AK4_qgid vbf1_AK4_qgid vbf2_AK4_eta vbf1_AK4_eta vbf2_AK4_pt zeppHad vbf_eta bos_PuppiAK8_m_sd0_corr MET dibos_eta dibos_m dibos_pt vbf_pt vbf1_AK4_m vbf2_AK4_m vbf1_AK4_pt vbf2_AK4_pt"
     activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta AntiIsoInt $TMVAVARS"
     plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad zeppLep nJet30 nJet50 nJet30f"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
@@ -119,12 +119,12 @@ if [ $2 == "Boosted" ]; then
     plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin lep1_idEffWeight lep2_idEffWeight lep1_trigEffWeight lep2_trigEffWeight"
     #weightVARS=""#mcWeight genWeight L1PFWeight puWeight btagWeight_loose lep1_idEffWeight lep2_idEffWeight lep1_trigEffWeight lep2_trigEffWeight pdfWeight scaleWeight"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plotVARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
-elif [ $2 == "Boosted2" ]; then
-    TMVAVARS="bos_PuppiAK8_tau2tau1 vbf_m lep1_eta nJet30f vbf_deta vbf1_AK4_pt zeppLep vbf2_AK4_qgid vbf1_AK4_qgid vbf2_AK4_eta vbf1_AK4_eta vbf2_AK4_pt zeppHad vbf_eta bos_PuppiAK8_m_sd0_corr"
+elif [ $2 == "boosted24" ]; then
+    TMVAVARS="vbf_m nJet30f vbf2_AK4_eta zeppHad bos_PuppiAK8_m_sd0_corr"
     activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta AntiIsoInt $TMVAVARS"
     plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad zeppLep nJet30 nJet50 nJet30f"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
-    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt vbf_eta"
+    plotVARS_VBFJet="nBtag_loose nBtag_medium vbf1_AK4_eta vbf1_AK4_phi vbf1_AK4_pt vbf1_AK4_m vbf2_AK4_m vbf2_AK4_eta vbf2_AK4_phi vbf2_AK4_pt vbf_m vbf_deta vbf1_AK4_qgid vbf2_AK4_qgid vbf_phi vbf_pt vbf_eta"
     plotVARS_Lep="lep1_eta lep1_phi lep1_pt lep2_eta lep2_pt lep2_phi"
     plotVARS_Other="dilep_eta dilep_m dilep_mt dilep_phi dilep_pt bos_j1_AK4_eta bos_j1_AK4_pt bos_j2_AK4_eta bos_j2_AK4_pt bos_AK4AK4_m bos_AK4AK4_pt year lumin lep1_idEffWeight lep2_idEffWeight lep1_trigEffWeight lep2_trigEffWeight"
     #weightVARS=""#mcWeight genWeight L1PFWeight puWeight btagWeight_loose lep1_idEffWeight lep2_idEffWeight lep1_trigEffWeight lep2_trigEffWeight pdfWeight scaleWeight"
