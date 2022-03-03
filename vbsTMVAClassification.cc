@@ -156,41 +156,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
 //----
 
-   //Signals
-   for (UInt_t ns=0; ns<sglSamples.size();ns++){
-      cout << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << endl;
-
-      if ( sglSamples[ns]->getLoadFlag()){
-        // cout << "register  "  << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << " signal samples" << endl;
-
-         sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
-
-         if( sglSamples[ns]->getInpTree() ){
-            fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]);
-         }
-         cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << " signal events " <<   sglSamples[ns]->getNevents() << endl;
-         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
-      }
-   }
-
-   //Backgrounds
-   for (UInt_t ns=0; ns<bkgSamples.size();ns++){
-     cout << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << endl;
-
-      if ( bkgSamples[ns]->getLoadFlag()){
-         //  cout << "register  "  << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << " background  samples" << endl;
-
-         bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
-
-         if( bkgSamples[ns]->getInpTree() ){
-            fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]);
-         }
-         cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << " background events " <<   bkgSamples[ns]->getNevents() << endl;
-         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
-      }
-   }
-
-   /* Two options
+/* Two options
    *  Put everything up until the comment below that says "Here" above the signal and background loops
    *  That uses less RAM, but makes the final output file sizes larger
    *  Conversely, if the file declaration and the Data loop are below the other loops then
@@ -229,6 +195,42 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    TTree* output_tree = TTree::MergeTrees(tree_list);
    //output_tree->SetTitle("DataTree");
    //output_tree->SetName("DataTree");
+
+   //Signals
+   for (UInt_t ns=0; ns<sglSamples.size();ns++){
+      cout << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << endl;
+
+      if ( sglSamples[ns]->getLoadFlag()){
+        // cout << "register  "  << sglSamples[ns]->getGName() << "--" << sglSamples[ns]->getSName() << " signal samples" << endl;
+
+         sglSamples[ns]->setInpTree( chain2tree("Events", sglSamples[ns]->getReqList(), sglSamples[ns]->getSName(), sglSamples[ns]->getSName() ) );
+
+         if( sglSamples[ns]->getInpTree() ){
+            fillBranch( sglSamples[ns]->getInpTree(), vbsEvent, sglSamples[ns]);
+         }
+         cout << "TMVAClassification:: Total " << sglSamples[ns]->getSName() << " signal events " <<   sglSamples[ns]->getNevents() << endl;
+         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
+      }
+   }
+
+   //Backgrounds
+   for (UInt_t ns=0; ns<bkgSamples.size();ns++){
+     cout << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << endl;
+
+      if ( bkgSamples[ns]->getLoadFlag()){
+         //  cout << "register  "  << bkgSamples[ns]->getGName() << "--" << bkgSamples[ns]->getSName() << " background  samples" << endl;
+
+         bkgSamples[ns]->setInpTree( chain2tree("Events", bkgSamples[ns]->getReqList(), bkgSamples[ns]->getSName(), bkgSamples[ns]->getSName() ) );
+
+         if( bkgSamples[ns]->getInpTree() ){
+            fillBranch( bkgSamples[ns]->getInpTree(), vbsEvent, bkgSamples[ns]);
+         }
+         cout << "TMVAClassification:: Total " << bkgSamples[ns]->getSName() << " background events " <<   bkgSamples[ns]->getNevents() << endl;
+         std::cout << "---------------------------------------------------------------------------------------------------------------------------------"  << std::endl;
+      }
+   }
+
+   
    // Here
 
    //outputFile->cd();

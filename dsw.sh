@@ -102,6 +102,10 @@ COMBINED_SKIM="cmbvbs_vv"
 skim_folder=$SKIMS
 data_foler=""
 
+if [[ ! -d skims ]]; then
+    mkdir skims
+fi
+
 if [[ "$2" == "1111" ]]; then
     skim_folder=$COMBINED_SKIM
     #data_folder="$Ntuple_loc/Run2"

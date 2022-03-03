@@ -374,7 +374,7 @@ TString getTimeAndDateString() {
 //
 void writeAUCFile (TString myMethodList, TMVA::DataLoader* dataloader, TMVA::Factory* factory) {
   stringstream ss_AUC_outfile;
-    ss_AUC_outfile << "ROC/" << "2016_boosted23.txt"; // AUCoutfile
+    ss_AUC_outfile << "ROC/" << "Run2_wv_boosted.txt"; // AUCoutfile
   std::ofstream AUC_outfile;
   AUC_outfile.open(ss_AUC_outfile.str(), std::ios_base::app);
   std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');

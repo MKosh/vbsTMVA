@@ -188,7 +188,7 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
     _testTree->Project(_hf1->GetName(), var, norm_hist*(cuts+_samplecut), "goff");
   }
 
-  int year = 2016;
+  int year = 1111;
   if (_sid == 15 && year == 2018) {
     scale *= 0.72; // Old scale factors //scale *= 0.6875; // 2018 Scale ttbar 
   } else if (_sid == 13 && year == 2018) {
@@ -357,8 +357,8 @@ class TmvaAnl{
       _scale_bkg_tmva = scale_bkg_tmva;
     }
     Int_t ArrangeHtms(Int_t flogy=0);
-    void  StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy=0, Int_t overFlow=0);
-    void  PlotHists(Float_t ymin, Int_t flogy=0, Int_t overFlow=0);
+    void  StackHtms(Int_t& imax, Float_t& ymin, const char* var, Int_t flogy=0, Int_t overFlow=0);
+    void  PlotHists(Float_t ymin, const char* var, Int_t flogy=0, Int_t overFlow=0);
     void  PlotLegend(const char* var);
     void  PlotSgf(const char* var); 
     void  sdb(Int_t dbl){ _debug=dbl; };
@@ -749,7 +749,7 @@ Int_t plotSingleVariable( TmvaAnl* anl, const char* var, TCut cuts, const char* 
   TCanvas* canvas1 = (TCanvas*)gROOT->FindObject("canvas1");
   if (canvas1) { canvas1->Delete(); }
   canvas1 = new TCanvas("canvas1","canvas1", 10,10, 800,800);
-  anl->PlotHists(ymin, flogy, overFlow); 
+  anl->PlotHists(ymin, var, flogy, overFlow); 
   anl->PlotLegend(var);
 
   if(istyle==1){
@@ -786,7 +786,7 @@ Int_t plotvar( TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   if (flogy) ymin= 1; // pow(10,flogy*(-1));
 
   gStyle->SetOptStat(0);  
-  anl->PlotHists(ymin, flogy, overFlow); 
+  anl->PlotHists(ymin, var, flogy, overFlow); 
   anl->PlotLegend(var); 
 
   if(istyle==1){
@@ -830,7 +830,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
 
   plotCanvas->cd(1);
   gPad->SetLogy(1);
-  anl->PlotHists(ymin, flogy); 
+  anl->PlotHists(ymin, var, flogy); 
   anl->PlotLegend(var); 
   if(istyle==1){
     anl->PlotSgf(var);
@@ -848,7 +848,7 @@ Int_t cplotvar(TmvaAnl* anl, const char* var, TCut cuts, Float_t scale, Int_t de
   plotCanvas->cd(2); 
   // hdata->SetMaximum(npmax*1.2);
   anl->getDataSample()->_hf1->SetMaximum(anl->getDataSample()->_hf1->GetMaximum()/1.2);
-  anl->PlotHists(ymin, flogy); 
+  anl->PlotHists(ymin, var, flogy); 
   anl->PlotLegend(var); 
   if(istyle==1){
     anl->PlotSgf(var);
@@ -922,7 +922,7 @@ void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 //
 TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& optmap, Float_t& best_cutval, Float_t& sgf_at_bestcut, TString plot_name){
 
-  std::string year2 = "2016";
+  std::string year2 = "1111";
   if (year2 == "1111") {
     year2 = "Run2";
   }
@@ -1217,7 +1217,7 @@ Float_t TmvaAnl::optCutAlg1(const char* optParName, TCut basecuts, const char* c
 
   }
   gStyle->SetOptStat(0); 
-  PlotHists(0.0);
+  PlotHists(0.0, cutvar);
   PlotLegend("njets");
   PlotSgf("njets");
   
@@ -1261,7 +1261,7 @@ TH1F* TmvaAnl::makeHist(const char* hname, const char* hvar, Int_t nbins, Float_
 
 //======================================================================================================================
 //
-void TmvaAnl::PlotHists(Float_t ymin, Int_t flogy, Int_t overFlow){
+void TmvaAnl::PlotHists(Float_t ymin, const char* var, Int_t flogy, Int_t overFlow){
   bkg_hists.clear();
   //Stack backgrounds
   for(UInt_t ns=3; ns <  _vsamples.size(); ns++){
@@ -1270,7 +1270,7 @@ void TmvaAnl::PlotHists(Float_t ymin, Int_t flogy, Int_t overFlow){
   //
   Int_t imax = ArrangeHtms(flogy); 
   //cout << "# bkgs = " <<  bkg_hists.size() << endl;
-  StackHtms(imax,ymin,flogy,overFlow);
+  StackHtms(imax, ymin, var, flogy, overFlow);
   if (_fsaveplots) _nstackplots++;
 
 }
@@ -1332,10 +1332,15 @@ Int_t TmvaAnl::ArrangeHtms(Int_t flogy){
 
 //======================================================================================================================
 //
-void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow){
+void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, const char* var, Int_t flogy, Int_t overFlow){
   TH1F* hdata = _data->_hf1;
   TH1F* hbkg  = _bkg->_hf1;
   TH1F* hsgl  = _sgl->_hf1;
+
+  TString date = getDateString();
+  TString time_str = getTimeString();
+  int year = 1111;
+  TString yearStr = std::to_string(year).c_str();
 
   stringstream sNameHstack;
   sNameHstack << "hstack_bkg_" << _nstackplots;
@@ -1364,24 +1369,6 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
   hdata->SetMinimum(ymin);
   hsgl->SetMinimum(ymin);
   signal_hist->SetMinimum(ymin);
-
-  /*
-  std::stringstream root_file;
-  root_file << "plots/" << year2 << "/" << date << "/" << year2 << "_" << plot_name << "_" << time_str << ".root";
-  TFile* anl_file = gFile->GetFile();
-  TString anlName = TString(anl->getAnlName());
-  TDirectory* anl_dir = (TDirectory*) anl_file->GetDirectory(anlName);
-  Int_t iter = 1;
-  TString c = "Canvas";
-  std::stringstream canvas_name;
-  TFile* f = new TFile(root_file.str().c_str(), "RECREATE");
-  f->cd();
-  cp1->Write(canvas_name.str().c_str());
-          ++iter;
-        canvas_name.str("");
-        anl_file->cd();
-        anl_dir->cd();
-  */
 
   Float_t ymax = _data->_hf1->GetMaximum();
   if ( imax == 1){
@@ -1476,6 +1463,20 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, Int_t flogy, Int_t overFlow
 
     gPad->RedrawAxis();
     gPad->SetLogy(flogy);
+
+  std::stringstream root_file;
+  root_file << "plots/" << yearStr << "/" << date << "/" << yearStr << "_" << var << "_" << time_str << ".root";
+  TFile* anl_file = gFile->GetFile();
+  //TString anlName = TString(anl->getAnlName());
+  TDirectory* anl_dir = (TDirectory*) anl_file->GetDirectory(TString(anl->getAnlName()));
+  TFile* f = new TFile(root_file.str().c_str(), "RECREATE");
+  f->cd();
+  hdata->Write("data");
+  hstack_bkg->Write("stacked");
+  errors_hist->Write("errors");
+  anl_file->cd();
+  anl_dir->cd();
+  f->Close();
 
   } else {
 
@@ -2075,7 +2076,7 @@ void genPlots(TmvaAnl *anl, TCut cuts, TString plot_name, TString plot_args_file
   stringstream pdf_save_name;
 
   plot_title << g_lum << " fb^{-1} (13 TeV)";
-  std::string year2 = "2016";
+  std::string year2 = "1111";
   if (year2 == "1111") year2 = "Run2";
 
   TString path = static_cast<TString>("plots/")+year2.c_str()+"/"+date;
@@ -2153,7 +2154,7 @@ void cplots(TmvaAnl* anl, TCut cuts, TString plotName, TString plot_args_file, c
   TString time_str = getTimeString();
   stringstream out_f_name;
 
-  std::string year2 = "2016";
+  std::string year2 = "1111";
   if (year2 == "1111") {
     year2 = "Run2";
   }
@@ -2260,7 +2261,7 @@ void printCutflow(TmvaAnl* anl, const char* var, TString plot_args_file, const c
   TString date = getDateString();
   TString time = getTimeString();
 
-  std::string year2 = "2016";
+  std::string year2 = "1111";
   if (year2 == "1111") year2 = "Run2";
 
   TString path = static_cast<TString>("plots/")+year2.c_str()+"/"+date;
