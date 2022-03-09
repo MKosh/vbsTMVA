@@ -153,9 +153,10 @@ TCut training_cut         ("training_cut",            region); //common+category
 TCut full_wjets_cr        ("full_wjets_cr",           full_common+btag_veto+wv_cr_wjets);
 TCut full_top_cr          ("full_top_cr",             full_common+wv_cr_top+wv_sr);
 TCut full_wv_sr           ("full_wv_sr",              full_common+btag_veto+wv_sr);//+noData);
-TCut BDT_cut_2016         ("BDT_cut_2016",            "BDT>-0.1265"); // optCutScan: 0.146, TMVA: -0.1265
+TCut BDT_cut_2016         ("BDT_cut_2016",            "BDT>0.313"); // optCutScan: 0.146, TMVA: -0.1265 .. ocs: 0.3128
 TCut BDTG_cut_2016        ("BDTG_cut_2016",           "BDTG>0.660"); // optCutScan: 0.660 TMVA: -0.3941
 TCut MLPBFGS_cut_2016     ("MLPBFGS_cut_2016",        "MLPBFGS>0.026"); // optCutScan: 0.026 TMVA: 0.0042
+TCut DNN_GPU_cut_2016     ("DNN_GPU_cut_2016",        "DNN_GPU>0.069"); // ocs: 0.0688
 TCut BDT_cut_2017         ("BDT_cut_2017",            "BDT>0.213");
 TCut BDTG_cut_2017        ("BDTG_cut_2017",           "BDTG>0.699");
 TCut MLPBFGS_cut_2017     ("MLPBFGS_cut_2017",        "MLPBFGS>0.0"); // Error

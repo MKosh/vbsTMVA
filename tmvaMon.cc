@@ -188,7 +188,7 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
     _testTree->Project(_hf1->GetName(), var, norm_hist*(cuts+_samplecut), "goff");
   }
 
-  int year = 1111;
+  int year = 2016;
   if (_sid == 15 && year == 2018) {
     scale *= 0.72; // Old scale factors //scale *= 0.6875; // 2018 Scale ttbar 
   } else if (_sid == 13 && year == 2018) {
@@ -469,7 +469,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.87, TCut cut="", TStrin
   if (function == "cplots") cplots(anl, cut, plot_name, plot_args_file, plot_style);
   else if (function == "genPlots") genPlots(anl, cut, plot_name, plot_args_file, plot_style);
   else if (function == "printCutflow") printCutflow(anl, var_to_plot, plot_args_file, plot_name, tau21_cut+qgid_cut+training_cut, plot_style);
-  else if (function == "optCutScan") anl->optCutScan(var_to_plot, cut, "BDT", -1, 1, 0.1, 0.0005, 20, plot_name);
+  else if (function == "optCutScan") anl->optCutScan("sgf1", cut, var_to_plot, -1, 1, 0.1, 0.0005, 20, plot_name);
 
 }
 
@@ -922,7 +922,7 @@ void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 //
 TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& optmap, Float_t& best_cutval, Float_t& sgf_at_bestcut, TString plot_name){
 
-  std::string year2 = "1111";
+  std::string year2 = "2016";
   if (year2 == "1111") {
     year2 = "Run2";
   }
@@ -1339,7 +1339,7 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, const char* var, Int_t flog
 
   TString date = getDateString();
   TString time_str = getTimeString();
-  int year = 1111;
+  int year = 2016;
   TString yearStr = std::to_string(year).c_str();
 
   stringstream sNameHstack;
@@ -1404,9 +1404,11 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, const char* var, Int_t flog
 
     SetRatioPlotStyle(ratio_plot);
 
-    TGraphAsymmErrors* errors_hist = (TGraphAsymmErrors*)gROOT->FindObject("errors_hist"); // Error bars for the sum of the backgrounds
-    if (errors_hist) { errors_hist->Delete(); }
-    errors_hist = new TGraphAsymmErrors((TH1F*)sum_bkg_hists->Clone("errors_hist"));
+    TGraphErrors* errors_hist = (TGraphErrors*)gROOT->FindObject("errors_hist"); // Error bars for the sum of the backgrounds
+    //if (errors_hist) { errors_hist->Delete(); }
+    //errors_hist = new TGraphAsymmErrors((TH1F*)sum_bkg_hists->Clone("errors_hist"));
+    errors_hist = new TGraphErrors(sum_bkg_hists);
+    errors_hist->SetName("errors_hist");
 
     errors_hist->SetFillStyle(3145);
     errors_hist->SetMarkerStyle(0);
@@ -1415,8 +1417,10 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, const char* var, Int_t flog
 
 
     TGraphAsymmErrors* errors_on_ratio = (TGraphAsymmErrors*)gROOT->FindObject("errors_on_ratio"); // Error bars for the ratio plot
-    if (errors_on_ratio) { errors_on_ratio->Delete(); }
-    errors_on_ratio = new TGraphAsymmErrors((TH1F*)sum_bkg_hists->Clone("errors_on_ratio"));
+    //if (errors_on_ratio) { errors_on_ratio->Delete(); }
+    //errors_on_ratio = new TGraphAsymmErrors((TH1F*)sum_bkg_hists->Clone("errors_on_ratio"));
+    errors_on_ratio = new TGraphAsymmErrors(sum_bkg_hists);
+    errors_on_ratio->SetName("errors_on_ratio");
 
     errors_on_ratio->SetFillStyle(1001);
     errors_on_ratio->SetMarkerStyle(0);
@@ -1425,7 +1429,9 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, const char* var, Int_t flog
     for (int ibin=1; ibin<=sum_bkg_hists->GetNbinsX(); ibin++) {
       errors_on_ratio->SetPointY(ibin, 1.0);
       if (errors_hist->GetPointY(ibin) != 0.0) {
-        errors_on_ratio->SetPointEYhigh(ibin, errors_hist->GetErrorYhigh(ibin)/errors_hist->GetPointY(ibin));
+        errors_hist->SetPointError(ibin, errors_hist->GetErrorX(ibin), (errors_hist->GetErrorY(ibin)+errors_hist->GetPointY(ibin)*0.1));
+//        errors_hist->SetPointError(ibin, errors_hist->GetErrorX(ibin), (errors_hist->GetErrorYlow(ibin)+errors_hist->GetPointY(ibin)*0.1));
+        errors_on_ratio->SetPointEYhigh(ibin, errors_hist->GetErrorY(ibin)/errors_hist->GetPointY(ibin));
         errors_on_ratio->SetPointEYlow(ibin, errors_hist->GetErrorYlow(ibin)/errors_hist->GetPointY(ibin));
       } else {
         errors_on_ratio->SetPointEYhigh(ibin, 0.0);
@@ -1463,7 +1469,7 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, const char* var, Int_t flog
 
     gPad->RedrawAxis();
     gPad->SetLogy(flogy);
-
+/*
   std::stringstream root_file;
   root_file << "plots/" << yearStr << "/" << date << "/" << yearStr << "_" << var << "_" << time_str << ".root";
   TFile* anl_file = gFile->GetFile();
@@ -1477,7 +1483,7 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, const char* var, Int_t flog
   anl_file->cd();
   anl_dir->cd();
   f->Close();
-
+*/
   } else {
 
     TGraphErrors* errors_hist = (TGraphErrors*)gROOT->FindObject("errors_hist"); // Error bars for the sum of the backgrounds
@@ -2076,7 +2082,7 @@ void genPlots(TmvaAnl *anl, TCut cuts, TString plot_name, TString plot_args_file
   stringstream pdf_save_name;
 
   plot_title << g_lum << " fb^{-1} (13 TeV)";
-  std::string year2 = "1111";
+  std::string year2 = "2016";
   if (year2 == "1111") year2 = "Run2";
 
   TString path = static_cast<TString>("plots/")+year2.c_str()+"/"+date;
@@ -2154,7 +2160,7 @@ void cplots(TmvaAnl* anl, TCut cuts, TString plotName, TString plot_args_file, c
   TString time_str = getTimeString();
   stringstream out_f_name;
 
-  std::string year2 = "1111";
+  std::string year2 = "2016";
   if (year2 == "1111") {
     year2 = "Run2";
   }
@@ -2261,7 +2267,7 @@ void printCutflow(TmvaAnl* anl, const char* var, TString plot_args_file, const c
   TString date = getDateString();
   TString time = getTimeString();
 
-  std::string year2 = "1111";
+  std::string year2 = "2016";
   if (year2 == "1111") year2 = "Run2";
 
   TString path = static_cast<TString>("plots/")+year2.c_str()+"/"+date;

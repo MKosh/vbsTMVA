@@ -20,6 +20,5 @@
   <zeppHad anl="anl" variable="zeppHad" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-4." xmax="4." bw="0.25" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Hadronic Zeppenfeld" yTitle="Events/bin"/>
   <nJet30f anl="anl" variable="nJet30f" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0.0" xmax="10" bw="1.0" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="Num Jets #p_t > 30 GeV" yTitle="Events/bin"/>
   <BDT anl="anl" variable="BDT" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.05" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="BDT" yTitle="Events/bin"/>
-  <BDTG anl="anl" variable="BDTG" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-1.0" xmax="1.0" bw="0.1" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="BDTG" yTitle="Events/bin"/>
-  <DNN-GPU anl="anl" variable="DNN_GPU" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0.0" xmax="0.6" bw="0.05" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="DNN_GPU" yTitle="Events/bin"/>
+  <DNN_GPU anl="anl" variable="DNN_GPU" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0.0" xmax="0.6" bw="0.05" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="DNN_GPU" yTitle="Events/bin"/>
 </plots>
