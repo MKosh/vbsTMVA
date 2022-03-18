@@ -188,7 +188,7 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
     _testTree->Project(_hf1->GetName(), var, norm_hist*(cuts+_samplecut), "goff");
   }
 
-  int year = 2016;
+  int year = 1111;
   if (_sid == 15 && year == 2018) {
     scale *= 0.72; // Old scale factors //scale *= 0.6875; // 2018 Scale ttbar 
   } else if (_sid == 13 && year == 2018) {
@@ -922,7 +922,7 @@ void TmvaAnl::PrintStat(TCut& cuts, Int_t debug){
 //
 TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Float_t>& optmap, Float_t& best_cutval, Float_t& sgf_at_bestcut, TString plot_name){
 
-  std::string year2 = "2016";
+  std::string year2 = "1111";
   if (year2 == "1111") {
     year2 = "Run2";
   }
@@ -1339,7 +1339,7 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, const char* var, Int_t flog
 
   TString date = getDateString();
   TString time_str = getTimeString();
-  int year = 2016;
+  int year = 1111;
   TString yearStr = std::to_string(year).c_str();
 
   stringstream sNameHstack;
@@ -2082,7 +2082,7 @@ void genPlots(TmvaAnl *anl, TCut cuts, TString plot_name, TString plot_args_file
   stringstream pdf_save_name;
 
   plot_title << g_lum << " fb^{-1} (13 TeV)";
-  std::string year2 = "2016";
+  std::string year2 = "1111";
   if (year2 == "1111") year2 = "Run2";
 
   TString path = static_cast<TString>("plots/")+year2.c_str()+"/"+date;
@@ -2160,7 +2160,7 @@ void cplots(TmvaAnl* anl, TCut cuts, TString plotName, TString plot_args_file, c
   TString time_str = getTimeString();
   stringstream out_f_name;
 
-  std::string year2 = "2016";
+  std::string year2 = "1111";
   if (year2 == "1111") {
     year2 = "Run2";
   }
@@ -2267,7 +2267,7 @@ void printCutflow(TmvaAnl* anl, const char* var, TString plot_args_file, const c
   TString date = getDateString();
   TString time = getTimeString();
 
-  std::string year2 = "2016";
+  std::string year2 = "1111";
   if (year2 == "1111") year2 = "Run2";
 
   TString path = static_cast<TString>("plots/")+year2.c_str()+"/"+date;

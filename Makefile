@@ -9,7 +9,7 @@ vars ?= "Boosted1"
 methods ?= "BDT"
 lumi ?= 35.867
 cut ?= "dummy"
-training_cut ?= wv_boosted_lep
+training_cut ?= region
 region ?= wv_boosted
 plot_name ?= "test"
 pltVar ?= "lep1_pt"
@@ -148,7 +148,7 @@ cutFlow: update_$(year)
 #///////////////////////////////////////////////////////////////////////////////
 #
 update_cuts:
-	@sed -i 's|^TCut category_selection.*|TCut category_selection   ("category_selection",      $(training_cut));|g' vbsTMVA.hpp
+	@sed -i 's|^TCut training_cut.*|TCut training_cut   ("training_cut",      $(training_cut));|g' vbsTMVA.hpp
 	@sed -i 's|^TCut region.*|TCut region               ("region",                  $(region));|g' vbsTMVA.hpp
 
 #-------------------------------------------------------------------------------
