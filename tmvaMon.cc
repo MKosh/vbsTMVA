@@ -185,11 +185,11 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   if(_sid == 3) {
     _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
   } else {
-    _testTree->Project(_hf1->GetName(), var, norm_hist*(cuts+_samplecut), "goff");
+    _testTree->Project(_hf1->GetName(), var, norm_hist*test_cut*(cuts+_samplecut), "goff");
   }
 
   int year = 1111;
-  if (_sid == 15 && year == 2018) {
+  /*if (_sid == 15 && year == 2018) {
     scale *= 0.72; // Old scale factors //scale *= 0.6875; // 2018 Scale ttbar 
   } else if (_sid == 13 && year == 2018) {
     scale *= 0.669; // scale *= 0.802; // 2018 Scale Wjets
@@ -206,6 +206,7 @@ Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   } else if (_sid == 13 && year == 1111) {
    //  scale *= 1.0;
   }
+  */
 //std::cout << "sid = " << _sid << ", scale = " << scale << std::endl;
   _hf1->GetStats(_stats);
   npass    = _stats[0]*(scale);
@@ -421,7 +422,7 @@ Int_t cplotvar( TmvaAnl* anl, const char* var, TCut cut, Float_t scale=1.0, Int_
                     Int_t debug=0, Int_t istyle=0, Float_t xmin=0., Float_t xmax=200., Float_t bw=-1.,Int_t flogy=0, 
                     Int_t flogx=0, const char hTitle[]="test", const char xTitle[]="test", const char yTitle[]="test");
 */
-void printCutflow(TmvaAnl* anl, const char* var="lep1_pt", 
+void printCutflow(TmvaAnl* anl, const char* var="lep1_pt", TCut cut="", 
                   TString plot_args_file = "datasets/plot_args/MVA_variable.xml",
                   const char* flow_name = "vbs_cutflow", 
                   TCut basecuts=tau21_cut+qgid_cut, const char plot_style = 'r');
@@ -468,7 +469,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.87, TCut cut="", TStrin
 
   if (function == "cplots") cplots(anl, cut, plot_name, plot_args_file, plot_style);
   else if (function == "genPlots") genPlots(anl, cut, plot_name, plot_args_file, plot_style);
-  else if (function == "printCutflow") printCutflow(anl, var_to_plot, plot_args_file, plot_name, tau21_cut+qgid_cut+training_cut, plot_style);
+  else if (function == "printCutflow") printCutflow(anl, var_to_plot, cut, plot_args_file, plot_name, tau21_cut+qgid_cut+training_cut, plot_style);
   else if (function == "optCutScan") anl->optCutScan("sgf1", cut, var_to_plot, -1, 1, 0.1, 0.0005, 20, plot_name);
 
 }
@@ -2256,7 +2257,7 @@ TCut splitCuts( const char* strcuts){
 
 //======================================================================================================================
 //
-void printCutflow(TmvaAnl* anl, const char* var, TString plot_args_file, const char* flow_name, TCut basecuts, const char plot_style) {
+void printCutflow(TmvaAnl* anl, const char* var, TCut last_cut, TString plot_args_file, const char* flow_name, TCut basecuts, const char plot_style) {
 //=========================================
 //printCutflow(anl, "mass_lvj_type0_PuppiAK8", "paperCuts", dummy,  1.0, 1, 0,  0.0,  2500., 50,    1, 0,  "VBS (WV), 35.9 fb^{-1}", "mass_lvj_type0_PuppiAK8 ( M_{WW} ) (GeV)", "Events/bin");
   TCut Cuts;
@@ -2345,7 +2346,7 @@ void printCutflow(TmvaAnl* anl, const char* var, TString plot_args_file, const c
     //wv_cr_wjets
     //wv_cr_top <<
     wv_sr <<
-    BDT_cut_2016                // needed for both SR and top CR
+    last_cut               // needed for both SR and top CR
   ;
   CanvasName <<  flow_name << " : " << anl->cuts.Cut(0).GetName();
   TCut currentCut;
