@@ -174,6 +174,9 @@ TCut BDT_cut_Run2_sr      ("BDT_cut_Run2_sr",         "BDT>0.104");
 TCut DNN_GPU_cut_Run2_wv  ("DNN_GPU_cut_Run2_wv",     "DNN_GPU>0.055");
 TCut DNN_GPU_cut_Run2_sr  ("DNN_GPU_cut_Run2_sr",     "DNN_GPU>0.125");
 
+TCut BDT_cut_Run2_Summed  ("BDT_cut_Run2_Summed",     "BDT>0.083");
+TCut DNN_cut_Run2_Summed  ("DNN_cut_Run2_Summed",     "DNN_GPU>0.117");
+
 // Full SR/CR cuts specifying one type of lepton
 TCut wjets_cr_ele         ("wjets_cr_ele",            common_ele+btag_veto+wv_cr_wjets);
 TCut wjets_cr_muon        ("wjets_cr_muon",           common_muon+btag_veto+wv_cr_wjets);
