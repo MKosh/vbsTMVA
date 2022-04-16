@@ -1,17 +1,22 @@
-{
-    #include <fstream>
-    #include <vector>
-    #include <string>
-    #include <iostream>
 
-    /////////////////////////////////////////////////////
-    // Copied from write_list_macro.sh
-    // Purpose: Add a new branch for nJet30 as a Float_t
-    // instead of as an Int_t because TMVA::Reader::AddVariable
-	// doesn't like ints
-    // Mon Jul 26 10:52:52 AM EDT 2021
-    /////////////////////////////////////////////////////
+#include <fstream>
+#include <vector>
+#include <string>
+#include <iostream>
 
+#include "RtypesCore.h"
+#include "TTree.h"
+#include "TFile.h"
+
+/////////////////////////////////////////////////////
+// Copied from write_list_macro.sh
+// Purpose: Add a new branch for nJet30 as a Float_t
+// instead of as an Int_t because TMVA::Reader::AddVariable
+// doesn't like ints
+// Mon Jul 26 10:52:52 AM EDT 2021
+/////////////////////////////////////////////////////
+
+void Convert_Branch() {
     std::vector<std::string> ntuples = {
 		"DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root",
 		"DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root",
@@ -80,9 +85,9 @@
 		"ZZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8.root",
     };
 
-// string location="/mnt/e/Research/ntuples/NEW/2018/haddedFiles/"; // in WSL on Desktop
-   string location="/mnt/d/ntuples/2016/haddedFiles/"; // in WSL on Laptop
-// string location="/mnt/Storage/Research/ntuples/NEW/2016/haddedFiles/"; // in Linux
+// std::string location="/mnt/e/Research/ntuples/NEW/2018/haddedFiles/"; // in WSL on Desktop
+//   std::string location="/mnt/d/ntuples/2016/haddedFiles/"; // in WSL on Laptop
+	std::string location="/mnt/Storage/Research/ntuples/NEW/2016/haddedFiles/"; // in Linux
 
     std::cout << '-' << std::flush;
     for (int i = 0; i<ntuples.size(); i++) {
@@ -99,7 +104,7 @@
         Int_t nJet30;
         Float_t nJet30f;
 
-        string infile = location+ntuples[i];
+        std::string infile = location+ntuples[i];
         TFile *input = new TFile(infile.c_str(), "update");
         auto Events_tree = input->Get<TTree>("Events");
         Events_tree->SetBranchAddress("nJet30", &nJet30);

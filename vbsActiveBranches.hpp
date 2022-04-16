@@ -90,6 +90,7 @@ inpChain->SetBranchStatus("vbf_m", 1);
 inpChain->SetBranchStatus("vbf_phi", 1);
 inpChain->SetBranchStatus("vbf_pt", 1);
 inpChain->SetBranchStatus("year", 1);
+inpChain->SetBranchStatus("yearf", 1);
 inpChain->SetBranchStatus("zeppHad", 1);
 inpChain->SetBranchStatus("zeppLep", 1);
 }

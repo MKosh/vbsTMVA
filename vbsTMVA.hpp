@@ -177,6 +177,12 @@ TCut DNN_GPU_cut_Run2_sr  ("DNN_GPU_cut_Run2_sr",     "DNN_GPU>0.125");
 TCut BDT_cut_Run2_Summed  ("BDT_cut_Run2_Summed",     "BDT>0.083");
 TCut DNN_cut_Run2_Summed  ("DNN_cut_Run2_Summed",     "DNN_GPU>0.117");
 
+TCut BDT_Run2_wv_year     ("BDT_Run2_wv_year",        "BDT>0.344");
+TCut DNN_Run2_wv_year     ("DNN_Run2_wv_year",        "DNN_GPU>0.060");
+
+TCut BDT_Run2_sr_year     ("BDT_Run2_sr_year",        "BDT>0.110");
+TCut DNN_Run2_sr_year     ("DNN_Run2_sr_year",        "DNN_GPU>0.138");
+
 // Full SR/CR cuts specifying one type of lepton
 TCut wjets_cr_ele         ("wjets_cr_ele",            common_ele+btag_veto+wv_cr_wjets);
 TCut wjets_cr_muon        ("wjets_cr_muon",           common_muon+btag_veto+wv_cr_wjets);
@@ -386,7 +392,7 @@ TString getTimeAndDateString() {
 //
 void writeAUCFile (TString myMethodList, TMVA::DataLoader* dataloader, TMVA::Factory* factory) {
   stringstream ss_AUC_outfile;
-    ss_AUC_outfile << "ROC/" << "Run2_wv_SR.txt"; // AUCoutfile
+    ss_AUC_outfile << "ROC/" << "Run2_wv_SR_year.txt"; // AUCoutfile
   std::ofstream AUC_outfile;
   AUC_outfile.open(ss_AUC_outfile.str(), std::ios_base::app);
   std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');
@@ -624,12 +630,14 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
   TBranch* bSampleID = groupTree->GetBranch("sid");
   TBranch* bMCweight = groupTree->GetBranch("mcWeight");
   TBranch* bYear     = groupTree->GetBranch("year");
+  TBranch* bYearf    = groupTree->GetBranch("yearf");
   TBranch* bLumin    = groupTree->GetBranch("lumin");
 
   vbsEvent.gid = sample->getGid();
   vbsEvent.sid = sample->getSid();
   vbsEvent.mcWeight = sample->getWeight();
   vbsEvent.year = sample->getYear();
+  vbsEvent.yearf = Float_t(sample->getYear());
   vbsEvent.lumin = sample->getLumin();
 
   for (Long64_t ievt=0; ievt < groupTree->GetEntries(); ievt++) {
@@ -638,6 +646,7 @@ void fillBranch(TTree* groupTree, VbsReducedEvent& vbsEvent, Sample* sample){
     bSampleID->Fill();
     bMCweight->Fill();
     bYear->Fill();
+    bYearf->Fill();
     bLumin->Fill();
  	}
 

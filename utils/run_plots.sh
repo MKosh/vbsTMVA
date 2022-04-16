@@ -1,0 +1,5 @@
+make mon loc="" year="1111" saveFile="Run2_wv_boosted_year" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut+BDT_Run2_wv_year" mon_function="cplots" plot_type=r plot_name="wv_boosted_BDT_year" | tee -a docs/logs/Run2_wv_boosted_year.log
+make mon loc="" year="1111" saveFile="Run2_wv_boosted_year" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut+DNN_Run2_wv_year" mon_function="cplots" plot_type=r plot_name="wv_boosted_DNN_year" | tee -a docs/logs/Run2_wv_boosted_year.log
+
+make mon loc="" year="1111" saveFile="Run2_wv_SR_year" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut+BDT_Run2_sr_year" mon_function="cplots" plot_type=r plot_name="sr_BDT_year" | tee -a docs/logs/Run2_wv_SR_year.log
+make mon loc="" year="1111" saveFile="Run2_wv_SR_year" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut+DNN_Run2_sr_year" mon_function="cplots" plot_type=r plot_name="sr_DNN_year" | tee -a docs/logs/Run2_wv_SR_year.log
