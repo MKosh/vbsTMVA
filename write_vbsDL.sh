@@ -35,6 +35,13 @@ elif [[ "0$1" == "0" && "0$(echo $SNAME | grep oplp)" != "0" ]]; then
         rootFiles="/mnt/Volume/ntuples/2017/haddedFiles/"
         echo "Error setting file - check write_vbsDL"
     fi
+elif [[ "0$1" == "0" && "0$(echo $SNAME | grep OptiPlex)" != "0" ]]; then
+    if [[ "$3" == "2016" || "$3" == "2017" || "$3" == "2018" ]]; then
+        rootFiles="/media/Storage/ntuples/$3/haddedFiles/"
+    else
+        rootFiles="/media/Storage/ntuples/2017/haddedFiles/"
+        echo "Error setting file - check write_vbsDL"
+    fi
 else
     rootFiles="/mnt/$1/" # $1 = g/2016/haddedFiles on my flashdrive, or on my desktop e/Research/ntuples/NEW/2016/haddedFiles
 fi
@@ -47,7 +54,7 @@ touch $macroFile
 
 echo "Creating $macroFile"
 cat >> $macroFile << EOF
-{
+
     #include <fstream>
     #include <vector>
     #include <string>
@@ -60,7 +67,7 @@ cat >> $macroFile << EOF
     // the branch names and types to a text file.
     // $now
     /////////////////////////////////////////////////////
-
+void write_list() {
     std::vector<std::string> ntuples = {
 EOF
 
@@ -81,6 +88,7 @@ cat >> $macroFile << EOF
     for (int i = 0; i<1; i++) {
         std::string infile = location+ntuples[i];
         TFile *input = new TFile(infile.c_str());
+        TTree* $Trees = input->Get<TTree>("$Trees");
         TObjArray* brches = $Trees->GetListOfBranches();
         for (int iter = 0; iter <brches->GetEntries(); iter++) {
             ofs << brches->At(iter)->GetTitle() << '\t' << '\t' << brches->At(iter)->GetName() << ";" << std::endl;
@@ -95,20 +103,20 @@ EOF
 # --------------------------------------------------------- End - Create the write_list C++ macro - End -------------------------------------------------------------------
 
 # Run the macro that was just generated
-root -q .x write_list.cc
+root -q write_list.cc
 # sort the branches and remove any duplicates then store the result in a new file
 sort -u var_list.txt > branches.txt
 # Delete the old varible list file
-rm var_list.txt
+#rm var_list.txt
 # Replace the I, F, and O type names with the full root type name (Int_t, Float_t, Bool_t) then store it in a new file
 # This can give issues. Apparently some branches in the root files don't have types. Forced them to be floats
-cat branches.txt | sed 's/[0-z]*\/I/Int_t/g' | sed 's/[0-z]*\/F/Float_t/g' | sed 's/[0-z]*\/O/Bool_t/g' | grep -v Float_t | grep -v Int_t | grep -v Bool_t | awk '{$1="Float_t"} {print}' > list_of_branches.txt
-cat branches.txt | sed 's/[0-z]*\/I/Int_t/g' | grep Int_t  >> list_of_branches.txt
-cat branches.txt | sed 's/[0-z]*\/F/Float_t/g' | grep Float_t >> list_of_branches.txt
+cat branches.txt | sed 's/^.*\/I/Int_t/g' | sed 's/^.*\/F/Float_t/g' | sed 's/^.*\/O/Bool_t/g' | grep -v Float_t | grep -v Int_t | grep -v Bool_t | awk '{$1="Float_t"} {print}' > list_of_branches.txt
+cat branches.txt | sed 's/^.*\/I/Int_t/g' | grep Int_t  >> list_of_branches.txt
+cat branches.txt | sed 's/^.*\/F/Float_t/g' | grep Float_t >> list_of_branches.txt
 #cat branches.txt | sed 's/[0-z]*\/O/Int_t/g' | grep Int_t >> list_of_branches.txt
-cat branches.txt | sed 's/[0-z]*\/O/Bool_t/g' | grep Bool_t >> list_of_branches.txt
+cat branches.txt | sed 's/^.*\/O/Bool_t/g' | grep Bool_t >> list_of_branches.txt
 # Delete the old variable list file
-rm branches.txt
+#rm branches.txt
 
 if [ $2 == "boosted1" ]; then
     TMVAVARS="lep1_pt bos_PuppiAK8_pt bos_PuppiAK8_phi bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 vbf_m lep1_eta nJet30f vbf_deta vbf1_AK4_pt zeppLep vbf2_AK4_qgid vbf1_AK4_qgid vbf2_AK4_eta vbf1_AK4_eta vbf2_AK4_pt zeppHad vbf_eta bos_PuppiAK8_m_sd0_corr MET dibos_eta dibos_m dibos_pt vbf_pt vbf1_AK4_m vbf2_AK4_m vbf1_AK4_pt vbf2_AK4_pt"
@@ -121,7 +129,7 @@ if [ $2 == "boosted1" ]; then
     #weightVARS=""#mcWeight genWeight L1PFWeight puWeight btagWeight_loose lep1_idEffWeight lep2_idEffWeight lep1_trigEffWeight lep2_trigEffWeight pdfWeight scaleWeight"
     SUanlVARS="$(echo $activeVARS $plotVARS ${plotVARS_AK8jet} ${plotVARS_VBFJet} ${plotVARS_Other} ${plotVARS_Lep} | sort | tr -s '\ ' '\n' | sort | uniq )"
 elif [ $2 == "boosted2" ]; then #Optimal VARs after dropping lowest performing ones
-    TMVAVARS="bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 vbf_m lep1_eta nJet30f vbf_deta vbf1_AK4_pt zeppLep vbf2_AK4_qgid vbf1_AK4_qgid vbf2_AK4_eta vbf1_AK4_eta vbf2_AK4_pt zeppHad vbf_eta bos_PuppiAK8_m_sd0_corr dibos_m"
+    TMVAVARS="bos_PuppiAK8_eta bos_PuppiAK8_tau2tau1 vbf_m lep1_eta nJet30f vbf_deta zeppLep vbf2_AK4_qgid vbf1_AK4_qgid vbf2_AK4_eta vbf1_AK4_eta zeppHad vbf_eta bos_PuppiAK8_m_sd0_corr dibos_m"
     activeVARS="gid sid run evt bosCent L1PFWeight nBtag_loose genWeight puWeight lep2_pt bos_PuppiAK8_eta lep1_m lep2_eta mcWeight btagWeight_loose bos_AK4AK4_eta AntiIsoInt $TMVAVARS"
     plotVARS="nPV MET lep1_pt lep1_eta lep1_iso lep1_phi lep1_q neu_pz_type0 MET_phi dibos_m dibos_eta dibos_mt dibos_phi dibos_pt zeppHad zeppLep nJet30 nJet50 nJet30f"
     plotVARS_AK8jet="bos_PuppiAK8_pt bos_PuppiAK8_eta bos_PuppiAK8_phi bos_PuppiAK8_m_sd0 bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1"
@@ -252,7 +260,7 @@ cat >> $outfile << EOF
 #endif
 EOF
 
-rm list_of_branches.txt
+#rm list_of_branches.txt
 
 # --------------------------------------------------------- End - Create vbsReducedTree.hpp file - End -------------------------------------------------------------
 

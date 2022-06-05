@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<plots>
+  <vbf_m anl="anl" variable="vbf_m" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="500." xmax="4000." bw="150." flogy="1" flogx="0" overFlow="1" hTitle="title_str" xTitle="m^{vbs}_{jj} (GeV)" yTitle="Events/bin"/>
+</plots>

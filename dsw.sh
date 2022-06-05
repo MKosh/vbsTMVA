@@ -50,6 +50,9 @@ elif [ "0$(echo $SNAME | grep Manjaro)" != "0" ]; then
 elif [ "0$(echo $SNAME | grep oplp)" != "0" ]; then
     Ntuple_loc="/mnt/Volume/ntuples"
     DatasetInpFile="./datasets/$3"
+elif [ "0$(echo $SNAME | grep OptiPlex)" != "0" ]; then
+    Ntuple_loc="/media/Storage/ntuples"
+    DatasetInpFile="./datasets/$3"
 fi
 
 if [ ! -d $Ntuple_loc ]; then

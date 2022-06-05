@@ -101,6 +101,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    Use["CFMlpANN"]        = 0; // Depreciated ANN from ALEPH
    Use["TMlpANN"]         = 0; // ROOT's own ANN
    Use["DNN_GPU"]         = 0; // CUDA-accelerated DNN training.
+   Use["DNN_GPU2"]        = 0;
    Use["DNN_CPU"]         = 0; // Multi-core accelerated DNN.
    //
    // Support Vector Machine
@@ -419,10 +420,10 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    // TMVA ANN: MLP (recommended ANN) -- all ANNs in TMVA are Multilayer Perceptrons
    if (Use["MLP"])
-      factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLP", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=600:HiddenLayers=N+5:TestRate=5:!UseRegulator" );
+      factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLP", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=600:HiddenLayers=64:TestRate=5:TrainingMethod=BFGS:!UseRegulator" );
 
    if (Use["MLPBFGS"])
-      factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLPBFGS", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=600:HiddenLayers=N+5:TestRate=5:TrainingMethod=BFGS:!UseRegulator" );
+      factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLPBFGS", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=600:HiddenLayers=20,15,10,5:TestRate=5:TrainingMethod=BFGS:!UseRegulator" );
 
    if (Use["MLPBNN"])
       factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLPBNN", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=60:HiddenLayers=N+5:TestRate=5:TrainingMethod=BFGS:UseRegulator" ); // BFGS training with bayesian regulators
@@ -433,41 +434,9 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
       // General layout.
 //       TString layoutString ("Layout=TANH|128,TANH|128,TANH|128,LINEAR");
 
-//       // Training strategies.
-//       TString training0("LearningRate=1e-1,Momentum=0.9,Repetitions=1,"
-//                         "ConvergenceSteps=20,BatchSize=256,TestRepetitions=10,"
-//                         "WeightDecay=1e-4,Regularization=L2,"
-//                         "DropConfig=0.0+0.5+0.5+0.5, Multithreading=True");
-//       TString training1("LearningRate=1e-2,Momentum=0.9,Repetitions=1,"
-//                         "ConvergenceSteps=20,BatchSize=256,TestRepetitions=10,"
-//                         "WeightDecay=1e-4,Regularization=L2,"
-//                         "DropConfig=0.0+0.0+0.0+0.0, Multithreading=True");
-//       TString training2("LearningRate=1e-3,Momentum=0.0,Repetitions=1,"
-//                         "ConvergenceSteps=20,BatchSize=256,TestRepetitions=10,"
-//                         "WeightDecay=1e-4,Regularization=L2,"
-//                         "DropConfig=0.0+0.0+0.0+0.0, Multithreading=True");
-//       TString trainingStrategyString ("TrainingStrategy=");
-//       trainingStrategyString += training0 + "|" + training1 + "|" + training2;
-
-//    TString layoutString ("Layout=TANH|100,TANH|50,TANH|10,LINEAR");
-//    TString layoutString ("Layout=TANH|(N+30)*2,TANH|(N+30),TANH|10,LINEAR");
       
-   TString layoutString ("Layout=RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR");
-     //TString training0 ("LearningRate=1e-1,Momentum=0.0,Repetitions=1,ConvergenceSteps=300,BatchSize=10,TestRepetitions=15,WeightDecay=0.001,Regularization=NONE,DropConfig=0.0+0.5+0.5+0.5,DropRepetitions=1,Multithreading=True");
-     //TString training1 ("LearningRate=1e-2,Momentum=0.5,Repetitions=1,ConvergenceSteps=300,BatchSize=10,TestRepetitions=7,WeightDecay=0.001,Regularization=L2,Multithreading=True,DropConfig=0.0+0.1+0.1+0.1,DropRepetitions=1");
-     //TString training2 ("LearningRate=1e-2,Momentum=0.3,Repetitions=1,ConvergenceSteps=300,BatchSize=10,TestRepetitions=7,WeightDecay=0.0001,Regularization=L2,Multithreading=True");
-     //TString training3 ("LearningRate=1e-2,Momentum=0.1,Repetitions=1,ConvergenceSteps=300,BatchSize=10,TestRepetitions=7,WeightDecay=0.0001,Regularization=NONE,Multithreading=True");
-   
-   //TString layoutString("Layout=RELU|128,RELU|64,RELU|32,SIGMOID|16,LINEAR");
-   //TString layoutString ("Layout=TANH|128,TANH|128,TANH|128,LINEAR");
-      //TString training0 ("LearningRate=1e-1,Momentum=0.0,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=15,WeightDecay=0.001,Regularization=NONE,DropConfig=0.0+0.5+0.5+0.5,DropRepetitions=1,Multithreading=True");
-      //TString training1 ("LearningRate=1e-2,Momentum=0.5,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.001,Regularization=L2,Multithreading=True,DropConfig=0.0+0.1+0.1+0.1,DropRepetitions=1");
-      //TString training2 ("LearningRate=1e-2,Momentum=0.3,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.0001,Regularization=L2,Multithreading=True");
-      //TString training3 ("LearningRate=1e-2,Momentum=0.1,Repetitions=1,ConvergenceSteps=300,BatchSize=256,TestRepetitions=7,WeightDecay=0.0001,Regularization=NONE,Multithreading=True");
-
-
-
-
+   //TString layoutString ("Layout=RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|64,RELU|32,LINEAR");
+   TString layoutString ("Layout=RELU|256,LINEAR");
     //TString trainingStrategyString ("TrainingStrategy=");
     //trainingStrategyString += training0 + "|" + training1 + "|" + training2 + "|" + training3;
 
@@ -488,6 +457,10 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
          TString cpuOptions = dnnOptions + ":Architecture=CPU";
          factory->BookMethod(dataloader, TMVA::Types::kDL, "DNN_CPU", cpuOptions);
       }
+   }
+
+   if (Use["DNN_GPU2"]) {
+      factory->BookMethod(dataloader, TMVA::Types::kDL, "DNN_GPU2", "!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=N:WeightInitialization=XAVIERUNIFORM:Layout=RELU|64,RELU|64,RELU|32,LINEAR:Architecture=GPU");
    }
 
    // CF(Clermont-Ferrand)ANN

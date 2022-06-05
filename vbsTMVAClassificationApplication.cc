@@ -74,6 +74,7 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    Use["CFMlpANN"]        = 0; // Depreciated ANN from ALEPH
    Use["TMlpANN"]         = 0; // ROOT's own ANN
    Use["DNN_CPU"] = 0;         // CUDA-accelerated DNN training.
+   Use["DNN_GPU2"] = 0;
    Use["DNN_GPU"] = 0;         // Multi-core accelerated DNN.
    //
    // Support Vector Machine
@@ -186,6 +187,7 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    TH1F *histCat(0);
    TH1F *histPBdt(0);
    TH1F *histDnnGpu(0);
+   TH1F *histDnnGpu2(0);
    TH1F *histDnnCpu(0);
 
    if (Use["Likelihood"])    histLk      = new TH1F( "MVA_Likelihood",    "MVA_Likelihood",    nbin, -1, 1 );
@@ -208,6 +210,7 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    if (Use["CFMlpANN"])      histNnC     = new TH1F( "MVA_CFMlpANN",      "MVA_CFMlpANN",      nbin,  0, 1 );
    if (Use["TMlpANN"])       histNnT     = new TH1F( "MVA_TMlpANN",       "MVA_TMlpANN",       nbin, -1.3, 1.3 );
    if (Use["DNN_GPU"]) histDnnGpu = new TH1F("MVA_DNN_GPU", "MVA_DNN_GPU", nbin, -0.1, 1.1);
+   if (Use["DNN_GPU2"]) histDnnGpu2 = new TH1F("MVA_DNN_GPU2", "MVA_DNN_GPU2", nbin, -0.1, 1.1);
    if (Use["DNN_CPU"]) histDnnCpu = new TH1F("MVA_DNN_CPU", "MVA_DNN_CPU", nbin, -0.1, 1.1);
    if (Use["BDT"])           histBdt     = new TH1F( "MVA_BDT",           "MVA_BDT",           nbin, -0.8, 0.8 );
    if (Use["BDT1"])           histBdt1     = new TH1F( "MVA_BDT1",           "MVA_BDT1",           nbin, -0.8, 0.8 );
@@ -279,6 +282,7 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
       Float_t BDT2     = 1.0;
       Float_t BDTG     = 1.0;
       Float_t DNN_GPU  = 1.0;
+      Float_t DNN_GPU2 = 1.0;
       Float_t MLP      = 1.0;
       Float_t MLPBFGS  = 1.0;
       Float_t MLPBNN   = 1.0;
@@ -294,7 +298,8 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
       TBranch* bBDT1(0);
       TBranch* bBDT2(0);
       TBranch* bBDTG(0); 
-      TBranch* bDNN_GPU(0);   
+      TBranch* bDNN_GPU(0); 
+      TBranch* bDNN_GPU2(0);  
       TBranch* bDNN_CPU(0);   
       TBranch* bMLP(0);   
       TBranch* bMLPBFGS(0);   
@@ -315,7 +320,9 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
       if (Use["DNN_GPU"]){
         bDNN_GPU = inpDataTree->Branch("DNN_GPU",   &DNN_GPU,     "DNN_GPU/F");
       }
-
+      if (Use["DNN_GPU2"]){
+         bDNN_GPU2 = inpDataTree->Branch("DNN_GPU2", &DNN_GPU2, "DNN_GPU2/F");
+      }
       if (Use["DNN_CPU"]){
         bDNN_CPU = inpDataTree->Branch("DNN_CPU",   &DNN_CPU,     "DNN_CPU/F");
       }
@@ -418,6 +425,11 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
          	DNN_GPU = reader->EvaluateMVA("DNN_GPU method");
             histDnnGpu->Fill( DNN_GPU );
             bDNN_GPU->Fill();
+         }
+         if (Use["DNN_GPU2"]){
+            DNN_GPU2 = reader->EvaluateMVA("DNN_GPU2 method");
+            histDnnGpu2->Fill(DNN_GPU2);
+            bDNN_GPU2->Fill();
          }
          if (Use["DNN_CPU"]){
             DNN_CPU = reader->EvaluateMVA("DNN_CPU method");
@@ -533,6 +545,7 @@ void vbsTMVAClassificationApplication(TString sname="vbs_ww", TString myMethodLi
    if (Use["CFMlpANN"     ])   histNnC    ->Write();
    if (Use["TMlpANN"      ])   histNnT    ->Write();
    if (Use["DNN_GPU"]) histDnnGpu->Write();
+   if (Use["DNN_GPU2"]) histDnnGpu2->Write();
    if (Use["DNN_CPU"]) histDnnCpu->Write();
    if (Use["BDT"          ])   histBdt    ->Write();
    if (Use["BDT1"         ])   histBdt1   ->Write();

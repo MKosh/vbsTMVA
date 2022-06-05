@@ -183,9 +183,9 @@ TmvaSample::TmvaSample(Int_t sid,Int_t scolor, const char* smplname, TCut sample
 //
 Float_t TmvaSample::fillSampleHist(const char* var, TCut cuts, Float_t scale){
   if(_sid == 3) {
-    _testTree->Project(_hf1->GetName(), var, (cuts+_samplecut), "goff");
+    _testTree->Project(_hf1->GetName(), var, scale_hist*(cuts+_samplecut), "goff");
   } else {
-    _testTree->Project(_hf1->GetName(), var, norm_hist*test_cut*(cuts+_samplecut), "goff");
+    _testTree->Project(_hf1->GetName(), var, norm_hist*scale_hist*(cuts+_samplecut), "goff");
   }
 
   int year = 1111;
