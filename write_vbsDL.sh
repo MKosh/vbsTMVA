@@ -37,9 +37,9 @@ elif [[ "0$1" == "0" && "0$(echo $SNAME | grep oplp)" != "0" ]]; then
     fi
 elif [[ "0$1" == "0" && "0$(echo $SNAME | grep OptiPlex)" != "0" ]]; then
     if [[ "$3" == "2016" || "$3" == "2017" || "$3" == "2018" ]]; then
-        rootFiles="/media/Storage/ntuples/$3/haddedFiles/"
+        rootFiles="/mnt/Storage/ntuples/$3/haddedFiles/"
     else
-        rootFiles="/media/Storage/ntuples/2017/haddedFiles/"
+        rootFiles="/mnt/Storage/ntuples/2017/haddedFiles/"
         echo "Error setting file - check write_vbsDL"
     fi
 else

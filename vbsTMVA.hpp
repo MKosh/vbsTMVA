@@ -170,9 +170,9 @@ TCut DNN_GPU_cut_2018_wv  ("DNN_GPU_cut_2018_wv",     "DNN_GPU>0.09");
 TCut DNN_GPU_cut_2018_sr  ("DNN_GPU_cut_2018_sr",     "DNN_GPU>0.103"); // was 0.078
 
 TCut BDT_cut_Run2_wv      ("BDT_cut_Run2_wv",         "BDT>0.353");
-TCut BDT_cut_Run2_sr      ("BDT_cut_Run2_sr",         "BDT>0.101"); // was 0.104
+TCut BDT_cut_Run2_sr      ("BDT_cut_Run2_sr",         "BDT>0.118"); // was 0.104
 TCut DNN_GPU_cut_Run2_wv  ("DNN_GPU_cut_Run2_wv",     "DNN_GPU>0.055");
-TCut DNN_GPU_cut_Run2_sr  ("DNN_GPU_cut_Run2_sr",     "DNN_GPU>0.104"); // was 0.125
+TCut DNN_GPU_cut_Run2_sr  ("DNN_GPU_cut_Run2_sr",     "DNN_GPU>0.092"); // was 0.125
 
 TCut BDT_cut_Run2_Summed  ("BDT_cut_Run2_Summed",     "BDT>0.083");
 TCut DNN_cut_Run2_Summed  ("DNN_cut_Run2_Summed",     "DNN_GPU>0.117");
@@ -199,7 +199,7 @@ TCut norm_btag            ("norm_btag",               "((year==2016)*(lumin*mcWe
 TCut norm_hist 	          ("norm_hist",               "((year==2016)*(lumin*mcWeight*genWeight*L1PFWeight*puWeight*lep1_idEffWeight*lep1_trigEffWeight))+((year==2017)*(lumin*mcWeight*genWeight*L1PFWeight*puWeight*lep1_idEffWeight*lep1_trigEffWeight))+((year==2018)*(lumin*mcWeight*genWeight*puWeight*L1PFWeight*lep1_idEffWeight*lep1_trigEffWeight))");
 TCut scale_hist           ("scale_hist",             "((((year==2016)&&(gid==13))*(1.378))+(((year==2016)&&(gid==15))*(0.895))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.213))+(((year==2017)&&(gid==15))*(1.036))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(0.631))+(((year==2018)&&(gid==15))*(0.697))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
 TCut test_cut 	          ("test_cut",               "((((year==2016)&&(gid==13))*(1.466))+(((year==2016)&&(gid==15))*(0.907))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.255))+(((year==2017)&&(gid==15))*(1.250))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(0.669))+(((year==2018)&&(gid==15))*(0.72))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
-TCut training_cut   ("training_cut",      full_wv_sr);
+TCut training_cut   ("training_cut",      wv_boosted);
 //Cuts ---------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -392,7 +392,7 @@ TString getTimeAndDateString() {
 //
 void writeAUCFile (TString myMethodList, TMVA::DataLoader* dataloader, TMVA::Factory* factory) {
   stringstream ss_AUC_outfile;
-    ss_AUC_outfile << "ROC/" << "2018_wv_SR.txt"; // AUCoutfile
+    ss_AUC_outfile << "ROC/" << "Run2_wv_boosted.txt"; // AUCoutfile
   std::ofstream AUC_outfile;
   AUC_outfile.open(ss_AUC_outfile.str(), std::ios_base::app);
   std::vector<TString> mlist = TMVA::gTools().SplitString(myMethodList, ',');

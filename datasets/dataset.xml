@@ -50,7 +50,7 @@
         <background year= "2016" lumi= "35867.06"   group= "Zjets"      sample= "DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8"                   xsection= "0.003659"    nMC= "399492.0"         nMCneg= "0" colorcode= "4"   />
     </2016>
     <2017>
-        <data       year= "2017" lumi= "1.0"       group= "data"       sample= "Data_noDup"                                                                              xsection= "1.0"         nMC= "1.0"               nMCneg= "0" colorcode= "1"   />
+        <data       year= "2017" lumi= "1.0"       group= "data"       sample= "Data_noDup"                                                                            xsection= "1.0"         nMC= "1.0"               nMCneg= "0" colorcode= "1"   />
         <signal     year= "2017" lumi= "41530.0"   group= "VBS_EWK"    sample= "WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8"                xsection= "0.02982"     nMC= "592774.0"          nMCneg= "0" colorcode= "840" />
         <signal     year= "2017" lumi= "41530.0"   group= "VBS_EWK"    sample= "WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8"          xsection= "0.03259"     nMC= "568778.0"          nMCneg= "0" colorcode= "840" />
         <signal     year= "2017" lumi= "41530.0"   group= "VBS_EWK"    sample= "WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8"               xsection= "0.1"         nMC= "592964.0"          nMCneg= "0" colorcode= "840" />
@@ -96,7 +96,7 @@
         <background year= "2017" lumi= "59740.0"   group= "Zjets"      sample= "DYJetsToLL_M-50_HT-2500toInf_TuneCP5_13TeV-madgraphMLM-pythia8"                        xsection= "0.003468"    nMC= "401334.0"          nMCneg= "0" colorcode= "4"   />
     </2017>
     <2018>
-        <data       year= "2018" lumi= "1.0"       group= "data"       sample= "Data_noDup"                                                                              xsection= "1.0"         nMC= "1.0"               nMCneg= "0" colorcode= "1"   />
+        <data       year= "2018" lumi= "1.0"       group= "data"       sample= "Data_noDup"                                                                            xsection= "1.0"         nMC= "1.0"               nMCneg= "0" colorcode= "1"   />
         <signal     year= "2018" lumi= "59740.0"   group= "VBS_EWK"    sample= "WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8"                xsection= "0.02982"     nMC= "584787.0"          nMCneg= "0" colorcode= "840" />
         <signal     year= "2018" lumi= "59740.0"   group= "VBS_EWK"    sample= "WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8"          xsection= "0.03259"     nMC= "565831.5"          nMCneg= "0" colorcode= "840" />
         <signal     year= "2018" lumi= "59740.0"   group= "VBS_EWK"    sample= "WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCP5_13TeV-madgraph-pythia8"               xsection= "0.1"         nMC= "566998.5625"       nMCneg= "0" colorcode= "840" />
