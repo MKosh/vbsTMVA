@@ -1540,22 +1540,23 @@ void TmvaAnl::PlotLegend(const char* var){
   if(legend) delete legend;
 
   //legend = new TLegend(.63, .58, .88, .88);
-  legend = new TLegend(.29, .7, .9, .87); // 0.29, 0.73, 0.89, 0.87
+  legend = new TLegend(.15, .65, .9, .87); // 0.29, 0.7, 0.9, 0.87
 
   legend->SetName(sNameLegend.str().c_str());
-  legend->SetFillColor(0);
+  legend->SetFillColor(kWhite); //was 0
   legend->SetLineColor(0);
   legend->SetNColumns(2);
   legend->SetFillStyle(0);
   legend->SetBorderSize(0);
+  legend->SetTextSize(0.03); // 0.04 for ratio plots 0.03 for shape plots
 
   TLegend* cms_leg = (TLegend*)gROOT->FindObject("cms_leg");
   if (cms_leg) { cms_leg->Delete(); }
   TLegend* cms_leg2 = (TLegend*)gROOT->FindObject("cms_leg2");
   if (cms_leg2) { cms_leg2->Delete(); }
 
-  cms_leg = new TLegend(0.11, 0.81, 0.24, 0.9);
-  cms_leg2 = new TLegend(0.11, 0.78, 0.24, 0.83);
+  cms_leg = new TLegend(0.11, 0.81, 0.21, 0.9);
+  cms_leg2 = new TLegend(0.11, 0.78, 0.21, 0.83);
 
   cms_leg->SetFillStyle(0);
   cms_leg->SetFillColor(0);
@@ -1569,8 +1570,8 @@ void TmvaAnl::PlotLegend(const char* var){
   cms_leg2->SetBorderSize(0);
   cms_leg2->SetTextFont(52);
 
-  cms_leg->AddEntry((TObject*)0,"CMS", "");
-  cms_leg2->AddEntry((TObject*)0,"Preliminary", "");
+  //cms_leg->AddEntry((TObject*)0,"CMS", "");
+  //cms_leg2->AddEntry((TObject*)0,"Work in progress", "");
 
   TGraphErrors* err = (TGraphErrors*)gROOT->FindObject("err");
   if (err) { err->Delete(); }
@@ -1594,7 +1595,7 @@ void TmvaAnl::PlotLegend(const char* var){
   if (_sgl->npass) {
     ss.str("");
     ss.precision(1);
-    ss <<setw(4)<<  "SM(EW) WV"  <<" " << setw(6) <<_sgl->npass << "(" <<setw(4)  <<setprecision(2)<< _sgl->accpt << ")";
+    ss <<setw(4)<<  "Signal"  <<" " << setw(6) <<_sgl->npass << "(" <<setw(4)  <<setprecision(2)<< _sgl->accpt << ")";
     legend->AddEntry(hsgl, ss.str().c_str(), "f");
   }
 
@@ -1638,7 +1639,7 @@ void TmvaAnl::PlotLegend(const char* var){
     } else if ( strcmp(_vsamples[ns]->_name,"DiBosons") ==0 ){
       ss.str("");
       ss.precision(1);
-      ss <<setw(4)<<  "DiBosons\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
+      ss <<setw(4)<<  "DiBoson\t" <<" " << setw(6) <<  _vsamples[ns]->npass << " #pm " <<setw(4)<< _vsamples[ns]->npass_err;
       legend->AddEntry(_vsamples[ns]->_hf1, ss.str().c_str(), "f");
     } else if ( strcmp(_vsamples[ns]->_name,"TT") ==0 ) {
       ss.str("");
@@ -1654,12 +1655,12 @@ void TmvaAnl::PlotLegend(const char* var){
     }
   }
 
-  ss.str("");
-  ss.precision(1);
-  ss << setw(4) << "VBS EW (x10)";
-  legend->AddEntry(hsgl_clone, ss.str().c_str(), "f");
+  //ss.str("");
+  //ss.precision(1);
+  //ss << setw(4) << "VBS EW (x10)";
+  //legend->AddEntry(hsgl_clone, ss.str().c_str(), "f");
 
-  legend->AddEntry((TObject*)0, "", "");
+  //legend->AddEntry((TObject*)0, "", "");
 
   ss.str("");
   ss.precision(1);
@@ -1667,8 +1668,13 @@ void TmvaAnl::PlotLegend(const char* var){
   legend->AddEntry(err, ss.str().c_str(), "f");
   
   legend->Draw();
-  cms_leg->Draw();
-  cms_leg2->Draw();
+  TLatex* cms = new TLatex();
+  cms->SetTextFont(62);
+  cms->SetTextSize(0.06);
+  cms->DrawLatexNDC(0.18,0.935, "CMS");
+
+  //cms_leg->Draw();
+  //cms_leg2->Draw();
 }
 
 //======================================================================================================================

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<plots>
+    <BDT anl="anl" variable="BDT" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="-0.5" xmax="0.5" bw="0.05" flogy="0" flogx="0" overFlow="0" hTitle="title_str" xTitle="BDT" yTitle="Events/bin"/>
+    <DNN_GPU anl="anl" variable="DNN_GPU" cuts="cuts" scale="1.0" debug="1" istyle="0" xmin="0.0" xmax="0.6" bw="0.05" flogy="1" flogx="0" overFlow="0" hTitle="title_str" xTitle="DNN_GPU" yTitle="Events/bin"/>
+</plots>

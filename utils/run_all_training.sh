@@ -44,6 +44,7 @@
 #make mon loc="" year="2018" saveFile="2018_wv_SR" lumi="59.74" cut="full_wv_sr+tau21_cut+qgid_cut" mon_function="cplots" plot_type=r plot_name="2018_wv_SR" | tee -a docs/logs/2018_wv_SR.log
 # tee docs/logs/Run2_wv_boosted.log
 #Run2 training
+#make train loc="" year="1111" vars="boosted2" methods="BDT,DNN_GPU" saveFile="Run2_wv_boosted" dataset="dataset.xml" training_cut=wv_boosted | tee docs/logs/Run2_wv_boosted.log
 make train loc="" year="1111" vars="boosted2" methods="BDT,DNN_GPU" saveFile="Run2_wv_boosted" dataset="dataset.xml" training_cut=wv_boosted | tee docs/logs/Run2_wv_boosted.log
 #make train loc="" year="1111" vars="boosted2" methods="BDT,DNN_GPU" saveFile="Run2_wv_SR" dataset="dataset.xml" training_cut=full_wv_sr | tee docs/logs/Run2_wv_SR.log
 
