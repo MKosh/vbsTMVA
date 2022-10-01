@@ -237,7 +237,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    gDirectory->Delete("Events;*");
 
    TMVA::Factory* factory = new TMVA::Factory( "TMVAClassification", outputFile,
-                                               "!V:!Silent:Color:DrawProgressBar=False:AnalysisType=Classification" ); //I;D;P;G,D :Transformations=I;G
+                                               "!V:!Silent:DrawProgressBar=False:AnalysisType=Classification" ); //I;D;P;G,D :Transformations=I;G
 
    TMVA::DataLoader* dataloader=new TMVA::DataLoader(sname);
 
@@ -420,10 +420,10 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    // TMVA ANN: MLP (recommended ANN) -- all ANNs in TMVA are Multilayer Perceptrons
    if (Use["MLP"])
-      factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLP", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=600:HiddenLayers=64:TestRate=5:TrainingMethod=BFGS:!UseRegulator" );
+      factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLP", "H:!V" );
 
    if (Use["MLPBFGS"])
-      factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLPBFGS", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=600:HiddenLayers=20,15,10,5:TestRate=5:TrainingMethod=BFGS:!UseRegulator" );
+      factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLPBFGS", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=600:HiddenLayers=N+5:TestRate=5:TrainingMethod=BFGS:!UseRegulator" );
 
    if (Use["MLPBNN"])
       factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLPBNN", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=60:HiddenLayers=N+5:TestRate=5:TrainingMethod=BFGS:UseRegulator" ); // BFGS training with bayesian regulators
@@ -460,7 +460,7 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
    }
 
    if (Use["DNN_GPU2"]) {
-      factory->BookMethod(dataloader, TMVA::Types::kDL, "DNN_GPU2", "!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=N:WeightInitialization=XAVIERUNIFORM:Layout=RELU|64,RELU|64,RELU|32,LINEAR:Architecture=GPU");
+      factory->BookMethod(dataloader, TMVA::Types::kDL, "DNN_GPU2", "!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=N:WeightInitialization=XAVIERUNIFORM:Layout=RELU|64,RELU|64,RELU|64,RELU|32,LINEAR:Architecture=GPU");
    }
 
    // CF(Clermont-Ferrand)ANN
@@ -482,15 +482,16 @@ int vbsTMVAClassification(TString sname="vbs_ww", TString myMethodList = "" )
 
    if (Use["BDT1"])  // Adaptive Boost
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT1",
-                           //"!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.6:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=False:UseNvars=2:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
-                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.2:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True:UseNvars=2:NegWeightTreatment=IgnoreNegWeightsInTraining" );
+                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=2:BoostType=AdaBoost:AdaBoostBeta=0.6:UseBaggedBoost:SeparationType=GiniIndex:nCuts=20:NegWeightTreatment=IgnoreNegWeightsInTraining");
+                           //"!H:!V:NegWeightTreatment=IgnoreNegWeightsInTraining"); //NegWeightTreatment=IgnoreNegWeightsInTraining:NTrees=800:MinNodeSize=5%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.2:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True:UseNvars=2:NegWeightTreatment=IgnoreNegWeightsInTraining" );
    if (Use["BDT2"])
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT2",
-                           "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=True:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
+                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=2:BoostType=AdaBoost:AdaBoostBeta=0.6:UseBaggedBoost:SeparationType=GiniIndex:nCuts=20:NegWeightTreatment=IgnoreNegWeightsInTraining");
+                           //"!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.2:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
 
    if (Use["BDT"])
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT",
-                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.2:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20:UseRandomisedTrees=False:UseNvars=2:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
+                           "!H:!V:NTrees=1000:MinNodeSize=1%:MaxDepth=2:BoostType=AdaBoost:AdaBoostBeta=0.6:UseBaggedBoost:SeparationType=GiniIndex:nCuts=20:NegWeightTreatment=IgnoreNegWeightsInTraining" ); // :NegWeightTreatment=IgnoreNegWeightsInTraining" );
 
    if (Use["BDTB"]) // Bagging
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDTB",

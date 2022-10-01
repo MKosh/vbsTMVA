@@ -45,9 +45,10 @@
 # tee docs/logs/Run2_wv_boosted.log
 #Run2 training
 #make train loc="" year="1111" vars="boosted2" methods="BDT,DNN_GPU" saveFile="Run2_wv_boosted" dataset="dataset.xml" training_cut=wv_boosted | tee docs/logs/Run2_wv_boosted.log
-make train loc="" year="1111" vars="boosted2" methods="BDT,DNN_GPU" saveFile="Run2_wv_boosted" dataset="dataset.xml" training_cut=wv_boosted | tee docs/logs/Run2_wv_boosted.log
+#make train loc="" year="1111" vars="boosted2" methods="BDT,DNN_GPU" saveFile="Run2_wv_boosted" dataset="dataset.xml" training_cut=wv_boosted | tee docs/logs/Run2_wv_boosted.log
 #make train loc="" year="1111" vars="boosted2" methods="BDT,DNN_GPU" saveFile="Run2_wv_SR" dataset="dataset.xml" training_cut=full_wv_sr | tee docs/logs/Run2_wv_SR.log
-
+make train loc="" year="1111" vars="boosted2" methods="BDT,BDT1,BDT2" saveFile="Run2_wv_SR_threeBDTs" dataset="dataset.xml" training_cut=full_wv_sr | tee docs/logs/Run2_wv_SR_threeBDTs.log
+# BDT,BDT1,BDT2,BDTG,BDTB,Fisher,MLP,MLPBFGS,DNN_GPU,DNN_GPU2
 #Run2 wv_boosted optCutScan, cutflow, and control plots
 #make mon loc="" year="1111" saveFile="Run2_wv_boosted" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut" mon_function="optCutScan" plot_type=r var_to_plot="BDT" plot_name="Run2_wv_boosted_optCut_BDT" | tee -a docs/logs/Run2_wv_boosted.log
 #make mon loc="" year="1111" saveFile="Run2_wv_boosted" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut" mon_function="optCutScan" plot_type=r var_to_plot="DNN_GPU" plot_name="Run2_wv_boosted_optCut_DNN" | tee -a docs/logs/Run2_wv_boosted.log

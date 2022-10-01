@@ -466,10 +466,10 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.87, TCut cut="", TStrin
   g_lum = lum_fb;
   std::cout << "\nanl Lum = " << anl->getLum() << std::endl;
   //printHelpMessage();
-
+  //gStyle->SetHatchesSpacing(0.5);
   if (function == "cplots") cplots(anl, cut, plot_name, plot_args_file, plot_style);
   else if (function == "genPlots") genPlots(anl, cut, plot_name, plot_args_file, plot_style);
-  else if (function == "printCutflow") printCutflow(anl, var_to_plot, cut, plot_args_file, plot_name, tau21_cut+qgid_cut+training_cut, plot_style);
+  else if (function == "printCutflow") printCutflow(anl, var_to_plot, cut, plot_args_file, plot_name, (tau21_cut+qgid_cut+training_cut), plot_style);
   else if (function == "optCutScan") anl->optCutScan("sgf1", cut, var_to_plot, -1, 1, 0.1, 0.0005, 20, plot_name);
 
 }
@@ -1305,7 +1305,7 @@ Int_t TmvaAnl::ArrangeHtms(Int_t flogy){
 
   hdata->SetMarkerStyle(20);
   hdata->SetMarkerColor(1);
-  hdata->SetMarkerSize(0.5); // was 0.6
+  hdata->SetMarkerSize(1.0); // 0.6 for cplots, 1.0 for genPlots
   hdata->SetLineWidth(1); // MM
   hdata->SetLineColor(1);
 
@@ -1423,9 +1423,9 @@ void  TmvaAnl::StackHtms(Int_t& imax, Float_t& ymin, const char* var, Int_t flog
     errors_on_ratio = new TGraphAsymmErrors(sum_bkg_hists);
     errors_on_ratio->SetName("errors_on_ratio");
 
-    errors_on_ratio->SetFillStyle(1001);
+    errors_on_ratio->SetFillStyle(3145); // was 1001
     errors_on_ratio->SetMarkerStyle(0);
-    errors_on_ratio->SetFillColor(kGray+1);
+    errors_on_ratio->SetFillColor(kGray+1); // was +1
 
     for (int ibin=1; ibin<=sum_bkg_hists->GetNbinsX(); ibin++) {
       errors_on_ratio->SetPointY(ibin, 1.0);
@@ -1548,7 +1548,7 @@ void TmvaAnl::PlotLegend(const char* var){
   legend->SetNColumns(2);
   legend->SetFillStyle(0);
   legend->SetBorderSize(0);
-  legend->SetTextSize(0.03); // 0.04 for ratio plots 0.03 for shape plots
+  legend->SetTextSize(0.04); // 0.04 for ratio plots 0.03 for shape plots
 
   TLegend* cms_leg = (TLegend*)gROOT->FindObject("cms_leg");
   if (cms_leg) { cms_leg->Delete(); }
@@ -1922,7 +1922,7 @@ void  TmvaAnl::setHframe(const char* var, TCut cuts, Float_t xmin, Float_t xmax,
 
     //gStyle->SetErrorX(0);
     gStyle->SetLineScalePS(0.5);
-    gStyle->SetHatchesSpacing(2.5);
+    gStyle->SetHatchesSpacing(2.0); // 2.0 for genPlots, 2.5 for cplots
     gStyle->SetHatchesLineWidth(1);
 
     setHistStyle(_hframe);
@@ -1965,7 +1965,7 @@ void SetRatioPlotStyle(TRatioPlot* ratio) {
   ratio->GetLowerRefYaxis()->SetLabelSize(0.035);
   ratio->GetLowerRefYaxis()->SetTitle("Data/MC");
   ratio->GetLowerRefGraph()->SetMarkerStyle(20);
-  ratio->GetLowerRefGraph()->SetMarkerSize(0.5);
+  ratio->GetLowerRefGraph()->SetMarkerSize(1.0); // 0.6 for cplots, 1.0 for genPlots
   ratio->GetLowerRefGraph()->SetMinimum(0.1);
   ratio->GetLowerRefGraph()->SetMaximum(2);
 }
@@ -2095,7 +2095,8 @@ void genPlots(TmvaAnl *anl, TCut cuts, TString plot_name, TString plot_args_file
   TString path = static_cast<TString>("plots/")+year2.c_str()+"/"+date;
   Int_t dir = makeNewDirectory(path);
 
-  TString title_str = plot_title.str().c_str();
+  TString title_str = "VBS (WV) " + plot_title.str();
+  //TString title_str = plot_title.str().c_str();
   TCanvas* cp1 = new TCanvas("cp1","cp1",10,10,900,900);
   cp1->Clear();
   pdf_save_name << "plots/" << year2 << "/" << date << "/" << year2 << "_" << plot_name << "_" << time_str << ".pdf[";
@@ -2173,7 +2174,7 @@ void cplots(TmvaAnl* anl, TCut cuts, TString plotName, TString plot_args_file, c
   }
 
   stringstream plt_title;
-  plt_title << year2 <<" VBS (WV), " << g_lum << " fb^{-1}";
+  plt_title <<" VBS (WV), " << g_lum << " fb^{-1}";
   std::string s = plt_title.str();
   const char* title_str = s.c_str();
   // title: VBS (WV), 35.9fb^{-1}
@@ -2338,7 +2339,8 @@ void printCutflow(TmvaAnl* anl, const char* var, TCut last_cut, TString plot_arg
     basecuts <<
     region <<
     iso_cut <<
-    zepp_cut <<
+    ZeppWLlt1 <<
+    ZeppWHLlt1 <<
     lep_pt <<
     lep_eta <<
     fatjet_pt <<
@@ -2361,7 +2363,7 @@ void printCutflow(TmvaAnl* anl, const char* var, TCut last_cut, TString plot_arg
     Cuts=Cuts + currentCut;
     c1->cd();
     CanvasName << " + " << currentCut.GetName();
-    hist_title << year2 << " VBS (WV), " << anl->getLum() << "fb^{-1}, " << currentCut.GetName();
+    hist_title << " VBS (WV), " << anl->getLum() << "fb^{-1}, " << currentCut.GetName();
     plotFunction(anl, ((TXMLAttr*)attr_list->At(1))->GetValue(), Cuts,
                 (Float_t)stof(((TXMLAttr*)attr_list->At(3))->GetValue()),
                 (Int_t)stoi(((TXMLAttr*)attr_list->At(4))->GetValue()),

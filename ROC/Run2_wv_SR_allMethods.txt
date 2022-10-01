@@ -1,0 +1,83 @@
+
+--------------------------------------------------
+8-29-2022 19:26 with all transformations 3 hrs 9 min
+AUC for BDT:	0.837834 Optimized 
+                            : AdaBoostBeta = 0.2
+                            : MaxDepth = 4
+                            : MinNodeSize = 1
+                            : NTrees = 1000
+AUC for BDT1:	0.833261 Default
+AUC for BDT2:	0.834617 Original
+AUC for BDTG:	0.836048
+AUC for BDTB:	0.757329
+AUC for Fisher:	0.806202
+AUC for DNN_GPU:	0.838613 RELU|256,LINEAR
+AUC for DNN_GPU2:	0.836218 RELU|64,RELU|64,RELU|32,LINEAR
+--------------------------------------------------
+
+--------------------------------------------------
+8-30-2022 0:57 with no transformations 3hr 12min
+AUC for BDT:	0.837834
+AUC for BDT1:	0.833261
+AUC for BDT2:	0.835078
+AUC for BDTG:	0.836048
+AUC for BDTB:	0.757329
+AUC for Fisher:	0.806202
+AUC for DNN_GPU:	0.838519 RELU|256,LINEAR
+AUC for DNN_GPU2:	0.835452 RELU|64,RELU|64,RELU|32,LINEAR
+--------------------------------------------------
+
+--------------------------------------------------
+8-30-2022 8:21
+AUC for DNN_GPU:	0.837653 RELU|128
+AUC for DNN_GPU2:	0.83679 TANH|64,TANH|64,TANH|32,LINEAR
+--------------------------------------------------
+
+--------------------------------------------------
+8-30-2022 14:58
+AUC for DNN_GPU:	0.837079 TANH|128
+AUC for DNN_GPU2:	0.836746 TANH|64,TANH|64,TANH|64,TANH|32,TANH|32,LINEAR
+--------------------------------------------------
+
+--------------------------------------------------
+8-30-2022 19:4
+AUC for DNN_GPU:	0.838634 RELU|512,LINEAR
+AUC for DNN_GPU2:	0.83629 RELU|64,TANH|64,RELU|64,TANH|32,RELU|32,LINEAR
+--------------------------------------------------
+
+--------------------------------------------------
+8-31-2022 0:16
+AUC for DNN_GPU:	0.838111 RELU|256,RELU|16,LINEAR
+AUC for DNN_GPU2:	0.837058 RELU|128,TANH|128,LINEAR
+--------------------------------------------------
+
+--------------------------------------------------
+9-12-2022 1:46
+AUC for BDT2:	0.836373 136 sec Optimized                         
+                            : AdaBoostBeta = 0.2
+                            : MaxDepth = 4
+                            : MinNodeSize = 1
+                            : NTrees = 752.5
+--------------------------------------------------
+
+--------------------------------------------------
+9-12-2022 13:48
+AUC for BDT2:	0.835633 109 sec Optimized
+                         : AdaBoostBeta = 0.6
+                         : MaxDepth = 2
+                         : MinNodeSize = 2
+                         : NTrees = 1000
+--------------------------------------------------
+
+--------------------------------------------------
+9-13-2022 10:53     ROC         Time (sec)
+AUC for BDT:	    0.834812    47.1
+AUC for BDT1:	    0.832942    66.5
+AUC for BDT2:	    0.837834    64.5
+AUC for BDTG:	    0.836048    46.6
+AUC for Fisher:	    0.806202    0.338
+AUC for MLP:    	0.49473     842
+AUC for MLPBFGS:	0.830851    4350
+AUC for DNN_GPU:	0.838038    280
+AUC for DNN_GPU2:	0.836128    201
+--------------------------------------------------

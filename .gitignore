@@ -25,3 +25,5 @@ plots/Run2/12-22-2021/*
 #plots/2018/*
 #plots/Run2/*
 skims/*
+*.png
+*.pdf
