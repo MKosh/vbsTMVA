@@ -1,0 +1,543 @@
+System check done!
+Creating link to data files as 
+skim = vbs_ww
+Working Directory:
+  skims/vbs_ww -> /mnt/Storage/Research/ntuples/NEW
+Creating vbsSamples.hpp
+Done writing vbsSamples.hpp
+Done!
+
+Next run ./write_vbsDL.sh with the appropriate arguments
+Creating write_list.cc
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing write_list.cc...
+Pick from the premade variable lists or make a new list
+Creating vbsReducedTree.hpp
+Creating vbsDL.hpp
+Creating vbsActiveBranches.hpp
+Done!
+
+Next run root -b -q ./vbsTMVAClassification.cc\(\"vbs_ww\",\"BDT\"\)
+Don't forget to change the selector variable to switch what samples are being used
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing ./vbsTMVAClassification.cc("vbs_ww_2016_boosted21","BDT,BDTG,DNN_GPU")...
+
+==> Start TMVAClassification
+VBS_EWK--WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 29851
+Exit chain2tree 0x55a3db5f8500
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 0
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 28599
+Exit chain2tree 0x55a3db641af0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 0
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 20136
+Exit chain2tree 0x55a3db721c10
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 0
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 133089
+Exit chain2tree 0x55a3db57aae0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 0
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 27462
+Exit chain2tree 0x55a3db89bb00
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 0
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 129740
+Exit chain2tree 0x55a3db892650
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 0
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 32822
+Exit chain2tree 0x55a3db734dd0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 0
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 38104
+Exit chain2tree 0x55a3db6fd270
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 0
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 21652
+Exit chain2tree 0x55a3db5f5800
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 43048
+Exit chain2tree 0x55a3db5f4330
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 5414
+Exit chain2tree 0x55a3db71fe60
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 61967
+Exit chain2tree 0x55a3db4cf050
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 201268
+Exit chain2tree 0x55a3db6cd490
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 43854
+Exit chain2tree 0x55a3db60ede0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 186395
+Exit chain2tree 0x55a3db5e42a0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 6382
+Exit chain2tree 0x55a3db6a8b70
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 110410
+Exit chain2tree 0x55a3db5e2fd0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 7451
+Exit chain2tree 0x55a3db523dc0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8.root
+getChain: Tree Events , total events: 69821
+Exit chain2tree 0x55a3db874cd0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 64030
+Exit chain2tree 0x55a3db83e810
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8.root
+getChain: Tree Events , total events: 82491
+Exit chain2tree 0x55a3db60eab0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 64398
+Exit chain2tree 0x55a3db71d4e0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 75255
+Exit chain2tree 0x55a3db5d3e00
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 147527
+Exit chain2tree 0x55a3db8fa940
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8.root
+getChain: Tree Events , total events: 65617
+Exit chain2tree 0x55a3db6ee370
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8.root
+getChain: Tree Events , total events: 9096
+Exit chain2tree 0x55a3db71ce40
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8.root
+getChain: Tree Events , total events: 6445
+Exit chain2tree 0x55a3db4c5400
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+top--TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 19179
+Exit chain2tree 0x55a3db83dcb0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+top--TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 5001269
+Exit chain2tree 0x55a3dc367470
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+top--TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 2273080
+Exit chain2tree 0x55a3db889630
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 5142
+Exit chain2tree 0x55a3db583460
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 159216
+Exit chain2tree 0x55a3db84df40
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 490424
+Exit chain2tree 0x55a3db8c77b0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 330437
+Exit chain2tree 0x55a3db831be0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 1397231
+Exit chain2tree 0x55a3db4c9720
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 849388
+Exit chain2tree 0x55a3db6ad2b0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 1003998
+Exit chain2tree 0x55a3db4f17b0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 442278
+Exit chain2tree 0x55a3da5e0e70
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 26567
+Exit chain2tree 0x55a3db23b550
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 54318
+Exit chain2tree 0x55a3dbf05ce0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 235155
+Exit chain2tree 0x55a3db4ff380
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 715233
+Exit chain2tree 0x55a3db6be810
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 994124
+Exit chain2tree 0x55a3db8828a0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 444893
+Exit chain2tree 0x55a3db68b070
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 130623
+Exit chain2tree 0x55a3db7abd00
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 98761
+Exit chain2tree 0x55a3dbf1dbb0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 0
+---------------------------------------------------------------------------------------------------------------------------------
+data--Data
+register reqlists/rqs_2016--data--Data_data.lst data samples
+Processing filelist reqlists/rqs_2016--data--Data_data.lst
+fname = skims/vbs_ww/2016/Data.root
+getChain: Tree Events , total events: 1498464
+Exit chain2tree 0x55a3db8d5540
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total Data data events 0
+---------------------------------------------------------------------------------------------------------------------------------
+DataSetInfo              : [vbs_ww_2016_boosted21] : Added class "Signal"
+DataSetInfo              : [vbs_ww_2016_boosted21] : Added class "Background"
+                         : Add Tree WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 0 events
+[37;41;1m<FATAL>                         : Encountered empty TTree or TChain of class Signal[0m
+***> abort program execution
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing tmvaMon.cc("vbs_ww_2016_boosted21",35.87,full_wv_sr+tau21_cut+qgid_cut,"boosted21_optCut","datasets/plot_args/","optCutScan",'r',"sgf1")...
+Can not find the analysis directory vbs_ww_2016_boosted21
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing tmvaMon.cc("vbs_ww_2016_boosted21",35.87,full_wv_sr,"boosted21_cutflow","datasets/plot_args/MVA_variables.xml","printCutflow",'r',"vbf_deta")...
+Can not find the analysis directory vbs_ww_2016_boosted21

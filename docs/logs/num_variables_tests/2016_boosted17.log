@@ -1,0 +1,2059 @@
+System check done!
+Creating link to data files as 
+skim = vbs_ww
+Working Directory:
+  skims/vbs_ww -> /mnt/Storage/Research/ntuples/NEW
+Creating vbsSamples.hpp
+Done writing vbsSamples.hpp
+Done!
+
+Next run ./write_vbsDL.sh with the appropriate arguments
+Creating write_list.cc
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing write_list.cc...
+Creating vbsReducedTree.hpp
+Creating vbsDL.hpp
+// Int_t AntiIsoInt
+Spectator:: AntiIsoInt
+Spectator:: bos_AK4AK4_eta
+Spectator:: bos_AK4AK4_m
+Spectator:: bos_AK4AK4_pt
+Spectator:: bosCent
+Spectator:: bos_j1_AK4_eta
+Spectator:: bos_j1_AK4_pt
+Spectator:: bos_j2_AK4_eta
+Spectator:: bos_j2_AK4_pt
+Variable:: bos_PuppiAK8_eta
+Spectator:: bos_PuppiAK8_m_sd0
+Variable:: bos_PuppiAK8_m_sd0_corr
+Spectator:: bos_PuppiAK8_phi
+Spectator:: bos_PuppiAK8_pt
+Variable:: bos_PuppiAK8_tau2tau1
+Spectator:: btagWeight_loose
+Spectator:: dibos_eta
+Spectator:: dibos_m
+Spectator:: dibos_mt
+Spectator:: dibos_phi
+Spectator:: dibos_pt
+Spectator:: dilep_eta
+Spectator:: dilep_m
+Spectator:: dilep_mt
+Spectator:: dilep_phi
+Spectator:: dilep_pt
+Spectator:: evt
+Spectator:: genWeight
+Float_t Int_t gid
+Spectator:: gid
+Spectator:: L1PFWeight
+Variable:: lep1_eta
+Spectator:: lep1_idEffWeight
+Spectator:: lep1_iso
+Spectator:: lep1_m
+Spectator:: lep1_phi
+Spectator:: lep1_pt
+Spectator:: lep1_q
+Spectator:: lep1_trigEffWeight
+Spectator:: lep2_eta
+Spectator:: lep2_idEffWeight
+Spectator:: lep2_phi
+Spectator:: lep2_pt
+Spectator:: lep2_trigEffWeight
+Spectator:: lumin
+Spectator:: mcWeight
+Spectator:: MET
+Spectator:: MET_phi
+Spectator:: nBtag_loose
+Spectator:: nBtag_medium
+Spectator:: neu_pz_type0
+Float_t Int_t nJet30
+Spectator:: nJet30
+Variable:: nJet30f
+Spectator:: nJet50
+Spectator:: nPV
+Spectator:: puWeight
+Spectator:: run
+Spectator:: sid
+Spectator:: vbf1_AK4_eta
+Spectator:: vbf1_AK4_m
+Spectator:: vbf1_AK4_phi
+Spectator:: vbf1_AK4_pt
+Variable:: vbf1_AK4_qgid
+Variable:: vbf2_AK4_eta
+Spectator:: vbf2_AK4_m
+Spectator:: vbf2_AK4_phi
+Spectator:: vbf2_AK4_pt
+Spectator:: vbf2_AK4_qgid
+Variable:: vbf_deta
+Variable:: vbf_eta
+Variable:: vbf_m
+Spectator:: vbf_phi
+Spectator:: vbf_pt
+Spectator:: year
+Variable:: zeppHad
+Variable:: zeppLep
+Creating vbsActiveBranches.hpp
+Done!
+
+Next run root -b -q ./vbsTMVAClassification.cc\(\"vbs_ww\",\"BDT\"\)
+Don't forget to change the selector variable to switch what samples are being used
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing ./vbsTMVAClassification.cc("vbs_ww_2016_boosted17","BDT,BDTG,DNN_GPU")...
+
+==> Start TMVAClassification
+VBS_EWK--WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 29851
+Exit chain2tree 0x5606e5cc9f00
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 29851
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 28599
+Exit chain2tree 0x5606e5d24490
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 28599
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 20136
+Exit chain2tree 0x5606e5cdf1d0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 20136
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 133089
+Exit chain2tree 0x5606e62000b0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 133089
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 27462
+Exit chain2tree 0x5606e5c82c30
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 27462
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 129740
+Exit chain2tree 0x5606f0d2de60
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 129740
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 32822
+Exit chain2tree 0x5606f0ddb1e0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 32822
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 38104
+Exit chain2tree 0x5606e5c083a0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 38104
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 21652
+Exit chain2tree 0x5606e609e470
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 21652
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 43048
+Exit chain2tree 0x5606f35edf10
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 43048
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 5414
+Exit chain2tree 0x5606e60f7a20
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 5414
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 61967
+Exit chain2tree 0x5606e5fe1680
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 61967
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 201268
+Exit chain2tree 0x5606f3554880
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 201268
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 43854
+Exit chain2tree 0x5606e5c827d0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 43854
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 186395
+Exit chain2tree 0x56070a14b8b0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 186395
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 6382
+Exit chain2tree 0x5606e83bb690
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 6382
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 110410
+Exit chain2tree 0x560708509520
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 110410
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 7451
+Exit chain2tree 0x560708ae2990
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 7451
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8.root
+getChain: Tree Events , total events: 69821
+Exit chain2tree 0x560710a346d0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8 background events 69821
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 64030
+Exit chain2tree 0x5606f9283410
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 64030
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8.root
+getChain: Tree Events , total events: 82491
+Exit chain2tree 0x5606e61ddd70
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8 background events 82491
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 64398
+Exit chain2tree 0x5606f0cb34d0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 64398
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 75255
+Exit chain2tree 0x56071d91bd20
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 75255
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 147527
+Exit chain2tree 0x56071d8a09f0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 147527
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8.root
+getChain: Tree Events , total events: 65617
+Exit chain2tree 0x560708be7340
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8 background events 65617
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8.root
+getChain: Tree Events , total events: 9096
+Exit chain2tree 0x5607229c7ae0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8 background events 9096
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8.root
+getChain: Tree Events , total events: 6445
+Exit chain2tree 0x56070f8f0dc0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8 background events 6445
+---------------------------------------------------------------------------------------------------------------------------------
+top--TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 19179
+Exit chain2tree 0x5606f3587130
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 19179
+---------------------------------------------------------------------------------------------------------------------------------
+top--TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 5001269
+Exit chain2tree 0x56072bb1bf80
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 5001269
+---------------------------------------------------------------------------------------------------------------------------------
+top--TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 2273080
+Exit chain2tree 0x56075a27e640
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 2273080
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 5142
+Exit chain2tree 0x56071bcb17b0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 5142
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 159216
+Exit chain2tree 0x56072bb02310
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 159216
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 490424
+Exit chain2tree 0x56072b8b9370
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 490424
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 330437
+Exit chain2tree 0x560712c5c910
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 330437
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 1397231
+Exit chain2tree 0x5607c8311c90
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 1397231
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 849388
+Exit chain2tree 0x56070c53c680
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 849388
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 1003998
+Exit chain2tree 0x5607c837f270
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 1003998
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 442278
+Exit chain2tree 0x56080739b600
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 442278
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 26567
+Exit chain2tree 0x56072b88ea50
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 26567
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 54318
+Exit chain2tree 0x560709ffd810
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 54318
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 235155
+Exit chain2tree 0x560812b3f450
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 235155
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 715233
+Exit chain2tree 0x56081a6c9f40
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 715233
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 994124
+Exit chain2tree 0x5608294417c0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 994124
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 444893
+Exit chain2tree 0x56081a7bd450
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 444893
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 130623
+Exit chain2tree 0x5608107d1710
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 130623
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 98761
+Exit chain2tree 0x560845f9d790
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 98761
+---------------------------------------------------------------------------------------------------------------------------------
+data--Data
+register reqlists/rqs_2016--data--Data_data.lst data samples
+Processing filelist reqlists/rqs_2016--data--Data_data.lst
+fname = skims/vbs_ww/2016/Data.root
+getChain: Tree Events , total events: 1498464
+Exit chain2tree 0x56084de9e900
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total Data data events 1498464
+---------------------------------------------------------------------------------------------------------------------------------
+DataSetInfo              : [vbs_ww_2016_boosted17] : Added class "Signal"
+DataSetInfo              : [vbs_ww_2016_boosted17] : Added class "Background"
+                         : Add Tree WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 29851 events
+                         : Add Tree WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 28599 events
+                         : Add Tree WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 20136 events
+                         : Add Tree WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 133089 events
+                         : Add Tree WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 27462 events
+                         : Add Tree WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 129740 events
+                         : Add Tree WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 32822 events
+                         : Add Tree WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 38104 events
+                         : Add Tree ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 21652 events
+                         : Add Tree WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 43048 events
+                         : Add Tree WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 5414 events
+                         : Add Tree WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 61967 events
+                         : Add Tree WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 201268 events
+                         : Add Tree WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 43854 events
+                         : Add Tree WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 186395 events
+                         : Add Tree WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 6382 events
+                         : Add Tree WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 110410 events
+                         : Add Tree ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 7451 events
+                         : Add Tree ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8 of type Background with 69821 events
+                         : Add Tree ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 64030 events
+                         : Add Tree ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8 of type Background with 82491 events
+                         : Add Tree ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 64398 events
+                         : Add Tree ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 75255 events
+                         : Add Tree ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 147527 events
+                         : Add Tree ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8 of type Background with 65617 events
+                         : Add Tree ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8 of type Background with 9096 events
+                         : Add Tree ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8 of type Background with 6445 events
+                         : Add Tree TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 19179 events
+                         : Add Tree TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 5001269 events
+                         : Add Tree TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 2273080 events
+                         : Add Tree WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 5142 events
+                         : Add Tree WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 159216 events
+                         : Add Tree WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 490424 events
+                         : Add Tree WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 330437 events
+                         : Add Tree WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 1397231 events
+                         : Add Tree WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 849388 events
+                         : Add Tree WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 1003998 events
+                         : Add Tree WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 442278 events
+                         : Add Tree DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 26567 events
+                         : Add Tree DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 54318 events
+                         : Add Tree DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 235155 events
+                         : Add Tree DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 715233 events
+                         : Add Tree DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 994124 events
+                         : Add Tree DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 444893 events
+                         : Add Tree DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 130623 events
+                         : Add Tree DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 98761 events
+Factory                  : Booking method: [1mDNN_GPU[0m
+                         : 
+                         : Parsing option string: 
+                         : ... "!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=N:WeightInitialization=XAVIERUNIFORM:Layout=RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR:Architecture=GPU"
+                         : The following options are set:
+                         : - By User:
+                         :     <none>
+                         : - Default:
+                         :     Boost_num: "0" [Number of times the classifier will be boosted]
+                         : Parsing option string: 
+                         : ... "!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=N:WeightInitialization=XAVIERUNIFORM:Layout=RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR:Architecture=GPU"
+                         : The following options are set:
+                         : - By User:
+                         :     V: "True" [Verbose output (short form of "VerbosityLevel" below - overrides the latter one)]
+                         :     VarTransform: "N" [List of variable transformations performed before training, e.g., "D_Background,P_Signal,G,N_AllClasses" for: "Decorrelation, PCA-transformation, Gaussianisation, Normalisation, each for the given class of events ('AllClasses' denotes all events of all classes, if no class indication is given, 'All' is assumed)"]
+                         :     H: "False" [Print method-specific help message]
+                         :     Layout: "RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR" [Layout of the network.]
+                         :     ErrorStrategy: "CROSSENTROPY" [Loss function: Mean squared error (regression) or cross entropy (binary classification).]
+                         :     WeightInitialization: "XAVIERUNIFORM" [Weight initialization strategy]
+                         :     Architecture: "GPU" [Which architecture to perform the training on.]
+                         : - Default:
+                         :     VerbosityLevel: "Default" [Verbosity level]
+                         :     CreateMVAPdfs: "False" [Create PDFs for classifier outputs (signal and background)]
+                         :     IgnoreNegWeightsInTraining: "False" [Events with negative weights are ignored in the training (but are included for testing and performance evaluation)]
+                         :     InputLayout: "0|0|0" [The Layout of the input]
+                         :     BatchLayout: "0|0|0" [The Layout of the batch]
+                         :     RandomSeed: "0" [Random seed used for weight initialization and batch shuffling]
+                         :     ValidationSize: "20%" [Part of the training data to use for validation. Specify as 0.2 or 20% to use a fifth of the data set as validation set. Specify as 100 to use exactly 100 events. (Default: 20%)]
+                         :     TrainingStrategy: "LearningRate=1e-3,Momentum=0.0,ConvergenceSteps=100,MaxEpochs=2000,Optimizer=ADAM,BatchSize=30,TestRepetitions=1,WeightDecay=0.0,Regularization=None,DropConfig=0.0" [Defines the training strategies.]
+DNN_GPU                  : [vbs_ww_2016_boosted17] : Create Transformation "N" with events from all classes.
+                         : 
+                         : Transformation, Variable selection : 
+                         : Input : variable 'bos_PuppiAK8_eta' <---> Output : variable 'bos_PuppiAK8_eta'
+                         : Input : variable 'bos_PuppiAK8_m_sd0_corr' <---> Output : variable 'bos_PuppiAK8_m_sd0_corr'
+                         : Input : variable 'bos_PuppiAK8_tau2tau1' <---> Output : variable 'bos_PuppiAK8_tau2tau1'
+                         : Input : variable 'lep1_eta' <---> Output : variable 'lep1_eta'
+                         : Input : variable 'nJet30f' <---> Output : variable 'nJet30f'
+                         : Input : variable 'vbf1_AK4_qgid' <---> Output : variable 'vbf1_AK4_qgid'
+                         : Input : variable 'vbf2_AK4_eta' <---> Output : variable 'vbf2_AK4_eta'
+                         : Input : variable 'vbf_deta' <---> Output : variable 'vbf_deta'
+                         : Input : variable 'vbf_eta' <---> Output : variable 'vbf_eta'
+                         : Input : variable 'vbf_m' <---> Output : variable 'vbf_m'
+                         : Input : variable 'zeppHad' <---> Output : variable 'zeppHad'
+                         : Input : variable 'zeppLep' <---> Output : variable 'zeppLep'
+                         : Will now use the GPU architecture !
+Factory                  : Booking method: [1mBDTG[0m
+                         : 
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted17] :  create input formulas for tree DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+<WARNING>                : Found events with NaN and/or +-inf values
+<WARNING>                : Dataset[vbs_ww_2016_boosted17] : Input expression resolves to indeterminate value (NaN): vbf1_AK4_qgid (20050 times)
+<WARNING>                : Dataset[vbs_ww_2016_boosted17] : Spectator expression resolves to indeterminate value (NaN): vbf2_AK4_qgid (2850 times)
+<WARNING>                : These NaN and/or +-infs were all removed by the specified cut, continuing.
+                         : 
+DataSetFactory           : [vbs_ww_2016_boosted17] : Number of events in input trees
+                         : Dataset[vbs_ww_2016_boosted17] :     Signal     requirement: "(((vbf1_AK4_qgid >= 0.0 && vbf1_AK4_qgid <= 1.0)&&(vbf2_AK4_qgid >= 0.0 && vbf2_AK4_qgid <= 1.0))&&((bos_PuppiAK8_tau2tau1 >= 0.0 && bos_PuppiAK8_tau2tau1 <= 1.0)))&&(lep2_pt<0 && bos_PuppiAK8_pt>0)"
+                         : Dataset[vbs_ww_2016_boosted17] :     Signal          -- number of events passed: 80626  / sum of weights: 0.0327823
+                         : Dataset[vbs_ww_2016_boosted17] :     Signal          -- efficiency             : 0.178275
+                         : Dataset[vbs_ww_2016_boosted17] :     Background requirement: "(((vbf1_AK4_qgid >= 0.0 && vbf1_AK4_qgid <= 1.0)&&(vbf2_AK4_qgid >= 0.0 && vbf2_AK4_qgid <= 1.0))&&((bos_PuppiAK8_tau2tau1 >= 0.0 && bos_PuppiAK8_tau2tau1 <= 1.0)))&&(lep2_pt<0 && bos_PuppiAK8_pt>0)"
+                         : Dataset[vbs_ww_2016_boosted17] :     Background      -- number of events passed: 3969492  / sum of weights: 5.08936
+                         : Dataset[vbs_ww_2016_boosted17] :     Background      -- efficiency             : 0.128754
+                         : Dataset[vbs_ww_2016_boosted17] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[vbs_ww_2016_boosted17] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[vbs_ww_2016_boosted17] : No weight renormalisation applied: use original global and event weights
+DataSetInfo              : Correlation matrix (Signal):
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                          bos_PuppiAK8_eta bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1 lep1_eta nJet30f vbf1_AK4_qgid vbf2_AK4_eta vbf_deta vbf_eta   vbf_m zeppHad zeppLep
+                         :        bos_PuppiAK8_eta:           +1.000                  -0.003                +0.003   +0.004  +0.001        +0.002       +0.131   -0.014  -0.018  -0.007  +0.805  -0.057
+                         : bos_PuppiAK8_m_sd0_corr:           -0.003                  +1.000                -0.315   +0.004  -0.063        +0.003       -0.008   -0.013  +0.005  +0.015  -0.002  +0.004
+                         :   bos_PuppiAK8_tau2tau1:           +0.003                  -0.315                +1.000   +0.003  +0.103        -0.005       +0.006   -0.036  -0.005  -0.053  +0.004  +0.004
+                         :                lep1_eta:           +0.004                  +0.004                +0.003   +1.000  +0.007        -0.002       -0.029   +0.006  +0.156  +0.003  -0.066  +0.655
+                         :                 nJet30f:           +0.001                  -0.063                +0.103   +0.007  +1.000        -0.064       +0.002   +0.100  +0.000  +0.008  +0.001  +0.005
+                         :           vbf1_AK4_qgid:           +0.002                  +0.003                -0.005   -0.002  -0.064        +1.000       +0.010   -0.038  -0.005  +0.048  +0.002  -0.001
+                         :            vbf2_AK4_eta:           +0.131                  -0.008                +0.006   -0.029  +0.002        +0.010       +1.000   +0.003  +0.043  +0.001  -0.236  -0.423
+                         :                vbf_deta:           -0.014                  -0.013                -0.036   +0.006  +0.100        -0.038       +0.003   +1.000  +0.004  +0.473  -0.013  +0.006
+                         :                 vbf_eta:           -0.018                  +0.005                -0.005   +0.156  +0.000        -0.005       +0.043   +0.004  +1.000  +0.008  -0.441  -0.372
+                         :                   vbf_m:           -0.007                  +0.015                -0.053   +0.003  +0.008        +0.048       +0.001   +0.473  +0.008  +1.000  -0.009  +0.001
+                         :                 zeppHad:           +0.805                  -0.002                +0.004   -0.066  +0.001        +0.002       -0.236   -0.013  -0.441  -0.009  +1.000  +0.307
+                         :                 zeppLep:           -0.057                  +0.004                +0.004   +0.655  +0.005        -0.001       -0.423   +0.006  -0.372  +0.001  +0.307  +1.000
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DataSetInfo              : Correlation matrix (Background):
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                          bos_PuppiAK8_eta bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1 lep1_eta nJet30f vbf1_AK4_qgid vbf2_AK4_eta vbf_deta vbf_eta   vbf_m zeppHad zeppLep
+                         :        bos_PuppiAK8_eta:           +1.000                  -0.000                +0.002   +0.154  -0.001        +0.001       -0.021   +0.001  +0.041  -0.001  +0.752  +0.078
+                         : bos_PuppiAK8_m_sd0_corr:           -0.000                  +1.000                -0.323   -0.001  -0.000        +0.004       +0.001   -0.028  -0.001  +0.023  -0.000  -0.001
+                         :   bos_PuppiAK8_tau2tau1:           +0.002                  -0.323                +1.000   +0.003  -0.010        +0.018       -0.002   -0.055  -0.002  +0.008  +0.003  +0.003
+                         :                lep1_eta:           +0.154                  -0.001                +0.003   +1.000  -0.002        -0.003       -0.171   +0.002  +0.008  +0.001  +0.182  +0.715
+                         :                 nJet30f:           -0.001                  -0.000                -0.010   -0.002  +1.000        -0.052       +0.001   +0.096  -0.001  +0.135  -0.001  -0.001
+                         :           vbf1_AK4_qgid:           +0.001                  +0.004                +0.018   -0.003  -0.052        +1.000       +0.008   -0.007  -0.002  +0.060  -0.001  -0.004
+                         :            vbf2_AK4_eta:           -0.021                  +0.001                -0.002   -0.171  +0.001        +0.008       +1.000   +0.000  +0.208  +0.001  -0.460  -0.544
+                         :                vbf_deta:           +0.001                  -0.028                -0.055   +0.002  +0.096        -0.007       +0.000   +1.000  +0.002  +0.476  +0.000  +0.000
+                         :                 vbf_eta:           +0.041                  -0.001                -0.002   +0.008  -0.001        -0.002       +0.208   +0.002  +1.000  +0.001  -0.458  -0.462
+                         :                   vbf_m:           -0.001                  +0.023                +0.008   +0.001  +0.135        +0.060       +0.001   +0.476  +0.001  +1.000  -0.001  +0.000
+                         :                 zeppHad:           +0.752                  -0.000                +0.003   +0.182  -0.001        -0.001       -0.460   +0.000  -0.458  -0.001  +1.000  +0.520
+                         :                 zeppLep:           +0.078                  -0.001                +0.003   +0.715  -0.001        -0.004       -0.544   +0.000  -0.462  +0.000  +0.520  +1.000
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DataSetFactory           : [vbs_ww_2016_boosted17] :  
+                         : 
+Factory                  : Booking method: [1mBDT[0m
+                         : 
+Train All Methods
+Factory                  : [1mTrain all methods[0m
+Factory                  : [vbs_ww_2016_boosted17] : Create Transformation "I" with events from all classes.
+                         : 
+                         : Transformation, Variable selection : 
+                         : Input : variable 'bos_PuppiAK8_eta' <---> Output : variable 'bos_PuppiAK8_eta'
+                         : Input : variable 'bos_PuppiAK8_m_sd0_corr' <---> Output : variable 'bos_PuppiAK8_m_sd0_corr'
+                         : Input : variable 'bos_PuppiAK8_tau2tau1' <---> Output : variable 'bos_PuppiAK8_tau2tau1'
+                         : Input : variable 'lep1_eta' <---> Output : variable 'lep1_eta'
+                         : Input : variable 'nJet30f' <---> Output : variable 'nJet30f'
+                         : Input : variable 'vbf1_AK4_qgid' <---> Output : variable 'vbf1_AK4_qgid'
+                         : Input : variable 'vbf2_AK4_eta' <---> Output : variable 'vbf2_AK4_eta'
+                         : Input : variable 'vbf_deta' <---> Output : variable 'vbf_deta'
+                         : Input : variable 'vbf_eta' <---> Output : variable 'vbf_eta'
+                         : Input : variable 'vbf_m' <---> Output : variable 'vbf_m'
+                         : Input : variable 'zeppHad' <---> Output : variable 'zeppHad'
+                         : Input : variable 'zeppLep' <---> Output : variable 'zeppLep'
+Factory                  : [vbs_ww_2016_boosted17] : Create Transformation "G" with events from all classes.
+                         : 
+                         : Transformation, Variable selection : 
+                         : Input : variable 'bos_PuppiAK8_eta' <---> Output : variable 'bos_PuppiAK8_eta'
+                         : Input : variable 'bos_PuppiAK8_m_sd0_corr' <---> Output : variable 'bos_PuppiAK8_m_sd0_corr'
+                         : Input : variable 'bos_PuppiAK8_tau2tau1' <---> Output : variable 'bos_PuppiAK8_tau2tau1'
+                         : Input : variable 'lep1_eta' <---> Output : variable 'lep1_eta'
+                         : Input : variable 'nJet30f' <---> Output : variable 'nJet30f'
+                         : Input : variable 'vbf1_AK4_qgid' <---> Output : variable 'vbf1_AK4_qgid'
+                         : Input : variable 'vbf2_AK4_eta' <---> Output : variable 'vbf2_AK4_eta'
+                         : Input : variable 'vbf_deta' <---> Output : variable 'vbf_deta'
+                         : Input : variable 'vbf_eta' <---> Output : variable 'vbf_eta'
+                         : Input : variable 'vbf_m' <---> Output : variable 'vbf_m'
+                         : Input : variable 'zeppHad' <---> Output : variable 'zeppHad'
+                         : Input : variable 'zeppLep' <---> Output : variable 'zeppLep'
+TFHandler_Factory        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0079689                   1.0188   [                  -2.3999                   2.3999 ]
+                         : bos_PuppiAK8_m_sd0_corr:                   80.410                   23.901   [                   40.000                   150.00 ]
+                         :   bos_PuppiAK8_tau2tau1:                  0.43354                  0.15758   [               0.00020947                  0.96459 ]
+                         :                lep1_eta:                0.0083114                   1.2057   [                  -2.5000                   2.5000 ]
+                         :                 nJet30f:                   3.8702                   1.4674   [                   0.0000                   15.000 ]
+                         :           vbf1_AK4_qgid:                  0.50146                  0.37743   [               3.6292e-08                   1.0000 ]
+                         :            vbf2_AK4_eta:               0.00079838                   2.7491   [                  -4.7002                   4.7002 ]
+                         :                vbf_deta:                   4.3046                   1.3723   [                0.0034019                   9.3379 ]
+                         :                 vbf_eta:                0.0076159                   2.1333   [                  -9.0119                   8.5431 ]
+                         :                   vbf_m:                   951.93                   491.56   [                   500.00                   8674.2 ]
+                         :                 zeppHad:                0.0055967                   1.3146   [                  -4.5976                   4.6101 ]
+                         :                 zeppLep:                0.0039294                   1.3626   [                  -7.5223                   8.5106 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : Preparing the Gaussian transformation...
+TFHandler_Factory        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0036584                  0.99765   [                  -3.3078                   5.7307 ]
+                         : bos_PuppiAK8_m_sd0_corr:                -0.018795                  0.98561   [                  -3.3802                   5.7307 ]
+                         :   bos_PuppiAK8_tau2tau1:                0.0036591                  0.99726   [                  -3.2898                   5.7307 ]
+                         :                lep1_eta:                0.0027308                  0.99712   [                  -3.2973                   5.7307 ]
+                         :                 nJet30f:                 0.064389                  0.87516   [                  -5.6262                   5.7307 ]
+                         :           vbf1_AK4_qgid:                -0.028121                  0.95852   [                  -3.2445                   5.7307 ]
+                         :            vbf2_AK4_eta:                0.0052136                  0.99858   [                  -3.2906                   5.7307 ]
+                         :                vbf_deta:                0.0016175                  0.99694   [                  -3.2909                   5.7307 ]
+                         :                 vbf_eta:                0.0026022                  0.99562   [                  -3.2900                   5.7307 ]
+                         :                   vbf_m:                0.0024513                  0.99550   [                  -3.1584                   5.7307 ]
+                         :                 zeppHad:                0.0025344                  0.99590   [                  -3.2908                   5.7307 ]
+                         :                 zeppLep:                0.0022656                  0.99495   [                  -3.2945                   5.7307 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : Ranking input variables (method unspecific)...
+IdTransformation         : Ranking result (top variable is best ranked)
+                         : ------------------------------------------------
+                         : Rank : Variable                : Separation
+                         : ------------------------------------------------
+                         :    1 : vbf_m                   : 5.628e-02
+                         :    2 : nJet30f                 : 3.797e-02
+                         :    3 : bos_PuppiAK8_tau2tau1   : 2.648e-02
+                         :    4 : bos_PuppiAK8_m_sd0_corr : 2.329e-02
+                         :    5 : zeppLep                 : 1.683e-02
+                         :    6 : vbf1_AK4_qgid           : 1.222e-02
+                         :    7 : bos_PuppiAK8_eta        : 9.113e-03
+                         :    8 : lep1_eta                : 5.215e-03
+                         :    9 : vbf2_AK4_eta            : 4.569e-03
+                         :   10 : vbf_eta                 : 2.259e-03
+                         :   11 : vbf_deta                : 2.007e-03
+                         :   12 : zeppHad                 : 2.918e-04
+                         : ------------------------------------------------
+Factory                  : Train method: DNN_GPU for Classification
+                         : 
+TFHandler_DNN_GPU        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0033205                  0.42452   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.26527                  0.43456   [                  -1.0000                   1.0000 ]
+                         :   bos_PuppiAK8_tau2tau1:                 -0.10133                  0.32680   [                  -1.0000                   1.0000 ]
+                         :                lep1_eta:                0.0033246                  0.48230   [                  -1.0000                   1.0000 ]
+                         :                 nJet30f:                 -0.48398                  0.19566   [                  -1.0000                   1.0000 ]
+                         :           vbf1_AK4_qgid:                0.0029287                  0.75485   [                  -1.0000                   1.0000 ]
+                         :            vbf2_AK4_eta:               0.00016984                  0.58490   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                -0.078432                  0.29403   [                  -1.0000                   1.0000 ]
+                         :                 vbf_eta:                 0.027572                  0.24304   [                  -1.0000                   1.0000 ]
+                         :                   vbf_m:                 -0.88943                  0.12027   [                  -1.0000                   1.0000 ]
+                         :                 zeppHad:              -0.00014302                  0.28555   [                  -1.0000                   1.0000 ]
+                         :                 zeppLep:                -0.061155                  0.16998   [                  -1.0000                   1.0000 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : Start of deep neural network training on GPU.
+                         : 
+TFHandler_DNN_GPU        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0033205                  0.42452   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.26527                  0.43456   [                  -1.0000                   1.0000 ]
+                         :   bos_PuppiAK8_tau2tau1:                 -0.10133                  0.32680   [                  -1.0000                   1.0000 ]
+                         :                lep1_eta:                0.0033246                  0.48230   [                  -1.0000                   1.0000 ]
+                         :                 nJet30f:                 -0.48398                  0.19566   [                  -1.0000                   1.0000 ]
+                         :           vbf1_AK4_qgid:                0.0029287                  0.75485   [                  -1.0000                   1.0000 ]
+                         :            vbf2_AK4_eta:               0.00016984                  0.58490   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                -0.078432                  0.29403   [                  -1.0000                   1.0000 ]
+                         :                 vbf_eta:                 0.027572                  0.24304   [                  -1.0000                   1.0000 ]
+                         :                   vbf_m:                 -0.88943                  0.12027   [                  -1.0000                   1.0000 ]
+                         :                 zeppHad:              -0.00014302                  0.28555   [                  -1.0000                   1.0000 ]
+                         :                 zeppLep:                -0.061155                  0.16998   [                  -1.0000                   1.0000 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+TCudaTensor::create cudnn handle ! 
+                         : *****   Deep Learning Network *****
+DEEP NEURAL NETWORK:   Depth = 5  Input = ( 1, 1, 12 )  Batch size = 30  Loss function = C
+	Layer 0	 DENSE Layer: 	 ( Input =    12 , Width =    64 ) 	Output = (  1 ,    30 ,    64 ) 	 Activation Function = Relu
+	Layer 1	 DENSE Layer: 	 ( Input =    64 , Width =    32 ) 	Output = (  1 ,    30 ,    32 ) 	 Activation Function = Relu
+	Layer 2	 DENSE Layer: 	 ( Input =    32 , Width =    32 ) 	Output = (  1 ,    30 ,    32 ) 	 Activation Function = Relu
+	Layer 3	 DENSE Layer: 	 ( Input =    32 , Width =    32 ) 	Output = (  1 ,    30 ,    32 ) 	 Activation Function = Sigmoid
+	Layer 4	 DENSE Layer: 	 ( Input =    32 , Width =     1 ) 	Output = (  1 ,    30 ,     1 ) 	 Activation Function = Identity
+                         : Using 1620048 events for training and 405011 for testing
+                         : Compute initial loss  on the validation data 
+                         : Training phase 1 of 1:  Optimizer ADAM (beta1=0.9,beta2=0.999,eps=1e-07) Learning rate = 0.001 regularization 0 minimum error = 5.61971e-07
+                         : --------------------------------------------------------------
+                         :      Epoch |   Train Err.   Val. Err.  t(s)/epoch   t(s)/Loss   nEvents/s Conv. Steps
+                         : --------------------------------------------------------------
+                         :    Start epoch iteration ...
+                         :          1 Minimum Test error found - save the configuration 
+                         :          1 |  5.17052e-08 4.89556e-08     11.1036    0.970253      159872           0
+                         :          2 Minimum Test error found - save the configuration 
+                         :          2 |  4.91151e-08 4.85595e-08     11.1286    0.988348      159762           0
+                         :          3 Minimum Test error found - save the configuration 
+                         :          3 |  4.85325e-08 4.78381e-08     11.1443    0.989647      159536           0
+                         :          4 Minimum Test error found - save the configuration 
+                         :          4 |  4.75536e-08 4.68532e-08     11.1419    0.988023      159549           0
+                         :          5 Minimum Test error found - save the configuration 
+                         :          5 |  4.65571e-08 4.61048e-08     11.1564    0.989432      159342           0
+                         :          6 Minimum Test error found - save the configuration 
+                         :          6 |   4.6025e-08 4.57815e-08     11.2865    0.994371      157404           0
+                         :          7 Minimum Test error found - save the configuration 
+                         :          7 |   4.5757e-08 4.55704e-08     10.7574    0.941951      165049           0
+                         :          8 Minimum Test error found - save the configuration 
+                         :          8 |  4.55885e-08 4.54309e-08      10.676    0.945336      166488           0
+                         :          9 Minimum Test error found - save the configuration 
+                         :          9 |  4.54713e-08 4.53429e-08     10.6761    0.944586      166472           0
+                         :         10 Minimum Test error found - save the configuration 
+                         :         10 |  4.53871e-08 4.52824e-08     10.6778    0.942708      166412           0
+                         :         11 Minimum Test error found - save the configuration 
+                         :         11 |  4.53229e-08 4.52169e-08     10.6852    0.944103      166309           0
+                         :         12 Minimum Test error found - save the configuration 
+                         :         12 |  4.52765e-08 4.52088e-08     10.6763    0.945044      166476           0
+                         :         13 Minimum Test error found - save the configuration 
+                         :         13 |  4.52334e-08 4.51784e-08     10.6736    0.942066      166472           0
+                         :         14 Minimum Test error found - save the configuration 
+                         :         14 |  4.52049e-08 4.51321e-08     10.6692    0.946014      166616           0
+                         :         15 Minimum Test error found - save the configuration 
+                         :         15 |  4.51776e-08 4.51197e-08     10.6748     0.94481      166499           0
+                         :         16 Minimum Test error found - save the configuration 
+                         :         16 |   4.5148e-08 4.50686e-08     10.6707    0.945261      166576           0
+                         :         17 Minimum Test error found - save the configuration 
+                         :         17 |  4.51216e-08 4.50651e-08       10.82    0.995562      164898           0
+                         :         18 Minimum Test error found - save the configuration 
+                         :         18 |  4.51031e-08 4.50538e-08     11.0568    0.967722      160572           0
+                         :         19 Minimum Test error found - save the configuration 
+                         :         19 |  4.50736e-08 4.50039e-08      10.917    0.965076      162785           0
+                         :         20 Minimum Test error found - save the configuration 
+                         :         20 |  4.50567e-08 4.49961e-08     10.9469    0.977869      162507           0
+                         :         21 |  4.50394e-08  4.5016e-08      10.711    0.942727      165846           1
+                         :         22 Minimum Test error found - save the configuration 
+                         :         22 |    4.502e-08 4.49719e-08     10.6748    0.945252      166507           0
+                         :         23 |  4.50032e-08 4.50132e-08     10.6733    0.943647      166504           1
+                         :         24 Minimum Test error found - save the configuration 
+                         :         24 |  4.49778e-08 4.49477e-08     10.6759    0.945758      166495           0
+                         :         25 |  4.49713e-08 4.49781e-08     10.6713    0.943311      166533           1
+                         :         26 Minimum Test error found - save the configuration 
+                         :         26 |   4.4949e-08 4.49263e-08     10.6718    0.945188      166556           0
+                         :         27 Minimum Test error found - save the configuration 
+                         :         27 |  4.49366e-08 4.48998e-08     10.6683    0.942679      166574           0
+                         :         28 |  4.49222e-08 4.51199e-08     10.6655    0.943603      166636           1
+                         :         29 |   4.4901e-08 4.50953e-08     10.6782    0.948652      166506           2
+                         :         30 Minimum Test error found - save the configuration 
+                         :         30 |  4.48881e-08 4.48428e-08     10.6925    0.947218      166237           0
+                         :         31 |  4.48785e-08 4.48922e-08     10.6854     0.94738      166361           1
+                         :         32 Minimum Test error found - save the configuration 
+                         :         32 |   4.4867e-08 4.48375e-08     10.6872      0.9481      166342           0
+                         :         33 |  4.48533e-08 4.48403e-08     10.6897    0.948975      166314           1
+                         :         34 Minimum Test error found - save the configuration 
+                         :         34 |  4.48398e-08 4.48014e-08     10.7018     0.94831      166097           0
+                         :         35 |  4.48231e-08 4.48617e-08     10.6915    0.947918      166267           1
+                         :         36 |  4.48193e-08  4.4874e-08     10.6994    0.947141      166118           2
+                         :         37 |  4.48003e-08 4.48353e-08     10.6859    0.946108      166331           3
+                         :         38 Minimum Test error found - save the configuration 
+                         :         38 |  4.47903e-08 4.47764e-08     10.6889    0.947035      166296           0
+                         :         39 |  4.47754e-08 4.48123e-08     10.6925    0.947734      166247           1
+                         :         40 |  4.47689e-08 4.48199e-08     10.6913    0.948358      166277           2
+                         :         41 |    4.477e-08 4.48272e-08     10.6935    0.949507      166259           3
+                         :         42 Minimum Test error found - save the configuration 
+                         :         42 |  4.47451e-08 4.47294e-08     10.7001    0.948288      166126           0
+                         :         43 Minimum Test error found - save the configuration 
+                         :         43 |  4.47386e-08  4.4718e-08     10.6949    0.947987      166210           0
+                         :         44 |  4.47434e-08 4.51724e-08     10.6897    0.948023      166300           1
+                         :         45 |  4.47305e-08 4.48442e-08      10.688    0.946792      166306           2
+                         :         46 |  4.47202e-08 4.47215e-08     10.6897    0.948464      166307           3
+                         :         47 Minimum Test error found - save the configuration 
+                         :         47 |  4.47093e-08 4.46984e-08     10.6888    0.947145      166300           0
+                         :         48 |  4.47059e-08  4.4791e-08     10.6827    0.947139      166403           1
+                         :         49 |  4.46966e-08 4.47399e-08     10.6871    0.948459      166351           2
+                         :         50 |  4.46953e-08 4.47592e-08     10.6987    0.947047      166129           3
+                         :         51 Minimum Test error found - save the configuration 
+                         :         51 |  4.46886e-08 4.46904e-08      10.694    0.956158      166365           0
+                         :         52 |  4.46819e-08 4.47556e-08     10.6884    0.946868      166301           1
+                         :         53 |  4.46733e-08 4.47541e-08     10.6912    0.947809      166269           2
+                         :         54 Minimum Test error found - save the configuration 
+                         :         54 |  4.46755e-08  4.4664e-08     10.6846    0.946677      166363           0
+                         :         55 |  4.46657e-08 4.48698e-08     10.6847    0.946927      166366           1
+                         :         56 |  4.46496e-08 4.47281e-08     10.6867    0.948184      166353           2
+                         :         57 |  4.46518e-08 4.46786e-08     10.6907    0.948732      166294           3
+                         :         58 |  4.46456e-08 4.47075e-08     10.6824    0.947118      166409           4
+                         :         59 |   4.4629e-08 4.47541e-08     10.6786     0.94661      166464           5
+                         :         60 |  4.46295e-08 4.48618e-08     10.6827    0.945843      166382           6
+                         :         61 Minimum Test error found - save the configuration 
+                         :         61 |  4.46371e-08 4.46495e-08     10.6828    0.946155      166386           0
+                         :         62 |   4.4625e-08 4.46671e-08      10.679    0.948231      166485           1
+                         :         63 |  4.46247e-08 4.47103e-08     10.6787    0.946678      166463           2
+                         :         64 |   4.4616e-08 4.47909e-08     10.6828    0.946458      166390           3
+                         :         65 |  4.46031e-08 4.47048e-08     10.6824    0.947183      166409           4
+                         :         66 |  4.46101e-08 4.46535e-08     10.6791    0.946281      166451           5
+                         :         67 |  4.46009e-08 4.47051e-08     10.6847    0.947709      166379           6
+                         :         68 Minimum Test error found - save the configuration 
+                         :         68 |  4.45975e-08 4.46494e-08     10.6792    0.946125      166446           0
+                         :         69 |  4.45955e-08 4.47104e-08       10.68     0.94835      166471           1
+                         :         70 |  4.45875e-08 4.48074e-08     10.6868    0.946737      166327           2
+                         :         71 |  4.45791e-08 4.46801e-08     10.6927    0.946907      166228           3
+                         :         72 Minimum Test error found - save the configuration 
+                         :         72 |  4.45788e-08 4.46228e-08     10.6927    0.948955      166264           0
+                         :         73 |  4.45759e-08 4.46233e-08     10.7049    0.949843      166070           1
+                         :         74 |  4.45765e-08 4.46545e-08      10.701    0.949077      166124           2
+                         :         75 Minimum Test error found - save the configuration 
+                         :         75 |  4.45645e-08  4.4615e-08     10.6982    0.947965      166153           0
+                         :         76 |  4.45605e-08 4.46829e-08     10.7018    0.948947      166109           1
+                         :         77 |  4.45543e-08  4.4623e-08     10.7007    0.947849      166109           2
+                         :         78 |  4.45551e-08 4.46865e-08     10.6918     0.94891      166278           3
+                         :         79 |  4.45476e-08 4.47055e-08     10.6943    0.949077      166238           4
+                         :         80 |  4.45385e-08 4.46185e-08     10.7027      0.9483      166083           5
+                         :         81 |  4.45428e-08 4.46267e-08     10.6901    0.948863      166306           6
+                         :         82 Minimum Test error found - save the configuration 
+                         :         82 |  4.45401e-08 4.46142e-08     10.6944    0.949145      166238           0
+                         :         83 |   4.4529e-08 4.47331e-08     10.6825    0.946892      166402           1
+                         :         84 |  4.45364e-08 4.46426e-08     10.6838    0.948401      166406           2
+                         :         85 Minimum Test error found - save the configuration 
+                         :         85 |  4.45213e-08  4.4598e-08     10.6922    0.948785      166269           0
+                         :         86 |  4.45258e-08 4.46365e-08     10.6989    0.949333      166165           1
+                         :         87 |  4.45212e-08 4.46167e-08     10.6905    0.949071      166303           2
+                         :         88 Minimum Test error found - save the configuration 
+                         :         88 |  4.45208e-08 4.45757e-08     10.6894    0.947903      166302           0
+                         :         89 |  4.45217e-08  4.4693e-08     10.6879    0.948598      166339           1
+                         :         90 |  4.45105e-08 4.45876e-08     10.6916    0.948837      166280           2
+                         :         91 |  4.45105e-08 4.46144e-08     10.6906    0.950223      166321           3
+                         :         92 |  4.45091e-08 4.46096e-08      10.701    0.949374      166129           4
+                         :         93 |  4.45079e-08 4.46194e-08     10.6958    0.946888      166176           5
+                         :         94 Minimum Test error found - save the configuration 
+                         :         94 |  4.44958e-08 4.45615e-08     10.6867    0.948422      166358           0
+                         :         95 |  4.44915e-08 4.46109e-08     10.6877    0.948189      166336           1
+                         :         96 |  4.44993e-08 4.45812e-08     10.6821    0.947745      166424           2
+                         :         97 |  4.44873e-08 4.45849e-08     10.6854    0.946792      166352           3
+                         :         98 |  4.44902e-08  4.4776e-08     10.6903    0.947908      166287           4
+                         :         99 |  4.44947e-08 4.46649e-08     10.6873    0.948116      166341           5
+                         :        100 |   4.4489e-08 4.46137e-08     10.6853    0.947465      166365           6
+                         :        101 |  4.44825e-08 4.45646e-08     10.6729    0.948724      166599           7
+                         :        102 |  4.44817e-08 4.46183e-08     10.6828    0.947036      166399           8
+                         :        103 |  4.44823e-08 4.46368e-08     10.6887    0.948712      166328           9
+                         :        104 |  4.44717e-08 4.46694e-08     10.6898    0.948613      166308          10
+                         :        105 |  4.44703e-08 4.46172e-08     10.6885    0.950431      166360          11
+                         :        106 |  4.44697e-08 4.45963e-08     10.6825    0.949434      166445          12
+                         :        107 |  4.44707e-08 4.45793e-08     10.6884    0.950077      166356          13
+                         :        108 |   4.4464e-08 4.45847e-08      10.693     0.95007      166278          14
+                         :        109 |  4.44571e-08 4.46192e-08     10.6871    0.949696      166371          15
+                         :        110 |  4.44539e-08 4.46437e-08     10.6867    0.949347      166373          16
+                         :        111 Minimum Test error found - save the configuration 
+                         :        111 |  4.44612e-08 4.45536e-08     10.6919    0.948835      166275           0
+                         :        112 |  4.44565e-08 4.46234e-08     10.6844    0.949043      166408           1
+                         :        113 Minimum Test error found - save the configuration 
+                         :        113 |  4.44466e-08 4.45536e-08     10.6909    0.948497      166287           0
+                         :        114 |  4.44479e-08 4.46815e-08     10.6847    0.949151      166404           1
+                         :        115 |  4.44499e-08 4.45858e-08     10.6906    0.948767      166296           2
+                         :        116 |  4.44443e-08 4.46404e-08     10.6918    0.948311      166268           3
+                         :        117 |  4.44467e-08 4.45576e-08     10.6902    0.948416      166297           4
+                         :        118 |  4.44508e-08 4.47248e-08     10.6872    0.948982      166358           5
+                         :        119 |  4.44564e-08  4.4561e-08     10.6893    0.948569      166315           6
+                         :        120 |   4.4434e-08 4.45994e-08     10.6769    0.947758      166513           7
+                         :        121 Minimum Test error found - save the configuration 
+                         :        121 |  4.44429e-08 4.45321e-08     10.6896    0.948607      166311           0
+                         :        122 |  4.44338e-08 4.45539e-08     10.6824    0.948425      166431           1
+                         :        123 |  4.44308e-08 4.46775e-08     10.6829    0.948557      166425           2
+                         :        124 |  4.44345e-08 4.46301e-08     10.6866     0.94646      166325           3
+                         :        125 |  4.44249e-08 4.45693e-08     10.6862    0.947459      166349           4
+                         :        126 |  4.44191e-08 4.45825e-08     10.6871    0.947281      166330           5
+                         :        127 |  4.44251e-08 4.45515e-08     10.6934    0.949387      166260           6
+                         :        128 |   4.4425e-08 4.45478e-08     10.6825    0.946662      166399           7
+                         :        129 |  4.44152e-08 4.45483e-08     10.6793    0.949973      166510           8
+                         :        130 |  4.44142e-08 4.47266e-08     10.6928    0.948878      166261           9
+                         :        131 |    4.442e-08 4.46087e-08     10.6873    0.948627      166350          10
+                         :        132 |  4.44132e-08 4.45371e-08     10.6949    0.949048      166227          11
+                         :        133 |  4.44211e-08 4.45371e-08      10.694    0.948601      166236          12
+                         :        134 |  4.44102e-08 4.45456e-08     10.6864    0.947627      166349          13
+                         :        135 |  4.44165e-08 4.45508e-08     10.6888    0.947196      166300          14
+                         :        136 |  4.44086e-08 4.46613e-08     10.6977    0.948983      166178          15
+                         :        137 |  4.44096e-08 4.45359e-08     10.6961    0.948475      166198          16
+                         :        138 |  4.44042e-08  4.4588e-08     10.6901    0.948431      166298          17
+                         :        139 |   4.4403e-08 4.45776e-08     10.6841    0.946763      166373          18
+                         :        140 |   4.4397e-08 4.45959e-08      10.678    0.947299      166486          19
+                         :        141 |  4.43974e-08 4.47083e-08     10.6846    0.948721      166398          20
+                         :        142 |   4.4407e-08 4.45877e-08     10.6984    0.950825      166198          21
+                         :        143 |  4.43921e-08 4.46166e-08     10.6974    0.950028      166201          22
+                         :        144 |   4.4394e-08  4.4566e-08     10.6954     0.94903      166219          23
+                         :        145 |  4.43899e-08 4.45678e-08     10.6948    0.950026      166246          24
+                         :        146 |  4.43926e-08 4.46157e-08     10.6928    0.948729      166257          25
+                         :        147 |  4.43913e-08 4.49149e-08     10.6812     0.94822      166448          26
+                         :        148 |  4.43857e-08 4.46091e-08      10.678     0.94889      166513          27
+                         :        149 |  4.43894e-08 4.46699e-08     10.6952    0.948832      166218          28
+                         :        150 |  4.43855e-08 4.47093e-08     10.6908     0.94837      166287          29
+                         :        151 |  4.43888e-08 4.45673e-08     10.6933    0.948445      166245          30
+                         :        152 |   4.4389e-08 4.45982e-08     10.6838    0.946709      166377          31
+                         :        153 |  4.43862e-08 4.45653e-08     10.6795    0.947702      166467          32
+                         :        154 |  4.43809e-08 4.45477e-08     10.6868    0.949712      166377          33
+                         :        155 |  4.43767e-08 4.45372e-08     10.6941    0.948092      166226          34
+                         :        156 |  4.43753e-08 4.45371e-08     10.6962    0.949119      166206          35
+                         :        157 |  4.43773e-08 4.45957e-08     10.6926    0.949385      166272          36
+                         :        158 |  4.43768e-08 4.45391e-08      10.692    0.948446      166267          37
+                         :        159 Minimum Test error found - save the configuration 
+                         :        159 |  4.43716e-08   4.451e-08     10.6933    0.949997      166270           0
+                         :        160 |  4.43702e-08 4.45378e-08     10.6914    0.948483      166278           1
+                         :        161 |  4.43674e-08 4.47531e-08      10.689    0.949139      166330           2
+                         :        162 |  4.43735e-08  4.4563e-08     10.6889    0.950334      166353           3
+                         :        163 |  4.43665e-08 4.45237e-08     10.6949    0.950082      166246           4
+                         :        164 |  4.43601e-08 4.45889e-08     10.6964    0.949098      166203           5
+                         :        165 Minimum Test error found - save the configuration 
+                         :        165 |  4.43587e-08 4.45087e-08     10.6863    0.948823      166370           0
+                         :        166 |  4.43633e-08 4.46496e-08     10.6885    0.948765      166332           1
+                         :        167 |  4.43563e-08 4.45966e-08     10.6876    0.948949      166351           2
+                         :        168 |  4.43602e-08 4.48579e-08     10.6898    0.948293      166302           3
+                         :        169 |  4.43599e-08 4.46355e-08     10.6781    0.948696      166509           4
+                         :        170 |  4.43542e-08 4.45581e-08     10.6759    0.947774      166530           5
+                         :        171 |  4.43509e-08 4.45674e-08     10.6759    0.948433      166541           6
+                         :        172 |  4.43519e-08 4.46836e-08     10.6839    0.950081      166434           7
+                         :        173 |  4.43535e-08 4.45308e-08     10.6817    0.948284      166440           8
+                         :        174 |  4.43446e-08 4.45802e-08     10.6862    0.948991      166375           9
+                         :        175 |  4.43468e-08 4.45292e-08      10.689    0.948771      166323          10
+                         :        176 |  4.43444e-08 4.45842e-08     10.6886    0.948455      166325          11
+                         :        177 |  4.43504e-08 4.47097e-08     10.6819    0.948227      166435          12
+                         :        178 |  4.43407e-08 4.46673e-08     10.6735    0.948419      166583          13
+                         :        179 |   4.4342e-08 4.45707e-08     10.6771    0.948285      166519          14
+                         :        180 |  4.43369e-08 4.46072e-08     10.6843    0.949409      166416          15
+                         :        181 |  4.43414e-08 4.45162e-08     10.6855    0.948984      166388          16
+                         :        182 |  4.43326e-08 4.46357e-08     10.6755    0.950099      166577          17
+                         :        183 |  4.43402e-08 4.45518e-08     10.6843    0.949754      166420          18
+                         :        184 |  4.43342e-08 4.45266e-08     10.6941    0.949299      166246          19
+                         :        185 |  4.43378e-08 4.45436e-08     10.6863    0.949702      166386          20
+                         :        186 |  4.43375e-08 4.47943e-08     10.6834    0.947989      166406          21
+                         :        187 |  4.43324e-08 4.45173e-08     10.6769    0.946844      166497          22
+                         :        188 |  4.43305e-08 4.45391e-08     10.6788    0.948973      166501          23
+                         :        189 |  4.43348e-08 4.48783e-08     10.6824    0.949824      166455          24
+                         :        190 |  4.43246e-08 4.45453e-08     10.6752    0.947412      166536          25
+                         :        191 |  4.43232e-08 4.45633e-08     10.6782    0.947531      166487          26
+                         :        192 |  4.43246e-08  4.4682e-08     10.6823    0.948134      166428          27
+                         :        193 |  4.43227e-08 4.45523e-08     10.6859    0.948767      166376          28
+                         :        194 |  4.43169e-08 4.48067e-08     10.6818    0.949642      166462          29
+                         :        195 |   4.4327e-08 4.45623e-08     10.6853    0.949439      166398          30
+                         :        196 |  4.43187e-08 4.45679e-08      10.686    0.949501      166387          31
+                         :        197 |  4.43156e-08 4.45964e-08     10.6793    0.948685      166488          32
+                         :        198 Minimum Test error found - save the configuration 
+                         :        198 |  4.43184e-08 4.44951e-08     10.6791    0.948256      166483           0
+                         :        199 |  4.43135e-08  4.4543e-08     10.6776    0.947396      166495           1
+                         :        200 |  4.43092e-08 4.45883e-08     10.6802    0.949446      166486           2
+                         :        201 |   4.4312e-08  4.4549e-08     10.6851    0.949546      166403           3
+                         :        202 |   4.4308e-08 4.46235e-08     10.6846    0.947895      166383           4
+                         :        203 |  4.43118e-08 4.45311e-08     10.6783    0.949274      166515           5
+                         :        204 |  4.43041e-08 4.45586e-08     10.6872    0.948783      166355           6
+                         :        205 |  4.42981e-08 4.46094e-08     10.6746    0.947992      166557           7
+                         :        206 |  4.42985e-08 4.48385e-08     10.6695    0.947391      166634           8
+                         :        207 |  4.43005e-08 4.45117e-08     10.6755     0.94732      166529           9
+                         :        208 |  4.43006e-08 4.45022e-08     10.6758    0.948207      166540          10
+                         :        209 |  4.43005e-08 4.46448e-08     10.6741    0.947735      166561          11
+                         :        210 |  4.42947e-08 4.46665e-08     10.6866    0.949088      166369          12
+                         :        211 |  4.42951e-08 4.45376e-08     10.6823    0.947864      166423          13
+                         :        212 |  4.42993e-08 4.46376e-08     10.6794    0.947984      166474          14
+                         :        213 |  4.42863e-08 4.45017e-08     10.6793    0.947703      166471          15
+                         :        214 |  4.42942e-08 4.45578e-08     10.6701    0.946245      166603          16
+                         :        215 |  4.42925e-08 4.46127e-08     10.6737    0.947708      166567          17
+                         :        216 |  4.42871e-08  4.4537e-08     10.6746    0.947522      166548          18
+                         :        217 |  4.42897e-08 4.45786e-08     10.6839     0.94789      166396          19
+                         :        218 |  4.42883e-08 4.45275e-08     10.6853    0.948742      166387          20
+                         :        219 |  4.42855e-08 4.46039e-08     10.6797    0.948016      166469          21
+                         :        220 |  4.42767e-08  4.4549e-08      10.695    0.948524      166217          22
+                         :        221 |  4.42806e-08 4.45679e-08     10.6852    0.950469      166418          23
+                         :        222 |  4.42794e-08 4.45524e-08     10.6721    0.947496      166590          24
+                         :        223 |  4.42817e-08 4.49388e-08     10.6743    0.947516      166553          25
+                         :        224 |  4.42814e-08 4.45538e-08     10.6749    0.948115      166554          26
+                         :        225 |  4.42708e-08 4.46628e-08     10.6773    0.947843      166507          27
+                         :        226 |  4.42743e-08 4.45334e-08     10.6826     0.94829      166424          28
+                         :        227 |  4.42721e-08 4.45427e-08     10.6865    0.950298      166392          29
+                         :        228 |  4.42754e-08 4.45692e-08     10.6765     0.94955      166551          30
+                         :        229 |  4.42711e-08 4.45667e-08     10.6752    0.949497      166573          31
+                         :        230 |  4.42729e-08 4.45341e-08     10.6808    0.948888      166466          32
+                         :        231 |  4.42641e-08 4.45491e-08     10.6736    0.948328      166580          33
+                         :        232 |  4.42699e-08 4.45867e-08     10.6786    0.948173      166491          34
+                         :        233 |  4.42693e-08 4.45695e-08     10.6771    0.949543      166540          35
+                         :        234 |  4.42657e-08 4.45831e-08     10.6775    0.948634      166517          36
+                         :        235 |  4.42573e-08 4.45173e-08     10.6801    0.947075      166447          37
+                         :        236 |  4.42621e-08 4.46067e-08     10.6856    0.949424      166392          38
+                         :        237 |  4.42595e-08 4.45441e-08     10.6803    0.948594      166469          39
+                         :        238 |  4.42645e-08 4.45037e-08     10.6774    0.949176      166528          40
+                         :        239 |  4.42596e-08 4.45831e-08     10.6748     0.94751      166545          41
+                         :        240 |    4.426e-08 4.45498e-08     10.6777    0.949305      166527          42
+                         :        241 |  4.42606e-08 4.46871e-08     10.6702    0.947785      166629          43
+                         :        242 |  4.42491e-08 4.45956e-08      10.676    0.948053      166533          44
+                         :        243 |  4.42525e-08 4.45633e-08     10.6814    0.949057      166459          45
+                         :        244 |  4.42518e-08 4.46082e-08     10.6807    0.947271      166439          46
+                         :        245 |  4.42546e-08 4.46591e-08     10.6799     0.94855      166475          47
+                         :        246 |  4.42539e-08 4.45699e-08     10.6791    0.948664      166491          48
+                         :        247 |  4.42478e-08 4.45493e-08     10.6738     0.94805      166571          49
+                         :        248 |   4.4252e-08 4.45801e-08     10.6834    0.947702      166401          50
+                         :        249 |  4.42482e-08 4.46076e-08     10.6708    0.948026      166622          51
+                         :        250 |  4.42425e-08 4.46171e-08     10.6779    0.948197      166503          52
+                         :        251 |  4.42428e-08 4.45632e-08     10.6749    0.948193      166554          53
+                         :        252 |  4.42425e-08 4.46471e-08      10.679    0.948215      166484          54
+                         :        253 |  4.42471e-08 4.45234e-08     10.6797    0.949175      166489          55
+                         :        254 |    4.424e-08 4.48605e-08     10.6711    0.948429      166623          56
+                         :        255 |   4.4238e-08 4.45165e-08     10.6744    0.947641      166553          57
+                         :        256 |  4.42356e-08 4.45823e-08     10.6697    0.946348      166612          58
+                         :        257 |  4.42416e-08 4.46188e-08     10.6738    0.947973      166569          59
+                         :        258 |  4.42279e-08 4.45427e-08     10.6667    0.947401      166681          60
+                         :        259 |  4.42431e-08   4.464e-08     10.6686    0.948686      166672          61
+                         :        260 |   4.4228e-08  4.4556e-08     10.6778     0.95009      166537          62
+                         :        261 |  4.42298e-08 4.45466e-08     10.6717    0.947299      166594          63
+                         :        262 |  4.42365e-08 4.45314e-08     10.6791    0.948284      166484          64
+                         :        263 |  4.42263e-08 4.45498e-08     10.6756    0.947639      166534          65
+                         :        264 |  4.42323e-08 4.45999e-08     10.6788    0.949461      166510          66
+                         :        265 |  4.42294e-08 4.45569e-08     10.6818    0.948312      166439          67
+                         :        266 |  4.42326e-08 4.45415e-08     10.6688    0.947993      166655          68
+                         :        267 |  4.42231e-08 4.45756e-08      10.672    0.947358      166590          69
+                         :        268 |  4.42311e-08 4.45748e-08     10.6668     0.94597      166656          70
+                         :        269 |  4.42257e-08 4.46486e-08     10.6764    0.947335      166515          71
+                         :        270 |  4.42246e-08 4.45602e-08     10.6767    0.949084      166540          72
+                         :        271 |  4.42226e-08 4.46077e-08     10.6833    0.947556      166400          73
+                         :        272 |  4.42219e-08 4.45293e-08     10.6689    0.949039      166672          74
+                         :        273 |  4.42243e-08 4.45944e-08     10.6677    0.947915      166673          75
+                         :        274 |  4.42123e-08 4.45702e-08     10.6686    0.947556      166653          76
+                         :        275 |   4.4218e-08 4.46053e-08      10.666     0.94754      166696          77
+                         :        276 |  4.42212e-08 4.45606e-08      10.675    0.947201      166536          78
+                         :        277 |  4.42147e-08 4.45269e-08     10.6706    0.947254      166612          79
+                         :        278 |  4.42146e-08 4.45369e-08     10.6756    0.948689      166552          80
+                         :        279 |  4.42142e-08 4.45683e-08     10.6688    0.946689      166634          81
+                         :        280 |  4.42072e-08 4.45896e-08     10.6712    0.948021      166615          82
+                         :        281 |  4.42217e-08 4.45934e-08     10.6718    0.948603      166616          83
+                         :        282 |  4.42079e-08 4.45352e-08     10.6623    0.946772      166747          84
+                         :        283 |  4.42082e-08 4.45531e-08     10.6638    0.947131      166727          85
+                         :        284 |  4.42091e-08 4.45561e-08     10.6672    0.948547      166693          86
+                         :        285 |  4.42042e-08 4.45418e-08      10.674    0.947532      166560          87
+                         :        286 |  4.42017e-08 4.45503e-08      10.675    0.948813      166563          88
+                         :        287 |  4.42067e-08 4.45891e-08      10.673    0.948296      166589          89
+                         :        288 |  4.41987e-08 4.46006e-08     10.6617    0.946849      166758          90
+                         :        289 |  4.42035e-08 4.46109e-08     10.6673    0.947421      166672          91
+                         :        290 |  4.42036e-08 4.45301e-08     10.6615    0.947714      166776          92
+                         :        291 |  4.42031e-08 4.45358e-08     10.6662    0.946463      166674          93
+                         :        292 |  4.41978e-08 4.45192e-08     10.6619    0.946931      166756          94
+                         :        293 |   4.4196e-08 4.45831e-08     10.6593    0.947599      166812          95
+                         :        294 |  4.42013e-08 4.47255e-08     10.6648     0.94761      166718          96
+                         :        295 |  4.41969e-08 4.45813e-08     10.6661    0.947989      166703          97
+                         :        296 |  4.41985e-08 4.45811e-08      10.662    0.948235      166776          98
+                         :        297 |  4.41899e-08 4.46062e-08     10.6636    0.947468      166737          99
+                         :        298 |  4.41919e-08 4.47063e-08     10.6587    0.946057      166796         100
+                         :        299 |  4.41892e-08 4.45292e-08     10.6598    0.949032      166828         101
+                         : 
+                         : Elapsed time for training with 2025059 events: [1;31m3.2e+03 sec[0m         
+                         : Evaluate deep neural network on GPU using batches with size = 30
+                         : 
+DNN_GPU                  : [vbs_ww_2016_boosted17] : Evaluation of DNN_GPU on training sample (2025059 events)
+                         : Elapsed time for evaluation of 2025059 events: [1;31m12.6 sec[0m       
+                         : Creating xml weight file: [0;36mvbs_ww_2016_boosted17/weights/TMVAClassification_DNN_GPU.weights.xml[0m
+                         : Creating standalone class: [0;36mvbs_ww_2016_boosted17/weights/TMVAClassification_DNN_GPU.class.C[0m
+Factory                  : Training finished
+                         : 
+Factory                  : Train method: BDTG for Classification
+                         : 
+<WARNING>                :  Note, you have events with negative event weight in the sample, but you've chosen to ignore them
+BDTG                     : #events: (reweighted) sig: 1.00993e+06 bkg: 1.00993e+06
+                         : #events: (unweighted) sig: 40313 bkg: 1979543
+                         : Training 1000 Decision Trees ... patience please
+                         : Elapsed time for training with 2025059 events: [1;31m287 sec[0m         
+BDTG                     : [vbs_ww_2016_boosted17] : Evaluation of BDTG on training sample (2025059 events)
+                         : Elapsed time for evaluation of 2025059 events: [1;31m63.2 sec[0m       
+                         : Creating xml weight file: [0;36mvbs_ww_2016_boosted17/weights/TMVAClassification_BDTG.weights.xml[0m
+                         : Creating standalone class: [0;36mvbs_ww_2016_boosted17/weights/TMVAClassification_BDTG.class.C[0m
+                         : vbs_ww_2016_boosted17_SBtmva.root:/vbs_ww_2016_boosted17/Method_BDT/BDTG
+Factory                  : Training finished
+                         : 
+Factory                  : Train method: BDT for Classification
+                         : 
+<WARNING>                :  Note, you have events with negative event weight in the sample, but you've chosen to ignore them
+BDT                      : #events: (reweighted) sig: 1.00993e+06 bkg: 1.00993e+06
+                         : #events: (unweighted) sig: 40313 bkg: 1979543
+                         : Training 1000 Decision Trees ... patience please
+                         : Elapsed time for training with 2025059 events: [1;31m383 sec[0m         
+BDT                      : [vbs_ww_2016_boosted17] : Evaluation of BDT on training sample (2025059 events)
+                         : Elapsed time for evaluation of 2025059 events: [1;31m145 sec[0m       
+                         : Creating xml weight file: [0;36mvbs_ww_2016_boosted17/weights/TMVAClassification_BDT.weights.xml[0m
+                         : Creating standalone class: [0;36mvbs_ww_2016_boosted17/weights/TMVAClassification_BDT.class.C[0m
+                         : vbs_ww_2016_boosted17_SBtmva.root:/vbs_ww_2016_boosted17/Method_BDT/BDT
+Factory                  : Training finished
+                         : 
+                         : Ranking input variables (method specific)...
+                         : No variable ranking supplied by classifier: DNN_GPU
+BDTG                     : Ranking result (top variable is best ranked)
+                         : ---------------------------------------------------------
+                         : Rank : Variable                : Variable Importance
+                         : ---------------------------------------------------------
+                         :    1 : bos_PuppiAK8_m_sd0_corr : 9.629e-02
+                         :    2 : nJet30f                 : 9.370e-02
+                         :    3 : bos_PuppiAK8_tau2tau1   : 8.968e-02
+                         :    4 : vbf_m                   : 8.814e-02
+                         :    5 : zeppHad                 : 8.717e-02
+                         :    6 : lep1_eta                : 8.683e-02
+                         :    7 : vbf_deta                : 8.644e-02
+                         :    8 : vbf2_AK4_eta            : 8.276e-02
+                         :    9 : bos_PuppiAK8_eta        : 8.010e-02
+                         :   10 : zeppLep                 : 7.268e-02
+                         :   11 : vbf1_AK4_qgid           : 6.932e-02
+                         :   12 : vbf_eta                 : 6.688e-02
+                         : ---------------------------------------------------------
+BDT                      : Ranking result (top variable is best ranked)
+                         : ---------------------------------------------------------
+                         : Rank : Variable                : Variable Importance
+                         : ---------------------------------------------------------
+                         :    1 : vbf_m                   : 1.324e-01
+                         :    2 : nJet30f                 : 1.097e-01
+                         :    3 : bos_PuppiAK8_tau2tau1   : 8.934e-02
+                         :    4 : bos_PuppiAK8_m_sd0_corr : 8.521e-02
+                         :    5 : lep1_eta                : 8.177e-02
+                         :    6 : vbf2_AK4_eta            : 8.050e-02
+                         :    7 : zeppHad                 : 7.727e-02
+                         :    8 : vbf_deta                : 7.555e-02
+                         :    9 : zeppLep                 : 7.174e-02
+                         :   10 : bos_PuppiAK8_eta        : 6.909e-02
+                         :   11 : vbf_eta                 : 6.542e-02
+                         :   12 : vbf1_AK4_qgid           : 6.198e-02
+                         : ---------------------------------------------------------
+TH1.Print Name  = TrainingHistory_DNN_GPU_trainingError, Entries= 0, Total sum= 1.33165e-05
+TH1.Print Name  = TrainingHistory_DNN_GPU_valError, Entries= 0, Total sum= 1.33705e-05
+Factory                  : === Destroy and recreate all methods via weight files for testing ===
+                         : 
+                         : Reading weight file: [0;36mvbs_ww_2016_boosted17/weights/TMVAClassification_DNN_GPU.weights.xml[0m
+                         : Reading weight file: [0;36mvbs_ww_2016_boosted17/weights/TMVAClassification_BDTG.weights.xml[0m
+                         : Reading weight file: [0;36mvbs_ww_2016_boosted17/weights/TMVAClassification_BDT.weights.xml[0m
+Test All Methods
+Factory                  : [1mTest all methods[0m
+Factory                  : Test method: DNN_GPU for Classification performance
+                         : 
+                         : Evaluate deep neural network on GPU using batches with size = 1000
+                         : 
+TFHandler_DNN_GPU        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0019776                  0.42578   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.26544                  0.43480   [                  -1.0000                   1.0000 ]
+                         :   bos_PuppiAK8_tau2tau1:                 -0.10046                  0.32650   [                 -0.98073                   1.0133 ]
+                         :                lep1_eta:                0.0041938                  0.48308   [                  -1.0000                   1.0000 ]
+                         :                 nJet30f:                 -0.48396                  0.19567   [                  -1.0000                   1.1333 ]
+                         :           vbf1_AK4_qgid:                0.0050738                  0.75456   [                  -1.0000                   1.0000 ]
+                         :            vbf2_AK4_eta:               -0.0028963                  0.58503   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                -0.078375                  0.29358   [                  -1.0005                   1.0075 ]
+                         :                 vbf_eta:                 0.027020                  0.24308   [                 -0.99912                  0.94914 ]
+                         :                   vbf_m:                 -0.88951                  0.12007   [                  -1.0000                  0.81248 ]
+                         :                 zeppHad:              -6.8536e-05                  0.28609   [                  -1.0044                   1.0124 ]
+                         :                 zeppLep:                -0.060575                  0.17027   [                  -1.1122                  0.95123 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+DNN_GPU                  : [vbs_ww_2016_boosted17] : Evaluation of DNN_GPU on testing sample (2025059 events)
+                         : Elapsed time for evaluation of 2025059 events: [1;31m8.67 sec[0m       
+Factory                  : Test method: BDTG for Classification performance
+                         : 
+BDTG                     : [vbs_ww_2016_boosted17] : Evaluation of BDTG on testing sample (2025059 events)
+                         : Elapsed time for evaluation of 2025059 events: [1;31m47.9 sec[0m       
+Factory                  : Test method: BDT for Classification performance
+                         : 
+BDT                      : [vbs_ww_2016_boosted17] : Evaluation of BDT on testing sample (2025059 events)
+                         : Elapsed time for evaluation of 2025059 events: [1;31m106 sec[0m       
+Evaluate All Methods
+Factory                  : [1mEvaluate all methods[0m
+Factory                  : Evaluate classifier: DNN_GPU
+                         : 
+DNN_GPU                  : [vbs_ww_2016_boosted17] : Loop over test events and fill histograms with classifier response...
+                         : 
+                         : Evaluate deep neural network on GPU using batches with size = 1000
+                         : 
+TFHandler_DNN_GPU        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0033205                  0.42452   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.26527                  0.43456   [                  -1.0000                   1.0000 ]
+                         :   bos_PuppiAK8_tau2tau1:                 -0.10133                  0.32680   [                  -1.0000                   1.0000 ]
+                         :                lep1_eta:                0.0033246                  0.48230   [                  -1.0000                   1.0000 ]
+                         :                 nJet30f:                 -0.48398                  0.19566   [                  -1.0000                   1.0000 ]
+                         :           vbf1_AK4_qgid:                0.0029287                  0.75485   [                  -1.0000                   1.0000 ]
+                         :            vbf2_AK4_eta:               0.00016984                  0.58490   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                -0.078432                  0.29403   [                  -1.0000                   1.0000 ]
+                         :                 vbf_eta:                 0.027572                  0.24304   [                  -1.0000                   1.0000 ]
+                         :                   vbf_m:                 -0.88943                  0.12027   [                  -1.0000                   1.0000 ]
+                         :                 zeppHad:              -0.00014302                  0.28555   [                  -1.0000                   1.0000 ]
+                         :                 zeppLep:                -0.061155                  0.16998   [                  -1.0000                   1.0000 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+TFHandler_DNN_GPU        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0019776                  0.42578   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.26544                  0.43480   [                  -1.0000                   1.0000 ]
+                         :   bos_PuppiAK8_tau2tau1:                 -0.10046                  0.32650   [                 -0.98073                   1.0133 ]
+                         :                lep1_eta:                0.0041938                  0.48308   [                  -1.0000                   1.0000 ]
+                         :                 nJet30f:                 -0.48396                  0.19567   [                  -1.0000                   1.1333 ]
+                         :           vbf1_AK4_qgid:                0.0050738                  0.75456   [                  -1.0000                   1.0000 ]
+                         :            vbf2_AK4_eta:               -0.0028963                  0.58503   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                -0.078375                  0.29358   [                  -1.0005                   1.0075 ]
+                         :                 vbf_eta:                 0.027020                  0.24308   [                 -0.99912                  0.94914 ]
+                         :                   vbf_m:                 -0.88951                  0.12007   [                  -1.0000                  0.81248 ]
+                         :                 zeppHad:              -6.8536e-05                  0.28609   [                  -1.0044                   1.0124 ]
+                         :                 zeppLep:                -0.060575                  0.17027   [                  -1.1122                  0.95123 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+Factory                  : Evaluate classifier: BDTG
+                         : 
+BDTG                     : [vbs_ww_2016_boosted17] : Loop over test events and fill histograms with classifier response...
+                         : 
+TFHandler_BDTG           :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0047462                   1.0218   [                  -2.3999                   2.3999 ]
+                         : bos_PuppiAK8_m_sd0_corr:                   80.401                   23.914   [                   40.000                   150.00 ]
+                         :   bos_PuppiAK8_tau2tau1:                  0.43396                  0.15744   [                0.0095035                  0.97100 ]
+                         :                lep1_eta:                 0.010484                   1.2077   [                  -2.5000                   2.5000 ]
+                         :                 nJet30f:                   3.8703                   1.4675   [                   0.0000                   16.000 ]
+                         :           vbf1_AK4_qgid:                  0.50254                  0.37728   [               2.9919e-08                   1.0000 ]
+                         :            vbf2_AK4_eta:                -0.013613                   2.7498   [                  -4.7002                   4.7002 ]
+                         :                vbf_deta:                   4.3049                   1.3702   [                0.0011617                   9.3730 ]
+                         :                 vbf_eta:                0.0027713                   2.1337   [                  -9.0042                   8.0967 ]
+                         :                   vbf_m:                   951.60                   490.74   [                   500.00                   7907.8 ]
+                         :                 zeppHad:                0.0059396                   1.3171   [                  -4.6177                   4.6674 ]
+                         :                 zeppLep:                0.0085746                   1.3650   [                  -8.4216                   8.1196 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+Factory                  : Evaluate classifier: BDT
+                         : 
+BDT                      : [vbs_ww_2016_boosted17] : Loop over test events and fill histograms with classifier response...
+                         : 
+TFHandler_BDT            :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0047462                   1.0218   [                  -2.3999                   2.3999 ]
+                         : bos_PuppiAK8_m_sd0_corr:                   80.401                   23.914   [                   40.000                   150.00 ]
+                         :   bos_PuppiAK8_tau2tau1:                  0.43396                  0.15744   [                0.0095035                  0.97100 ]
+                         :                lep1_eta:                 0.010484                   1.2077   [                  -2.5000                   2.5000 ]
+                         :                 nJet30f:                   3.8703                   1.4675   [                   0.0000                   16.000 ]
+                         :           vbf1_AK4_qgid:                  0.50254                  0.37728   [               2.9919e-08                   1.0000 ]
+                         :            vbf2_AK4_eta:                -0.013613                   2.7498   [                  -4.7002                   4.7002 ]
+                         :                vbf_deta:                   4.3049                   1.3702   [                0.0011617                   9.3730 ]
+                         :                 vbf_eta:                0.0027713                   2.1337   [                  -9.0042                   8.0967 ]
+                         :                   vbf_m:                   951.60                   490.74   [                   500.00                   7907.8 ]
+                         :                 zeppHad:                0.0059396                   1.3171   [                  -4.6177                   4.6674 ]
+                         :                 zeppLep:                0.0085746                   1.3650   [                  -8.4216                   8.1196 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Evaluation results ranked by best signal efficiency and purity (area)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet       MVA                       
+                         : Name:         Method:          ROC-integ
+                         : vbs_ww_2016_boosted17 DNN_GPU        : 0.760
+                         : vbs_ww_2016_boosted17 BDT            : 0.758
+                         : vbs_ww_2016_boosted17 BDTG           : 0.754
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Testing efficiency compared to training efficiency (overtraining check)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet              MVA              Signal efficiency: from test sample (from training sample) 
+                         : Name:                Method:          @B=0.01             @B=0.10            @B=0.30   
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : vbs_ww_2016_boosted17 DNN_GPU        : 0.150 (0.150)       0.438 (0.439)      0.685 (0.686)
+                         : vbs_ww_2016_boosted17 BDT            : 0.147 (0.145)       0.435 (0.435)      0.678 (0.679)
+                         : vbs_ww_2016_boosted17 BDTG           : 0.139 (0.138)       0.430 (0.430)      0.674 (0.674)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+Dataset:vbs_ww_2016_bo...: Created tree 'TestTree' with 2025059 events
+                         : 
+Dataset:vbs_ww_2016_bo...: Created tree 'TrainTree' with 2025059 events
+                         : 
+Factory                  : [1mThank you for using TMVA![0m
+                         : [1mFor citation information, please visit: http://tmva.sf.net/citeTMVA.html[0m
+ROC file written
+Clone dataTree
+==> Wrote root file: vbs_ww_2016_boosted17_SBtmva.root
+==> TMVAClassification is done!
+==> To apply results to data:: 
+==> root  -b -q  ./vbsTMVAClassificationApplication.cc\(\"vbs_ww_2016_boosted17\",\"BDT,BDTG,DNN_GPU\"\)
+(int) 0
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing ./vbsTMVAClassificationApplication.cc("vbs_ww_2016_boosted17","BDT,BDTG,DNN_GPU")...
+
+==> Start TMVAClassificationApplication
+                         : Booking "BDT method" of type "BDT" from vbs_ww_2016_boosted17/weights/TMVAClassification_BDT.weights.xml.
+                         : Reading weight file: vbs_ww_2016_boosted17/weights/TMVAClassification_BDT.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+                         : Booked classifier "BDT" of type: "BDT"
+                         : Booking "BDTG method" of type "BDT" from vbs_ww_2016_boosted17/weights/TMVAClassification_BDTG.weights.xml.
+                         : Reading weight file: vbs_ww_2016_boosted17/weights/TMVAClassification_BDTG.weights.xml
+                         : Booked classifier "BDTG" of type: "BDT"
+                         : Booking "DNN_GPU method" of type "DL" from vbs_ww_2016_boosted17/weights/TMVAClassification_DNN_GPU.weights.xml.
+                         : Reading weight file: vbs_ww_2016_boosted17/weights/TMVAClassification_DNN_GPU.weights.xml
+                         : Booked classifier "DNN_GPU" of type: "DL"
+--- TMVAClassificationApp    : Using input file: vbs_ww_2016_boosted17_SBtmva.root
+Using analysis directory vbs_ww_2016_boosted17
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+--- Processing: 1498464 events
+--- ... Processing event: 0
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 100000
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 200000
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 300000
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 400000
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 500000
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 600000
+--- ... Processing event: 700000
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 800000
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 900000
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 1000000
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 1100000
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 1200000
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- ... Processing event: 1300000
+--- ... Processing event: 1400000
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+<ERROR>                          : 5-th variable of the event is NaN --> return MVA value -999, 
+<ERROR>                          :  that's all I can do, please fix or remove this event.
+--- End of event loop: Real time 0:02:34, CP time 154.740
+--- Adding MVA output for data to vbs_ww_2016_boosted17_SBtmva.root
+==> TMVAClassificationApplication is done!
+
+==> Use root -l tmvaMon.cc\(\"vbs_ww_2016_boosted17\",lumi,cut,\"cutName\"\)  to analyse...
+==> Use one of the following as a second argument for the luminosity
+Lumies:
+  ==> 2016 Samples -> 35.8671
+  ==> 2017 Samples -> 41.53
+  ==> 2018 Samples -> 59.74
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing tmvaMon.cc("vbs_ww_2016_boosted17",35.87,full_wv_sr+tau21_cut+qgid_cut,"boosted17_optCut","datasets/plot_args/","optCutScan",'r',"sgf1")...
+Using analysis directory vbs_ww_2016_boosted17
+--- plot_tmv: Using signal&bkg test trees from file: vbs_ww_2016_boosted17_SBtmva.root
+ Entries bkg :: test/train/test+train = 1984746/1984746/3969492
+ Entries sgl :: test/train/test+train = 40313/40313/80626
+ scale_sgl_tmva/scale_bkg_tmva = 0.5/0.5
+ Entries data  = 1498464
+ Signal x-sect, fb / Generated signal events (normalized to Lum =  35.87 fb ) :: 2324.84/83392
+ 1.0 * lum_fbinv * PB2FB = 35870
+
+anl Lum = 35.87
+BDT :: point/step/cutval/significance  = 1/0.1/-1/1.3853
+BDT :: point/step/cutval/significance  = 2/0.1/-0.9/1.3853
+BDT :: point/step/cutval/significance  = 3/0.1/-0.8/1.3853
+BDT :: point/step/cutval/significance  = 4/0.1/-0.7/1.3853
+BDT :: point/step/cutval/significance  = 5/0.1/-0.6/1.3853
+BDT :: point/step/cutval/significance  = 6/0.1/-0.5/1.3853
+BDT :: point/step/cutval/significance  = 7/0.1/-0.4/1.3853
+BDT :: point/step/cutval/significance  = 8/0.1/-0.3/1.38557
+BDT :: point/step/cutval/significance  = 9/0.1/-0.2/1.39945
+BDT :: point/step/cutval/significance  = 10/0.1/-0.1/1.47222
+BDT :: point/step/cutval/significance  = 11/0.1/0/1.65694
+BDT :: point/step/cutval/significance  = 12/0.1/0.1/1.90014
+BDT :: point/step/cutval/significance  = 13/0.1/0.2/2.02515
+BDT :: point/step/cutval/significance  = 14/0.1/0.3/2.05508
+BDT :: point/step/cutval/significance  = 15/0.1/0.4/1.68394
+BDT :: point/step/cutval/significance  = 16/0.1/0.5/0.981393
+BDT :: point/step/cutval/significance  = 17/0.1/0.6/0
+BDT :: point/step/cutval/significance  = 18/0.1/0.7/0
+BDT :: point/step/cutval/significance  = 19/0.1/0.8/0
+BDT :: point/step/cutval/significance  = 20/0.1/0.9/0
+BDT :: point/step/cutval/significance  = 1/0.02/0.2/2.02515
+BDT :: point/step/cutval/significance  = 2/0.02/0.22/2.06824
+BDT :: point/step/cutval/significance  = 3/0.02/0.24/2.08122
+BDT :: point/step/cutval/significance  = 4/0.02/0.26/2.1076
+BDT :: point/step/cutval/significance  = 5/0.02/0.28/2.08314
+BDT :: point/step/cutval/significance  = 6/0.02/0.3/2.05508
+BDT :: point/step/cutval/significance  = 7/0.02/0.32/2.01929
+BDT :: point/step/cutval/significance  = 8/0.02/0.34/1.97736
+BDT :: point/step/cutval/significance  = 9/0.02/0.36/1.89403
+BDT :: point/step/cutval/significance  = 10/0.02/0.38/1.84846
+BDT :: point/step/cutval/significance  = 1/0.004/0.24/2.08122
+BDT :: point/step/cutval/significance  = 2/0.004/0.244/2.09605
+BDT :: point/step/cutval/significance  = 3/0.004/0.248/2.09881
+BDT :: point/step/cutval/significance  = 4/0.004/0.252/2.10412
+BDT :: point/step/cutval/significance  = 5/0.004/0.256/2.10404
+BDT :: point/step/cutval/significance  = 6/0.004/0.26/2.1076
+BDT :: point/step/cutval/significance  = 7/0.004/0.264/2.09401
+BDT :: point/step/cutval/significance  = 8/0.004/0.268/2.08595
+BDT :: point/step/cutval/significance  = 9/0.004/0.272/2.0925
+BDT :: point/step/cutval/significance  = 10/0.004/0.276/2.08312
+BDT :: point/step/cutval/significance  = 1/0.0008/0.256/2.10404
+BDT :: point/step/cutval/significance  = 2/0.0008/0.2568/2.10107
+BDT :: point/step/cutval/significance  = 3/0.0008/0.2576/2.11207
+BDT :: point/step/cutval/significance  = 4/0.0008/0.2584/2.11319
+BDT :: point/step/cutval/significance  = 5/0.0008/0.2592/2.10579
+BDT :: point/step/cutval/significance  = 6/0.0008/0.26/2.1076
+BDT :: point/step/cutval/significance  = 7/0.0008/0.2608/2.0982
+BDT :: point/step/cutval/significance  = 8/0.0008/0.2616/2.10569
+BDT :: point/step/cutval/significance  = 9/0.0008/0.2624/2.09994
+BDT :: point/step/cutval/significance  = 10/0.0008/0.2632/2.09915
+bestcut/sgf  = 0.2584/2.11319
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing tmvaMon.cc("vbs_ww_2016_boosted17",35.87,full_wv_sr,"boosted17_cutflow","datasets/plot_args/MVA_variables.xml","printCutflow",'r',"vbf_deta")...
+Using analysis directory vbs_ww_2016_boosted17
+--- plot_tmv: Using signal&bkg test trees from file: vbs_ww_2016_boosted17_SBtmva.root
+ Entries bkg :: test/train/test+train = 1984746/1984746/3969492
+ Entries sgl :: test/train/test+train = 40313/40313/80626
+ scale_sgl_tmva/scale_bkg_tmva = 0.5/0.5
+ Entries data  = 1498464
+ Signal x-sect, fb / Generated signal events (normalized to Lum =  35.87 fb ) :: 2324.84/83392
+ 1.0 * lum_fbinv * PB2FB = 35870
+
+anl Lum = 35.87
+|--------------------------------------------------------------------------------------------------------------------|
+|-----------------------|--------------|------------------------|----------------------------|-------------| 95% CL, |
+|         Cut           |    DATA      |       Total_bkg        |      Total_sgl (accpt)     | S/sqrt(S+B) | exp(fb) |
+|-----------------------|--------------|------------------------|----------------------------|-------------|---------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  190191    |    193126.5+/-246.7      |    1045.15+/-5.67 ( 1.25)    |    2.37    | 2282.71   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  190191    |    193126.5+/-246.7      |    1045.15+/-5.67 ( 1.25)    |    2.37    | 2282.71   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  115636    |    134390.4+/-211.9      |    793.16+/-4.94 ( 0.95)    |    2.16    | 2542.97   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  115636    |    134390.4+/-211.9      |    793.16+/-4.94 ( 0.95)    |    2.16    | 2542.97   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  112483    |    130657.2+/-209.2      |    771.66+/-4.87 ( 0.93)    |    2.13    | 2578.12   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  111243    |    129128.6+/-208.0      |    764.02+/-4.85 ( 0.92)    |    2.12    | 2586.91   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  110970    |    126668.9+/-205.3      |    755.13+/-4.82 ( 0.91)    |    2.12    | 2592.77   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  110970    |    126668.9+/-205.3      |    755.13+/-4.82 ( 0.91)    |    2.12    | 2592.77   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |   80303    |    92532.4+/-174.2      |    646.19+/-4.46 ( 0.77)    |    2.12    | 2632.32   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |   69538    |    82275.6+/-164.1      |    567.36+/-4.18 ( 0.68)    |    1.97    | 2830.08   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |   12878    |    15197.4+/-80.9      |    158.21+/-2.19 ( 0.19)    |    1.28    | 3940.43   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |   12878    |    15197.4+/-80.9      |    158.21+/-2.19 ( 0.19)    |    1.28    | 3940.43   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |   12385    |    14475.4+/-80.4      |    152.72+/-2.15 ( 0.18)    |    1.26    | 3999.02   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |    5849    |    5981.2+/-47.5      |    102.20+/-1.75 ( 0.12)    |    1.31    | 3769.53   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |    3182    |    3373.9+/-34.4      |    81.43+/-1.56 ( 0.10)    |    1.39    | 3588.87   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |    2873    |    3006.7+/-32.3      |    80.49+/-1.55 ( 0.10)    |    1.45    | 3437.50   |
+|--------------------------------------------------------------------------------------------------------------------|

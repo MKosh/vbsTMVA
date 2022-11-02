@@ -469,7 +469,7 @@ void tmvaMon(TString anlName="vbf_ww", Float_t lum_fb=35.87, TCut cut="", TStrin
   //gStyle->SetHatchesSpacing(0.5);
   if (function == "cplots") cplots(anl, cut, plot_name, plot_args_file, plot_style);
   else if (function == "genPlots") genPlots(anl, cut, plot_name, plot_args_file, plot_style);
-  else if (function == "printCutflow") printCutflow(anl, var_to_plot, cut, plot_args_file, plot_name, (tau21_cut+qgid_cut+training_cut), plot_style);
+  else if (function == "printCutflow") printCutflow(anl, var_to_plot, cut, plot_args_file, plot_name, (cleanNAN_tau+cleanNAN_qgid), plot_style);
   else if (function == "optCutScan") anl->optCutScan("sgf1", cut, var_to_plot, -1, 1, 0.1, 0.0005, 20, plot_name);
 
 }
@@ -2343,9 +2343,10 @@ void printCutflow(TmvaAnl* anl, const char* var, TCut last_cut, TString plot_arg
     ZeppWHLlt1 <<
     lep_pt <<
     lep_eta <<
-    fatjet_pt <<
-    fatjet_eta <<
-    fatjet_tau21 <<
+    fatjet_pt << // boosted
+    fatjet_eta << // boosted
+    fatjet_tau21 << // boosted
+    //resolved_jet_pt << // resolved
     met_pt <<
     btag_veto <<         // this has to be commented out when doing top cr
     vbs_jets_mjj <<
@@ -2353,9 +2354,10 @@ void printCutflow(TmvaAnl* anl, const char* var, TCut last_cut, TString plot_arg
     vbs_jets_pt <<
     //wv_cr_wjets
     //wv_cr_top <<
-    wv_sr <<
-    last_cut               // needed for both SR and top CR
-  ;
+    wv_sr; // boosted
+    // wv_resolved_sr; // resolved
+    //last_cut               // needed for both SR and top CR
+  //;
   CanvasName <<  flow_name << " : " << anl->cuts.Cut(0).GetName();
   TCut currentCut;
   for (Int_t i=0; i<=anl->cuts.GetLast(); ++i){

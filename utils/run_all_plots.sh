@@ -28,7 +28,8 @@
 ##make mon loc="" year="1111" saveFile="Run2_wv_SR" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut" mon_function="optCutScan" plot_type=r var_to_plot="BDT" plot_name="Run2_wv_SR_optCut_BDT_BDT" | tee -a docs/logs/Run2_wv_SR.log
 ##make mon loc="" year="1111" saveFile="Run2_wv_SR" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut" mon_function="optCutScan" plot_type=r var_to_plot="DNN_GPU" plot_name="Run2_wv_SR_optCut_DNN_DNN" | tee -a docs/logs/Run2_wv_SR.log
 
-#make cutFlow year="1111" saveFile="Run2_wv_SR" lumi="137" cut="BDT_cut_Run2_sr" plot_name="Run2_wv_sr_BDT_cutflow" plot_args="datasets/plot_args/MVA_variables.xml" plot_type=r var_to_plot="vbf_deta"  | tee -a docs/logs/Run2_wv_SR.log
+#make mon year="1111" saveFile="TMVAoutput_resolved_full" lumi="137" cut="dummy" plot_name="Run2_resolved_cutflow" region=resolved mon_function="printCutflow" plot_args="datasets/plot_args/single_plot.xml" plot_type=r var_to_plot="vbf_m"  | tee -a docs/logs/Resolved_cutflows.log
+#make mon year="1111" saveFile="TMVAoutput_boosted_full" lumi="137" cut="dummy" plot_name="Run2_boosted_cutflow" region=boosted mon_function="printCutflow" plot_args="datasets/plot_args/single_plot.xml" plot_type=r var_to_plot="vbf_m"  | tee -a docs/logs/Boosted_cutflows.log
 #make cutFlow year="1111" saveFile="Run2_wv_SR" lumi="137" cut="DNN_GPU_cut_Run2_sr" plot_name="Run2_wv_sr_DNN_cutflow" plot_args="datasets/plot_args/MVA_variables.xml" plot_type=r var_to_plot="vbf_deta"  | tee -a docs/logs/Run2_wv_SR.log
 
 # MVA cplots RATIO
@@ -54,8 +55,13 @@
 # genPlots Kinematic
 #make mon loc="" year="1111" saveFile="Run2_wv_SR" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut+BDT_cut_Run2_sr" mon_function="genPlots" plot_type=r plot_name="wv_SR_BDT_plots" plot_args="datasets/plot_args/Kinematic_variables.xml" | tee -a docs/logs/Run2_wv_SR.log
 #make mon loc="" year="1111" saveFile="Run2_wv_SR" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut+DNN_GPU_cut_Run2_sr" mon_function="genPlots" plot_type=r plot_name="wv_SR_DNN_plots" plot_args="datasets/plot_args/Kinematic_variables.xml" | tee -a docs/logs/Run2_wv_SR.log
-make mon loc="" year="1111" saveFile="Run2_wv_SR" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut" mon_function="genPlots" plot_type=r plot_name="wv_SR_BDT_plots" plot_args="datasets/plot_args/Kinematic_variables.xml"
 
 # ML models genPlots
 #make mon loc="" year="1111" saveFile="Run2_wv_SR" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut" mon_function="genPlots" plot_type=r plot_name="SR_ML_S" plot_args="datasets/plot_args/ML_models.xml"
 ###make mon loc="" year="1111" saveFile="Run2_wv_SR" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut" mon_function="genPlots" plot_type=s plot_name="SR_ML_shape_S" plot_args="datasets/plot_args/ML_models.xml"
+
+#### Full
+
+#make mon loc="" year="1111" saveFile="TMVAoutput_boosted_full" lumi="137" cut="year_2016+full_top_cr+cleanNAN_tau+cleanNAN_qgid" region=boosted mon_function="genPlots" plot_type=r plot_name="vbf_m_Top_CR_2016" plot_args="datasets/plot_args/single_plot.xml"
+
+#make mon loc="" year="1111" saveFile="TMVAoutput_resolved_full" lumi="137" cut="full_resolved_sr+cleanNAN_tau+qgid_cut" region=resolved mon_function="genPlots" plot_type=r plot_name="vbf_m_SR" plot_args="datasets/plot_args/single_plot.xml"

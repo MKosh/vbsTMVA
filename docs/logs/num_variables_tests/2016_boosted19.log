@@ -1,0 +1,1811 @@
+System check done!
+Creating link to data files as 
+skim = vbs_ww
+Working Directory:
+  skims/vbs_ww -> /mnt/Storage/Research/ntuples/NEW
+Creating vbsSamples.hpp
+Done writing vbsSamples.hpp
+Done!
+
+Next run ./write_vbsDL.sh with the appropriate arguments
+Creating write_list.cc
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing write_list.cc...
+Creating vbsReducedTree.hpp
+Creating vbsDL.hpp
+// Int_t AntiIsoInt
+Spectator:: AntiIsoInt
+Spectator:: bos_AK4AK4_eta
+Spectator:: bos_AK4AK4_m
+Spectator:: bos_AK4AK4_pt
+Spectator:: bosCent
+Spectator:: bos_j1_AK4_eta
+Spectator:: bos_j1_AK4_pt
+Spectator:: bos_j2_AK4_eta
+Spectator:: bos_j2_AK4_pt
+Variable:: bos_PuppiAK8_eta
+Spectator:: bos_PuppiAK8_m_sd0
+Variable:: bos_PuppiAK8_m_sd0_corr
+Spectator:: bos_PuppiAK8_phi
+Spectator:: bos_PuppiAK8_pt
+Variable:: bos_PuppiAK8_tau2tau1
+Spectator:: btagWeight_loose
+Spectator:: dibos_eta
+Spectator:: dibos_m
+Spectator:: dibos_mt
+Spectator:: dibos_phi
+Spectator:: dibos_pt
+Spectator:: dilep_eta
+Spectator:: dilep_m
+Spectator:: dilep_mt
+Spectator:: dilep_phi
+Spectator:: dilep_pt
+Spectator:: evt
+Spectator:: genWeight
+Float_t Int_t gid
+Spectator:: gid
+Spectator:: L1PFWeight
+Variable:: lep1_eta
+Spectator:: lep1_idEffWeight
+Spectator:: lep1_iso
+Spectator:: lep1_m
+Spectator:: lep1_phi
+Spectator:: lep1_pt
+Spectator:: lep1_q
+Spectator:: lep1_trigEffWeight
+Spectator:: lep2_eta
+Spectator:: lep2_idEffWeight
+Spectator:: lep2_phi
+Spectator:: lep2_pt
+Spectator:: lep2_trigEffWeight
+Spectator:: lumin
+Spectator:: mcWeight
+Spectator:: MET
+Spectator:: MET_phi
+Spectator:: nBtag_loose
+Spectator:: nBtag_medium
+Spectator:: neu_pz_type0
+Float_t Int_t nJet30
+Spectator:: nJet30
+Variable:: nJet30f
+Spectator:: nJet50
+Spectator:: nPV
+Spectator:: puWeight
+Spectator:: run
+Spectator:: sid
+Spectator:: vbf1_AK4_eta
+Spectator:: vbf1_AK4_m
+Spectator:: vbf1_AK4_phi
+Spectator:: vbf1_AK4_pt
+Spectator:: vbf1_AK4_qgid
+Variable:: vbf2_AK4_eta
+Spectator:: vbf2_AK4_m
+Spectator:: vbf2_AK4_phi
+Spectator:: vbf2_AK4_pt
+Spectator:: vbf2_AK4_qgid
+Variable:: vbf_deta
+Spectator:: vbf_eta
+Variable:: vbf_m
+Spectator:: vbf_phi
+Spectator:: vbf_pt
+Spectator:: year
+Variable:: zeppHad
+Variable:: zeppLep
+Creating vbsActiveBranches.hpp
+Done!
+
+Next run root -b -q ./vbsTMVAClassification.cc\(\"vbs_ww\",\"BDT\"\)
+Don't forget to change the selector variable to switch what samples are being used
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing ./vbsTMVAClassification.cc("vbs_ww_2016_boosted19","BDT,BDTG,DNN_GPU")...
+
+==> Start TMVAClassification
+VBS_EWK--WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 29851
+Exit chain2tree 0x5610c9783690
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 29851
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 28599
+Exit chain2tree 0x5610c98504d0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 28599
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 20136
+Exit chain2tree 0x5610c9868550
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 20136
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 133089
+Exit chain2tree 0x5610c97534c0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 133089
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 27462
+Exit chain2tree 0x5610cbf215b0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 27462
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 129740
+Exit chain2tree 0x5610cbdcc740
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 129740
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 32822
+Exit chain2tree 0x5610d497cd00
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 32822
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 38104
+Exit chain2tree 0x5610d6f163a0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 38104
+---------------------------------------------------------------------------------------------------------------------------------
+VBS_EWK--ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--VBS_EWK--ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_sgl.lst
+fname = skims/vbs_ww/2016/ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 21652
+Exit chain2tree 0x5610c9a88810
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 signal events 21652
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 43048
+Exit chain2tree 0x5610c99901b0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 43048
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 5414
+Exit chain2tree 0x5610d6d39ef0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 5414
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 61967
+Exit chain2tree 0x5610c9a47620
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 61967
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 201268
+Exit chain2tree 0x5610d70d0c70
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 201268
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 43854
+Exit chain2tree 0x5610cbdcbf80
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 43854
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 186395
+Exit chain2tree 0x5610eddfc010
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 186395
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 6382
+Exit chain2tree 0x5610cbdcba00
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 6382
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 110410
+Exit chain2tree 0x5610ebf6c210
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 110410
+---------------------------------------------------------------------------------------------------------------------------------
+Diboson--ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+Processing filelist reqlists/rqs_2016--Diboson--ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8.root
+getChain: Tree Events , total events: 7451
+Exit chain2tree 0x5610d4995840
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 background events 7451
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8.root
+getChain: Tree Events , total events: 69821
+Exit chain2tree 0x5610cbe61bd0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8 background events 69821
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 64030
+Exit chain2tree 0x5610de9456c0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 64030
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8.root
+getChain: Tree Events , total events: 82491
+Exit chain2tree 0x5610d70cfef0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8 background events 82491
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 64398
+Exit chain2tree 0x5610fbbddee0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 64398
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 75255
+Exit chain2tree 0x5610fbd64ec0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 75255
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 147527
+Exit chain2tree 0x5610c96eefa0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 147527
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8.root
+getChain: Tree Events , total events: 65617
+Exit chain2tree 0x5610c9bf83e0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8 background events 65617
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8.root
+getChain: Tree Events , total events: 9096
+Exit chain2tree 0x5610c9a3e350
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8 background events 9096
+---------------------------------------------------------------------------------------------------------------------------------
+top--ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8
+Processing filelist reqlists/rqs_2016--top--ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8.root
+getChain: Tree Events , total events: 6445
+Exit chain2tree 0x56110602d280
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8 background events 6445
+---------------------------------------------------------------------------------------------------------------------------------
+top--TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 19179
+Exit chain2tree 0x5610d47cf140
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 19179
+---------------------------------------------------------------------------------------------------------------------------------
+top--TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 5001269
+Exit chain2tree 0x56110f58e1c0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 5001269
+---------------------------------------------------------------------------------------------------------------------------------
+top--TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8
+Processing filelist reqlists/rqs_2016--top--TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8.root
+getChain: Tree Events , total events: 2273080
+Exit chain2tree 0x56110f31f050
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8 background events 2273080
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 5142
+Exit chain2tree 0x56110f386540
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 5142
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 159216
+Exit chain2tree 0x56110f8356b0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 159216
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 490424
+Exit chain2tree 0x56110f5562a0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 490424
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 330437
+Exit chain2tree 0x5610ebf90b90
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 330437
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 1397231
+Exit chain2tree 0x5611abde97a0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 1397231
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 849388
+Exit chain2tree 0x5610e5df8b90
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 849388
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 1003998
+Exit chain2tree 0x5611abe3a010
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 1003998
+---------------------------------------------------------------------------------------------------------------------------------
+Wjets--WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Wjets--WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 442278
+Exit chain2tree 0x5611aa6ab6b0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 442278
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 26567
+Exit chain2tree 0x5611abe35d90
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 26567
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 54318
+Exit chain2tree 0x5611f41fbe80
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 54318
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 235155
+Exit chain2tree 0x5611f42aaac0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 235155
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 715233
+Exit chain2tree 0x5611fe17e9c0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 715233
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 994124
+Exit chain2tree 0x56120cef5ec0
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 994124
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 444893
+Exit chain2tree 0x5611fe456080
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 444893
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 130623
+Exit chain2tree 0x561195040720
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 130623
+---------------------------------------------------------------------------------------------------------------------------------
+Zjets--DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+Processing filelist reqlists/rqs_2016--Zjets--DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_bkg.lst
+fname = skims/vbs_ww/2016/DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.root
+getChain: Tree Events , total events: 98761
+Exit chain2tree 0x5611f4212290
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 background events 98761
+---------------------------------------------------------------------------------------------------------------------------------
+data--Data
+register reqlists/rqs_2016--data--Data_data.lst data samples
+Processing filelist reqlists/rqs_2016--data--Data_data.lst
+fname = skims/vbs_ww/2016/Data.root
+getChain: Tree Events , total events: 1498464
+Exit chain2tree 0x56122e000610
+Adding branches
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+TMVAClassification:: Total Data data events 1498464
+---------------------------------------------------------------------------------------------------------------------------------
+DataSetInfo              : [vbs_ww_2016_boosted19] : Added class "Signal"
+DataSetInfo              : [vbs_ww_2016_boosted19] : Added class "Background"
+                         : Add Tree WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 29851 events
+                         : Add Tree WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 28599 events
+                         : Add Tree WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 20136 events
+                         : Add Tree WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 133089 events
+                         : Add Tree WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 27462 events
+                         : Add Tree WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 129740 events
+                         : Add Tree WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 32822 events
+                         : Add Tree WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 38104 events
+                         : Add Tree ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Signal with 21652 events
+                         : Add Tree WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 43048 events
+                         : Add Tree WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 5414 events
+                         : Add Tree WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 61967 events
+                         : Add Tree WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 201268 events
+                         : Add Tree WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 43854 events
+                         : Add Tree WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 186395 events
+                         : Add Tree WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 6382 events
+                         : Add Tree WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 110410 events
+                         : Add Tree ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8 of type Background with 7451 events
+                         : Add Tree ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8 of type Background with 69821 events
+                         : Add Tree ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 64030 events
+                         : Add Tree ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8 of type Background with 82491 events
+                         : Add Tree ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 64398 events
+                         : Add Tree ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 75255 events
+                         : Add Tree ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 147527 events
+                         : Add Tree ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8 of type Background with 65617 events
+                         : Add Tree ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8 of type Background with 9096 events
+                         : Add Tree ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8 of type Background with 6445 events
+                         : Add Tree TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 19179 events
+                         : Add Tree TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 5001269 events
+                         : Add Tree TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8 of type Background with 2273080 events
+                         : Add Tree WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 5142 events
+                         : Add Tree WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 159216 events
+                         : Add Tree WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 490424 events
+                         : Add Tree WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 330437 events
+                         : Add Tree WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 1397231 events
+                         : Add Tree WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 849388 events
+                         : Add Tree WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 1003998 events
+                         : Add Tree WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 442278 events
+                         : Add Tree DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 26567 events
+                         : Add Tree DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 54318 events
+                         : Add Tree DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 235155 events
+                         : Add Tree DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 715233 events
+                         : Add Tree DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 994124 events
+                         : Add Tree DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 444893 events
+                         : Add Tree DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 130623 events
+                         : Add Tree DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8 of type Background with 98761 events
+Factory                  : Booking method: [1mDNN_GPU[0m
+                         : 
+                         : Parsing option string: 
+                         : ... "!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=N:WeightInitialization=XAVIERUNIFORM:Layout=RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR:Architecture=GPU"
+                         : The following options are set:
+                         : - By User:
+                         :     <none>
+                         : - Default:
+                         :     Boost_num: "0" [Number of times the classifier will be boosted]
+                         : Parsing option string: 
+                         : ... "!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=N:WeightInitialization=XAVIERUNIFORM:Layout=RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR:Architecture=GPU"
+                         : The following options are set:
+                         : - By User:
+                         :     V: "True" [Verbose output (short form of "VerbosityLevel" below - overrides the latter one)]
+                         :     VarTransform: "N" [List of variable transformations performed before training, e.g., "D_Background,P_Signal,G,N_AllClasses" for: "Decorrelation, PCA-transformation, Gaussianisation, Normalisation, each for the given class of events ('AllClasses' denotes all events of all classes, if no class indication is given, 'All' is assumed)"]
+                         :     H: "False" [Print method-specific help message]
+                         :     Layout: "RELU|64,RELU|32,RELU|32,SIGMOID|32,LINEAR" [Layout of the network.]
+                         :     ErrorStrategy: "CROSSENTROPY" [Loss function: Mean squared error (regression) or cross entropy (binary classification).]
+                         :     WeightInitialization: "XAVIERUNIFORM" [Weight initialization strategy]
+                         :     Architecture: "GPU" [Which architecture to perform the training on.]
+                         : - Default:
+                         :     VerbosityLevel: "Default" [Verbosity level]
+                         :     CreateMVAPdfs: "False" [Create PDFs for classifier outputs (signal and background)]
+                         :     IgnoreNegWeightsInTraining: "False" [Events with negative weights are ignored in the training (but are included for testing and performance evaluation)]
+                         :     InputLayout: "0|0|0" [The Layout of the input]
+                         :     BatchLayout: "0|0|0" [The Layout of the batch]
+                         :     RandomSeed: "0" [Random seed used for weight initialization and batch shuffling]
+                         :     ValidationSize: "20%" [Part of the training data to use for validation. Specify as 0.2 or 20% to use a fifth of the data set as validation set. Specify as 100 to use exactly 100 events. (Default: 20%)]
+                         :     TrainingStrategy: "LearningRate=1e-3,Momentum=0.0,ConvergenceSteps=100,MaxEpochs=2000,Optimizer=ADAM,BatchSize=30,TestRepetitions=1,WeightDecay=0.0,Regularization=None,DropConfig=0.0" [Defines the training strategies.]
+DNN_GPU                  : [vbs_ww_2016_boosted19] : Create Transformation "N" with events from all classes.
+                         : 
+                         : Transformation, Variable selection : 
+                         : Input : variable 'bos_PuppiAK8_eta' <---> Output : variable 'bos_PuppiAK8_eta'
+                         : Input : variable 'bos_PuppiAK8_m_sd0_corr' <---> Output : variable 'bos_PuppiAK8_m_sd0_corr'
+                         : Input : variable 'bos_PuppiAK8_tau2tau1' <---> Output : variable 'bos_PuppiAK8_tau2tau1'
+                         : Input : variable 'lep1_eta' <---> Output : variable 'lep1_eta'
+                         : Input : variable 'nJet30f' <---> Output : variable 'nJet30f'
+                         : Input : variable 'vbf2_AK4_eta' <---> Output : variable 'vbf2_AK4_eta'
+                         : Input : variable 'vbf_deta' <---> Output : variable 'vbf_deta'
+                         : Input : variable 'vbf_m' <---> Output : variable 'vbf_m'
+                         : Input : variable 'zeppHad' <---> Output : variable 'zeppHad'
+                         : Input : variable 'zeppLep' <---> Output : variable 'zeppLep'
+                         : Will now use the GPU architecture !
+Factory                  : Booking method: [1mBDTG[0m
+                         : 
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WminusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WminusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WminusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WplusTo2JWminusToLNuJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WplusTo2JZTo2LJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WplusToLNuWminusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WplusToLNuWplusTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WplusToLNuZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Signal
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree ZTo2LZTo2JJJ_EWK_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WminusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WminusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WminusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WplusTo2JWminusToLNuJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WplusTo2JZTo2LJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WplusToLNuWminusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WplusToLNuWplusTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WplusToLNuZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree ZTo2LZTo2JJJ_QCD_LO_SM_MJJ100PTJ10_TuneCUETP8M1_13TeV-madgraph-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree ST_tW_antitop_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree ST_tW_top_5f_NoFullyHadronicDecays_13TeV_PSweights-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree ST_tW_top_5f_inclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree ST_t-channel_top_4f_InclusiveDecays_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree ST_s-channel_4f_leptonDecays_13TeV_PSweights-amcatnlo-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree ST_s-channel_4f_hadronicDecays_TuneCP5_PSweights_13TeV-amcatnlo-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree TTToHadronic_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WJetsToLNu_HT-70To100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WJetsToLNu_HT-100To200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WJetsToLNu_HT-400To600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WJetsToLNu_HT-600To800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WJetsToLNu_HT-800To1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WJetsToLNu_HT-1200To2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree WJetsToLNu_HT-2500ToInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+                         : Building event vectors for type 2 Background
+                         : Dataset[vbs_ww_2016_boosted19] :  create input formulas for tree DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+<WARNING>                : Found events with NaN and/or +-inf values
+<WARNING>                : Dataset[vbs_ww_2016_boosted19] : Spectator expression resolves to indeterminate value (NaN): vbf1_AK4_qgid (20050 times)
+<WARNING>                : Dataset[vbs_ww_2016_boosted19] : Spectator expression resolves to indeterminate value (NaN): vbf2_AK4_qgid (2850 times)
+<WARNING>                : These NaN and/or +-infs were all removed by the specified cut, continuing.
+                         : 
+DataSetFactory           : [vbs_ww_2016_boosted19] : Number of events in input trees
+                         : Dataset[vbs_ww_2016_boosted19] :     Signal     requirement: "(((vbf1_AK4_qgid >= 0.0 && vbf1_AK4_qgid <= 1.0)&&(vbf2_AK4_qgid >= 0.0 && vbf2_AK4_qgid <= 1.0))&&((bos_PuppiAK8_tau2tau1 >= 0.0 && bos_PuppiAK8_tau2tau1 <= 1.0)))&&(lep2_pt<0 && bos_PuppiAK8_pt>0)"
+                         : Dataset[vbs_ww_2016_boosted19] :     Signal          -- number of events passed: 80626  / sum of weights: 0.0327823
+                         : Dataset[vbs_ww_2016_boosted19] :     Signal          -- efficiency             : 0.178275
+                         : Dataset[vbs_ww_2016_boosted19] :     Background requirement: "(((vbf1_AK4_qgid >= 0.0 && vbf1_AK4_qgid <= 1.0)&&(vbf2_AK4_qgid >= 0.0 && vbf2_AK4_qgid <= 1.0))&&((bos_PuppiAK8_tau2tau1 >= 0.0 && bos_PuppiAK8_tau2tau1 <= 1.0)))&&(lep2_pt<0 && bos_PuppiAK8_pt>0)"
+                         : Dataset[vbs_ww_2016_boosted19] :     Background      -- number of events passed: 3969492  / sum of weights: 5.08936
+                         : Dataset[vbs_ww_2016_boosted19] :     Background      -- efficiency             : 0.128754
+                         : Dataset[vbs_ww_2016_boosted19] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[vbs_ww_2016_boosted19] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[vbs_ww_2016_boosted19] : No weight renormalisation applied: use original global and event weights
+DataSetInfo              : Correlation matrix (Signal):
+                         : ------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                          bos_PuppiAK8_eta bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1 lep1_eta nJet30f vbf2_AK4_eta vbf_deta   vbf_m zeppHad zeppLep
+                         :        bos_PuppiAK8_eta:           +1.000                  -0.003                +0.003   +0.004  +0.001       +0.131   -0.014  -0.007  +0.805  -0.057
+                         : bos_PuppiAK8_m_sd0_corr:           -0.003                  +1.000                -0.315   +0.004  -0.063       -0.008   -0.013  +0.015  -0.002  +0.004
+                         :   bos_PuppiAK8_tau2tau1:           +0.003                  -0.315                +1.000   +0.003  +0.103       +0.006   -0.036  -0.053  +0.004  +0.004
+                         :                lep1_eta:           +0.004                  +0.004                +0.003   +1.000  +0.007       -0.029   +0.006  +0.003  -0.066  +0.655
+                         :                 nJet30f:           +0.001                  -0.063                +0.103   +0.007  +1.000       +0.002   +0.100  +0.008  +0.001  +0.005
+                         :            vbf2_AK4_eta:           +0.131                  -0.008                +0.006   -0.029  +0.002       +1.000   +0.003  +0.001  -0.236  -0.423
+                         :                vbf_deta:           -0.014                  -0.013                -0.036   +0.006  +0.100       +0.003   +1.000  +0.473  -0.013  +0.006
+                         :                   vbf_m:           -0.007                  +0.015                -0.053   +0.003  +0.008       +0.001   +0.473  +1.000  -0.009  +0.001
+                         :                 zeppHad:           +0.805                  -0.002                +0.004   -0.066  +0.001       -0.236   -0.013  -0.009  +1.000  +0.307
+                         :                 zeppLep:           -0.057                  +0.004                +0.004   +0.655  +0.005       -0.423   +0.006  +0.001  +0.307  +1.000
+                         : ------------------------------------------------------------------------------------------------------------------------------------------------------
+DataSetInfo              : Correlation matrix (Background):
+                         : ------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                          bos_PuppiAK8_eta bos_PuppiAK8_m_sd0_corr bos_PuppiAK8_tau2tau1 lep1_eta nJet30f vbf2_AK4_eta vbf_deta   vbf_m zeppHad zeppLep
+                         :        bos_PuppiAK8_eta:           +1.000                  -0.000                +0.002   +0.154  -0.001       -0.021   +0.001  -0.001  +0.752  +0.078
+                         : bos_PuppiAK8_m_sd0_corr:           -0.000                  +1.000                -0.323   -0.001  -0.000       +0.001   -0.028  +0.023  -0.000  -0.001
+                         :   bos_PuppiAK8_tau2tau1:           +0.002                  -0.323                +1.000   +0.003  -0.010       -0.002   -0.055  +0.008  +0.003  +0.003
+                         :                lep1_eta:           +0.154                  -0.001                +0.003   +1.000  -0.002       -0.171   +0.002  +0.001  +0.182  +0.715
+                         :                 nJet30f:           -0.001                  -0.000                -0.010   -0.002  +1.000       +0.001   +0.096  +0.135  -0.001  -0.001
+                         :            vbf2_AK4_eta:           -0.021                  +0.001                -0.002   -0.171  +0.001       +1.000   +0.000  +0.001  -0.460  -0.544
+                         :                vbf_deta:           +0.001                  -0.028                -0.055   +0.002  +0.096       +0.000   +1.000  +0.476  +0.000  +0.000
+                         :                   vbf_m:           -0.001                  +0.023                +0.008   +0.001  +0.135       +0.001   +0.476  +1.000  -0.001  +0.000
+                         :                 zeppHad:           +0.752                  -0.000                +0.003   +0.182  -0.001       -0.460   +0.000  -0.001  +1.000  +0.520
+                         :                 zeppLep:           +0.078                  -0.001                +0.003   +0.715  -0.001       -0.544   +0.000  +0.000  +0.520  +1.000
+                         : ------------------------------------------------------------------------------------------------------------------------------------------------------
+DataSetFactory           : [vbs_ww_2016_boosted19] :  
+                         : 
+Factory                  : Booking method: [1mBDT[0m
+                         : 
+Train All Methods
+Factory                  : [1mTrain all methods[0m
+Factory                  : [vbs_ww_2016_boosted19] : Create Transformation "I" with events from all classes.
+                         : 
+                         : Transformation, Variable selection : 
+                         : Input : variable 'bos_PuppiAK8_eta' <---> Output : variable 'bos_PuppiAK8_eta'
+                         : Input : variable 'bos_PuppiAK8_m_sd0_corr' <---> Output : variable 'bos_PuppiAK8_m_sd0_corr'
+                         : Input : variable 'bos_PuppiAK8_tau2tau1' <---> Output : variable 'bos_PuppiAK8_tau2tau1'
+                         : Input : variable 'lep1_eta' <---> Output : variable 'lep1_eta'
+                         : Input : variable 'nJet30f' <---> Output : variable 'nJet30f'
+                         : Input : variable 'vbf2_AK4_eta' <---> Output : variable 'vbf2_AK4_eta'
+                         : Input : variable 'vbf_deta' <---> Output : variable 'vbf_deta'
+                         : Input : variable 'vbf_m' <---> Output : variable 'vbf_m'
+                         : Input : variable 'zeppHad' <---> Output : variable 'zeppHad'
+                         : Input : variable 'zeppLep' <---> Output : variable 'zeppLep'
+Factory                  : [vbs_ww_2016_boosted19] : Create Transformation "G" with events from all classes.
+                         : 
+                         : Transformation, Variable selection : 
+                         : Input : variable 'bos_PuppiAK8_eta' <---> Output : variable 'bos_PuppiAK8_eta'
+                         : Input : variable 'bos_PuppiAK8_m_sd0_corr' <---> Output : variable 'bos_PuppiAK8_m_sd0_corr'
+                         : Input : variable 'bos_PuppiAK8_tau2tau1' <---> Output : variable 'bos_PuppiAK8_tau2tau1'
+                         : Input : variable 'lep1_eta' <---> Output : variable 'lep1_eta'
+                         : Input : variable 'nJet30f' <---> Output : variable 'nJet30f'
+                         : Input : variable 'vbf2_AK4_eta' <---> Output : variable 'vbf2_AK4_eta'
+                         : Input : variable 'vbf_deta' <---> Output : variable 'vbf_deta'
+                         : Input : variable 'vbf_m' <---> Output : variable 'vbf_m'
+                         : Input : variable 'zeppHad' <---> Output : variable 'zeppHad'
+                         : Input : variable 'zeppLep' <---> Output : variable 'zeppLep'
+TFHandler_Factory        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0079689                   1.0188   [                  -2.3999                   2.3999 ]
+                         : bos_PuppiAK8_m_sd0_corr:                   80.410                   23.901   [                   40.000                   150.00 ]
+                         :   bos_PuppiAK8_tau2tau1:                  0.43354                  0.15758   [               0.00020947                  0.96459 ]
+                         :                lep1_eta:                0.0083114                   1.2057   [                  -2.5000                   2.5000 ]
+                         :                 nJet30f:                   3.8702                   1.4674   [                   0.0000                   15.000 ]
+                         :            vbf2_AK4_eta:               0.00079838                   2.7491   [                  -4.7002                   4.7002 ]
+                         :                vbf_deta:                   4.3046                   1.3723   [                0.0034019                   9.3379 ]
+                         :                   vbf_m:                   951.93                   491.56   [                   500.00                   8674.2 ]
+                         :                 zeppHad:                0.0055967                   1.3146   [                  -4.5976                   4.6101 ]
+                         :                 zeppLep:                0.0039294                   1.3626   [                  -7.5223                   8.5106 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : Preparing the Gaussian transformation...
+TFHandler_Factory        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0036584                  0.99765   [                  -3.3078                   5.7307 ]
+                         : bos_PuppiAK8_m_sd0_corr:                -0.018795                  0.98561   [                  -3.3802                   5.7307 ]
+                         :   bos_PuppiAK8_tau2tau1:                0.0036591                  0.99726   [                  -3.2898                   5.7307 ]
+                         :                lep1_eta:                0.0027308                  0.99712   [                  -3.2973                   5.7307 ]
+                         :                 nJet30f:                 0.064389                  0.87516   [                  -5.6262                   5.7307 ]
+                         :            vbf2_AK4_eta:                0.0052136                  0.99858   [                  -3.2906                   5.7307 ]
+                         :                vbf_deta:                0.0016175                  0.99694   [                  -3.2909                   5.7307 ]
+                         :                   vbf_m:                0.0024513                  0.99550   [                  -3.1584                   5.7307 ]
+                         :                 zeppHad:                0.0025344                  0.99590   [                  -3.2908                   5.7307 ]
+                         :                 zeppLep:                0.0022656                  0.99495   [                  -3.2945                   5.7307 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : Ranking input variables (method unspecific)...
+IdTransformation         : Ranking result (top variable is best ranked)
+                         : ------------------------------------------------
+                         : Rank : Variable                : Separation
+                         : ------------------------------------------------
+                         :    1 : vbf_m                   : 5.628e-02
+                         :    2 : nJet30f                 : 3.797e-02
+                         :    3 : bos_PuppiAK8_tau2tau1   : 2.648e-02
+                         :    4 : bos_PuppiAK8_m_sd0_corr : 2.329e-02
+                         :    5 : zeppLep                 : 1.683e-02
+                         :    6 : bos_PuppiAK8_eta        : 9.113e-03
+                         :    7 : lep1_eta                : 5.215e-03
+                         :    8 : vbf2_AK4_eta            : 4.569e-03
+                         :    9 : vbf_deta                : 2.007e-03
+                         :   10 : zeppHad                 : 2.918e-04
+                         : ------------------------------------------------
+Factory                  : Train method: DNN_GPU for Classification
+                         : 
+TFHandler_DNN_GPU        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0033205                  0.42452   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.26527                  0.43456   [                  -1.0000                   1.0000 ]
+                         :   bos_PuppiAK8_tau2tau1:                 -0.10133                  0.32680   [                  -1.0000                   1.0000 ]
+                         :                lep1_eta:                0.0033246                  0.48230   [                  -1.0000                   1.0000 ]
+                         :                 nJet30f:                 -0.48398                  0.19566   [                  -1.0000                   1.0000 ]
+                         :            vbf2_AK4_eta:               0.00016984                  0.58490   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                -0.078432                  0.29403   [                  -1.0000                   1.0000 ]
+                         :                   vbf_m:                 -0.88943                  0.12027   [                  -1.0000                   1.0000 ]
+                         :                 zeppHad:              -0.00014302                  0.28555   [                  -1.0000                   1.0000 ]
+                         :                 zeppLep:                -0.061155                  0.16998   [                  -1.0000                   1.0000 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : Start of deep neural network training on GPU.
+                         : 
+TFHandler_DNN_GPU        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0033205                  0.42452   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.26527                  0.43456   [                  -1.0000                   1.0000 ]
+                         :   bos_PuppiAK8_tau2tau1:                 -0.10133                  0.32680   [                  -1.0000                   1.0000 ]
+                         :                lep1_eta:                0.0033246                  0.48230   [                  -1.0000                   1.0000 ]
+                         :                 nJet30f:                 -0.48398                  0.19566   [                  -1.0000                   1.0000 ]
+                         :            vbf2_AK4_eta:               0.00016984                  0.58490   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                -0.078432                  0.29403   [                  -1.0000                   1.0000 ]
+                         :                   vbf_m:                 -0.88943                  0.12027   [                  -1.0000                   1.0000 ]
+                         :                 zeppHad:              -0.00014302                  0.28555   [                  -1.0000                   1.0000 ]
+                         :                 zeppLep:                -0.061155                  0.16998   [                  -1.0000                   1.0000 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+TCudaTensor::create cudnn handle ! 
+                         : *****   Deep Learning Network *****
+DEEP NEURAL NETWORK:   Depth = 5  Input = ( 1, 1, 10 )  Batch size = 30  Loss function = C
+	Layer 0	 DENSE Layer: 	 ( Input =    10 , Width =    64 ) 	Output = (  1 ,    30 ,    64 ) 	 Activation Function = Relu
+	Layer 1	 DENSE Layer: 	 ( Input =    64 , Width =    32 ) 	Output = (  1 ,    30 ,    32 ) 	 Activation Function = Relu
+	Layer 2	 DENSE Layer: 	 ( Input =    32 , Width =    32 ) 	Output = (  1 ,    30 ,    32 ) 	 Activation Function = Relu
+	Layer 3	 DENSE Layer: 	 ( Input =    32 , Width =    32 ) 	Output = (  1 ,    30 ,    32 ) 	 Activation Function = Sigmoid
+	Layer 4	 DENSE Layer: 	 ( Input =    32 , Width =     1 ) 	Output = (  1 ,    30 ,     1 ) 	 Activation Function = Identity
+                         : Using 1620048 events for training and 405011 for testing
+                         : Compute initial loss  on the validation data 
+                         : Training phase 1 of 1:  Optimizer ADAM (beta1=0.9,beta2=0.999,eps=1e-07) Learning rate = 0.001 regularization 0 minimum error = 1.33807e-06
+                         : --------------------------------------------------------------
+                         :      Epoch |   Train Err.   Val. Err.  t(s)/epoch   t(s)/Loss   nEvents/s Conv. Steps
+                         : --------------------------------------------------------------
+                         :    Start epoch iteration ...
+                         :          1 Minimum Test error found - save the configuration 
+                         :          1 |  5.40289e-08 4.87653e-08     10.7237    0.941351      165608           0
+                         :          2 Minimum Test error found - save the configuration 
+                         :          2 |  4.87251e-08 4.79586e-08     10.7303    0.943058      165524           0
+                         :          3 Minimum Test error found - save the configuration 
+                         :          3 |  4.76096e-08 4.67967e-08     10.7016    0.935153      165876           0
+                         :          4 Minimum Test error found - save the configuration 
+                         :          4 |  4.65374e-08 4.60554e-08     10.6106    0.934973      167434           0
+                         :          5 Minimum Test error found - save the configuration 
+                         :          5 |  4.60188e-08 4.57769e-08     10.6143    0.935159      167373           0
+                         :          6 Minimum Test error found - save the configuration 
+                         :          6 |  4.57836e-08 4.55996e-08     10.6147    0.934675      167357           0
+                         :          7 Minimum Test error found - save the configuration 
+                         :          7 |  4.56294e-08 4.54923e-08      10.618    0.934952      167306           0
+                         :          8 Minimum Test error found - save the configuration 
+                         :          8 |  4.55281e-08 4.54151e-08     10.6162    0.935123      167340           0
+                         :          9 Minimum Test error found - save the configuration 
+                         :          9 |  4.54522e-08 4.53495e-08     10.6178    0.935899      167326           0
+                         :         10 Minimum Test error found - save the configuration 
+                         :         10 |  4.53994e-08 4.53351e-08     10.6579    0.936298      166642           0
+                         :         11 Minimum Test error found - save the configuration 
+                         :         11 |  4.53512e-08 4.52607e-08     10.6715    0.939775      166469           0
+                         :         12 |  4.53136e-08 4.52665e-08     10.6627    0.936772      166569           1
+                         :         13 Minimum Test error found - save the configuration 
+                         :         13 |  4.52749e-08 4.52151e-08     10.6662    0.939478      166554           0
+                         :         14 |  4.52439e-08 4.52292e-08     10.6703    0.937206      166446           1
+                         :         15 Minimum Test error found - save the configuration 
+                         :         15 |  4.52186e-08 4.51367e-08     10.6739    0.937397      166387           0
+                         :         16 |  4.51815e-08  4.5211e-08     10.6684    0.937709      166487           1
+                         :         17 Minimum Test error found - save the configuration 
+                         :         17 |  4.51528e-08 4.51136e-08      10.673    0.937088      166397           0
+                         :         18 Minimum Test error found - save the configuration 
+                         :         18 |  4.51308e-08 4.50841e-08     10.6725    0.940434      166463           0
+                         :         19 |  4.51089e-08 4.51054e-08     10.6696    0.936681      166448           1
+                         :         20 Minimum Test error found - save the configuration 
+                         :         20 |  4.50841e-08  4.5069e-08     10.6644    0.937053      166544           0
+                         :         21 Minimum Test error found - save the configuration 
+                         :         21 |  4.50597e-08 4.50212e-08     10.6644    0.938322      166565           0
+                         :         22 |  4.50419e-08  4.5043e-08     10.6648    0.937594      166547           1
+                         :         23 Minimum Test error found - save the configuration 
+                         :         23 |  4.50263e-08 4.49863e-08     10.6574    0.938482      166689           0
+                         :         24 |  4.50095e-08   4.501e-08     10.6827    0.940423      166289           1
+                         :         25 Minimum Test error found - save the configuration 
+                         :         25 |  4.49856e-08 4.49442e-08     10.6774    0.937626      166332           0
+                         :         26 |  4.49675e-08 4.49601e-08     10.6723    0.941009      166477           1
+                         :         27 Minimum Test error found - save the configuration 
+                         :         27 |  4.49514e-08 4.49211e-08     10.6737    0.938042      166401           0
+                         :         28 |  4.49389e-08 4.49284e-08     10.6712     0.93901      166462           1
+                         :         29 |   4.4926e-08 4.49913e-08     10.6761    0.937749      166355           2
+                         :         30 |   4.4913e-08 4.49444e-08     10.6744    0.937805      166385           3
+                         :         31 |  4.49079e-08 4.49458e-08     10.6712    0.937404      166434           4
+                         :         32 |  4.48905e-08 4.49457e-08     10.6735    0.939111      166423           5
+                         :         33 Minimum Test error found - save the configuration 
+                         :         33 |  4.48871e-08 4.48888e-08     10.6745    0.938381      166395           0
+                         :         34 |  4.48735e-08 4.49014e-08     10.6644    0.937232      166548           1
+                         :         35 |  4.48656e-08 4.49104e-08     10.6614    0.937694      166606           2
+                         :         36 Minimum Test error found - save the configuration 
+                         :         36 |  4.48575e-08 4.48673e-08     10.6616    0.936519      166584           0
+                         :         37 Minimum Test error found - save the configuration 
+                         :         37 |  4.48432e-08 4.48214e-08     10.6661    0.936802      166510           0
+                         :         38 |  4.48328e-08 4.48412e-08     10.6729      0.9384      166422           1
+                         :         39 |  4.48245e-08 4.48408e-08     10.6746    0.939116      166405           2
+                         :         40 |  4.48152e-08 4.49039e-08     10.6726    0.937317      166409           3
+                         :         41 |  4.48154e-08 4.49142e-08     10.6729    0.936632      166392           4
+                         :         42 |  4.48107e-08 4.50764e-08     10.6738    0.938619      166409           5
+                         :         43 |  4.48021e-08 4.48414e-08     10.6746    0.938067      166387           6
+                         :         44 |  4.47889e-08 4.49876e-08     10.6761     0.93861      166371           7
+                         :         45 |  4.47887e-08 4.52474e-08     10.6667    0.936978      166502           8
+                         :         46 Minimum Test error found - save the configuration 
+                         :         46 |  4.47862e-08 4.47966e-08     10.6744    0.936472      166363           0
+                         :         47 |  4.47807e-08 4.48118e-08      10.678    0.940724      166375           1
+                         :         48 |  4.47782e-08 4.48222e-08     10.6857    0.941388      166254           2
+                         :         49 Minimum Test error found - save the configuration 
+                         :         49 |  4.47765e-08 4.47613e-08     10.6839    0.938767      166240           0
+                         :         50 |  4.47641e-08 4.47869e-08     10.6851    0.939572      166233           1
+                         :         51 |  4.47597e-08 4.48802e-08     10.6822    0.939203      166276           2
+                         :         52 |  4.47638e-08  4.4822e-08      10.686     0.93767      166185           3
+                         :         53 |  4.47569e-08 4.47871e-08     10.6791    0.938391      166315           4
+                         :         54 |  4.47518e-08 4.47767e-08     10.6793    0.937968      166305           5
+                         :         55 Minimum Test error found - save the configuration 
+                         :         55 |  4.47475e-08 4.47511e-08     10.6819    0.937155      166246           0
+                         :         56 |   4.4741e-08 4.48838e-08     10.6804    0.938418      166293           1
+                         :         57 |  4.47437e-08 4.47811e-08     10.6765    0.936402      166325           2
+                         :         58 |  4.47377e-08 4.48117e-08     10.6748     0.93773      166378           3
+                         :         59 Minimum Test error found - save the configuration 
+                         :         59 |  4.47284e-08 4.47403e-08     10.6771    0.937003      166326           0
+                         :         60 |  4.47278e-08 4.48182e-08     10.6833    0.938276      166241           1
+                         :         61 |  4.47163e-08 4.47499e-08     10.6872    0.938072      166172           2
+                         :         62 |  4.47224e-08 4.48597e-08     10.6809    0.937055      166261           3
+                         :         63 |  4.47218e-08  4.4831e-08     10.6806     0.93694      166266           4
+                         :         64 |  4.47087e-08 4.47839e-08     10.6785    0.937699      166314           5
+                         :         65 |  4.47114e-08 4.47508e-08     10.6816    0.939604      166294           6
+                         :         66 |  4.47092e-08 4.48327e-08      10.681    0.937046      166261           7
+                         :         67 |  4.46945e-08 4.48325e-08     10.6843     0.93801      166220           8
+                         :         68 |  4.47051e-08 4.49034e-08     10.6902    0.937336      166108           9
+                         :         69 |  4.46967e-08  4.4759e-08     10.6784    0.936511      166295          10
+                         :         70 |  4.47013e-08 4.47786e-08     10.6767    0.936271      166321          11
+                         :         71 |  4.46925e-08 4.47556e-08      10.682      0.9391      166277          12
+                         :         72 |  4.46908e-08 4.47619e-08     10.6889    0.937794      166137          13
+                         :         73 |  4.46894e-08 4.48638e-08     10.6888    0.938944      166159          14
+                         :         74 |  4.46849e-08 4.48009e-08     10.6865    0.938328      166188          15
+                         :         75 |  4.46873e-08 4.47772e-08     10.6855    0.936869      166181          16
+                         :         76 |  4.46766e-08 4.47601e-08     10.6789    0.935601      166271          17
+                         :         77 |  4.46799e-08 4.48059e-08       10.68    0.935515      166251          18
+                         :         78 |  4.46828e-08 4.47476e-08     10.6871    0.938567      166181          19
+                         :         79 |  4.46714e-08 4.48285e-08     10.6808    0.937643      166273          20
+                         :         80 |  4.46771e-08  4.4758e-08     10.6892    0.939339      166160          21
+                         :         81 |  4.46676e-08 4.47684e-08     10.6886    0.939368      166170          22
+                         :         82 |   4.4666e-08 4.47697e-08     10.6865      0.9391      166202          23
+                         :         83 Minimum Test error found - save the configuration 
+                         :         83 |  4.46652e-08 4.47397e-08     10.6957    0.940211      166063           0
+                         :         84 |  4.46564e-08 4.47667e-08     10.6894    0.938327      166139           1
+                         :         85 |  4.46632e-08  4.4754e-08     10.6975     0.93846      166003           2
+                         :         86 Minimum Test error found - save the configuration 
+                         :         86 |  4.46657e-08 4.47215e-08     10.6918    0.939326      166116           0
+                         :         87 |  4.46584e-08 4.47625e-08     10.6843    0.938364      166227           1
+                         :         88 |  4.46575e-08 4.47905e-08     10.6891    0.940002      166172           2
+                         :         89 |  4.46503e-08 4.47739e-08     10.6907    0.938809      166125           3
+                         :         90 |  4.46503e-08 4.47746e-08     10.6953    0.937587      166026           4
+                         :         91 |  4.46468e-08 4.49626e-08     10.6871    0.938489      166181           5
+                         :         92 |   4.4639e-08 4.47344e-08     10.6852    0.937163      166191           6
+                         :         93 |  4.46513e-08 4.49643e-08     10.6864    0.937281      166172           7
+                         :         94 |  4.46345e-08 4.48243e-08     10.6787    0.938002      166316           8
+                         :         95 |  4.46457e-08 4.48073e-08     10.6908    0.940859      166159           9
+                         :         96 |  4.46391e-08 4.47397e-08     10.6821    0.938004      166258          10
+                         :         97 |  4.46385e-08 4.47575e-08      10.679    0.937442      166301          11
+                         :         98 |  4.46309e-08 4.47852e-08     10.6845    0.937938      166215          12
+                         :         99 |   4.4628e-08 4.47998e-08     10.6859    0.937879      166191          13
+                         :        100 |  4.46332e-08 4.47403e-08     10.6903    0.939167      166137          14
+                         :        101 |  4.46329e-08 4.47381e-08     10.6901     0.93802      166122          15
+                         :        102 |  4.46348e-08 4.47517e-08     10.6905     0.93905      166132          16
+                         :        103 |  4.46296e-08 4.47861e-08     10.6893    0.938095      166136          17
+                         :        104 |  4.46212e-08 4.48225e-08     10.6844    0.938009      166218          18
+                         :        105 |   4.4618e-08 4.48885e-08     10.6837     0.93966      166258          19
+                         :        106 |  4.46243e-08 4.48411e-08     10.6864    0.936525      166160          20
+                         :        107 |  4.46179e-08 4.47466e-08     10.6908    0.939482      166134          21
+                         :        108 Minimum Test error found - save the configuration 
+                         :        108 |  4.46169e-08 4.47198e-08       10.69    0.939713      166151           0
+                         :        109 |  4.46085e-08 4.48971e-08     10.6834    0.937059      166219           1
+                         :        110 |  4.46122e-08 4.47633e-08     10.6826    0.937706      166244           2
+                         :        111 |  4.46117e-08 4.47627e-08     10.6912    0.938174      166105           3
+                         :        112 Minimum Test error found - save the configuration 
+                         :        112 |  4.46148e-08 4.47069e-08     10.6874     0.93792      166166           0
+                         :        113 |  4.46052e-08 4.47663e-08     10.6933    0.938327      166072           1
+                         :        114 |  4.46087e-08 4.47312e-08     10.6855    0.937392      166189           2
+                         :        115 |  4.46037e-08 4.47269e-08      10.686    0.937656      166186           3
+                         :        116 |  4.46004e-08 4.47905e-08     10.6871    0.937747      166168           4
+                         :        117 |  4.46034e-08 4.48591e-08     10.6954    0.938976      166048           5
+                         :        118 |  4.45976e-08 4.47951e-08     10.6893    0.936985      166117           6
+                         :        119 |  4.45982e-08 4.47307e-08      10.688    0.937044      166140           7
+                         :        120 |  4.45955e-08 4.47162e-08     10.6848    0.937391      166201           8
+                         :        121 |  4.45944e-08 4.47507e-08     10.6818    0.937202      166248           9
+                         :        122 |   4.4594e-08 4.47187e-08     10.6778    0.937036      166314          10
+                         :        123 |  4.45897e-08 4.47166e-08     10.6868    0.937903      166176          11
+                         :        124 |   4.4589e-08  4.4749e-08     10.6887    0.937124      166130          12
+                         :        125 Minimum Test error found - save the configuration 
+                         :        125 |  4.45918e-08 4.46926e-08     10.6805     0.93632      166255           0
+                         :        126 |  4.45801e-08 4.47242e-08     10.6803    0.936437      166262           1
+                         :        127 |  4.45865e-08 4.51003e-08     10.6787    0.937091      166300           2
+                         :        128 |   4.4583e-08 4.47489e-08     10.6783    0.937865      166320           3
+                         :        129 Minimum Test error found - save the configuration 
+                         :        129 |   4.4587e-08 4.46905e-08     10.6803    0.937923      166287           0
+                         :        130 |  4.45847e-08 4.47039e-08      10.682    0.937524      166251           1
+                         :        131 |  4.45882e-08 4.49579e-08     10.6776     0.93745      166326           2
+                         :        132 |  4.45757e-08 4.48139e-08     10.6785    0.938487      166327           3
+                         :        133 |  4.45765e-08 4.47333e-08     10.6859    0.938132      166196           4
+                         :        134 |  4.45703e-08 4.48546e-08     10.6847    0.937425      166204           5
+                         :        135 |   4.4573e-08 4.47748e-08      10.686    0.940695      166237           6
+                         :        136 |  4.45732e-08 4.47538e-08     10.6839    0.938715      166238           7
+                         :        137 |  4.45681e-08 4.47306e-08     10.6791    0.936887      166290           8
+                         :        138 |  4.45696e-08 4.49716e-08     10.6791    0.937257      166296           9
+                         :        139 |  4.45748e-08 4.47371e-08     10.6761    0.937466      166352          10
+                         :        140 |  4.45748e-08  4.4724e-08     10.6764    0.937622      166348          11
+                         :        141 |  4.45702e-08 4.47066e-08     10.6805    0.937179      166271          12
+                         :        142 |  4.45676e-08 4.48152e-08     10.6737    0.936552      166377          13
+                         :        143 |   4.4565e-08  4.4708e-08      10.675    0.937784      166375          14
+                         :        144 |  4.45532e-08 4.47192e-08     10.6731    0.937988      166411          15
+                         :        145 |  4.45628e-08 4.47987e-08     10.6726    0.935942      166385          16
+                         :        146 |  4.45661e-08 4.47217e-08     10.6804    0.940051      166322          17
+                         :        147 |  4.45532e-08 4.47315e-08     10.6852    0.938592      166214          18
+                         :        148 |  4.45572e-08 4.47698e-08     10.6761    0.935498      166316          19
+                         :        149 |  4.45584e-08 4.47608e-08     10.6764    0.937961      166354          20
+                         :        150 |  4.45533e-08 4.47686e-08     10.6809    0.937178      166264          21
+                         :        151 |  4.45559e-08 4.47155e-08     10.6859    0.938606      166203          22
+                         :        152 |  4.45553e-08  4.4756e-08     10.6842     0.93828      166227          23
+                         :        153 |  4.45552e-08 4.47056e-08      10.686    0.937166      166177          24
+                         :        154 |  4.45493e-08  4.4705e-08     10.6931    0.939837      166101          25
+                         :        155 |  4.45498e-08 4.47706e-08     10.6921    0.940665      166133          26
+                         :        156 |  4.45475e-08 4.47302e-08     10.6858    0.937812      166191          27
+                         :        157 |  4.45477e-08 4.47251e-08     10.6801    0.936923      166274          28
+                         :        158 |  4.45505e-08 4.47209e-08     10.6805    0.936187      166254          29
+                         :        159 |  4.45408e-08 4.47085e-08     10.6757    0.936217      166337          30
+                         :        160 |  4.45443e-08 4.47477e-08     10.6805    0.938293      166290          31
+                         :        161 |   4.4544e-08 4.48476e-08     10.6803    0.937558      166281          32
+                         :        162 |  4.45364e-08  4.4794e-08     10.6773    0.937222      166327          33
+                         :        163 |  4.45399e-08  4.4696e-08     10.6722    0.936425      166400          34
+                         :        164 |   4.4542e-08 4.47085e-08     10.6763    0.936906      166338          35
+                         :        165 |  4.45389e-08 4.48094e-08     10.6758    0.936651      166341          36
+                         :        166 |  4.45311e-08 4.47898e-08     10.6682    0.935733      166457          37
+                         :        167 |  4.45247e-08 4.47169e-08     10.6779    0.938373      166336          38
+                         :        168 |  4.45358e-08 4.47368e-08     10.6744    0.936647      166366          39
+                         :        169 |   4.4536e-08 4.47352e-08     10.6814    0.936498      166244          40
+                         :        170 |   4.4535e-08 4.47545e-08     10.6778    0.937665      166326          41
+                         :        171 |  4.45304e-08 4.47472e-08     10.6867    0.939255      166201          42
+                         :        172 |   4.4535e-08 4.47541e-08     10.6851    0.938749      166218          43
+                         :        173 |  4.45277e-08 4.47413e-08     10.6828    0.936865      166227          44
+                         :        174 Minimum Test error found - save the configuration 
+                         :        174 |  4.45314e-08  4.4682e-08     10.6827    0.938621      166258           0
+                         :        175 |  4.45207e-08 4.46952e-08     10.6915    0.937166      166082           1
+                         :        176 |  4.45305e-08 4.47085e-08     10.6893    0.937927      166133           2
+                         :        177 |  4.45222e-08 4.47434e-08     10.6907    0.939107      166130           3
+                         :        178 |  4.45255e-08 4.47724e-08     10.6882    0.938726      166166           4
+                         :        179 |  4.45245e-08 4.47042e-08     10.6821      0.9375      166249           5
+                         :        180 |  4.45202e-08 4.47368e-08     10.6777    0.939658      166361           6
+                         :        181 |  4.45217e-08 4.47119e-08     10.6788    0.936929      166296           7
+                         :        182 |  4.45242e-08 4.47147e-08     10.6706    0.936666      166432           8
+                         :        183 |  4.45236e-08 4.46935e-08      10.686    0.939584      166217           9
+                         :        184 |  4.45238e-08 4.47849e-08     10.6905    0.938326      166120          10
+                         :        185 |  4.45223e-08  4.4757e-08     10.6858    0.937733      166191          11
+                         :        186 |  4.45173e-08 4.47049e-08     10.6813    0.938006      166271          12
+                         :        187 |  4.45182e-08 4.47364e-08     10.6838    0.937028      166211          13
+                         :        188 |   4.4519e-08 4.47656e-08     10.6807    0.937828      166278          14
+                         :        189 |   4.4511e-08 4.47047e-08     10.6721     0.93621      166398          15
+                         :        190 |  4.45166e-08 4.48167e-08     10.6826    0.939408      166272          16
+                         :        191 |  4.45128e-08 4.47036e-08     10.6863    0.938322      166192          17
+                         :        192 |  4.45115e-08 4.48034e-08     10.6899    0.942219      166197          18
+                         :        193 |  4.45106e-08 4.47111e-08     10.6914    0.937196      166086          19
+                         :        194 |  4.45144e-08 4.47589e-08     10.6841    0.936749      166202          20
+                         :        195 |   4.4508e-08  4.4755e-08     10.6816    0.937503      166258          21
+                         :        196 |  4.45112e-08 4.47957e-08     10.6708    0.936734      166430          22
+                         :        197 |  4.45077e-08 4.47305e-08     10.6811    0.935728      166235          23
+                         :        198 |  4.45005e-08 4.47267e-08     10.6706    0.937043      166437          24
+                         :        199 |  4.45077e-08 4.47292e-08     10.6761    0.936158      166329          25
+                         :        200 |  4.45026e-08 4.47356e-08     10.6846    0.938933      166231          26
+                         :        201 |  4.44977e-08 4.47028e-08     10.6824    0.938432      166260          27
+                         :        202 |  4.45077e-08 4.48958e-08     10.6845    0.937981      166216          28
+                         :        203 |  4.45064e-08 4.47491e-08     10.6876    0.936998      166147          29
+                         :        204 |   4.4503e-08 4.48562e-08     10.6838    0.938394      166235          30
+                         :        205 |  4.44997e-08 4.47035e-08     10.6803    0.937523      166280          31
+                         :        206 |  4.44986e-08 4.47079e-08      10.673    0.935679      166374          32
+                         :        207 |  4.44974e-08 4.47425e-08     10.6828    0.937984      166245          33
+                         :        208 |  4.44987e-08 4.47484e-08     10.6727    0.936571      166393          34
+                         :        209 |  4.44945e-08 4.47026e-08     10.6755    0.936451      166343          35
+                         :        210 |  4.44956e-08 4.47137e-08     10.6772    0.937685      166336          36
+                         :        211 |  4.44955e-08 4.47269e-08     10.6791    0.938727      166321          37
+                         :        212 |  4.44995e-08 4.46951e-08     10.6721    0.935473      166385          38
+                         :        213 |  4.44873e-08 4.47119e-08     10.6703    0.937564      166452          39
+                         :        214 |  4.44933e-08 4.47005e-08     10.6783    0.938007      166322          40
+                         :        215 |  4.44866e-08 4.47566e-08     10.6764    0.938447      166363          41
+                         :        216 |  4.44882e-08 4.47031e-08     10.6753    0.936693      166351          42
+                         :        217 |  4.44908e-08 4.47377e-08     10.6748    0.938174      166386          43
+                         :        218 |  4.44874e-08 4.47096e-08     10.6783     0.93863      166333          44
+                         :        219 |  4.44889e-08 4.47316e-08     10.6776    0.936937      166317          45
+                         :        220 |   4.4493e-08  4.4707e-08      10.678    0.935776      166289          46
+                         :        221 |  4.44904e-08 4.48365e-08     10.6806    0.936939      166265          47
+                         :        222 |  4.44762e-08 4.47104e-08      10.676    0.937362      166351          48
+                         :        223 |  4.44906e-08 4.47844e-08     10.6803    0.936988      166271          49
+                         :        224 |  4.44838e-08  4.4762e-08     10.6801    0.937933      166290          50
+                         :        225 |  4.44865e-08 4.47322e-08     10.6919    0.939596      166118          51
+                         :        226 |  4.44878e-08 4.46882e-08     10.6969    0.939898      166038          52
+                         :        227 |  4.44834e-08  4.4691e-08     10.6895    0.937824      166128          53
+                         :        228 |  4.44801e-08 4.47184e-08     10.6912    0.938659      166114          54
+                         :        229 |  4.44807e-08 4.48862e-08     10.6849    0.938665      166221          55
+                         :        230 |  4.44811e-08 4.47983e-08     10.6844    0.939038      166236          56
+                         :        231 |  4.44796e-08 4.46825e-08     10.6812    0.938138      166276          57
+                         :        232 |  4.44712e-08 4.47948e-08     10.6906    0.938995      166129          58
+                         :        233 |  4.44841e-08 4.48387e-08     10.6747     0.93707      166368          59
+                         :        234 |  4.44794e-08 4.46868e-08     10.6752    0.936727      166354          60
+                         :        235 |  4.44701e-08 4.47584e-08     10.6739     0.93572      166359          61
+                         :        236 Minimum Test error found - save the configuration 
+                         :        236 |  4.44774e-08 4.46775e-08     10.6752    0.936834      166356           0
+                         :        237 |  4.44741e-08 4.47588e-08     10.6856    0.938324      166204           1
+                         :        238 |  4.44736e-08 4.47462e-08     10.6829    0.937986      166244           2
+                         :        239 |  4.44685e-08 4.47158e-08     10.6791    0.937529      166301           3
+                         :        240 |  4.44732e-08 4.47059e-08     10.6814    0.938837      166285           4
+                         :        241 |  4.44689e-08 4.47715e-08      10.685    0.939244      166229           5
+                         :        242 |   4.4479e-08  4.4759e-08     10.6856     0.93761      166192           6
+                         :        243 |  4.44732e-08 4.46854e-08     10.6853    0.938086      166204           7
+                         :        244 |  4.44738e-08 4.47132e-08     10.6818    0.936849      166242           8
+                         :        245 |  4.44621e-08 4.47724e-08     10.6783    0.938954      166339           9
+                         :        246 |   4.4473e-08 4.46796e-08     10.6836    0.940324      166272          10
+                         :        247 |  4.44694e-08 4.47612e-08     10.6669    0.937007      166501          11
+                         :        248 |  4.44677e-08 4.48393e-08     10.6732    0.938418      166417          12
+                         :        249 |  4.44693e-08 4.47001e-08      10.679    0.937963      166310          13
+                         :        250 |  4.44684e-08 4.47246e-08     10.6752    0.937289      166363          14
+                         :        251 |  4.44715e-08 4.47051e-08     10.6746    0.938341      166391          15
+                         :        252 |  4.44626e-08 4.47286e-08     10.6711    0.935944      166410          16
+                         :        253 |  4.44596e-08 4.47097e-08     10.6718    0.939646      166462          17
+                         :        254 |  4.44617e-08 4.47266e-08     10.6902    0.939906      166152          18
+                         :        255 |  4.44602e-08 4.47573e-08     10.6889    0.939391      166165          19
+                         :        256 |  4.44636e-08 4.46862e-08       10.68    0.937245      166280          20
+                         :        257 |   4.4462e-08 4.47451e-08     10.6728    0.937586      166409          21
+                         :        258 |  4.44634e-08 4.48122e-08     10.6779    0.937036      166313          22
+                         :        259 |  4.44616e-08 4.47594e-08     10.6817    0.938516      166273          23
+                         :        260 |  4.44628e-08 4.47429e-08     10.6787    0.937816      166313          24
+                         :        261 |  4.44539e-08 4.47865e-08      10.677    0.937777      166340          25
+                         :        262 |  4.44611e-08 4.47026e-08     10.6708    0.936836      166430          26
+                         :        263 |  4.44555e-08 4.46866e-08     10.6728    0.936342      166388          27
+                         :        264 |  4.44577e-08 4.46954e-08     10.6683    0.937907      166491          28
+                         :        265 |   4.4454e-08 4.47096e-08     10.6688    0.938454      166492          29
+                         :        266 |  4.44506e-08 4.47352e-08     10.6577    0.936846      166655          30
+                         :        267 |  4.44556e-08 4.47093e-08     10.6586    0.935812      166622          31
+                         :        268 |  4.44491e-08 4.47976e-08     10.6601    0.937537      166627          32
+                         :        269 |  4.44478e-08 4.46814e-08     10.6648    0.936491      166527          33
+                         :        270 |  4.44482e-08 4.49375e-08     10.6599    0.937099      166622          34
+                         :        271 |  4.44506e-08 4.48004e-08     10.6643    0.937699      166556          35
+                         :        272 |  4.44524e-08 4.47005e-08      10.659    0.936284      166624          36
+                         :        273 |  4.44487e-08 4.47106e-08     10.6661    0.936348      166503          37
+                         :        274 |  4.44478e-08 4.47134e-08     10.6581    0.936774      166647          38
+                         :        275 |  4.44479e-08 4.47249e-08     10.6601    0.935922      166598          39
+                         :        276 |   4.4452e-08 4.47009e-08     10.6605     0.93718      166613          40
+                         :        277 |  4.44501e-08  4.4731e-08     10.6657    0.936366      166510          41
+                         :        278 |  4.44441e-08 4.47244e-08     10.6626    0.935088      166541          42
+                         :        279 |  4.44466e-08 4.47021e-08     10.6671     0.93654      166490          43
+                         :        280 |  4.44463e-08 4.47283e-08     10.6619    0.935446      166559          44
+                         :        281 |  4.44416e-08 4.47044e-08     10.6571    0.935979      166651          45
+                         :        282 |  4.44489e-08 4.47122e-08     10.6632    0.938662      166592          46
+                         :        283 |  4.44491e-08 4.47516e-08     10.6684    0.937652      166485          47
+                         :        284 |   4.4441e-08 4.47183e-08     10.6679    0.937133      166485          48
+                         :        285 |   4.4446e-08 4.47643e-08     10.6708    0.938589      166461          49
+                         :        286 |  4.44391e-08 4.47169e-08     10.6737    0.937562      166394          50
+                         :        287 |  4.44391e-08 4.46939e-08     10.6741    0.939156      166413          51
+                         :        288 |  4.44404e-08 4.48414e-08     10.6727    0.936136      166386          52
+                         :        289 |  4.44403e-08 4.47944e-08     10.6728    0.938294      166422          53
+                         :        290 |  4.44399e-08 4.46798e-08     10.6713    0.937343      166431          54
+                         :        291 |  4.44401e-08 4.46808e-08     10.6635    0.937097      166560          55
+                         :        292 |  4.44412e-08 4.47047e-08     10.6684    0.936892      166473          56
+                         :        293 |  4.44353e-08 4.47053e-08     10.6638    0.936707      166549          57
+                         :        294 |   4.4432e-08 4.48201e-08     10.6746    0.936841      166366          58
+                         :        295 |  4.44288e-08 4.47211e-08     10.6657    0.935934      166503          59
+                         :        296 |  4.44303e-08   4.475e-08     10.6667    0.936457      166495          60
+                         :        297 |  4.44321e-08 4.48162e-08      10.665    0.936446      166524          61
+                         :        298 |  4.44322e-08 4.48017e-08     10.6595    0.936455      166618          62
+                         :        299 |  4.44377e-08 4.47472e-08     10.6639     0.93587      166532          63
+                         :        300 |  4.44244e-08  4.4869e-08     10.6732    0.936938      166391          64
+                         :        301 |  4.44317e-08 4.47443e-08      10.672    0.940585      166474          65
+                         :        302 |  4.44306e-08 4.47827e-08     10.6729     0.93653      166390          66
+                         :        303 |  4.44286e-08 4.46917e-08      10.674    0.938444      166404          67
+                         :        304 |  4.44301e-08  4.4683e-08     10.6753    0.941419      166432          68
+                         :        305 |  4.44227e-08 4.47566e-08     10.6721    0.938531      166437          69
+                         :        306 Minimum Test error found - save the configuration 
+                         :        306 |  4.44298e-08 4.46771e-08     10.6766    0.937504      166343           0
+                         :        307 |  4.44265e-08 4.47609e-08     10.6749     0.93667      166358           1
+                         :        308 |  4.44262e-08 4.47397e-08     10.6717    0.937805      166431           2
+                         :        309 |   4.4425e-08 4.47379e-08     10.6856    0.941645      166261           3
+                         :        310 |   4.4429e-08 4.47366e-08      10.694    0.942358      166129           4
+                         :        311 |  4.44288e-08 4.46895e-08     10.6847    0.937824      166211           5
+                         :        312 |  4.44239e-08  4.4712e-08     10.6857    0.938945      166212           6
+                         :        313 |  4.44212e-08 4.48199e-08     10.6843    0.938778      166234           7
+                         :        314 |  4.44274e-08 4.47251e-08     10.6785    0.937435      166309           8
+                         :        315 |  4.44281e-08  4.4721e-08     10.6704    0.937308      166446           9
+                         :        316 |  4.44289e-08 4.47266e-08     10.6724    0.938809      166437          10
+                         :        317 |  4.44286e-08 4.48868e-08     10.6773    0.940371      166380          11
+                         :        318 |  4.44242e-08  4.4727e-08     10.6794    0.939263      166326          12
+                         :        319 |   4.4423e-08 4.47454e-08     10.6771    0.937784      166339          13
+                         :        320 |   4.4415e-08 4.49021e-08     10.6745    0.938399      166394          14
+                         :        321 |  4.44132e-08 4.46872e-08     10.6704    0.938546      166467          15
+                         :        322 |  4.44158e-08 4.47798e-08     10.6733    0.936746      166386          16
+                         :        323 |  4.44234e-08 4.46901e-08     10.6736    0.938362      166408          17
+                         :        324 Minimum Test error found - save the configuration 
+                         :        324 |  4.44195e-08 4.46769e-08     10.6732    0.938597      166419           0
+                         :        325 |  4.44163e-08 4.47025e-08     10.6678     0.93977      166532           1
+                         :        326 |   4.4416e-08 4.46822e-08     10.6728    0.937059      166400           2
+                         :        327 |   4.4416e-08 4.47442e-08     10.6737    0.938229      166405           3
+                         :        328 |   4.4414e-08 4.46997e-08     10.6811    0.938266      166279           4
+                         :        329 |  4.44087e-08 4.47242e-08     10.6841      0.9397      166253           5
+                         :        330 |  4.44149e-08 4.48198e-08     10.6836    0.942099      166303           6
+                         :        331 |  4.44151e-08 4.47904e-08     10.6831    0.938536      166250           7
+                         :        332 |  4.44094e-08 4.49789e-08     10.6793    0.937341      166294           8
+                         :        333 |  4.44117e-08 4.46998e-08      10.675    0.938679      166390           9
+                         :        334 |  4.44153e-08 4.47084e-08     10.6758    0.937425      166355          10
+                         :        335 |  4.44153e-08 4.47596e-08     10.6786    0.942785      166399          11
+                         :        336 |  4.44074e-08 4.47217e-08     10.6758    0.936871      166345          12
+                         :        337 |   4.4405e-08 4.47305e-08     10.6723    0.936971      166408          13
+                         :        338 |  4.44099e-08 4.47271e-08     10.6705    0.937819      166453          14
+                         :        339 |  4.44102e-08 4.46949e-08     10.6737    0.936793      166380          15
+                         :        340 |  4.44099e-08  4.4739e-08     10.6769    0.937336      166335          16
+                         :        341 |  4.44098e-08 4.46946e-08     10.6742    0.936622      166370          17
+                         :        342 |  4.44056e-08 4.47812e-08     10.6655     0.93828      166545          18
+                         :        343 |  4.44033e-08 4.47061e-08     10.6677     0.93785      166501          19
+                         :        344 |  4.44034e-08 4.47171e-08     10.6774    0.936177      166307          20
+                         :        345 |  4.44055e-08 4.47789e-08     10.6813    0.939076      166289          21
+                         :        346 |  4.44061e-08 4.48298e-08     10.6846    0.936948      166198          22
+                         :        347 |  4.44084e-08 4.47489e-08     10.6837    0.937098      166214          23
+                         :        348 |  4.44003e-08 4.47443e-08     10.6781    0.936727      166304          24
+                         :        349 |  4.44046e-08 4.47074e-08     10.6717    0.936029      166402          25
+                         :        350 |  4.44057e-08 4.47532e-08     10.6684    0.938315      166497          26
+                         :        351 |  4.43995e-08  4.4712e-08     10.6716    0.936075      166405          27
+                         :        352 |  4.43954e-08 4.47501e-08     10.6786    0.937352      166306          28
+                         :        353 |  4.43957e-08 4.47863e-08     10.6734    0.936917      166387          29
+                         :        354 |  4.44005e-08 4.47183e-08     10.6675    0.936742      166485          30
+                         :        355 |  4.44011e-08 4.47755e-08     10.6658    0.935209      166488          31
+                         :        356 |  4.43979e-08 4.47354e-08     10.6666    0.936727      166500          32
+                         :        357 |  4.44009e-08 4.47363e-08     10.6711    0.938098      166447          33
+                         :        358 |  4.43913e-08 4.46886e-08     10.6692    0.936765      166457          34
+                         :        359 |  4.43968e-08 4.47173e-08     10.6637    0.935863      166536          35
+                         :        360 |  4.43912e-08 4.47172e-08     10.6654    0.937186      166529          36
+                         :        361 |  4.43909e-08 4.47411e-08     10.6888    0.938785      166156          37
+                         :        362 |  4.43962e-08 4.47674e-08     10.6766    0.938059      166352          38
+                         :        363 |  4.43988e-08 4.46943e-08     10.6676    0.936804      166485          39
+                         :        364 |  4.43994e-08 4.46986e-08     10.6727    0.938087      166419          40
+                         :        365 |  4.43922e-08 4.47408e-08     10.6758    0.938685      166377          41
+                         :        366 |  4.43933e-08 4.48471e-08     10.6743     0.93722      166377          42
+                         :        367 |  4.43929e-08  4.4775e-08     10.6763    0.939286      166378          43
+                         :        368 |  4.43924e-08 4.47975e-08     10.6764    0.937748      166351          44
+                         :        369 |  4.43892e-08 4.47146e-08     10.6744    0.937014      166372          45
+                         :        370 |  4.43922e-08 4.47098e-08     10.6737    0.939113      166419          46
+                         :        371 |  4.43926e-08 4.48071e-08     10.6736     0.93697      166385          47
+                         :        372 |  4.43913e-08 4.46981e-08     10.6802    0.939794      166321          48
+                         :        373 |  4.43847e-08 4.50417e-08     10.6689    0.938285      166489          49
+                         :        374 |  4.43892e-08 4.46873e-08     10.6684    0.936932      166473          50
+                         :        375 |  4.43906e-08  4.4727e-08     10.6706     0.93606      166420          51
+                         :        376 |  4.43876e-08 4.48224e-08     10.6681    0.937045      166481          52
+                         :        377 |  4.43898e-08 4.46868e-08     10.6727    0.938013      166419          53
+                         :        378 |  4.43948e-08 4.47451e-08     10.6851    0.940688      166253          54
+                         :        379 |  4.43892e-08 4.46836e-08     10.6819    0.940579      166305          55
+                         :        380 |  4.43859e-08 4.47406e-08     10.6852    0.939208      166224          56
+                         :        381 |  4.43857e-08 4.47707e-08     10.6815    0.940168      166305          57
+                         :        382 |  4.43851e-08 4.47326e-08     10.6775    0.938414      166343          58
+                         :        383 |  4.43853e-08 4.47412e-08     10.6691    0.935673      166439          59
+                         :        384 |  4.43805e-08  4.4706e-08     10.6757     0.93731      166355          60
+                         :        385 |  4.43866e-08 4.47193e-08     10.6666    0.938217      166526          61
+                         :        386 |  4.43847e-08 4.48422e-08     10.6739    0.937183      166383          62
+                         :        387 |  4.43788e-08 4.46787e-08     10.6729    0.937475      166406          63
+                         :        388 |  4.43787e-08 4.46841e-08     10.6742     0.93799      166393          64
+                         :        389 |  4.43796e-08 4.51419e-08     10.6793    0.938827      166320          65
+                         :        390 |   4.4376e-08 4.47192e-08     10.6756    0.937536      166361          66
+                         :        391 |  4.43753e-08 4.47816e-08       10.68    0.937623      166287          67
+                         :        392 |   4.4378e-08 4.47149e-08     10.6761    0.936659      166337          68
+                         :        393 |  4.43783e-08  4.4678e-08      10.665    0.937778      166546          69
+                         :        394 |  4.43696e-08 4.47095e-08     10.6633    0.936861      166560          70
+                         :        395 |  4.43768e-08 4.46964e-08     10.6642    0.938377      166570          71
+                         :        396 |  4.43698e-08 4.47235e-08      10.673    0.939631      166441          72
+                         :        397 |  4.43696e-08 4.47088e-08     10.6795    0.940034      166336          73
+                         :        398 |  4.43742e-08 4.47269e-08     10.6786    0.936958      166300          74
+                         :        399 |  4.43739e-08 4.47309e-08     10.6698    0.936801      166447          75
+                         :        400 |   4.4364e-08  4.4716e-08     10.6733    0.937421      166398          76
+                         :        401 |  4.43721e-08 4.47718e-08     10.6764    0.938595      166366          77
+                         :        402 |  4.43689e-08 4.47212e-08     10.6752    0.938321      166381          78
+                         :        403 |  4.43732e-08 4.47206e-08     10.6775    0.936355      166308          79
+                         :        404 |  4.43715e-08 4.47609e-08     10.6753    0.937591      166367          80
+                         :        405 |  4.43706e-08 4.47231e-08     10.6759    0.936906      166345          81
+                         :        406 |  4.43668e-08 4.47279e-08     10.6673    0.935979      166475          82
+                         :        407 |  4.43723e-08 4.47184e-08     10.6656    0.936685      166517          83
+                         :        408 |   4.4373e-08 4.46784e-08      10.663    0.936785      166563          84
+                         :        409 |  4.43705e-08 4.46776e-08     10.6683    0.936762      166473          85
+                         :        410 |  4.43692e-08  4.4749e-08     10.6654    0.935996      166509          86
+                         :        411 |  4.43646e-08 4.47079e-08     10.6722    0.937295      166415          87
+                         :        412 |  4.43625e-08 4.47367e-08     10.6794    0.935899      166268          88
+                         :        413 |  4.43677e-08 4.47173e-08     10.6724    0.937624      166418          89
+                         :        414 |  4.43619e-08 4.47368e-08     10.6786    0.937694      166312          90
+                         :        415 |  4.43648e-08 4.47707e-08     10.6729    0.936942      166396          91
+                         :        416 |  4.43621e-08 4.47229e-08     10.6706    0.939951      166487          92
+                         :        417 |  4.43647e-08  4.4706e-08     10.6686     0.93728      166475          93
+                         :        418 |  4.43644e-08   4.479e-08     10.6688    0.936599      166461          94
+                         :        419 |  4.43658e-08 4.47483e-08     10.6677    0.937296      166491          95
+                         :        420 |  4.43595e-08 4.47121e-08     10.6802    0.938243      166295          96
+                         :        421 |  4.43635e-08 4.47599e-08     10.6727    0.937951      166418          97
+                         :        422 |  4.43636e-08 4.47044e-08     10.6717    0.937225      166423          98
+                         :        423 |  4.43581e-08 4.48144e-08     10.6666    0.935871      166487          99
+                         :        424 |  4.43596e-08 4.47401e-08     10.6653    0.936568      166519         100
+                         :        425 |  4.43553e-08 4.47153e-08     10.6661    0.937505      166522         101
+                         : 
+                         : Elapsed time for training with 2025059 events: [1;31m4.54e+03 sec[0m         
+                         : Evaluate deep neural network on GPU using batches with size = 30
+                         : 
+DNN_GPU                  : [vbs_ww_2016_boosted19] : Evaluation of DNN_GPU on training sample (2025059 events)
+                         : Elapsed time for evaluation of 2025059 events: [1;31m12.6 sec[0m       
+                         : Creating xml weight file: [0;36mvbs_ww_2016_boosted19/weights/TMVAClassification_DNN_GPU.weights.xml[0m
+                         : Creating standalone class: [0;36mvbs_ww_2016_boosted19/weights/TMVAClassification_DNN_GPU.class.C[0m
+Factory                  : Training finished
+                         : 
+Factory                  : Train method: BDTG for Classification
+                         : 
+<WARNING>                :  Note, you have events with negative event weight in the sample, but you've chosen to ignore them
+BDTG                     : #events: (reweighted) sig: 1.00993e+06 bkg: 1.00993e+06
+                         : #events: (unweighted) sig: 40313 bkg: 1979543
+                         : Training 1000 Decision Trees ... patience please
+                         : Elapsed time for training with 2025059 events: [1;31m280 sec[0m         
+BDTG                     : [vbs_ww_2016_boosted19] : Evaluation of BDTG on training sample (2025059 events)
+                         : Elapsed time for evaluation of 2025059 events: [1;31m63.3 sec[0m       
+                         : Creating xml weight file: [0;36mvbs_ww_2016_boosted19/weights/TMVAClassification_BDTG.weights.xml[0m
+                         : Creating standalone class: [0;36mvbs_ww_2016_boosted19/weights/TMVAClassification_BDTG.class.C[0m
+                         : vbs_ww_2016_boosted19_SBtmva.root:/vbs_ww_2016_boosted19/Method_BDT/BDTG
+Factory                  : Training finished
+                         : 
+Factory                  : Train method: BDT for Classification
+                         : 
+<WARNING>                :  Note, you have events with negative event weight in the sample, but you've chosen to ignore them
+BDT                      : #events: (reweighted) sig: 1.00993e+06 bkg: 1.00993e+06
+                         : #events: (unweighted) sig: 40313 bkg: 1979543
+                         : Training 1000 Decision Trees ... patience please
+                         : Elapsed time for training with 2025059 events: [1;31m375 sec[0m         
+BDT                      : [vbs_ww_2016_boosted19] : Evaluation of BDT on training sample (2025059 events)
+                         : Elapsed time for evaluation of 2025059 events: [1;31m142 sec[0m       
+                         : Creating xml weight file: [0;36mvbs_ww_2016_boosted19/weights/TMVAClassification_BDT.weights.xml[0m
+                         : Creating standalone class: [0;36mvbs_ww_2016_boosted19/weights/TMVAClassification_BDT.class.C[0m
+                         : vbs_ww_2016_boosted19_SBtmva.root:/vbs_ww_2016_boosted19/Method_BDT/BDT
+Factory                  : Training finished
+                         : 
+                         : Ranking input variables (method specific)...
+                         : No variable ranking supplied by classifier: DNN_GPU
+BDTG                     : Ranking result (top variable is best ranked)
+                         : ---------------------------------------------------------
+                         : Rank : Variable                : Variable Importance
+                         : ---------------------------------------------------------
+                         :    1 : bos_PuppiAK8_m_sd0_corr : 1.131e-01
+                         :    2 : zeppHad                 : 1.091e-01
+                         :    3 : bos_PuppiAK8_tau2tau1   : 1.073e-01
+                         :    4 : nJet30f                 : 1.046e-01
+                         :    5 : vbf_deta                : 1.038e-01
+                         :    6 : vbf_m                   : 9.634e-02
+                         :    7 : lep1_eta                : 9.546e-02
+                         :    8 : vbf2_AK4_eta            : 9.507e-02
+                         :    9 : bos_PuppiAK8_eta        : 9.094e-02
+                         :   10 : zeppLep                 : 8.431e-02
+                         : ---------------------------------------------------------
+BDT                      : Ranking result (top variable is best ranked)
+                         : ---------------------------------------------------------
+                         : Rank : Variable                : Variable Importance
+                         : ---------------------------------------------------------
+                         :    1 : vbf_m                   : 1.526e-01
+                         :    2 : nJet30f                 : 1.210e-01
+                         :    3 : bos_PuppiAK8_tau2tau1   : 9.941e-02
+                         :    4 : zeppHad                 : 9.727e-02
+                         :    5 : vbf2_AK4_eta            : 9.528e-02
+                         :    6 : bos_PuppiAK8_m_sd0_corr : 9.479e-02
+                         :    7 : lep1_eta                : 9.082e-02
+                         :    8 : vbf_deta                : 8.922e-02
+                         :    9 : zeppLep                 : 8.338e-02
+                         :   10 : bos_PuppiAK8_eta        : 7.626e-02
+                         : ---------------------------------------------------------
+TH1.Print Name  = TrainingHistory_DNN_GPU_trainingError, Entries= 0, Total sum= 1.89553e-05
+TH1.Print Name  = TrainingHistory_DNN_GPU_valError, Entries= 0, Total sum= 1.90443e-05
+Factory                  : === Destroy and recreate all methods via weight files for testing ===
+                         : 
+                         : Reading weight file: [0;36mvbs_ww_2016_boosted19/weights/TMVAClassification_DNN_GPU.weights.xml[0m
+                         : Reading weight file: [0;36mvbs_ww_2016_boosted19/weights/TMVAClassification_BDTG.weights.xml[0m
+                         : Reading weight file: [0;36mvbs_ww_2016_boosted19/weights/TMVAClassification_BDT.weights.xml[0m
+Test All Methods
+Factory                  : [1mTest all methods[0m
+Factory                  : Test method: DNN_GPU for Classification performance
+                         : 
+                         : Evaluate deep neural network on GPU using batches with size = 1000
+                         : 
+TFHandler_DNN_GPU        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0019776                  0.42578   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.26544                  0.43480   [                  -1.0000                   1.0000 ]
+                         :   bos_PuppiAK8_tau2tau1:                 -0.10046                  0.32650   [                 -0.98073                   1.0133 ]
+                         :                lep1_eta:                0.0041938                  0.48308   [                  -1.0000                   1.0000 ]
+                         :                 nJet30f:                 -0.48396                  0.19567   [                  -1.0000                   1.1333 ]
+                         :            vbf2_AK4_eta:               -0.0028963                  0.58503   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                -0.078375                  0.29358   [                  -1.0005                   1.0075 ]
+                         :                   vbf_m:                 -0.88951                  0.12007   [                  -1.0000                  0.81248 ]
+                         :                 zeppHad:              -6.8536e-05                  0.28609   [                  -1.0044                   1.0124 ]
+                         :                 zeppLep:                -0.060575                  0.17027   [                  -1.1122                  0.95123 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+DNN_GPU                  : [vbs_ww_2016_boosted19] : Evaluation of DNN_GPU on testing sample (2025059 events)
+                         : Elapsed time for evaluation of 2025059 events: [1;31m8.73 sec[0m       
+Factory                  : Test method: BDTG for Classification performance
+                         : 
+BDTG                     : [vbs_ww_2016_boosted19] : Evaluation of BDTG on testing sample (2025059 events)
+                         : Elapsed time for evaluation of 2025059 events: [1;31m48.9 sec[0m       
+Factory                  : Test method: BDT for Classification performance
+                         : 
+BDT                      : [vbs_ww_2016_boosted19] : Evaluation of BDT on testing sample (2025059 events)
+                         : Elapsed time for evaluation of 2025059 events: [1;31m104 sec[0m       
+Evaluate All Methods
+Factory                  : [1mEvaluate all methods[0m
+Factory                  : Evaluate classifier: DNN_GPU
+                         : 
+DNN_GPU                  : [vbs_ww_2016_boosted19] : Loop over test events and fill histograms with classifier response...
+                         : 
+                         : Evaluate deep neural network on GPU using batches with size = 1000
+                         : 
+TFHandler_DNN_GPU        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0033205                  0.42452   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.26527                  0.43456   [                  -1.0000                   1.0000 ]
+                         :   bos_PuppiAK8_tau2tau1:                 -0.10133                  0.32680   [                  -1.0000                   1.0000 ]
+                         :                lep1_eta:                0.0033246                  0.48230   [                  -1.0000                   1.0000 ]
+                         :                 nJet30f:                 -0.48398                  0.19566   [                  -1.0000                   1.0000 ]
+                         :            vbf2_AK4_eta:               0.00016984                  0.58490   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                -0.078432                  0.29403   [                  -1.0000                   1.0000 ]
+                         :                   vbf_m:                 -0.88943                  0.12027   [                  -1.0000                   1.0000 ]
+                         :                 zeppHad:              -0.00014302                  0.28555   [                  -1.0000                   1.0000 ]
+                         :                 zeppLep:                -0.061155                  0.16998   [                  -1.0000                   1.0000 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+TFHandler_DNN_GPU        :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0019776                  0.42578   [                  -1.0000                   1.0000 ]
+                         : bos_PuppiAK8_m_sd0_corr:                 -0.26544                  0.43480   [                  -1.0000                   1.0000 ]
+                         :   bos_PuppiAK8_tau2tau1:                 -0.10046                  0.32650   [                 -0.98073                   1.0133 ]
+                         :                lep1_eta:                0.0041938                  0.48308   [                  -1.0000                   1.0000 ]
+                         :                 nJet30f:                 -0.48396                  0.19567   [                  -1.0000                   1.1333 ]
+                         :            vbf2_AK4_eta:               -0.0028963                  0.58503   [                  -1.0000                   1.0000 ]
+                         :                vbf_deta:                -0.078375                  0.29358   [                  -1.0005                   1.0075 ]
+                         :                   vbf_m:                 -0.88951                  0.12007   [                  -1.0000                  0.81248 ]
+                         :                 zeppHad:              -6.8536e-05                  0.28609   [                  -1.0044                   1.0124 ]
+                         :                 zeppLep:                -0.060575                  0.17027   [                  -1.1122                  0.95123 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+Factory                  : Evaluate classifier: BDTG
+                         : 
+BDTG                     : [vbs_ww_2016_boosted19] : Loop over test events and fill histograms with classifier response...
+                         : 
+TFHandler_BDTG           :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0047462                   1.0218   [                  -2.3999                   2.3999 ]
+                         : bos_PuppiAK8_m_sd0_corr:                   80.401                   23.914   [                   40.000                   150.00 ]
+                         :   bos_PuppiAK8_tau2tau1:                  0.43396                  0.15744   [                0.0095035                  0.97100 ]
+                         :                lep1_eta:                 0.010484                   1.2077   [                  -2.5000                   2.5000 ]
+                         :                 nJet30f:                   3.8703                   1.4675   [                   0.0000                   16.000 ]
+                         :            vbf2_AK4_eta:                -0.013613                   2.7498   [                  -4.7002                   4.7002 ]
+                         :                vbf_deta:                   4.3049                   1.3702   [                0.0011617                   9.3730 ]
+                         :                   vbf_m:                   951.60                   490.74   [                   500.00                   7907.8 ]
+                         :                 zeppHad:                0.0059396                   1.3171   [                  -4.6177                   4.6674 ]
+                         :                 zeppLep:                0.0085746                   1.3650   [                  -8.4216                   8.1196 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+Factory                  : Evaluate classifier: BDT
+                         : 
+BDT                      : [vbs_ww_2016_boosted19] : Loop over test events and fill histograms with classifier response...
+                         : 
+TFHandler_BDT            :                Variable                       Mean                       RMS               [        Min                       Max ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         :        bos_PuppiAK8_eta:                0.0047462                   1.0218   [                  -2.3999                   2.3999 ]
+                         : bos_PuppiAK8_m_sd0_corr:                   80.401                   23.914   [                   40.000                   150.00 ]
+                         :   bos_PuppiAK8_tau2tau1:                  0.43396                  0.15744   [                0.0095035                  0.97100 ]
+                         :                lep1_eta:                 0.010484                   1.2077   [                  -2.5000                   2.5000 ]
+                         :                 nJet30f:                   3.8703                   1.4675   [                   0.0000                   16.000 ]
+                         :            vbf2_AK4_eta:                -0.013613                   2.7498   [                  -4.7002                   4.7002 ]
+                         :                vbf_deta:                   4.3049                   1.3702   [                0.0011617                   9.3730 ]
+                         :                   vbf_m:                   951.60                   490.74   [                   500.00                   7907.8 ]
+                         :                 zeppHad:                0.0059396                   1.3171   [                  -4.6177                   4.6674 ]
+                         :                 zeppLep:                0.0085746                   1.3650   [                  -8.4216                   8.1196 ]
+                         : --------------------------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Evaluation results ranked by best signal efficiency and purity (area)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet       MVA                       
+                         : Name:         Method:          ROC-integ
+                         : vbs_ww_2016_boosted19 DNN_GPU        : 0.757
+                         : vbs_ww_2016_boosted19 BDT            : 0.754
+                         : vbs_ww_2016_boosted19 BDTG           : 0.750
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Testing efficiency compared to training efficiency (overtraining check)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet              MVA              Signal efficiency: from test sample (from training sample) 
+                         : Name:                Method:          @B=0.01             @B=0.10            @B=0.30   
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : vbs_ww_2016_boosted19 DNN_GPU        : 0.147 (0.148)       0.436 (0.436)      0.674 (0.675)
+                         : vbs_ww_2016_boosted19 BDT            : 0.144 (0.144)       0.429 (0.429)      0.673 (0.674)
+                         : vbs_ww_2016_boosted19 BDTG           : 0.137 (0.136)       0.423 (0.422)      0.669 (0.670)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+Dataset:vbs_ww_2016_bo...: Created tree 'TestTree' with 2025059 events
+                         : 
+Dataset:vbs_ww_2016_bo...: Created tree 'TrainTree' with 2025059 events
+                         : 
+Factory                  : [1mThank you for using TMVA![0m
+                         : [1mFor citation information, please visit: http://tmva.sf.net/citeTMVA.html[0m
+ROC file written
+Clone dataTree
+==> Wrote root file: vbs_ww_2016_boosted19_SBtmva.root
+==> TMVAClassification is done!
+==> To apply results to data:: 
+==> root  -b -q  ./vbsTMVAClassificationApplication.cc\(\"vbs_ww_2016_boosted19\",\"BDT,BDTG,DNN_GPU\"\)
+(int) 0
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing ./vbsTMVAClassificationApplication.cc("vbs_ww_2016_boosted19","BDT,BDTG,DNN_GPU")...
+
+==> Start TMVAClassificationApplication
+                         : Booking "BDT method" of type "BDT" from vbs_ww_2016_boosted19/weights/TMVAClassification_BDT.weights.xml.
+                         : Reading weight file: vbs_ww_2016_boosted19/weights/TMVAClassification_BDT.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+                         : Booked classifier "BDT" of type: "BDT"
+                         : Booking "BDTG method" of type "BDT" from vbs_ww_2016_boosted19/weights/TMVAClassification_BDTG.weights.xml.
+                         : Reading weight file: vbs_ww_2016_boosted19/weights/TMVAClassification_BDTG.weights.xml
+                         : Booked classifier "BDTG" of type: "BDT"
+                         : Booking "DNN_GPU method" of type "DL" from vbs_ww_2016_boosted19/weights/TMVAClassification_DNN_GPU.weights.xml.
+                         : Reading weight file: vbs_ww_2016_boosted19/weights/TMVAClassification_DNN_GPU.weights.xml
+                         : Booked classifier "DNN_GPU" of type: "DL"
+--- TMVAClassificationApp    : Using input file: vbs_ww_2016_boosted19_SBtmva.root
+Using analysis directory vbs_ww_2016_boosted19
+ Setting extra branches
+ Done setting extra branches. Setting the rest.
+--- Processing: 1498464 events
+--- ... Processing event: 0
+--- ... Processing event: 100000
+--- ... Processing event: 200000
+--- ... Processing event: 300000
+--- ... Processing event: 400000
+--- ... Processing event: 500000
+--- ... Processing event: 600000
+--- ... Processing event: 700000
+--- ... Processing event: 800000
+--- ... Processing event: 900000
+--- ... Processing event: 1000000
+--- ... Processing event: 1100000
+--- ... Processing event: 1200000
+--- ... Processing event: 1300000
+--- ... Processing event: 1400000
+--- End of event loop: Real time 0:02:33, CP time 152.950
+--- Adding MVA output for data to vbs_ww_2016_boosted19_SBtmva.root
+==> TMVAClassificationApplication is done!
+
+==> Use root -l tmvaMon.cc\(\"vbs_ww_2016_boosted19\",lumi,cut,\"cutName\"\)  to analyse...
+==> Use one of the following as a second argument for the luminosity
+Lumies:
+  ==> 2016 Samples -> 35.8671
+  ==> 2017 Samples -> 41.53
+  ==> 2018 Samples -> 59.74
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing tmvaMon.cc("vbs_ww_2016_boosted19",35.87,full_wv_sr+tau21_cut+qgid_cut,"boosted19_optCut","datasets/plot_args/","optCutScan",'r',"sgf1")...
+Using analysis directory vbs_ww_2016_boosted19
+--- plot_tmv: Using signal&bkg test trees from file: vbs_ww_2016_boosted19_SBtmva.root
+ Entries bkg :: test/train/test+train = 1984746/1984746/3969492
+ Entries sgl :: test/train/test+train = 40313/40313/80626
+ scale_sgl_tmva/scale_bkg_tmva = 0.5/0.5
+ Entries data  = 1498464
+ Signal x-sect, fb / Generated signal events (normalized to Lum =  35.87 fb ) :: 2324.84/83392
+ 1.0 * lum_fbinv * PB2FB = 35870
+
+anl Lum = 35.87
+BDT :: point/step/cutval/significance  = 1/0.1/-1/1.3853
+BDT :: point/step/cutval/significance  = 2/0.1/-0.9/1.3853
+BDT :: point/step/cutval/significance  = 3/0.1/-0.8/1.3853
+BDT :: point/step/cutval/significance  = 4/0.1/-0.7/1.3853
+BDT :: point/step/cutval/significance  = 5/0.1/-0.6/1.3853
+BDT :: point/step/cutval/significance  = 6/0.1/-0.5/1.3853
+BDT :: point/step/cutval/significance  = 7/0.1/-0.4/1.3853
+BDT :: point/step/cutval/significance  = 8/0.1/-0.3/1.38555
+BDT :: point/step/cutval/significance  = 9/0.1/-0.2/1.39787
+BDT :: point/step/cutval/significance  = 10/0.1/-0.1/1.46494
+BDT :: point/step/cutval/significance  = 11/0.1/0/1.62723
+BDT :: point/step/cutval/significance  = 12/0.1/0.1/1.86938
+BDT :: point/step/cutval/significance  = 13/0.1/0.2/2.01213
+BDT :: point/step/cutval/significance  = 14/0.1/0.3/2.05693
+BDT :: point/step/cutval/significance  = 15/0.1/0.4/1.7852
+BDT :: point/step/cutval/significance  = 16/0.1/0.5/1.23515
+BDT :: point/step/cutval/significance  = 17/0.1/0.6/0.136994
+BDT :: point/step/cutval/significance  = 18/0.1/0.7/0
+BDT :: point/step/cutval/significance  = 19/0.1/0.8/0
+BDT :: point/step/cutval/significance  = 20/0.1/0.9/0
+BDT :: point/step/cutval/significance  = 1/0.02/0.2/2.01213
+BDT :: point/step/cutval/significance  = 2/0.02/0.22/2.02267
+BDT :: point/step/cutval/significance  = 3/0.02/0.24/2.05955
+BDT :: point/step/cutval/significance  = 4/0.02/0.26/2.07112
+BDT :: point/step/cutval/significance  = 5/0.02/0.28/2.07033
+BDT :: point/step/cutval/significance  = 6/0.02/0.3/2.05693
+BDT :: point/step/cutval/significance  = 7/0.02/0.32/2.00181
+BDT :: point/step/cutval/significance  = 8/0.02/0.34/1.94274
+BDT :: point/step/cutval/significance  = 9/0.02/0.36/1.90524
+BDT :: point/step/cutval/significance  = 10/0.02/0.38/1.87827
+BDT :: point/step/cutval/significance  = 1/0.004/0.24/2.05955
+BDT :: point/step/cutval/significance  = 2/0.004/0.244/2.06688
+BDT :: point/step/cutval/significance  = 3/0.004/0.248/2.05905
+BDT :: point/step/cutval/significance  = 4/0.004/0.252/2.05863
+BDT :: point/step/cutval/significance  = 5/0.004/0.256/2.05941
+BDT :: point/step/cutval/significance  = 6/0.004/0.26/2.07112
+BDT :: point/step/cutval/significance  = 7/0.004/0.264/2.0755
+BDT :: point/step/cutval/significance  = 8/0.004/0.268/2.09204
+BDT :: point/step/cutval/significance  = 9/0.004/0.272/2.08815
+BDT :: point/step/cutval/significance  = 10/0.004/0.276/2.08631
+BDT :: point/step/cutval/significance  = 1/0.0008/0.264/2.0755
+BDT :: point/step/cutval/significance  = 2/0.0008/0.2648/2.07901
+BDT :: point/step/cutval/significance  = 3/0.0008/0.2656/2.08488
+BDT :: point/step/cutval/significance  = 4/0.0008/0.2664/2.08602
+BDT :: point/step/cutval/significance  = 5/0.0008/0.2672/2.08777
+BDT :: point/step/cutval/significance  = 6/0.0008/0.268/2.09204
+BDT :: point/step/cutval/significance  = 7/0.0008/0.2688/2.08739
+BDT :: point/step/cutval/significance  = 8/0.0008/0.2696/2.09617
+BDT :: point/step/cutval/significance  = 9/0.0008/0.2704/2.09023
+BDT :: point/step/cutval/significance  = 10/0.0008/0.2712/2.08667
+bestcut/sgf  = 0.2696/2.09617
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing tmvaMon.cc("vbs_ww_2016_boosted19",35.87,full_wv_sr,"boosted19_cutflow","datasets/plot_args/MVA_variables.xml","printCutflow",'r',"vbf_deta")...
+Using analysis directory vbs_ww_2016_boosted19
+--- plot_tmv: Using signal&bkg test trees from file: vbs_ww_2016_boosted19_SBtmva.root
+ Entries bkg :: test/train/test+train = 1984746/1984746/3969492
+ Entries sgl :: test/train/test+train = 40313/40313/80626
+ scale_sgl_tmva/scale_bkg_tmva = 0.5/0.5
+ Entries data  = 1498464
+ Signal x-sect, fb / Generated signal events (normalized to Lum =  35.87 fb ) :: 2324.84/83392
+ 1.0 * lum_fbinv * PB2FB = 35870
+
+anl Lum = 35.87
+|--------------------------------------------------------------------------------------------------------------------|
+|-----------------------|--------------|------------------------|----------------------------|-------------| 95% CL, |
+|         Cut           |    DATA      |       Total_bkg        |      Total_sgl (accpt)     | S/sqrt(S+B) | exp(fb) |
+|-----------------------|--------------|------------------------|----------------------------|-------------|---------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  190191    |    193126.5+/-246.7      |    1045.15+/-5.67 ( 1.25)    |    2.37    | 2282.71   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  190191    |    193126.5+/-246.7      |    1045.15+/-5.67 ( 1.25)    |    2.37    | 2282.71   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  115636    |    134390.4+/-211.9      |    793.16+/-4.94 ( 0.95)    |    2.16    | 2542.97   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  115636    |    134390.4+/-211.9      |    793.16+/-4.94 ( 0.95)    |    2.16    | 2542.97   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  112483    |    130657.2+/-209.2      |    771.66+/-4.87 ( 0.93)    |    2.13    | 2578.12   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  111243    |    129128.6+/-208.0      |    764.02+/-4.85 ( 0.92)    |    2.12    | 2586.91   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  110970    |    126668.9+/-205.3      |    755.13+/-4.82 ( 0.91)    |    2.12    | 2592.77   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |  110970    |    126668.9+/-205.3      |    755.13+/-4.82 ( 0.91)    |    2.12    | 2592.77   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |   80303    |    92532.4+/-174.2      |    646.19+/-4.46 ( 0.77)    |    2.12    | 2632.32   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |   69538    |    82275.6+/-164.1      |    567.36+/-4.18 ( 0.68)    |    1.97    | 2830.08   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |   12878    |    15197.4+/-80.9      |    158.21+/-2.19 ( 0.19)    |    1.28    | 3940.43   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |   12878    |    15197.4+/-80.9      |    158.21+/-2.19 ( 0.19)    |    1.28    | 3940.43   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |   12385    |    14475.4+/-80.4      |    152.72+/-2.15 ( 0.18)    |    1.26    | 3999.02   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |    5849    |    5981.2+/-47.5      |    102.20+/-1.75 ( 0.12)    |    1.31    | 3769.53   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |    3182    |    3373.9+/-34.4      |    81.43+/-1.56 ( 0.10)    |    1.39    | 3588.87   |
+|--------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------|
+|                       |    2908    |    3057.4+/-32.7      |    80.52+/-1.55 ( 0.10)    |    1.44    | 3471.68   |
+|--------------------------------------------------------------------------------------------------------------------|

@@ -10,7 +10,7 @@ methods ?= "BDT"
 lumi ?= 35.867
 cut ?= "dummy"
 training_cut ?= region
-region ?= wv_boosted
+region ?= boosted
 plot_name ?= "test"
 pltVar ?= "lep1_pt"
 saveFile ?= "$(year)"
@@ -137,8 +137,8 @@ genPlots: update_$(year)
 
 #///////////////////////////////////////////////////////////////////////////////
 #
-mon: update_$(year)
-	@root -q tmvaMon.cc\(\"vbs_ww_$(saveFile)\",$(lumi),$(cut),\"$(plot_name)\",\"$(plot_args)\",\"$(mon_function)\",\'$(plot_type)\',\"$(var_to_plot)\"\)
+mon: update_$(year) update_cuts
+	@root -q tmvaMon.cc\(\"$(saveFile)\",$(lumi),$(cut),\"$(plot_name)\",\"$(plot_args)\",\"$(mon_function)\",\'$(plot_type)\',\"$(var_to_plot)\"\)
 
 #///////////////////////////////////////////////////////////////////////////////
 #
@@ -149,7 +149,8 @@ cutFlow: update_$(year)
 #
 update_cuts:
 	@sed -i 's|^TCut training_cut.*|TCut training_cut   ("training_cut",      $(training_cut));|g' vbsTMVA.hpp
-	@sed -i 's|^TCut region.*|TCut region               ("region",                  $(region));|g' vbsTMVA.hpp
+	@sed -i 's|^TCut region.*|TCut region               ("region",                  wv_$(region));|g' vbsTMVA.hpp
+	@sed -i 's|^TCut scale_hist.*|TCut scale_hist               ("scale_hist",               $(region)_scale_hist);|g' vbsTMVA.hpp
 
 #-------------------------------------------------------------------------------
 # These makefile targets update the different files for whichever year specified

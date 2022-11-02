@@ -148,6 +148,16 @@ TCut full_common          ("full_common",             common+lep_eta+region);
 TCut common_ele           ("common_ele",              common+lep_ele+region);
 TCut common_muon          ("common_muon",             common+lep_muon+region);
 
+// Resolved category
+TCut resolved_jet_pt      ("resoved_jet_pt",          "bos_j1_AK4_pt > 30.0 && bos_j2_AK4_pt > 30.0");
+TCut resolved_common      ("resolved_common",         iso_cut+vbs_jets+met_pt+zepp_cut+lep_pt+lep_eta+resolved_jet_pt+wv_resolved);
+TCut wv_resolved_sr       ("wv_resolved_sr",          "bos_AK4AK4_m > 65.0 && bos_AK4AK4_m < 105");
+TCut wv_resolved_wcr      ("wv_resolved_wcr",         "(bos_AK4AK4_m > 50 && bos_AK4AK4_m < 65) || (bos_AK4AK4_m > 105 && bos_AK4AK4_m < 150)");
+TCut wv_resolved_tcr      ("wv_resolved_tcr",         "nBtag_loose > 0");
+
+TCut full_resolved_sr     ("full_resolved_sr",        resolved_common+btag_veto+wv_resolved_sr);
+TCut full_resolved_wcr    ("full_resolved_wcr",       resolved_common+btag_veto+wv_resolved_wcr);
+TCut full_resolved_tcr    ("full_resolved_tcr",       resolved_common+wv_resolved_tcr+wv_resolved_sr);
 
 // Full set of cuts for each SR/CR selecting both electrons and muons
 TCut full_wjets_cr        ("full_wjets_cr",           full_common+btag_veto+wv_cr_wjets);
@@ -200,9 +210,12 @@ TCut wtot_2018            ("wtot_2018",               "59740*genWeight*mcWeight*
 TCut allCuts              ("allCuts",                 (lep_pt+fatjet_pt+wv_sr+btag_veto+vbs_jets_mjj+vbs_delta_eta+vbs_jets_pt));
 TCut norm_btag            ("norm_btag",               "((year==2016)*(lumin*mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep1_trigEffWeight))+((year==2017)*(lumin*mcWeight*genWeight*L1PFWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep1_trigEffWeight))+((year==2018)*(lumin*mcWeight*genWeight*puWeight*btagWeight_loose*lep1_idEffWeight*lep1_trigEffWeight))");
 TCut norm_hist 	          ("norm_hist",               "((year==2016)*(lumin*mcWeight*genWeight*L1PFWeight*puWeight*lep1_idEffWeight*lep1_trigEffWeight))+((year==2017)*(lumin*mcWeight*genWeight*L1PFWeight*puWeight*lep1_idEffWeight*lep1_trigEffWeight))+((year==2018)*(lumin*mcWeight*genWeight*puWeight*L1PFWeight*lep1_idEffWeight*lep1_trigEffWeight))");
-TCut scale_hist           ("scale_hist",             "((((year==2016)&&(gid==13))*(1.378))+(((year==2016)&&(gid==15))*(0.895))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.213))+(((year==2017)&&(gid==15))*(1.036))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(0.631))+(((year==2018)&&(gid==15))*(0.697))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
-TCut test_cut 	          ("test_cut",               "((((year==2016)&&(gid==13))*(1.466))+(((year==2016)&&(gid==15))*(0.907))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.255))+(((year==2017)&&(gid==15))*(1.250))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(0.669))+(((year==2018)&&(gid==15))*(0.72))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
-TCut training_cut   ("training_cut",      full_wv_sr);
+//TCut boosted_scale_hist   ("boosted_scale_hist",      "((((year==2016)&&(gid==13))*(1.378))+(((year==2016)&&(gid==15))*(0.895))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.213))+(((year==2017)&&(gid==15))*(1.036))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(0.631))+(((year==2018)&&(gid==15))*(0.697))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
+TCut boosted_scale_hist   ("boosted_scale_hist",      "((((year==2016)&&(gid==13))*(1.400))+(((year==2016)&&(gid==15))*(0.901))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.264))+(((year==2017)&&(gid==15))*(1.040))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(0.576))+(((year==2018)&&(gid==15))*(0.689))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
+TCut resolved_scale_hist	("resolved_scale_hist",     "((((year==2016)&&(gid==13))*(1.940))+(((year==2016)&&(gid==15))*(1.089))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.960))+(((year==2017)&&(gid==15))*(1.354))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(1.029))+(((year==2018)&&(gid==15))*(0.884))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
+TCut scale_hist               ("scale_hist",               boosted_scale_hist);
+
+TCut training_cut   ("training_cut",      region);
 //Cuts ---------------------------------------------------------------------------------------------------------------------------------
 
 

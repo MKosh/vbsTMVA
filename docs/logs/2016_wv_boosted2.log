@@ -1,0 +1,117 @@
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing tmvaMon.cc("vbs_ww_2016_wv_boosted",35.87,full_wv_sr+tau21_cut+qgid_cut,"2016_wv_boosted_optCut","datasets/plot_args/MVA_variables.xml","optCutScan",'r',"sgf1")...
+Using analysis directory vbs_ww_2016_wv_boosted
+--- plot_tmv: Using signal&bkg test trees from file: vbs_ww_2016_wv_boosted_SBtmva.root
+ Entries bkg :: test/train/test+train = 1984746/1984746/3969492
+ Entries sgl :: test/train/test+train = 40313/40313/80626
+ scale_sgl_tmva/scale_bkg_tmva = 0.5/0.5
+ Entries data  = 1498464
+ Signal x-sect, fb / Generated signal events (normalized to Lum =  35.87 fb ) :: 2324.84/83392
+ 1.0 * lum_fbinv * PB2FB = 35870
+
+anl Lum = 35.87
+sgf1 :: point/step/cutval/significance  = 1/0.1/-1/0
+sgf1 :: point/step/cutval/significance  = 2/0.1/-0.9/0
+sgf1 :: point/step/cutval/significance  = 3/0.1/-0.8/0
+sgf1 :: point/step/cutval/significance  = 4/0.1/-0.7/0
+sgf1 :: point/step/cutval/significance  = 5/0.1/-0.6/0
+sgf1 :: point/step/cutval/significance  = 6/0.1/-0.5/0
+sgf1 :: point/step/cutval/significance  = 7/0.1/-0.4/0
+sgf1 :: point/step/cutval/significance  = 8/0.1/-0.3/0
+sgf1 :: point/step/cutval/significance  = 9/0.1/-0.2/0
+sgf1 :: point/step/cutval/significance  = 10/0.1/-0.1/0
+sgf1 :: point/step/cutval/significance  = 11/0.1/0/0
+sgf1 :: point/step/cutval/significance  = 12/0.1/0.1/0
+sgf1 :: point/step/cutval/significance  = 13/0.1/0.2/0
+sgf1 :: point/step/cutval/significance  = 14/0.1/0.3/0
+sgf1 :: point/step/cutval/significance  = 15/0.1/0.4/0
+sgf1 :: point/step/cutval/significance  = 16/0.1/0.5/0
+sgf1 :: point/step/cutval/significance  = 17/0.1/0.6/0
+sgf1 :: point/step/cutval/significance  = 18/0.1/0.7/0
+sgf1 :: point/step/cutval/significance  = 19/0.1/0.8/0
+sgf1 :: point/step/cutval/significance  = 20/0.1/0.9/0
+sgf1 :: point/step/cutval/significance  = 1/0.02/-1.1/0
+sgf1 :: point/step/cutval/significance  = 2/0.02/-1.08/0
+sgf1 :: point/step/cutval/significance  = 3/0.02/-1.06/0
+sgf1 :: point/step/cutval/significance  = 4/0.02/-1.04/0
+sgf1 :: point/step/cutval/significance  = 5/0.02/-1.02/0
+sgf1 :: point/step/cutval/significance  = 6/0.02/-1/0
+sgf1 :: point/step/cutval/significance  = 7/0.02/-0.98/0
+sgf1 :: point/step/cutval/significance  = 8/0.02/-0.96/0
+sgf1 :: point/step/cutval/significance  = 9/0.02/-0.94/0
+sgf1 :: point/step/cutval/significance  = 10/0.02/-0.92/0
+sgf1 :: point/step/cutval/significance  = 1/0.004/-1.02/0
+sgf1 :: point/step/cutval/significance  = 2/0.004/-1.016/0
+sgf1 :: point/step/cutval/significance  = 3/0.004/-1.012/0
+sgf1 :: point/step/cutval/significance  = 4/0.004/-1.008/0
+sgf1 :: point/step/cutval/significance  = 5/0.004/-1.004/0
+sgf1 :: point/step/cutval/significance  = 6/0.004/-1/0
+sgf1 :: point/step/cutval/significance  = 7/0.004/-0.996/0
+sgf1 :: point/step/cutval/significance  = 8/0.004/-0.992/0
+sgf1 :: point/step/cutval/significance  = 9/0.004/-0.988/0
+sgf1 :: point/step/cutval/significance  = 1/0.0008/-1.004/0
+sgf1 :: point/step/cutval/significance  = 2/0.0008/-1.0032/0
+sgf1 :: point/step/cutval/significance  = 3/0.0008/-1.0024/0
+sgf1 :: point/step/cutval/significance  = 4/0.0008/-1.0016/0
+sgf1 :: point/step/cutval/significance  = 5/0.0008/-1.0008/0
+sgf1 :: point/step/cutval/significance  = 6/0.0008/-1/0
+sgf1 :: point/step/cutval/significance  = 7/0.0008/-0.9992/0
+sgf1 :: point/step/cutval/significance  = 8/0.0008/-0.9984/0
+sgf1 :: point/step/cutval/significance  = 9/0.0008/-0.9976/0
+bestcut/sgf  = -1/0
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.24/02                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Feb 15 2022, 19:06:00                 |
+  | From heads/latest-stable@v6-24-02-2-g0173f51a8c                  |
+  | With                                                             |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing tmvaMon.cc("vbs_ww_2016_wv_boosted",35.87,full_wv_sr+tau21_cut+qgid_cut,"2016_wv_boosted_optCut","datasets/plot_args/MVA_variables.xml","optCutScan",'r',"BDT")...
+Using analysis directory vbs_ww_2016_wv_boosted
+--- plot_tmv: Using signal&bkg test trees from file: vbs_ww_2016_wv_boosted_SBtmva.root
+ Entries bkg :: test/train/test+train = 1984746/1984746/3969492
+ Entries sgl :: test/train/test+train = 40313/40313/80626
+ scale_sgl_tmva/scale_bkg_tmva = 0.5/0.5
+ Entries data  = 1498464
+ Signal x-sect, fb / Generated signal events (normalized to Lum =  35.87 fb ) :: 2324.84/83392
+ 1.0 * lum_fbinv * PB2FB = 35870
+
+anl Lum = 35.87
+BDT :: point/step/cutval/significance  = 1/0.1/-1/1.3853
+BDT :: point/step/cutval/significance  = 2/0.1/-0.9/1.3853
+BDT :: point/step/cutval/significance  = 3/0.1/-0.8/1.3853
+BDT :: point/step/cutval/significance  = 4/0.1/-0.7/1.3853
+BDT :: point/step/cutval/significance  = 5/0.1/-0.6/1.3853
+BDT :: point/step/cutval/significance  = 6/0.1/-0.5/1.3853
+BDT :: point/step/cutval/significance  = 7/0.1/-0.4/1.3853
+BDT :: point/step/cutval/significance  = 8/0.1/-0.3/1.38591
+BDT :: point/step/cutval/significance  = 9/0.1/-0.2/1.4008
+BDT :: point/step/cutval/significance  = 10/0.1/-0.1/1.47942
+BDT :: point/step/cutval/significance  = 11/0.1/0/1.67193
+BDT :: point/step/cutval/significance  = 12/0.1/0.1/1.97037
+BDT :: point/step/cutval/significance  = 13/0.1/0.2/2.11851
+BDT :: point/step/cutval/significance  = 14/0.1/0.3/2.17465
+BDT :: point/step/cutval/significance  = 15/0.1/0.4/1.81307
+BDT :: point/step/cutval/significance  = 16/0.1/0.5/1.02494
+BDT :: point/step/cutval/significance  = 17/0.1/0.6/0.10341
+BDT :: point/step/cutval/significance  = 18/0.1/0.7/0
+BDT :: point/step/cutval/significance  = 19/0.1/0.8/0
+BDT :: point/step/cutval/significance  = 20/0.1/0.9/0
+BDT :: point/step/cutval/significance  = 1/0.02/0.2/2.11851
+BDT :: point/step/cutval/significance  = 2/0.02/0.22/2.11176
+BDT :: point/step/cutval/significance  = 3/0.02/0.24/2.1518
+BDT :: point/step/cutval/significance  = 4/0.02/0.26/2.15471
+BDT :: point/step/cutval/significance  = 5/0.02/0.28/2.15931
+BDT :: point/step/cutval/significance  = 6/0.02/0.3/2.17465
