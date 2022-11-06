@@ -1,29 +1,47 @@
 #!/bin/bash
 
-# Run2 Full
+# Run2 WV Boosted
+##################
 
-# WV boosted
-#make cutFlow year="1111" saveFile="Run2_wv_boosted" lumi="137" cut="BDT_cut_Run2_wv" plot_name="Run2_wv_boosted_BDT_cutflow" plot_args="datasets/plot_args/MVA_variables.xml" plot_type=r var_to_plot="vbf_m"  | tee -a docs/logs/Run2_wv_boosted.log
-#make cutFlow year="1111" saveFile="Run2_wv_boosted" lumi="137" cut="DNN_GPU_cut_Run2_wv" plot_name="Run2_wv_boosted_DNN_cutflow" plot_args="datasets/plot_args/MVA_variables.xml" plot_type=r var_to_plot="vbf_m"  | tee -a docs/logs/Run2_wv_boosted.log
+# Optimal Cut Scan
+Boosted_optCutScan() {
+# BDT
+    make mon loc="" year="1111" saveFile="TMVAoutput_boosted" lumi="137" cut="full_wv_sr+cleanNAN_tau+cleanNAN_qgid" mon_function="optCutScan" region=boosted plot_type=r var_to_plot="${1}" plot_name="Run2_boosted_optCut_BDT" | tee -a docs/logs/boosted/boosted_plots.log
+# DNN
+    make mon loc="" year="1111" saveFile="TMVAoutput_boosted" lumi="137" cut="full_wv_sr+cleanNAN_tau+cleanNAN_qgid" mon_function="optCutScan" region=boosted plot_type=r var_to_plot="${2}" plot_name="Run2_boosted_optCut_DNN" | tee -a docs/logs/boosted/boosted_plots.log
+}
 
-#make cutFlow year="1111" saveFile="Run2_wv_boosted" lumi="137" cut="BDT_cut_Run2_wv" plot_name="Run2_wv_boosted_BDT_cutflow" plot_args="datasets/plot_args/MVA_variables.xml" plot_type=r var_to_plot="vbf_deta"  | tee -a docs/logs/Run2_wv_boosted.log
-#make cutFlow year="1111" saveFile="Run2_wv_boosted" lumi="137" cut="DNN_GPU_cut_Run2_wv" plot_name="Run2_wv_boosted_DNN_cutflow" plot_args="datasets/plot_args/MVA_variables.xml" plot_type=r var_to_plot="vbf_deta"  | tee -a docs/logs/Run2_wv_boosted.log
+Boosted_genPlots() {
+    make mon loc="" year="1111" saveFile="TMVAoutput_boosted" lumi="137" cut="boosted_bdt_cut+cleanNAN_tau+cleanNAN_qgid" region=boosted mon_function="genPlots" plot_type=r plot_name="${1}" plot_args="datasets/plot_args/${3}.xml" | tee -a docs/logs/boosted/boosted_plots.log
+    make mon loc="" year="1111" saveFile="TMVAoutput_boosted" lumi="137" cut="boosted_dnn_cut+cleanNAN_tau+cleanNAN_qgid" region=boosted mon_function="genPlots" plot_type=r plot_name="${2}" plot_args="datasets/plot_args/${3}.xml" | tee -a docs/logs/boosted/boosted_plots.log
+}
 
-# SR
-#make mon loc="" year="1111" saveFile="Run2_wv_boosted" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut+BDT_cut_Run2_wv" mon_function="cplots" plot_type=r plot_name="Run2_wv_boosted_BDT" | tee -a docs/logs/Run2_wv_boosted.log
-#make mon loc="" year="1111" saveFile="Run2_wv_boosted" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut+DNN_GPU_cut_Run2_wv" mon_function="cplots" plot_type=r plot_name="Run2_wv_boosted_DNN" | tee -a docs/logs/Run2_wv_boosted.log
+Boosted_cPlots() {
+    make mon loc="" year="1111" saveFile="TMVAoutput_boosted" lumi="137" cut="boosted_bdt_cut+cleanNAN_tau+cleanNAN_qgid" region=boosted mon_function="cplots" plot_type=r plot_name="${1}" plot_args="datasets/plot_args/${3}.xml" | tee -a docs/logs/boosted/boosted_plots.log
+    make mon loc="" year="1111" saveFile="TMVAoutput_boosted" lumi="137" cut="boosted_dnn_cut+cleanNAN_tau+cleanNAN_qgid" region=boosted mon_function="cplots" plot_type=r plot_name="${2}" plot_args="datasets/plot_args/${3}.xml" | tee -a docs/logs/boosted/boosted_plots.log
+}
 
-# Top and Wjets CRs
-## genPlots
-###make mon loc="" year="1111" saveFile="Run2_wv_boosted" lumi="137" cut="full_top_cr+tau21_cut+qgid_cut" mon_function="genPlots" plot_type=r plot_name="Run2_Top_CR_S_MVA" plot_args="datasets/plot_args/Kinematic_variables.xml"| tee -a docs/logs/Run2_wv_boosted.log
-###make mon loc="" year="1111" saveFile="Run2_wv_boosted" lumi="137" cut="full_wjets_cr+tau21_cut+qgid_cut" mon_function="genPlots" plot_type=r plot_name="Run2_Wjets_CR_S_MVA" plot_args="datasets/plot_args/Kinematic_variables.xml"| tee -a docs/logs/Run2_wv_boosted.log
+Boosted_shapePlots() {
+    make mon loc="" year="1111" saveFile="TMVAoutput_boosted" lumi="137" cut="boosted_bdt_cut+cleanNAN_tau+cleanNAN_qgid" region=boosted mon_function="genPlots" plot_type=s plot_name="${1}" plot_args="datasets/plot_args/${3}.xml" | tee -a docs/logs/boosted/boosted_plots.log
+    make mon loc="" year="1111" saveFile="TMVAoutput_boosted" lumi="137" cut="boosted_dnn_cut+cleanNAN_tau+cleanNAN_qgid" region=boosted mon_function="genPlots" plot_type=s plot_name="${2}" plot_args="datasets/plot_args/${3}.xml" | tee -a docs/logs/boosted/boosted_plots.log
+}
 
-## cplots
-#make mon loc="" year="1111" saveFile="Run2_wv_boosted" lumi="137" cut="full_top_cr+tau21_cut+qgid_cut" mon_function="cplots" plot_type=r plot_name="Run2_Top_CR_G_MVA" plot_args="datasets/plot_args/MVA_variables.xml"
-#make mon loc="" year="1111" saveFile="Run2_wv_boosted" lumi="137" cut="full_wjets_cr+tau21_cut+qgid_cut" mon_function="cplots" plot_type=r plot_name="Run2_Wjets_CR_G_MVA" plot_args="datasets/plot_args/MVA_variables.xml"
+Boosted_MLplots() {
+    make mon loc="" year="1111" saveFile="TMVAoutput_boosted" lumi="137" cut="full_wv_sr+cleanNAN_tau+cleanNAN_qgid" mon_function="genPlots" plot_type=r plot_name="SR_ML_g" plot_args="datasets/plot_args/ML_models_boosted.xml"  | tee -a docs/logs/boosted/boosted_plots.log
+    make mon loc="" year="1111" saveFile="TMVAoutput_boosted" lumi="137" cut="full_wv_sr+cleanNAN_tau+cleanNAN_qgid" mon_function="genPlots" plot_type=s plot_name="SR_ML_Shape" plot_args="datasets/plot_args/ML_models_boosted.xml"  | tee -a docs/logs/boosted/boosted_plots.log
+}
 
-##############
+# Run2 WV Resolved
+##################
 
+# Optimal Cut Scan
+Resolved_optCutScan() {
+# BDT
+make mon loc="" year="1111" saveFile="TMVAoutput_resolved" lumi="137" cut="full_resolved_sr+cleanNAN_tau+cleanNAN_qgid" mon_function="optCutScan" region=resolved plot_type=r var_to_plot="${1}" plot_name="Run2_resolved_optCut_BDT" | tee -a docs/logs/resolved/resolved_plots.log
+# DNN
+make mon loc="" year="1111" saveFile="TMVAoutput_resolved" lumi="137" cut="full_resolved_sr+cleanNAN_tau+cleanNAN_qgid" mon_function="optCutScan" region=resolved plot_type=r var_to_plot="${2}" plot_name="Run2_resolved_optCut_DNN" | tee -a docs/logs/resolved/resolved_plots.log
+}
+ 
 # SR
 ##make mon loc="" year="1111" saveFile="Run2_wv_SR" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut" mon_function="optCutScan" plot_type=r var_to_plot="BDT" plot_name="Run2_wv_SR_optCut_BDT_BDT" | tee -a docs/logs/Run2_wv_SR.log
 ##make mon loc="" year="1111" saveFile="Run2_wv_SR" lumi="137" cut="full_wv_sr+tau21_cut+qgid_cut" mon_function="optCutScan" plot_type=r var_to_plot="DNN_GPU" plot_name="Run2_wv_SR_optCut_DNN_DNN" | tee -a docs/logs/Run2_wv_SR.log
@@ -65,3 +83,11 @@
 #make mon loc="" year="1111" saveFile="TMVAoutput_boosted_full" lumi="137" cut="year_2016+full_top_cr+cleanNAN_tau+cleanNAN_qgid" region=boosted mon_function="genPlots" plot_type=r plot_name="vbf_m_Top_CR_2016" plot_args="datasets/plot_args/single_plot.xml"
 
 #make mon loc="" year="1111" saveFile="TMVAoutput_resolved_full" lumi="137" cut="full_resolved_sr+cleanNAN_tau+qgid_cut" region=resolved mon_function="genPlots" plot_type=r plot_name="vbf_m_SR" plot_args="datasets/plot_args/single_plot.xml"
+
+#Boosted_optCutScan BDT4 DNN_GPU1
+#Resolved_optCutScan BDT2 DNN_GPU1
+
+Boosted_genPlots Run2_boosted_G_kin_BDT Run2_boosted_G_kin_DNN Boosted_kinematic_variables
+Boosted_cPlots Run2_boosted_kin_BDT Run2_boosted_kin_DNN Boosted_kinematic_variables
+Boosted_shapePlots Run2_boosted_kin_BDT Run2_boosted_kin_DNN Boosted_kinematic_variables
+Boosted_MLplots 

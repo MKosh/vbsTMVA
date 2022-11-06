@@ -158,11 +158,15 @@ TCut wv_resolved_tcr      ("wv_resolved_tcr",         "nBtag_loose > 0");
 TCut full_resolved_sr     ("full_resolved_sr",        resolved_common+btag_veto+wv_resolved_sr);
 TCut full_resolved_wcr    ("full_resolved_wcr",       resolved_common+btag_veto+wv_resolved_wcr);
 TCut full_resolved_tcr    ("full_resolved_tcr",       resolved_common+wv_resolved_tcr+wv_resolved_sr);
+TCut resolved_bdt_cut     ("resolved_bdt_cut",        "BDT2>0.100");
+TCut resolved_dnn_cut     ("resolved_dnn_cut",        "DNN_GPU1>0.068");
 
 // Full set of cuts for each SR/CR selecting both electrons and muons
 TCut full_wjets_cr        ("full_wjets_cr",           full_common+btag_veto+wv_cr_wjets);
 TCut full_top_cr          ("full_top_cr",             full_common+wv_cr_top+wv_sr);
 TCut full_wv_sr           ("full_wv_sr",              full_common+btag_veto+wv_sr);//+noData);
+TCut boosted_bdt_cut      ("boosted_bdt_cut",         "BDT4>0.539");
+TCut boosted_dnn_cut      ("boosted_dnn_cut",         "DNN_GPU1>0.111");
 
 TCut BDT_cut_2016_wv      ("BDT_cut_2016_wv",         "BDT>0.313"); //
 TCut BDT_cut_2016_sr      ("BDT_cut_2016_sr",         "BDT>0.038"); // was 0.046
@@ -187,14 +191,6 @@ TCut DNN_GPU_cut_Run2_wv  ("DNN_GPU_cut_Run2_wv",     "DNN_GPU>0.060");
 TCut DNN_GPU_cut_Run2_sr  ("DNN_GPU_cut_Run2_sr",     "DNN_GPU>0.092"); // was 0.125
 // use these
 
-TCut BDT_cut_Run2_Summed  ("BDT_cut_Run2_Summed",     "BDT>0.083");
-TCut DNN_cut_Run2_Summed  ("DNN_cut_Run2_Summed",     "DNN_GPU>0.117");
-
-TCut BDT_Run2_wv_year     ("BDT_Run2_wv_year",        "BDT>0.344");
-TCut DNN_Run2_wv_year     ("DNN_Run2_wv_year",        "DNN_GPU>0.060");
-
-TCut BDT_Run2_sr_year     ("BDT_Run2_sr_year",        "BDT>0.110");
-TCut DNN_Run2_sr_year     ("DNN_Run2_sr_year",        "DNN_GPU>0.138");
 
 // Full SR/CR cuts specifying one type of lepton
 TCut wjets_cr_ele         ("wjets_cr_ele",            common_ele+btag_veto+wv_cr_wjets);

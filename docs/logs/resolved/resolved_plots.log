@@ -1,0 +1,143 @@
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.26/06                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Jul 28 2022, 18:08:51                 |
+  | From tags/v6-26-06@v6-26-06                                      |
+  | With g++-11 (GCC) 11.3.0                                         |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing tmvaMon.cc("TMVAoutput_resolved",137,full_resolved_sr+cleanNAN_tau+cleanNAN_qgid,"Run2_resolved_optCut_BDT","datasets/plot_args/MVA_variables.xml","optCutScan",'r',"BDT2")...
+Using analysis directory TMVAoutput_resolved
+--- plot_tmv: Using signal&bkg test trees from file: TMVAoutput_resolved_SBtmva.root
+ Entries bkg :: test/train/test+train = 435506/435506/871012
+ Entries sgl :: test/train/test+train = 73564/73564/147128
+ scale_sgl_tmva/scale_bkg_tmva = 0.5/0.5
+ Entries data  = 107855
+ Signal x-sect, fb / Generated signal events (normalized to Lum =  137 fb ) :: 2324.84/318503
+ 1.0 * lum_fbinv * PB2FB = 137000
+
+anl Lum = 137
+BDT2 :: point/step/cutval/significance  = 1/0.1/-1/3.18868
+BDT2 :: point/step/cutval/significance  = 2/0.1/-0.9/3.18868
+BDT2 :: point/step/cutval/significance  = 3/0.1/-0.8/3.18868
+BDT2 :: point/step/cutval/significance  = 4/0.1/-0.7/3.18868
+BDT2 :: point/step/cutval/significance  = 5/0.1/-0.6/3.18868
+BDT2 :: point/step/cutval/significance  = 6/0.1/-0.5/3.18868
+BDT2 :: point/step/cutval/significance  = 7/0.1/-0.4/3.18871
+BDT2 :: point/step/cutval/significance  = 8/0.1/-0.3/3.19724
+BDT2 :: point/step/cutval/significance  = 9/0.1/-0.2/3.32267
+BDT2 :: point/step/cutval/significance  = 10/0.1/-0.1/3.86658
+BDT2 :: point/step/cutval/significance  = 11/0.1/0/4.82612
+BDT2 :: point/step/cutval/significance  = 12/0.1/0.1/5.52167
+BDT2 :: point/step/cutval/significance  = 13/0.1/0.2/4.53635
+BDT2 :: point/step/cutval/significance  = 14/0.1/0.3/1.8026
+BDT2 :: point/step/cutval/significance  = 15/0.1/0.4/0
+BDT2 :: point/step/cutval/significance  = 16/0.1/0.5/0
+BDT2 :: point/step/cutval/significance  = 17/0.1/0.6/0
+BDT2 :: point/step/cutval/significance  = 18/0.1/0.7/0
+BDT2 :: point/step/cutval/significance  = 19/0.1/0.8/0
+BDT2 :: point/step/cutval/significance  = 20/0.1/0.9/0
+BDT2 :: point/step/cutval/significance  = 1/0.02/2.23517e-08/4.82612
+BDT2 :: point/step/cutval/significance  = 2/0.02/0.02/5.04675
+BDT2 :: point/step/cutval/significance  = 3/0.02/0.04/5.21295
+BDT2 :: point/step/cutval/significance  = 4/0.02/0.06/5.35173
+BDT2 :: point/step/cutval/significance  = 5/0.02/0.08/5.46336
+BDT2 :: point/step/cutval/significance  = 6/0.02/0.1/5.52167
+BDT2 :: point/step/cutval/significance  = 7/0.02/0.12/5.4946
+BDT2 :: point/step/cutval/significance  = 8/0.02/0.14/5.38385
+BDT2 :: point/step/cutval/significance  = 9/0.02/0.16/5.30878
+BDT2 :: point/step/cutval/significance  = 10/0.02/0.18/4.96706
+BDT2 :: point/step/cutval/significance  = 1/0.004/0.08/5.46336
+BDT2 :: point/step/cutval/significance  = 2/0.004/0.084/5.46477
+BDT2 :: point/step/cutval/significance  = 3/0.004/0.088/5.48903
+BDT2 :: point/step/cutval/significance  = 4/0.004/0.092/5.4917
+BDT2 :: point/step/cutval/significance  = 5/0.004/0.096/5.50282
+BDT2 :: point/step/cutval/significance  = 6/0.004/0.1/5.52167
+BDT2 :: point/step/cutval/significance  = 7/0.004/0.104/5.51587
+BDT2 :: point/step/cutval/significance  = 8/0.004/0.108/5.50595
+BDT2 :: point/step/cutval/significance  = 9/0.004/0.112/5.48456
+BDT2 :: point/step/cutval/significance  = 1/0.0008/0.096/5.50282
+BDT2 :: point/step/cutval/significance  = 2/0.0008/0.0968/5.50815
+BDT2 :: point/step/cutval/significance  = 3/0.0008/0.0976/5.514
+BDT2 :: point/step/cutval/significance  = 4/0.0008/0.0984/5.51144
+BDT2 :: point/step/cutval/significance  = 5/0.0008/0.0992/5.51967
+BDT2 :: point/step/cutval/significance  = 6/0.0008/0.1/5.52167
+BDT2 :: point/step/cutval/significance  = 7/0.0008/0.1008/5.51745
+BDT2 :: point/step/cutval/significance  = 8/0.0008/0.1016/5.51892
+BDT2 :: point/step/cutval/significance  = 9/0.0008/0.1024/5.51943
+BDT2 :: point/step/cutval/significance  = 10/0.0008/0.1032/5.51302
+bestcut/sgf  = 0.1/5.52167
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.26/06                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Jul 28 2022, 18:08:51                 |
+  | From tags/v6-26-06@v6-26-06                                      |
+  | With g++-11 (GCC) 11.3.0                                         |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+
+Processing tmvaMon.cc("TMVAoutput_resolved",137,full_resolved_sr+cleanNAN_tau+cleanNAN_qgid,"Run2_resolved_optCut_DNN","datasets/plot_args/MVA_variables.xml","optCutScan",'r',"DNN_GPU1")...
+Using analysis directory TMVAoutput_resolved
+--- plot_tmv: Using signal&bkg test trees from file: TMVAoutput_resolved_SBtmva.root
+ Entries bkg :: test/train/test+train = 435506/435506/871012
+ Entries sgl :: test/train/test+train = 73564/73564/147128
+ scale_sgl_tmva/scale_bkg_tmva = 0.5/0.5
+ Entries data  = 107855
+ Signal x-sect, fb / Generated signal events (normalized to Lum =  137 fb ) :: 2324.84/318503
+ 1.0 * lum_fbinv * PB2FB = 137000
+
+anl Lum = 137
+DNN_GPU1 :: point/step/cutval/significance  = 1/0.1/-1/3.18868
+DNN_GPU1 :: point/step/cutval/significance  = 2/0.1/-0.9/3.18868
+DNN_GPU1 :: point/step/cutval/significance  = 3/0.1/-0.8/3.18868
+DNN_GPU1 :: point/step/cutval/significance  = 4/0.1/-0.7/3.18868
+DNN_GPU1 :: point/step/cutval/significance  = 5/0.1/-0.6/3.18868
+DNN_GPU1 :: point/step/cutval/significance  = 6/0.1/-0.5/3.18868
+DNN_GPU1 :: point/step/cutval/significance  = 7/0.1/-0.4/3.18868
+DNN_GPU1 :: point/step/cutval/significance  = 8/0.1/-0.3/3.18868
+DNN_GPU1 :: point/step/cutval/significance  = 9/0.1/-0.2/3.18868
+DNN_GPU1 :: point/step/cutval/significance  = 10/0.1/-0.1/3.18868
+DNN_GPU1 :: point/step/cutval/significance  = 11/0.1/0/3.18868
+DNN_GPU1 :: point/step/cutval/significance  = 12/0.1/0.1/5.49892
+DNN_GPU1 :: point/step/cutval/significance  = 13/0.1/0.2/4.66106
+DNN_GPU1 :: point/step/cutval/significance  = 14/0.1/0.3/3.61977
+DNN_GPU1 :: point/step/cutval/significance  = 15/0.1/0.4/2.67519
+DNN_GPU1 :: point/step/cutval/significance  = 16/0.1/0.5/1.82296
+DNN_GPU1 :: point/step/cutval/significance  = 17/0.1/0.6/1.16365
+DNN_GPU1 :: point/step/cutval/significance  = 18/0.1/0.7/0.581769
+DNN_GPU1 :: point/step/cutval/significance  = 19/0.1/0.8/0.29278
+DNN_GPU1 :: point/step/cutval/significance  = 20/0.1/0.9/0
+DNN_GPU1 :: point/step/cutval/significance  = 1/0.02/2.23517e-08/3.18868
+DNN_GPU1 :: point/step/cutval/significance  = 2/0.02/0.02/5.2178
+DNN_GPU1 :: point/step/cutval/significance  = 3/0.02/0.04/5.58894
+DNN_GPU1 :: point/step/cutval/significance  = 4/0.02/0.06/5.6986
+DNN_GPU1 :: point/step/cutval/significance  = 5/0.02/0.08/5.63332
+DNN_GPU1 :: point/step/cutval/significance  = 6/0.02/0.1/5.49892
+DNN_GPU1 :: point/step/cutval/significance  = 7/0.02/0.12/5.33187
+DNN_GPU1 :: point/step/cutval/significance  = 8/0.02/0.14/5.19397
+DNN_GPU1 :: point/step/cutval/significance  = 9/0.02/0.16/5.0283
+DNN_GPU1 :: point/step/cutval/significance  = 10/0.02/0.18/4.84659
+DNN_GPU1 :: point/step/cutval/significance  = 1/0.004/0.04/5.58894
+DNN_GPU1 :: point/step/cutval/significance  = 2/0.004/0.044/5.60474
+DNN_GPU1 :: point/step/cutval/significance  = 3/0.004/0.048/5.62515
+DNN_GPU1 :: point/step/cutval/significance  = 4/0.004/0.052/5.6508
+DNN_GPU1 :: point/step/cutval/significance  = 5/0.004/0.056/5.68914
+DNN_GPU1 :: point/step/cutval/significance  = 6/0.004/0.06/5.6986
+DNN_GPU1 :: point/step/cutval/significance  = 7/0.004/0.064/5.71063
+DNN_GPU1 :: point/step/cutval/significance  = 8/0.004/0.068/5.71221
+DNN_GPU1 :: point/step/cutval/significance  = 9/0.004/0.072/5.68
+DNN_GPU1 :: point/step/cutval/significance  = 10/0.004/0.076/5.65433
+DNN_GPU1 :: point/step/cutval/significance  = 1/0.0008/0.064/5.71063
+DNN_GPU1 :: point/step/cutval/significance  = 2/0.0008/0.0648/5.70386
+DNN_GPU1 :: point/step/cutval/significance  = 3/0.0008/0.0656/5.70589
+DNN_GPU1 :: point/step/cutval/significance  = 4/0.0008/0.0664/5.71004
+DNN_GPU1 :: point/step/cutval/significance  = 5/0.0008/0.0672/5.71018
+DNN_GPU1 :: point/step/cutval/significance  = 6/0.0008/0.068/5.71221
+DNN_GPU1 :: point/step/cutval/significance  = 7/0.0008/0.0688/5.69942
+DNN_GPU1 :: point/step/cutval/significance  = 8/0.0008/0.0696/5.69527
+DNN_GPU1 :: point/step/cutval/significance  = 9/0.0008/0.0704/5.68759
+DNN_GPU1 :: point/step/cutval/significance  = 10/0.0008/0.0712/5.68513
+bestcut/sgf  = 0.068/5.71221
