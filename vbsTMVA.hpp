@@ -92,7 +92,7 @@ TCut wv_boosted           ("wv_boosted",              "lep2_pt<0 && bos_PuppiAK8
 TCut wv_resolved          ("wv_resolved",             "lep2_pt<0 && bos_AK4AK4_pt>0");
 TCut zv_boosted           ("zv_boosted",              "lep2_pt>0 && bos_PuppiAK8_pt>0");
 TCut zv_resolved          ("zv_resolved",             "lep2_pt>0 && bos_AK4AK4_pt>0");
-TCut region               ("region",                  wv_boosted);
+TCut region               ("region",                  wv_resolved);
 
 TCut lep_pt               ("lep_pt",                  "lep1_pt>25"); // can be different value, debatable // lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
 TCut lep_eta              ("lep_eta",                 "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 ) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))"); // && fabs(lep2_eta) < 2.4
@@ -209,7 +209,7 @@ TCut norm_hist 	          ("norm_hist",               "((year==2016)*(lumin*mcWe
 //TCut boosted_scale_hist   ("boosted_scale_hist",      "((((year==2016)&&(gid==13))*(1.378))+(((year==2016)&&(gid==15))*(0.895))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.213))+(((year==2017)&&(gid==15))*(1.036))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(0.631))+(((year==2018)&&(gid==15))*(0.697))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
 TCut boosted_scale_hist   ("boosted_scale_hist",      "((((year==2016)&&(gid==13))*(1.400))+(((year==2016)&&(gid==15))*(0.901))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.264))+(((year==2017)&&(gid==15))*(1.040))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(0.576))+(((year==2018)&&(gid==15))*(0.689))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
 TCut resolved_scale_hist	("resolved_scale_hist",     "((((year==2016)&&(gid==13))*(1.940))+(((year==2016)&&(gid==15))*(1.089))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.960))+(((year==2017)&&(gid==15))*(1.354))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(1.029))+(((year==2018)&&(gid==15))*(0.884))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
-TCut scale_hist               ("scale_hist",               boosted_scale_hist);
+TCut scale_hist               ("scale_hist",               resolved_scale_hist);
 
 TCut training_cut   ("training_cut",      region);
 //Cuts ---------------------------------------------------------------------------------------------------------------------------------

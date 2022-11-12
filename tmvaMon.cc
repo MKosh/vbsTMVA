@@ -1021,7 +1021,7 @@ TGraphErrors* map2graph( const char* sgfName,const char* cutvar, map<Float_t,Flo
 
   sgf->SetLineWidth(2);
   sgf->SetMarkerStyle(21);
-  sgf->SetMarkerSize(0.8);
+  sgf->SetMarkerSize(1.0);
   sgf->SetTitle("Discriminant cut optimization");
 
   SgfText->SetNDC();
@@ -1548,7 +1548,8 @@ void TmvaAnl::PlotLegend(const char* var){
   legend->SetNColumns(2);
   legend->SetFillStyle(0);
   legend->SetBorderSize(0);
-  legend->SetTextSize(0.04); // 0.04 for ratio plots 0.03 for shape plots
+  // 0.04 for ratio plots 0.03 for shape plots
+  legend->SetTextSize(0.03); // shape
 
   TLegend* cms_leg = (TLegend*)gROOT->FindObject("cms_leg");
   if (cms_leg) { cms_leg->Delete(); }
@@ -2088,7 +2089,7 @@ void genPlots(TmvaAnl *anl, TCut cuts, TString plot_name, TString plot_args_file
   stringstream plot_title;
   stringstream pdf_save_name;
 
-  plot_title << g_lum << " fb^{-1} (13 TeV)";
+  plot_title << g_lum << " fb^{-1}";
   std::string year2 = "1111";
   if (year2 == "1111") year2 = "Run2";
 

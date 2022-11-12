@@ -1,5 +1,5 @@
 # Need to specify bash in order for conda activate to work.
-#SHELL=/bin/bash
+SHELL=/bin/bash
 # Note that the extra activate is needed to ensure that the activate floats env to the front of PATH
 #CONDA_ACTIVATE=source $$(conda info --base)/etc/profile.d/conda.sh ; conda activate ; conda activate
 
@@ -137,7 +137,7 @@ genPlots: update_$(year)
 
 #///////////////////////////////////////////////////////////////////////////////
 #
-mon: update_$(year) update_cuts
+mon: update_$(year) update_cuts update_markers update_text_size
 	@root -q tmvaMon.cc\(\"$(saveFile)\",$(lumi),$(cut),\"$(plot_name)\",\"$(plot_args)\",\"$(mon_function)\",\'$(plot_type)\',\"$(var_to_plot)\"\)
 
 #///////////////////////////////////////////////////////////////////////////////
@@ -152,6 +152,23 @@ update_cuts:
 	@sed -i 's|^TCut region.*|TCut region               ("region",                  wv_$(region));|g' vbsTMVA.hpp
 	@sed -i 's|^TCut scale_hist.*|TCut scale_hist               ("scale_hist",               $(region)_scale_hist);|g' vbsTMVA.hpp
 
+#///////////////////////////////////////////////////////////////////////////////
+#
+update_markers:
+	@if [[ "$(mon_function)" == "cplots" ]]; then \
+		sed -i 's|SetMarkerSize([0-9]*\.[0-9]*)|SetMarkerSize(0.6)|g' tmvaMon.cc; \
+	else \
+		sed -i 's|SetMarkerSize([0-9]*\.[0-9]*)|SetMarkerSize(1.0)|g' tmvaMon.cc; \
+	fi;
+
+#///////////////////////////////////////////////////////////////////////////////
+#
+update_text_size:
+	@if [[ "$(plot_type)" == "s" ]]; then \
+		sed -i 's|legend->SetTextSize([0-9]*\.[0-9]*);|legend->SetTextSize(0.03);|g' tmvaMon.cc; \
+	else \
+		sed -i 's|legend->SetTextSize([0-9]*\.[0-9]*);|legend->SetTextSize(0.04);|g' tmvaMon.cc; \
+	fi;
 #-------------------------------------------------------------------------------
 # These makefile targets update the different files for whichever year specified
 update_1111: 
