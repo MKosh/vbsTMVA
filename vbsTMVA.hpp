@@ -92,7 +92,7 @@ TCut wv_boosted           ("wv_boosted",              "lep2_pt<0 && bos_PuppiAK8
 TCut wv_resolved          ("wv_resolved",             "lep2_pt<0 && bos_AK4AK4_pt>0");
 TCut zv_boosted           ("zv_boosted",              "lep2_pt>0 && bos_PuppiAK8_pt>0");
 TCut zv_resolved          ("zv_resolved",             "lep2_pt>0 && bos_AK4AK4_pt>0");
-TCut region               ("region",                  wv_resolved);
+TCut region               ("region",                  wv_boosted);
 
 TCut lep_pt               ("lep_pt",                  "lep1_pt>25"); // can be different value, debatable // lepton eta cleaning, different for muon and electron, (if muon) || (if ele)
 TCut lep_eta              ("lep_eta",                 "(lep1_m > 0.105 && fabs(lep1_eta) < 2.4 ) || (lep1_m < 0.105 && fabs(lep1_eta) < 2.5 && !(fabs(lep1_eta) > 1.4442 && fabs(lep1_eta) < 1.566))"); // && fabs(lep2_eta) < 2.4
@@ -168,29 +168,14 @@ TCut full_wv_sr           ("full_wv_sr",              full_common+btag_veto+wv_s
 TCut boosted_bdt_cut      ("boosted_bdt_cut",         "BDT4>0.539");
 TCut boosted_dnn_cut      ("boosted_dnn_cut",         "DNN_GPU1>0.111");
 
-TCut BDT_cut_2016_wv      ("BDT_cut_2016_wv",         "BDT>0.313"); //
-TCut BDT_cut_2016_sr      ("BDT_cut_2016_sr",         "BDT>0.038"); // was 0.046
-TCut DNN_GPU_cut_2016_wv  ("DNN_GPU_cut_2016_wv",     "DNN_GPU>0.071"); // 
-TCut DNN_GPU_cut_2016_sr  ("DNN_GPU_cut_2016_sr",     "DNN_GPU>0.098"); // was 0.084
+TCut bdt_2016             ("bdt_2016",                "BDT4>0.457"); //
+TCut dnn_2016             ("dnn_2016",                "DNN_GPU1>0.073"); // 
 
-TCut BDT_cut_2017_wv      ("BDT_cut_2017_wv",         "BDT>0.292");
-TCut BDT_cut_2017_sr      ("BDT_cut_2017_sr",         "BDT>0.118"); // was 0.102
-TCut DNN_GPU_cut_2017_wv  ("DNN_GPU_cut_2017_wv",     "DNN_GPU>0.066");
-TCut DNN_GPU_cut_2017_sr  ("DNN_GPU_cut_2017_sr",     "DNN_GPU>0.112"); // was 0.122
+TCut bdt_2017             ("bdt_2017",                "BDT4>0.568");
+TCut dnn_2017             ("dnn_2017",                "DNN_GPU1>0.114");
 
-
-TCut BDT_cut_2018_wv      ("BDT_cut_2018_wv",         "BDT>0.316");
-TCut BDT_cut_2018_sr      ("BDT_cut_2018_sr",         "BDT>0.098"); // was 0.084
-TCut DNN_GPU_cut_2018_wv  ("DNN_GPU_cut_2018_wv",     "DNN_GPU>0.09");
-TCut DNN_GPU_cut_2018_sr  ("DNN_GPU_cut_2018_sr",     "DNN_GPU>0.103"); // was 0.078
-
-// use these
-TCut BDT_cut_Run2_wv      ("BDT_cut_Run2_wv",         "BDT>0.344");
-TCut BDT_cut_Run2_sr      ("BDT_cut_Run2_sr",         "BDT>0.118"); // was 0.104
-TCut DNN_GPU_cut_Run2_wv  ("DNN_GPU_cut_Run2_wv",     "DNN_GPU>0.060");
-TCut DNN_GPU_cut_Run2_sr  ("DNN_GPU_cut_Run2_sr",     "DNN_GPU>0.092"); // was 0.125
-// use these
-
+TCut bdt_2018             ("bdt_2018",                "BDT4>0.543");
+TCut dnn_2018             ("dnn_2018",                "DNN_GPU1>0.078");
 
 // Full SR/CR cuts specifying one type of lepton
 TCut wjets_cr_ele         ("wjets_cr_ele",            common_ele+btag_veto+wv_cr_wjets);
@@ -209,7 +194,7 @@ TCut norm_hist 	          ("norm_hist",               "((year==2016)*(lumin*mcWe
 //TCut boosted_scale_hist   ("boosted_scale_hist",      "((((year==2016)&&(gid==13))*(1.378))+(((year==2016)&&(gid==15))*(0.895))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.213))+(((year==2017)&&(gid==15))*(1.036))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(0.631))+(((year==2018)&&(gid==15))*(0.697))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
 TCut boosted_scale_hist   ("boosted_scale_hist",      "((((year==2016)&&(gid==13))*(1.400))+(((year==2016)&&(gid==15))*(0.901))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.264))+(((year==2017)&&(gid==15))*(1.040))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(0.576))+(((year==2018)&&(gid==15))*(0.689))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
 TCut resolved_scale_hist	("resolved_scale_hist",     "((((year==2016)&&(gid==13))*(1.940))+(((year==2016)&&(gid==15))*(1.089))+(((year==2016)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2017)&&(gid==13))*(1.960))+(((year==2017)&&(gid==15))*(1.354))+(((year==2017)&&(gid!=13)&&(gid!=15))*1.)) + ((((year==2018)&&(gid==13))*(1.029))+(((year==2018)&&(gid==15))*(0.884))+(((year==2018)&&(gid!=13)&&(gid!=15))*1.))");
-TCut scale_hist               ("scale_hist",               resolved_scale_hist);
+TCut scale_hist               ("scale_hist",               boosted_scale_hist);
 
 TCut training_cut   ("training_cut",      region);
 //Cuts ---------------------------------------------------------------------------------------------------------------------------------

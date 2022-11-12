@@ -1549,7 +1549,7 @@ void TmvaAnl::PlotLegend(const char* var){
   legend->SetFillStyle(0);
   legend->SetBorderSize(0);
   // 0.04 for ratio plots 0.03 for shape plots
-  legend->SetTextSize(0.03); // shape
+  legend->SetTextSize(0.04); // shape
 
   TLegend* cms_leg = (TLegend*)gROOT->FindObject("cms_leg");
   if (cms_leg) { cms_leg->Delete(); }
